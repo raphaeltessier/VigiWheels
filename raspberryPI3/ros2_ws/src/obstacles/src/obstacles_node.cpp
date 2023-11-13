@@ -57,8 +57,6 @@ private:
     */
     void ultrasonicFeedbackCallback(const interfaces::msg::Ultrasonic & Ultrasonic){
 
-        RCLCPP_INFO(this->get_logger(), "callback");
-
         int front_left = Ultrasonic.front_left;
         int front_center = Ultrasonic.front_center;
         int front_right = Ultrasonic.front_right;
