@@ -1,2 +1,0 @@
-Invoking command in '/home/raphael/Bureau/VigiWheels/raspberryPI3/ros2_ws/build/interfaces': /usr/bin/cmake /home/raphael/Bureau/VigiWheels/raspberryPI3/ros2_ws/src/interfaces -DCMAKE_INSTALL_PREFIX=/home/raphael/Bureau/VigiWheels/raspberryPI3/ros2_ws/install/interfaces
-Invoked command in '/home/raphael/Bureau/VigiWheels/raspberryPI3/ros2_ws/build/interfaces' returned '1': /usr/bin/cmake /home/raphael/Bureau/VigiWheels/raspberryPI3/ros2_ws/src/interfaces -DCMAKE_INSTALL_PREFIX=/home/raphael/Bureau/VigiWheels/raspberryPI3/ros2_ws/install/interfaces
