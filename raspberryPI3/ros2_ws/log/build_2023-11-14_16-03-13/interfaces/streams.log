@@ -1,0 +1,35 @@
+[0.065s] Invoking command in '/home/raphael/Bureau/VigiWheels/raspberryPI3/ros2_ws/build/interfaces': /usr/bin/cmake /home/raphael/Bureau/VigiWheels/raspberryPI3/ros2_ws/src/interfaces -DCMAKE_INSTALL_PREFIX=/home/raphael/Bureau/VigiWheels/raspberryPI3/ros2_ws/install/interfaces
+[2.148s] -- The C compiler identification is GNU 9.4.0
+[3.240s] -- The CXX compiler identification is GNU 9.4.0
+[3.277s] -- Check for working C compiler: /usr/bin/cc
+[3.398s] -- Check for working C compiler: /usr/bin/cc -- works
+[3.400s] -- Detecting C compiler ABI info
+[3.460s] -- Detecting C compiler ABI info - done
+[3.472s] -- Detecting C compile features
+[3.472s] -- Detecting C compile features - done
+[3.475s] -- Check for working CXX compiler: /usr/bin/c++
+[3.544s] -- Check for working CXX compiler: /usr/bin/c++ -- works
+[3.545s] -- Detecting CXX compiler ABI info
+[3.613s] -- Detecting CXX compiler ABI info - done
+[3.625s] -- Detecting CXX compile features
+[3.626s] -- Detecting CXX compile features - done
+[3.706s] CMake Error at CMakeLists.txt:9 (find_package):
+[3.706s]   By not providing "Findament_cmake.cmake" in CMAKE_MODULE_PATH this project
+[3.706s]   has asked CMake to find a package configuration file provided by
+[3.706s]   "ament_cmake", but CMake did not find one.
+[3.706s] 
+[3.706s]   Could not find a package configuration file provided by "ament_cmake" with
+[3.706s]   any of the following names:
+[3.706s] 
+[3.706s]     ament_cmakeConfig.cmake
+[3.706s]     ament_cmake-config.cmake
+[3.706s] 
+[3.706s]   Add the installation prefix of "ament_cmake" to CMAKE_PREFIX_PATH or set
+[3.706s]   "ament_cmake_DIR" to a directory containing one of the above files.  If
+[3.707s]   "ament_cmake" provides a separate development package or SDK, be sure it
+[3.707s]   has been installed.
+[3.707s] 
+[3.707s] 
+[3.707s] -- Configuring incomplete, errors occurred!
+[3.707s] See also "/home/raphael/Bureau/VigiWheels/raspberryPI3/ros2_ws/build/interfaces/CMakeFiles/CMakeOutput.log".
+[3.709s] Invoked command in '/home/raphael/Bureau/VigiWheels/raspberryPI3/ros2_ws/build/interfaces' returned '1': /usr/bin/cmake /home/raphael/Bureau/VigiWheels/raspberryPI3/ros2_ws/src/interfaces -DCMAKE_INSTALL_PREFIX=/home/raphael/Bureau/VigiWheels/raspberryPI3/ros2_ws/install/interfaces

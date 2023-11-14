@@ -7,6 +7,7 @@
 #include "interfaces/msg/motors_feedback.hpp"
 #include "interfaces/msg/steering_calibration.hpp"
 #include "interfaces/msg/joystick_order.hpp"
+#include "interfaces/msg/obstacles_order.hpp"
 
 #include "std_srvs/srv/empty.hpp"
 
@@ -44,6 +45,9 @@ public:
 
         subscription_steering_calibration_ = this->create_subscription<interfaces::msg::SteeringCalibration>(
         "steering_calibration", 10, std::bind(&car_control::steeringCalibrationCallback, this, _1));
+
+        subscription_obstacles_order_ = this->create_subscription<interfaces::msg::ObstaclesOrder>(
+        "obstacles_order", 10, std::bind(&obstacles::obstaclesOrderCallback, this, _1));
 
 
         
@@ -97,7 +101,19 @@ private:
         }
     }
 
-    /* Update currentAngle from motors feedback [callback function]  :
+    /* Update front and rear obstacles prensence from Obstacles_order  :
+    *
+    * This function is called when a message is published on the "/mobstacles_order" topic
+    * 
+    */
+    void motorsFeedbackCallback(const interfaces::msg::ObstaclesOrder & obstacles_order){
+        obstacles_front = obstacles_order.front_object;
+        obstacles_rear = obstacles_order.rear_object;
+    }
+
+
+
+    /* Update currentAngle from obstacles feedback [callback function]  :
     *
     * This function is called when a message is published on the "/motors_feedback" topic
     * 
@@ -125,13 +141,14 @@ private:
             steeringPwmCmd = STOP;
 
 
-        }else{ //Car started
+        }else{ //Car started and no obstacles
 
             //Manual Mode
             if (mode==0){
                 
-                manualPropulsionCmd(requestedThrottle, reverse, leftRearPwmCmd,rightRearPwmCmd);
-
+                if ((reverse & obstacles_rear) | (!reverse & obstacles_front)){  // si pas d'obstacle dans notre direction
+                    manualPropulsionCmd(requestedThrottle, reverse, leftRearPwmCmd,rightRearPwmCmd);
+                }
                 steeringCmd(requestedSteerAngle,currentAngle, steeringPwmCmd);
 
 

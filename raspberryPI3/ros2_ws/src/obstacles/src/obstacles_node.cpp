@@ -5,6 +5,7 @@
 
 #include "interfaces/msg/ultrasonic.hpp"
 #include "interfaces/msg/joystick_order.hpp"
+#include "interfaces/msg/obstacles_order.hpp"
 
 #include "std_srvs/srv/empty.hpp"
 
@@ -45,7 +46,6 @@ private:
     */
     void joystickOrderCallback(const interfaces::msg::JoystickOrder & joyOrder) {
 
-        reverse = joyOrder.reverse;
         mode = joyOrder.mode;
         steer = joyOrder.steer;
         
@@ -72,6 +72,7 @@ private:
         bool dist_av_is_ok = (front_left > dist_left) & (front_right > dist_right) & (front_center > DIST_DETECT_CENTER);
         bool dist_ar_is_ok = (rear_left > dist_left) & (rear_right > dist_right) & (rear_center > DIST_DETECT_CENTER);
 
+        RCLCPP_INFO(this->get_logger(),"dist : " + itoa(dist_left) + ";" + itoa(dist_right));
 
         auto obstaclesOrderMsg = interfaces::msg::ObstaclesOrder();
         
@@ -90,7 +91,6 @@ private:
     // ---- Private variables ----
 
     //General variables
-        bool reverse = 0;
         int mode = 0;
         float steer = 0;
 
