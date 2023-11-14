@@ -47,7 +47,7 @@ public:
         "steering_calibration", 10, std::bind(&car_control::steeringCalibrationCallback, this, _1));
 
         subscription_obstacles_order_ = this->create_subscription<interfaces::msg::ObstaclesOrder>(
-        "obstacles_order", 10, std::bind(&obstacles::obstaclesOrderCallback, this, _1));
+        "obstacles_order", 10, std::bind(&car_control::obstaclesOrderCallback, this, _1));
 
 
         
@@ -106,7 +106,7 @@ private:
     * This function is called when a message is published on the "/mobstacles_order" topic
     * 
     */
-    void motorsFeedbackCallback(const interfaces::msg::ObstaclesOrder & obstacles_order){
+    void obstaclesOrderCallback(const interfaces::msg::ObstaclesOrder & obstacles_order){
         obstacles_front = obstacles_order.front_object;
         obstacles_rear = obstacles_order.rear_object;
     }
@@ -146,7 +146,7 @@ private:
             //Manual Mode
             if (mode==0){
                 
-                if ((reverse & obstacles_rear) | (!reverse & obstacles_front)){  // si pas d'obstacle dans notre direction
+                if ((reverse & !obstacles_rear) | (!reverse & !obstacles_front)){  // si pas d'obstacle dans notre direction
                     manualPropulsionCmd(requestedThrottle, reverse, leftRearPwmCmd,rightRearPwmCmd);
                 }
                 steeringCmd(requestedSteerAngle,currentAngle, steeringPwmCmd);
@@ -233,6 +233,12 @@ private:
     //Motors feedback variables
     float currentAngle;
 
+    //obstacles variables
+    bool obstacles_front;
+    bool obstacles_rear;
+    
+    
+    
     //Manual Mode variables (with joystick control)
     bool reverse;
     float requestedThrottle;
@@ -251,6 +257,7 @@ private:
     rclcpp::Subscription<interfaces::msg::JoystickOrder>::SharedPtr subscription_joystick_order_;
     rclcpp::Subscription<interfaces::msg::MotorsFeedback>::SharedPtr subscription_motors_feedback_;
     rclcpp::Subscription<interfaces::msg::SteeringCalibration>::SharedPtr subscription_steering_calibration_;
+    rclcpp::Subscription<interfaces::msg::ObstaclesOrder>::SharedPtr subscription_obstacles_order_; 
 
     //Timer
     rclcpp::TimerBase::SharedPtr timer_;
