@@ -21,7 +21,7 @@ public:
     : Node("obstacles_node")
     {
 
-        publisher_joystick_order_= this->create_publisher<interfaces::msg::JoystickOrder>("joystick_order", 10);
+        publisher_obstacles_order_= this->create_publisher<interfaces::msg::ObstaclesOrder>("obstacles_order", 10);
 
     
 
@@ -47,6 +47,7 @@ private:
 
         reverse = joyOrder.reverse;
         mode = joyOrder.mode;
+        steer = joyOrder.steer;
         
     }
 
@@ -65,23 +66,20 @@ private:
         int rear_center = Ultrasonic.rear_center;
         int rear_right = Ultrasonic.rear_right;
 
-        bool dist_av_is_ok = (front_left > 100) & (front_right > 100) & (front_center > 100);
-        bool dist_ar_is_ok = (rear_left > 100) & (rear_right > 100) & (rear_center > 100);
+        int dist_left = DIST_DETECT_SIDE_BASE - steer * DIST_DETECT_SIDE_PENTE;
+        int dist_right = DIST_DETECT_SIDE_BASE + steer * DIST_DETECT_SIDE_PENTE;
 
-        if ((reverse & !dist_ar_is_ok) | (!reverse & !dist_av_is_ok)) {
+        bool dist_av_is_ok = (front_left > dist_left) & (front_right > dist_right) & (front_center > DIST_DETECT_CENTER);
+        bool dist_ar_is_ok = (rear_left > dist_left) & (rear_right > dist_right) & (rear_center > DIST_DETECT_CENTER);
 
-            auto joystickOrderMsg = interfaces::msg::JoystickOrder();
-            joystickOrderMsg.start = start;
-            joystickOrderMsg.mode = mode;
-            joystickOrderMsg.throttle = throttle;
-            joystickOrderMsg.steer  = steer;
-            joystickOrderMsg.reverse = reverse;
-            
 
-            RCLCPP_INFO(this->get_logger(), "obstacles detected");
-            publisher_joystick_order_->publish(joystickOrderMsg);
+        auto obstaclesOrderMsg = interfaces::msg::ObstaclesOrder();
+        
+        obstaclesOrderMsg.front_object = !dist_av_is_ok;
+        obstaclesOrderMsg.rear_object = !dist_ar_is_ok;
+        
+        publisher_obstacles_order_->publish(obstaclesOrderMsg);
 
-        }
 
 
     
@@ -92,10 +90,8 @@ private:
     // ---- Private variables ----
 
     //General variables
-        bool start = 0;
         bool reverse = 0;
         int mode = 0;
-        float throttle = 0.5;
         float steer = 0;
 
 
@@ -104,7 +100,7 @@ private:
 
 
     //Publishers
-    rclcpp::Publisher<interfaces::msg::JoystickOrder>::SharedPtr publisher_joystick_order_;
+    rclcpp::Publisher<interfaces::msg::ObstaclesOrder>::SharedPtr publisher_obstacles_order_;
 
     //Subscribers
     rclcpp::Subscription<interfaces::msg::JoystickOrder>::SharedPtr subscription_joystick_order_;
