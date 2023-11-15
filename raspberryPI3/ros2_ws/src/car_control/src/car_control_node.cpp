@@ -146,7 +146,14 @@ private:
             //Manual Mode
             if (mode==0){
                 
-                if ((reverse & !obstacles_rear) | (!reverse & !obstacles_front)){  // si pas d'obstacle dans notre direction
+                if ((reverse & obstacles_rear) | (!reverse & obstacles_front)){  // si pas d'obstacle dans notre direction
+
+                    leftRearPwmCmd = STOP;
+                    rightRearPwmCmd = STOP;
+                    steeringPwmCmd = STOP;
+
+                }
+                else {
                     manualPropulsionCmd(requestedThrottle, reverse, leftRearPwmCmd,rightRearPwmCmd);
                 }
                 steeringCmd(requestedSteerAngle,currentAngle, steeringPwmCmd);
