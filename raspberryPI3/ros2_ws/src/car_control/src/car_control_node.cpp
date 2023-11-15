@@ -97,13 +97,15 @@ private:
         }
     }
 
-    /* Update currentAngle from motors feedback [callback function]  :
+    /* Update currentAngle, left_rear from motors feedback [callback function]  :
     *
     * This function is called when a message is published on the "/motors_feedback" topic
     * 
     */
     void motorsFeedbackCallback(const interfaces::msg::MotorsFeedback & motorsFeedback){
         currentAngle = motorsFeedback.steering_angle;
+        leftRearSpeedFeedback = MotorsFeedback.left_rear_speed;
+        rightRearSpeedFeedback = MotorsFeedback.right_rear_speed;
     }
 
 
@@ -215,6 +217,9 @@ private:
     
     //Motors feedback variables
     float currentAngle;
+    float leftRearSpeedFeedback;
+    float rightRearSpeedFeedback;
+
 
     //Manual Mode variables (with joystick control)
     bool reverse;
