@@ -1,4 +1,0 @@
-Invoking command in '/home/pi/ros2_ws/src/build/obstacles': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake /home/pi/ros2_ws/src/obstacles -DCMAKE_INSTALL_PREFIX=/home/pi/ros2_ws/src/install/obstacles
-Invoked command in '/home/pi/ros2_ws/src/build/obstacles' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake /home/pi/ros2_ws/src/obstacles -DCMAKE_INSTALL_PREFIX=/home/pi/ros2_ws/src/install/obstacles
-Invoking command in '/home/pi/ros2_ws/src/build/obstacles': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/pi/ros2_ws/src/build/obstacles -- -j4 -l4
-Invoked command in '/home/pi/ros2_ws/src/build/obstacles' returned '-2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/pi/ros2_ws/src/build/obstacles -- -j4 -l4
