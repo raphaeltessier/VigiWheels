@@ -13,6 +13,7 @@
 #include "../include/car_control/steeringCmd.h"
 #include "../include/car_control/propulsionCmd.h"
 #include "../include/car_control/car_control_node.h"
+#include "../include/car_control/controlCmd.h"
 
 using namespace std;
 using placeholders::_1;
@@ -136,10 +137,16 @@ private:
 
                 steeringCmd(requestedSteerAngle,currentAngle, steeringPwmCmd);
 
+                RCLCPP_INFO("Update Commande in Manual Mode");
+
 
             //Autonomous Mode
             } else if (mode==1){
-                //...
+
+                calculateRPMAuto( speedMotor, leftRearPwmCmd, rightRearPwmCmd, leftRearSpeedFeedback, rightRearSpeedFeedback, 
+                    sumIntegralLeft, sumIntegralRight);
+                
+                RCLCPP_INFO("Update Commande in Auto Mode");
             }
         }
 
@@ -230,6 +237,13 @@ private:
     uint8_t leftRearPwmCmd;
     uint8_t rightRearPwmCmd;
     uint8_t steeringPwmCmd;
+
+    //Default rpm speed value
+    float speedMotor = 60.0;
+
+    //PI variables for motor
+    float sumIntegralLeft =0;
+    float sumIntegralRight = 0;
 
     //Publishers
     rclcpp::Publisher<interfaces::msg::MotorsOrder>::SharedPtr publisher_can_;
