@@ -133,11 +133,12 @@ private:
             //Manual Mode
             if (mode==0){
                 
-                manualPropulsionCmd(requestedThrottle, reverse, leftRearPwmCmd,rightRearPwmCmd);
+                //manualPropulsionCmd(requestedThrottle, reverse, leftRearPwmCmd,rightRearPwmCmd);
 
+                calculateRPMManual(requestedThrottle, reverse, leftRearPwmCmd, rightRearPwmCmd, 
+                    leftRearSpeedFeedback, rightRearPwmCmd, sumIntegralLeft, sumIntegralRight);
+                
                 steeringCmd(requestedSteerAngle,currentAngle, steeringPwmCmd);
-
-                RCLCPP_INFO(this->get_logger(), "Update Commande in Manual Mode");
 
 
             //Autonomous Mode
