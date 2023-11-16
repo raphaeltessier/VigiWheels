@@ -105,8 +105,8 @@ private:
     */
     void motorsFeedbackCallback(const interfaces::msg::MotorsFeedback & motorsFeedback){
         currentAngle = motorsFeedback.steering_angle;
-        leftRearSpeedFeedback = MotorsFeedback.left_rear_speed;
-        rightRearSpeedFeedback = MotorsFeedback.right_rear_speed;
+        leftRearSpeedFeedback = motorsFeedback.left_rear_speed;
+        rightRearSpeedFeedback = motorsFeedback.right_rear_speed;
     }
 
 
@@ -137,7 +137,7 @@ private:
 
                 steeringCmd(requestedSteerAngle,currentAngle, steeringPwmCmd);
 
-                RCLCPP_INFO("Update Commande in Manual Mode");
+                RCLCPP_INFO(this->get_logger, "Update Commande in Manual Mode");
 
 
             //Autonomous Mode
@@ -146,7 +146,7 @@ private:
                 calculateRPMAuto(consigneMotor, leftRearPwmCmd, rightRearPwmCmd, leftRearSpeedFeedback, rightRearSpeedFeedback, 
                     sumIntegralLeft, sumIntegralRight);
                 
-                RCLCPP_INFO("Update Commande in Auto Mode");
+                RCLCPP_INFO(this->get_logger, "Update Commande in Auto Mode");
             }
         }
 
