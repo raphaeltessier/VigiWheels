@@ -40,7 +40,7 @@ void calculateRPMAuto(float consigneMotor, uint8_t& leftRearPwmCmd, uint8_t& rig
     rightRearPwmCmd = rightPwmCmd;
 }
 
-void calculateRPMManual(float requestedThrottle, bool reverse, uint8_t& leftRearPwmCmd, uint8_t& rightRearPwmCmd,
+/*void calculateRPMManual(float requestedThrottle, bool reverse, uint8_t& leftRearPwmCmd, uint8_t& rightRearPwmCmd,
             float currentRPM_L, float currentRPM_R, float& sumIntegralLeft, float& sumIntegralRight){
 
     // Calcul of the command to be sent to each motor (right and left)
@@ -77,5 +77,5 @@ void calculateRPMManual(float requestedThrottle, bool reverse, uint8_t& leftRear
 
     leftRearPwmCmd = leftPwmCmd;
     rightRearPwmCmd = rightPwmCmd;
-}
+}*/
 
