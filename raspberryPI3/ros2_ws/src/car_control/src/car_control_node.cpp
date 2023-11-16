@@ -143,7 +143,7 @@ private:
             //Autonomous Mode
             } else if (mode==1){
 
-                calculateRPMAuto( speedMotor, leftRearPwmCmd, rightRearPwmCmd, leftRearSpeedFeedback, rightRearSpeedFeedback, 
+                calculateRPMAuto(consigneMotor, leftRearPwmCmd, rightRearPwmCmd, leftRearSpeedFeedback, rightRearSpeedFeedback, 
                     sumIntegralLeft, sumIntegralRight);
                 
                 RCLCPP_INFO("Update Commande in Auto Mode");
@@ -238,12 +238,14 @@ private:
     uint8_t rightRearPwmCmd;
     uint8_t steeringPwmCmd;
 
-    //Default rpm speed value
-    float speedMotor = 60.0;
+    //Default consigne in auto mode 
+    //Equivalent to throttle in manual mode
+    float consigneMotor = 0.5;
 
     //PI variables for motor
     float sumIntegralLeft =0;
     float sumIntegralRight = 0;
+    float alpha_prev = 0;
 
     //Publishers
     rclcpp::Publisher<interfaces::msg::MotorsOrder>::SharedPtr publisher_can_;

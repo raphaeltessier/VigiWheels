@@ -12,13 +12,19 @@ float leftPwmCmd ;
 float rightPwmCmd ;
 float speedErrorLeft ;
 float speedErrorRight ;
+float consigneRPM;
+float gainRPM =65; //Valeur maximale RPM du moteur d'une roue
+float alpha;
 
-void calculateRPMAuto(float cmd_RearSpeed, uint8_t& leftRearPwmCmd, uint8_t& rightRearPwmCmd,
+void calculateRPMAuto(float consigneMotor, uint8_t& leftRearPwmCmd, uint8_t& rightRearPwmCmd,
             float currentRPM_L, float currentRPM_R, float& sumIntegralLeft, float& sumIntegralRight){
     
+    //Transformation consigne to RPM
+    consigneRPM = gainRPM * consigneMotor;
+    
     // Calcul of the error for gain Kp
-    speedErrorLeft = cmd_RearSpeed - currentRPM_L;
-    speedErrorRight = cmd_RearSpeed - currentRPM_R;
+    speedErrorLeft = consigneRPM - currentRPM_L;
+    speedErrorRight = consigneRPM - currentRPM_R;
 
     // Calcul of the error for gain Ki
     sumIntegralLeft += speedErrorLeft;

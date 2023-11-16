@@ -12,7 +12,7 @@
 *   Takes into account the motor feedback left rpm and right rpm and control the command pwm motor right and left
 *   Mode Auto
 */
-void calculateRPMAuto(float cmd_RearSpeed, uint8_t& leftRearPwmCmd, uint8_t& rightRearPwmCmd, 
+void calculateRPMAuto(float consigneMotor, uint8_t& leftRearPwmCmd, uint8_t& rightRearPwmCmd, 
                     float currentRPM_L, float currentRPM_R, float& sumIntegralLeft, float& sumIntegralRight);
 
 /* Calculate the both PWM of the motors right and left based on the throttle of the joystick
