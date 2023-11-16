@@ -4,7 +4,7 @@
 #include <memory>
 
 #include "interfaces/msg/ultrasonic.hpp"
-#include "interfaces/msg/joystick_order.hpp"
+#include "interfaces/msg/motors_feedback.hpp"
 #include "interfaces/msg/obstacles_order.hpp"
 
 #include "std_srvs/srv/empty.hpp"
@@ -26,8 +26,8 @@ public:
 
     
 
-        subscription_joystick_order_ = this->create_subscription<interfaces::msg::JoystickOrder>(
-        "joystick_order", 10, std::bind(&obstacles::joystickOrderCallback, this, _1));
+        subscription_motors_feedback_ = this->create_subscription<interfaces::msg::MotorsFeedback>(
+        "motors_feedback", 10, std::bind(&car_control::motorsFeedbackCallback, this, _1));
 
         subscription_us_data_ = this->create_subscription<interfaces::msg::Ultrasonic>(
         "us_data", 10, std::bind(&obstacles::ultrasonicFeedbackCallback, this, _1));
@@ -39,19 +39,16 @@ public:
     
 private:
    
-    /* Update mode and steer from joystick order [callback function]  :
+    /* Update steer from obstacles feedback [callback function]  :
     *
-    * This function is called when a message is published on the "/joystick_order" topic
+    * This function is called when a message is published on the "/motors_feedback" topic
     * 
     */
-    void joystickOrderCallback(const interfaces::msg::JoystickOrder & joyOrder) {
-
-        mode = joyOrder.mode;
-        steer = joyOrder.steer;
-        
+    void motorsFeedbackCallback(const interfaces::msg::MotorsFeedback & motorsFeedback){
+        steer = motorsFeedback.steering_angle;
     }
 
-    /* Update currentAngle from motors feedback [callback function]  :
+    /* Update us information from  ultrasonic feedback, and publish detected obstzcle information [callback function]  :
     *
     * This function is called when a message is published on the "/us_data" topic
     * 
@@ -90,7 +87,6 @@ private:
     // ---- Private variables ----
 
     //General variables
-        int mode = 0;
         float steer = 0;
 
 
@@ -102,7 +98,7 @@ private:
     rclcpp::Publisher<interfaces::msg::ObstaclesOrder>::SharedPtr publisher_obstacles_order_;
 
     //Subscribers
-    rclcpp::Subscription<interfaces::msg::JoystickOrder>::SharedPtr subscription_joystick_order_;
+    rclcpp::Subscription<interfaces::msg::MotorsFeedback>::SharedPtr subscription_motors_feedback_;
     rclcpp::Subscription<interfaces::msg::Ultrasonic>::SharedPtr subscription_us_data_;
 
 
