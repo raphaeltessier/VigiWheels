@@ -137,7 +137,7 @@ private:
 
                 steeringCmd(requestedSteerAngle,currentAngle, steeringPwmCmd);
 
-                RCLCPP_INFO(this->get_logger, "Update Commande in Manual Mode");
+                RCLCPP_INFO(this->get_logger(), "Update Commande in Manual Mode");
 
 
             //Autonomous Mode
@@ -146,7 +146,7 @@ private:
                 calculateRPMAuto(consigneMotor, leftRearPwmCmd, rightRearPwmCmd, leftRearSpeedFeedback, rightRearSpeedFeedback, 
                     sumIntegralLeft, sumIntegralRight);
                 
-                RCLCPP_INFO(this->get_logger, "Update Commande in Auto Mode");
+                RCLCPP_INFO(this->get_logger(), "Update Commande in Auto Mode");
             }
         }
 
