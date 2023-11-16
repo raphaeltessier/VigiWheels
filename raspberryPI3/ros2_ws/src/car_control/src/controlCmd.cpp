@@ -62,7 +62,7 @@ void calculateRPMManual(float requestedThrottle, bool reverse, uint8_t& leftRear
             //requestedThrottle : [0 ; 1] => PWM : [50 -> 0] (reverse)
             
             leftPwmCmd = min( max(0.0, (speedErrorLeft * KP + sumIntegralLeft * KI)), 50.0);
-            rightPwmCmd = min( max(0.0, (speedErrorRight * 0.8 + sumIntegralRight * KI)), 50.0);
+            rightPwmCmd = min( max(0.0, (speedErrorRight * 0.5 + sumIntegralRight * KI)), 50.0);
             leftPwmCmd = 50 - leftPwmCmd;    
             rightPwmCmd = 50 - rightPwmCmd; 
         }
@@ -70,7 +70,7 @@ void calculateRPMManual(float requestedThrottle, bool reverse, uint8_t& leftRear
 
             //requestedThrottle : [0 ; 1] => PWM : [50 -> 100] (forward)
             leftPwmCmd = min( max(0.0, (speedErrorLeft * KP + sumIntegralLeft * KI)), 50.0);
-            rightPwmCmd = min( max(0.0, (speedErrorRight * 0.8 + sumIntegralRight * KI)), 50.0);
+            rightPwmCmd = min( max(0.0, (speedErrorRight * 0.5 + sumIntegralRight * KI)), 50.0);
             leftPwmCmd += 50;
             rightPwmCmd += 50;
         }
