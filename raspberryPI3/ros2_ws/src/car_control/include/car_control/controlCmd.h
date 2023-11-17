@@ -5,7 +5,7 @@
 #include <stdint.h>
 #include <string.h>
 
-#define KP 1.01
+#define KP 1.00
 #define KI 0.01
 
 /* Calculate the both PWM of the motors right and left based on a wanted speed in RPM 

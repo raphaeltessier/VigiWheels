@@ -39,6 +39,11 @@ void calculateRPMAuto(float consigneMotor, uint8_t& leftRearPwmCmd, uint8_t& rig
     //Affectation de valeurs PWM pour les 2 moteurs des roues
     leftRearPwmCmd = leftPwmCmd;
     rightRearPwmCmd = rightPwmCmd;
+
+    //Protection contre mauvais controle sur l'une des roue
+    if (abs(leftRearPwmCmd - rightRearPwmCmd) >5){
+        rightRearPwmCmd = leftRearPwmCmd;
+    }
 }
 
 void calculateRPMManual(float requestedThrottle, bool reverse, uint8_t& leftRearPwmCmd, uint8_t& rightRearPwmCmd,
@@ -62,7 +67,7 @@ void calculateRPMManual(float requestedThrottle, bool reverse, uint8_t& leftRear
             //requestedThrottle : [0 ; 1] => PWM : [50 -> 0] (reverse)
             
             leftPwmCmd = min( max(0.0, (speedErrorLeft * KP + sumIntegralLeft * KI)), 50.0);
-            rightPwmCmd = min( max(0.0, (speedErrorRight * 0.5 + sumIntegralRight * KI)), 50.0);
+            rightPwmCmd = min( max(0.0, (speedErrorRight * KP + sumIntegralRight * KI)), 50.0);
             leftPwmCmd = 50 - leftPwmCmd;    
             rightPwmCmd = 50 - rightPwmCmd; 
         }
@@ -70,7 +75,7 @@ void calculateRPMManual(float requestedThrottle, bool reverse, uint8_t& leftRear
 
             //requestedThrottle : [0 ; 1] => PWM : [50 -> 100] (forward)
             leftPwmCmd = min( max(0.0, (speedErrorLeft * KP + sumIntegralLeft * KI)), 50.0);
-            rightPwmCmd = min( max(0.0, (speedErrorRight * 0.5 + sumIntegralRight * KI)), 50.0);
+            rightPwmCmd = min( max(0.0, (speedErrorRight * KP + sumIntegralRight * KI)), 50.0);
             leftPwmCmd += 50;
             rightPwmCmd += 50;
         }
@@ -78,5 +83,10 @@ void calculateRPMManual(float requestedThrottle, bool reverse, uint8_t& leftRear
     //Affectation de valeurs PWM pour les 2 moteurs des roues
     leftRearPwmCmd = leftPwmCmd;
     rightRearPwmCmd = rightPwmCmd;
+
+    //Protection contre mauvais controle sur l'une des roue
+    if (abs(leftRearPwmCmd - rightRearPwmCmd) >5){
+        rightRearPwmCmd = leftRearPwmCmd;
+    }
 }
 
