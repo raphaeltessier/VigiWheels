@@ -117,6 +117,10 @@ private:
     * In MANUAL mode, the commands depends on :
     * - requestedThrottle, reverse, requestedSteerAngle [from joystick orders]
     * - currentAngle [from motors feedback]
+    * - current RPM Speed of both motors 
+    * In Auto mode, the commands depend on :
+    * - consigne, reverse {to be added}, requestedSteerAngle {to be added}
+    * - current RPM Speed of both motors 
     */
     void updateCmd(){
 

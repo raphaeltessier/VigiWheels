@@ -1,5 +1,9 @@
-/* This file contains the function that calculate the PWM of each wheel according to the speed that needs to be reached
-*/
+/**
+ * @file        controlCmd.cpp
+ * @details     Contains two functions for manual and auto mode in order to control the angular rotation of rear wheels
+ * @author      Aishya Costa 
+ * @date        18/11/2023 
+ */
 
 #include "rclcpp/rclcpp.hpp"
 #include <functional>
@@ -13,7 +17,7 @@ float rightPwmCmd ;
 float speedErrorLeft ;
 float speedErrorRight ;
 float consigneRPM;
-float gainRPM =65; //Valeur maximale RPM du moteur d'une roue
+float gainRPM =65; //Maximum value RPM of each motor based on motors_feedback topic
 float alpha;
 
 void calculateRPMAuto(float consigneMotor, uint8_t& leftRearPwmCmd, uint8_t& rightRearPwmCmd,
@@ -36,11 +40,11 @@ void calculateRPMAuto(float consigneMotor, uint8_t& leftRearPwmCmd, uint8_t& rig
     leftPwmCmd += 50;
     rightPwmCmd += 50;
 
-    //Affectation de valeurs PWM pour les 2 moteurs des roues
+    //Update the PWM values of both motors after command
     leftRearPwmCmd = leftPwmCmd;
     rightRearPwmCmd = rightPwmCmd;
 
-    //Protection contre mauvais controle sur l'une des roue
+    //Protection against synchronisation between two wheels
     if (abs(leftRearPwmCmd - rightRearPwmCmd) >5){
         rightRearPwmCmd = leftRearPwmCmd;
     }
@@ -80,11 +84,11 @@ void calculateRPMManual(float requestedThrottle, bool reverse, uint8_t& leftRear
             rightPwmCmd += 50;
         }
 
-    //Affectation de valeurs PWM pour les 2 moteurs des roues
+    //Update the PWM values of both motors after command
     leftRearPwmCmd = leftPwmCmd;
     rightRearPwmCmd = rightPwmCmd;
 
-    //Protection contre mauvais controle sur l'une des roue
+    //Protection against synchronisation between two wheels
     if (abs(leftRearPwmCmd - rightRearPwmCmd) >5){
         rightRearPwmCmd = leftRearPwmCmd;
     }
