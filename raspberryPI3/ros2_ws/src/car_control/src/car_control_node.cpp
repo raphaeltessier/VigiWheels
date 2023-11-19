@@ -7,6 +7,7 @@
 #include "interfaces/msg/motors_feedback.hpp"
 #include "interfaces/msg/steering_calibration.hpp"
 #include "interfaces/msg/joystick_order.hpp"
+#include "interfaces/msg/obstacles_order.hpp"
 
 #include "std_srvs/srv/empty.hpp"
 
@@ -45,6 +46,9 @@ public:
 
         subscription_steering_calibration_ = this->create_subscription<interfaces::msg::SteeringCalibration>(
         "steering_calibration", 10, std::bind(&car_control::steeringCalibrationCallback, this, _1));
+
+        subscription_obstacles_order_ = this->create_subscription<interfaces::msg::ObstaclesOrder>(
+        "obstacles_order", 10, std::bind(&car_control::obstaclesOrderCallback, this, _1));
 
 
         
@@ -98,7 +102,22 @@ private:
         }
     }
 
+
+    /* Update front and rear obstacles prensence from Obstacles_order  :
+    *
+    * This function is called when a message is published on the "/mobstacles_order" topic
+    * 
+    */
+    void obstaclesOrderCallback(const interfaces::msg::ObstaclesOrder & obstacles_order){
+        obstacles_front = obstacles_order.front_object;
+        obstacles_rear = obstacles_order.rear_object;
+    }
+
+
+
+ 
     /* Update currentAngle, left_rear from motors feedback [callback function]  :
+
     *
     * This function is called when a message is published on the "/motors_feedback" topic
     * 
@@ -132,24 +151,44 @@ private:
             steeringPwmCmd = STOP;
 
 
-        }else{ //Car started
+        }else{ //Car started and no obstacles
 
             //Manual Mode
             if (mode==0){
                 
+
+                if ((reverse & obstacles_rear) | (!reverse & obstacles_front)){  // si pas d'obstacle dans notre direction
+
+                    leftRearPwmCmd = STOP;
+                    rightRearPwmCmd = STOP;
+                    steeringPwmCmd = STOP;
+
+                }
+                else {
+                    calculateRPMManual(requestedThrottle, reverse, leftRearPwmCmd, rightRearPwmCmd, 
+                      leftRearSpeedFeedback, rightRearPwmCmd, sumIntegralLeft, sumIntegralRight);
+                }
                 //manualPropulsionCmd(requestedThrottle, reverse, leftRearPwmCmd,rightRearPwmCmd);
 
-                calculateRPMManual(requestedThrottle, reverse, leftRearPwmCmd, rightRearPwmCmd, 
-                    leftRearSpeedFeedback, rightRearPwmCmd, sumIntegralLeft, sumIntegralRight);
+
                 
+
                 steeringCmd(requestedSteerAngle,currentAngle, steeringPwmCmd);
 
 
             //Autonomous Mode
             } else if (mode==1){
+                if ((reverse & obstacles_rear) | (!reverse & obstacles_front)){  // si pas d'obstacle dans notre direction
 
+                    leftRearPwmCmd = STOP;
+                    rightRearPwmCmd = STOP;
+                    steeringPwmCmd = STOP;
+
+                }
+                else {
                 calculateRPMAuto(consigneMotor, leftRearPwmCmd, rightRearPwmCmd, leftRearSpeedFeedback, rightRearSpeedFeedback, 
                     sumIntegralLeft, sumIntegralRight);
+                }
                 
             }
         }
@@ -232,6 +271,12 @@ private:
     float rightRearSpeedFeedback;
 
 
+    //obstacles variables
+    bool obstacles_front;
+    bool obstacles_rear;
+    
+    
+    
     //Manual Mode variables (with joystick control)
     bool reverse;
     float requestedThrottle;
@@ -259,6 +304,7 @@ private:
     rclcpp::Subscription<interfaces::msg::JoystickOrder>::SharedPtr subscription_joystick_order_;
     rclcpp::Subscription<interfaces::msg::MotorsFeedback>::SharedPtr subscription_motors_feedback_;
     rclcpp::Subscription<interfaces::msg::SteeringCalibration>::SharedPtr subscription_steering_calibration_;
+    rclcpp::Subscription<interfaces::msg::ObstaclesOrder>::SharedPtr subscription_obstacles_order_; 
 
     //Timer
     rclcpp::TimerBase::SharedPtr timer_;
