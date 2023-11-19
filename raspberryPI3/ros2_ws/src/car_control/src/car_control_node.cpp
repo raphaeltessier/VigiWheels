@@ -14,6 +14,7 @@
 #include "../include/car_control/steeringCmd.h"
 #include "../include/car_control/propulsionCmd.h"
 #include "../include/car_control/car_control_node.h"
+#include "../include/car_control/controlCmd.h"
 
 using namespace std;
 using placeholders::_1;
@@ -101,6 +102,7 @@ private:
         }
     }
 
+
     /* Update front and rear obstacles prensence from Obstacles_order  :
     *
     * This function is called when a message is published on the "/mobstacles_order" topic
@@ -113,13 +115,17 @@ private:
 
 
 
-    /* Update currentAngle from obstacles feedback [callback function]  :
+ 
+    /* Update currentAngle, left_rear from motors feedback [callback function]  :
+
     *
     * This function is called when a message is published on the "/motors_feedback" topic
     * 
     */
     void motorsFeedbackCallback(const interfaces::msg::MotorsFeedback & motorsFeedback){
         currentAngle = motorsFeedback.steering_angle;
+        leftRearSpeedFeedback = motorsFeedback.left_rear_speed;
+        rightRearSpeedFeedback = motorsFeedback.right_rear_speed;
     }
 
 
@@ -130,6 +136,10 @@ private:
     * In MANUAL mode, the commands depends on :
     * - requestedThrottle, reverse, requestedSteerAngle [from joystick orders]
     * - currentAngle [from motors feedback]
+    * - current RPM Speed of both motors 
+    * In Auto mode, the commands depend on :
+    * - consigne, reverse {to be added}, requestedSteerAngle {to be added}
+    * - current RPM Speed of both motors 
     */
     void updateCmd(){
 
@@ -146,6 +156,7 @@ private:
             //Manual Mode
             if (mode==0){
                 
+
                 if ((reverse & obstacles_rear) | (!reverse & obstacles_front)){  // si pas d'obstacle dans notre direction
 
                     leftRearPwmCmd = STOP;
@@ -154,14 +165,31 @@ private:
 
                 }
                 else {
-                    manualPropulsionCmd(requestedThrottle, reverse, leftRearPwmCmd,rightRearPwmCmd);
+                    calculateRPMManual(requestedThrottle, reverse, leftRearPwmCmd, rightRearPwmCmd, 
+                      leftRearSpeedFeedback, rightRearPwmCmd, sumIntegralLeft, sumIntegralRight);
                 }
+                //manualPropulsionCmd(requestedThrottle, reverse, leftRearPwmCmd,rightRearPwmCmd);
+
+
+                
+
                 steeringCmd(requestedSteerAngle,currentAngle, steeringPwmCmd);
 
 
             //Autonomous Mode
             } else if (mode==1){
-                //...
+                if ((reverse & obstacles_rear) | (!reverse & obstacles_front)){  // si pas d'obstacle dans notre direction
+
+                    leftRearPwmCmd = STOP;
+                    rightRearPwmCmd = STOP;
+                    steeringPwmCmd = STOP;
+
+                }
+                else {
+                calculateRPMAuto(consigneMotor, leftRearPwmCmd, rightRearPwmCmd, leftRearSpeedFeedback, rightRearSpeedFeedback, 
+                    sumIntegralLeft, sumIntegralRight);
+                }
+                
             }
         }
 
@@ -239,6 +267,9 @@ private:
     
     //Motors feedback variables
     float currentAngle;
+    float leftRearSpeedFeedback;
+    float rightRearSpeedFeedback;
+
 
     //obstacles variables
     bool obstacles_front;
@@ -255,6 +286,15 @@ private:
     uint8_t leftRearPwmCmd;
     uint8_t rightRearPwmCmd;
     uint8_t steeringPwmCmd;
+
+    //Default consigne in auto mode 
+    //Equivalent to throttle in manual mode
+    float consigneMotor = 0.5;
+
+    //PI variables for motor
+    float sumIntegralLeft =0;
+    float sumIntegralRight = 0;
+    float alpha_prev = 0;
 
     //Publishers
     rclcpp::Publisher<interfaces::msg::MotorsOrder>::SharedPtr publisher_can_;
