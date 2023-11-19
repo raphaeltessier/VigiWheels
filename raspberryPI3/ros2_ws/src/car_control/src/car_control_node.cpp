@@ -13,6 +13,7 @@
 #include "../include/car_control/steeringCmd.h"
 #include "../include/car_control/propulsionCmd.h"
 #include "../include/car_control/car_control_node.h"
+#include "../include/car_control/controlCmd.h"
 
 using namespace std;
 using placeholders::_1;
@@ -97,13 +98,15 @@ private:
         }
     }
 
-    /* Update currentAngle from motors feedback [callback function]  :
+    /* Update currentAngle, left_rear from motors feedback [callback function]  :
     *
     * This function is called when a message is published on the "/motors_feedback" topic
     * 
     */
     void motorsFeedbackCallback(const interfaces::msg::MotorsFeedback & motorsFeedback){
         currentAngle = motorsFeedback.steering_angle;
+        leftRearSpeedFeedback = motorsFeedback.left_rear_speed;
+        rightRearSpeedFeedback = motorsFeedback.right_rear_speed;
     }
 
 
@@ -114,6 +117,10 @@ private:
     * In MANUAL mode, the commands depends on :
     * - requestedThrottle, reverse, requestedSteerAngle [from joystick orders]
     * - currentAngle [from motors feedback]
+    * - current RPM Speed of both motors 
+    * In Auto mode, the commands depend on :
+    * - consigne, reverse {to be added}, requestedSteerAngle {to be added}
+    * - current RPM Speed of both motors 
     */
     void updateCmd(){
 
@@ -130,14 +137,20 @@ private:
             //Manual Mode
             if (mode==0){
                 
-                manualPropulsionCmd(requestedThrottle, reverse, leftRearPwmCmd,rightRearPwmCmd);
+                //manualPropulsionCmd(requestedThrottle, reverse, leftRearPwmCmd,rightRearPwmCmd);
 
+                calculateRPMManual(requestedThrottle, reverse, leftRearPwmCmd, rightRearPwmCmd, 
+                    leftRearSpeedFeedback, rightRearPwmCmd, sumIntegralLeft, sumIntegralRight);
+                
                 steeringCmd(requestedSteerAngle,currentAngle, steeringPwmCmd);
 
 
             //Autonomous Mode
             } else if (mode==1){
-                //...
+
+                calculateRPMAuto(consigneMotor, leftRearPwmCmd, rightRearPwmCmd, leftRearSpeedFeedback, rightRearSpeedFeedback, 
+                    sumIntegralLeft, sumIntegralRight);
+                
             }
         }
 
@@ -215,6 +228,9 @@ private:
     
     //Motors feedback variables
     float currentAngle;
+    float leftRearSpeedFeedback;
+    float rightRearSpeedFeedback;
+
 
     //Manual Mode variables (with joystick control)
     bool reverse;
@@ -225,6 +241,15 @@ private:
     uint8_t leftRearPwmCmd;
     uint8_t rightRearPwmCmd;
     uint8_t steeringPwmCmd;
+
+    //Default consigne in auto mode 
+    //Equivalent to throttle in manual mode
+    float consigneMotor = 0.5;
+
+    //PI variables for motor
+    float sumIntegralLeft =0;
+    float sumIntegralRight = 0;
+    float alpha_prev = 0;
 
     //Publishers
     rclcpp::Publisher<interfaces::msg::MotorsOrder>::SharedPtr publisher_can_;
