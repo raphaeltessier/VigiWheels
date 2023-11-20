@@ -44,7 +44,7 @@ install(PROGRAMS
 )
 
 install(PROGRAMS
-  joystick/joystick_ros2.py
+  joystick/inputs.py
   DESTINATION lib/${PROJECT_NAME}
 )
 
