@@ -44,10 +44,10 @@ void calculateRPMAuto(float consigneMotor, uint8_t& leftRearPwmCmd, uint8_t& rig
     leftRearPwmCmd = leftPwmCmd;
     rightRearPwmCmd = rightPwmCmd;
 
-    //Protection against synchronisation between two wheels
-    if (abs(leftRearPwmCmd - rightRearPwmCmd) >5){
-        rightRearPwmCmd = leftRearPwmCmd;
-    }
+/**/    //Protection against synchronisation between two wheels
+//    if (abs(leftRearPwmCmd - rightRearPwmCmd) >5){
+//        rightRearPwmCmd = leftRearPwmCmd;
+//    }
 }
 
 void calculateRPMManual(float requestedThrottle, bool reverse, uint8_t& leftRearPwmCmd, uint8_t& rightRearPwmCmd,
@@ -89,8 +89,8 @@ void calculateRPMManual(float requestedThrottle, bool reverse, uint8_t& leftRear
     rightRearPwmCmd = rightPwmCmd;
 
     //Protection against synchronisation between two wheels
-    if (abs(leftRearPwmCmd - rightRearPwmCmd) >5){
-        rightRearPwmCmd = leftRearPwmCmd;
-    }
+//    if (abs(leftRearPwmCmd - rightRearPwmCmd) >5){
+//        rightRearPwmCmd = leftRearPwmCmd;
+//    }
 }
 
