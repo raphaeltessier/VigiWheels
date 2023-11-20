@@ -27,7 +27,7 @@ public:
     
 
         subscription_motors_feedback_ = this->create_subscription<interfaces::msg::MotorsFeedback>(
-        "motors_feedback", 10, std::bind(&car_control::motorsFeedbackCallback, this, _1));
+        "motors_feedback", 10, std::bind(&obstacles::motorsFeedbackCallback, this, _1));
 
         subscription_us_data_ = this->create_subscription<interfaces::msg::Ultrasonic>(
         "us_data", 10, std::bind(&obstacles::ultrasonicFeedbackCallback, this, _1));
