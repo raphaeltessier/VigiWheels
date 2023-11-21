@@ -165,8 +165,7 @@ private:
 
                 }
                 else {
-                    calculateRPMManual(requestedThrottle, reverse, leftRearPwmCmd, rightRearPwmCmd, 
-                      leftRearSpeedFeedback, rightRearPwmCmd, sumIntegralLeft, sumIntegralRight);
+                    manualPropulsionCmd(requestedThrottle, reverse, leftRearPwmCmd,rightRearPwmCmd);
                 }
                 //manualPropulsionCmd(requestedThrottle, reverse, leftRearPwmCmd,rightRearPwmCmd);
 
