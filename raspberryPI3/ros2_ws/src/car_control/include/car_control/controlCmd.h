@@ -4,9 +4,11 @@
 #include <cstdint>
 #include <stdint.h>
 #include <string.h>
+#include <math.h>
 
 #define KP 1.00
 #define KI 0.01
+#define Te pow(10,-3)
 
 /**
  * @file        controlCmd.h
@@ -28,7 +30,8 @@
 */
 
 void calculateRPMAuto(float consigneMotor, uint8_t& leftRearPwmCmd, uint8_t& rightRearPwmCmd, 
-                    float currentRPM_L, float currentRPM_R, float& sumIntegralLeft, float& sumIntegralRight);
+                    float currentRPM_L, float currentRPM_R, float& lastError_L, float& lastError_R,
+                    float& correctedValue_L, float& correctedValue_R);
 
 
 /**

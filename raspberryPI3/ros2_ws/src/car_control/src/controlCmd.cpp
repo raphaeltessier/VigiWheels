@@ -19,9 +19,16 @@ float speedErrorRight ;
 float consigneRPM;
 float gainRPM =65; //Maximum value RPM of each motor based on motors_feedback topic
 float alpha;
+double double_corrected_final_value_left;
+double double_corrected_final_value_right;
 
 void calculateRPMAuto(float consigneMotor, uint8_t& leftRearPwmCmd, uint8_t& rightRearPwmCmd,
-            float currentRPM_L, float currentRPM_R, float& sumIntegralLeft, float& sumIntegralRight){
+            float currentRPM_L, float currentRPM_R, float& lastError_L, float& lastError_R, float& correctedValue_L, 
+            float& correctedValue_R){
+
+    //Necessary constants
+    double double_constante_correcteur_moteurA = (KI * Te + 2* KP)/ 2;
+    double double_constante_correcteur_moteurB = (KI * Te - 2* KP)/ 2;
     
     //Transformation consigne to RPM
     consigneRPM = gainRPM * consigneMotor;
@@ -30,19 +37,38 @@ void calculateRPMAuto(float consigneMotor, uint8_t& leftRearPwmCmd, uint8_t& rig
     speedErrorLeft = consigneRPM - currentRPM_L;
     speedErrorRight = consigneRPM - currentRPM_R;
 
-    // Calcul of the error for gain Ki
-    sumIntegralLeft += speedErrorLeft;
-    sumIntegralRight += speedErrorRight;
+    //Calcul of corrected value 
+    correctedValue_L = correctedValue_L + double_constante_correcteur_moteurA * speedErrorLeft 
+                    + double_constante_correcteur_moteurB * lastError_L;
+    correctedValue_R = correctedValue_R + double_constante_correcteur_moteurA * speedErrorRight 
+                    + double_constante_correcteur_moteurB* lastError_R;
 
     // Calcul of the command to be sent to each motor (right and left)
-    leftPwmCmd = min( max(0.0, (speedErrorLeft * KP + sumIntegralLeft * KI)), 50.0);
-    rightPwmCmd = min( max(0.0, (speedErrorRight * KP + sumIntegralRight * KI)), 50.0);
-    leftPwmCmd += 50;
-    rightPwmCmd += 50;
+    
+    double_corrected_final_value_right = correctedValue_R;
+
+    if (correctedValue_L > 50)
+        double_corrected_final_value_left = 50;
+    else if (correctedValue_L < -50)
+        double_corrected_final_value_left = -50;
+    else
+        double_corrected_final_value_left = correctedValue_L;
+    
+    if (correctedValue_R > 50)
+        double_corrected_final_value_right = 50;
+    else if (correctedValue_R < -50)
+        double_corrected_final_value_right = -50;
+    else
+        double_corrected_final_value_left = correctedValue_R;
+
 
     //Update the PWM values of both motors after command
-    leftRearPwmCmd = leftPwmCmd;
-    rightRearPwmCmd = rightPwmCmd;
+    leftRearPwmCmd = double_corrected_final_value_left + 50;
+    rightRearPwmCmd = double_corrected_final_value_right + 50;
+
+    // Calcul of the error for gain Ki
+    lastError_L = speedErrorLeft;
+    lastError_R = speedErrorRight;
 
 /**/    //Protection against synchronisation between two wheels
 //    if (abs(leftRearPwmCmd - rightRearPwmCmd) >5){

@@ -137,10 +137,10 @@ private:
             //Manual Mode
             if (mode==0){
                 
-                //manualPropulsionCmd(requestedThrottle, reverse, leftRearPwmCmd,rightRearPwmCmd);
+                manualPropulsionCmd(requestedThrottle, reverse, leftRearPwmCmd,rightRearPwmCmd);
 
-                calculateRPMManual(requestedThrottle, reverse, leftRearPwmCmd, rightRearPwmCmd, 
-                    leftRearSpeedFeedback, rightRearPwmCmd, sumIntegralLeft, sumIntegralRight);
+                //calculateRPMManual(requestedThrottle, reverse, leftRearPwmCmd, rightRearPwmCmd, 
+                //    leftRearSpeedFeedback, rightRearPwmCmd, sumIntegralLeft, sumIntegralRight);
                 
                 steeringCmd(requestedSteerAngle,currentAngle, steeringPwmCmd);
 
@@ -149,7 +149,7 @@ private:
             } else if (mode==1){
 
                 calculateRPMAuto(consigneMotor, leftRearPwmCmd, rightRearPwmCmd, leftRearSpeedFeedback, rightRearSpeedFeedback, 
-                    sumIntegralLeft, sumIntegralRight);
+                    lastError_L, lastError_R, correctedValue_L, correctedValue_R);
                 
             }
         }
@@ -249,7 +249,10 @@ private:
     //PI variables for motor
     float sumIntegralLeft =0;
     float sumIntegralRight = 0;
-    float alpha_prev = 0;
+    float correctedValue_L = 0;
+    float correctedValue_R = 0;
+    float lastError_L = 0;
+    float lastError_R = 0;
 
     //Publishers
     rclcpp::Publisher<interfaces::msg::MotorsOrder>::SharedPtr publisher_can_;
