@@ -7,7 +7,7 @@
 #include <math.h>
 
 #define KP 1.00
-#define KI 0.01
+#define KI 0.1
 #define Te pow(10,-3)
 
 /**
