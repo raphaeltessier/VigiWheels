@@ -1,0 +1,18 @@
+!SESSION 2023-11-24 11:19:13.352 -----------------------------------------------
+eclipse.buildId=Version 1.14.0
+java.version=17.0.8.1
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_US
+Command-line arguments:  -os linux -ws gtk -arch x86_64
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2023-11-24 11:19:40.620
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2023-11-24 11:19:40.620
+!MESSAGE Log4j2 initialized with config file /home/insa/Desktop/VigiWheels/.metadata/.log4j2.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2023-11-24 11:19:42.512
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY org.eclipse.cdt.core 1 0 2023-11-24 11:20:07.856
+!MESSAGE Indexed 'VigiWheels_Fire_Detection' (28 sources, 126 headers) in 5.28 sec: 13,153 declarations; 63,372 references; 3 unresolved inclusions; 46 syntax errors; 171 unresolved names (0.22%)
