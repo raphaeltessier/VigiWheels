@@ -1,0 +1,14 @@
+{
+  "package_name": "interfaces",
+  "non_idl_tuples": [
+    "/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/src/interfaces:msg/JoystickOrder.msg",
+    "/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/src/interfaces:msg/MotorsOrder.msg",
+    "/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/src/interfaces:msg/MotorsFeedback.msg",
+    "/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/src/interfaces:msg/GeneralData.msg",
+    "/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/src/interfaces:msg/SteeringCalibration.msg",
+    "/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/src/interfaces:msg/Ultrasonic.msg",
+    "/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/src/interfaces:msg/Gnss.msg",
+    "/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/src/interfaces:msg/SystemCheck.msg",
+    "/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/src/interfaces:msg/FireSensor.msg"
+  ]
+}

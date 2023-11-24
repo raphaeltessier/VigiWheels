@@ -1,0 +1,2 @@
+int16 ir_sensor_1
+int16 ir_sensor_2
