@@ -10,6 +10,6 @@
 
 #include "stm32l4xx_hal.h"
 
-void reading_infrared_sensor();
+void sending_data_uart();
 
 #endif /* APP_H_ */
