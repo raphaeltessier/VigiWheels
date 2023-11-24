@@ -1,0 +1,10 @@
+/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/build/fire_detection/CMakeFiles/uninstall.dir
+/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/build/fire_detection/CMakeFiles/fire_detection_uninstall.dir
+/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/build/fire_detection/CMakeFiles/serial_reading_node.dir
+/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/build/fire_detection/CMakeFiles/test.dir
+/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/build/fire_detection/CMakeFiles/edit_cache.dir
+/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/build/fire_detection/CMakeFiles/rebuild_cache.dir
+/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/build/fire_detection/CMakeFiles/list_install_components.dir
+/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/build/fire_detection/CMakeFiles/install.dir
+/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/build/fire_detection/CMakeFiles/install/local.dir
+/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/build/fire_detection/CMakeFiles/install/strip.dir
