@@ -64,8 +64,8 @@ bool interfaces__msg__fire_sensor__convert_from_py(PyObject * _pymsg, void * _ro
     if (!field) {
       return false;
     }
-    assert(PyLong_Check(field));
-    ros_message->ir_sensor2 = (int16_t)PyLong_AsLong(field);
+    assert(PyBool_Check(field));
+    ros_message->ir_sensor2 = (Py_True == field);
     Py_DECREF(field);
   }
   {  // ir_sensor3
@@ -82,8 +82,8 @@ bool interfaces__msg__fire_sensor__convert_from_py(PyObject * _pymsg, void * _ro
     if (!field) {
       return false;
     }
-    assert(PyLong_Check(field));
-    ros_message->ir_sensor4 = (int16_t)PyLong_AsLong(field);
+    assert(PyBool_Check(field));
+    ros_message->ir_sensor4 = (Py_True == field);
     Py_DECREF(field);
   }
   {  // smoke_sensor1
@@ -139,7 +139,7 @@ PyObject * interfaces__msg__fire_sensor__convert_to_py(void * raw_ros_message)
   }
   {  // ir_sensor2
     PyObject * field = NULL;
-    field = PyLong_FromLong(ros_message->ir_sensor2);
+    field = PyBool_FromLong(ros_message->ir_sensor2 ? 1 : 0);
     {
       int rc = PyObject_SetAttrString(_pymessage, "ir_sensor2", field);
       Py_DECREF(field);
@@ -161,7 +161,7 @@ PyObject * interfaces__msg__fire_sensor__convert_to_py(void * raw_ros_message)
   }
   {  // ir_sensor4
     PyObject * field = NULL;
-    field = PyLong_FromLong(ros_message->ir_sensor4);
+    field = PyBool_FromLong(ros_message->ir_sensor4 ? 1 : 0);
     {
       int rc = PyObject_SetAttrString(_pymessage, "ir_sensor4", field);
       Py_DECREF(field);

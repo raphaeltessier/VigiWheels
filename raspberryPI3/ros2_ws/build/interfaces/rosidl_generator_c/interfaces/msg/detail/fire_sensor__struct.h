@@ -21,9 +21,9 @@ extern "C"
 typedef struct interfaces__msg__FireSensor
 {
   int16_t ir_sensor1;
-  int16_t ir_sensor2;
+  bool ir_sensor2;
   int16_t ir_sensor3;
-  int16_t ir_sensor4;
+  bool ir_sensor4;
   int16_t smoke_sensor1;
   int16_t smoke_sensor2;
 } interfaces__msg__FireSensor;

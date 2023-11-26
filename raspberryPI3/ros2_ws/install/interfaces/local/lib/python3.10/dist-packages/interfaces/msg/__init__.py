@@ -1,3 +1,4 @@
+from interfaces.msg._emergency_alert_fire import EmergencyAlertFire  # noqa: F401
 from interfaces.msg._fire_sensor import FireSensor  # noqa: F401
 from interfaces.msg._general_data import GeneralData  # noqa: F401
 from interfaces.msg._gnss import Gnss  # noqa: F401

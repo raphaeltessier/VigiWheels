@@ -1,3 +1,5 @@
+msg/EmergencyAlertFire.idl
+msg/EmergencyAlertFire.msg
 msg/FireSensor.idl
 msg/FireSensor.msg
 msg/GeneralData.idl

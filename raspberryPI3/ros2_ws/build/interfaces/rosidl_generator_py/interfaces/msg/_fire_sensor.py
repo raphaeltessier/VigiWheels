@@ -65,18 +65,18 @@ class FireSensor(metaclass=Metaclass_FireSensor):
 
     _fields_and_field_types = {
         'ir_sensor1': 'int16',
-        'ir_sensor2': 'int16',
+        'ir_sensor2': 'boolean',
         'ir_sensor3': 'int16',
-        'ir_sensor4': 'int16',
+        'ir_sensor4': 'boolean',
         'smoke_sensor1': 'int16',
         'smoke_sensor2': 'int16',
     }
 
     SLOT_TYPES = (
         rosidl_parser.definition.BasicType('int16'),  # noqa: E501
+        rosidl_parser.definition.BasicType('boolean'),  # noqa: E501
         rosidl_parser.definition.BasicType('int16'),  # noqa: E501
-        rosidl_parser.definition.BasicType('int16'),  # noqa: E501
-        rosidl_parser.definition.BasicType('int16'),  # noqa: E501
+        rosidl_parser.definition.BasicType('boolean'),  # noqa: E501
         rosidl_parser.definition.BasicType('int16'),  # noqa: E501
         rosidl_parser.definition.BasicType('int16'),  # noqa: E501
     )
@@ -86,9 +86,9 @@ class FireSensor(metaclass=Metaclass_FireSensor):
             'Invalid arguments passed to constructor: %s' % \
             ', '.join(sorted(k for k in kwargs.keys() if '_' + k not in self.__slots__))
         self.ir_sensor1 = kwargs.get('ir_sensor1', int())
-        self.ir_sensor2 = kwargs.get('ir_sensor2', int())
+        self.ir_sensor2 = kwargs.get('ir_sensor2', bool())
         self.ir_sensor3 = kwargs.get('ir_sensor3', int())
-        self.ir_sensor4 = kwargs.get('ir_sensor4', int())
+        self.ir_sensor4 = kwargs.get('ir_sensor4', bool())
         self.smoke_sensor1 = kwargs.get('smoke_sensor1', int())
         self.smoke_sensor2 = kwargs.get('smoke_sensor2', int())
 
@@ -164,10 +164,8 @@ class FireSensor(metaclass=Metaclass_FireSensor):
     def ir_sensor2(self, value):
         if __debug__:
             assert \
-                isinstance(value, int), \
-                "The 'ir_sensor2' field must be of type 'int'"
-            assert value >= -32768 and value < 32768, \
-                "The 'ir_sensor2' field must be an integer in [-32768, 32767]"
+                isinstance(value, bool), \
+                "The 'ir_sensor2' field must be of type 'bool'"
         self._ir_sensor2 = value
 
     @builtins.property
@@ -194,10 +192,8 @@ class FireSensor(metaclass=Metaclass_FireSensor):
     def ir_sensor4(self, value):
         if __debug__:
             assert \
-                isinstance(value, int), \
-                "The 'ir_sensor4' field must be of type 'int'"
-            assert value >= -32768 and value < 32768, \
-                "The 'ir_sensor4' field must be an integer in [-32768, 32767]"
+                isinstance(value, bool), \
+                "The 'ir_sensor4' field must be of type 'bool'"
         self._ir_sensor4 = value
 
     @builtins.property

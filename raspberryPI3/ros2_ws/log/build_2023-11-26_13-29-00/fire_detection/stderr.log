@@ -1,0 +1,27 @@
+[01m[K/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/src/fire_detection/src/serial_reading.cpp:[m[K In member function ‘[01m[Kint SerialReadingNode::serialCommunication()[m[K’:
+[01m[K/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/src/fire_detection/src/serial_reading.cpp:139:66:[m[K [01;35m[Kwarning: [m[Kformat ‘[01m[K%d[m[K’ expects argument of type ‘[01m[Kint*[m[K’, but argument 4 has type ‘[01m[Kbool*[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wformat=-Wformat=]8;;[m[K]
+  139 |                     sscanf(frame_buf, "IR_SENSOR1=%d|IR_SENSOR2=[01;35m[K%d[m[K|IR_SENSOR3=%d|IR_SENSOR4=%d|SMOKE_SENSOR1=%d|SMOKE_SENSOR2=%d", &ir_sensor1_value, [32m[K&ir_sensor2_value[m[K, &ir_sensor3_value, &ir_sensor4_value, &smoke_sensor1_value, &smoke_sensor2_value);
+      |                                                                 [01;35m[K~^[m[K                                                                                    [32m[K~~~~~~~~~~~~~~~~~[m[K
+      |                                                                  [01;35m[K|[m[K                                                                                    [32m[K|[m[K
+      |                                                                  [01;35m[Kint*[m[K                                                                                 [32m[Kbool*[m[K
+[01m[K/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/src/fire_detection/src/serial_reading.cpp:139:94:[m[K [01;35m[Kwarning: [m[Kformat ‘[01m[K%d[m[K’ expects argument of type ‘[01m[Kint*[m[K’, but argument 6 has type ‘[01m[Kbool*[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wformat=-Wformat=]8;;[m[K]
+  139 |                     sscanf(frame_buf, "IR_SENSOR1=%d|IR_SENSOR2=%d|IR_SENSOR3=%d|IR_SENSOR4=[01;35m[K%d[m[K|SMOKE_SENSOR1=%d|SMOKE_SENSOR2=%d", &ir_sensor1_value, &ir_sensor2_value, &ir_sensor3_value, [32m[K&ir_sensor4_value[m[K, &smoke_sensor1_value, &smoke_sensor2_value);
+      |                                                                                             [01;35m[K~^[m[K                                                                                              [32m[K~~~~~~~~~~~~~~~~~[m[K
+      |                                                                                              [01;35m[K|[m[K                                                                                              [32m[K|[m[K
+      |                                                                                              [01;35m[Kint*[m[K                                                                                           [32m[Kbool*[m[K
+[01m[K/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/src/fire_detection/src/processing_data_fire.cpp:[m[K In constructor ‘[01m[KProcessingDataFireNode::ProcessingDataFireNode()[m[K’:
+[01m[K/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/src/fire_detection/src/processing_data_fire.cpp:97:12:[m[K [01;35m[Kwarning: [m[K‘[01m[KProcessingDataFireNode::counter_[m[K’ will be initialized after [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreorder-Wreorder]8;;[m[K]
+   97 |     size_t [01;35m[Kcounter_[m[K;
+      |            [01;35m[K^~~~~~~~[m[K
+[01m[K/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/src/fire_detection/src/processing_data_fire.cpp:95:10:[m[K [01;35m[Kwarning: [m[K  ‘[01m[Kbool ProcessingDataFireNode::fireIsDetected[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreorder-Wreorder]8;;[m[K]
+   95 |     bool [01;35m[KfireIsDetected[m[K;
+      |          [01;35m[K^~~~~~~~~~~~~~[m[K
+[01m[K/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/src/fire_detection/src/processing_data_fire.cpp:11:5:[m[K [01;35m[Kwarning: [m[K  when initialized here [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreorder-Wreorder]8;;[m[K]
+   11 |     [01;35m[KProcessingDataFireNode[m[K() : Node("processing_data_fire_node"), window_size_{100}, counter_{0}, fireIsDetected{false}
+      |     [01;35m[K^~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/src/fire_detection/src/processing_data_fire.cpp:17:119:[m[K [01;31m[Kerror: [m[K‘[01m[KsendEmergencyAltert[m[K’ is not a member of ‘[01m[KProcessingDataFireNode[m[K’
+   17 |         timer_proccesing_data = this->create_wall_timer(std::chrono::milliseconds(250), bind(&ProcessingDataFireNode::[01;31m[KsendEmergencyAltert[m[K, this));
+      |                                                                                                                       [01;31m[K^~~~~~~~~~~~~~~~~~~[m[K
+gmake[2]: *** [CMakeFiles/processing_data_fire_node.dir/build.make:76: CMakeFiles/processing_data_fire_node.dir/src/processing_data_fire.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:165: CMakeFiles/processing_data_fire_node.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

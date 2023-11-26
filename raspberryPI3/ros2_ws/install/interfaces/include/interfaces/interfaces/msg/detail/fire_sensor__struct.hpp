@@ -39,9 +39,9 @@ struct FireSensor_
       rosidl_runtime_cpp::MessageInitialization::ZERO == _init)
     {
       this->ir_sensor1 = 0;
-      this->ir_sensor2 = 0;
+      this->ir_sensor2 = false;
       this->ir_sensor3 = 0;
-      this->ir_sensor4 = 0;
+      this->ir_sensor4 = false;
       this->smoke_sensor1 = 0;
       this->smoke_sensor2 = 0;
     }
@@ -54,9 +54,9 @@ struct FireSensor_
       rosidl_runtime_cpp::MessageInitialization::ZERO == _init)
     {
       this->ir_sensor1 = 0;
-      this->ir_sensor2 = 0;
+      this->ir_sensor2 = false;
       this->ir_sensor3 = 0;
-      this->ir_sensor4 = 0;
+      this->ir_sensor4 = false;
       this->smoke_sensor1 = 0;
       this->smoke_sensor2 = 0;
     }
@@ -67,13 +67,13 @@ struct FireSensor_
     int16_t;
   _ir_sensor1_type ir_sensor1;
   using _ir_sensor2_type =
-    int16_t;
+    bool;
   _ir_sensor2_type ir_sensor2;
   using _ir_sensor3_type =
     int16_t;
   _ir_sensor3_type ir_sensor3;
   using _ir_sensor4_type =
-    int16_t;
+    bool;
   _ir_sensor4_type ir_sensor4;
   using _smoke_sensor1_type =
     int16_t;
@@ -90,7 +90,7 @@ struct FireSensor_
     return *this;
   }
   Type & set__ir_sensor2(
-    const int16_t & _arg)
+    const bool & _arg)
   {
     this->ir_sensor2 = _arg;
     return *this;
@@ -102,7 +102,7 @@ struct FireSensor_
     return *this;
   }
   Type & set__ir_sensor4(
-    const int16_t & _arg)
+    const bool & _arg)
   {
     this->ir_sensor4 = _arg;
     return *this;

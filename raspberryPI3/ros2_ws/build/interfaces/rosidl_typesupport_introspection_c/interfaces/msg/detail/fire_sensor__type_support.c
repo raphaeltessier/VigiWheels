@@ -51,7 +51,7 @@ static rosidl_typesupport_introspection_c__MessageMember interfaces__msg__FireSe
   },
   {
     "ir_sensor2",  // name
-    rosidl_typesupport_introspection_c__ROS_TYPE_INT16,  // type
+    rosidl_typesupport_introspection_c__ROS_TYPE_BOOLEAN,  // type
     0,  // upper bound of string
     NULL,  // members of sub message
     false,  // is array
@@ -85,7 +85,7 @@ static rosidl_typesupport_introspection_c__MessageMember interfaces__msg__FireSe
   },
   {
     "ir_sensor4",  // name
-    rosidl_typesupport_introspection_c__ROS_TYPE_INT16,  // type
+    rosidl_typesupport_introspection_c__ROS_TYPE_BOOLEAN,  // type
     0,  // upper bound of string
     NULL,  // members of sub message
     false,  // is array

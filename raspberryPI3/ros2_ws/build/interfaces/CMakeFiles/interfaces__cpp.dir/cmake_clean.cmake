@@ -1,5 +1,8 @@
 file(REMOVE_RECURSE
   "CMakeFiles/interfaces__cpp"
+  "rosidl_generator_cpp/interfaces/msg/detail/emergency_alert_fire__builder.hpp"
+  "rosidl_generator_cpp/interfaces/msg/detail/emergency_alert_fire__struct.hpp"
+  "rosidl_generator_cpp/interfaces/msg/detail/emergency_alert_fire__traits.hpp"
   "rosidl_generator_cpp/interfaces/msg/detail/fire_sensor__builder.hpp"
   "rosidl_generator_cpp/interfaces/msg/detail/fire_sensor__struct.hpp"
   "rosidl_generator_cpp/interfaces/msg/detail/fire_sensor__traits.hpp"
@@ -27,6 +30,7 @@ file(REMOVE_RECURSE
   "rosidl_generator_cpp/interfaces/msg/detail/ultrasonic__builder.hpp"
   "rosidl_generator_cpp/interfaces/msg/detail/ultrasonic__struct.hpp"
   "rosidl_generator_cpp/interfaces/msg/detail/ultrasonic__traits.hpp"
+  "rosidl_generator_cpp/interfaces/msg/emergency_alert_fire.hpp"
   "rosidl_generator_cpp/interfaces/msg/fire_sensor.hpp"
   "rosidl_generator_cpp/interfaces/msg/general_data.hpp"
   "rosidl_generator_cpp/interfaces/msg/gnss.hpp"

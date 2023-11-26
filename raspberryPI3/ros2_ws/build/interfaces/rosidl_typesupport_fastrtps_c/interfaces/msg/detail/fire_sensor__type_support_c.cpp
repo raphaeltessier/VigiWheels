@@ -56,7 +56,7 @@ static bool _FireSensor__cdr_serialize(
 
   // Field name: ir_sensor2
   {
-    cdr << ros_message->ir_sensor2;
+    cdr << (ros_message->ir_sensor2 ? true : false);
   }
 
   // Field name: ir_sensor3
@@ -66,7 +66,7 @@ static bool _FireSensor__cdr_serialize(
 
   // Field name: ir_sensor4
   {
-    cdr << ros_message->ir_sensor4;
+    cdr << (ros_message->ir_sensor4 ? true : false);
   }
 
   // Field name: smoke_sensor1
@@ -98,7 +98,9 @@ static bool _FireSensor__cdr_deserialize(
 
   // Field name: ir_sensor2
   {
-    cdr >> ros_message->ir_sensor2;
+    uint8_t tmp;
+    cdr >> tmp;
+    ros_message->ir_sensor2 = tmp ? true : false;
   }
 
   // Field name: ir_sensor3
@@ -108,7 +110,9 @@ static bool _FireSensor__cdr_deserialize(
 
   // Field name: ir_sensor4
   {
-    cdr >> ros_message->ir_sensor4;
+    uint8_t tmp;
+    cdr >> tmp;
+    ros_message->ir_sensor4 = tmp ? true : false;
   }
 
   // Field name: smoke_sensor1
@@ -212,8 +216,7 @@ size_t max_serialized_size_interfaces__msg__FireSensor(
   {
     size_t array_size = 1;
 
-    current_alignment += array_size * sizeof(uint16_t) +
-      eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint16_t));
+    current_alignment += array_size * sizeof(uint8_t);
   }
   // member: ir_sensor3
   {
@@ -226,8 +229,7 @@ size_t max_serialized_size_interfaces__msg__FireSensor(
   {
     size_t array_size = 1;
 
-    current_alignment += array_size * sizeof(uint16_t) +
-      eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint16_t));
+    current_alignment += array_size * sizeof(uint8_t);
   }
   // member: smoke_sensor1
   {

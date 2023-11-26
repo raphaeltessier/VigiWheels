@@ -1,0 +1,12 @@
+[0.049s] Invoking command in '/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/build/fire_detection': CMAKE_PREFIX_PATH=/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/install/interfaces:/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/install/fire_detection:/home/insa/ros2_ws/install/my_fire_pkg:/home/insa/ros2_ws/install/demo_sensor_pkg:/home/insa/ros2_ws/install/my_robot_interfaces:/home/insa/ros2_ws/install/my_cpp_pkg:/home/insa/ros2_ws/install/johann_cpp_pkg:/opt/ros/humble /usr/bin/cmake --build /home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/build/fire_detection -- -j8 -l8
+[0.077s] [35m[1mConsolidate compiler generated dependencies of target serial_reading_node[0m
+[0.086s] [ 50%] Built target processing_data_fire_node
+[0.088s] [ 75%] [32mBuilding CXX object CMakeFiles/serial_reading_node.dir/src/serial_reading.cpp.o[0m
+[1.487s] [01m[K/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/src/fire_detection/src/serial_reading.cpp:[m[K In member function ‘[01m[Kint SerialReadingNode::serialCommunication()[m[K’:
+[1.487s] [01m[K/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/src/fire_detection/src/serial_reading.cpp:102:67:[m[K [01;31m[Kerror: [m[Kexpected unqualified-id before ‘[01m[K,[m[K’ token
+[1.487s]   102 |         int ir_sensor1_value, ir_sensor2_value, ir_sensor3_value, [01;31m[K,[m[K ir_sensor4_value;
+[1.487s]       |                                                                   [01;31m[K^[m[K
+[2.004s] gmake[2]: *** [CMakeFiles/serial_reading_node.dir/build.make:76: CMakeFiles/serial_reading_node.dir/src/serial_reading.cpp.o] Error 1
+[2.004s] gmake[1]: *** [CMakeFiles/Makefile2:139: CMakeFiles/serial_reading_node.dir/all] Error 2
+[2.004s] gmake: *** [Makefile:146: all] Error 2
+[2.006s] Invoked command in '/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/build/fire_detection' returned '2': CMAKE_PREFIX_PATH=/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/install/interfaces:/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/install/fire_detection:/home/insa/ros2_ws/install/my_fire_pkg:/home/insa/ros2_ws/install/demo_sensor_pkg:/home/insa/ros2_ws/install/my_robot_interfaces:/home/insa/ros2_ws/install/my_cpp_pkg:/home/insa/ros2_ws/install/johann_cpp_pkg:/opt/ros/humble /usr/bin/cmake --build /home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/build/fire_detection -- -j8 -l8

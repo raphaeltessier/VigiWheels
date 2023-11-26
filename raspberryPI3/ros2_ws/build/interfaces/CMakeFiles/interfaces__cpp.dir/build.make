@@ -102,6 +102,10 @@ CMakeFiles/interfaces__cpp: rosidl_generator_cpp/interfaces/msg/fire_sensor.hpp
 CMakeFiles/interfaces__cpp: rosidl_generator_cpp/interfaces/msg/detail/fire_sensor__builder.hpp
 CMakeFiles/interfaces__cpp: rosidl_generator_cpp/interfaces/msg/detail/fire_sensor__struct.hpp
 CMakeFiles/interfaces__cpp: rosidl_generator_cpp/interfaces/msg/detail/fire_sensor__traits.hpp
+CMakeFiles/interfaces__cpp: rosidl_generator_cpp/interfaces/msg/emergency_alert_fire.hpp
+CMakeFiles/interfaces__cpp: rosidl_generator_cpp/interfaces/msg/detail/emergency_alert_fire__builder.hpp
+CMakeFiles/interfaces__cpp: rosidl_generator_cpp/interfaces/msg/detail/emergency_alert_fire__struct.hpp
+CMakeFiles/interfaces__cpp: rosidl_generator_cpp/interfaces/msg/detail/emergency_alert_fire__traits.hpp
 
 rosidl_generator_cpp/interfaces/msg/joystick_order.hpp: /opt/ros/humble/lib/rosidl_generator_cpp/rosidl_generator_cpp
 rosidl_generator_cpp/interfaces/msg/joystick_order.hpp: /opt/ros/humble/local/lib/python3.10/dist-packages/rosidl_generator_cpp/__init__.py
@@ -127,6 +131,7 @@ rosidl_generator_cpp/interfaces/msg/joystick_order.hpp: rosidl_adapter/interface
 rosidl_generator_cpp/interfaces/msg/joystick_order.hpp: rosidl_adapter/interfaces/msg/Gnss.idl
 rosidl_generator_cpp/interfaces/msg/joystick_order.hpp: rosidl_adapter/interfaces/msg/SystemCheck.idl
 rosidl_generator_cpp/interfaces/msg/joystick_order.hpp: rosidl_adapter/interfaces/msg/FireSensor.idl
+rosidl_generator_cpp/interfaces/msg/joystick_order.hpp: rosidl_adapter/interfaces/msg/EmergencyAlertFire.idl
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/build/interfaces/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating C++ code for ROS interfaces"
 	/usr/bin/python3.10 /opt/ros/humble/share/rosidl_generator_cpp/cmake/../../../lib/rosidl_generator_cpp/rosidl_generator_cpp --generator-arguments-file /home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/build/interfaces/rosidl_generator_cpp__arguments.json
 
@@ -235,7 +240,22 @@ rosidl_generator_cpp/interfaces/msg/detail/fire_sensor__struct.hpp: rosidl_gener
 rosidl_generator_cpp/interfaces/msg/detail/fire_sensor__traits.hpp: rosidl_generator_cpp/interfaces/msg/joystick_order.hpp
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_cpp/interfaces/msg/detail/fire_sensor__traits.hpp
 
+rosidl_generator_cpp/interfaces/msg/emergency_alert_fire.hpp: rosidl_generator_cpp/interfaces/msg/joystick_order.hpp
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_cpp/interfaces/msg/emergency_alert_fire.hpp
+
+rosidl_generator_cpp/interfaces/msg/detail/emergency_alert_fire__builder.hpp: rosidl_generator_cpp/interfaces/msg/joystick_order.hpp
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_cpp/interfaces/msg/detail/emergency_alert_fire__builder.hpp
+
+rosidl_generator_cpp/interfaces/msg/detail/emergency_alert_fire__struct.hpp: rosidl_generator_cpp/interfaces/msg/joystick_order.hpp
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_cpp/interfaces/msg/detail/emergency_alert_fire__struct.hpp
+
+rosidl_generator_cpp/interfaces/msg/detail/emergency_alert_fire__traits.hpp: rosidl_generator_cpp/interfaces/msg/joystick_order.hpp
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_cpp/interfaces/msg/detail/emergency_alert_fire__traits.hpp
+
 interfaces__cpp: CMakeFiles/interfaces__cpp
+interfaces__cpp: rosidl_generator_cpp/interfaces/msg/detail/emergency_alert_fire__builder.hpp
+interfaces__cpp: rosidl_generator_cpp/interfaces/msg/detail/emergency_alert_fire__struct.hpp
+interfaces__cpp: rosidl_generator_cpp/interfaces/msg/detail/emergency_alert_fire__traits.hpp
 interfaces__cpp: rosidl_generator_cpp/interfaces/msg/detail/fire_sensor__builder.hpp
 interfaces__cpp: rosidl_generator_cpp/interfaces/msg/detail/fire_sensor__struct.hpp
 interfaces__cpp: rosidl_generator_cpp/interfaces/msg/detail/fire_sensor__traits.hpp
@@ -263,6 +283,7 @@ interfaces__cpp: rosidl_generator_cpp/interfaces/msg/detail/system_check__traits
 interfaces__cpp: rosidl_generator_cpp/interfaces/msg/detail/ultrasonic__builder.hpp
 interfaces__cpp: rosidl_generator_cpp/interfaces/msg/detail/ultrasonic__struct.hpp
 interfaces__cpp: rosidl_generator_cpp/interfaces/msg/detail/ultrasonic__traits.hpp
+interfaces__cpp: rosidl_generator_cpp/interfaces/msg/emergency_alert_fire.hpp
 interfaces__cpp: rosidl_generator_cpp/interfaces/msg/fire_sensor.hpp
 interfaces__cpp: rosidl_generator_cpp/interfaces/msg/general_data.hpp
 interfaces__cpp: rosidl_generator_cpp/interfaces/msg/gnss.hpp

@@ -1,0 +1,57 @@
+[0.048s] Invoking command in '/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/build/interfaces': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/build/interfaces -- -j8 -l8
+[0.071s] -- Found ament_cmake: 1.3.5 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.213s] -- Found rclcpp: 16.0.6 (/opt/ros/humble/share/rclcpp/cmake)
+[0.248s] -- Found rosidl_generator_c: 3.1.5 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[0.250s] -- Found rosidl_adapter: 3.1.5 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[0.279s] -- Found rosidl_generator_cpp: 3.1.5 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[0.289s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.301s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.342s] -- Found rmw_implementation_cmake: 6.1.1 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+[0.343s] -- Found rmw_fastrtps_cpp: 6.2.4 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+[0.422s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[0.521s] -- Found rosidl_default_generators: 1.2.0 (/opt/ros/humble/share/rosidl_default_generators/cmake)
+[0.666s] [31mCMake Error at /opt/ros/humble/share/rosidl_adapter/cmake/rosidl_adapt_interfaces.cmake:59 (message):
+[0.666s]   execute_process(/usr/bin/python3.10 -m rosidl_adapter --package-name
+[0.666s]   interfaces --arguments-file
+[0.666s]   /home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/build/interfaces/rosidl_adapter__arguments__interfaces.json
+[0.667s]   --output-dir
+[0.667s]   /home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/build/interfaces/rosidl_adapter/interfaces
+[0.667s]   --output-file
+[0.667s]   /home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/build/interfaces/rosidl_adapter/interfaces.idls)
+[0.667s]   returned error code 1:
+[0.667s] 
+[0.667s]   Error processing 'bool fireIsDetected' of 'interfaces/EmergencyAlertFire':
+[0.667s]   ''fireIsDetected' is an invalid field name.  It should have the pattern
+[0.667s]   '^(?!.*__)(?!.*_$)[a-z][a-z0-9_]*$''
+[0.667s] 
+[0.667s]   Traceback (most recent call last):
+[0.667s] 
+[0.667s]     File "/usr/lib/python3.10/runpy.py", line 196, in _run_module_as_main
+[0.667s]       return _run_code(code, main_globals, None,
+[0.667s]     File "/usr/lib/python3.10/runpy.py", line 86, in _run_code
+[0.667s]       exec(code, run_globals)
+[0.667s]     File "/opt/ros/humble/local/lib/python3.10/dist-packages/rosidl_adapter/__main__.py", line 19, in <module>
+[0.667s]       sys.exit(main())
+[0.667s]     File "/opt/ros/humble/local/lib/python3.10/dist-packages/rosidl_adapter/main.py", line 53, in main
+[0.667s]       abs_idl_file = convert_to_idl(
+[0.667s]     File "/opt/ros/humble/local/lib/python3.10/dist-packages/rosidl_adapter/__init__.py", line 19, in convert_to_idl
+[0.667s]       return convert_msg_to_idl(
+[0.667s]     File "/opt/ros/humble/local/lib/python3.10/dist-packages/rosidl_adapter/msg/__init__.py", line 28, in convert_msg_to_idl
+[0.667s]       msg = parse_message_string(package_name, input_file.stem, content)
+[0.667s]     File "/opt/ros/humble/local/lib/python3.10/dist-packages/rosidl_adapter/parser.py", line 519, in parse_message_string
+[0.667s]       fields.append(Field(
+[0.667s]     File "/opt/ros/humble/local/lib/python3.10/dist-packages/rosidl_adapter/parser.py", line 354, in __init__
+[0.667s]       raise NameError(
+[0.667s] 
+[0.668s]   NameError: 'fireIsDetected' is an invalid field name.  It should have the
+[0.668s]   pattern '^(?!.*__)(?!.*_$)[a-z][a-z0-9_]*$'
+[0.668s] 
+[0.668s] Call Stack (most recent call first):
+[0.668s]   /opt/ros/humble/share/rosidl_cmake/cmake/rosidl_generate_interfaces.cmake:130 (rosidl_adapt_interfaces)
+[0.668s]   CMakeLists.txt:28 (rosidl_generate_interfaces)
+[0.668s] 
+[0.668s] [0m
+[0.668s] -- Configuring incomplete, errors occurred!
+[0.668s] See also "/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/build/interfaces/CMakeFiles/CMakeOutput.log".
+[0.672s] gmake: *** [Makefile:2475: cmake_check_build_system] Error 1
+[0.674s] Invoked command in '/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/build/interfaces' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/build/interfaces -- -j8 -l8

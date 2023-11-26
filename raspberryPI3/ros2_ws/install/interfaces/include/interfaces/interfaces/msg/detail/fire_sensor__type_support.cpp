@@ -57,7 +57,7 @@ static const ::rosidl_typesupport_introspection_cpp::MessageMember FireSensor_me
   },
   {
     "ir_sensor2",  // name
-    ::rosidl_typesupport_introspection_cpp::ROS_TYPE_INT16,  // type
+    ::rosidl_typesupport_introspection_cpp::ROS_TYPE_BOOLEAN,  // type
     0,  // upper bound of string
     nullptr,  // members of sub message
     false,  // is array
@@ -91,7 +91,7 @@ static const ::rosidl_typesupport_introspection_cpp::MessageMember FireSensor_me
   },
   {
     "ir_sensor4",  // name
-    ::rosidl_typesupport_introspection_cpp::ROS_TYPE_INT16,  // type
+    ::rosidl_typesupport_introspection_cpp::ROS_TYPE_BOOLEAN,  // type
     0,  // upper bound of string
     nullptr,  // members of sub message
     false,  // is array

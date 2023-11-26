@@ -1,4 +1,6 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/interfaces/msg/emergency_alert_fire__type_support.cpp.o"
+  "CMakeFiles/interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/interfaces/msg/emergency_alert_fire__type_support.cpp.o.d"
   "CMakeFiles/interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/interfaces/msg/fire_sensor__type_support.cpp.o"
   "CMakeFiles/interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/interfaces/msg/fire_sensor__type_support.cpp.o.d"
   "CMakeFiles/interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/interfaces/msg/general_data__type_support.cpp.o"
@@ -19,6 +21,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/interfaces/msg/ultrasonic__type_support.cpp.o.d"
   "libinterfaces__rosidl_typesupport_cpp.pdb"
   "libinterfaces__rosidl_typesupport_cpp.so"
+  "rosidl_typesupport_cpp/interfaces/msg/emergency_alert_fire__type_support.cpp"
   "rosidl_typesupport_cpp/interfaces/msg/fire_sensor__type_support.cpp"
   "rosidl_typesupport_cpp/interfaces/msg/general_data__type_support.cpp"
   "rosidl_typesupport_cpp/interfaces/msg/gnss__type_support.cpp"

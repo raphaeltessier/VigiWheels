@@ -20,9 +20,10 @@ class SerialReadingNode : public rclcpp::Node
 public:
     SerialReadingNode() : Node("Serial_reading_node")
     {
+        RCLCPP_INFO(this->get_logger(), "Hello Serial Reading Node !");
         publisher_serial_reading = this->create_publisher<interfaces::msg::FireSensor>("data_fire", 10);
         timer_serial_reading = this->create_wall_timer(std::chrono::milliseconds(250), bind(&SerialReadingNode::serialCommunication, this)); 
-        RCLCPP_INFO(this->get_logger(), "Hello Serial Reading Node !");
+
     }
 
 private:
@@ -97,6 +98,10 @@ private:
             return 1;
         }
 
+        // Sensor values
+        int ir_sensor1_value, ir_sensor2_value, ir_sensor3_value, ir_sensor4_value; 
+        int smoke_sensor1_value, smoke_sensor2_value;
+
         // Read from serial port in a loop
         char read_buf[BUFFER_SIZE];
         char frame_buf[BUFFER_SIZE];
@@ -130,7 +135,7 @@ private:
                     frame_started = false;
 
                     // Process the complete frame (e.g., parse and publish)
-                    sscanf(frame_buf, "IR_SENSOR1=%d|IR_SENSOR2=%d|IR_SENSOR3=%d|IR_SENSOR4=%d|SMOKE_SENSOR1=%d|SMOKE_SENSOR2=%d", &ir_sensor1_value, &ir_sensor2_value, &ir_sensor3_value, &ir_sensor4_value, &smoke_sensor1_value, &smoke_sensor2_value);
+                    sscanf(frame_buf, "IR_SENSOR1=%d|IR_SENSOR2=%d|IR_SENSOR3=%d|IR_SENSOR4=%d|SMOKE_SENSOR1=%d|SMOKE_SENSOR2=%d",&ir_sensor1_value, &ir_sensor2_value, &ir_sensor3_value, &ir_sensor4_value, &smoke_sensor1_value, &smoke_sensor2_value);
                 }
                 // Store bytes in the frame buffer
                 else if (frame_started) 
@@ -151,12 +156,6 @@ private:
         return 0;
     }
 
-    int ir_sensor1_value;
-    int ir_sensor2_value;
-    int ir_sensor3_value;
-    int ir_sensor4_value;
-    int smoke_sensor1_value;
-    int smoke_sensor2_value;
     std::shared_ptr<rclcpp::Publisher<interfaces::msg::FireSensor>> publisher_serial_reading;
     std::shared_ptr<rclcpp::TimerBase> timer_serial_reading;
 };

@@ -672,8 +672,20 @@ CMakeFiles/processing_data_fire_node.dir/src/processing_data_fire.cpp.o: /home/i
   /home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/fire_sensor.hpp \
   /home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/fire_sensor__struct.hpp \
   /home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/fire_sensor__builder.hpp \
-  /home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/fire_sensor__traits.hpp
+  /home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/fire_sensor__traits.hpp \
+  /home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/emergency_alert_fire.hpp \
+  /home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/emergency_alert_fire__struct.hpp \
+  /home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/emergency_alert_fire__builder.hpp \
+  /home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/emergency_alert_fire__traits.hpp
 
+
+/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/emergency_alert_fire__traits.hpp:
+
+/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/emergency_alert_fire__builder.hpp:
+
+/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/emergency_alert_fire__struct.hpp:
+
+/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/emergency_alert_fire.hpp:
 
 /home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/fire_sensor__traits.hpp:
 

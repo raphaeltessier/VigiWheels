@@ -11,7 +11,8 @@
     "/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/build/interfaces/rosidl_adapter/interfaces:msg/Ultrasonic.idl",
     "/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/build/interfaces/rosidl_adapter/interfaces:msg/Gnss.idl",
     "/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/build/interfaces/rosidl_adapter/interfaces:msg/SystemCheck.idl",
-    "/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/build/interfaces/rosidl_adapter/interfaces:msg/FireSensor.idl"
+    "/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/build/interfaces/rosidl_adapter/interfaces:msg/FireSensor.idl",
+    "/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/build/interfaces/rosidl_adapter/interfaces:msg/EmergencyAlertFire.idl"
   ],
   "target_dependencies": [
     "/opt/ros/humble/share/rosidl_generator_c/cmake/../../../lib/rosidl_generator_c/rosidl_generator_c",
@@ -35,6 +36,7 @@
     "/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/build/interfaces/rosidl_adapter/interfaces/msg/Ultrasonic.idl",
     "/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/build/interfaces/rosidl_adapter/interfaces/msg/Gnss.idl",
     "/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/build/interfaces/rosidl_adapter/interfaces/msg/SystemCheck.idl",
-    "/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/build/interfaces/rosidl_adapter/interfaces/msg/FireSensor.idl"
+    "/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/build/interfaces/rosidl_adapter/interfaces/msg/FireSensor.idl",
+    "/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/build/interfaces/rosidl_adapter/interfaces/msg/EmergencyAlertFire.idl"
   ]
 }

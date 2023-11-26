@@ -9,6 +9,7 @@
     "/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/src/interfaces:msg/Ultrasonic.msg",
     "/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/src/interfaces:msg/Gnss.msg",
     "/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/src/interfaces:msg/SystemCheck.msg",
-    "/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/src/interfaces:msg/FireSensor.msg"
+    "/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/src/interfaces:msg/FireSensor.msg",
+    "/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/src/interfaces:msg/EmergencyAlertFire.msg"
   ]
 }

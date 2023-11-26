@@ -1,4 +1,6 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/interfaces/msg/detail/emergency_alert_fire__type_support_c.cpp.o"
+  "CMakeFiles/interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/interfaces/msg/detail/emergency_alert_fire__type_support_c.cpp.o.d"
   "CMakeFiles/interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/interfaces/msg/detail/fire_sensor__type_support_c.cpp.o"
   "CMakeFiles/interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/interfaces/msg/detail/fire_sensor__type_support_c.cpp.o.d"
   "CMakeFiles/interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/interfaces/msg/detail/general_data__type_support_c.cpp.o"
@@ -19,6 +21,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/interfaces/msg/detail/ultrasonic__type_support_c.cpp.o.d"
   "libinterfaces__rosidl_typesupport_fastrtps_c.pdb"
   "libinterfaces__rosidl_typesupport_fastrtps_c.so"
+  "rosidl_typesupport_fastrtps_c/interfaces/msg/detail/emergency_alert_fire__rosidl_typesupport_fastrtps_c.h"
+  "rosidl_typesupport_fastrtps_c/interfaces/msg/detail/emergency_alert_fire__type_support_c.cpp"
   "rosidl_typesupport_fastrtps_c/interfaces/msg/detail/fire_sensor__rosidl_typesupport_fastrtps_c.h"
   "rosidl_typesupport_fastrtps_c/interfaces/msg/detail/fire_sensor__type_support_c.cpp"
   "rosidl_typesupport_fastrtps_c/interfaces/msg/detail/general_data__rosidl_typesupport_fastrtps_c.h"

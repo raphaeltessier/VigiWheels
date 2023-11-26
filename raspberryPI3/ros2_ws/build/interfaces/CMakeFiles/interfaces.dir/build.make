@@ -75,6 +75,7 @@ CMakeFiles/interfaces: /home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/src/in
 CMakeFiles/interfaces: /home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/src/interfaces/msg/Gnss.msg
 CMakeFiles/interfaces: /home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/src/interfaces/msg/SystemCheck.msg
 CMakeFiles/interfaces: /home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/src/interfaces/msg/FireSensor.msg
+CMakeFiles/interfaces: /home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/src/interfaces/msg/EmergencyAlertFire.msg
 
 interfaces: CMakeFiles/interfaces
 interfaces: CMakeFiles/interfaces.dir/build.make

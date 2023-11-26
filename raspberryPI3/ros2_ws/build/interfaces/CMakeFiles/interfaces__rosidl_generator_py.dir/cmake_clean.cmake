@@ -1,4 +1,6 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/interfaces__rosidl_generator_py.dir/rosidl_generator_py/interfaces/msg/_emergency_alert_fire_s.c.o"
+  "CMakeFiles/interfaces__rosidl_generator_py.dir/rosidl_generator_py/interfaces/msg/_emergency_alert_fire_s.c.o.d"
   "CMakeFiles/interfaces__rosidl_generator_py.dir/rosidl_generator_py/interfaces/msg/_fire_sensor_s.c.o"
   "CMakeFiles/interfaces__rosidl_generator_py.dir/rosidl_generator_py/interfaces/msg/_fire_sensor_s.c.o.d"
   "CMakeFiles/interfaces__rosidl_generator_py.dir/rosidl_generator_py/interfaces/msg/_general_data_s.c.o"
