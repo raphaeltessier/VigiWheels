@@ -1,10 +1,17 @@
-15:08:53 **** Incremental Build of configuration Debug for project VigiWheels_Fire_Detection ****
+16:12:31 **** Incremental Build of configuration Debug for project VigiWheels_Fire_Detection ****
 make -j8 all 
+arm-none-eabi-gcc "../Core/App/app.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -I"/home/insa/Desktop/VigiWheels/nucleoL476Fire/firmware/Core/App" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/App/app.d" -MT"Core/App/app.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/App/app.o"
+arm-none-eabi-gcc -o "VigiWheels_Fire_Detection.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/insa/Desktop/VigiWheels/nucleoL476Fire/firmware/STM32L476RGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="VigiWheels_Fire_Detection.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: VigiWheels_Fire_Detection.elf
+ 
 arm-none-eabi-size  VigiWheels_Fire_Detection.elf 
+arm-none-eabi-objdump -h -S VigiWheels_Fire_Detection.elf  > "VigiWheels_Fire_Detection.list"
    text	   data	    bss	    dec	    hex	filename
-  22580	    100	   2356	  25036	   61cc	VigiWheels_Fire_Detection.elf
+  22528	    100	   2356	  24984	   6198	VigiWheels_Fire_Detection.elf
 Finished building: default.size.stdout
  
+Finished building: VigiWheels_Fire_Detection.list
+ 
 
-15:08:54 Build Finished. 0 errors, 0 warnings. (took 184ms)
+16:12:31 Build Finished. 0 errors, 0 warnings. (took 439ms)
 

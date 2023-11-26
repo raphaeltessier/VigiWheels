@@ -1,0 +1,7 @@
+[01m[K/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/src/fire_detection/src/serial_reading.cpp:10:10:[m[K [01;31m[Kfatal error: [m[Kinterfaces/msg/fire_sensor.hpp: No such file or directory
+   10 | #include [01;31m[K"interfaces/msg/fire_sensor.hpp"[m[K
+      |          [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+compilation terminated.
+gmake[2]: *** [CMakeFiles/serial_reading_node.dir/build.make:76: CMakeFiles/serial_reading_node.dir/src/serial_reading.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/serial_reading_node.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

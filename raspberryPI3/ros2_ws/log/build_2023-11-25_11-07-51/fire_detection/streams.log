@@ -1,0 +1,11 @@
+[0.056s] Invoking command in '/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/build/fire_detection': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/build/fire_detection -- -j8 -l8
+[0.087s] [35m[1mConsolidate compiler generated dependencies of target serial_reading_node[0m
+[0.100s] [ 50%] [32mBuilding CXX object CMakeFiles/serial_reading_node.dir/src/serial_reading.cpp.o[0m
+[0.257s] [01m[K/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/src/fire_detection/src/serial_reading.cpp:10:10:[m[K [01;31m[Kfatal error: [m[Kinterfaces/msg/fire_sensor.hpp: No such file or directory
+[0.257s]    10 | #include [01;31m[K"interfaces/msg/fire_sensor.hpp"[m[K
+[0.257s]       |          [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[0.257s] compilation terminated.
+[0.259s] gmake[2]: *** [CMakeFiles/serial_reading_node.dir/build.make:76: CMakeFiles/serial_reading_node.dir/src/serial_reading.cpp.o] Error 1
+[0.259s] gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/serial_reading_node.dir/all] Error 2
+[0.259s] gmake: *** [Makefile:146: all] Error 2
+[0.261s] Invoked command in '/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/build/fire_detection' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/build/fire_detection -- -j8 -l8

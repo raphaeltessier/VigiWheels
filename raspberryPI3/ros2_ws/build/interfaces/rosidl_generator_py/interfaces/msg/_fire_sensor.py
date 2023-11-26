@@ -55,16 +55,28 @@ class FireSensor(metaclass=Metaclass_FireSensor):
     """Message class 'FireSensor'."""
 
     __slots__ = [
-        '_ir_sensor_1',
-        '_ir_sensor_2',
+        '_ir_sensor1',
+        '_ir_sensor2',
+        '_ir_sensor3',
+        '_ir_sensor4',
+        '_smoke_sensor1',
+        '_smoke_sensor2',
     ]
 
     _fields_and_field_types = {
-        'ir_sensor_1': 'int16',
-        'ir_sensor_2': 'int16',
+        'ir_sensor1': 'int16',
+        'ir_sensor2': 'int16',
+        'ir_sensor3': 'int16',
+        'ir_sensor4': 'int16',
+        'smoke_sensor1': 'int16',
+        'smoke_sensor2': 'int16',
     }
 
     SLOT_TYPES = (
+        rosidl_parser.definition.BasicType('int16'),  # noqa: E501
+        rosidl_parser.definition.BasicType('int16'),  # noqa: E501
+        rosidl_parser.definition.BasicType('int16'),  # noqa: E501
+        rosidl_parser.definition.BasicType('int16'),  # noqa: E501
         rosidl_parser.definition.BasicType('int16'),  # noqa: E501
         rosidl_parser.definition.BasicType('int16'),  # noqa: E501
     )
@@ -73,8 +85,12 @@ class FireSensor(metaclass=Metaclass_FireSensor):
         assert all('_' + key in self.__slots__ for key in kwargs.keys()), \
             'Invalid arguments passed to constructor: %s' % \
             ', '.join(sorted(k for k in kwargs.keys() if '_' + k not in self.__slots__))
-        self.ir_sensor_1 = kwargs.get('ir_sensor_1', int())
-        self.ir_sensor_2 = kwargs.get('ir_sensor_2', int())
+        self.ir_sensor1 = kwargs.get('ir_sensor1', int())
+        self.ir_sensor2 = kwargs.get('ir_sensor2', int())
+        self.ir_sensor3 = kwargs.get('ir_sensor3', int())
+        self.ir_sensor4 = kwargs.get('ir_sensor4', int())
+        self.smoke_sensor1 = kwargs.get('smoke_sensor1', int())
+        self.smoke_sensor2 = kwargs.get('smoke_sensor2', int())
 
     def __repr__(self):
         typename = self.__class__.__module__.split('.')
@@ -105,9 +121,17 @@ class FireSensor(metaclass=Metaclass_FireSensor):
     def __eq__(self, other):
         if not isinstance(other, self.__class__):
             return False
-        if self.ir_sensor_1 != other.ir_sensor_1:
+        if self.ir_sensor1 != other.ir_sensor1:
             return False
-        if self.ir_sensor_2 != other.ir_sensor_2:
+        if self.ir_sensor2 != other.ir_sensor2:
+            return False
+        if self.ir_sensor3 != other.ir_sensor3:
+            return False
+        if self.ir_sensor4 != other.ir_sensor4:
+            return False
+        if self.smoke_sensor1 != other.smoke_sensor1:
+            return False
+        if self.smoke_sensor2 != other.smoke_sensor2:
             return False
         return True
 
@@ -117,31 +141,91 @@ class FireSensor(metaclass=Metaclass_FireSensor):
         return copy(cls._fields_and_field_types)
 
     @builtins.property
-    def ir_sensor_1(self):
-        """Message field 'ir_sensor_1'."""
-        return self._ir_sensor_1
+    def ir_sensor1(self):
+        """Message field 'ir_sensor1'."""
+        return self._ir_sensor1
 
-    @ir_sensor_1.setter
-    def ir_sensor_1(self, value):
+    @ir_sensor1.setter
+    def ir_sensor1(self, value):
         if __debug__:
             assert \
                 isinstance(value, int), \
-                "The 'ir_sensor_1' field must be of type 'int'"
+                "The 'ir_sensor1' field must be of type 'int'"
             assert value >= -32768 and value < 32768, \
-                "The 'ir_sensor_1' field must be an integer in [-32768, 32767]"
-        self._ir_sensor_1 = value
+                "The 'ir_sensor1' field must be an integer in [-32768, 32767]"
+        self._ir_sensor1 = value
 
     @builtins.property
-    def ir_sensor_2(self):
-        """Message field 'ir_sensor_2'."""
-        return self._ir_sensor_2
+    def ir_sensor2(self):
+        """Message field 'ir_sensor2'."""
+        return self._ir_sensor2
 
-    @ir_sensor_2.setter
-    def ir_sensor_2(self, value):
+    @ir_sensor2.setter
+    def ir_sensor2(self, value):
         if __debug__:
             assert \
                 isinstance(value, int), \
-                "The 'ir_sensor_2' field must be of type 'int'"
+                "The 'ir_sensor2' field must be of type 'int'"
             assert value >= -32768 and value < 32768, \
-                "The 'ir_sensor_2' field must be an integer in [-32768, 32767]"
-        self._ir_sensor_2 = value
+                "The 'ir_sensor2' field must be an integer in [-32768, 32767]"
+        self._ir_sensor2 = value
+
+    @builtins.property
+    def ir_sensor3(self):
+        """Message field 'ir_sensor3'."""
+        return self._ir_sensor3
+
+    @ir_sensor3.setter
+    def ir_sensor3(self, value):
+        if __debug__:
+            assert \
+                isinstance(value, int), \
+                "The 'ir_sensor3' field must be of type 'int'"
+            assert value >= -32768 and value < 32768, \
+                "The 'ir_sensor3' field must be an integer in [-32768, 32767]"
+        self._ir_sensor3 = value
+
+    @builtins.property
+    def ir_sensor4(self):
+        """Message field 'ir_sensor4'."""
+        return self._ir_sensor4
+
+    @ir_sensor4.setter
+    def ir_sensor4(self, value):
+        if __debug__:
+            assert \
+                isinstance(value, int), \
+                "The 'ir_sensor4' field must be of type 'int'"
+            assert value >= -32768 and value < 32768, \
+                "The 'ir_sensor4' field must be an integer in [-32768, 32767]"
+        self._ir_sensor4 = value
+
+    @builtins.property
+    def smoke_sensor1(self):
+        """Message field 'smoke_sensor1'."""
+        return self._smoke_sensor1
+
+    @smoke_sensor1.setter
+    def smoke_sensor1(self, value):
+        if __debug__:
+            assert \
+                isinstance(value, int), \
+                "The 'smoke_sensor1' field must be of type 'int'"
+            assert value >= -32768 and value < 32768, \
+                "The 'smoke_sensor1' field must be an integer in [-32768, 32767]"
+        self._smoke_sensor1 = value
+
+    @builtins.property
+    def smoke_sensor2(self):
+        """Message field 'smoke_sensor2'."""
+        return self._smoke_sensor2
+
+    @smoke_sensor2.setter
+    def smoke_sensor2(self, value):
+        if __debug__:
+            assert \
+                isinstance(value, int), \
+                "The 'smoke_sensor2' field must be of type 'int'"
+            assert value >= -32768 and value < 32768, \
+                "The 'smoke_sensor2' field must be an integer in [-32768, 32767]"
+        self._smoke_sensor2 = value

@@ -4,8 +4,7 @@
 CMakeFiles/serial_reading_node.dir/src/serial_reading.cpp.o
  /home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/src/fire_detection/src/serial_reading.cpp
  /usr/include/stdc-predef.h
- /usr/include/stdio.h
- /usr/include/x86_64-linux-gnu/bits/libc-header-start.h
+ /usr/include/fcntl.h
  /usr/include/features.h
  /usr/include/features-time64.h
  /usr/include/x86_64-linux-gnu/bits/wordsize.h
@@ -14,25 +13,13 @@ CMakeFiles/serial_reading_node.dir/src/serial_reading.cpp.o
  /usr/include/x86_64-linux-gnu/bits/long-double.h
  /usr/include/x86_64-linux-gnu/gnu/stubs.h
  /usr/include/x86_64-linux-gnu/gnu/stubs-64.h
- /usr/lib/gcc/x86_64-linux-gnu/11/include/stddef.h
- /usr/lib/gcc/x86_64-linux-gnu/11/include/stdarg.h
  /usr/include/x86_64-linux-gnu/bits/types.h
  /usr/include/x86_64-linux-gnu/bits/typesizes.h
  /usr/include/x86_64-linux-gnu/bits/time64.h
- /usr/include/x86_64-linux-gnu/bits/types/__fpos_t.h
- /usr/include/x86_64-linux-gnu/bits/types/__mbstate_t.h
- /usr/include/x86_64-linux-gnu/bits/types/__fpos64_t.h
- /usr/include/x86_64-linux-gnu/bits/types/__FILE.h
- /usr/include/x86_64-linux-gnu/bits/types/FILE.h
- /usr/include/x86_64-linux-gnu/bits/types/struct_FILE.h
- /usr/include/x86_64-linux-gnu/bits/types/cookie_io_functions_t.h
- /usr/include/x86_64-linux-gnu/bits/stdio_lim.h
- /usr/include/x86_64-linux-gnu/bits/floatn.h
- /usr/include/x86_64-linux-gnu/bits/floatn-common.h
- /usr/include/fcntl.h
  /usr/include/x86_64-linux-gnu/bits/fcntl.h
  /usr/include/x86_64-linux-gnu/bits/fcntl-linux.h
  /usr/include/x86_64-linux-gnu/bits/types/struct_iovec.h
+ /usr/lib/gcc/x86_64-linux-gnu/11/include/stddef.h
  /usr/include/linux/falloc.h
  /usr/include/x86_64-linux-gnu/bits/types/struct_timespec.h
  /usr/include/x86_64-linux-gnu/bits/endian.h
@@ -61,6 +48,7 @@ CMakeFiles/serial_reading_node.dir/src/serial_reading.cpp.o
  /usr/include/x86_64-linux-gnu/bits/unistd_ext.h
  /usr/include/linux/close_range.h
  /usr/include/string.h
+ /usr/include/x86_64-linux-gnu/bits/libc-header-start.h
  /usr/include/x86_64-linux-gnu/bits/types/locale_t.h
  /usr/include/x86_64-linux-gnu/bits/types/__locale_t.h
  /usr/include/strings.h
@@ -163,8 +151,14 @@ CMakeFiles/serial_reading_node.dir/src/serial_reading.cpp.o
  /usr/include/c++/11/bits/postypes.h
  /usr/include/c++/11/cwchar
  /usr/include/wchar.h
+ /usr/include/x86_64-linux-gnu/bits/floatn.h
+ /usr/include/x86_64-linux-gnu/bits/floatn-common.h
+ /usr/lib/gcc/x86_64-linux-gnu/11/include/stdarg.h
  /usr/include/x86_64-linux-gnu/bits/types/wint_t.h
  /usr/include/x86_64-linux-gnu/bits/types/mbstate_t.h
+ /usr/include/x86_64-linux-gnu/bits/types/__mbstate_t.h
+ /usr/include/x86_64-linux-gnu/bits/types/__FILE.h
+ /usr/include/x86_64-linux-gnu/bits/types/FILE.h
  /usr/include/c++/11/bits/shared_ptr_base.h
  /usr/include/c++/11/typeinfo
  /usr/include/c++/11/bits/allocated_ptr.h
@@ -245,6 +239,12 @@ CMakeFiles/serial_reading_node.dir/src/serial_reading.cpp.o
  /usr/include/x86_64-linux-gnu/bits/stdlib-float.h
  /usr/include/c++/11/bits/std_abs.h
  /usr/include/c++/11/cstdio
+ /usr/include/stdio.h
+ /usr/include/x86_64-linux-gnu/bits/types/__fpos_t.h
+ /usr/include/x86_64-linux-gnu/bits/types/__fpos64_t.h
+ /usr/include/x86_64-linux-gnu/bits/types/struct_FILE.h
+ /usr/include/x86_64-linux-gnu/bits/types/cookie_io_functions_t.h
+ /usr/include/x86_64-linux-gnu/bits/stdio_lim.h
  /usr/include/c++/11/bits/charconv.h
  /usr/include/c++/11/bits/basic_string.tcc
  /usr/include/c++/11/bits/std_mutex.h
@@ -689,8 +689,8 @@ CMakeFiles/serial_reading_node.dir/src/serial_reading.cpp.o
  /opt/ros/humble/include/example_interfaces/example_interfaces/msg/detail/string__struct.hpp
  /opt/ros/humble/include/example_interfaces/example_interfaces/msg/detail/string__builder.hpp
  /opt/ros/humble/include/example_interfaces/example_interfaces/msg/detail/string__traits.hpp
- /home/insa/ros2_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/hardware_status.hpp
- /home/insa/ros2_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/hardware_status__struct.hpp
- /home/insa/ros2_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/hardware_status__builder.hpp
- /home/insa/ros2_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/hardware_status__traits.hpp
+ /home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/fire_sensor.hpp
+ /home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/fire_sensor__struct.hpp
+ /home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/fire_sensor__builder.hpp
+ /home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/fire_sensor__traits.hpp
 

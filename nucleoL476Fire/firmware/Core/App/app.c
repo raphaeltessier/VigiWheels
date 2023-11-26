@@ -50,7 +50,7 @@ void sending_data_uart()
 {
     reading_sensor_values();
 
-    sprintf(msg, "IR_SENSOR1=%hu|IR_SENSOR2=%u|IR_SENSOR3=%hu|IR_SENSOR4=%u|SMOKE_SENSOR1=%u|SMOKE_SENSOR2=%u\r\n", ir_sensor1, ir_sensor2, ir_sensor3, ir_sensor4, smoke_sensor1, smoke_sensor2);
+    sprintf(msg, "#IR_SENSOR1=%hu|IR_SENSOR2=%u|IR_SENSOR3=4095|IR_SENSOR4=0|SMOKE_SENSOR1=4095|SMOKE_SENSOR2=4095\r\n", ir_sensor1, ir_sensor2);
 
     HAL_UART_Transmit(&huart2, (const uint8_t *)msg, strlen(msg), 100);
 

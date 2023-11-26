@@ -37,16 +37,16 @@ void FireSensor_fini_function(void * message_memory)
   typed_message->~FireSensor();
 }
 
-static const ::rosidl_typesupport_introspection_cpp::MessageMember FireSensor_message_member_array[2] = {
+static const ::rosidl_typesupport_introspection_cpp::MessageMember FireSensor_message_member_array[6] = {
   {
-    "ir_sensor_1",  // name
+    "ir_sensor1",  // name
     ::rosidl_typesupport_introspection_cpp::ROS_TYPE_INT16,  // type
     0,  // upper bound of string
     nullptr,  // members of sub message
     false,  // is array
     0,  // array size
     false,  // is upper bound
-    offsetof(interfaces::msg::FireSensor, ir_sensor_1),  // bytes offset in struct
+    offsetof(interfaces::msg::FireSensor, ir_sensor1),  // bytes offset in struct
     nullptr,  // default value
     nullptr,  // size() function pointer
     nullptr,  // get_const(index) function pointer
@@ -56,14 +56,82 @@ static const ::rosidl_typesupport_introspection_cpp::MessageMember FireSensor_me
     nullptr  // resize(index) function pointer
   },
   {
-    "ir_sensor_2",  // name
+    "ir_sensor2",  // name
     ::rosidl_typesupport_introspection_cpp::ROS_TYPE_INT16,  // type
     0,  // upper bound of string
     nullptr,  // members of sub message
     false,  // is array
     0,  // array size
     false,  // is upper bound
-    offsetof(interfaces::msg::FireSensor, ir_sensor_2),  // bytes offset in struct
+    offsetof(interfaces::msg::FireSensor, ir_sensor2),  // bytes offset in struct
+    nullptr,  // default value
+    nullptr,  // size() function pointer
+    nullptr,  // get_const(index) function pointer
+    nullptr,  // get(index) function pointer
+    nullptr,  // fetch(index, &value) function pointer
+    nullptr,  // assign(index, value) function pointer
+    nullptr  // resize(index) function pointer
+  },
+  {
+    "ir_sensor3",  // name
+    ::rosidl_typesupport_introspection_cpp::ROS_TYPE_INT16,  // type
+    0,  // upper bound of string
+    nullptr,  // members of sub message
+    false,  // is array
+    0,  // array size
+    false,  // is upper bound
+    offsetof(interfaces::msg::FireSensor, ir_sensor3),  // bytes offset in struct
+    nullptr,  // default value
+    nullptr,  // size() function pointer
+    nullptr,  // get_const(index) function pointer
+    nullptr,  // get(index) function pointer
+    nullptr,  // fetch(index, &value) function pointer
+    nullptr,  // assign(index, value) function pointer
+    nullptr  // resize(index) function pointer
+  },
+  {
+    "ir_sensor4",  // name
+    ::rosidl_typesupport_introspection_cpp::ROS_TYPE_INT16,  // type
+    0,  // upper bound of string
+    nullptr,  // members of sub message
+    false,  // is array
+    0,  // array size
+    false,  // is upper bound
+    offsetof(interfaces::msg::FireSensor, ir_sensor4),  // bytes offset in struct
+    nullptr,  // default value
+    nullptr,  // size() function pointer
+    nullptr,  // get_const(index) function pointer
+    nullptr,  // get(index) function pointer
+    nullptr,  // fetch(index, &value) function pointer
+    nullptr,  // assign(index, value) function pointer
+    nullptr  // resize(index) function pointer
+  },
+  {
+    "smoke_sensor1",  // name
+    ::rosidl_typesupport_introspection_cpp::ROS_TYPE_INT16,  // type
+    0,  // upper bound of string
+    nullptr,  // members of sub message
+    false,  // is array
+    0,  // array size
+    false,  // is upper bound
+    offsetof(interfaces::msg::FireSensor, smoke_sensor1),  // bytes offset in struct
+    nullptr,  // default value
+    nullptr,  // size() function pointer
+    nullptr,  // get_const(index) function pointer
+    nullptr,  // get(index) function pointer
+    nullptr,  // fetch(index, &value) function pointer
+    nullptr,  // assign(index, value) function pointer
+    nullptr  // resize(index) function pointer
+  },
+  {
+    "smoke_sensor2",  // name
+    ::rosidl_typesupport_introspection_cpp::ROS_TYPE_INT16,  // type
+    0,  // upper bound of string
+    nullptr,  // members of sub message
+    false,  // is array
+    0,  // array size
+    false,  // is upper bound
+    offsetof(interfaces::msg::FireSensor, smoke_sensor2),  // bytes offset in struct
     nullptr,  // default value
     nullptr,  // size() function pointer
     nullptr,  // get_const(index) function pointer
@@ -77,7 +145,7 @@ static const ::rosidl_typesupport_introspection_cpp::MessageMember FireSensor_me
 static const ::rosidl_typesupport_introspection_cpp::MessageMembers FireSensor_message_members = {
   "interfaces::msg",  // message namespace
   "FireSensor",  // message name
-  2,  // number of fields
+  6,  // number of fields
   sizeof(interfaces::msg::FireSensor),
   FireSensor_message_member_array,  // message members
   FireSensor_init_function,  // function to initialize message memory (memory has to be allocated)

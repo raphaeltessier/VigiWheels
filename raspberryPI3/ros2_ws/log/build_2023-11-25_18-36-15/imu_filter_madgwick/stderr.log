@@ -1,0 +1,5 @@
+gmake[2]: *** [CMakeFiles/imu_filter_madgwick.dir/build.make:90: CMakeFiles/imu_filter_madgwick.dir/src/imu_filter_ros.cpp.o] Interrupt
+gmake[1]: *** wait: No child processes.  Stop.
+gmake[1]: *** Waiting for unfinished jobs....
+gmake[1]: *** wait: No child processes.  Stop.
+gmake: *** [Makefile:146: all] Error 2

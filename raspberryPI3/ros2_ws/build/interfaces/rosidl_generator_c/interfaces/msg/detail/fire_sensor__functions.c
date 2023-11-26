@@ -17,8 +17,12 @@ interfaces__msg__FireSensor__init(interfaces__msg__FireSensor * msg)
   if (!msg) {
     return false;
   }
-  // ir_sensor_1
-  // ir_sensor_2
+  // ir_sensor1
+  // ir_sensor2
+  // ir_sensor3
+  // ir_sensor4
+  // smoke_sensor1
+  // smoke_sensor2
   return true;
 }
 
@@ -28,8 +32,12 @@ interfaces__msg__FireSensor__fini(interfaces__msg__FireSensor * msg)
   if (!msg) {
     return;
   }
-  // ir_sensor_1
-  // ir_sensor_2
+  // ir_sensor1
+  // ir_sensor2
+  // ir_sensor3
+  // ir_sensor4
+  // smoke_sensor1
+  // smoke_sensor2
 }
 
 bool
@@ -38,12 +46,28 @@ interfaces__msg__FireSensor__are_equal(const interfaces__msg__FireSensor * lhs, 
   if (!lhs || !rhs) {
     return false;
   }
-  // ir_sensor_1
-  if (lhs->ir_sensor_1 != rhs->ir_sensor_1) {
+  // ir_sensor1
+  if (lhs->ir_sensor1 != rhs->ir_sensor1) {
     return false;
   }
-  // ir_sensor_2
-  if (lhs->ir_sensor_2 != rhs->ir_sensor_2) {
+  // ir_sensor2
+  if (lhs->ir_sensor2 != rhs->ir_sensor2) {
+    return false;
+  }
+  // ir_sensor3
+  if (lhs->ir_sensor3 != rhs->ir_sensor3) {
+    return false;
+  }
+  // ir_sensor4
+  if (lhs->ir_sensor4 != rhs->ir_sensor4) {
+    return false;
+  }
+  // smoke_sensor1
+  if (lhs->smoke_sensor1 != rhs->smoke_sensor1) {
+    return false;
+  }
+  // smoke_sensor2
+  if (lhs->smoke_sensor2 != rhs->smoke_sensor2) {
     return false;
   }
   return true;
@@ -57,10 +81,18 @@ interfaces__msg__FireSensor__copy(
   if (!input || !output) {
     return false;
   }
-  // ir_sensor_1
-  output->ir_sensor_1 = input->ir_sensor_1;
-  // ir_sensor_2
-  output->ir_sensor_2 = input->ir_sensor_2;
+  // ir_sensor1
+  output->ir_sensor1 = input->ir_sensor1;
+  // ir_sensor2
+  output->ir_sensor2 = input->ir_sensor2;
+  // ir_sensor3
+  output->ir_sensor3 = input->ir_sensor3;
+  // ir_sensor4
+  output->ir_sensor4 = input->ir_sensor4;
+  // smoke_sensor1
+  output->smoke_sensor1 = input->smoke_sensor1;
+  // smoke_sensor2
+  output->smoke_sensor2 = input->smoke_sensor2;
   return true;
 }
 

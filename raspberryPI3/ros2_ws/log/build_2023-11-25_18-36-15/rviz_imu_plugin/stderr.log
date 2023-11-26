@@ -1,0 +1,13 @@
+gmake[2]: *** [CMakeFiles/rviz_imu_plugin.dir/build.make:90: CMakeFiles/rviz_imu_plugin.dir/src/imu_display.cpp.o] Interrupt
+gmake[2]: *** [CMakeFiles/rviz_imu_plugin.dir/build.make:104: CMakeFiles/rviz_imu_plugin.dir/src/imu_orientation_visual.cpp.o] Interrupt
+gmake[2]: *** [CMakeFiles/rviz_imu_plugin.dir/build.make:118: CMakeFiles/rviz_imu_plugin.dir/src/imu_axes_visual.cpp.o] Interrupt
+gmake[2]: *** [CMakeFiles/rviz_imu_plugin.dir/build.make:146: CMakeFiles/rviz_imu_plugin.dir/src/mag_display.cpp.o] Interrupt
+gmake[2]: *** wait: No child processes.  Stop.
+gmake[2]: *** Waiting for unfinished jobs....
+gmake[2]: *** wait: No child processes.  Stop.
+gmake[1]: *** wait: No child processes.  Stop.
+gmake[1]: *** Waiting for unfinished jobs....
+gmake[1]: *** wait: No child processes.  Stop.
+gmake: *** wait: No child processes.  Stop.
+gmake: *** Waiting for unfinished jobs....
+gmake: *** wait: No child processes.  Stop.

@@ -1,0 +1,259 @@
+[0.000000] (-) TimerEvent: {}
+[0.000198] (-) JobUnselected: {'identifier': 'can'}
+[0.000264] (-) JobUnselected: {'identifier': 'car_control'}
+[0.000277] (-) JobUnselected: {'identifier': 'carla_msgs'}
+[0.000287] (-) JobUnselected: {'identifier': 'geicar_start'}
+[0.000297] (-) JobUnselected: {'identifier': 'imu_complementary_filter'}
+[0.000307] (-) JobUnselected: {'identifier': 'imu_filter_madgwick'}
+[0.000316] (-) JobUnselected: {'identifier': 'imu_tools'}
+[0.000326] (-) JobUnselected: {'identifier': 'interfaces'}
+[0.000335] (-) JobUnselected: {'identifier': 'joystick'}
+[0.000345] (-) JobUnselected: {'identifier': 'rviz_imu_plugin'}
+[0.000355] (-) JobUnselected: {'identifier': 'simulation'}
+[0.000364] (-) JobUnselected: {'identifier': 'system_check'}
+[0.000375] (fire_detection) JobQueued: {'identifier': 'fire_detection', 'dependencies': OrderedDict([('interfaces', '/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/install/interfaces')])}
+[0.000390] (fire_detection) JobStarted: {'identifier': 'fire_detection'}
+[0.048535] (fire_detection) JobProgress: {'identifier': 'fire_detection', 'progress': 'cmake'}
+[0.049318] (fire_detection) JobProgress: {'identifier': 'fire_detection', 'progress': 'build'}
+[0.049335] (fire_detection) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/build/fire_detection', '--', '-j8', '-l8'], 'cwd': '/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/build/fire_detection', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'insa'), ('LC_TIME', 'fr_FR.UTF-8'), ('XDG_SESSION_TYPE', 'wayland'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/install/interfaces/lib:/home/insa/ros2_ws/install/my_robot_interfaces/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/insa'), ('OLDPWD', '/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/src'), ('DESKTOP_SESSION', 'ubuntu'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('LC_MONETARY', 'fr_FR.UTF-8'), ('MANAGERPID', '1664'), ('SYSTEMD_EXEC_PID', '2043'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('TERMINATOR_DBUS_NAME', 'net.tenshu.Terminator25ef4b219e3b005583550f2b0f9f990c3'), ('GIO_LAUNCHED_DESKTOP_FILE_PID', '4004'), ('IM_CONFIG_PHASE', '1'), ('WAYLAND_DISPLAY', 'wayland-0'), ('COLCON_PREFIX_PATH', '/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/install:/home/insa/ros2_ws/install'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'insa'), ('JOURNAL_STREAM', '8:35205'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'insa'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin'), ('SESSION_MANAGER', 'local/insa-ThinkPad-T14-Gen-2i:@/tmp/.ICE-unix/1858,unix/insa-ThinkPad-T14-Gen-2i:/tmp/.ICE-unix/1858'), ('INVOCATION_ID', 'bbb3e55367ee4cb8986947756b528187'), ('XDG_MENU_PREFIX', 'gnome-'), ('LC_ADDRESS', 'fr_FR.UTF-8'), ('GNOME_SETUP_DISPLAY', ':1'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('TERMINATOR_DBUS_PATH', '/net/tenshu/Terminator2'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('IBUS_DISABLE_SNOOPER', '1'), ('LC_TELEPHONE', 'fr_FR.UTF-8'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/.mutter-Xwaylandauth.9QE0E2'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('AMENT_PREFIX_PATH', '/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/install/fire_detection:/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/install/interfaces:/home/insa/ros2_ws/install/my_fire_pkg:/home/insa/ros2_ws/install/demo_sensor_pkg:/home/insa/ros2_ws/install/my_robot_interfaces:/home/insa/ros2_ws/install/my_cpp_pkg:/home/insa/ros2_ws/install/johann_cpp_pkg:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('LC_NAME', 'fr_FR.UTF-8'), ('TERMINATOR_UUID', 'urn:uuid:872a4073-3000-4e56-a3d8-d7a93b478b07'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('LC_MEASUREMENT', 'fr_FR.UTF-8'), ('LC_IDENTIFICATION', 'fr_FR.UTF-8'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/build/fire_detection'), ('TURTLEBOT3_MODEL', 'waffle'), ('LC_ALL', 'en_US.UTF-8'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/install/interfaces/local/lib/python3.10/dist-packages:/home/insa/ros2_ws/install/my_robot_interfaces/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('LC_NUMERIC', 'fr_FR.UTF-8'), ('LC_PAPER', 'fr_FR.UTF-8'), ('COLCON', '1'), ('VTE_VERSION', '6800'), ('CMAKE_PREFIX_PATH', '/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/install/interfaces:/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/install/fire_detection:/home/insa/ros2_ws/install/my_fire_pkg:/home/insa/ros2_ws/install/demo_sensor_pkg:/home/insa/ros2_ws/install/my_robot_interfaces:/home/insa/ros2_ws/install/my_cpp_pkg:/home/insa/ros2_ws/install/johann_cpp_pkg:/opt/ros/humble')]), 'shell': False}
+[0.079034] (fire_detection) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target serial_reading_node\x1b[0m\n'}
+[0.079282] (fire_detection) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target processing_data_fire_node\x1b[0m\n'}
+[0.090045] (fire_detection) StdoutLine: {'line': b'[ 25%] \x1b[32mBuilding CXX object CMakeFiles/serial_reading_node.dir/src/serial_reading.cpp.o\x1b[0m\n'}
+[0.090386] (fire_detection) StdoutLine: {'line': b'[ 50%] \x1b[32mBuilding CXX object CMakeFiles/processing_data_fire_node.dir/src/processing_data_fire.cpp.o\x1b[0m\n'}
+[0.099624] (-) TimerEvent: {}
+[0.199889] (-) TimerEvent: {}
+[0.300163] (-) TimerEvent: {}
+[0.400486] (-) TimerEvent: {}
+[0.500822] (-) TimerEvent: {}
+[0.601209] (-) TimerEvent: {}
+[0.701608] (-) TimerEvent: {}
+[0.801887] (-) TimerEvent: {}
+[0.902167] (-) TimerEvent: {}
+[1.002439] (-) TimerEvent: {}
+[1.102733] (-) TimerEvent: {}
+[1.203087] (-) TimerEvent: {}
+[1.303509] (-) TimerEvent: {}
+[1.403836] (-) TimerEvent: {}
+[1.504136] (-) TimerEvent: {}
+[1.604440] (-) TimerEvent: {}
+[1.704723] (-) TimerEvent: {}
+[1.721214] (fire_detection) StderrLine: {'line': b'\x1b[01m\x1b[K/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/src/fire_detection/src/serial_reading.cpp:\x1b[m\x1b[K In constructor \xe2\x80\x98\x1b[01m\x1b[KSerialReadingNode::SerialReadingNode()\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[1.721993] (fire_detection) StderrLine: {'line': b'\x1b[01m\x1b[K/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/src/fire_detection/src/serial_reading.cpp:22:26:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kno matching function for call to \xe2\x80\x98\x1b[01m\x1b[Kstd::shared_ptr<interfaces::msg::FireSensor_<std::allocator<void> > >::shared_ptr(std::shared_ptr<rclcpp::Publisher<interfaces::msg::FireSensor_<std::allocator<void> >, std::allocator<void> > >)\x1b[m\x1b[K\xe2\x80\x99\n'}
+[1.722064] (fire_detection) StderrLine: {'line': b'   22 |                          \x1b[01;31m\x1b[Kpublisher_(create_publisher<interfaces::msg::FireSensor>("data_fire", 10))\x1b[m\x1b[K,\n'}
+[1.722122] (fire_detection) StderrLine: {'line': b'      |                          \x1b[01;31m\x1b[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[1.722176] (fire_detection) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/usr/include/c++/11/memory:77\x1b[m\x1b[K,\n'}
+[1.722230] (fire_detection) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:153\x1b[m\x1b[K,\n'}
+[1.722284] (fire_detection) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/src/fire_detection/src/serial_reading.cpp:8\x1b[m\x1b[K:\n'}
+[1.722337] (fire_detection) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/11/bits/shared_ptr.h:408:9:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Ktemplate<class _Alloc, class ... _Args> std::shared_ptr<_Tp>::shared_ptr(std::_Sp_alloc_shared_tag<_Tp>, _Args&& ...) [with _Alloc = _Alloc; _Args = {_Args ...}; _Tp = interfaces::msg::FireSensor_<std::allocator<void> >]\x1b[m\x1b[K\xe2\x80\x99\n'}
+[1.722392] (fire_detection) StderrLine: {'line': b'  408 |         \x1b[01;36m\x1b[Kshared_ptr\x1b[m\x1b[K(_Sp_alloc_shared_tag<_Alloc> __tag, _Args&&... __args)\n'}
+[1.722445] (fire_detection) StderrLine: {'line': b'      |         \x1b[01;36m\x1b[K^~~~~~~~~~\x1b[m\x1b[K\n'}
+[1.722497] (fire_detection) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/11/bits/shared_ptr.h:408:9:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  template argument deduction/substitution failed:\n'}
+[1.722550] (fire_detection) StderrLine: {'line': b'\x1b[01m\x1b[K/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/src/fire_detection/src/serial_reading.cpp:22:26:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  \xe2\x80\x98\x1b[01m\x1b[Kstd::shared_ptr<rclcpp::Publisher<interfaces::msg::FireSensor_<std::allocator<void> >, std::allocator<void> > >\x1b[m\x1b[K\xe2\x80\x99 is not derived from \xe2\x80\x98\x1b[01m\x1b[Kstd::_Sp_alloc_shared_tag<_Tp>\x1b[m\x1b[K\xe2\x80\x99\n'}
+[1.722608] (fire_detection) StderrLine: {'line': b'   22 |                          \x1b[01;36m\x1b[Kpublisher_(create_publisher<interfaces::msg::FireSensor>("data_fire", 10))\x1b[m\x1b[K,\n'}
+[1.722661] (fire_detection) StderrLine: {'line': b'      |                          \x1b[01;36m\x1b[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[1.722713] (fire_detection) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/usr/include/c++/11/memory:77\x1b[m\x1b[K,\n'}
+[1.722764] (fire_detection) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:153\x1b[m\x1b[K,\n'}
+[1.722816] (fire_detection) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/src/fire_detection/src/serial_reading.cpp:8\x1b[m\x1b[K:\n'}
+[1.722867] (fire_detection) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/11/bits/shared_ptr.h:340:9:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Ktemplate<class _Yp, class _Del, class> std::shared_ptr<_Tp>::shared_ptr(std::unique_ptr<_Up, _Ep>&&) [with _Yp = _Yp; _Del = _Del; <template-parameter-2-3> = <template-parameter-1-3>; _Tp = interfaces::msg::FireSensor_<std::allocator<void> >]\x1b[m\x1b[K\xe2\x80\x99\n'}
+[1.722977] (fire_detection) StderrLine: {'line': b'  340 |         \x1b[01;36m\x1b[Kshared_ptr\x1b[m\x1b[K(unique_ptr<_Yp, _Del>&& __r)\n'}
+[1.723027] (fire_detection) StderrLine: {'line': b'      |         \x1b[01;36m\x1b[K^~~~~~~~~~\x1b[m\x1b[K\n'}
+[1.723076] (fire_detection) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/11/bits/shared_ptr.h:340:9:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  template argument deduction/substitution failed:\n'}
+[1.723125] (fire_detection) StderrLine: {'line': b'\x1b[01m\x1b[K/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/src/fire_detection/src/serial_reading.cpp:22:26:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  \xe2\x80\x98\x1b[01m\x1b[Kstd::shared_ptr<rclcpp::Publisher<interfaces::msg::FireSensor_<std::allocator<void> >, std::allocator<void> > >\x1b[m\x1b[K\xe2\x80\x99 is not derived from \xe2\x80\x98\x1b[01m\x1b[Kstd::unique_ptr<_Tp, _Dp>\x1b[m\x1b[K\xe2\x80\x99\n'}
+[1.723176] (fire_detection) StderrLine: {'line': b'   22 |                          \x1b[01;36m\x1b[Kpublisher_(create_publisher<interfaces::msg::FireSensor>("data_fire", 10))\x1b[m\x1b[K,\n'}
+[1.723224] (fire_detection) StderrLine: {'line': b'      |                          \x1b[01;36m\x1b[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[1.723275] (fire_detection) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/usr/include/c++/11/memory:77\x1b[m\x1b[K,\n'}
+[1.723322] (fire_detection) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:153\x1b[m\x1b[K,\n'}
+[1.723369] (fire_detection) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/src/fire_detection/src/serial_reading.cpp:8\x1b[m\x1b[K:\n'}
+[1.723416] (fire_detection) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/11/bits/shared_ptr.h:332:9:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Ktemplate<class _Yp, class> std::shared_ptr<_Tp>::shared_ptr(std::auto_ptr<_Up>&&) [with _Yp = _Tp1; <template-parameter-2-2> = <template-parameter-1-2>; _Tp = interfaces::msg::FireSensor_<std::allocator<void> >]\x1b[m\x1b[K\xe2\x80\x99\n'}
+[1.723467] (fire_detection) StderrLine: {'line': b'  332 |         \x1b[01;36m\x1b[Kshared_ptr\x1b[m\x1b[K(auto_ptr<_Yp>&& __r);\n'}
+[1.723514] (fire_detection) StderrLine: {'line': b'      |         \x1b[01;36m\x1b[K^~~~~~~~~~\x1b[m\x1b[K\n'}
+[1.723559] (fire_detection) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/11/bits/shared_ptr.h:332:9:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  template argument deduction/substitution failed:\n'}
+[1.723607] (fire_detection) StderrLine: {'line': b'\x1b[01m\x1b[K/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/src/fire_detection/src/serial_reading.cpp:22:26:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  \xe2\x80\x98\x1b[01m\x1b[Kstd::shared_ptr<rclcpp::Publisher<interfaces::msg::FireSensor_<std::allocator<void> >, std::allocator<void> > >\x1b[m\x1b[K\xe2\x80\x99 is not derived from \xe2\x80\x98\x1b[01m\x1b[Kstd::auto_ptr<_Up>\x1b[m\x1b[K\xe2\x80\x99\n'}
+[1.723656] (fire_detection) StderrLine: {'line': b'   22 |                          \x1b[01;36m\x1b[Kpublisher_(create_publisher<interfaces::msg::FireSensor>("data_fire", 10))\x1b[m\x1b[K,\n'}
+[1.723703] (fire_detection) StderrLine: {'line': b'      |                          \x1b[01;36m\x1b[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[1.723751] (fire_detection) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/usr/include/c++/11/memory:77\x1b[m\x1b[K,\n'}
+[1.723799] (fire_detection) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:153\x1b[m\x1b[K,\n'}
+[1.723850] (fire_detection) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/src/fire_detection/src/serial_reading.cpp:8\x1b[m\x1b[K:\n'}
+[1.723898] (fire_detection) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/11/bits/shared_ptr.h:325:18:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Ktemplate<class _Yp, class> std::shared_ptr<_Tp>::shared_ptr(const std::weak_ptr<_Yp>&) [with _Yp = _Yp; <template-parameter-2-2> = <template-parameter-1-2>; _Tp = interfaces::msg::FireSensor_<std::allocator<void> >]\x1b[m\x1b[K\xe2\x80\x99\n'}
+[1.723951] (fire_detection) StderrLine: {'line': b'  325 |         explicit \x1b[01;36m\x1b[Kshared_ptr\x1b[m\x1b[K(const weak_ptr<_Yp>& __r)\n'}
+[1.724000] (fire_detection) StderrLine: {'line': b'      |                  \x1b[01;36m\x1b[K^~~~~~~~~~\x1b[m\x1b[K\n'}
+[1.724047] (fire_detection) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/11/bits/shared_ptr.h:325:18:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  template argument deduction/substitution failed:\n'}
+[1.724095] (fire_detection) StderrLine: {'line': b'\x1b[01m\x1b[K/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/src/fire_detection/src/serial_reading.cpp:22:26:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  \xe2\x80\x98\x1b[01m\x1b[Kstd::shared_ptr<rclcpp::Publisher<interfaces::msg::FireSensor_<std::allocator<void> >, std::allocator<void> > >\x1b[m\x1b[K\xe2\x80\x99 is not derived from \xe2\x80\x98\x1b[01m\x1b[Kconst std::weak_ptr<_Tp>\x1b[m\x1b[K\xe2\x80\x99\n'}
+[1.724145] (fire_detection) StderrLine: {'line': b'   22 |                          \x1b[01;36m\x1b[Kpublisher_(create_publisher<interfaces::msg::FireSensor>("data_fire", 10))\x1b[m\x1b[K,\n'}
+[1.724193] (fire_detection) StderrLine: {'line': b'      |                          \x1b[01;36m\x1b[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[1.724240] (fire_detection) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/usr/include/c++/11/memory:77\x1b[m\x1b[K,\n'}
+[1.724316] (fire_detection) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:153\x1b[m\x1b[K,\n'}
+[1.724367] (fire_detection) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/src/fire_detection/src/serial_reading.cpp:8\x1b[m\x1b[K:\n'}
+[1.724415] (fire_detection) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/11/bits/shared_ptr.h:313:9:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Ktemplate<class _Yp, class> std::shared_ptr<_Tp>::shared_ptr(std::shared_ptr<_Yp>&&) [with _Yp = _Yp; <template-parameter-2-2> = <template-parameter-1-2>; _Tp = interfaces::msg::FireSensor_<std::allocator<void> >]\x1b[m\x1b[K\xe2\x80\x99\n'}
+[1.724465] (fire_detection) StderrLine: {'line': b'  313 |         \x1b[01;36m\x1b[Kshared_ptr\x1b[m\x1b[K(shared_ptr<_Yp>&& __r) noexcept\n'}
+[1.724513] (fire_detection) StderrLine: {'line': b'      |         \x1b[01;36m\x1b[K^~~~~~~~~~\x1b[m\x1b[K\n'}
+[1.724560] (fire_detection) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/11/bits/shared_ptr.h:313:9:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  template argument deduction/substitution failed:\n'}
+[1.724607] (fire_detection) StderrLine: {'line': b'/usr/include/c++/11/bits/shared_ptr.h: In substitution of \xe2\x80\x98\x1b[01m\x1b[Ktemplate<class _Tp> template<class ... _Args> using _Constructible = typename std::enable_if<std::is_constructible<std::__shared_ptr<_Tp>, _Args ...>::value>::type [with _Args = {std::shared_ptr<rclcpp::Publisher<interfaces::msg::FireSensor_<std::allocator<void> >, std::allocator<void> > >}; _Tp = interfaces::msg::FireSensor_<std::allocator<void> >]\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[1.724662] (fire_detection) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/11/bits/shared_ptr.h:312:30:\x1b[m\x1b[K   required from here\n'}
+[1.724712] (fire_detection) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/11/bits/shared_ptr.h:125:15:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kno type named \xe2\x80\x98\x1b[01m\x1b[Ktype\x1b[m\x1b[K\xe2\x80\x99 in \xe2\x80\x98\x1b[01m\x1b[Kstruct std::enable_if<false, void>\x1b[m\x1b[K\xe2\x80\x99\n'}
+[1.724763] (fire_detection) StderrLine: {'line': b'  125 |         using \x1b[01;31m\x1b[K_Constructible\x1b[m\x1b[K = typename enable_if<\n'}
+[1.724810] (fire_detection) StderrLine: {'line': b'      |               \x1b[01;31m\x1b[K^~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[1.724860] (fire_detection) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/11/bits/shared_ptr.h:296:9:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Ktemplate<class _Yp, class> std::shared_ptr<_Tp>::shared_ptr(const std::shared_ptr<_Yp>&) [with _Yp = _Yp; <template-parameter-2-2> = <template-parameter-1-2>; _Tp = interfaces::msg::FireSensor_<std::allocator<void> >]\x1b[m\x1b[K\xe2\x80\x99\n'}
+[1.724910] (fire_detection) StderrLine: {'line': b'  296 |         \x1b[01;36m\x1b[Kshared_ptr\x1b[m\x1b[K(const shared_ptr<_Yp>& __r) noexcept\n'}
+[1.724958] (fire_detection) StderrLine: {'line': b'      |         \x1b[01;36m\x1b[K^~~~~~~~~~\x1b[m\x1b[K\n'}
+[1.725006] (fire_detection) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/11/bits/shared_ptr.h:296:9:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  template argument deduction/substitution failed:\n'}
+[1.725055] (fire_detection) StderrLine: {'line': b'/usr/include/c++/11/bits/shared_ptr.h: In substitution of \xe2\x80\x98\x1b[01m\x1b[Ktemplate<class _Tp> template<class ... _Args> using _Constructible = typename std::enable_if<std::is_constructible<std::__shared_ptr<_Tp>, _Args ...>::value>::type [with _Args = {const std::shared_ptr<rclcpp::Publisher<interfaces::msg::FireSensor_<std::allocator<void> >, std::allocator<void> > >&}; _Tp = interfaces::msg::FireSensor_<std::allocator<void> >]\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[1.725107] (fire_detection) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/11/bits/shared_ptr.h:295:9:\x1b[m\x1b[K   required from here\n'}
+[1.725155] (fire_detection) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/11/bits/shared_ptr.h:125:15:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kno type named \xe2\x80\x98\x1b[01m\x1b[Ktype\x1b[m\x1b[K\xe2\x80\x99 in \xe2\x80\x98\x1b[01m\x1b[Kstruct std::enable_if<false, void>\x1b[m\x1b[K\xe2\x80\x99\n'}
+[1.725204] (fire_detection) StderrLine: {'line': b'  125 |         using \x1b[01;31m\x1b[K_Constructible\x1b[m\x1b[K = typename enable_if<\n'}
+[1.725252] (fire_detection) StderrLine: {'line': b'      |               \x1b[01;31m\x1b[K^~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[1.725300] (fire_detection) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/11/bits/shared_ptr.h:257:9:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Ktemplate<class _Yp> std::shared_ptr<_Tp>::shared_ptr(const std::shared_ptr<_Yp>&, std::shared_ptr<_Tp>::element_type*) [with _Yp = _Yp; _Tp = interfaces::msg::FireSensor_<std::allocator<void> >]\x1b[m\x1b[K\xe2\x80\x99\n'}
+[1.725350] (fire_detection) StderrLine: {'line': b'  257 |         \x1b[01;36m\x1b[Kshared_ptr\x1b[m\x1b[K(const shared_ptr<_Yp>& __r, element_type* __p) noexcept\n'}
+[1.725411] (fire_detection) StderrLine: {'line': b'      |         \x1b[01;36m\x1b[K^~~~~~~~~~\x1b[m\x1b[K\n'}
+[1.725472] (fire_detection) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/11/bits/shared_ptr.h:257:9:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  template argument deduction/substitution failed:\n'}
+[1.725520] (fire_detection) StderrLine: {'line': b'\x1b[01m\x1b[K/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/src/fire_detection/src/serial_reading.cpp:22:26:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  candidate expects 2 arguments, 1 provided\n'}
+[1.725569] (fire_detection) StderrLine: {'line': b'   22 |                          \x1b[01;36m\x1b[Kpublisher_(create_publisher<interfaces::msg::FireSensor>("data_fire", 10))\x1b[m\x1b[K,\n'}
+[1.725624] (fire_detection) StderrLine: {'line': b'      |                          \x1b[01;36m\x1b[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[1.725672] (fire_detection) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/usr/include/c++/11/memory:77\x1b[m\x1b[K,\n'}
+[1.725721] (fire_detection) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:153\x1b[m\x1b[K,\n'}
+[1.725769] (fire_detection) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/src/fire_detection/src/serial_reading.cpp:8\x1b[m\x1b[K:\n'}
+[1.725817] (fire_detection) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/11/bits/shared_ptr.h:233:9:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Ktemplate<class _Deleter, class _Alloc> std::shared_ptr<_Tp>::shared_ptr(std::nullptr_t, _Deleter, _Alloc) [with _Deleter = _Deleter; _Alloc = _Alloc; _Tp = interfaces::msg::FireSensor_<std::allocator<void> >]\x1b[m\x1b[K\xe2\x80\x99\n'}
+[1.725868] (fire_detection) StderrLine: {'line': b'  233 |         \x1b[01;36m\x1b[Kshared_ptr\x1b[m\x1b[K(nullptr_t __p, _Deleter __d, _Alloc __a)\n'}
+[1.725917] (fire_detection) StderrLine: {'line': b'      |         \x1b[01;36m\x1b[K^~~~~~~~~~\x1b[m\x1b[K\n'}
+[1.725964] (fire_detection) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/11/bits/shared_ptr.h:233:9:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  template argument deduction/substitution failed:\n'}
+[1.726012] (fire_detection) StderrLine: {'line': b'\x1b[01m\x1b[K/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/src/fire_detection/src/serial_reading.cpp:22:26:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  candidate expects 3 arguments, 1 provided\n'}
+[1.726060] (fire_detection) StderrLine: {'line': b'   22 |                          \x1b[01;36m\x1b[Kpublisher_(create_publisher<interfaces::msg::FireSensor>("data_fire", 10))\x1b[m\x1b[K,\n'}
+[1.726111] (fire_detection) StderrLine: {'line': b'      |                          \x1b[01;36m\x1b[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[1.726159] (fire_detection) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/usr/include/c++/11/memory:77\x1b[m\x1b[K,\n'}
+[1.726208] (fire_detection) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:153\x1b[m\x1b[K,\n'}
+[1.726257] (fire_detection) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/src/fire_detection/src/serial_reading.cpp:8\x1b[m\x1b[K:\n'}
+[1.726304] (fire_detection) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/11/bits/shared_ptr.h:214:9:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Ktemplate<class _Yp, class _Deleter, class _Alloc, class> std::shared_ptr<_Tp>::shared_ptr(_Yp*, _Deleter, _Alloc) [with _Yp = _Yp; _Deleter = _Deleter; _Alloc = _Alloc; <template-parameter-2-4> = <template-parameter-1-4>; _Tp = interfaces::msg::FireSensor_<std::allocator<void> >]\x1b[m\x1b[K\xe2\x80\x99\n'}
+[1.726355] (fire_detection) StderrLine: {'line': b'  214 |         \x1b[01;36m\x1b[Kshared_ptr\x1b[m\x1b[K(_Yp* __p, _Deleter __d, _Alloc __a)\n'}
+[1.726403] (fire_detection) StderrLine: {'line': b'      |         \x1b[01;36m\x1b[K^~~~~~~~~~\x1b[m\x1b[K\n'}
+[1.726451] (fire_detection) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/11/bits/shared_ptr.h:214:9:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  template argument deduction/substitution failed:\n'}
+[1.726500] (fire_detection) StderrLine: {'line': b'\x1b[01m\x1b[K/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/src/fire_detection/src/serial_reading.cpp:22:26:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  mismatched types \xe2\x80\x98\x1b[01m\x1b[K_Yp*\x1b[m\x1b[K\xe2\x80\x99 and \xe2\x80\x98\x1b[01m\x1b[Kstd::shared_ptr<rclcpp::Publisher<interfaces::msg::FireSensor_<std::allocator<void> >, std::allocator<void> > >\x1b[m\x1b[K\xe2\x80\x99\n'}
+[1.726557] (fire_detection) StderrLine: {'line': b'   22 |                          \x1b[01;36m\x1b[Kpublisher_(create_publisher<interfaces::msg::FireSensor>("data_fire", 10))\x1b[m\x1b[K,\n'}
+[1.726607] (fire_detection) StderrLine: {'line': b'      |                          \x1b[01;36m\x1b[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[1.726656] (fire_detection) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/usr/include/c++/11/memory:77\x1b[m\x1b[K,\n'}
+[1.726704] (fire_detection) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:153\x1b[m\x1b[K,\n'}
+[1.726752] (fire_detection) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/src/fire_detection/src/serial_reading.cpp:8\x1b[m\x1b[K:\n'}
+[1.726801] (fire_detection) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/11/bits/shared_ptr.h:194:9:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Ktemplate<class _Deleter> std::shared_ptr<_Tp>::shared_ptr(std::nullptr_t, _Deleter) [with _Deleter = _Deleter; _Tp = interfaces::msg::FireSensor_<std::allocator<void> >]\x1b[m\x1b[K\xe2\x80\x99\n'}
+[1.726851] (fire_detection) StderrLine: {'line': b'  194 |         \x1b[01;36m\x1b[Kshared_ptr\x1b[m\x1b[K(nullptr_t __p, _Deleter __d)\n'}
+[1.726899] (fire_detection) StderrLine: {'line': b'      |         \x1b[01;36m\x1b[K^~~~~~~~~~\x1b[m\x1b[K\n'}
+[1.726947] (fire_detection) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/11/bits/shared_ptr.h:194:9:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  template argument deduction/substitution failed:\n'}
+[1.726994] (fire_detection) StderrLine: {'line': b'\x1b[01m\x1b[K/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/src/fire_detection/src/serial_reading.cpp:22:26:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  candidate expects 2 arguments, 1 provided\n'}
+[1.727045] (fire_detection) StderrLine: {'line': b'   22 |                          \x1b[01;36m\x1b[Kpublisher_(create_publisher<interfaces::msg::FireSensor>("data_fire", 10))\x1b[m\x1b[K,\n'}
+[1.727094] (fire_detection) StderrLine: {'line': b'      |                          \x1b[01;36m\x1b[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[1.727142] (fire_detection) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/usr/include/c++/11/memory:77\x1b[m\x1b[K,\n'}
+[1.727192] (fire_detection) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:153\x1b[m\x1b[K,\n'}
+[1.727243] (fire_detection) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/src/fire_detection/src/serial_reading.cpp:8\x1b[m\x1b[K:\n'}
+[1.727290] (fire_detection) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/11/bits/shared_ptr.h:177:9:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Ktemplate<class _Yp, class _Deleter, class> std::shared_ptr<_Tp>::shared_ptr(_Yp*, _Deleter) [with _Yp = _Yp; _Deleter = _Deleter; <template-parameter-2-3> = <template-parameter-1-3>; _Tp = interfaces::msg::FireSensor_<std::allocator<void> >]\x1b[m\x1b[K\xe2\x80\x99\n'}
+[1.727340] (fire_detection) StderrLine: {'line': b'  177 |         \x1b[01;36m\x1b[Kshared_ptr\x1b[m\x1b[K(_Yp* __p, _Deleter __d)\n'}
+[1.727389] (fire_detection) StderrLine: {'line': b'      |         \x1b[01;36m\x1b[K^~~~~~~~~~\x1b[m\x1b[K\n'}
+[1.727436] (fire_detection) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/11/bits/shared_ptr.h:177:9:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  template argument deduction/substitution failed:\n'}
+[1.727485] (fire_detection) StderrLine: {'line': b'\x1b[01m\x1b[K/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/src/fire_detection/src/serial_reading.cpp:22:26:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  mismatched types \xe2\x80\x98\x1b[01m\x1b[K_Yp*\x1b[m\x1b[K\xe2\x80\x99 and \xe2\x80\x98\x1b[01m\x1b[Kstd::shared_ptr<rclcpp::Publisher<interfaces::msg::FireSensor_<std::allocator<void> >, std::allocator<void> > >\x1b[m\x1b[K\xe2\x80\x99\n'}
+[1.727541] (fire_detection) StderrLine: {'line': b'   22 |                          \x1b[01;36m\x1b[Kpublisher_(create_publisher<interfaces::msg::FireSensor>("data_fire", 10))\x1b[m\x1b[K,\n'}
+[1.727589] (fire_detection) StderrLine: {'line': b'      |                          \x1b[01;36m\x1b[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[1.727638] (fire_detection) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/usr/include/c++/11/memory:77\x1b[m\x1b[K,\n'}
+[1.727689] (fire_detection) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:153\x1b[m\x1b[K,\n'}
+[1.727738] (fire_detection) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/src/fire_detection/src/serial_reading.cpp:8\x1b[m\x1b[K:\n'}
+[1.727787] (fire_detection) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/11/bits/shared_ptr.h:160:9:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Ktemplate<class _Yp, class> std::shared_ptr<_Tp>::shared_ptr(_Yp*) [with _Yp = _Yp; <template-parameter-2-2> = <template-parameter-1-2>; _Tp = interfaces::msg::FireSensor_<std::allocator<void> >]\x1b[m\x1b[K\xe2\x80\x99\n'}
+[1.727839] (fire_detection) StderrLine: {'line': b'  160 |         \x1b[01;36m\x1b[Kshared_ptr\x1b[m\x1b[K(_Yp* __p) : __shared_ptr<_Tp>(__p) { }\n'}
+[1.727889] (fire_detection) StderrLine: {'line': b'      |         \x1b[01;36m\x1b[K^~~~~~~~~~\x1b[m\x1b[K\n'}
+[1.727939] (fire_detection) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/11/bits/shared_ptr.h:160:9:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  template argument deduction/substitution failed:\n'}
+[1.727990] (fire_detection) StderrLine: {'line': b'\x1b[01m\x1b[K/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/src/fire_detection/src/serial_reading.cpp:22:26:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  mismatched types \xe2\x80\x98\x1b[01m\x1b[K_Yp*\x1b[m\x1b[K\xe2\x80\x99 and \xe2\x80\x98\x1b[01m\x1b[Kstd::shared_ptr<rclcpp::Publisher<interfaces::msg::FireSensor_<std::allocator<void> >, std::allocator<void> > >\x1b[m\x1b[K\xe2\x80\x99\n'}
+[1.728041] (fire_detection) StderrLine: {'line': b'   22 |                          \x1b[01;36m\x1b[Kpublisher_(create_publisher<interfaces::msg::FireSensor>("data_fire", 10))\x1b[m\x1b[K,\n'}
+[1.728090] (fire_detection) StderrLine: {'line': b'      |                          \x1b[01;36m\x1b[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[1.728139] (fire_detection) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/usr/include/c++/11/memory:77\x1b[m\x1b[K,\n'}
+[1.728188] (fire_detection) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:153\x1b[m\x1b[K,\n'}
+[1.728237] (fire_detection) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/src/fire_detection/src/serial_reading.cpp:8\x1b[m\x1b[K:\n'}
+[1.728285] (fire_detection) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/11/bits/shared_ptr.h:417:7:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Kstd::shared_ptr<_Tp>::shared_ptr(const std::weak_ptr<_Tp>&, std::nothrow_t) [with _Tp = interfaces::msg::FireSensor_<std::allocator<void> >]\x1b[m\x1b[K\xe2\x80\x99\n'}
+[1.728335] (fire_detection) StderrLine: {'line': b'  417 |       \x1b[01;36m\x1b[Kshared_ptr\x1b[m\x1b[K(const weak_ptr<_Tp>& __r, std::nothrow_t) noexcept\n'}
+[1.728386] (fire_detection) StderrLine: {'line': b'      |       \x1b[01;36m\x1b[K^~~~~~~~~~\x1b[m\x1b[K\n'}
+[1.728436] (fire_detection) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/11/bits/shared_ptr.h:417:7:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  candidate expects 2 arguments, 1 provided\n'}
+[1.728490] (fire_detection) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/11/bits/shared_ptr.h:357:17:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Kconstexpr std::shared_ptr<_Tp>::shared_ptr(std::nullptr_t) [with _Tp = interfaces::msg::FireSensor_<std::allocator<void> >; std::nullptr_t = std::nullptr_t]\x1b[m\x1b[K\xe2\x80\x99\n'}
+[1.728547] (fire_detection) StderrLine: {'line': b'  357 |       constexpr \x1b[01;36m\x1b[Kshared_ptr\x1b[m\x1b[K(nullptr_t) noexcept : shared_ptr() { }\n'}
+[1.728599] (fire_detection) StderrLine: {'line': b'      |                 \x1b[01;36m\x1b[K^~~~~~~~~~\x1b[m\x1b[K\n'}
+[1.728646] (fire_detection) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/11/bits/shared_ptr.h:357:28:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  no known conversion for argument 1 from \xe2\x80\x98\x1b[01m\x1b[Kstd::shared_ptr<rclcpp::Publisher<interfaces::msg::FireSensor_<std::allocator<void> >, std::allocator<void> > >\x1b[m\x1b[K\xe2\x80\x99 to \xe2\x80\x98\x1b[01m\x1b[Kstd::nullptr_t\x1b[m\x1b[K\xe2\x80\x99\n'}
+[1.728699] (fire_detection) StderrLine: {'line': b'  357 |       constexpr shared_ptr(\x1b[01;36m\x1b[Knullptr_t\x1b[m\x1b[K) noexcept : shared_ptr() { }\n'}
+[1.728747] (fire_detection) StderrLine: {'line': b'      |                            \x1b[01;36m\x1b[K^~~~~~~~~\x1b[m\x1b[K\n'}
+[1.728795] (fire_detection) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/11/bits/shared_ptr.h:304:7:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Kstd::shared_ptr<_Tp>::shared_ptr(std::shared_ptr<_Tp>&&) [with _Tp = interfaces::msg::FireSensor_<std::allocator<void> >]\x1b[m\x1b[K\xe2\x80\x99\n'}
+[1.728846] (fire_detection) StderrLine: {'line': b'  304 |       \x1b[01;36m\x1b[Kshared_ptr\x1b[m\x1b[K(shared_ptr&& __r) noexcept\n'}
+[1.728894] (fire_detection) StderrLine: {'line': b'      |       \x1b[01;36m\x1b[K^~~~~~~~~~\x1b[m\x1b[K\n'}
+[1.728943] (fire_detection) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/11/bits/shared_ptr.h:304:31:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  no known conversion for argument 1 from \xe2\x80\x98\x1b[01m\x1b[Kstd::shared_ptr<rclcpp::Publisher<interfaces::msg::FireSensor_<std::allocator<void> >, std::allocator<void> > >\x1b[m\x1b[K\xe2\x80\x99 to \xe2\x80\x98\x1b[01m\x1b[Kstd::shared_ptr<interfaces::msg::FireSensor_<std::allocator<void> > >&&\x1b[m\x1b[K\xe2\x80\x99\n'}
+[1.728997] (fire_detection) StderrLine: {'line': b'  304 |       shared_ptr(\x1b[01;36m\x1b[Kshared_ptr&& __r\x1b[m\x1b[K) noexcept\n'}
+[1.729047] (fire_detection) StderrLine: {'line': b'      |                  \x1b[01;36m\x1b[K~~~~~~~~~~~~~^~~\x1b[m\x1b[K\n'}
+[1.729097] (fire_detection) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/11/bits/shared_ptr.h:150:7:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Kstd::shared_ptr<_Tp>::shared_ptr(const std::shared_ptr<_Tp>&) [with _Tp = interfaces::msg::FireSensor_<std::allocator<void> >]\x1b[m\x1b[K\xe2\x80\x99\n'}
+[1.729151] (fire_detection) StderrLine: {'line': b'  150 |       \x1b[01;36m\x1b[Kshared_ptr\x1b[m\x1b[K(const shared_ptr&) noexcept = default; ///< Copy constructor\n'}
+[1.729200] (fire_detection) StderrLine: {'line': b'      |       \x1b[01;36m\x1b[K^~~~~~~~~~\x1b[m\x1b[K\n'}
+[1.729249] (fire_detection) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/11/bits/shared_ptr.h:150:18:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  no known conversion for argument 1 from \xe2\x80\x98\x1b[01m\x1b[Kstd::shared_ptr<rclcpp::Publisher<interfaces::msg::FireSensor_<std::allocator<void> >, std::allocator<void> > >\x1b[m\x1b[K\xe2\x80\x99 to \xe2\x80\x98\x1b[01m\x1b[Kconst std::shared_ptr<interfaces::msg::FireSensor_<std::allocator<void> > >&\x1b[m\x1b[K\xe2\x80\x99\n'}
+[1.729302] (fire_detection) StderrLine: {'line': b'  150 |       shared_ptr(\x1b[01;36m\x1b[Kconst shared_ptr&\x1b[m\x1b[K) noexcept = default; ///< Copy constructor\n'}
+[1.729354] (fire_detection) StderrLine: {'line': b'      |                  \x1b[01;36m\x1b[K^~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[1.729412] (fire_detection) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/11/bits/shared_ptr.h:148:17:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Kconstexpr std::shared_ptr<_Tp>::shared_ptr() [with _Tp = interfaces::msg::FireSensor_<std::allocator<void> >]\x1b[m\x1b[K\xe2\x80\x99\n'}
+[1.729466] (fire_detection) StderrLine: {'line': b'  148 |       constexpr \x1b[01;36m\x1b[Kshared_ptr\x1b[m\x1b[K() noexcept : __shared_ptr<_Tp>() { }\n'}
+[1.729516] (fire_detection) StderrLine: {'line': b'      |                 \x1b[01;36m\x1b[K^~~~~~~~~~\x1b[m\x1b[K\n'}
+[1.729566] (fire_detection) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/11/bits/shared_ptr.h:148:17:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  candidate expects 0 arguments, 1 provided\n'}
+[1.729615] (fire_detection) StderrLine: {'line': b'\x1b[01m\x1b[K/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/src/fire_detection/src/serial_reading.cpp:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Kint SerialReadingNode::serialCommunication()\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[1.729665] (fire_detection) StderrLine: {'line': b'\x1b[01m\x1b[K/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/src/fire_detection/src/serial_reading.cpp:144:33:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kusing element_type = struct interfaces::msg::FireSensor_<std::allocator<void> >\x1b[m\x1b[K\xe2\x80\x99 {aka \xe2\x80\x98\x1b[01m\x1b[Kstruct interfaces::msg::FireSensor_<std::allocator<void> >\x1b[m\x1b[K\xe2\x80\x99} has no member named \xe2\x80\x98\x1b[01m\x1b[Kpublish\x1b[m\x1b[K\xe2\x80\x99\n'}
+[1.729785] (fire_detection) StderrLine: {'line': b'  144 |                     publisher_->\x1b[01;31m\x1b[Kpublish\x1b[m\x1b[K(msg);\n'}
+[1.729837] (fire_detection) StderrLine: {'line': b'      |                                 \x1b[01;31m\x1b[K^~~~~~~\x1b[m\x1b[K\n'}
+[1.804912] (-) TimerEvent: {}
+[1.905209] (-) TimerEvent: {}
+[2.005562] (-) TimerEvent: {}
+[2.105840] (-) TimerEvent: {}
+[2.206150] (-) TimerEvent: {}
+[2.306453] (-) TimerEvent: {}
+[2.406748] (-) TimerEvent: {}
+[2.432040] (fire_detection) StderrLine: {'line': b'gmake[2]: *** [CMakeFiles/serial_reading_node.dir/build.make:76: CMakeFiles/serial_reading_node.dir/src/serial_reading.cpp.o] Error 1\n'}
+[2.432269] (fire_detection) StderrLine: {'line': b'gmake[1]: *** [CMakeFiles/Makefile2:139: CMakeFiles/serial_reading_node.dir/all] Error 2\n'}
+[2.432361] (fire_detection) StderrLine: {'line': b'gmake[1]: *** Waiting for unfinished jobs....\n'}
+[2.506876] (-) TimerEvent: {}
+[2.607164] (-) TimerEvent: {}
+[2.707459] (-) TimerEvent: {}
+[2.807811] (-) TimerEvent: {}
+[2.908095] (-) TimerEvent: {}
+[3.008445] (-) TimerEvent: {}
+[3.108717] (-) TimerEvent: {}
+[3.208964] (-) TimerEvent: {}
+[3.309240] (-) TimerEvent: {}
+[3.409546] (-) TimerEvent: {}
+[3.509828] (-) TimerEvent: {}
+[3.610176] (-) TimerEvent: {}
+[3.710462] (-) TimerEvent: {}
+[3.810729] (-) TimerEvent: {}
+[3.911032] (-) TimerEvent: {}
+[4.011303] (-) TimerEvent: {}
+[4.111578] (-) TimerEvent: {}
+[4.211862] (-) TimerEvent: {}
+[4.312253] (-) TimerEvent: {}
+[4.412620] (-) TimerEvent: {}
+[4.512987] (-) TimerEvent: {}
+[4.613391] (-) TimerEvent: {}
+[4.713671] (-) TimerEvent: {}
+[4.813929] (-) TimerEvent: {}
+[4.914178] (-) TimerEvent: {}
+[5.014571] (-) TimerEvent: {}
+[5.114908] (-) TimerEvent: {}
+[5.215247] (-) TimerEvent: {}
+[5.315611] (-) TimerEvent: {}
+[5.415953] (-) TimerEvent: {}
+[5.516213] (-) TimerEvent: {}
+[5.616546] (-) TimerEvent: {}
+[5.716911] (-) TimerEvent: {}
+[5.817281] (-) TimerEvent: {}
+[5.917568] (-) TimerEvent: {}
+[6.017936] (-) TimerEvent: {}
+[6.118220] (-) TimerEvent: {}
+[6.218476] (-) TimerEvent: {}
+[6.318737] (-) TimerEvent: {}
+[6.419071] (-) TimerEvent: {}
+[6.519469] (-) TimerEvent: {}
+[6.619845] (-) TimerEvent: {}
+[6.720226] (-) TimerEvent: {}
+[6.820590] (-) TimerEvent: {}
+[6.920894] (-) TimerEvent: {}
+[6.976419] (fire_detection) StdoutLine: {'line': b'[ 75%] \x1b[32m\x1b[1mLinking CXX executable processing_data_fire_node\x1b[0m\n'}
+[7.021090] (-) TimerEvent: {}
+[7.121449] (-) TimerEvent: {}
+[7.221727] (-) TimerEvent: {}
+[7.321280] (fire_detection) StdoutLine: {'line': b'[ 75%] Built target processing_data_fire_node\n'}
+[7.321808] (-) TimerEvent: {}
+[7.322183] (fire_detection) StderrLine: {'line': b'gmake: *** [Makefile:146: all] Error 2\n'}
+[7.323766] (fire_detection) CommandEnded: {'returncode': 2}
+[7.404726] (fire_detection) JobEnded: {'identifier': 'fire_detection', 'rc': 2}
+[7.415115] (-) EventReactorShutdown: {}

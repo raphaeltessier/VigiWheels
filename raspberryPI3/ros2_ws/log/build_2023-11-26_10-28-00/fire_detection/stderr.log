@@ -1,0 +1,11 @@
+[01m[K/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/src/fire_detection/src/serial_reading.cpp:[m[K In constructor ‘[01m[KSerialReadingNode::SerialReadingNode()[m[K’:
+[01m[K/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/src/fire_detection/src/serial_reading.cpp:22:19:[m[K [01;31m[Kerror: [m[Kno match for call to ‘[01m[K(std::shared_ptr<rclcpp::Publisher<interfaces::msg::FireSensor_<std::allocator<void> > > >) (std::shared_ptr<rclcpp::Publisher<interfaces::msg::FireSensor_<std::allocator<void> > > >)[m[K’
+   22 |         [01;31m[Kpublisher_(this->create_publisher<interfaces::msg::FireSensor>("data_fire", 10))[m[K;
+      |         [01;31m[K~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/src/fire_detection/src/serial_reading.cpp:23:15:[m[K [01;31m[Kerror: [m[Kno match for call to ‘[01m[K(std::shared_ptr<rclcpp::TimerBase>) (rclcpp::WallTimer<std::_Bind<int (SerialReadingNode::*(SerialReadingNode*))()>, 0>::SharedPtr)[m[K’
+   23 |         [01;31m[Ktimer_(this->create_wall_timer(std::chrono::milliseconds(250), bind(&SerialReadingNode::serialCommunication, this)))[m[K;
+      |         [01;31m[K~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+gmake[2]: *** [CMakeFiles/serial_reading_node.dir/build.make:76: CMakeFiles/serial_reading_node.dir/src/serial_reading.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:139: CMakeFiles/serial_reading_node.dir/all] Error 2
+gmake[1]: *** Waiting for unfinished jobs....
+gmake: *** [Makefile:146: all] Error 2

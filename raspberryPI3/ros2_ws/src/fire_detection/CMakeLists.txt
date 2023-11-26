@@ -9,14 +9,20 @@ endif()
 find_package(ament_cmake REQUIRED)
 find_package(rclcpp REQUIRED)
 find_package(example_interfaces REQUIRED)
-find_package(my_robot_interfaces REQUIRED) 
-
+find_package(interfaces REQUIRED) 
 
 add_executable(serial_reading_node src/serial_reading.cpp)
-ament_target_dependencies(serial_reading_node rclcpp example_interfaces my_robot_interfaces)
+ament_target_dependencies(serial_reading_node rclcpp example_interfaces interfaces)
+
+add_executable(processing_data_fire_node src/processing_data_fire.cpp)
+ament_target_dependencies(processing_data_fire_node rclcpp example_interfaces interfaces)
 
 install(TARGETS
-serial_reading_node
+  serial_reading_node
+  DESTINATION lib/${PROJECT_NAME})
+
+install(TARGETS
+  processing_data_fire_node
   DESTINATION lib/${PROJECT_NAME})
 
 ament_package()

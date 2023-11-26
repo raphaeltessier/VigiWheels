@@ -25,17 +25,45 @@ inline void to_flow_style_yaml(
   std::ostream & out)
 {
   out << "{";
-  // member: ir_sensor_1
+  // member: ir_sensor1
   {
-    out << "ir_sensor_1: ";
-    rosidl_generator_traits::value_to_yaml(msg.ir_sensor_1, out);
+    out << "ir_sensor1: ";
+    rosidl_generator_traits::value_to_yaml(msg.ir_sensor1, out);
     out << ", ";
   }
 
-  // member: ir_sensor_2
+  // member: ir_sensor2
   {
-    out << "ir_sensor_2: ";
-    rosidl_generator_traits::value_to_yaml(msg.ir_sensor_2, out);
+    out << "ir_sensor2: ";
+    rosidl_generator_traits::value_to_yaml(msg.ir_sensor2, out);
+    out << ", ";
+  }
+
+  // member: ir_sensor3
+  {
+    out << "ir_sensor3: ";
+    rosidl_generator_traits::value_to_yaml(msg.ir_sensor3, out);
+    out << ", ";
+  }
+
+  // member: ir_sensor4
+  {
+    out << "ir_sensor4: ";
+    rosidl_generator_traits::value_to_yaml(msg.ir_sensor4, out);
+    out << ", ";
+  }
+
+  // member: smoke_sensor1
+  {
+    out << "smoke_sensor1: ";
+    rosidl_generator_traits::value_to_yaml(msg.smoke_sensor1, out);
+    out << ", ";
+  }
+
+  // member: smoke_sensor2
+  {
+    out << "smoke_sensor2: ";
+    rosidl_generator_traits::value_to_yaml(msg.smoke_sensor2, out);
   }
   out << "}";
 }  // NOLINT(readability/fn_size)
@@ -44,23 +72,63 @@ inline void to_block_style_yaml(
   const FireSensor & msg,
   std::ostream & out, size_t indentation = 0)
 {
-  // member: ir_sensor_1
+  // member: ir_sensor1
   {
     if (indentation > 0) {
       out << std::string(indentation, ' ');
     }
-    out << "ir_sensor_1: ";
-    rosidl_generator_traits::value_to_yaml(msg.ir_sensor_1, out);
+    out << "ir_sensor1: ";
+    rosidl_generator_traits::value_to_yaml(msg.ir_sensor1, out);
     out << "\n";
   }
 
-  // member: ir_sensor_2
+  // member: ir_sensor2
   {
     if (indentation > 0) {
       out << std::string(indentation, ' ');
     }
-    out << "ir_sensor_2: ";
-    rosidl_generator_traits::value_to_yaml(msg.ir_sensor_2, out);
+    out << "ir_sensor2: ";
+    rosidl_generator_traits::value_to_yaml(msg.ir_sensor2, out);
+    out << "\n";
+  }
+
+  // member: ir_sensor3
+  {
+    if (indentation > 0) {
+      out << std::string(indentation, ' ');
+    }
+    out << "ir_sensor3: ";
+    rosidl_generator_traits::value_to_yaml(msg.ir_sensor3, out);
+    out << "\n";
+  }
+
+  // member: ir_sensor4
+  {
+    if (indentation > 0) {
+      out << std::string(indentation, ' ');
+    }
+    out << "ir_sensor4: ";
+    rosidl_generator_traits::value_to_yaml(msg.ir_sensor4, out);
+    out << "\n";
+  }
+
+  // member: smoke_sensor1
+  {
+    if (indentation > 0) {
+      out << std::string(indentation, ' ');
+    }
+    out << "smoke_sensor1: ";
+    rosidl_generator_traits::value_to_yaml(msg.smoke_sensor1, out);
+    out << "\n";
+  }
+
+  // member: smoke_sensor2
+  {
+    if (indentation > 0) {
+      out << std::string(indentation, ' ');
+    }
+    out << "smoke_sensor2: ";
+    rosidl_generator_traits::value_to_yaml(msg.smoke_sensor2, out);
     out << "\n";
   }
 }  // NOLINT(readability/fn_size)

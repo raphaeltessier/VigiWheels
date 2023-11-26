@@ -210,6 +210,43 @@ serial_reading_node/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/serial_reading_node.dir/build.make CMakeFiles/serial_reading_node.dir/build
 .PHONY : serial_reading_node/fast
 
+#=============================================================================
+# Target rules for targets named processing_data_fire_node
+
+# Build rule for target.
+processing_data_fire_node: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 processing_data_fire_node
+.PHONY : processing_data_fire_node
+
+# fast build rule for target.
+processing_data_fire_node/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/processing_data_fire_node.dir/build.make CMakeFiles/processing_data_fire_node.dir/build
+.PHONY : processing_data_fire_node/fast
+
+src/processing_data_fire.o: src/processing_data_fire.cpp.o
+.PHONY : src/processing_data_fire.o
+
+# target to build an object file
+src/processing_data_fire.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/processing_data_fire_node.dir/build.make CMakeFiles/processing_data_fire_node.dir/src/processing_data_fire.cpp.o
+.PHONY : src/processing_data_fire.cpp.o
+
+src/processing_data_fire.i: src/processing_data_fire.cpp.i
+.PHONY : src/processing_data_fire.i
+
+# target to preprocess a source file
+src/processing_data_fire.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/processing_data_fire_node.dir/build.make CMakeFiles/processing_data_fire_node.dir/src/processing_data_fire.cpp.i
+.PHONY : src/processing_data_fire.cpp.i
+
+src/processing_data_fire.s: src/processing_data_fire.cpp.s
+.PHONY : src/processing_data_fire.s
+
+# target to generate assembly for a file
+src/processing_data_fire.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/processing_data_fire_node.dir/build.make CMakeFiles/processing_data_fire_node.dir/src/processing_data_fire.cpp.s
+.PHONY : src/processing_data_fire.cpp.s
+
 src/serial_reading.o: src/serial_reading.cpp.o
 .PHONY : src/serial_reading.o
 
@@ -249,7 +286,11 @@ help:
 	@echo "... test"
 	@echo "... fire_detection_uninstall"
 	@echo "... uninstall"
+	@echo "... processing_data_fire_node"
 	@echo "... serial_reading_node"
+	@echo "... src/processing_data_fire.o"
+	@echo "... src/processing_data_fire.i"
+	@echo "... src/processing_data_fire.s"
 	@echo "... src/serial_reading.o"
 	@echo "... src/serial_reading.i"
 	@echo "... src/serial_reading.s"

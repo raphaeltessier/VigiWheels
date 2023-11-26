@@ -49,14 +49,34 @@ static bool _FireSensor__cdr_serialize(
     return false;
   }
   const _FireSensor__ros_msg_type * ros_message = static_cast<const _FireSensor__ros_msg_type *>(untyped_ros_message);
-  // Field name: ir_sensor_1
+  // Field name: ir_sensor1
   {
-    cdr << ros_message->ir_sensor_1;
+    cdr << ros_message->ir_sensor1;
   }
 
-  // Field name: ir_sensor_2
+  // Field name: ir_sensor2
   {
-    cdr << ros_message->ir_sensor_2;
+    cdr << ros_message->ir_sensor2;
+  }
+
+  // Field name: ir_sensor3
+  {
+    cdr << ros_message->ir_sensor3;
+  }
+
+  // Field name: ir_sensor4
+  {
+    cdr << ros_message->ir_sensor4;
+  }
+
+  // Field name: smoke_sensor1
+  {
+    cdr << ros_message->smoke_sensor1;
+  }
+
+  // Field name: smoke_sensor2
+  {
+    cdr << ros_message->smoke_sensor2;
   }
 
   return true;
@@ -71,14 +91,34 @@ static bool _FireSensor__cdr_deserialize(
     return false;
   }
   _FireSensor__ros_msg_type * ros_message = static_cast<_FireSensor__ros_msg_type *>(untyped_ros_message);
-  // Field name: ir_sensor_1
+  // Field name: ir_sensor1
   {
-    cdr >> ros_message->ir_sensor_1;
+    cdr >> ros_message->ir_sensor1;
   }
 
-  // Field name: ir_sensor_2
+  // Field name: ir_sensor2
   {
-    cdr >> ros_message->ir_sensor_2;
+    cdr >> ros_message->ir_sensor2;
+  }
+
+  // Field name: ir_sensor3
+  {
+    cdr >> ros_message->ir_sensor3;
+  }
+
+  // Field name: ir_sensor4
+  {
+    cdr >> ros_message->ir_sensor4;
+  }
+
+  // Field name: smoke_sensor1
+  {
+    cdr >> ros_message->smoke_sensor1;
+  }
+
+  // Field name: smoke_sensor2
+  {
+    cdr >> ros_message->smoke_sensor2;
   }
 
   return true;
@@ -98,15 +138,39 @@ size_t get_serialized_size_interfaces__msg__FireSensor(
   (void)padding;
   (void)wchar_size;
 
-  // field.name ir_sensor_1
+  // field.name ir_sensor1
   {
-    size_t item_size = sizeof(ros_message->ir_sensor_1);
+    size_t item_size = sizeof(ros_message->ir_sensor1);
     current_alignment += item_size +
       eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
   }
-  // field.name ir_sensor_2
+  // field.name ir_sensor2
   {
-    size_t item_size = sizeof(ros_message->ir_sensor_2);
+    size_t item_size = sizeof(ros_message->ir_sensor2);
+    current_alignment += item_size +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
+  }
+  // field.name ir_sensor3
+  {
+    size_t item_size = sizeof(ros_message->ir_sensor3);
+    current_alignment += item_size +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
+  }
+  // field.name ir_sensor4
+  {
+    size_t item_size = sizeof(ros_message->ir_sensor4);
+    current_alignment += item_size +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
+  }
+  // field.name smoke_sensor1
+  {
+    size_t item_size = sizeof(ros_message->smoke_sensor1);
+    current_alignment += item_size +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
+  }
+  // field.name smoke_sensor2
+  {
+    size_t item_size = sizeof(ros_message->smoke_sensor2);
     current_alignment += item_size +
       eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
   }
@@ -137,14 +201,42 @@ size_t max_serialized_size_interfaces__msg__FireSensor(
   full_bounded = true;
   is_plain = true;
 
-  // member: ir_sensor_1
+  // member: ir_sensor1
   {
     size_t array_size = 1;
 
     current_alignment += array_size * sizeof(uint16_t) +
       eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint16_t));
   }
-  // member: ir_sensor_2
+  // member: ir_sensor2
+  {
+    size_t array_size = 1;
+
+    current_alignment += array_size * sizeof(uint16_t) +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint16_t));
+  }
+  // member: ir_sensor3
+  {
+    size_t array_size = 1;
+
+    current_alignment += array_size * sizeof(uint16_t) +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint16_t));
+  }
+  // member: ir_sensor4
+  {
+    size_t array_size = 1;
+
+    current_alignment += array_size * sizeof(uint16_t) +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint16_t));
+  }
+  // member: smoke_sensor1
+  {
+    size_t array_size = 1;
+
+    current_alignment += array_size * sizeof(uint16_t) +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint16_t));
+  }
+  // member: smoke_sensor2
   {
     size_t array_size = 1;
 

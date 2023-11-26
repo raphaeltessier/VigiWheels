@@ -1,0 +1,6 @@
+[35m[1mConsolidate compiler generated dependencies of target serial_reading_node[0m
+[35m[1mConsolidate compiler generated dependencies of target processing_data_fire_node[0m
+[ 25%] [32mBuilding CXX object CMakeFiles/processing_data_fire_node.dir/src/processing_data_fire.cpp.o[0m
+[ 50%] [32mBuilding CXX object CMakeFiles/serial_reading_node.dir/src/serial_reading.cpp.o[0m
+[ 75%] [32m[1mLinking CXX executable processing_data_fire_node[0m
+[ 75%] Built target processing_data_fire_node

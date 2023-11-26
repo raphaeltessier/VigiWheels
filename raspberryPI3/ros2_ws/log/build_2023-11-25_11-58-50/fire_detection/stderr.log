@@ -1,0 +1,16 @@
+[01m[K/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/src/fire_detection/src/serial_reading.cpp:113:22:[m[K [01;31m[Kerror: [m[Kexpected unqualified-id before ‘[01m[K<<[m[K’ token
+  113 |     rclcpp::Publisher[01;31m[K<<[m[Kinterfaces::msg::FireSensor>::SharedPtr publisher_;
+      |                      [01;31m[K^~[m[K
+[01m[K/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/src/fire_detection/src/serial_reading.cpp:[m[K In constructor ‘[01m[KSerialReadingNode::SerialReadingNode()[m[K’:
+[01m[K/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/src/fire_detection/src/serial_reading.cpp:25:17:[m[K [01;31m[Kerror: [m[K‘[01m[Kpublisher_[m[K’ was not declared in this scope; did you mean ‘[01m[Krmw_publisher_t[m[K’?
+   25 |                 [01;31m[Kpublisher_[m[K = this->create_publisher<interfaces::msg::FireSensor>("data_fire", 10);
+      |                 [01;31m[K^~~~~~~~~~[m[K
+      |                 [32m[Krmw_publisher_t[m[K
+[01m[K/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/src/fire_detection/src/serial_reading.cpp:[m[K In member function ‘[01m[Kint SerialReadingNode::serialCommunication()[m[K’:
+[01m[K/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/src/fire_detection/src/serial_reading.cpp:92:13:[m[K [01;31m[Kerror: [m[K‘[01m[Kpublisher_[m[K’ was not declared in this scope; did you mean ‘[01m[Krmw_publisher_t[m[K’?
+   92 |             [01;31m[Kpublisher_[m[K->publish(msg);
+      |             [01;31m[K^~~~~~~~~~[m[K
+      |             [32m[Krmw_publisher_t[m[K
+gmake[2]: *** [CMakeFiles/serial_reading_node.dir/build.make:76: CMakeFiles/serial_reading_node.dir/src/serial_reading.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/serial_reading_node.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

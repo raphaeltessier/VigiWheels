@@ -50,22 +50,58 @@ bool interfaces__msg__fire_sensor__convert_from_py(PyObject * _pymsg, void * _ro
     assert(strncmp("interfaces.msg._fire_sensor.FireSensor", full_classname_dest, 38) == 0);
   }
   interfaces__msg__FireSensor * ros_message = _ros_message;
-  {  // ir_sensor_1
-    PyObject * field = PyObject_GetAttrString(_pymsg, "ir_sensor_1");
+  {  // ir_sensor1
+    PyObject * field = PyObject_GetAttrString(_pymsg, "ir_sensor1");
     if (!field) {
       return false;
     }
     assert(PyLong_Check(field));
-    ros_message->ir_sensor_1 = (int16_t)PyLong_AsLong(field);
+    ros_message->ir_sensor1 = (int16_t)PyLong_AsLong(field);
     Py_DECREF(field);
   }
-  {  // ir_sensor_2
-    PyObject * field = PyObject_GetAttrString(_pymsg, "ir_sensor_2");
+  {  // ir_sensor2
+    PyObject * field = PyObject_GetAttrString(_pymsg, "ir_sensor2");
     if (!field) {
       return false;
     }
     assert(PyLong_Check(field));
-    ros_message->ir_sensor_2 = (int16_t)PyLong_AsLong(field);
+    ros_message->ir_sensor2 = (int16_t)PyLong_AsLong(field);
+    Py_DECREF(field);
+  }
+  {  // ir_sensor3
+    PyObject * field = PyObject_GetAttrString(_pymsg, "ir_sensor3");
+    if (!field) {
+      return false;
+    }
+    assert(PyLong_Check(field));
+    ros_message->ir_sensor3 = (int16_t)PyLong_AsLong(field);
+    Py_DECREF(field);
+  }
+  {  // ir_sensor4
+    PyObject * field = PyObject_GetAttrString(_pymsg, "ir_sensor4");
+    if (!field) {
+      return false;
+    }
+    assert(PyLong_Check(field));
+    ros_message->ir_sensor4 = (int16_t)PyLong_AsLong(field);
+    Py_DECREF(field);
+  }
+  {  // smoke_sensor1
+    PyObject * field = PyObject_GetAttrString(_pymsg, "smoke_sensor1");
+    if (!field) {
+      return false;
+    }
+    assert(PyLong_Check(field));
+    ros_message->smoke_sensor1 = (int16_t)PyLong_AsLong(field);
+    Py_DECREF(field);
+  }
+  {  // smoke_sensor2
+    PyObject * field = PyObject_GetAttrString(_pymsg, "smoke_sensor2");
+    if (!field) {
+      return false;
+    }
+    assert(PyLong_Check(field));
+    ros_message->smoke_sensor2 = (int16_t)PyLong_AsLong(field);
     Py_DECREF(field);
   }
 
@@ -90,22 +126,66 @@ PyObject * interfaces__msg__fire_sensor__convert_to_py(void * raw_ros_message)
     }
   }
   interfaces__msg__FireSensor * ros_message = (interfaces__msg__FireSensor *)raw_ros_message;
-  {  // ir_sensor_1
+  {  // ir_sensor1
     PyObject * field = NULL;
-    field = PyLong_FromLong(ros_message->ir_sensor_1);
+    field = PyLong_FromLong(ros_message->ir_sensor1);
     {
-      int rc = PyObject_SetAttrString(_pymessage, "ir_sensor_1", field);
+      int rc = PyObject_SetAttrString(_pymessage, "ir_sensor1", field);
       Py_DECREF(field);
       if (rc) {
         return NULL;
       }
     }
   }
-  {  // ir_sensor_2
+  {  // ir_sensor2
     PyObject * field = NULL;
-    field = PyLong_FromLong(ros_message->ir_sensor_2);
+    field = PyLong_FromLong(ros_message->ir_sensor2);
     {
-      int rc = PyObject_SetAttrString(_pymessage, "ir_sensor_2", field);
+      int rc = PyObject_SetAttrString(_pymessage, "ir_sensor2", field);
+      Py_DECREF(field);
+      if (rc) {
+        return NULL;
+      }
+    }
+  }
+  {  // ir_sensor3
+    PyObject * field = NULL;
+    field = PyLong_FromLong(ros_message->ir_sensor3);
+    {
+      int rc = PyObject_SetAttrString(_pymessage, "ir_sensor3", field);
+      Py_DECREF(field);
+      if (rc) {
+        return NULL;
+      }
+    }
+  }
+  {  // ir_sensor4
+    PyObject * field = NULL;
+    field = PyLong_FromLong(ros_message->ir_sensor4);
+    {
+      int rc = PyObject_SetAttrString(_pymessage, "ir_sensor4", field);
+      Py_DECREF(field);
+      if (rc) {
+        return NULL;
+      }
+    }
+  }
+  {  // smoke_sensor1
+    PyObject * field = NULL;
+    field = PyLong_FromLong(ros_message->smoke_sensor1);
+    {
+      int rc = PyObject_SetAttrString(_pymessage, "smoke_sensor1", field);
+      Py_DECREF(field);
+      if (rc) {
+        return NULL;
+      }
+    }
+  }
+  {  // smoke_sensor2
+    PyObject * field = NULL;
+    field = PyLong_FromLong(ros_message->smoke_sensor2);
+    {
+      int rc = PyObject_SetAttrString(_pymessage, "smoke_sensor2", field);
       Py_DECREF(field);
       if (rc) {
         return NULL;

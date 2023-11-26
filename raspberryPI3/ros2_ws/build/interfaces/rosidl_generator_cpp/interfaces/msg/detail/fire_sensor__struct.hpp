@@ -38,8 +38,12 @@ struct FireSensor_
     if (rosidl_runtime_cpp::MessageInitialization::ALL == _init ||
       rosidl_runtime_cpp::MessageInitialization::ZERO == _init)
     {
-      this->ir_sensor_1 = 0;
-      this->ir_sensor_2 = 0;
+      this->ir_sensor1 = 0;
+      this->ir_sensor2 = 0;
+      this->ir_sensor3 = 0;
+      this->ir_sensor4 = 0;
+      this->smoke_sensor1 = 0;
+      this->smoke_sensor2 = 0;
     }
   }
 
@@ -49,30 +53,70 @@ struct FireSensor_
     if (rosidl_runtime_cpp::MessageInitialization::ALL == _init ||
       rosidl_runtime_cpp::MessageInitialization::ZERO == _init)
     {
-      this->ir_sensor_1 = 0;
-      this->ir_sensor_2 = 0;
+      this->ir_sensor1 = 0;
+      this->ir_sensor2 = 0;
+      this->ir_sensor3 = 0;
+      this->ir_sensor4 = 0;
+      this->smoke_sensor1 = 0;
+      this->smoke_sensor2 = 0;
     }
   }
 
   // field types and members
-  using _ir_sensor_1_type =
+  using _ir_sensor1_type =
     int16_t;
-  _ir_sensor_1_type ir_sensor_1;
-  using _ir_sensor_2_type =
+  _ir_sensor1_type ir_sensor1;
+  using _ir_sensor2_type =
     int16_t;
-  _ir_sensor_2_type ir_sensor_2;
+  _ir_sensor2_type ir_sensor2;
+  using _ir_sensor3_type =
+    int16_t;
+  _ir_sensor3_type ir_sensor3;
+  using _ir_sensor4_type =
+    int16_t;
+  _ir_sensor4_type ir_sensor4;
+  using _smoke_sensor1_type =
+    int16_t;
+  _smoke_sensor1_type smoke_sensor1;
+  using _smoke_sensor2_type =
+    int16_t;
+  _smoke_sensor2_type smoke_sensor2;
 
   // setters for named parameter idiom
-  Type & set__ir_sensor_1(
+  Type & set__ir_sensor1(
     const int16_t & _arg)
   {
-    this->ir_sensor_1 = _arg;
+    this->ir_sensor1 = _arg;
     return *this;
   }
-  Type & set__ir_sensor_2(
+  Type & set__ir_sensor2(
     const int16_t & _arg)
   {
-    this->ir_sensor_2 = _arg;
+    this->ir_sensor2 = _arg;
+    return *this;
+  }
+  Type & set__ir_sensor3(
+    const int16_t & _arg)
+  {
+    this->ir_sensor3 = _arg;
+    return *this;
+  }
+  Type & set__ir_sensor4(
+    const int16_t & _arg)
+  {
+    this->ir_sensor4 = _arg;
+    return *this;
+  }
+  Type & set__smoke_sensor1(
+    const int16_t & _arg)
+  {
+    this->smoke_sensor1 = _arg;
+    return *this;
+  }
+  Type & set__smoke_sensor2(
+    const int16_t & _arg)
+  {
+    this->smoke_sensor2 = _arg;
     return *this;
   }
 
@@ -118,10 +162,22 @@ struct FireSensor_
   // comparison operators
   bool operator==(const FireSensor_ & other) const
   {
-    if (this->ir_sensor_1 != other.ir_sensor_1) {
+    if (this->ir_sensor1 != other.ir_sensor1) {
       return false;
     }
-    if (this->ir_sensor_2 != other.ir_sensor_2) {
+    if (this->ir_sensor2 != other.ir_sensor2) {
+      return false;
+    }
+    if (this->ir_sensor3 != other.ir_sensor3) {
+      return false;
+    }
+    if (this->ir_sensor4 != other.ir_sensor4) {
+      return false;
+    }
+    if (this->smoke_sensor1 != other.smoke_sensor1) {
+      return false;
+    }
+    if (this->smoke_sensor2 != other.smoke_sensor2) {
       return false;
     }
     return true;

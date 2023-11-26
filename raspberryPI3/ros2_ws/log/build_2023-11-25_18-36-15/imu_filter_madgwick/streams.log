@@ -1,0 +1,59 @@
+[0.189s] Invoking command in '/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/build/imu_filter_madgwick': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake /home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/src/imu_tools/imu_filter_madgwick -DCMAKE_INSTALL_PREFIX=/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/install/imu_filter_madgwick
+[0.259s] -- The C compiler identification is GNU 11.4.0
+[0.343s] -- The CXX compiler identification is GNU 11.4.0
+[0.350s] -- Detecting C compiler ABI info
+[0.428s] -- Detecting C compiler ABI info - done
+[0.441s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.442s] -- Detecting C compile features
+[0.442s] -- Detecting C compile features - done
+[0.446s] -- Detecting CXX compiler ABI info
+[0.515s] -- Detecting CXX compiler ABI info - done
+[0.521s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.521s] -- Detecting CXX compile features
+[0.521s] -- Detecting CXX compile features - done
+[0.524s] -- Found ament_cmake: 1.3.5 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.697s] -- Found Python3: /usr/bin/python3.10 (found version "3.10.12") found components: Interpreter 
+[0.791s] -- Found rclcpp: 16.0.6 (/opt/ros/humble/share/rclcpp/cmake)
+[0.844s] -- Found rosidl_generator_c: 3.1.5 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[0.853s] -- Found rosidl_adapter: 3.1.5 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[0.865s] -- Found rosidl_generator_cpp: 3.1.5 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[0.885s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.914s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[1.020s] -- Found rmw_implementation_cmake: 6.1.1 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+[1.024s] -- Found rmw_fastrtps_cpp: 6.2.4 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+[1.137s] -- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.2")  
+[1.162s] -- Found FastRTPS: /opt/ros/humble/include  
+[1.216s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[1.225s] -- Looking for pthread.h
+[1.286s] -- Looking for pthread.h - found
+[1.287s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+[1.372s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+[1.373s] -- Found Threads: TRUE  
+[1.619s] -- Found rclcpp_components: 16.0.6 (/opt/ros/humble/share/rclcpp_components/cmake)
+[1.742s] -- Found geometry_msgs: 4.2.3 (/opt/ros/humble/share/geometry_msgs/cmake)
+[1.814s] -- Found tf2_geometry_msgs: 0.25.4 (/opt/ros/humble/share/tf2_geometry_msgs/cmake)
+[1.846s] -- Found eigen3_cmake_module: 0.1.1 (/opt/ros/humble/share/eigen3_cmake_module/cmake)
+[1.850s] -- Found Eigen3: TRUE (found version "3.4.0") 
+[1.850s] -- Ensuring Eigen3 include directory is part of orocos-kdl CMake target
+[2.368s] -- Found sensor_msgs: 4.2.3 (/opt/ros/humble/share/sensor_msgs/cmake)
+[2.508s] -- Found ament_cmake_gtest: 1.3.5 (/opt/ros/humble/share/ament_cmake_gtest/cmake)
+[2.514s] -- Found gtest sources under '/opt/ros/humble/src/gtest_vendor': C++ tests using 'Google Test' will be built
+[2.637s] -- Configuring done
+[2.681s] -- Generating done
+[2.684s] -- Build files have been written to: /home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/build/imu_filter_madgwick
+[2.703s] Invoked command in '/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/build/imu_filter_madgwick' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake /home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/src/imu_tools/imu_filter_madgwick -DCMAKE_INSTALL_PREFIX=/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/install/imu_filter_madgwick
+[2.704s] Invoking command in '/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/build/imu_filter_madgwick': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/build/imu_filter_madgwick -- -j8 -l8
+[5.050s] [  7%] [32mBuilding CXX object gtest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.o[0m
+[5.050s] [ 14%] [32mBuilding CXX object CMakeFiles/imu_filter_madgwick.dir/src/imu_filter_ros.cpp.o[0m
+[5.050s] [ 21%] [32mBuilding CXX object CMakeFiles/imu_filter_madgwick.dir/src/imu_filter.cpp.o[0m
+[5.050s] [ 28%] [32mBuilding CXX object CMakeFiles/imu_filter_madgwick.dir/src/stateless_orientation.cpp.o[0m
+[5.050s] [ 35%] [32mBuilding CXX object gtest/CMakeFiles/gtest.dir/src/gtest-all.cc.o[0m
+[5.050s] [ 42%] [32m[1mLinking CXX static library libgtest_main.a[0m
+[5.050s] [ 42%] Built target gtest_main
+[15.133s] [ 50%] [32m[1mLinking CXX static library libgtest.a[0m
+[15.557s] [ 50%] Built target gtest
+[24.132s] gmake[2]: *** [CMakeFiles/imu_filter_madgwick.dir/build.make:90: CMakeFiles/imu_filter_madgwick.dir/src/imu_filter_ros.cpp.o] Interrupt
+[24.138s] gmake[1]: *** wait: No child processes.  Stop.
+[24.142s] gmake[1]: *** Waiting for unfinished jobs....
+[24.142s] gmake[1]: *** wait: No child processes.  Stop.
+[24.143s] gmake: *** [Makefile:146: all] Error 2

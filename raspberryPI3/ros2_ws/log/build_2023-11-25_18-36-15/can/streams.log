@@ -1,0 +1,55 @@
+[0.332s] Invoking command in '/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/build/can': CMAKE_PREFIX_PATH=/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/install/interfaces:/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/install/fire_detection:/home/insa/ros2_ws/install/my_fire_pkg:/home/insa/ros2_ws/install/demo_sensor_pkg:/home/insa/ros2_ws/install/my_robot_interfaces:/home/insa/ros2_ws/install/my_cpp_pkg:/home/insa/ros2_ws/install/johann_cpp_pkg:/opt/ros/humble /usr/bin/cmake /home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/src/can -DCMAKE_INSTALL_PREFIX=/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/install/can
+[0.412s] -- The C compiler identification is GNU 11.4.0
+[0.499s] -- The CXX compiler identification is GNU 11.4.0
+[0.508s] -- Detecting C compiler ABI info
+[0.598s] -- Detecting C compiler ABI info - done
+[0.609s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.610s] -- Detecting C compile features
+[0.610s] -- Detecting C compile features - done
+[0.614s] -- Detecting CXX compiler ABI info
+[0.710s] -- Detecting CXX compiler ABI info - done
+[0.722s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.722s] -- Detecting CXX compile features
+[0.723s] -- Detecting CXX compile features - done
+[0.726s] -- Found ament_cmake: 1.3.5 (/opt/ros/humble/share/ament_cmake/cmake)
+[1.027s] -- Found Python3: /usr/bin/python3.10 (found version "3.10.12") found components: Interpreter 
+[1.154s] -- Found rclcpp: 16.0.6 (/opt/ros/humble/share/rclcpp/cmake)
+[1.224s] -- Found rosidl_generator_c: 3.1.5 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[1.235s] -- Found rosidl_adapter: 3.1.5 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[1.248s] -- Found rosidl_generator_cpp: 3.1.5 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[1.266s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[1.300s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[1.417s] -- Found rmw_implementation_cmake: 6.1.1 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+[1.423s] -- Found rmw_fastrtps_cpp: 6.2.4 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+[1.702s] -- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.2")  
+[1.749s] -- Found FastRTPS: /opt/ros/humble/include  
+[1.858s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[1.907s] -- Looking for pthread.h
+[2.243s] -- Looking for pthread.h - found
+[2.243s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+[2.614s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+[2.616s] -- Found Threads: TRUE  
+[3.130s] -- Found sensor_msgs: 4.2.3 (/opt/ros/humble/share/sensor_msgs/cmake)
+[3.543s] -- Found interfaces: 0.0.0 (/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/install/interfaces/share/interfaces/cmake)
+[3.621s] -- Found ament_lint_auto: 0.12.8 (/opt/ros/humble/share/ament_lint_auto/cmake)
+[3.842s] -- Added test 'cppcheck' to perform static code analysis on C / C++ code
+[3.842s] -- Configured cppcheck include dirs: $<BUILD_INTERFACE:/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/src/can/include>
+[3.843s] -- Configured cppcheck exclude dirs and/or files: 
+[3.844s] -- Added test 'lint_cmake' to check CMake code style
+[3.846s] -- Added test 'uncrustify' to check C / C++ code style
+[3.846s] -- Configured uncrustify additional arguments: 
+[3.847s] -- Added test 'xmllint' to check XML markup files
+[3.849s] -- Configuring done
+[3.880s] -- Generating done
+[3.884s] -- Build files have been written to: /home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/build/can
+[3.931s] Invoked command in '/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/build/can' returned '0': CMAKE_PREFIX_PATH=/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/install/interfaces:/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/install/fire_detection:/home/insa/ros2_ws/install/my_fire_pkg:/home/insa/ros2_ws/install/demo_sensor_pkg:/home/insa/ros2_ws/install/my_robot_interfaces:/home/insa/ros2_ws/install/my_cpp_pkg:/home/insa/ros2_ws/install/johann_cpp_pkg:/opt/ros/humble /usr/bin/cmake /home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/src/can -DCMAKE_INSTALL_PREFIX=/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/install/can
+[3.931s] Invoking command in '/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/build/can': CMAKE_PREFIX_PATH=/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/install/interfaces:/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/install/fire_detection:/home/insa/ros2_ws/install/my_fire_pkg:/home/insa/ros2_ws/install/demo_sensor_pkg:/home/insa/ros2_ws/install/my_robot_interfaces:/home/insa/ros2_ws/install/my_cpp_pkg:/home/insa/ros2_ws/install/johann_cpp_pkg:/opt/ros/humble /usr/bin/cmake --build /home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/build/can -- -j8 -l8
+[4.185s] [ 25%] [32mBuilding CXX object CMakeFiles/can_rx_node.dir/src/can_rx_node.cpp.o[0m
+[4.225s] [ 50%] [32mBuilding CXX object CMakeFiles/can_tx_node.dir/src/can_tx_node.cpp.o[0m
+[23.017s] gmake[2]: *** [CMakeFiles/can_rx_node.dir/build.make:76: CMakeFiles/can_rx_node.dir/src/can_rx_node.cpp.o] Interrupt
+[23.023s] gmake[2]: *** wait: No child processes.  Stop.
+[23.023s] gmake[2]: *** Waiting for unfinished jobs....
+[23.023s] gmake[2]: *** wait: No child processes.  Stop.
+[23.024s] gmake[1]: *** [CMakeFiles/Makefile2:139: CMakeFiles/can_rx_node.dir/all] Interrupt
+[23.024s] gmake[1]: *** [CMakeFiles/Makefile2:165: CMakeFiles/can_tx_node.dir/all] Error 2
+[23.024s] gmake: *** [Makefile:146: all] Interrupt
