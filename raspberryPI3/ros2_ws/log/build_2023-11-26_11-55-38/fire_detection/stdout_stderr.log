@@ -1,0 +1,20 @@
+[35m[1mConsolidate compiler generated dependencies of target processing_data_fire_node[0m
+[ 50%] Built target serial_reading_node
+[ 75%] [32mBuilding CXX object CMakeFiles/processing_data_fire_node.dir/src/processing_data_fire.cpp.o[0m
+[01m[K/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/src/fire_detection/src/processing_data_fire.cpp:[m[K In constructor ‘[01m[KProcessingDataFireNode::ProcessingDataFireNode()[m[K’:
+[01m[K/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/src/fire_detection/src/processing_data_fire.cpp:54:10:[m[K [01;35m[Kwarning: [m[K‘[01m[KProcessingDataFireNode::analysis_started_[m[K’ will be initialized after [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreorder-Wreorder]8;;[m[K]
+   54 |     bool [01;35m[Kanalysis_started_[m[K;
+      |          [01;35m[K^~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/src/fire_detection/src/processing_data_fire.cpp:51:12:[m[K [01;35m[Kwarning: [m[K  ‘[01m[Ksize_t ProcessingDataFireNode::window_size_[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreorder-Wreorder]8;;[m[K]
+   51 |     size_t [01;35m[Kwindow_size_[m[K;
+      |            [01;35m[K^~~~~~~~~~~~[m[K
+[01m[K/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/src/fire_detection/src/processing_data_fire.cpp:9:5:[m[K [01;35m[Kwarning: [m[K  when initialized here [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreorder-Wreorder]8;;[m[K]
+    9 |     [01;35m[KProcessingDataFireNode[m[K() : Node("processing_data_fire_node"), counter_{0}, analysis_started_{false}, window_size_{5}
+      |     [01;35m[K^~~~~~~~~~~~~~~~~~~~~~[m[K
+[100%] [32m[1mLinking CXX executable processing_data_fire_node[0m
+/usr/bin/ld: /usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/Scrt1.o: in function `_start':
+(.text+0x1b): undefined reference to `main'
+collect2: error: ld returned 1 exit status
+gmake[2]: *** [CMakeFiles/processing_data_fire_node.dir/build.make:183: processing_data_fire_node] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:165: CMakeFiles/processing_data_fire_node.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

@@ -1,0 +1,22 @@
+[01m[K/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/src/fire_detection/src/processing_data_fire.cpp:[m[K In member function ‘[01m[Kvoid ProcessingDataFireNode::dataFireCallBack(const FireSensor&)[m[K’:
+[01m[K/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/src/fire_detection/src/processing_data_fire.cpp:18:41:[m[K [01;31m[Kerror: [m[K‘[01m[Kir_sensor1[m[K’ was not declared in this scope
+   18 |             previous_ir_sensor1_value = [01;31m[Kir_sensor1[m[K;
+      |                                         [01;31m[K^~~~~~~~~~[m[K
+[01m[K/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/src/fire_detection/src/processing_data_fire.cpp:24:17:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kir_sensor2_value[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+   24 |             int [01;35m[Kir_sensor2_value[m[K = msg.ir_sensor2;
+      |                 [01;35m[K^~~~~~~~~~~~~~~~[m[K
+[01m[K/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/src/fire_detection/src/processing_data_fire.cpp:25:17:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kir_sensor3_value[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+   25 |             int [01;35m[Kir_sensor3_value[m[K = msg.ir_sensor3;
+      |                 [01;35m[K^~~~~~~~~~~~~~~~[m[K
+[01m[K/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/src/fire_detection/src/processing_data_fire.cpp:26:17:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kir_sensor4_value[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+   26 |             int [01;35m[Kir_sensor4_value[m[K = msg.ir_sensor4;
+      |                 [01;35m[K^~~~~~~~~~~~~~~~[m[K
+[01m[K/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/src/fire_detection/src/processing_data_fire.cpp:27:17:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Ksmoke_sensor1_value[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+   27 |             int [01;35m[Ksmoke_sensor1_value[m[K = msg.smoke_sensor1;
+      |                 [01;35m[K^~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/src/fire_detection/src/processing_data_fire.cpp:28:17:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Ksmoke_sensor2_value[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+   28 |             int [01;35m[Ksmoke_sensor2_value[m[K = msg.smoke_sensor2;
+      |                 [01;35m[K^~~~~~~~~~~~~~~~~~~[m[K
+gmake[2]: *** [CMakeFiles/processing_data_fire_node.dir/build.make:76: CMakeFiles/processing_data_fire_node.dir/src/processing_data_fire.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:165: CMakeFiles/processing_data_fire_node.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

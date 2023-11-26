@@ -1,0 +1,9 @@
+[ 75%] Built target serial_reading_node
+[ 75%] [32mBuilding CXX object CMakeFiles/processing_data_fire_node.dir/src/processing_data_fire.cpp.o[0m
+[01m[K/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/src/fire_detection/src/processing_data_fire.cpp:[m[K In member function ‘[01m[Kvoid ProcessingDataFireNode::dataFireCallBack(const FireSensor&)[m[K’:
+[01m[K/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/src/fire_detection/src/processing_data_fire.cpp:62:63:[m[K [01;31m[Kerror: [m[Kexpected primary-expression before ‘[01m[K)[m[K’ token
+   62 |             RCLCPP_INFO(this->get_logger(), "Fire detected!");[01;31m[K)[m[K);
+      |                                                               [01;31m[K^[m[K
+gmake[2]: *** [CMakeFiles/processing_data_fire_node.dir/build.make:76: CMakeFiles/processing_data_fire_node.dir/src/processing_data_fire.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:165: CMakeFiles/processing_data_fire_node.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2
