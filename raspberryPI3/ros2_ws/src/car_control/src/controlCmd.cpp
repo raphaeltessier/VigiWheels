@@ -59,7 +59,7 @@ void calculateRPMAuto(float consigneMotor, uint8_t& leftRearPwmCmd, uint8_t& rig
     else if (correctedValue_R < -50)
         double_corrected_final_value_right = -50;
     else
-        double_corrected_final_value_left = correctedValue_R;
+        double_corrected_final_value_right = correctedValue_R;
 
 
     //Update the PWM values of both motors after command
