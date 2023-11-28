@@ -21,6 +21,7 @@
   <exec_depend>system_check</exec_depend>
   <exec_depend>ros2launch</exec_depend>
   <exec_depend>obstacles></exec_depend>
+  <exec_depend>servo_cam></exec_depend>
 
   <export>
     <build_type>ament_cmake</build_type>
