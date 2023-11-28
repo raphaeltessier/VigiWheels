@@ -25,7 +25,7 @@ public:
 
     
         //suscriber
-        subscription_motors_feedback_ = this->create_subscription<interfaces::msg::CamPosOrder>(
+        subscription_cam_pos_order_ = this->create_subscription<interfaces::msg::CamPosOrder>(
         "cam_pos_order", 10, std::bind(&servo_cam::camPosOrderCallback, this, _1));
 
 
