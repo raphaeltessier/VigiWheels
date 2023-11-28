@@ -73,5 +73,6 @@ def generate_launch_description():
     ld.add_action(obstacles_node)
     ld.add_action(imu_filter_madgwick_node)
     ld.add_action(system_check_node)
+    ld.add_action(servo_cam_node)
 
     return ld
