@@ -11,14 +11,7 @@
 #define Te pow(10,-3)
 #define gainRPM 65.00   //Maximum value RPM of each motor based on motors_feedback topic
 
-//Necessary constants for corrector
-float double_constante_correcteur_moteurA = (KI * Te + 2* KP)/ 2;
-float double_constante_correcteur_moteurB = (KI * Te - 2* KP)/ 2;
 
-//Speed variables
-float speedErrorLeft ;
-float speedErrorRight ;
-float consigneRPM ;
 
 /**
  * @file        controlCmd.h

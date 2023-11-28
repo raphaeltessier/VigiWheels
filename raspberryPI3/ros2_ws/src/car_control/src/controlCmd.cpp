@@ -11,6 +11,15 @@
 
 using namespace std;
 
+//Necessary constants for corrector
+float double_constante_correcteur_moteurA = (KI * Te + 2* KP)/ 2;
+float double_constante_correcteur_moteurB = (KI * Te - 2* KP)/ 2;
+
+//Speed variables
+float speedErrorLeft ;
+float speedErrorRight ;
+float consigneRPM ;
+
 
 void calculateRPMAuto(float consigneMotor, uint8_t& leftRearPwmCmd, uint8_t& rightRearPwmCmd,
             float currentRPM_L, float currentRPM_R, float& lastError_L, float& lastError_R, float& correctedValue_L, 
