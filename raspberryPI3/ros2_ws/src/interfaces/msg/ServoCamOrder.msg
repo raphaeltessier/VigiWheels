@@ -1,1 +1,1 @@
-int8 servo_cam_pwm 50    #PWM [0;100]
+oat32 servo_cam_pwm 5    #PWM [5, 10]

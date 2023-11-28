@@ -44,18 +44,55 @@ private:
     * 
     */
     void camPosOrderCallback(const interfaces::msg::CamPosOrder & pos_cmd){
-        mode = pos_cmd.mode;
-        pwm_cmd = pos_cmd.cam_pwm;
+        mode = pos_cmd.mode; // 0 : fixed ; 1 : scan
+        requested_angle = pos_cmd.cam_angle;
     }
 
 
+    //calculate a pwm [5 , 10] for the servo from an command angle
+    float calculate_pwm(int angle) {
+        float pwm = float(angle)/36.0 + 5;
 
- //periodic function ---------------------------------------------------
 
-     void updateCmd(){
+        //security
+        if (pwm >= 10) {
+            pwm = 10;
+        }
+        else if (pwm <= 0) {
+            pwm = 0;
+        }
+
+        return pwm;
+
+    }
+
+ //periodic function, see servo_cam_node.h to set period -> 100ms
+    // to update the angular positon of the camera to scan
+
+    void updateCmd(){
 
         auto servoOrder = interfaces::msg::ServoCamOrder();
 
+        if (mode == 1) {
+            command_angle = command_angle + sens;
+            if (command_angle >= 180) {
+                command_angle = 180;
+                sens = -sens;
+            }
+            else if (command_angle <= 0) {
+                command_angle = 0;
+                sens = -sens;
+            }
+            
+        }
+
+        else {
+            command_angle = requested_angle;
+        }
+
+
+        servoOrder.servo_cam_pwm = calculate_pwm(command_angle);
+        publisher_servo_cam_order_->publish(servoOrder);
 
         
 
@@ -64,7 +101,11 @@ private:
     // ---- Private variables ----
 
     //General variables
-
+        int mode = 0;
+        int requested_angle;
+        int command_angle = 90;
+        int sens = 10; //{-10; 10}
+        
         
 
 
