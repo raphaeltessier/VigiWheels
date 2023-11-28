@@ -42,7 +42,7 @@ def generate_launch_description():
         emulate_tty=True
     )
 
-        servo_cam_node = Node(
+    servo_cam_node = Node(
         package="servo_cam",
         executable="servo_cam",
         emulate_tty=True
