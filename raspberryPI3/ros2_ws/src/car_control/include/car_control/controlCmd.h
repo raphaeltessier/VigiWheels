@@ -6,14 +6,14 @@
 #include <string.h>
 #include <math.h>
 
-#define KP 4.5
-#define KI 3
+#define KP 4.50
+#define KI 3.00
 #define Te pow(10,-3)
 #define gainRPM 65.00   //Maximum value RPM of each motor based on motors_feedback topic
 
 //Necessary constants for corrector
-double double_constante_correcteur_moteurA = (KI * Te + 2* KP)/ 2;
-double double_constante_correcteur_moteurB = (KI * Te - 2* KP)/ 2;
+float double_constante_correcteur_moteurA = (KI * Te + 2* KP)/ 2;
+float double_constante_correcteur_moteurB = (KI * Te - 2* KP)/ 2;
 
 //Speed variables
 float speedErrorLeft ;
