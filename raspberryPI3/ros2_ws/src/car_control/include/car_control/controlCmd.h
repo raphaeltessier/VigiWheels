@@ -6,9 +6,9 @@
 #include <string.h>
 #include <math.h>
 
-#define KP 1.50
-#define KI 1.00
-#define Te 30 * pow(10,-3)
+#define KP 0.95
+#define KI 3.5
+#define Te pow(10,-3)
 #define gainRPM 65.00   //Maximum value RPM of each motor based on motors_feedback topic
 
 
