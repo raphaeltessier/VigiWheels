@@ -5,7 +5,6 @@
 #include <errno.h>
 
 #include "rclcpp/rclcpp.hpp"
-#include "example_interfaces/msg/string.hpp"
 #include "interfaces/msg/fire_sensor.hpp"
 
 #define SERIAL_PORT_1 "/dev/ttyACM0"

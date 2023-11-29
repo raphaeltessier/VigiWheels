@@ -1,0 +1,7 @@
+[01m[K/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/src/fire_detection/src/serial_writing.cpp:[m[K In constructor ‘[01m[KSerialWritingNode::SerialWritingNode()[m[K’:
+[01m[K/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/src/fire_detection/src/serial_writing.cpp:25:131:[m[K [01;31m[Kerror: [m[K‘[01m[KProcessingDataFireNode[m[K’ has not been declared
+   25 |         subscription_emergency_alert = this->create_subscription<interfaces::msg::EmergencyAlertFire>("data_fire", 10, std::bind(&[01;31m[KProcessingDataFireNode[m[K::EmergencyAlertFireCallBack, this, std::placeholders::_1));
+      |                                                                                                                                   [01;31m[K^~~~~~~~~~~~~~~~~~~~~~[m[K
+gmake[2]: *** [CMakeFiles/serial_writing_node.dir/build.make:76: CMakeFiles/serial_writing_node.dir/src/serial_writing.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:193: CMakeFiles/serial_writing_node.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

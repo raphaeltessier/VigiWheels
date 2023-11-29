@@ -223,6 +223,19 @@ processing_data_fire_node/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/processing_data_fire_node.dir/build.make CMakeFiles/processing_data_fire_node.dir/build
 .PHONY : processing_data_fire_node/fast
 
+#=============================================================================
+# Target rules for targets named serial_writing_node
+
+# Build rule for target.
+serial_writing_node: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 serial_writing_node
+.PHONY : serial_writing_node
+
+# fast build rule for target.
+serial_writing_node/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/serial_writing_node.dir/build.make CMakeFiles/serial_writing_node.dir/build
+.PHONY : serial_writing_node/fast
+
 src/processing_data_fire.o: src/processing_data_fire.cpp.o
 .PHONY : src/processing_data_fire.o
 
@@ -271,6 +284,30 @@ src/serial_reading.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/serial_reading_node.dir/build.make CMakeFiles/serial_reading_node.dir/src/serial_reading.cpp.s
 .PHONY : src/serial_reading.cpp.s
 
+src/serial_writing.o: src/serial_writing.cpp.o
+.PHONY : src/serial_writing.o
+
+# target to build an object file
+src/serial_writing.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/serial_writing_node.dir/build.make CMakeFiles/serial_writing_node.dir/src/serial_writing.cpp.o
+.PHONY : src/serial_writing.cpp.o
+
+src/serial_writing.i: src/serial_writing.cpp.i
+.PHONY : src/serial_writing.i
+
+# target to preprocess a source file
+src/serial_writing.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/serial_writing_node.dir/build.make CMakeFiles/serial_writing_node.dir/src/serial_writing.cpp.i
+.PHONY : src/serial_writing.cpp.i
+
+src/serial_writing.s: src/serial_writing.cpp.s
+.PHONY : src/serial_writing.s
+
+# target to generate assembly for a file
+src/serial_writing.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/serial_writing_node.dir/build.make CMakeFiles/serial_writing_node.dir/src/serial_writing.cpp.s
+.PHONY : src/serial_writing.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -288,12 +325,16 @@ help:
 	@echo "... uninstall"
 	@echo "... processing_data_fire_node"
 	@echo "... serial_reading_node"
+	@echo "... serial_writing_node"
 	@echo "... src/processing_data_fire.o"
 	@echo "... src/processing_data_fire.i"
 	@echo "... src/processing_data_fire.s"
 	@echo "... src/serial_reading.o"
 	@echo "... src/serial_reading.i"
 	@echo "... src/serial_reading.s"
+	@echo "... src/serial_writing.o"
+	@echo "... src/serial_writing.i"
+	@echo "... src/serial_writing.s"
 .PHONY : help
 
 

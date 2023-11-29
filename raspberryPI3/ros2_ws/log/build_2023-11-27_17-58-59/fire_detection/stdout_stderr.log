@@ -1,0 +1,42 @@
+[35m[1mConsolidate compiler generated dependencies of target serial_writing_node[0m
+[ 66%] Built target serial_reading_node
+[ 66%] Built target processing_data_fire_node
+[ 83%] [32mBuilding CXX object CMakeFiles/serial_writing_node.dir/src/serial_writing.cpp.o[0m
+[01m[K/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/src/fire_detection/src/serial_writing.cpp:[m[K In constructor ‘[01m[KSerialWritingNode::SerialWritingNode()[m[K’:
+[01m[K/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/src/fire_detection/src/serial_writing.cpp:23:94:[m[K [01;31m[Kerror: [m[K‘[01m[KSerialReadingNode[m[K’ has not been declared
+   23 |         timer_serial_reading = this->create_wall_timer(std::chrono::milliseconds(250), bind(&[01;31m[KSerialReadingNode[m[K::serialCommunication, this));
+      |                                                                                              [01;31m[K^~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/src/fire_detection/src/serial_writing.cpp:[m[K In member function ‘[01m[Kint SerialWritingNode::serialCommunication()[m[K’:
+[01m[K/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/src/fire_detection/src/serial_writing.cpp:100:13:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kir_sensor1_value[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+  100 |         int [01;35m[Kir_sensor1_value[m[K, ir_sensor2_value, ir_sensor3_value, ir_sensor4_value;
+      |             [01;35m[K^~~~~~~~~~~~~~~~[m[K
+[01m[K/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/src/fire_detection/src/serial_writing.cpp:100:31:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kir_sensor2_value[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+  100 |         int ir_sensor1_value, [01;35m[Kir_sensor2_value[m[K, ir_sensor3_value, ir_sensor4_value;
+      |                               [01;35m[K^~~~~~~~~~~~~~~~[m[K
+[01m[K/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/src/fire_detection/src/serial_writing.cpp:100:49:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kir_sensor3_value[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+  100 |         int ir_sensor1_value, ir_sensor2_value, [01;35m[Kir_sensor3_value[m[K, ir_sensor4_value;
+      |                                                 [01;35m[K^~~~~~~~~~~~~~~~[m[K
+[01m[K/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/src/fire_detection/src/serial_writing.cpp:100:67:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kir_sensor4_value[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+  100 |         int ir_sensor1_value, ir_sensor2_value, ir_sensor3_value, [01;35m[Kir_sensor4_value[m[K;
+      |                                                                   [01;35m[K^~~~~~~~~~~~~~~~[m[K
+[01m[K/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/src/fire_detection/src/serial_writing.cpp:101:13:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Ksmoke_sensor1_value[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+  101 |         int [01;35m[Ksmoke_sensor1_value[m[K, smoke_sensor2_value;
+      |             [01;35m[K^~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/src/fire_detection/src/serial_writing.cpp:101:34:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Ksmoke_sensor2_value[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+  101 |         int smoke_sensor1_value, [01;35m[Ksmoke_sensor2_value[m[K;
+      |                                  [01;35m[K^~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/src/fire_detection/src/serial_writing.cpp:104:14:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kread_buf[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+  104 |         char [01;35m[Kread_buf[m[K[BUFFER_SIZE];
+      |              [01;35m[K^~~~~~~~[m[K
+[01m[K/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/src/fire_detection/src/serial_writing.cpp:105:14:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kframe_buf[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+  105 |         char [01;35m[Kframe_buf[m[K[BUFFER_SIZE];
+      |              [01;35m[K^~~~~~~~~[m[K
+[01m[K/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/src/fire_detection/src/serial_writing.cpp:106:13:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kframe_index[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+  106 |         int [01;35m[Kframe_index[m[K = 0;
+      |             [01;35m[K^~~~~~~~~~~[m[K
+[01m[K/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/src/fire_detection/src/serial_writing.cpp:107:14:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kframe_started[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+  107 |         bool [01;35m[Kframe_started[m[K = false;
+      |              [01;35m[K^~~~~~~~~~~~~[m[K
+gmake[2]: *** [CMakeFiles/serial_writing_node.dir/build.make:76: CMakeFiles/serial_writing_node.dir/src/serial_writing.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:193: CMakeFiles/serial_writing_node.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

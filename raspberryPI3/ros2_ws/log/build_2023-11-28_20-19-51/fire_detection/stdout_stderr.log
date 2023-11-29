@@ -1,0 +1,18 @@
+[35m[1mConsolidate compiler generated dependencies of target serial_writing_node[0m
+[ 66%] Built target serial_reading_node
+[ 66%] Built target processing_data_fire_node
+[ 83%] [32mBuilding CXX object CMakeFiles/serial_writing_node.dir/src/serial_writing.cpp.o[0m
+[01m[K/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/src/fire_detection/src/serial_writing.cpp:72:60:[m[K [01;31m[Kerror: [m[K‘[01m[KFireSensor[m[K’ in namespace ‘[01m[Kinterfaces::msg[m[K’ does not name a type
+   72 |     void EmergencyAlertFireCallBack(const interfaces::msg::[01;31m[KFireSensor[m[K & msg)
+      |                                                            [01;31m[K^~~~~~~~~~[m[K
+[01m[K/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/src/fire_detection/src/serial_writing.cpp:[m[K In constructor ‘[01m[KSerialWritingNode::SerialWritingNode()[m[K’:
+[01m[K/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/src/fire_detection/src/serial_writing.cpp:25:131:[m[K [01;31m[Kerror: [m[K‘[01m[KProcessingDataFireNode[m[K’ has not been declared
+   25 |         subscription_emergency_alert = this->create_subscription<interfaces::msg::EmergencyAlertFire>("data_fire", 10, std::bind(&[01;31m[KProcessingDataFireNode[m[K::EmergencyAlertFireCallBack, this, std::placeholders::_1));
+      |                                                                                                                                   [01;31m[K^~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/src/fire_detection/src/serial_writing.cpp:[m[K In member function ‘[01m[Kvoid SerialWritingNode::EmergencyAlertFireCallBack(const int&)[m[K’:
+[01m[K/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/src/fire_detection/src/serial_writing.cpp:105:54:[m[K [01;31m[Kerror: [m[Krequest for member ‘[01m[Kfire_detected[m[K’ in ‘[01m[Kmsg[m[K’, which is of non-class type ‘[01m[Kconst int[m[K’
+  105 |             snprintf(tx, sizeof(tx), "#fire=%u", msg.[01;31m[Kfire_detected[m[K); //8
+      |                                                      [01;31m[K^~~~~~~~~~~~~[m[K
+gmake[2]: *** [CMakeFiles/serial_writing_node.dir/build.make:76: CMakeFiles/serial_writing_node.dir/src/serial_writing.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:193: CMakeFiles/serial_writing_node.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

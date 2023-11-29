@@ -1,0 +1,17 @@
+[0.052s] Invoking command in '/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/build/fire_detection': CMAKE_PREFIX_PATH=/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/install/interfaces:/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/install/fire_detection:/home/insa/ros2_ws/install/my_fire_pkg:/home/insa/ros2_ws/install/demo_sensor_pkg:/home/insa/ros2_ws/install/my_robot_interfaces:/home/insa/ros2_ws/install/my_cpp_pkg:/home/insa/ros2_ws/install/johann_cpp_pkg:/opt/ros/humble /usr/bin/cmake --build /home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/build/fire_detection -- -j8 -l8
+[0.080s] [35m[1mConsolidate compiler generated dependencies of target serial_writing_node[0m
+[0.088s] [ 66%] Built target processing_data_fire_node
+[0.088s] [ 66%] Built target serial_reading_node
+[0.091s] [ 83%] [32mBuilding CXX object CMakeFiles/serial_writing_node.dir/src/serial_writing.cpp.o[0m
+[1.587s] [01m[K/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/src/fire_detection/src/serial_writing.cpp:[m[K In constructor ‘[01m[KSerialWritingNode::SerialWritingNode()[m[K’:
+[1.587s] [01m[K/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/src/fire_detection/src/serial_writing.cpp:23:35:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[KSerialWritingNode::EmergencyAlertFireCallBack()[m[K’
+[1.588s]    23 |         [01;31m[KEmergencyAlertFireCallBack()[m[K;
+[1.588s]       |         [01;31m[K~~~~~~~~~~~~~~~~~~~~~~~~~~^~[m[K
+[1.588s] [01m[K/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/src/fire_detection/src/serial_writing.cpp:71:9:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kint SerialWritingNode::EmergencyAlertFireCallBack(const EmergencyAlertFire&)[m[K’
+[1.588s]    71 |     int [01;36m[KEmergencyAlertFireCallBack[m[K(const interfaces::msg::EmergencyAlertFire &msg)
+[1.588s]       |         [01;36m[K^~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[1.588s] [01m[K/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/src/fire_detection/src/serial_writing.cpp:71:9:[m[K [01;36m[Knote: [m[K  candidate expects 1 argument, 0 provided
+[1.886s] gmake[2]: *** [CMakeFiles/serial_writing_node.dir/build.make:76: CMakeFiles/serial_writing_node.dir/src/serial_writing.cpp.o] Error 1
+[1.886s] gmake[1]: *** [CMakeFiles/Makefile2:193: CMakeFiles/serial_writing_node.dir/all] Error 2
+[1.886s] gmake: *** [Makefile:146: all] Error 2
+[1.887s] Invoked command in '/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/build/fire_detection' returned '2': CMAKE_PREFIX_PATH=/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/install/interfaces:/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/install/fire_detection:/home/insa/ros2_ws/install/my_fire_pkg:/home/insa/ros2_ws/install/demo_sensor_pkg:/home/insa/ros2_ws/install/my_robot_interfaces:/home/insa/ros2_ws/install/my_cpp_pkg:/home/insa/ros2_ws/install/johann_cpp_pkg:/opt/ros/humble /usr/bin/cmake --build /home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/build/fire_detection -- -j8 -l8

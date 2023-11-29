@@ -1,0 +1,17 @@
+[35m[1mConsolidate compiler generated dependencies of target processing_data_fire_node[0m
+[35m[1mConsolidate compiler generated dependencies of target serial_writing_node[0m
+[ 33%] Built target serial_reading_node
+[ 50%] [32mBuilding CXX object CMakeFiles/processing_data_fire_node.dir/src/processing_data_fire.cpp.o[0m
+[ 83%] Built target serial_writing_node
+[01m[K/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/src/fire_detection/src/processing_data_fire.cpp:[m[K In member function ‘[01m[Kvoid ProcessingDataFireNode::dataFireCallBack(const FireSensor&)[m[K’:
+[01m[K/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/src/fire_detection/src/processing_data_fire.cpp:83:13:[m[K [01;31m[Kerror: [m[K‘[01m[Kresult1[m[K’ was not declared in this scope; did you mean ‘[01m[Kresult4[m[K’?
+   83 |         if ([01;31m[Kresult1[m[K == 1 || result2 == 1 || result3 == 1 || result4 == 1)
+      |             [01;31m[K^~~~~~~[m[K
+      |             [32m[Kresult4[m[K
+[01m[K/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/src/fire_detection/src/processing_data_fire.cpp:83:45:[m[K [01;31m[Kerror: [m[K‘[01m[Kresult3[m[K’ was not declared in this scope; did you mean ‘[01m[Kresult4[m[K’?
+   83 |         if (result1 == 1 || result2 == 1 || [01;31m[Kresult3[m[K == 1 || result4 == 1)
+      |                                             [01;31m[K^~~~~~~[m[K
+      |                                             [32m[Kresult4[m[K
+gmake[2]: *** [CMakeFiles/processing_data_fire_node.dir/build.make:76: CMakeFiles/processing_data_fire_node.dir/src/processing_data_fire.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:167: CMakeFiles/processing_data_fire_node.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

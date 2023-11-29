@@ -8,14 +8,17 @@ endif()
 # find dependencies
 find_package(ament_cmake REQUIRED)
 find_package(rclcpp REQUIRED)
-find_package(example_interfaces REQUIRED)
 find_package(interfaces REQUIRED) 
 
 add_executable(serial_reading_node src/serial_reading.cpp)
-ament_target_dependencies(serial_reading_node rclcpp example_interfaces interfaces)
+ament_target_dependencies(serial_reading_node rclcpp interfaces)
 
 add_executable(processing_data_fire_node src/processing_data_fire.cpp)
-ament_target_dependencies(processing_data_fire_node rclcpp example_interfaces interfaces)
+ament_target_dependencies(processing_data_fire_node rclcpp interfaces)
+
+add_executable(serial_writing_node src/serial_writing.cpp)
+ament_target_dependencies(serial_writing_node rclcpp interfaces)
+
 
 install(TARGETS
   serial_reading_node
@@ -23,6 +26,10 @@ install(TARGETS
 
 install(TARGETS
   processing_data_fire_node
+  DESTINATION lib/${PROJECT_NAME})
+
+install(TARGETS
+  serial_writing_node
   DESTINATION lib/${PROJECT_NAME})
 
 ament_package()

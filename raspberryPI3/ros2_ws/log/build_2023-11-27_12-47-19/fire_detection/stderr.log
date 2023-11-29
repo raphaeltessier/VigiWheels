@@ -1,0 +1,9 @@
+[31mCMake Error at CMakeLists.txt:19 (add_executable):
+  add_executable cannot create target "processing_data_fire_node" because
+  another target with the same name already exists.  The existing target is
+  an executable created in source directory
+  "/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/src/fire_detection".
+  See documentation for policy CMP0002 for more details.
+
+[0m
+gmake: *** [Makefile:308: cmake_check_build_system] Error 1

@@ -1,0 +1,7 @@
+[01m[K/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/src/fire_detection/src/serial_writing.cpp:[m[K In member function ‘[01m[Kint SerialWritingNode::EmergencyAlertFireCallBack(const EmergencyAlertFire&)[m[K’:
+[01m[K/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/src/fire_detection/src/serial_writing.cpp:105:63:[m[K [01;35m[Kwarning: [m[K‘[01m[K#FireIsDetected [m[K’ directive output truncated writing 16 bytes into a region of size 10 [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wformat-truncation=-Wformat-truncation=]8;;[m[K]
+  105 |             snprintf(write_buf, sizeof(write_buf), "[01;35m[K#FireIsDetected [m[K%d", msg.fire_detected);
+      |                                                     [01;35m[K~~~~~~~~~~^~~~~~[m[K
+[01m[K/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/src/fire_detection/src/serial_writing.cpp:105:21:[m[K [01;36m[Knote: [m[K‘[01m[Ksnprintf[m[K’ output 18 bytes into a destination of size 10
+  105 |             [01;36m[Ksnprintf(write_buf, sizeof(write_buf), "#FireIsDetected %d", msg.fire_detected)[m[K;
+      |             [01;36m[K~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K

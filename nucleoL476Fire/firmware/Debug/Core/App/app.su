@@ -1,4 +1,5 @@
-../Core/App/app.c:26:6:reading_analog_sensor	16	static
-../Core/App/app.c:34:6:reading_digital_sensor	24	static
-../Core/App/app.c:39:6:reading_sensor_values	8	static
-../Core/App/app.c:49:6:sending_data_uart	8	static
+../Core/App/app.c:35:6:reading_analog_sensor	16	static
+../Core/App/app.c:43:6:reading_digital_sensor	24	static
+../Core/App/app.c:48:6:reading_sensor_values	8	static
+../Core/App/app.c:58:6:sending_data_uart	120	static
+../Core/App/app.c:78:6:receiving_data_uart	40	static

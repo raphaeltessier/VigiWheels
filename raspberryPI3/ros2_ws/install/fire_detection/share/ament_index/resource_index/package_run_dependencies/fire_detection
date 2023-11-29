@@ -1,1 +1,1 @@
-rclcpp;example_interfaces_msgs;interfaces;ament_lint_auto;ament_lint_common
+rclcpp;interfaces;ament_lint_auto;ament_lint_common

@@ -665,10 +665,6 @@ CMakeFiles/processing_data_fire_node.dir/src/processing_data_fire.cpp.o: /home/i
   /opt/ros/humble/include/rclcpp/rclcpp/wait_set_policies/thread_safe_synchronization.hpp \
   /opt/ros/humble/include/rclcpp/rclcpp/wait_set_policies/detail/write_preferring_read_write_lock.hpp \
   /opt/ros/humble/include/rclcpp/rclcpp/wait_set_template.hpp \
-  /opt/ros/humble/include/example_interfaces/example_interfaces/msg/string.hpp \
-  /opt/ros/humble/include/example_interfaces/example_interfaces/msg/detail/string__struct.hpp \
-  /opt/ros/humble/include/example_interfaces/example_interfaces/msg/detail/string__builder.hpp \
-  /opt/ros/humble/include/example_interfaces/example_interfaces/msg/detail/string__traits.hpp \
   /home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/fire_sensor.hpp \
   /home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/fire_sensor__struct.hpp \
   /home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/fire_sensor__builder.hpp \
@@ -692,14 +688,6 @@ CMakeFiles/processing_data_fire_node.dir/src/processing_data_fire.cpp.o: /home/i
 /home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/fire_sensor__struct.hpp:
 
 /home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/fire_sensor.hpp:
-
-/opt/ros/humble/include/example_interfaces/example_interfaces/msg/detail/string__traits.hpp:
-
-/opt/ros/humble/include/example_interfaces/example_interfaces/msg/detail/string__builder.hpp:
-
-/opt/ros/humble/include/example_interfaces/example_interfaces/msg/detail/string__struct.hpp:
-
-/opt/ros/humble/include/example_interfaces/example_interfaces/msg/string.hpp:
 
 /opt/ros/humble/include/rclcpp/rclcpp/wait_set_policies/thread_safe_synchronization.hpp:
 

@@ -1,0 +1,44 @@
+[0.057s] Invoking command in '/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/build/fire_detection': CMAKE_PREFIX_PATH=/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/install/interfaces:/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/install/fire_detection:/home/insa/ros2_ws/install/my_fire_pkg:/home/insa/ros2_ws/install/demo_sensor_pkg:/home/insa/ros2_ws/install/my_robot_interfaces:/home/insa/ros2_ws/install/my_cpp_pkg:/home/insa/ros2_ws/install/johann_cpp_pkg:/opt/ros/humble /usr/bin/cmake --build /home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/build/fire_detection -- -j8 -l8
+[0.085s] [35m[1mConsolidate compiler generated dependencies of target serial_writing_node[0m
+[0.094s] [ 66%] Built target serial_reading_node
+[0.094s] [ 66%] Built target processing_data_fire_node
+[0.096s] [ 83%] [32mBuilding CXX object CMakeFiles/serial_writing_node.dir/src/serial_writing.cpp.o[0m
+[1.618s] [01m[K/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/src/fire_detection/src/serial_writing.cpp:[m[K In constructor ‘[01m[KSerialWritingNode::SerialWritingNode()[m[K’:
+[1.618s] [01m[K/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/src/fire_detection/src/serial_writing.cpp:23:94:[m[K [01;31m[Kerror: [m[K‘[01m[KSerialReadingNode[m[K’ has not been declared
+[1.618s]    23 |         timer_serial_reading = this->create_wall_timer(std::chrono::milliseconds(250), bind(&[01;31m[KSerialReadingNode[m[K::serialCommunication, this));
+[1.618s]       |                                                                                              [01;31m[K^~~~~~~~~~~~~~~~~[m[K
+[1.619s] [01m[K/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/src/fire_detection/src/serial_writing.cpp:[m[K In member function ‘[01m[Kint SerialWritingNode::serialCommunication()[m[K’:
+[1.619s] [01m[K/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/src/fire_detection/src/serial_writing.cpp:100:13:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kir_sensor1_value[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+[1.619s]   100 |         int [01;35m[Kir_sensor1_value[m[K, ir_sensor2_value, ir_sensor3_value, ir_sensor4_value;
+[1.619s]       |             [01;35m[K^~~~~~~~~~~~~~~~[m[K
+[1.619s] [01m[K/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/src/fire_detection/src/serial_writing.cpp:100:31:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kir_sensor2_value[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+[1.619s]   100 |         int ir_sensor1_value, [01;35m[Kir_sensor2_value[m[K, ir_sensor3_value, ir_sensor4_value;
+[1.619s]       |                               [01;35m[K^~~~~~~~~~~~~~~~[m[K
+[1.619s] [01m[K/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/src/fire_detection/src/serial_writing.cpp:100:49:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kir_sensor3_value[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+[1.619s]   100 |         int ir_sensor1_value, ir_sensor2_value, [01;35m[Kir_sensor3_value[m[K, ir_sensor4_value;
+[1.619s]       |                                                 [01;35m[K^~~~~~~~~~~~~~~~[m[K
+[1.619s] [01m[K/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/src/fire_detection/src/serial_writing.cpp:100:67:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kir_sensor4_value[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+[1.619s]   100 |         int ir_sensor1_value, ir_sensor2_value, ir_sensor3_value, [01;35m[Kir_sensor4_value[m[K;
+[1.620s]       |                                                                   [01;35m[K^~~~~~~~~~~~~~~~[m[K
+[1.620s] [01m[K/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/src/fire_detection/src/serial_writing.cpp:101:13:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Ksmoke_sensor1_value[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+[1.620s]   101 |         int [01;35m[Ksmoke_sensor1_value[m[K, smoke_sensor2_value;
+[1.620s]       |             [01;35m[K^~~~~~~~~~~~~~~~~~~[m[K
+[1.620s] [01m[K/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/src/fire_detection/src/serial_writing.cpp:101:34:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Ksmoke_sensor2_value[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+[1.620s]   101 |         int smoke_sensor1_value, [01;35m[Ksmoke_sensor2_value[m[K;
+[1.620s]       |                                  [01;35m[K^~~~~~~~~~~~~~~~~~~[m[K
+[1.620s] [01m[K/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/src/fire_detection/src/serial_writing.cpp:104:14:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kread_buf[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+[1.620s]   104 |         char [01;35m[Kread_buf[m[K[BUFFER_SIZE];
+[1.620s]       |              [01;35m[K^~~~~~~~[m[K
+[1.620s] [01m[K/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/src/fire_detection/src/serial_writing.cpp:105:14:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kframe_buf[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+[1.620s]   105 |         char [01;35m[Kframe_buf[m[K[BUFFER_SIZE];
+[1.620s]       |              [01;35m[K^~~~~~~~~[m[K
+[1.620s] [01m[K/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/src/fire_detection/src/serial_writing.cpp:106:13:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kframe_index[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+[1.620s]   106 |         int [01;35m[Kframe_index[m[K = 0;
+[1.620s]       |             [01;35m[K^~~~~~~~~~~[m[K
+[1.620s] [01m[K/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/src/fire_detection/src/serial_writing.cpp:107:14:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kframe_started[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+[1.620s]   107 |         bool [01;35m[Kframe_started[m[K = false;
+[1.620s]       |              [01;35m[K^~~~~~~~~~~~~[m[K
+[1.911s] gmake[2]: *** [CMakeFiles/serial_writing_node.dir/build.make:76: CMakeFiles/serial_writing_node.dir/src/serial_writing.cpp.o] Error 1
+[1.911s] gmake[1]: *** [CMakeFiles/Makefile2:193: CMakeFiles/serial_writing_node.dir/all] Error 2
+[1.911s] gmake: *** [Makefile:146: all] Error 2
+[1.913s] Invoked command in '/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/build/fire_detection' returned '2': CMAKE_PREFIX_PATH=/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/install/interfaces:/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/install/fire_detection:/home/insa/ros2_ws/install/my_fire_pkg:/home/insa/ros2_ws/install/demo_sensor_pkg:/home/insa/ros2_ws/install/my_robot_interfaces:/home/insa/ros2_ws/install/my_cpp_pkg:/home/insa/ros2_ws/install/johann_cpp_pkg:/opt/ros/humble /usr/bin/cmake --build /home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/build/fire_detection -- -j8 -l8

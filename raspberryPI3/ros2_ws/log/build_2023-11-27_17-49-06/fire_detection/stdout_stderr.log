@@ -1,0 +1,15 @@
+[35m[1mConsolidate compiler generated dependencies of target serial_writing_node[0m
+[ 66%] Built target processing_data_fire_node
+[ 66%] Built target serial_reading_node
+[ 83%] [32mBuilding CXX object CMakeFiles/serial_writing_node.dir/src/serial_writing.cpp.o[0m
+[01m[K/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/src/fire_detection/src/serial_writing.cpp:[m[K In constructor ‘[01m[KSerialWritingNode::SerialWritingNode()[m[K’:
+[01m[K/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/src/fire_detection/src/serial_writing.cpp:23:35:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[KSerialWritingNode::EmergencyAlertFireCallBack()[m[K’
+   23 |         [01;31m[KEmergencyAlertFireCallBack()[m[K;
+      |         [01;31m[K~~~~~~~~~~~~~~~~~~~~~~~~~~^~[m[K
+[01m[K/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/src/fire_detection/src/serial_writing.cpp:71:9:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kint SerialWritingNode::EmergencyAlertFireCallBack(const EmergencyAlertFire&)[m[K’
+   71 |     int [01;36m[KEmergencyAlertFireCallBack[m[K(const interfaces::msg::EmergencyAlertFire &msg)
+      |         [01;36m[K^~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/src/fire_detection/src/serial_writing.cpp:71:9:[m[K [01;36m[Knote: [m[K  candidate expects 1 argument, 0 provided
+gmake[2]: *** [CMakeFiles/serial_writing_node.dir/build.make:76: CMakeFiles/serial_writing_node.dir/src/serial_writing.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:193: CMakeFiles/serial_writing_node.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

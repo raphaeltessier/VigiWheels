@@ -1,0 +1,25 @@
+[35m[1mConsolidate compiler generated dependencies of target serial_writing_node[0m
+[ 66%] Built target serial_reading_node
+[ 66%] Built target processing_data_fire_node
+[ 83%] [32mBuilding CXX object CMakeFiles/serial_writing_node.dir/src/serial_writing.cpp.o[0m
+[01m[K/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/src/fire_detection/src/serial_writing.cpp:157:56:[m[K [01;31m[Kerror: [m[K‘[01m[KFireSensor[m[K’ is not a member of ‘[01m[Kinterfaces::msg[m[K’
+  157 |     std::shared_ptr<rclcpp::Publisher<interfaces::msg::[01;31m[KFireSensor[m[K>> publisher_serial_reading;
+      |                                                        [01;31m[K^~~~~~~~~~[m[K
+[01m[K/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/src/fire_detection/src/serial_writing.cpp:157:56:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+[01m[K/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/src/fire_detection/src/serial_writing.cpp:157:66:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+  157 |     std::shared_ptr<rclcpp::Publisher<interfaces::msg::FireSensor[01;31m[K>>[m[K publisher_serial_reading;
+      |                                                                  [01;31m[K^~[m[K
+[01m[K/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/src/fire_detection/src/serial_writing.cpp:[m[K In constructor ‘[01m[KSerialWritingNode::SerialWritingNode()[m[K’:
+[01m[K/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/src/fire_detection/src/serial_writing.cpp:23:94:[m[K [01;31m[Kerror: [m[K‘[01m[KSerialReadingNode[m[K’ has not been declared
+   23 |         timer_serial_reading = this->create_wall_timer(std::chrono::milliseconds(250), bind(&[01;31m[KSerialReadingNode[m[K::serialCommunication, this));
+      |                                                                                              [01;31m[K^~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/src/fire_detection/src/serial_writing.cpp:[m[K In member function ‘[01m[Kint SerialWritingNode::serialCommunication()[m[K’:
+[01m[K/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/src/fire_detection/src/serial_writing.cpp:144:45:[m[K [01;31m[Kerror: [m[K‘[01m[KFireSensor[m[K’ is not a member of ‘[01m[Kinterfaces::msg[m[K’
+  144 |                 auto msg = interfaces::msg::[01;31m[KFireSensor[m[K();
+      |                                             [01;31m[K^~~~~~~~~~[m[K
+[01m[K/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/src/fire_detection/src/serial_writing.cpp:151:41:[m[K [01;31m[Kerror: [m[Kbase operand of ‘[01m[K->[m[K’ is not a pointer
+  151 |                 publisher_serial_reading[01;31m[K->[m[Kpublish(msg);
+      |                                         [01;31m[K^~[m[K
+gmake[2]: *** [CMakeFiles/serial_writing_node.dir/build.make:76: CMakeFiles/serial_writing_node.dir/src/serial_writing.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:193: CMakeFiles/serial_writing_node.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

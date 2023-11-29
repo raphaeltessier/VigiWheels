@@ -5,10 +5,7 @@
  *      Author: Johann Courand
  */
 
-#include "stm32l4xx_hal.h"
 #include "app.h"
-#include <string.h>
-#include <stdio.h>
 
 extern UART_HandleTypeDef huart2;
 extern ADC_HandleTypeDef hadc1;
@@ -21,7 +18,18 @@ uint16_t ir_sensor4; // digital port D4
 uint16_t smoke_sensor1; // digital port D4
 uint16_t smoke_sensor2; // digital port D4
 
-char msg[100];
+osMutexId_t uartMutex;
+osThreadId_t senderThreadId;
+osThreadId_t receiverThreadId;
+
+const osThreadAttr_t senderTask_attributes = {
+    .name = "Sender",
+    .priority = (osPriority_t) osPriorityHigh,  // Priorité élevée
+    .stack_size = 128 * 4  // Taille de la pile
+};
+
+#define SIZE_RX 10
+#define SIZE_TX 100
 
 void reading_analog_sensor(ADC_HandleTypeDef *hadc, uint16_t *sensorValue)
 {
@@ -41,18 +49,69 @@ void reading_sensor_values()
     reading_analog_sensor(&hadc1, &ir_sensor1);
     reading_digital_sensor(GPIOA, GPIO_PIN_10, &ir_sensor2);
     reading_analog_sensor(&hadc1, &ir_sensor3);
-    reading_digital_sensor(GPIOB, GPIO_PIN_5, &ir_sensor4);
+    reading_digital_sensor(GPIOB, GPIO_PIN_3, &ir_sensor4);
     reading_analog_sensor(&hadc1, &smoke_sensor1);
     reading_analog_sensor(&hadc1, &smoke_sensor2);
 }
 
-void sending_data_uart()
+void sending_data_uart(void *argument)
 {
-    reading_sensor_values();
+	char tx[SIZE_TX + 1];
 
-    sprintf(msg, "#IR_SENSOR1=%hu|IR_SENSOR2=%u|IR_SENSOR3=4095|IR_SENSOR4=0|SMOKE_SENSOR1=4095|SMOKE_SENSOR2=4095\r\n", ir_sensor1, ir_sensor2);
+    while (1)
+    {
+        osMutexAcquire(uartMutex, osWaitForever);
 
-    HAL_UART_Transmit(&huart2, (const uint8_t *)msg, strlen(msg), 100);
+        reading_sensor_values();
 
-    HAL_Delay(250);
+        sprintf(tx, "#IR_SENSOR1=%hu|IR_SENSOR2=%u|IR_SENSOR3=4095|IR_SENSOR4=0|SMOKE_SENSOR1=4095|SMOKE_SENSOR2=4095\r\n", ir_sensor1, ir_sensor2);
+
+        HAL_UART_Transmit(&huart2, (const uint8_t *)tx, strlen(tx), 100);
+
+        osMutexRelease(uartMutex);
+
+        osDelay(200);
+    }
+}
+
+void receiving_data_uart(void *argument)
+{
+    char buf[1];
+    char rx[SIZE_RX + 1];
+
+    while (1)
+    {
+        osMutexAcquire(uartMutex, osWaitForever);
+
+        do
+        {
+            HAL_UART_Receive(&huart2, (uint8_t *)buf, 1, 100);
+        } while (*buf != '#');
+
+        int i = 0;
+        do
+        {
+            HAL_UART_Receive(&huart2, (uint8_t *)buf, 1, 100);
+            if (*buf != '#')
+            {
+                rx[i++] = *buf;
+            }
+        } while (i < SIZE_RX && (*buf != '0' && *buf != '1'));
+
+        rx[i] = '\0';
+
+        if (strcmp(rx, "fire=1") == 0)
+        {
+            HAL_GPIO_WritePin(GPIOB, GPIO_PIN_5, GPIO_PIN_SET);
+        }
+        else if (strcmp(rx, "fire=0") == 0)
+        {
+            HAL_GPIO_WritePin(GPIOB, GPIO_PIN_5, GPIO_PIN_RESET);
+        } else
+        {
+            // Error handling for unexpected values
+        }
+
+        osMutexRelease(uartMutex);
+    }
 }

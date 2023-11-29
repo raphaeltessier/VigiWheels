@@ -65,6 +65,7 @@ CMAKE_BINARY_DIR = /home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/build/fire
 # The main recursive "all" target.
 all: CMakeFiles/serial_reading_node.dir/all
 all: CMakeFiles/processing_data_fire_node.dir/all
+all: CMakeFiles/serial_writing_node.dir/all
 .PHONY : all
 
 # The main recursive "preinstall" target.
@@ -76,6 +77,7 @@ clean: CMakeFiles/uninstall.dir/clean
 clean: CMakeFiles/fire_detection_uninstall.dir/clean
 clean: CMakeFiles/serial_reading_node.dir/clean
 clean: CMakeFiles/processing_data_fire_node.dir/clean
+clean: CMakeFiles/serial_writing_node.dir/clean
 .PHONY : clean
 
 #=============================================================================
@@ -181,6 +183,32 @@ processing_data_fire_node: CMakeFiles/processing_data_fire_node.dir/rule
 CMakeFiles/processing_data_fire_node.dir/clean:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/processing_data_fire_node.dir/build.make CMakeFiles/processing_data_fire_node.dir/clean
 .PHONY : CMakeFiles/processing_data_fire_node.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/serial_writing_node.dir
+
+# All Build rule for target.
+CMakeFiles/serial_writing_node.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/serial_writing_node.dir/build.make CMakeFiles/serial_writing_node.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/serial_writing_node.dir/build.make CMakeFiles/serial_writing_node.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/build/fire_detection/CMakeFiles --progress-num=5,6 "Built target serial_writing_node"
+.PHONY : CMakeFiles/serial_writing_node.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/serial_writing_node.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/build/fire_detection/CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/serial_writing_node.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/build/fire_detection/CMakeFiles 0
+.PHONY : CMakeFiles/serial_writing_node.dir/rule
+
+# Convenience name for target.
+serial_writing_node: CMakeFiles/serial_writing_node.dir/rule
+.PHONY : serial_writing_node
+
+# clean rule for target.
+CMakeFiles/serial_writing_node.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/serial_writing_node.dir/build.make CMakeFiles/serial_writing_node.dir/clean
+.PHONY : CMakeFiles/serial_writing_node.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

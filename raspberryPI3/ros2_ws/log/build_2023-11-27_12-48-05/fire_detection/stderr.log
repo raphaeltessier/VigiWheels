@@ -1,0 +1,8 @@
+[01m[K/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/src/fire_detection/src/serial_writing.cpp:[m[K In constructor ‘[01m[KSerialWritingNode::SerialWritingNode()[m[K’:
+[01m[K/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/src/fire_detection/src/serial_writing.cpp:23:9:[m[K [01;31m[Kerror: [m[K‘[01m[Ksubscription_processing_data[m[K’ was not declared in this scope
+   23 |         [01;31m[Ksubscription_processing_data[m[K = this->create_subscription<interfaces::msg::EmergencyAlertFire>("emergency_alert", 10, std::bind(&SerialWritingNode::EmergencyAlertFireCallBack, this, std::placeholders::_1));
+      |         [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+gmake[2]: *** [CMakeFiles/serial_writing_node.dir/build.make:76: CMakeFiles/serial_writing_node.dir/src/serial_writing.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:193: CMakeFiles/serial_writing_node.dir/all] Error 2
+gmake[1]: *** Waiting for unfinished jobs....
+gmake: *** [Makefile:146: all] Error 2
