@@ -12,6 +12,7 @@
 #include "interfaces/msg/motors_order.hpp"
 #include "interfaces/msg/steering_calibration.hpp"
 #include "interfaces/msg/system_check.hpp"
+#include "interfaces/msg/servo_cam_order.hpp"
 
 #include "../include/can/can.h"
 
