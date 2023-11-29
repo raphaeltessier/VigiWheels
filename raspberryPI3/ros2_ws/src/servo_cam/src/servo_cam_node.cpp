@@ -13,6 +13,8 @@
 using namespace std;
 using placeholders::_1;
 
+//take command from cam_pos_order and send angle info to the can node to be transmit to nucleo F106
+
 
 class servo_cam : public rclcpp::Node {
 
@@ -48,7 +50,7 @@ private:
         requested_angle = pos_cmd.cam_angle;
     }
 
-
+/*
     //calculate a pwm [5 , 10] for the servo from an command angle
     float calculate_pwm(int angle) {
         float pwm = float(angle)/36.0 + 5;
@@ -65,6 +67,7 @@ private:
         return pwm;
 
     }
+*/
 
  //periodic function, see servo_cam_node.h to set period -> 100ms
     // to update the angular positon of the camera to scan
@@ -91,7 +94,7 @@ private:
         }
 
 
-        servoOrder.servo_cam_pwm = calculate_pwm(command_angle);
+        servoOrder.servo_cam_angle = command_angle;
         publisher_servo_cam_order_->publish(servoOrder);
 
         
@@ -103,8 +106,8 @@ private:
     //General variables
         int mode = 0;
         int requested_angle;
-        int command_angle = 90;
-        int sens = 10; //{-10; 10}
+        int command_angle = 90; //[0, 180]
+        int sens = PAS_SCAN; //{-10; 10}
         
         
 
