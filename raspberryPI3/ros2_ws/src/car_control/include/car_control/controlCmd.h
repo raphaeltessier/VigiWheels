@@ -8,7 +8,7 @@
 
 #define KP 1.50
 #define KI 1.00
-#define Te 20 * pow(10,-3)
+#define Te 30 * pow(10,-3)
 #define gainRPM 65.00   //Maximum value RPM of each motor based on motors_feedback topic
 
 
