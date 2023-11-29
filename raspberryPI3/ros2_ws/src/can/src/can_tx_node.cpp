@@ -34,6 +34,9 @@ public:
       subscription_system_check_ = this->create_subscription<interfaces::msg::SystemCheck>(
       "system_check", 10, std::bind(&can_tx::sendCommunicationRequestCallback, this, _1));
 
+      subscription_servo_cam_order_ = this->create_subscription<interfaces::msg::ServoCamOrder>(
+      "servo_cam_order", 10, std::bind(&can_tx::sendServoCamOrderCallback, this, _1));
+
       RCLCPP_INFO(this->get_logger(), "Ready to transmit");
     }
   }
@@ -92,6 +95,18 @@ private:
       return canSend(frame);
     }
 
+    /* Send angle servo cam order via CAN bus [callback function]
+    * This function is called when a message is published on the "/system_check" topic
+    */
+    int sendServoCamOrderCallback (const interfaces::msg::ServoCamOrder & servoOrder) {
+
+      frame.can_id = ID_CAM_CMD;
+      frame.data[0] = servoOrder.servo_cam_angle;
+
+      return canSend(frame);
+    }
+
+
     /* Send steering calibration request via CAN bus [callback function]  :
     * This function is called when a message is published on the "/steering_calibration" topic
     */
@@ -147,6 +162,7 @@ private:
     rclcpp::Subscription<interfaces::msg::MotorsOrder>::SharedPtr subscription_motors_order_;
     rclcpp::Subscription<interfaces::msg::SteeringCalibration>::SharedPtr subscription_steering_calibration_;
     rclcpp::Subscription<interfaces::msg::SystemCheck>::SharedPtr subscription_system_check_;
+    rclcpp::Subscription<interfaces::msg::ServoCamOrder>::SharedPtr subscription_servo_cam_order_;
 };
 
 
