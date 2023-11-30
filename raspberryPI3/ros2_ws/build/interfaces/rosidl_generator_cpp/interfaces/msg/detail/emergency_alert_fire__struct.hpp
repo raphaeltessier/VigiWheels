@@ -39,6 +39,10 @@ struct EmergencyAlertFire_
       rosidl_runtime_cpp::MessageInitialization::ZERO == _init)
     {
       this->fire_detected = false;
+      this->ir_front_right = false;
+      this->ir_front_left = false;
+      this->ir_rear_right = false;
+      this->ir_rear_left = false;
     }
   }
 
@@ -49,6 +53,10 @@ struct EmergencyAlertFire_
       rosidl_runtime_cpp::MessageInitialization::ZERO == _init)
     {
       this->fire_detected = false;
+      this->ir_front_right = false;
+      this->ir_front_left = false;
+      this->ir_rear_right = false;
+      this->ir_rear_left = false;
     }
   }
 
@@ -56,12 +64,48 @@ struct EmergencyAlertFire_
   using _fire_detected_type =
     bool;
   _fire_detected_type fire_detected;
+  using _ir_front_right_type =
+    bool;
+  _ir_front_right_type ir_front_right;
+  using _ir_front_left_type =
+    bool;
+  _ir_front_left_type ir_front_left;
+  using _ir_rear_right_type =
+    bool;
+  _ir_rear_right_type ir_rear_right;
+  using _ir_rear_left_type =
+    bool;
+  _ir_rear_left_type ir_rear_left;
 
   // setters for named parameter idiom
   Type & set__fire_detected(
     const bool & _arg)
   {
     this->fire_detected = _arg;
+    return *this;
+  }
+  Type & set__ir_front_right(
+    const bool & _arg)
+  {
+    this->ir_front_right = _arg;
+    return *this;
+  }
+  Type & set__ir_front_left(
+    const bool & _arg)
+  {
+    this->ir_front_left = _arg;
+    return *this;
+  }
+  Type & set__ir_rear_right(
+    const bool & _arg)
+  {
+    this->ir_rear_right = _arg;
+    return *this;
+  }
+  Type & set__ir_rear_left(
+    const bool & _arg)
+  {
+    this->ir_rear_left = _arg;
     return *this;
   }
 
@@ -108,6 +152,18 @@ struct EmergencyAlertFire_
   bool operator==(const EmergencyAlertFire_ & other) const
   {
     if (this->fire_detected != other.fire_detected) {
+      return false;
+    }
+    if (this->ir_front_right != other.ir_front_right) {
+      return false;
+    }
+    if (this->ir_front_left != other.ir_front_left) {
+      return false;
+    }
+    if (this->ir_rear_right != other.ir_rear_right) {
+      return false;
+    }
+    if (this->ir_rear_left != other.ir_rear_left) {
       return false;
     }
     return true;

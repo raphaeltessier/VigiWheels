@@ -56,13 +56,16 @@ class EmergencyAlertFire(metaclass=Metaclass_EmergencyAlertFire):
 
     __slots__ = [
         '_fire_detected',
+        '_test',
     ]
 
     _fields_and_field_types = {
         'fire_detected': 'boolean',
+        'test': 'boolean',
     }
 
     SLOT_TYPES = (
+        rosidl_parser.definition.BasicType('boolean'),  # noqa: E501
         rosidl_parser.definition.BasicType('boolean'),  # noqa: E501
     )
 
@@ -71,6 +74,7 @@ class EmergencyAlertFire(metaclass=Metaclass_EmergencyAlertFire):
             'Invalid arguments passed to constructor: %s' % \
             ', '.join(sorted(k for k in kwargs.keys() if '_' + k not in self.__slots__))
         self.fire_detected = kwargs.get('fire_detected', bool())
+        self.test = kwargs.get('test', bool())
 
     def __repr__(self):
         typename = self.__class__.__module__.split('.')
@@ -103,6 +107,8 @@ class EmergencyAlertFire(metaclass=Metaclass_EmergencyAlertFire):
             return False
         if self.fire_detected != other.fire_detected:
             return False
+        if self.test != other.test:
+            return False
         return True
 
     @classmethod
@@ -122,3 +128,16 @@ class EmergencyAlertFire(metaclass=Metaclass_EmergencyAlertFire):
                 isinstance(value, bool), \
                 "The 'fire_detected' field must be of type 'bool'"
         self._fire_detected = value
+
+    @builtins.property
+    def test(self):
+        """Message field 'test'."""
+        return self._test
+
+    @test.setter
+    def test(self, value):
+        if __debug__:
+            assert \
+                isinstance(value, bool), \
+                "The 'test' field must be of type 'bool'"
+        self._test = value

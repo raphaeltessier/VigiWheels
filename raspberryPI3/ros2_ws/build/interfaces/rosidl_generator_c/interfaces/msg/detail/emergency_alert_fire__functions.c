@@ -18,6 +18,10 @@ interfaces__msg__EmergencyAlertFire__init(interfaces__msg__EmergencyAlertFire * 
     return false;
   }
   // fire_detected
+  // ir_front_right
+  // ir_front_left
+  // ir_rear_right
+  // ir_rear_left
   return true;
 }
 
@@ -28,6 +32,10 @@ interfaces__msg__EmergencyAlertFire__fini(interfaces__msg__EmergencyAlertFire * 
     return;
   }
   // fire_detected
+  // ir_front_right
+  // ir_front_left
+  // ir_rear_right
+  // ir_rear_left
 }
 
 bool
@@ -38,6 +46,22 @@ interfaces__msg__EmergencyAlertFire__are_equal(const interfaces__msg__EmergencyA
   }
   // fire_detected
   if (lhs->fire_detected != rhs->fire_detected) {
+    return false;
+  }
+  // ir_front_right
+  if (lhs->ir_front_right != rhs->ir_front_right) {
+    return false;
+  }
+  // ir_front_left
+  if (lhs->ir_front_left != rhs->ir_front_left) {
+    return false;
+  }
+  // ir_rear_right
+  if (lhs->ir_rear_right != rhs->ir_rear_right) {
+    return false;
+  }
+  // ir_rear_left
+  if (lhs->ir_rear_left != rhs->ir_rear_left) {
     return false;
   }
   return true;
@@ -53,6 +77,14 @@ interfaces__msg__EmergencyAlertFire__copy(
   }
   // fire_detected
   output->fire_detected = input->fire_detected;
+  // ir_front_right
+  output->ir_front_right = input->ir_front_right;
+  // ir_front_left
+  output->ir_front_left = input->ir_front_left;
+  // ir_rear_right
+  output->ir_rear_right = input->ir_rear_right;
+  // ir_rear_left
+  output->ir_rear_left = input->ir_rear_left;
   return true;
 }
 

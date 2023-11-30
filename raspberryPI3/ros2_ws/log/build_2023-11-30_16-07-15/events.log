@@ -1,0 +1,124 @@
+[0.000000] (-) TimerEvent: {}
+[0.000353] (-) JobUnselected: {'identifier': 'can'}
+[0.000462] (-) JobUnselected: {'identifier': 'car_control'}
+[0.000479] (-) JobUnselected: {'identifier': 'carla_msgs'}
+[0.000490] (-) JobUnselected: {'identifier': 'geicar_start'}
+[0.000500] (-) JobUnselected: {'identifier': 'imu_complementary_filter'}
+[0.000511] (-) JobUnselected: {'identifier': 'imu_filter_madgwick'}
+[0.000521] (-) JobUnselected: {'identifier': 'imu_tools'}
+[0.000532] (-) JobUnselected: {'identifier': 'interfaces'}
+[0.000542] (-) JobUnselected: {'identifier': 'joystick'}
+[0.000552] (-) JobUnselected: {'identifier': 'rviz_imu_plugin'}
+[0.000563] (-) JobUnselected: {'identifier': 'simulation'}
+[0.000573] (-) JobUnselected: {'identifier': 'system_check'}
+[0.000585] (fire_detection) JobQueued: {'identifier': 'fire_detection', 'dependencies': OrderedDict([('interfaces', '/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/install/interfaces')])}
+[0.000601] (fire_detection) JobStarted: {'identifier': 'fire_detection'}
+[0.056492] (fire_detection) JobProgress: {'identifier': 'fire_detection', 'progress': 'cmake'}
+[0.056794] (fire_detection) JobProgress: {'identifier': 'fire_detection', 'progress': 'build'}
+[0.057362] (fire_detection) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/build/fire_detection', '--', '-j8', '-l8'], 'cwd': '/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/build/fire_detection', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'insa'), ('LC_TIME', 'fr_FR.UTF-8'), ('GIO_MODULE_DIR', '/home/insa/snap/code/common/.cache/gio-modules'), ('XDG_SESSION_TYPE', 'wayland'), ('GIT_ASKPASS', '/snap/code/146/usr/share/code/resources/app/extensions/git/dist/askpass.sh'), ('GTK_EXE_PREFIX_VSCODE_SNAP_ORIG', ''), ('GDK_BACKEND_VSCODE_SNAP_ORIG', ''), ('SHLVL', '2'), ('LD_LIBRARY_PATH', '/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/install/interfaces/lib:/home/insa/ros2_ws/install/my_robot_interfaces/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/insa'), ('CHROME_DESKTOP', 'code-url-handler.desktop'), ('LOCPATH_VSCODE_SNAP_ORIG', ''), ('OLDPWD', '/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/src'), ('TERM_PROGRAM_VERSION', '1.84.2'), ('DESKTOP_SESSION', 'ubuntu'), ('GTK_PATH', '/snap/code/146/usr/lib/x86_64-linux-gnu/gtk-3.0'), ('GTK_IM_MODULE_FILE', '/home/insa/snap/code/common/.cache/immodules/immodules.cache'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('GSETTINGS_SCHEMA_DIR_VSCODE_SNAP_ORIG', ''), ('VSCODE_GIT_ASKPASS_MAIN', '/snap/code/146/usr/share/code/resources/app/extensions/git/dist/askpass-main.js'), ('LC_MONETARY', 'fr_FR.UTF-8'), ('VSCODE_GIT_ASKPASS_NODE', '/snap/code/146/usr/share/code/code'), ('MANAGERPID', '1645'), ('SYSTEMD_EXEC_PID', '2025'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('TERMINATOR_DBUS_NAME', 'net.tenshu.Terminator25ef4b219e3b005583550f2b0f9f990c3'), ('GIO_LAUNCHED_DESKTOP_FILE_PID', '14329'), ('IM_CONFIG_PHASE', '1'), ('WAYLAND_DISPLAY', 'wayland-0'), ('COLCON_PREFIX_PATH', '/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/install:/home/insa/ros2_ws/install'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'insa'), ('JOURNAL_STREAM', '8:31332'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_CONFIG_DIRS_VSCODE_SNAP_ORIG', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('XDG_SESSION_CLASS', 'user'), ('XDG_DATA_DIRS_VSCODE_SNAP_ORIG', '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('USERNAME', 'insa'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin'), ('SESSION_MANAGER', 'local/insa-ThinkPad-T14-Gen-2i:@/tmp/.ICE-unix/1838,unix/insa-ThinkPad-T14-Gen-2i:/tmp/.ICE-unix/1838'), ('GTK_EXE_PREFIX', '/snap/code/146/usr'), ('INVOCATION_ID', '6223f5039cd6470e80eb7895becbaeab'), ('XDG_MENU_PREFIX', 'gnome-'), ('LC_ADDRESS', 'fr_FR.UTF-8'), ('GNOME_SETUP_DISPLAY', ':1'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('GDK_BACKEND', 'x11'), ('DISPLAY', ':0'), ('LOCPATH', '/snap/code/146/usr/lib/locale'), ('TERMINATOR_DBUS_PATH', '/net/tenshu/Terminator2'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'Unity'), ('IBUS_DISABLE_SNOOPER', '1'), ('LC_TELEPHONE', 'fr_FR.UTF-8'), ('GIO_MODULE_DIR_VSCODE_SNAP_ORIG', ''), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/.mutter-Xwaylandauth.JU2BF2'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('VSCODE_GIT_IPC_HANDLE', '/run/user/1000/vscode-git-51c07549c0.sock'), ('TERM_PROGRAM', 'vscode'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('GSETTINGS_SCHEMA_DIR', '/home/insa/snap/code/146/.local/share/glib-2.0/schemas'), ('AMENT_PREFIX_PATH', '/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/install/fire_detection:/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/install/interfaces:/home/insa/ros2_ws/install/my_fire_pkg:/home/insa/ros2_ws/install/demo_sensor_pkg:/home/insa/ros2_ws/install/my_robot_interfaces:/home/insa/ros2_ws/install/my_cpp_pkg:/home/insa/ros2_ws/install/johann_cpp_pkg:/opt/ros/humble'), ('ORIGINAL_XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('SHELL', '/bin/bash'), ('LC_NAME', 'fr_FR.UTF-8'), ('TERMINATOR_UUID', 'urn:uuid:a89ab863-04f5-4dce-b08c-13246191b436'), ('QT_ACCESSIBILITY', '1'), ('NO_AT_BRIDGE', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('GTK_PATH_VSCODE_SNAP_ORIG', ''), ('GTK_IM_MODULE_FILE_VSCODE_SNAP_ORIG', ''), ('LC_MEASUREMENT', 'fr_FR.UTF-8'), ('LC_IDENTIFICATION', 'fr_FR.UTF-8'), ('VSCODE_GIT_ASKPASS_EXTRA_ARGS', '--ms-enable-electron-run-as-node'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/build/fire_detection'), ('TURTLEBOT3_MODEL', 'waffle'), ('LC_ALL', 'en_US.UTF-8'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('XDG_DATA_DIRS', '/home/insa/snap/code/146/.local/share:/home/insa/snap/code/146:/snap/code/146/usr/share:/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/install/interfaces/local/lib/python3.10/dist-packages:/home/insa/ros2_ws/install/my_robot_interfaces/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('LC_NUMERIC', 'fr_FR.UTF-8'), ('LC_PAPER', 'fr_FR.UTF-8'), ('COLCON', '1'), ('VTE_VERSION', '6800'), ('CMAKE_PREFIX_PATH', '/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/install/interfaces:/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/install/fire_detection:/home/insa/ros2_ws/install/my_fire_pkg:/home/insa/ros2_ws/install/demo_sensor_pkg:/home/insa/ros2_ws/install/my_robot_interfaces:/home/insa/ros2_ws/install/my_cpp_pkg:/home/insa/ros2_ws/install/johann_cpp_pkg:/opt/ros/humble')]), 'shell': False}
+[0.090594] (fire_detection) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target processing_data_fire_node\x1b[0m\n'}
+[0.099925] (fire_detection) StdoutLine: {'line': b'[ 33%] \x1b[32mBuilding CXX object CMakeFiles/serial_reading_node.dir/src/serial_reading.cpp.o\x1b[0m\n'}
+[0.100107] (-) TimerEvent: {}
+[0.100223] (fire_detection) StdoutLine: {'line': b'[ 33%] \x1b[32mBuilding CXX object CMakeFiles/serial_writing_node.dir/src/serial_writing.cpp.o\x1b[0m\n'}
+[0.102295] (fire_detection) StdoutLine: {'line': b'[ 50%] \x1b[32mBuilding CXX object CMakeFiles/processing_data_fire_node.dir/src/processing_data_fire.cpp.o\x1b[0m\n'}
+[0.200276] (-) TimerEvent: {}
+[0.300630] (-) TimerEvent: {}
+[0.401106] (-) TimerEvent: {}
+[0.501400] (-) TimerEvent: {}
+[0.601731] (-) TimerEvent: {}
+[0.702098] (-) TimerEvent: {}
+[0.802372] (-) TimerEvent: {}
+[0.902664] (-) TimerEvent: {}
+[1.003002] (-) TimerEvent: {}
+[1.103340] (-) TimerEvent: {}
+[1.203677] (-) TimerEvent: {}
+[1.304009] (-) TimerEvent: {}
+[1.404333] (-) TimerEvent: {}
+[1.504675] (-) TimerEvent: {}
+[1.605028] (-) TimerEvent: {}
+[1.705343] (-) TimerEvent: {}
+[1.805750] (-) TimerEvent: {}
+[1.906123] (-) TimerEvent: {}
+[2.006404] (-) TimerEvent: {}
+[2.106671] (-) TimerEvent: {}
+[2.206951] (-) TimerEvent: {}
+[2.307222] (-) TimerEvent: {}
+[2.407484] (-) TimerEvent: {}
+[2.507851] (-) TimerEvent: {}
+[2.608228] (-) TimerEvent: {}
+[2.709125] (-) TimerEvent: {}
+[2.809607] (-) TimerEvent: {}
+[2.909990] (-) TimerEvent: {}
+[3.010245] (-) TimerEvent: {}
+[3.110517] (-) TimerEvent: {}
+[3.210790] (-) TimerEvent: {}
+[3.311064] (-) TimerEvent: {}
+[3.411400] (-) TimerEvent: {}
+[3.493449] (fire_detection) StdoutLine: {'line': b'[ 66%] \x1b[32m\x1b[1mLinking CXX executable serial_reading_node\x1b[0m\n'}
+[3.511505] (-) TimerEvent: {}
+[3.611782] (-) TimerEvent: {}
+[3.659529] (fire_detection) StdoutLine: {'line': b'[ 66%] Built target serial_reading_node\n'}
+[3.711897] (-) TimerEvent: {}
+[3.812178] (-) TimerEvent: {}
+[3.912445] (-) TimerEvent: {}
+[4.012715] (-) TimerEvent: {}
+[4.113104] (-) TimerEvent: {}
+[4.213361] (-) TimerEvent: {}
+[4.313676] (-) TimerEvent: {}
+[4.413934] (-) TimerEvent: {}
+[4.514170] (-) TimerEvent: {}
+[4.614401] (-) TimerEvent: {}
+[4.714691] (-) TimerEvent: {}
+[4.814950] (-) TimerEvent: {}
+[4.915210] (-) TimerEvent: {}
+[5.015500] (-) TimerEvent: {}
+[5.115848] (-) TimerEvent: {}
+[5.216074] (-) TimerEvent: {}
+[5.316322] (-) TimerEvent: {}
+[5.416694] (-) TimerEvent: {}
+[5.517096] (-) TimerEvent: {}
+[5.617382] (-) TimerEvent: {}
+[5.717709] (-) TimerEvent: {}
+[5.818006] (-) TimerEvent: {}
+[5.918297] (-) TimerEvent: {}
+[6.018651] (-) TimerEvent: {}
+[6.119096] (-) TimerEvent: {}
+[6.161056] (fire_detection) StdoutLine: {'line': b'[ 83%] \x1b[32m\x1b[1mLinking CXX executable serial_writing_node\x1b[0m\n'}
+[6.219203] (-) TimerEvent: {}
+[6.319464] (-) TimerEvent: {}
+[6.419818] (-) TimerEvent: {}
+[6.430332] (fire_detection) StdoutLine: {'line': b'[ 83%] Built target serial_writing_node\n'}
+[6.497407] (fire_detection) StdoutLine: {'line': b'[100%] \x1b[32m\x1b[1mLinking CXX executable processing_data_fire_node\x1b[0m\n'}
+[6.519940] (-) TimerEvent: {}
+[6.620211] (-) TimerEvent: {}
+[6.720545] (-) TimerEvent: {}
+[6.775915] (fire_detection) StdoutLine: {'line': b'[100%] Built target processing_data_fire_node\n'}
+[6.784111] (fire_detection) CommandEnded: {'returncode': 0}
+[6.804678] (fire_detection) JobProgress: {'identifier': 'fire_detection', 'progress': 'install'}
+[6.811378] (fire_detection) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/build/fire_detection'], 'cwd': '/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/build/fire_detection', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'insa'), ('LC_TIME', 'fr_FR.UTF-8'), ('GIO_MODULE_DIR', '/home/insa/snap/code/common/.cache/gio-modules'), ('XDG_SESSION_TYPE', 'wayland'), ('GIT_ASKPASS', '/snap/code/146/usr/share/code/resources/app/extensions/git/dist/askpass.sh'), ('GTK_EXE_PREFIX_VSCODE_SNAP_ORIG', ''), ('GDK_BACKEND_VSCODE_SNAP_ORIG', ''), ('SHLVL', '2'), ('LD_LIBRARY_PATH', '/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/install/interfaces/lib:/home/insa/ros2_ws/install/my_robot_interfaces/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/insa'), ('CHROME_DESKTOP', 'code-url-handler.desktop'), ('LOCPATH_VSCODE_SNAP_ORIG', ''), ('OLDPWD', '/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/src'), ('TERM_PROGRAM_VERSION', '1.84.2'), ('DESKTOP_SESSION', 'ubuntu'), ('GTK_PATH', '/snap/code/146/usr/lib/x86_64-linux-gnu/gtk-3.0'), ('GTK_IM_MODULE_FILE', '/home/insa/snap/code/common/.cache/immodules/immodules.cache'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('GSETTINGS_SCHEMA_DIR_VSCODE_SNAP_ORIG', ''), ('VSCODE_GIT_ASKPASS_MAIN', '/snap/code/146/usr/share/code/resources/app/extensions/git/dist/askpass-main.js'), ('LC_MONETARY', 'fr_FR.UTF-8'), ('VSCODE_GIT_ASKPASS_NODE', '/snap/code/146/usr/share/code/code'), ('MANAGERPID', '1645'), ('SYSTEMD_EXEC_PID', '2025'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('TERMINATOR_DBUS_NAME', 'net.tenshu.Terminator25ef4b219e3b005583550f2b0f9f990c3'), ('GIO_LAUNCHED_DESKTOP_FILE_PID', '14329'), ('IM_CONFIG_PHASE', '1'), ('WAYLAND_DISPLAY', 'wayland-0'), ('COLCON_PREFIX_PATH', '/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/install:/home/insa/ros2_ws/install'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'insa'), ('JOURNAL_STREAM', '8:31332'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_CONFIG_DIRS_VSCODE_SNAP_ORIG', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('XDG_SESSION_CLASS', 'user'), ('XDG_DATA_DIRS_VSCODE_SNAP_ORIG', '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('USERNAME', 'insa'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin'), ('SESSION_MANAGER', 'local/insa-ThinkPad-T14-Gen-2i:@/tmp/.ICE-unix/1838,unix/insa-ThinkPad-T14-Gen-2i:/tmp/.ICE-unix/1838'), ('GTK_EXE_PREFIX', '/snap/code/146/usr'), ('INVOCATION_ID', '6223f5039cd6470e80eb7895becbaeab'), ('XDG_MENU_PREFIX', 'gnome-'), ('LC_ADDRESS', 'fr_FR.UTF-8'), ('GNOME_SETUP_DISPLAY', ':1'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('GDK_BACKEND', 'x11'), ('DISPLAY', ':0'), ('LOCPATH', '/snap/code/146/usr/lib/locale'), ('TERMINATOR_DBUS_PATH', '/net/tenshu/Terminator2'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'Unity'), ('IBUS_DISABLE_SNOOPER', '1'), ('LC_TELEPHONE', 'fr_FR.UTF-8'), ('GIO_MODULE_DIR_VSCODE_SNAP_ORIG', ''), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/.mutter-Xwaylandauth.JU2BF2'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('VSCODE_GIT_IPC_HANDLE', '/run/user/1000/vscode-git-51c07549c0.sock'), ('TERM_PROGRAM', 'vscode'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('GSETTINGS_SCHEMA_DIR', '/home/insa/snap/code/146/.local/share/glib-2.0/schemas'), ('AMENT_PREFIX_PATH', '/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/install/fire_detection:/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/install/interfaces:/home/insa/ros2_ws/install/my_fire_pkg:/home/insa/ros2_ws/install/demo_sensor_pkg:/home/insa/ros2_ws/install/my_robot_interfaces:/home/insa/ros2_ws/install/my_cpp_pkg:/home/insa/ros2_ws/install/johann_cpp_pkg:/opt/ros/humble'), ('ORIGINAL_XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('SHELL', '/bin/bash'), ('LC_NAME', 'fr_FR.UTF-8'), ('TERMINATOR_UUID', 'urn:uuid:a89ab863-04f5-4dce-b08c-13246191b436'), ('QT_ACCESSIBILITY', '1'), ('NO_AT_BRIDGE', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('GTK_PATH_VSCODE_SNAP_ORIG', ''), ('GTK_IM_MODULE_FILE_VSCODE_SNAP_ORIG', ''), ('LC_MEASUREMENT', 'fr_FR.UTF-8'), ('LC_IDENTIFICATION', 'fr_FR.UTF-8'), ('VSCODE_GIT_ASKPASS_EXTRA_ARGS', '--ms-enable-electron-run-as-node'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/build/fire_detection'), ('TURTLEBOT3_MODEL', 'waffle'), ('LC_ALL', 'en_US.UTF-8'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('XDG_DATA_DIRS', '/home/insa/snap/code/146/.local/share:/home/insa/snap/code/146:/snap/code/146/usr/share:/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/install/interfaces/local/lib/python3.10/dist-packages:/home/insa/ros2_ws/install/my_robot_interfaces/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('LC_NUMERIC', 'fr_FR.UTF-8'), ('LC_PAPER', 'fr_FR.UTF-8'), ('COLCON', '1'), ('VTE_VERSION', '6800'), ('CMAKE_PREFIX_PATH', '/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/install/interfaces:/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/install/fire_detection:/home/insa/ros2_ws/install/my_fire_pkg:/home/insa/ros2_ws/install/demo_sensor_pkg:/home/insa/ros2_ws/install/my_robot_interfaces:/home/insa/ros2_ws/install/my_cpp_pkg:/home/insa/ros2_ws/install/johann_cpp_pkg:/opt/ros/humble')]), 'shell': False}
+[6.816458] (fire_detection) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[6.816598] (fire_detection) StdoutLine: {'line': b'-- Installing: /home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/install/fire_detection/lib/fire_detection/serial_reading_node\n'}
+[6.817342] (fire_detection) StdoutLine: {'line': b'-- Set runtime path of "/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/install/fire_detection/lib/fire_detection/serial_reading_node" to ""\n'}
+[6.817460] (fire_detection) StdoutLine: {'line': b'-- Installing: /home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/install/fire_detection/lib/fire_detection/processing_data_fire_node\n'}
+[6.819815] (fire_detection) StdoutLine: {'line': b'-- Set runtime path of "/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/install/fire_detection/lib/fire_detection/processing_data_fire_node" to ""\n'}
+[6.819972] (fire_detection) StdoutLine: {'line': b'-- Installing: /home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/install/fire_detection/lib/fire_detection/serial_writing_node\n'}
+[6.820626] (-) TimerEvent: {}
+[6.822138] (fire_detection) StdoutLine: {'line': b'-- Set runtime path of "/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/install/fire_detection/lib/fire_detection/serial_writing_node" to ""\n'}
+[6.822247] (fire_detection) StdoutLine: {'line': b'-- Up-to-date: /home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/install/fire_detection/share/ament_index/resource_index/package_run_dependencies/fire_detection\n'}
+[6.822295] (fire_detection) StdoutLine: {'line': b'-- Up-to-date: /home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/install/fire_detection/share/ament_index/resource_index/parent_prefix_path/fire_detection\n'}
+[6.822335] (fire_detection) StdoutLine: {'line': b'-- Up-to-date: /home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/install/fire_detection/share/fire_detection/environment/ament_prefix_path.sh\n'}
+[6.822374] (fire_detection) StdoutLine: {'line': b'-- Up-to-date: /home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/install/fire_detection/share/fire_detection/environment/ament_prefix_path.dsv\n'}
+[6.822432] (fire_detection) StdoutLine: {'line': b'-- Up-to-date: /home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/install/fire_detection/share/fire_detection/environment/path.sh\n'}
+[6.822471] (fire_detection) StdoutLine: {'line': b'-- Up-to-date: /home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/install/fire_detection/share/fire_detection/environment/path.dsv\n'}
+[6.822508] (fire_detection) StdoutLine: {'line': b'-- Up-to-date: /home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/install/fire_detection/share/fire_detection/local_setup.bash\n'}
+[6.822547] (fire_detection) StdoutLine: {'line': b'-- Up-to-date: /home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/install/fire_detection/share/fire_detection/local_setup.sh\n'}
+[6.822586] (fire_detection) StdoutLine: {'line': b'-- Up-to-date: /home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/install/fire_detection/share/fire_detection/local_setup.zsh\n'}
+[6.822624] (fire_detection) StdoutLine: {'line': b'-- Up-to-date: /home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/install/fire_detection/share/fire_detection/local_setup.dsv\n'}
+[6.822661] (fire_detection) StdoutLine: {'line': b'-- Installing: /home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/install/fire_detection/share/fire_detection/package.dsv\n'}
+[6.822713] (fire_detection) StdoutLine: {'line': b'-- Up-to-date: /home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/install/fire_detection/share/ament_index/resource_index/packages/fire_detection\n'}
+[6.822776] (fire_detection) StdoutLine: {'line': b'-- Up-to-date: /home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/install/fire_detection/share/fire_detection/cmake/fire_detectionConfig.cmake\n'}
+[6.822815] (fire_detection) StdoutLine: {'line': b'-- Up-to-date: /home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/install/fire_detection/share/fire_detection/cmake/fire_detectionConfig-version.cmake\n'}
+[6.822851] (fire_detection) StdoutLine: {'line': b'-- Up-to-date: /home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/install/fire_detection/share/fire_detection/package.xml\n'}
+[6.823731] (fire_detection) CommandEnded: {'returncode': 0}
+[6.917337] (fire_detection) JobEnded: {'identifier': 'fire_detection', 'rc': 0}
+[6.917765] (-) EventReactorShutdown: {}

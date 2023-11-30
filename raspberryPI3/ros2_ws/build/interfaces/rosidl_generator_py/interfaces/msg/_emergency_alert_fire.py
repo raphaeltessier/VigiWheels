@@ -56,13 +56,25 @@ class EmergencyAlertFire(metaclass=Metaclass_EmergencyAlertFire):
 
     __slots__ = [
         '_fire_detected',
+        '_ir_front_right',
+        '_ir_front_left',
+        '_ir_rear_right',
+        '_ir_rear_left',
     ]
 
     _fields_and_field_types = {
         'fire_detected': 'boolean',
+        'ir_front_right': 'boolean',
+        'ir_front_left': 'boolean',
+        'ir_rear_right': 'boolean',
+        'ir_rear_left': 'boolean',
     }
 
     SLOT_TYPES = (
+        rosidl_parser.definition.BasicType('boolean'),  # noqa: E501
+        rosidl_parser.definition.BasicType('boolean'),  # noqa: E501
+        rosidl_parser.definition.BasicType('boolean'),  # noqa: E501
+        rosidl_parser.definition.BasicType('boolean'),  # noqa: E501
         rosidl_parser.definition.BasicType('boolean'),  # noqa: E501
     )
 
@@ -71,6 +83,10 @@ class EmergencyAlertFire(metaclass=Metaclass_EmergencyAlertFire):
             'Invalid arguments passed to constructor: %s' % \
             ', '.join(sorted(k for k in kwargs.keys() if '_' + k not in self.__slots__))
         self.fire_detected = kwargs.get('fire_detected', bool())
+        self.ir_front_right = kwargs.get('ir_front_right', bool())
+        self.ir_front_left = kwargs.get('ir_front_left', bool())
+        self.ir_rear_right = kwargs.get('ir_rear_right', bool())
+        self.ir_rear_left = kwargs.get('ir_rear_left', bool())
 
     def __repr__(self):
         typename = self.__class__.__module__.split('.')
@@ -103,6 +119,14 @@ class EmergencyAlertFire(metaclass=Metaclass_EmergencyAlertFire):
             return False
         if self.fire_detected != other.fire_detected:
             return False
+        if self.ir_front_right != other.ir_front_right:
+            return False
+        if self.ir_front_left != other.ir_front_left:
+            return False
+        if self.ir_rear_right != other.ir_rear_right:
+            return False
+        if self.ir_rear_left != other.ir_rear_left:
+            return False
         return True
 
     @classmethod
@@ -122,3 +146,55 @@ class EmergencyAlertFire(metaclass=Metaclass_EmergencyAlertFire):
                 isinstance(value, bool), \
                 "The 'fire_detected' field must be of type 'bool'"
         self._fire_detected = value
+
+    @builtins.property
+    def ir_front_right(self):
+        """Message field 'ir_front_right'."""
+        return self._ir_front_right
+
+    @ir_front_right.setter
+    def ir_front_right(self, value):
+        if __debug__:
+            assert \
+                isinstance(value, bool), \
+                "The 'ir_front_right' field must be of type 'bool'"
+        self._ir_front_right = value
+
+    @builtins.property
+    def ir_front_left(self):
+        """Message field 'ir_front_left'."""
+        return self._ir_front_left
+
+    @ir_front_left.setter
+    def ir_front_left(self, value):
+        if __debug__:
+            assert \
+                isinstance(value, bool), \
+                "The 'ir_front_left' field must be of type 'bool'"
+        self._ir_front_left = value
+
+    @builtins.property
+    def ir_rear_right(self):
+        """Message field 'ir_rear_right'."""
+        return self._ir_rear_right
+
+    @ir_rear_right.setter
+    def ir_rear_right(self, value):
+        if __debug__:
+            assert \
+                isinstance(value, bool), \
+                "The 'ir_rear_right' field must be of type 'bool'"
+        self._ir_rear_right = value
+
+    @builtins.property
+    def ir_rear_left(self):
+        """Message field 'ir_rear_left'."""
+        return self._ir_rear_left
+
+    @ir_rear_left.setter
+    def ir_rear_left(self, value):
+        if __debug__:
+            assert \
+                isinstance(value, bool), \
+                "The 'ir_rear_left' field must be of type 'bool'"
+        self._ir_rear_left = value

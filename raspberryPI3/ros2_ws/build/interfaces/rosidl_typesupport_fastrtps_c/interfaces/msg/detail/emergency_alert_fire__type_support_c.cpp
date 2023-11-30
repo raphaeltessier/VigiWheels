@@ -54,6 +54,26 @@ static bool _EmergencyAlertFire__cdr_serialize(
     cdr << (ros_message->fire_detected ? true : false);
   }
 
+  // Field name: ir_front_right
+  {
+    cdr << (ros_message->ir_front_right ? true : false);
+  }
+
+  // Field name: ir_front_left
+  {
+    cdr << (ros_message->ir_front_left ? true : false);
+  }
+
+  // Field name: ir_rear_right
+  {
+    cdr << (ros_message->ir_rear_right ? true : false);
+  }
+
+  // Field name: ir_rear_left
+  {
+    cdr << (ros_message->ir_rear_left ? true : false);
+  }
+
   return true;
 }
 
@@ -71,6 +91,34 @@ static bool _EmergencyAlertFire__cdr_deserialize(
     uint8_t tmp;
     cdr >> tmp;
     ros_message->fire_detected = tmp ? true : false;
+  }
+
+  // Field name: ir_front_right
+  {
+    uint8_t tmp;
+    cdr >> tmp;
+    ros_message->ir_front_right = tmp ? true : false;
+  }
+
+  // Field name: ir_front_left
+  {
+    uint8_t tmp;
+    cdr >> tmp;
+    ros_message->ir_front_left = tmp ? true : false;
+  }
+
+  // Field name: ir_rear_right
+  {
+    uint8_t tmp;
+    cdr >> tmp;
+    ros_message->ir_rear_right = tmp ? true : false;
+  }
+
+  // Field name: ir_rear_left
+  {
+    uint8_t tmp;
+    cdr >> tmp;
+    ros_message->ir_rear_left = tmp ? true : false;
   }
 
   return true;
@@ -93,6 +141,30 @@ size_t get_serialized_size_interfaces__msg__EmergencyAlertFire(
   // field.name fire_detected
   {
     size_t item_size = sizeof(ros_message->fire_detected);
+    current_alignment += item_size +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
+  }
+  // field.name ir_front_right
+  {
+    size_t item_size = sizeof(ros_message->ir_front_right);
+    current_alignment += item_size +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
+  }
+  // field.name ir_front_left
+  {
+    size_t item_size = sizeof(ros_message->ir_front_left);
+    current_alignment += item_size +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
+  }
+  // field.name ir_rear_right
+  {
+    size_t item_size = sizeof(ros_message->ir_rear_right);
+    current_alignment += item_size +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
+  }
+  // field.name ir_rear_left
+  {
+    size_t item_size = sizeof(ros_message->ir_rear_left);
     current_alignment += item_size +
       eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
   }
@@ -124,6 +196,30 @@ size_t max_serialized_size_interfaces__msg__EmergencyAlertFire(
   is_plain = true;
 
   // member: fire_detected
+  {
+    size_t array_size = 1;
+
+    current_alignment += array_size * sizeof(uint8_t);
+  }
+  // member: ir_front_right
+  {
+    size_t array_size = 1;
+
+    current_alignment += array_size * sizeof(uint8_t);
+  }
+  // member: ir_front_left
+  {
+    size_t array_size = 1;
+
+    current_alignment += array_size * sizeof(uint8_t);
+  }
+  // member: ir_rear_right
+  {
+    size_t array_size = 1;
+
+    current_alignment += array_size * sizeof(uint8_t);
+  }
+  // member: ir_rear_left
   {
     size_t array_size = 1;
 

@@ -1,0 +1,1 @@
+Invoking command in '/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/build/interfaces': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/build/interfaces -- -j8 -l8

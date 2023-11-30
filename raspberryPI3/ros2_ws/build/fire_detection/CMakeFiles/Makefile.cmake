@@ -632,7 +632,5 @@ set(CMAKE_MAKEFILE_PRODUCTS
 set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/uninstall.dir/DependInfo.cmake"
   "CMakeFiles/fire_detection_uninstall.dir/DependInfo.cmake"
-  "CMakeFiles/serial_reading_node.dir/DependInfo.cmake"
   "CMakeFiles/processing_data_fire_node.dir/DependInfo.cmake"
-  "CMakeFiles/serial_writing_node.dir/DependInfo.cmake"
   )

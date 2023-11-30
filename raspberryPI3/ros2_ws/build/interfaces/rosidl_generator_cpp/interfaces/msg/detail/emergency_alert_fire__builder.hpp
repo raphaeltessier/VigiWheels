@@ -21,16 +21,80 @@ namespace msg
 namespace builder
 {
 
+class Init_EmergencyAlertFire_ir_rear_left
+{
+public:
+  explicit Init_EmergencyAlertFire_ir_rear_left(::interfaces::msg::EmergencyAlertFire & msg)
+  : msg_(msg)
+  {}
+  ::interfaces::msg::EmergencyAlertFire ir_rear_left(::interfaces::msg::EmergencyAlertFire::_ir_rear_left_type arg)
+  {
+    msg_.ir_rear_left = std::move(arg);
+    return std::move(msg_);
+  }
+
+private:
+  ::interfaces::msg::EmergencyAlertFire msg_;
+};
+
+class Init_EmergencyAlertFire_ir_rear_right
+{
+public:
+  explicit Init_EmergencyAlertFire_ir_rear_right(::interfaces::msg::EmergencyAlertFire & msg)
+  : msg_(msg)
+  {}
+  Init_EmergencyAlertFire_ir_rear_left ir_rear_right(::interfaces::msg::EmergencyAlertFire::_ir_rear_right_type arg)
+  {
+    msg_.ir_rear_right = std::move(arg);
+    return Init_EmergencyAlertFire_ir_rear_left(msg_);
+  }
+
+private:
+  ::interfaces::msg::EmergencyAlertFire msg_;
+};
+
+class Init_EmergencyAlertFire_ir_front_left
+{
+public:
+  explicit Init_EmergencyAlertFire_ir_front_left(::interfaces::msg::EmergencyAlertFire & msg)
+  : msg_(msg)
+  {}
+  Init_EmergencyAlertFire_ir_rear_right ir_front_left(::interfaces::msg::EmergencyAlertFire::_ir_front_left_type arg)
+  {
+    msg_.ir_front_left = std::move(arg);
+    return Init_EmergencyAlertFire_ir_rear_right(msg_);
+  }
+
+private:
+  ::interfaces::msg::EmergencyAlertFire msg_;
+};
+
+class Init_EmergencyAlertFire_ir_front_right
+{
+public:
+  explicit Init_EmergencyAlertFire_ir_front_right(::interfaces::msg::EmergencyAlertFire & msg)
+  : msg_(msg)
+  {}
+  Init_EmergencyAlertFire_ir_front_left ir_front_right(::interfaces::msg::EmergencyAlertFire::_ir_front_right_type arg)
+  {
+    msg_.ir_front_right = std::move(arg);
+    return Init_EmergencyAlertFire_ir_front_left(msg_);
+  }
+
+private:
+  ::interfaces::msg::EmergencyAlertFire msg_;
+};
+
 class Init_EmergencyAlertFire_fire_detected
 {
 public:
   Init_EmergencyAlertFire_fire_detected()
   : msg_(::rosidl_runtime_cpp::MessageInitialization::SKIP)
   {}
-  ::interfaces::msg::EmergencyAlertFire fire_detected(::interfaces::msg::EmergencyAlertFire::_fire_detected_type arg)
+  Init_EmergencyAlertFire_ir_front_right fire_detected(::interfaces::msg::EmergencyAlertFire::_fire_detected_type arg)
   {
     msg_.fire_detected = std::move(arg);
-    return std::move(msg_);
+    return Init_EmergencyAlertFire_ir_front_right(msg_);
   }
 
 private:

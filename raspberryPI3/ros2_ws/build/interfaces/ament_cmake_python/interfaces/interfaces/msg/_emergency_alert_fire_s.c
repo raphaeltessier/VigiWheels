@@ -59,6 +59,15 @@ bool interfaces__msg__emergency_alert_fire__convert_from_py(PyObject * _pymsg, v
     ros_message->fire_detected = (Py_True == field);
     Py_DECREF(field);
   }
+  {  // test
+    PyObject * field = PyObject_GetAttrString(_pymsg, "test");
+    if (!field) {
+      return false;
+    }
+    assert(PyBool_Check(field));
+    ros_message->test = (Py_True == field);
+    Py_DECREF(field);
+  }
 
   return true;
 }
@@ -86,6 +95,17 @@ PyObject * interfaces__msg__emergency_alert_fire__convert_to_py(void * raw_ros_m
     field = PyBool_FromLong(ros_message->fire_detected ? 1 : 0);
     {
       int rc = PyObject_SetAttrString(_pymessage, "fire_detected", field);
+      Py_DECREF(field);
+      if (rc) {
+        return NULL;
+      }
+    }
+  }
+  {  // test
+    PyObject * field = NULL;
+    field = PyBool_FromLong(ros_message->test ? 1 : 0);
+    {
+      int rc = PyObject_SetAttrString(_pymessage, "test", field);
       Py_DECREF(field);
       if (rc) {
         return NULL;

@@ -1,6 +1,4 @@
-/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/install/fire_detection/lib/fire_detection/serial_reading_node
 /home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/install/fire_detection/lib/fire_detection/processing_data_fire_node
-/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/install/fire_detection/lib/fire_detection/serial_writing_node
 /home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/install/fire_detection/share/ament_index/resource_index/package_run_dependencies/fire_detection
 /home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/install/fire_detection/share/ament_index/resource_index/parent_prefix_path/fire_detection
 /home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/install/fire_detection/share/fire_detection/environment/ament_prefix_path.sh

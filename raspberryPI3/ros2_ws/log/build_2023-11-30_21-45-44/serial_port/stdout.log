@@ -1,0 +1,40 @@
+-- Found ament_cmake: 1.3.5 (/opt/ros/humble/share/ament_cmake/cmake)
+-- Found rclcpp: 16.0.6 (/opt/ros/humble/share/rclcpp/cmake)
+-- Found rosidl_generator_c: 3.1.5 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+-- Found rosidl_adapter: 3.1.5 (/opt/ros/humble/share/rosidl_adapter/cmake)
+-- Found rosidl_generator_cpp: 3.1.5 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+-- Found rmw_implementation_cmake: 6.1.1 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+-- Found rmw_fastrtps_cpp: 6.2.4 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+-- Using RMW implementation 'rmw_fastrtps_cpp' as default
+-- Found interfaces: 0.0.0 (/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/install/interfaces/share/interfaces/cmake)
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/build/serial_port
+[ 25%] [32mBuilding CXX object CMakeFiles/serial_reading_node.dir/src/serial_reading.cpp.o[0m
+[ 50%] [32mBuilding CXX object CMakeFiles/serial_writing_node.dir/src/serial_writing.cpp.o[0m
+[ 75%] [32m[1mLinking CXX executable serial_reading_node[0m
+[ 75%] Built target serial_reading_node
+[100%] [32m[1mLinking CXX executable serial_writing_node[0m
+[100%] Built target serial_writing_node
+-- Install configuration: ""
+-- Installing: /home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/install/serial_port/lib/serial_port/serial_reading_node
+-- Set runtime path of "/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/install/serial_port/lib/serial_port/serial_reading_node" to ""
+-- Installing: /home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/install/serial_port/lib/serial_port/serial_writing_node
+-- Set runtime path of "/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/install/serial_port/lib/serial_port/serial_writing_node" to ""
+-- Installing: /home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/install/serial_port/share/ament_index/resource_index/package_run_dependencies/serial_port
+-- Installing: /home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/install/serial_port/share/ament_index/resource_index/parent_prefix_path/serial_port
+-- Installing: /home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/install/serial_port/share/serial_port/environment/ament_prefix_path.sh
+-- Installing: /home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/install/serial_port/share/serial_port/environment/ament_prefix_path.dsv
+-- Installing: /home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/install/serial_port/share/serial_port/environment/path.sh
+-- Installing: /home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/install/serial_port/share/serial_port/environment/path.dsv
+-- Installing: /home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/install/serial_port/share/serial_port/local_setup.bash
+-- Installing: /home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/install/serial_port/share/serial_port/local_setup.sh
+-- Installing: /home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/install/serial_port/share/serial_port/local_setup.zsh
+-- Installing: /home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/install/serial_port/share/serial_port/local_setup.dsv
+-- Installing: /home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/install/serial_port/share/serial_port/package.dsv
+-- Installing: /home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/install/serial_port/share/ament_index/resource_index/packages/serial_port
+-- Installing: /home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/install/serial_port/share/serial_port/cmake/serial_portConfig.cmake
+-- Installing: /home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/install/serial_port/share/serial_port/cmake/serial_portConfig-version.cmake
+-- Installing: /home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/install/serial_port/share/serial_port/package.xml

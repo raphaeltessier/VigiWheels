@@ -7,6 +7,14 @@ module interfaces {
   module msg {
     struct EmergencyAlertFire {
       boolean fire_detected;
+
+      boolean ir_front_right;
+
+      boolean ir_front_left;
+
+      boolean ir_rear_right;
+
+      boolean ir_rear_left;
     };
   };
 };

@@ -1,13 +1,14 @@
 #include <vector>
 #include <cmath> 
 #include "rclcpp/rclcpp.hpp"
+
 #include "interfaces/msg/fire_sensor.hpp"
 #include "interfaces/msg/emergency_alert_fire.hpp"
 
 class ProcessingDataFireNode : public rclcpp::Node
 {
 public:
-    ProcessingDataFireNode() : Node("processing_data_fire_node"), fireIsDetected{false}, window_size_{100}, counter_{0}
+    ProcessingDataFireNode() : Node("processing_data_fire_node"), fireIsDetected{false},  FrontRightSensor{false}, FrontLeftSensor{false}, RearRightSensor{false}, RearLeftSensor{false} , window_size_{100}, counter_{0}
     {
         RCLCPP_INFO(this->get_logger(), "Hello Processing Data Fire Node !");
         buffer_.resize(window_size_, 0);
@@ -40,7 +41,7 @@ private:
             // Set dynamic thresholds
             double lowerThreshold = movingAverage - 2 * standardDeviation;
 
-            if (lowerThreshold < 100) 
+            if (lowerThreshold < 150) 
             {
                 return 1; // Fire detected
             }
@@ -74,15 +75,30 @@ private:
 
     void dataFireCallBack(const interfaces::msg::FireSensor & msg)
     {
-        //int result1 = processSensorData(msg.ir_sensor1);
-        bool result2 = msg.ir_sensor2; 
-        //int result3 = processSensorData(msg.ir_sensor3);
-        int result4 = msg.ir_sensor4; 
+        int result1 = processSensorData(msg.ir_sensor1); //Avant Droit 
+        bool result2 = msg.ir_sensor2; //Avant Gauche 
+        int result3 = processSensorData(msg.ir_sensor3); //Arrière Gauche 
+        int result4 = msg.ir_sensor4; //Arrière Droit 
     
-        if (result2 == 1 || result4 == 1) 
+        if (result1 == 1 || result2 == 1 || result3 == 1 || result4 == 1) 
         {
             fireIsDetected = true; 
-            RCLCPP_INFO(this->get_logger(), "Fire detected!");
+        }
+        else if (result1 == 1)
+        {
+            FrontRightSensor = true; 
+        }
+        else if (result2 == 1)
+        {
+            FrontLeftSensor = true; 
+        }
+        else if (result3 == 1)
+        {
+            RearLeftSensor = true; 
+        }
+        else if (result4 == 1)
+        {
+            RearRightSensor = true; 
         }
         else
         {
@@ -94,10 +110,18 @@ private:
     {
         auto msg = interfaces::msg::EmergencyAlertFire();
         msg.fire_detected = fireIsDetected;
+        msg.ir_front_right = FrontRightSensor; 
+        msg.ir_front_left = FrontLeftSensor; 
+        msg.ir_rear_right = RearRightSensor; 
+        msg.ir_rear_left = RearLeftSensor; 
         publisher_processing_data->publish(msg);
     }
 
     bool fireIsDetected; 
+    bool FrontRightSensor; 
+    bool FrontLeftSensor; 
+    bool RearRightSensor; 
+    bool RearLeftSensor; 
     size_t window_size_;
     size_t counter_;
     std::vector<int> buffer_;

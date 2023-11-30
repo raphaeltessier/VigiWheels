@@ -1,0 +1,30 @@
+[0.054s] Invoking command in '/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/build/fire_detection': CMAKE_PREFIX_PATH=/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/install/interfaces:/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/install/fire_detection:/home/insa/ros2_ws/install/my_fire_pkg:/home/insa/ros2_ws/install/demo_sensor_pkg:/home/insa/ros2_ws/install/my_robot_interfaces:/home/insa/ros2_ws/install/my_cpp_pkg:/home/insa/ros2_ws/install/johann_cpp_pkg:/opt/ros/humble /usr/bin/cmake --build /home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/build/fire_detection -- -j8 -l8
+[0.081s] [35m[1mConsolidate compiler generated dependencies of target processing_data_fire_node[0m
+[0.090s] [ 66%] Built target serial_reading_node
+[0.090s] [ 66%] Built target serial_writing_node
+[0.092s] [ 83%] [32mBuilding CXX object CMakeFiles/processing_data_fire_node.dir/src/processing_data_fire.cpp.o[0m
+[6.001s] [100%] [32m[1mLinking CXX executable processing_data_fire_node[0m
+[6.287s] [100%] Built target processing_data_fire_node
+[6.294s] Invoked command in '/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/build/fire_detection' returned '0': CMAKE_PREFIX_PATH=/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/install/interfaces:/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/install/fire_detection:/home/insa/ros2_ws/install/my_fire_pkg:/home/insa/ros2_ws/install/demo_sensor_pkg:/home/insa/ros2_ws/install/my_robot_interfaces:/home/insa/ros2_ws/install/my_cpp_pkg:/home/insa/ros2_ws/install/johann_cpp_pkg:/opt/ros/humble /usr/bin/cmake --build /home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/build/fire_detection -- -j8 -l8
+[6.321s] Invoking command in '/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/build/fire_detection': CMAKE_PREFIX_PATH=/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/install/interfaces:/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/install/fire_detection:/home/insa/ros2_ws/install/my_fire_pkg:/home/insa/ros2_ws/install/demo_sensor_pkg:/home/insa/ros2_ws/install/my_robot_interfaces:/home/insa/ros2_ws/install/my_cpp_pkg:/home/insa/ros2_ws/install/johann_cpp_pkg:/opt/ros/humble /usr/bin/cmake --install /home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/build/fire_detection
+[6.326s] -- Install configuration: ""
+[6.326s] -- Up-to-date: /home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/install/fire_detection/lib/fire_detection/serial_reading_node
+[6.326s] -- Installing: /home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/install/fire_detection/lib/fire_detection/processing_data_fire_node
+[6.329s] -- Set runtime path of "/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/install/fire_detection/lib/fire_detection/processing_data_fire_node" to ""
+[6.329s] -- Up-to-date: /home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/install/fire_detection/lib/fire_detection/serial_writing_node
+[6.329s] -- Up-to-date: /home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/install/fire_detection/share/ament_index/resource_index/package_run_dependencies/fire_detection
+[6.329s] -- Up-to-date: /home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/install/fire_detection/share/ament_index/resource_index/parent_prefix_path/fire_detection
+[6.329s] -- Up-to-date: /home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/install/fire_detection/share/fire_detection/environment/ament_prefix_path.sh
+[6.329s] -- Up-to-date: /home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/install/fire_detection/share/fire_detection/environment/ament_prefix_path.dsv
+[6.329s] -- Up-to-date: /home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/install/fire_detection/share/fire_detection/environment/path.sh
+[6.329s] -- Up-to-date: /home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/install/fire_detection/share/fire_detection/environment/path.dsv
+[6.329s] -- Up-to-date: /home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/install/fire_detection/share/fire_detection/local_setup.bash
+[6.329s] -- Up-to-date: /home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/install/fire_detection/share/fire_detection/local_setup.sh
+[6.329s] -- Up-to-date: /home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/install/fire_detection/share/fire_detection/local_setup.zsh
+[6.329s] -- Up-to-date: /home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/install/fire_detection/share/fire_detection/local_setup.dsv
+[6.329s] -- Installing: /home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/install/fire_detection/share/fire_detection/package.dsv
+[6.329s] -- Up-to-date: /home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/install/fire_detection/share/ament_index/resource_index/packages/fire_detection
+[6.329s] -- Up-to-date: /home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/install/fire_detection/share/fire_detection/cmake/fire_detectionConfig.cmake
+[6.329s] -- Up-to-date: /home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/install/fire_detection/share/fire_detection/cmake/fire_detectionConfig-version.cmake
+[6.329s] -- Up-to-date: /home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/install/fire_detection/share/fire_detection/package.xml
+[6.330s] Invoked command in '/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/build/fire_detection' returned '0': CMAKE_PREFIX_PATH=/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/install/interfaces:/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/install/fire_detection:/home/insa/ros2_ws/install/my_fire_pkg:/home/insa/ros2_ws/install/demo_sensor_pkg:/home/insa/ros2_ws/install/my_robot_interfaces:/home/insa/ros2_ws/install/my_cpp_pkg:/home/insa/ros2_ws/install/johann_cpp_pkg:/opt/ros/humble /usr/bin/cmake --install /home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/build/fire_detection
