@@ -1,0 +1,53 @@
+[0.937s] Invoking command in '/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/build/can': CMAKE_PREFIX_PATH=/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/install/interfaces:/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/install/fire_detection:/home/insa/ros2_ws/install/my_fire_pkg:/home/insa/ros2_ws/install/demo_sensor_pkg:/home/insa/ros2_ws/install/my_robot_interfaces:/home/insa/ros2_ws/install/my_cpp_pkg:/home/insa/ros2_ws/install/johann_cpp_pkg:/opt/ros/humble /usr/bin/cmake --build /home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/build/can -- -j8 -l8
+[1.081s] -- Found ament_cmake: 1.3.5 (/opt/ros/humble/share/ament_cmake/cmake)
+[1.776s] -- Found rclcpp: 16.0.6 (/opt/ros/humble/share/rclcpp/cmake)
+[1.958s] -- Found rosidl_generator_c: 3.1.5 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[1.980s] -- Found rosidl_adapter: 3.1.5 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[1.989s] -- Found rosidl_generator_cpp: 3.1.5 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[2.050s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[2.173s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[2.396s] -- Found rmw_implementation_cmake: 6.1.1 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+[2.397s] -- Found rmw_fastrtps_cpp: 6.2.4 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+[2.822s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[3.151s] -- Found sensor_msgs: 4.2.3 (/opt/ros/humble/share/sensor_msgs/cmake)
+[3.326s] -- Found interfaces: 0.0.0 (/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/install/interfaces/share/interfaces/cmake)
+[3.354s] -- Found ament_lint_auto: 0.12.8 (/opt/ros/humble/share/ament_lint_auto/cmake)
+[3.480s] -- Added test 'cppcheck' to perform static code analysis on C / C++ code
+[3.480s] -- Configured cppcheck include dirs: $<BUILD_INTERFACE:/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/src/can/include>
+[3.480s] -- Configured cppcheck exclude dirs and/or files: 
+[3.481s] -- Added test 'lint_cmake' to check CMake code style
+[3.482s] -- Added test 'uncrustify' to check C / C++ code style
+[3.482s] -- Configured uncrustify additional arguments: 
+[3.482s] -- Added test 'xmllint' to check XML markup files
+[3.488s] -- Configuring done
+[3.532s] -- Generating done
+[3.534s] -- Build files have been written to: /home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/build/can
+[3.712s] [ 25%] [32mBuilding CXX object CMakeFiles/can_rx_node.dir/src/can_rx_node.cpp.o[0m
+[3.760s] [ 50%] [32mBuilding CXX object CMakeFiles/can_tx_node.dir/src/can_tx_node.cpp.o[0m
+[18.109s] [ 75%] [32m[1mLinking CXX executable can_rx_node[0m
+[18.821s] [ 75%] Built target can_rx_node
+[27.197s] [100%] [32m[1mLinking CXX executable can_tx_node[0m
+[28.578s] [100%] Built target can_tx_node
+[28.614s] Invoked command in '/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/build/can' returned '0': CMAKE_PREFIX_PATH=/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/install/interfaces:/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/install/fire_detection:/home/insa/ros2_ws/install/my_fire_pkg:/home/insa/ros2_ws/install/demo_sensor_pkg:/home/insa/ros2_ws/install/my_robot_interfaces:/home/insa/ros2_ws/install/my_cpp_pkg:/home/insa/ros2_ws/install/johann_cpp_pkg:/opt/ros/humble /usr/bin/cmake --build /home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/build/can -- -j8 -l8
+[29.107s] Invoking command in '/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/build/can': CMAKE_PREFIX_PATH=/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/install/interfaces:/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/install/fire_detection:/home/insa/ros2_ws/install/my_fire_pkg:/home/insa/ros2_ws/install/demo_sensor_pkg:/home/insa/ros2_ws/install/my_robot_interfaces:/home/insa/ros2_ws/install/my_cpp_pkg:/home/insa/ros2_ws/install/johann_cpp_pkg:/opt/ros/humble /usr/bin/cmake --install /home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/build/can
+[29.126s] -- Install configuration: ""
+[29.127s] -- Installing: /home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/install/can/lib/can/can_rx_node
+[29.130s] -- Set runtime path of "/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/install/can/lib/can/can_rx_node" to ""
+[29.130s] -- Installing: /home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/install/can/lib/can/can_tx_node
+[29.145s] -- Set runtime path of "/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/install/can/lib/can/can_tx_node" to ""
+[29.145s] -- Installing: /home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/install/can/share/ament_index/resource_index/package_run_dependencies/can
+[29.146s] -- Installing: /home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/install/can/share/ament_index/resource_index/parent_prefix_path/can
+[29.148s] -- Installing: /home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/install/can/share/can/environment/ament_prefix_path.sh
+[29.148s] -- Installing: /home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/install/can/share/can/environment/ament_prefix_path.dsv
+[29.149s] -- Installing: /home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/install/can/share/can/environment/path.sh
+[29.149s] -- Installing: /home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/install/can/share/can/environment/path.dsv
+[29.149s] -- Installing: /home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/install/can/share/can/local_setup.bash
+[29.149s] -- Installing: /home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/install/can/share/can/local_setup.sh
+[29.150s] -- Installing: /home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/install/can/share/can/local_setup.zsh
+[29.151s] -- Installing: /home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/install/can/share/can/local_setup.dsv
+[29.158s] -- Installing: /home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/install/can/share/can/package.dsv
+[29.158s] -- Installing: /home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/install/can/share/ament_index/resource_index/packages/can
+[29.159s] -- Installing: /home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/install/can/share/can/cmake/canConfig.cmake
+[29.159s] -- Installing: /home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/install/can/share/can/cmake/canConfig-version.cmake
+[29.159s] -- Installing: /home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/install/can/share/can/package.xml
+[29.175s] Invoked command in '/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/build/can' returned '0': CMAKE_PREFIX_PATH=/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/install/interfaces:/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/install/fire_detection:/home/insa/ros2_ws/install/my_fire_pkg:/home/insa/ros2_ws/install/demo_sensor_pkg:/home/insa/ros2_ws/install/my_robot_interfaces:/home/insa/ros2_ws/install/my_cpp_pkg:/home/insa/ros2_ws/install/johann_cpp_pkg:/opt/ros/humble /usr/bin/cmake --install /home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/build/can

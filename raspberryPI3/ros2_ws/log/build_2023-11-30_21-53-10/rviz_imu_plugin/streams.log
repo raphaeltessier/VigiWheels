@@ -1,0 +1,39 @@
+[0.064s] Invoking command in '/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/build/rviz_imu_plugin': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/build/rviz_imu_plugin -- -j8 -l8
+[0.178s] [ 11%] [34m[1mAutomatic MOC for target rviz_imu_plugin[0m
+[0.202s] [ 11%] Built target rviz_imu_plugin_autogen
+[0.214s] [35m[1mConsolidate compiler generated dependencies of target rviz_imu_plugin[0m
+[0.233s] [ 33%] [32mBuilding CXX object CMakeFiles/rviz_imu_plugin.dir/rviz_imu_plugin_autogen/mocs_compilation.cpp.o[0m
+[0.233s] [ 33%] [32mBuilding CXX object CMakeFiles/rviz_imu_plugin.dir/src/imu_display.cpp.o[0m
+[0.234s] [ 44%] [32mBuilding CXX object CMakeFiles/rviz_imu_plugin.dir/src/imu_axes_visual.cpp.o[0m
+[0.243s] [ 55%] [32mBuilding CXX object CMakeFiles/rviz_imu_plugin.dir/src/imu_orientation_visual.cpp.o[0m
+[0.246s] [ 66%] [32mBuilding CXX object CMakeFiles/rviz_imu_plugin.dir/src/mag_display.cpp.o[0m
+[27.023s] [ 77%] [32m[1mLinking CXX shared library librviz_imu_plugin.so[0m
+[30.831s] [100%] Built target rviz_imu_plugin
+[30.859s] Invoked command in '/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/build/rviz_imu_plugin' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/build/rviz_imu_plugin -- -j8 -l8
+[30.931s] Invoking command in '/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/build/rviz_imu_plugin': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/build/rviz_imu_plugin
+[34.729s] -- Install configuration: ""
+[34.729s] -- Installing: /home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/install/rviz_imu_plugin/share/rviz_imu_plugin/plugin_description.xml
+[34.729s] -- Installing: /home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/install/rviz_imu_plugin/share/rviz_imu_plugin/environment/library_path.sh
+[34.729s] -- Installing: /home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/install/rviz_imu_plugin/share/rviz_imu_plugin/environment/library_path.dsv
+[34.729s] -- Installing: /home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/install/rviz_imu_plugin/lib/librviz_imu_plugin.so
+[34.729s] -- Set runtime path of "/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/install/rviz_imu_plugin/lib/librviz_imu_plugin.so" to ""
+[34.729s] -- Installing: /home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/install/rviz_imu_plugin/share/ament_index/resource_index/package_run_dependencies/rviz_imu_plugin
+[34.729s] -- Installing: /home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/install/rviz_imu_plugin/share/ament_index/resource_index/parent_prefix_path/rviz_imu_plugin
+[34.729s] -- Installing: /home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/install/rviz_imu_plugin/share/rviz_imu_plugin/environment/ament_prefix_path.sh
+[34.729s] -- Installing: /home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/install/rviz_imu_plugin/share/rviz_imu_plugin/environment/ament_prefix_path.dsv
+[34.729s] -- Installing: /home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/install/rviz_imu_plugin/share/rviz_imu_plugin/environment/path.sh
+[34.730s] -- Installing: /home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/install/rviz_imu_plugin/share/rviz_imu_plugin/environment/path.dsv
+[34.730s] -- Installing: /home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/install/rviz_imu_plugin/share/rviz_imu_plugin/local_setup.bash
+[34.730s] -- Installing: /home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/install/rviz_imu_plugin/share/rviz_imu_plugin/local_setup.sh
+[34.730s] -- Installing: /home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/install/rviz_imu_plugin/share/rviz_imu_plugin/local_setup.zsh
+[34.730s] -- Installing: /home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/install/rviz_imu_plugin/share/rviz_imu_plugin/local_setup.dsv
+[34.730s] -- Installing: /home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/install/rviz_imu_plugin/share/rviz_imu_plugin/package.dsv
+[34.730s] -- Installing: /home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/install/rviz_imu_plugin/share/ament_index/resource_index/packages/rviz_imu_plugin
+[34.730s] -- Installing: /home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/install/rviz_imu_plugin/share/ament_index/resource_index/rviz_common__pluginlib__plugin/rviz_imu_plugin
+[34.730s] -- Installing: /home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/install/rviz_imu_plugin/share/rviz_imu_plugin/cmake/ament_cmake_export_include_directories-extras.cmake
+[34.730s] -- Installing: /home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/install/rviz_imu_plugin/share/rviz_imu_plugin/cmake/ament_cmake_export_libraries-extras.cmake
+[34.730s] -- Installing: /home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/install/rviz_imu_plugin/share/rviz_imu_plugin/cmake/ament_cmake_export_dependencies-extras.cmake
+[34.730s] -- Installing: /home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/install/rviz_imu_plugin/share/rviz_imu_plugin/cmake/rviz_imu_pluginConfig.cmake
+[34.730s] -- Installing: /home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/install/rviz_imu_plugin/share/rviz_imu_plugin/cmake/rviz_imu_pluginConfig-version.cmake
+[34.730s] -- Installing: /home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/install/rviz_imu_plugin/share/rviz_imu_plugin/package.xml
+[34.868s] Invoked command in '/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/build/rviz_imu_plugin' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/build/rviz_imu_plugin

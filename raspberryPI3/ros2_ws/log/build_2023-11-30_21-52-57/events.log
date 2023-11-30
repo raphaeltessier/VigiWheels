@@ -1,0 +1,18 @@
+[0.000000] (-) TimerEvent: {}
+[0.000473] (-) JobUnselected: {'identifier': 'can'}
+[0.000603] (-) JobUnselected: {'identifier': 'car_control'}
+[0.000629] (-) JobUnselected: {'identifier': 'carla_msgs'}
+[0.000639] (-) JobUnselected: {'identifier': 'fire_detection'}
+[0.000649] (-) JobUnselected: {'identifier': 'imu_complementary_filter'}
+[0.000659] (-) JobUnselected: {'identifier': 'imu_filter_madgwick'}
+[0.000668] (-) JobUnselected: {'identifier': 'imu_tools'}
+[0.000677] (-) JobUnselected: {'identifier': 'interfaces'}
+[0.000687] (-) JobUnselected: {'identifier': 'joystick'}
+[0.000696] (-) JobUnselected: {'identifier': 'rviz_imu_plugin'}
+[0.000705] (-) JobUnselected: {'identifier': 'serial_port'}
+[0.000714] (-) JobUnselected: {'identifier': 'simulation'}
+[0.000724] (-) JobUnselected: {'identifier': 'system_check'}
+[0.000735] (geicar_start) JobQueued: {'identifier': 'geicar_start', 'dependencies': OrderedDict([('imu_filter_madgwick', '/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/install/imu_filter_madgwick'), ('interfaces', '/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/install/interfaces'), ('can', '/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/install/can'), ('car_control', '/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/install/car_control'), ('system_check', '/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/install/system_check')])}
+[0.000754] (geicar_start) JobStarted: {'identifier': 'geicar_start'}
+[0.067182] (geicar_start) JobEnded: {'identifier': 'geicar_start', 'rc': 1}
+[0.077566] (-) EventReactorShutdown: {}

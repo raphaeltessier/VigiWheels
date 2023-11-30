@@ -59,13 +59,40 @@ bool interfaces__msg__emergency_alert_fire__convert_from_py(PyObject * _pymsg, v
     ros_message->fire_detected = (Py_True == field);
     Py_DECREF(field);
   }
-  {  // test
-    PyObject * field = PyObject_GetAttrString(_pymsg, "test");
+  {  // ir_front_right
+    PyObject * field = PyObject_GetAttrString(_pymsg, "ir_front_right");
     if (!field) {
       return false;
     }
     assert(PyBool_Check(field));
-    ros_message->test = (Py_True == field);
+    ros_message->ir_front_right = (Py_True == field);
+    Py_DECREF(field);
+  }
+  {  // ir_front_left
+    PyObject * field = PyObject_GetAttrString(_pymsg, "ir_front_left");
+    if (!field) {
+      return false;
+    }
+    assert(PyBool_Check(field));
+    ros_message->ir_front_left = (Py_True == field);
+    Py_DECREF(field);
+  }
+  {  // ir_rear_right
+    PyObject * field = PyObject_GetAttrString(_pymsg, "ir_rear_right");
+    if (!field) {
+      return false;
+    }
+    assert(PyBool_Check(field));
+    ros_message->ir_rear_right = (Py_True == field);
+    Py_DECREF(field);
+  }
+  {  // ir_rear_left
+    PyObject * field = PyObject_GetAttrString(_pymsg, "ir_rear_left");
+    if (!field) {
+      return false;
+    }
+    assert(PyBool_Check(field));
+    ros_message->ir_rear_left = (Py_True == field);
     Py_DECREF(field);
   }
 
@@ -101,11 +128,44 @@ PyObject * interfaces__msg__emergency_alert_fire__convert_to_py(void * raw_ros_m
       }
     }
   }
-  {  // test
+  {  // ir_front_right
     PyObject * field = NULL;
-    field = PyBool_FromLong(ros_message->test ? 1 : 0);
+    field = PyBool_FromLong(ros_message->ir_front_right ? 1 : 0);
     {
-      int rc = PyObject_SetAttrString(_pymessage, "test", field);
+      int rc = PyObject_SetAttrString(_pymessage, "ir_front_right", field);
+      Py_DECREF(field);
+      if (rc) {
+        return NULL;
+      }
+    }
+  }
+  {  // ir_front_left
+    PyObject * field = NULL;
+    field = PyBool_FromLong(ros_message->ir_front_left ? 1 : 0);
+    {
+      int rc = PyObject_SetAttrString(_pymessage, "ir_front_left", field);
+      Py_DECREF(field);
+      if (rc) {
+        return NULL;
+      }
+    }
+  }
+  {  // ir_rear_right
+    PyObject * field = NULL;
+    field = PyBool_FromLong(ros_message->ir_rear_right ? 1 : 0);
+    {
+      int rc = PyObject_SetAttrString(_pymessage, "ir_rear_right", field);
+      Py_DECREF(field);
+      if (rc) {
+        return NULL;
+      }
+    }
+  }
+  {  // ir_rear_left
+    PyObject * field = NULL;
+    field = PyBool_FromLong(ros_message->ir_rear_left ? 1 : 0);
+    {
+      int rc = PyObject_SetAttrString(_pymessage, "ir_rear_left", field);
       Py_DECREF(field);
       if (rc) {
         return NULL;
