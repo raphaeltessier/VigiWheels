@@ -12,8 +12,11 @@
 using namespace std;
 
 //Necessary constants for corrector
-float double_constante_correcteur_moteurA = (KI * Te + 2* KP)/ 2;
-float double_constante_correcteur_moteurB = (KI * Te - 2* KP)/ 2;
+float float_constante_correcteur_moteurA_left = (KI_left * Te + 2* KP_left)/ 2;
+float float_constante_correcteur_moteurB_left = (KI_left * Te - 2* KP_left)/ 2;
+
+float float_constante_correcteur_moteurA_right = (KI_right * Te + 2* KP_right)/ 2;
+float float_constante_correcteur_moteurB_right = (KI_right * Te - 2* KP_right)/ 2;
 
 //Speed variables
 float speedErrorLeft ;
@@ -33,8 +36,8 @@ void calculateRPMAuto(float consigneMotor, uint8_t& leftRearPwmCmd, uint8_t& rig
     speedErrorRight = consigneRPM - currentRPM_R;
 
     //Calcul of corrected value 
-    correctedValue_L = correctedValue_L + double_constante_correcteur_moteurA * speedErrorLeft + double_constante_correcteur_moteurB * lastError_L;
-    correctedValue_R = correctedValue_R + double_constante_correcteur_moteurA * speedErrorRight + double_constante_correcteur_moteurB* lastError_R;
+    correctedValue_L = correctedValue_L + float_constante_correcteur_moteurA_left * speedErrorLeft + float_constante_correcteur_moteurA_left * lastError_L;
+    correctedValue_R = correctedValue_R + float_constante_correcteur_moteurA_right * speedErrorRight + float_constante_correcteur_moteurB_right* lastError_R;
 
     // Calcul of the command to be sent to each motor (right and left)
 
