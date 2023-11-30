@@ -63,6 +63,18 @@ def generate_launch_description():
         executable="system_check_node",
         emulate_tty=True
     )
+    
+    uart_write = Node(
+        package="uart",
+        executable="serial_writing_node",
+        emulate_tty=True
+    )
+
+    uart_send = Node(
+        package="uart",
+        executable="serial_reading_node",
+        emulate_tty=True
+    )
 
 
     ld.add_action(joystick_node)
