@@ -117,8 +117,8 @@ private:
         }
 
         char tx[8]; 
-        snprintf(tx, sizeof(tx), "#fire=%u", msg.fire_detected); //8
-
+        snprintf(tx, sizeof(tx), "#fire=%u", msg.fire_detected); 
+        
         int bytes_written = write(serial_port_, tx, strlen(tx));
 
         if (bytes_written == -1) 

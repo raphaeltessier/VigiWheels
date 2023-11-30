@@ -1,5 +1,5 @@
-../Core/App/app.c:35:6:reading_analog_sensor	1
-../Core/App/app.c:43:6:reading_digital_sensor	1
-../Core/App/app.c:48:6:reading_sensor_values	1
-../Core/App/app.c:58:6:sending_data_uart	1
-../Core/App/app.c:78:6:receiving_data_uart	8
+../Core/App/app.c:34:6:reading_analog_sensor	1
+../Core/App/app.c:42:6:reading_digital_sensor	1
+../Core/App/app.c:47:6:reading_sensor_values	1
+../Core/App/app.c:57:6:sending_data_uart	1
+../Core/App/app.c:77:6:receiving_data_uart	8
