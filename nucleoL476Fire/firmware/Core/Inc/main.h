@@ -75,6 +75,8 @@ void Error_Handler(void);
 #define TCK_GPIO_Port GPIOA
 #define D3___IR_SENSOR4_Pin GPIO_PIN_3
 #define D3___IR_SENSOR4_GPIO_Port GPIOB
+#define D5___BUZZER_Pin GPIO_PIN_4
+#define D5___BUZZER_GPIO_Port GPIOB
 #define D4___RELAIS_Pin GPIO_PIN_5
 #define D4___RELAIS_GPIO_Port GPIOB
 

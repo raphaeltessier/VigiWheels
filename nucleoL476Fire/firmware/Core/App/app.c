@@ -14,7 +14,7 @@ extern ADC_HandleTypeDef hadc2;
 uint16_t ir_sensor1; // analog port A0
 uint16_t ir_sensor2; // digital port D2
 uint16_t ir_sensor3; // analog port A1
-uint16_t ir_sensor4; // digital port D4
+uint16_t ir_sensor4; // digital port D3
 uint16_t smoke_sensor1; // digital port D4
 uint16_t smoke_sensor2; // digital port D4
 
@@ -64,7 +64,7 @@ void sending_data_uart(void *argument)
 
         reading_sensor_values();
 
-        sprintf(tx, "#IR_SENSOR1=%hu|IR_SENSOR2=%u|IR_SENSOR3=4095|IR_SENSOR4=0|SMOKE_SENSOR1=4095|SMOKE_SENSOR2=4095\r\n", ir_sensor1, ir_sensor2);
+        sprintf(tx, "#IR_SENSOR1=%hu|IR_SENSOR2=%u|IR_SENSOR3=%hu|IR_SENSOR4=%u|SMOKE_SENSOR1=4095|SMOKE_SENSOR2=4095\r\n", ir_sensor1, ir_sensor2, ir_sensor3, ir_sensor4);
 
         HAL_UART_Transmit(&huart2, (const uint8_t *)tx, strlen(tx), 100);
 
@@ -102,11 +102,13 @@ void receiving_data_uart(void *argument)
 
         if (strcmp(rx, "fire=1") == 0)
         {
-            HAL_GPIO_WritePin(GPIOB, GPIO_PIN_5, GPIO_PIN_SET);
+            HAL_GPIO_WritePin(GPIOB, GPIO_PIN_5, GPIO_PIN_SET); //Gyro
+            HAL_GPIO_WritePin(GPIOB, GPIO_PIN_4, GPIO_PIN_SET); //Buzzer
         }
         else if (strcmp(rx, "fire=0") == 0)
         {
             HAL_GPIO_WritePin(GPIOB, GPIO_PIN_5, GPIO_PIN_RESET);
+            HAL_GPIO_WritePin(GPIOB, GPIO_PIN_4, GPIO_PIN_SET);
         } else
         {
             // Error handling for unexpected values

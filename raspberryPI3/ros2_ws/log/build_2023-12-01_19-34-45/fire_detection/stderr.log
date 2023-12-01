@@ -1,0 +1,19 @@
+[01m[K/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/src/fire_detection/src/processing_data_fire.cpp:[m[K In member function ‘[01m[Kvoid ProcessingDataFireNode::dataFireCallBack(const FireSensor&)[m[K’:
+[01m[K/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/src/fire_detection/src/processing_data_fire.cpp:83:9:[m[K [01;31m[Kerror: [m[K‘[01m[Kresult1[m[K’ was not declared in this scope
+   83 |         [01;31m[Kresult1[m[K = true;
+      |         [01;31m[K^~~~~~~[m[K
+[01m[K/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/src/fire_detection/src/processing_data_fire.cpp:84:9:[m[K [01;31m[Kerror: [m[K‘[01m[Kresult2[m[K’ was not declared in this scope
+   84 |         [01;31m[Kresult2[m[K = false;
+      |         [01;31m[K^~~~~~~[m[K
+[01m[K/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/src/fire_detection/src/processing_data_fire.cpp:85:9:[m[K [01;31m[Kerror: [m[K‘[01m[Kresult3[m[K’ was not declared in this scope
+   85 |         [01;31m[Kresult3[m[K = false;
+      |         [01;31m[K^~~~~~~[m[K
+[01m[K/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/src/fire_detection/src/processing_data_fire.cpp:86:9:[m[K [01;31m[Kerror: [m[K‘[01m[Kresult4[m[K’ was not declared in this scope
+   86 |         [01;31m[Kresult4[m[K = false;
+      |         [01;31m[K^~~~~~~[m[K
+[01m[K/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/src/fire_detection/src/processing_data_fire.cpp:76:63:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Kmsg[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter-Wunused-parameter]8;;[m[K]
+   76 |     void dataFireCallBack([01;35m[Kconst interfaces::msg::FireSensor & msg[m[K)
+      |                           [01;35m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~[m[K
+gmake[2]: *** [CMakeFiles/processing_data_fire_node.dir/build.make:76: CMakeFiles/processing_data_fire_node.dir/src/processing_data_fire.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/processing_data_fire_node.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

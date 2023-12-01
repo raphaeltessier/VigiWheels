@@ -80,25 +80,25 @@ private:
         int result3 = processSensorData(msg.ir_sensor3); //Arrière Gauche 
         int result4 = msg.ir_sensor4; //Arrière Droit 
     
-        if (result1 == 1 || result2 == 1 || result3 == 1 || result4 == 1) 
-        {
-            fireIsDetected = true; 
-        }
-        else if (result1 == 1)
+        if (result1 == 1)
         {
             FrontRightSensor = true; 
+            fireIsDetected = true; 
         }
         else if (result2 == 1)
         {
             FrontLeftSensor = true; 
+            fireIsDetected = true; 
         }
         else if (result3 == 1)
         {
             RearLeftSensor = true; 
+            fireIsDetected = true; 
         }
         else if (result4 == 1)
         {
             RearRightSensor = true; 
+            fireIsDetected = true; 
         }
         else
         {

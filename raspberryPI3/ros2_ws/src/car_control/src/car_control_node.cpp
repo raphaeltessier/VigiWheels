@@ -7,6 +7,7 @@
 #include "interfaces/msg/motors_feedback.hpp"
 #include "interfaces/msg/steering_calibration.hpp"
 #include "interfaces/msg/joystick_order.hpp"
+#include "interfaces/msg/emergency_alert_fire.hpp"
 
 #include "std_srvs/srv/empty.hpp"
 
@@ -30,12 +31,15 @@ public:
         requestedSteerAngle = 0;
     
 
-        publisher_can_= this->create_publisher<interfaces::msg::MotorsOrder>("motors_order", 10);
+        publisher_can_= this->create_publisher<interfaces::msg::MotorsOrder>("motors_order", 10); //Publie PWM 
 
         publisher_steeringCalibration_ = this->create_publisher<interfaces::msg::SteeringCalibration>("steering_calibration", 10);
 
         
 
+        subscription_emergency_alert_fire = this->create_subscription<interfaces::msg::EmergencyAlertFire>(
+        "emergency_alert", 10, std::bind(&car_control::EmergencyAlertFireCallback, this, _1));
+    
         subscription_joystick_order_ = this->create_subscription<interfaces::msg::JoystickOrder>(
         "joystick_order", 10, std::bind(&car_control::joystickOrderCallback, this, _1));
 
@@ -46,10 +50,7 @@ public:
         "steering_calibration", 10, std::bind(&car_control::steeringCalibrationCallback, this, _1));
 
 
-        
-
-        server_calibration_ = this->create_service<std_srvs::srv::Empty>(
-                            "steering_calibration", std::bind(&car_control::steeringCalibration, this, std::placeholders::_1, std::placeholders::_2));
+        server_calibration_ = this->create_service<std_srvs::srv::Empty>("steering_calibration", std::bind(&car_control::steeringCalibration, this, std::placeholders::_1, std::placeholders::_2));
 
         timer_ = this->create_wall_timer(PERIOD_UPDATE_CMD, std::bind(&car_control::updateCmd, this));
 
@@ -59,6 +60,17 @@ public:
 
     
 private:
+
+    void EmergencyAlertFireCallback(const interfaces::msg::EmergencyAlertFire & msg){
+
+        fireDetected = msg.fire_detected;  
+        FrontRightSensor = msg.ir_front_right; 
+        FrontLeftSensor = msg.ir_front_left; 
+        RearRightSensor = msg.ir_rear_right; 
+        RearLeftSensor = msg.ir_rear_left;
+    }
+
+
 
     /* Update start, mode, requestedThrottle, requestedSteerAngle and reverse from joystick order [callback function]  :
     *
@@ -127,6 +139,13 @@ private:
 
         }else{ //Car started
 
+            if(fireDetected == 1)
+            {
+                leftRearPwmCmd = STOP;
+                rightRearPwmCmd = STOP;
+                steeringPwmCmd = STOP;
+                RCLCPP_INFO(this->get_logger(), "Fire is detected\n");
+            }
             //Manual Mode
             if (mode==0){
                 
@@ -208,6 +227,12 @@ private:
     
     // ---- Private variables ----
 
+    bool fireDetected;
+    bool FrontRightSensor; 
+    bool FrontLeftSensor; 
+    bool RearRightSensor; 
+    bool RearLeftSensor; 
+
     //General variables
     bool start;
     int mode;    //0 : Manual    1 : Auto    2 : Calibration
@@ -234,6 +259,7 @@ private:
     rclcpp::Subscription<interfaces::msg::JoystickOrder>::SharedPtr subscription_joystick_order_;
     rclcpp::Subscription<interfaces::msg::MotorsFeedback>::SharedPtr subscription_motors_feedback_;
     rclcpp::Subscription<interfaces::msg::SteeringCalibration>::SharedPtr subscription_steering_calibration_;
+    rclcpp::Subscription<interfaces::msg::EmergencyAlertFire>::SharedPtr subscription_emergency_alert_fire;
 
     //Timer
     rclcpp::TimerBase::SharedPtr timer_;

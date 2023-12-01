@@ -494,7 +494,7 @@ static void MX_GPIO_Init(void)
   HAL_GPIO_WritePin(LD2_GPIO_Port, LD2_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(D4___RELAIS_GPIO_Port, D4___RELAIS_Pin, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(GPIOB, D5___BUZZER_Pin|D4___RELAIS_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin : B1_Pin */
   GPIO_InitStruct.Pin = B1_Pin;
@@ -521,12 +521,12 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   HAL_GPIO_Init(D3___IR_SENSOR4_GPIO_Port, &GPIO_InitStruct);
 
-  /*Configure GPIO pin : D4___RELAIS_Pin */
-  GPIO_InitStruct.Pin = D4___RELAIS_Pin;
+  /*Configure GPIO pins : D5___BUZZER_Pin D4___RELAIS_Pin */
+  GPIO_InitStruct.Pin = D5___BUZZER_Pin|D4___RELAIS_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
-  HAL_GPIO_Init(D4___RELAIS_GPIO_Port, &GPIO_InitStruct);
+  HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
 
 /* USER CODE BEGIN MX_GPIO_Init_2 */
 /* USER CODE END MX_GPIO_Init_2 */
