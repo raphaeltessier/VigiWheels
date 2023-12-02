@@ -39,9 +39,9 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, READONLY, DEBUGGING, OCTETS
  17 .debug_macro  0002b0ca  00000000  00000000  00045924  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 18 .debug_line   0001ce40  00000000  00000000  000709ee  2**0
+ 18 .debug_line   0001ce41  00000000  00000000  000709ee  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 19 .debug_str    00111d30  00000000  00000000  0008d82e  2**0
+ 19 .debug_str    00111d30  00000000  00000000  0008d82f  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
  20 .debug_frame  00007fb4  00000000  00000000  0019f560  2**2
                   CONTENTS, READONLY, DEBUGGING, OCTETS
@@ -432,10 +432,10 @@ Disassembly of section .text:
  800059a:	bf00      	nop
 
 0800059c <reading_analog_sensor>:
-
 #define SIZE_RX 10
 #define SIZE_TX 100
 
+// Function to read analog sensor values
 void reading_analog_sensor(ADC_HandleTypeDef *hadc, uint16_t *sensorValue)
 {
  800059c:	b580      	push	{r7, lr}
@@ -468,6 +468,7 @@ void reading_analog_sensor(ADC_HandleTypeDef *hadc, uint16_t *sensorValue)
 
 080005d0 <reading_digital_sensor>:
 
+// Function to read digital sensor values
 void reading_digital_sensor(GPIO_TypeDef *GPIOx, uint16_t GPIO_Pin, uint16_t *sensorValue)
 {
  80005d0:	b580      	push	{r7, lr}
@@ -500,6 +501,7 @@ void reading_digital_sensor(GPIO_TypeDef *GPIOx, uint16_t GPIO_Pin, uint16_t *se
 
 08000604 <reading_sensor_values>:
 
+// Function to read all sensor values
 void reading_sensor_values()
 {
  8000604:	b580      	push	{r7, lr}
@@ -544,13 +546,14 @@ void reading_sensor_values()
 
 08000664 <sending_data_uart>:
 
+// Frame format: "#[ID]=[Value]|[ID]=[Value]|[ID]=[Value]\n"
 void sending_data_uart(void *argument)
 {
  8000664:	b590      	push	{r4, r7, lr}
  8000666:	b09f      	sub	sp, #124	; 0x7c
  8000668:	af02      	add	r7, sp, #8
  800066a:	6078      	str	r0, [r7, #4]
-	char tx[SIZE_TX + 1];
+    char tx[SIZE_TX + 1];
 
     while (1)
     {
@@ -564,7 +567,8 @@ void sending_data_uart(void *argument)
         reading_sensor_values();
  800067a:	f7ff ffc3 	bl	8000604 <reading_sensor_values>
 
-        sprintf(tx, "#IR_SENSOR1=%hu|IR_SENSOR2=%u|IR_SENSOR3=%hu|IR_SENSOR4=%u|SMOKE_SENSOR1=4095|SMOKE_SENSOR2=4095\r\n", ir_sensor1, ir_sensor2, ir_sensor3, ir_sensor4);
+        // Create and transmit the frame
+        sprintf(tx, "#IR_SENSOR1=%hu|IR_SENSOR2=%u|IR_SENSOR3=%hu|IR_SENSOR4=%u|SMOKE_SENSOR1=4095|SMOKE_SENSOR2=4095\n",
  800067e:	4b16      	ldr	r3, [pc, #88]	; (80006d8 <sending_data_uart+0x74>)
  8000680:	881b      	ldrh	r3, [r3, #0]
  8000682:	4619      	mov	r1, r3
@@ -583,6 +587,7 @@ void sending_data_uart(void *argument)
  800069e:	460a      	mov	r2, r1
  80006a0:	4911      	ldr	r1, [pc, #68]	; (80006e8 <sending_data_uart+0x84>)
  80006a2:	f008 feed 	bl	8009480 <siprintf>
+                ir_sensor1, ir_sensor2, ir_sensor3, ir_sensor4);
 
         HAL_UART_Transmit(&huart2, (const uint8_t *)tx, strlen(tx), 100);
  80006a6:	f107 0308 	add.w	r3, r7, #8
@@ -619,6 +624,7 @@ void sending_data_uart(void *argument)
     }
 }
 
+// Frame format: "#[ID]=[Value]\n"
 void receiving_data_uart()
 {
  80006f0:	b580      	push	{r7, lr}
@@ -650,7 +656,7 @@ void receiving_data_uart()
  8000714:	2b23      	cmp	r3, #35	; 0x23
  8000716:	d1f5      	bne.n	8000704 <receiving_data_uart+0x14>
 
-        // Receiving data until "END_OF_FRAME"
+        // Receive data until "END_OF_FRAME"
         int i = 0;
  8000718:	2300      	movs	r3, #0
  800071a:	61fb      	str	r3, [r7, #28]
@@ -683,18 +689,20 @@ void receiving_data_uart()
  8000746:	2200      	movs	r2, #0
  8000748:	701a      	strb	r2, [r3, #0]
 
-        char *id = strtok(rx, "=");  // ID
+        // Extract ID and Value from the received frame
+        char *id = strtok(rx, "=");    // ID
  800074a:	1d3b      	adds	r3, r7, #4
  800074c:	491f      	ldr	r1, [pc, #124]	; (80007cc <receiving_data_uart+0xdc>)
  800074e:	4618      	mov	r0, r3
  8000750:	f008 ff02 	bl	8009558 <strtok>
  8000754:	61b8      	str	r0, [r7, #24]
-        char *value = strtok(NULL, "=");  // Value
+        char *value = strtok(NULL, "="); // Value
  8000756:	491d      	ldr	r1, [pc, #116]	; (80007cc <receiving_data_uart+0xdc>)
  8000758:	2000      	movs	r0, #0
  800075a:	f008 fefd 	bl	8009558 <strtok>
  800075e:	6178      	str	r0, [r7, #20]
 
+        // Process based on ID and Value
         if (id != NULL && value != NULL)
  8000760:	69bb      	ldr	r3, [r7, #24]
  8000762:	2b00      	cmp	r3, #0
@@ -703,7 +711,7 @@ void receiving_data_uart()
  8000768:	2b00      	cmp	r3, #0
  800076a:	d024      	beq.n	80007b6 <receiving_data_uart+0xc6>
         {
-            if (strcmp(id, "Fire") == 0) //"strcmp" : Retourne 0 si les chaînes sont égales
+            if (strcmp(id, "Fire") == 0)
  800076c:	4918      	ldr	r1, [pc, #96]	; (80007d0 <receiving_data_uart+0xe0>)
  800076e:	69b8      	ldr	r0, [r7, #24]
  8000770:	f7ff fd2e 	bl	80001d0 <strcmp>
@@ -711,6 +719,7 @@ void receiving_data_uart()
  8000776:	2b00      	cmp	r3, #0
  8000778:	d119      	bne.n	80007ae <receiving_data_uart+0xbe>
             {
+                // Handle Fire sensor value
                 if (atoi(value) == 1)
  800077a:	6978      	ldr	r0, [r7, #20]
  800077c:	f008 fd2e 	bl	80091dc <atoi>
@@ -740,7 +749,7 @@ void receiving_data_uart()
  80007ac:	e003      	b.n	80007b6 <receiving_data_uart+0xc6>
                 else
                 {
-                	//Error
+                    // Handle error
                 }
             }
             else if (strcmp(id, "PWM") == 0)
@@ -748,7 +757,7 @@ void receiving_data_uart()
  80007b0:	69b8      	ldr	r0, [r7, #24]
  80007b2:	f7ff fd0d 	bl	80001d0 <strcmp>
             {
-            	//Error
+                // Handle other IDs or report error
             }
         }
 
