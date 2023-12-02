@@ -34,12 +34,19 @@ public:
         //periodic function
         timer_ = this->create_wall_timer(PERIOD_UPDATE_CMD, std::bind(&servo_cam::updateCmd, this));
         
+
+        // Set PWM frequency and duty cycle
+
+
+
         RCLCPP_INFO(this->get_logger(), "servo_cam_node READY");
     }
 
     
 private:
-   
+
+
+
     /* Update mode and pwm from cam pos order feedback [callback function]  :
     *
     * This function is called when a message is published on the "/cam_pos_order" topic
@@ -95,6 +102,9 @@ private:
 
 
         servoOrder.servo_cam_angle = command_angle;
+
+
+
         publisher_servo_cam_order_->publish(servoOrder);
 
         
@@ -108,6 +118,9 @@ private:
         int requested_angle;
         int command_angle = 90; //[0, 180]
         int sens = PAS_SCAN; //{-10; 10}
+
+
+
         
         
 

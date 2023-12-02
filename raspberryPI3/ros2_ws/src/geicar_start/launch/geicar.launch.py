@@ -64,13 +64,13 @@ def generate_launch_description():
         emulate_tty=True
     )
     
-    uart_write = Node(
+    serial_writing_node = Node(
         package="uart",
         executable="serial_writing_node",
         emulate_tty=True
     )
 
-    uart_send = Node(
+    serial_reading_node = Node(
         package="uart",
         executable="serial_reading_node",
         emulate_tty=True
@@ -86,5 +86,7 @@ def generate_launch_description():
     ld.add_action(imu_filter_madgwick_node)
     ld.add_action(system_check_node)
     ld.add_action(servo_cam_node)
+    ld.add_action(serial_writing_node)
+    ld.add_action(serial_reading_node)
 
     return ld

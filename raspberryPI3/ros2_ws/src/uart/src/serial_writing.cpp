@@ -20,6 +20,9 @@
 #define FIRE_ID 'f'
 #define CAM_ID 'c'
 
+using namespace std;
+using placeholders::_1;
+
 class SerialWritingNode : public rclcpp::Node 
 {
 public:
@@ -30,7 +33,7 @@ public:
         initSerialPort();
         
         //timer_ = this->create_wall_timer(std::chrono::milliseconds(250), std::bind(&SerialWritingNode::EmergencyAlertFireCallBack, this)); 
-        subscription_emergency_alert = this->create_subscription<interfaces::msg::EmergencyAlertFire>("emergency_alert", 10, std::bind(&SerialWritingNode::EmergencyAlertFireCallBack, this, std::placeholders::_1));
+        subscription_emergency_alert = this->create_subscription<interfaces::msg::EmergencyAlertFire>("emergency_alert", 10, std::bind(&SerialWritingNode::EmergencyAlertFireCallBack, this, _1));
 
 
         subscription_servo_cam_order_ = this->create_subscription<interfaces::msg::ServoCamOrder>(
@@ -128,13 +131,13 @@ private:
     /* Send angle servo cam order via CAN bus [callback function]
     * This function is called when a message is published on the "/system_check" topic
     */
-    int sendServoCamOrderCallback (const interfaces::msg::ServoCamOrder & servoOrder) {
+    void sendServoCamOrderCallback (const interfaces::msg::ServoCamOrder & servoOrder) {
         uart_sending_uint8(CAM_ID, servoOrder.servo_cam_angle);
   
     }
 
 
-    void uart_sending_uint8(char id, uint_8 value) {
+    void uart_sending_uint8(char id, uint8_t value) {
         if (serial_port_ == -1) 
         {
             RCLCPP_ERROR(this->get_logger(), "Serial port is not open");
@@ -142,7 +145,7 @@ private:
         }
 
         char tx[8]; 
-        snprintf(tx, sizeof(tx), "#%c=%04u", id, value); //8
+        snprintf(tx, sizeof(tx), "#%c=%04u", id, 90); //8
 
         int bytes_written = write(serial_port_, tx, strlen(tx));
 
@@ -151,7 +154,7 @@ private:
             perror("Error writing to serial port");
         }
 
-        RCLCPP_DEBUG(this->get_logger(), "Data send : %s\n", tx); 
+        RCLCPP_INFO(this->get_logger(), "Data send : %s\n", tx); 
 
 
 
