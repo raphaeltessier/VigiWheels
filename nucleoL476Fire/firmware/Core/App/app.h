@@ -12,6 +12,7 @@
 #include <string.h>
 #include <stdio.h>
 #include "cmsis_os2.h"
+#include <stdlib.h>
 
 extern osMutexId_t uartMutex;
 extern osThreadId_t senderThreadId;

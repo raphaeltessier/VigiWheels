@@ -11,6 +11,10 @@ extern UART_HandleTypeDef huart2;
 extern ADC_HandleTypeDef hadc1;
 extern ADC_HandleTypeDef hadc2;
 
+#define START_OF_FRAME '#'
+#define END_OF_FRAME '\n'
+#define SEPARATOR '='
+
 uint16_t ir_sensor1; // analog port A0
 uint16_t ir_sensor2; // digital port D2
 uint16_t ir_sensor3; // analog port A1
@@ -74,7 +78,9 @@ void sending_data_uart(void *argument)
     }
 }
 
-void receiving_data_uart(void *argument)
+//Frame "#[ID]=[Value]\n"
+
+void receiving_data_uart()
 {
     char buf[1];
     char rx[SIZE_RX + 1];
@@ -83,35 +89,51 @@ void receiving_data_uart(void *argument)
     {
         osMutexAcquire(uartMutex, osWaitForever);
 
+        // Wait for "START_OF_FRAME"
         do
         {
             HAL_UART_Receive(&huart2, (uint8_t *)buf, 1, 100);
-        } while (*buf != '#');
+        } while (*buf != START_OF_FRAME);
 
+        // Receiving data until "END_OF_FRAME"
         int i = 0;
         do
         {
             HAL_UART_Receive(&huart2, (uint8_t *)buf, 1, 100);
-            if (*buf != '#')
-            {
-                rx[i++] = *buf;
-            }
-        } while (i < SIZE_RX && (*buf != '0' && *buf != '1'));
+            rx[i++] = *buf;
+
+        } while (*buf != END_OF_FRAME);
 
         rx[i] = '\0';
 
-        if (strcmp(rx, "fire=1") == 0)
+        char *id = strtok(rx, "=");  // ID
+        char *value = strtok(NULL, "=");  // Value
+
+        if (id != NULL && value != NULL)
         {
-            HAL_GPIO_WritePin(GPIOB, GPIO_PIN_5, GPIO_PIN_SET); //Gyro
-            HAL_GPIO_WritePin(GPIOB, GPIO_PIN_4, GPIO_PIN_SET); //Buzzer
-        }
-        else if (strcmp(rx, "fire=0") == 0)
-        {
-            HAL_GPIO_WritePin(GPIOB, GPIO_PIN_5, GPIO_PIN_RESET);
-            HAL_GPIO_WritePin(GPIOB, GPIO_PIN_4, GPIO_PIN_SET);
-        } else
-        {
-            // Error handling for unexpected values
+            if (strcmp(id, "Fire") == 0) //"strcmp" : Retourne 0 si les chaînes sont égales
+            {
+                if (atoi(value) == 1)
+                {
+                    HAL_GPIO_WritePin(GPIOA, GPIO_PIN_5, GPIO_PIN_SET);
+                }
+                else if (atoi(value) == 0)
+                {
+                    HAL_GPIO_WritePin(GPIOA, GPIO_PIN_5, GPIO_PIN_RESET);
+                }
+                else
+                {
+                	//Error
+                }
+            }
+            else if (strcmp(id, "PWM") == 0)
+            {
+                //Axel
+            }
+            else
+            {
+            	//Error
+            }
         }
 
         osMutexRelease(uartMutex);
