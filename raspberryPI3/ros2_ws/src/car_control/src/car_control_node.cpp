@@ -118,9 +118,12 @@ private:
     * - requestedThrottle, reverse, requestedSteerAngle [from joystick orders]
     * - currentAngle [from motors feedback]
     * - current RPM Speed of both motors 
+    * 
     * In Auto mode, the commands depend on :
-    * - consigne, reverse {to be added}, requestedSteerAngle {to be added}
+    * - consigne_Speed_Left/ consigne_Speed_Right, reverse_Auto [variables to be used by Nav2]
     * - current RPM Speed of both motors 
+    * - static error of last iteration
+    * - commanded value of last iteration
     */
     void updateCmd(){
 
@@ -138,9 +141,6 @@ private:
             if (mode==0){
                 
                 manualPropulsionCmd(requestedThrottle, reverse, leftRearPwmCmd,rightRearPwmCmd);
-
-                //calculateRPMManual(requestedThrottle, reverse, leftRearPwmCmd, rightRearPwmCmd, 
-                //    leftRearSpeedFeedback, rightRearPwmCmd, sumIntegralLeft, sumIntegralRight);
                 
                 steeringCmd(requestedSteerAngle,currentAngle, steeringPwmCmd);
 
@@ -148,9 +148,11 @@ private:
             //Autonomous Mode
             } else if (mode==1){
 
-                calculateRPMAuto(consigneMotor, leftRearPwmCmd, rightRearPwmCmd, leftRearSpeedFeedback, rightRearSpeedFeedback, 
-                    lastError_L, lastError_R, correctedValue_L, correctedValue_R);
-                
+                calculateRPM_Left_Auto(consigne_Speed_Left, reverse_Auto, leftRearPwmCmd, leftRearSpeedFeedback,
+                    lastError_L, correctedValue_L);
+
+                calculateRPM_Right_Auto(consigne_Speed_Right, reverse_Auto, rightRearPwmCmd, rightRearSpeedFeedback,
+                    lastError_R, correctedValue_R );
             }
         }
 
@@ -243,12 +245,16 @@ private:
     uint8_t steeringPwmCmd;
 
     //Default consigne in auto mode 
+
     //Equivalent to throttle in manual mode
-    float consigneMotor = 0.5;
+    float consigne_Speed_Left = 0.5;
+    float consigne_Speed_Right = 0.5;
+
+    //Reverse mode
+    bool reverse_Auto = false;
 
     //PI variables for motor
-    float sumIntegralLeft =0;
-    float sumIntegralRight = 0;
+
     float correctedValue_L = 0;
     float correctedValue_R = 0;
     float lastError_L = 0;
