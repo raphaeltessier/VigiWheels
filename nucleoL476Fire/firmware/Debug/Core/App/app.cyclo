@@ -1,5 +1,6 @@
-../Core/App/app.c:40:6:reading_analog_sensor	1
-../Core/App/app.c:49:6:reading_digital_sensor	1
-../Core/App/app.c:55:6:reading_sensor_values	1
-../Core/App/app.c:66:6:sending_data_uart	1
-../Core/App/app.c:89:6:receiving_data_uart	8
+../Core/App/app.c:42:6:reading_analog_sensor	1
+../Core/App/app.c:51:6:reading_digital_sensor	1
+../Core/App/app.c:57:6:reading_sensor_values	1
+../Core/App/app.c:68:6:sending_data_uart	1
+../Core/App/app.c:91:6:receiving_data_uart	9
+../Core/App/app.c:161:6:update_CCR_timer_PWM	4

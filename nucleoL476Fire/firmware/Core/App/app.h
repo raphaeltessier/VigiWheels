@@ -22,5 +22,6 @@ extern const osThreadAttr_t senderTask_attributes;
 
 void sending_data_uart();
 void receiving_data_uart();
+void update_CCR_timer_PWM(uint32_t cmd_angle_deg, TIM_HandleTypeDef * htim);
 
 #endif /* APP_H_ */

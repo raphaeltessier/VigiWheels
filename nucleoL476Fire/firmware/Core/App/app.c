@@ -10,11 +10,13 @@
 extern UART_HandleTypeDef huart2;
 extern ADC_HandleTypeDef hadc1;
 extern ADC_HandleTypeDef hadc2;
-
+extern TIM_HandleTypeDef htim3;
 #define START_OF_FRAME '#'   // Start of frame delimiter
 #define END_OF_FRAME '\n'    // End of frame delimiter
 #define SEPARATOR '='        // Separator between ID and Value in the frame
 
+#define angle_0_duty_ratio_PWM 2.81
+#define angle_180_duty_ratio_PWM 13.13
 // Sensor values
 uint16_t ir_sensor1;        // Analog port A0
 uint16_t ir_sensor2;        // Digital port D2
@@ -119,9 +121,9 @@ void receiving_data_uart()
         // Process based on ID and Value
         if (id != NULL && value != NULL)
         {
-            if (strcmp(id, "fire") == 0)
+            if (strcmp(id, "f") == 0)
             {
-                // Handle Fire sensor value
+                // Handle Fire sensor values
                 if (atoi(value) == 1)
                 {
                     HAL_GPIO_WritePin(GPIOB, GPIO_PIN_4, GPIO_PIN_SET);
@@ -137,10 +139,14 @@ void receiving_data_uart()
                     // Handle error
                 }
             }
-            else if (strcmp(id, "PWM") == 0)
+            else if (strcmp(id, "c") == 0)
             {
                 // Handle PWM value
-                // Axel
+
+            	uint32_t cmd_angle = atoi(value);
+            	update_CCR_timer_PWM(cmd_angle,&htim3);
+
+
             }
             else
             {
@@ -152,3 +158,23 @@ void receiving_data_uart()
     }
 }
 
+void update_CCR_timer_PWM(uint32_t cmd_angle_deg, TIM_HandleTypeDef * htim){
+	if (cmd_angle_deg < 0){
+		cmd_angle_deg = 0;
+	} else if (cmd_angle_deg > 180){
+		cmd_angle_deg = 180;
+	}
+	uint32_t ARR_timer = htim->Instance->ARR;
+
+	uint32_t CCR_value_180_deg = angle_180_duty_ratio_PWM*ARR_timer/100; //2100 here
+	uint32_t CCR_value_0_deg = angle_0_duty_ratio_PWM*ARR_timer/100; // 450 here
+
+	int CCR_required = (CCR_value_180_deg-CCR_value_0_deg) * cmd_angle_deg / 180 + CCR_value_0_deg;
+
+	if (CCR_required > CCR_value_180_deg){
+		CCR_required = CCR_value_180_deg ;
+	} else if (CCR_required < CCR_value_0_deg){
+		CCR_required = CCR_value_0_deg;
+	}
+	htim->Instance->CCR1=CCR_required;
+}
