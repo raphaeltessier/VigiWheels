@@ -144,8 +144,9 @@ private:
             return;
         }
 
-        char tx[9]; 
+        char tx[10]; 
         snprintf(tx, sizeof(tx), "#%c=%04u\n", id, 90); //8
+        //snprintf(tx, sizeof(tx), "#Johann\n"); //8
 
         int bytes_written = write(serial_port_, tx, strlen(tx));
 
@@ -155,9 +156,6 @@ private:
         }
 
         RCLCPP_INFO(this->get_logger(), "Data send : %s\n", tx); 
-
-
-
     }
 
     int counter_; 

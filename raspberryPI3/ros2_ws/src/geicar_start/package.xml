@@ -23,6 +23,7 @@
   <exec_depend>obstacles></exec_depend>
   <exec_depend>servo_cam></exec_depend>
   <exec_depend>uart></exec_depend>
+  <exec_depend>fire_detection</exec_depend>
 
   <export>
     <build_type>ament_cmake</build_type>

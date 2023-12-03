@@ -5,7 +5,7 @@
 #include <string.h>  
 
 
-#define PERIOD_UPDATE_CMD 1000ms // update pwm servo period
+#define PERIOD_UPDATE_CMD 100ms // update pwm servo period
 #define PAS_SCAN 10
 
 

@@ -75,6 +75,12 @@ def generate_launch_description():
         executable="serial_reading_node",
         emulate_tty=True
     )
+    
+        processing_data_fire_node = Node(
+        package="fire_detection",
+        executable="processing_data_fire_node",
+        emulate_tty=True
+    )
 
 
     ld.add_action(joystick_node)
@@ -88,5 +94,6 @@ def generate_launch_description():
     ld.add_action(servo_cam_node)
     ld.add_action(serial_writing_node)
     ld.add_action(serial_reading_node)
+    ld.add_action(processing_data_fire_node)
 
     return ld
