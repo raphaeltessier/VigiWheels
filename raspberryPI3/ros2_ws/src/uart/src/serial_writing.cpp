@@ -144,7 +144,7 @@ private:
             return;
         }
 
-        char tx[8]; 
+        char tx[9]; 
         snprintf(tx, sizeof(tx), "#%c=%04u\n", id, 90); //8
 
         int bytes_written = write(serial_port_, tx, strlen(tx));
