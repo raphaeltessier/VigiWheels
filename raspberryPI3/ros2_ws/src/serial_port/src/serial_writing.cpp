@@ -116,8 +116,8 @@ private:
             return;
         }
 
-        char tx[8]; 
-        snprintf(tx, sizeof(tx), "#fire=%u", msg.fire_detected); 
+        char tx[9]; 
+        snprintf(tx, sizeof(tx), "#fire=%u\n", msg.fire_detected); 
         
         int bytes_written = write(serial_port_, tx, strlen(tx));
 
@@ -126,13 +126,13 @@ private:
             perror("Error writing to serial port");
         }
 
-        RCLCPP_INFO(this->get_logger(), "Data send : %s\n", tx); 
+        //RCLCPP_INFO(this->get_logger(), "Data send : %s\n", tx); 
     }
 
-    int counter_; 
+    int counter_;
+    int serial_port_; 
     std::shared_ptr<rclcpp::TimerBase> timer_;
     rclcpp::Subscription<interfaces::msg::EmergencyAlertFire>::SharedPtr subscription_emergency_alert;
-    int serial_port_;
 };
 
 int main(int argc, char *argv[]) 

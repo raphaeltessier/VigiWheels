@@ -20,8 +20,8 @@ uint16_t ir_sensor1;        // Analog port A0
 uint16_t ir_sensor2;        // Digital port D2
 uint16_t ir_sensor3;        // Analog port A1
 uint16_t ir_sensor4;        // Digital port D3
-uint16_t smoke_sensor1;     // Digital port D4
-uint16_t smoke_sensor2;     // Digital port D4
+uint16_t smoke_sensor1;
+uint16_t smoke_sensor2;
 
 osMutexId_t uartMutex;
 osThreadId_t senderThreadId;
@@ -119,16 +119,18 @@ void receiving_data_uart()
         // Process based on ID and Value
         if (id != NULL && value != NULL)
         {
-            if (strcmp(id, "Fire") == 0)
+            if (strcmp(id, "fire") == 0)
             {
                 // Handle Fire sensor value
                 if (atoi(value) == 1)
                 {
-                    HAL_GPIO_WritePin(GPIOA, GPIO_PIN_5, GPIO_PIN_SET);
+                    HAL_GPIO_WritePin(GPIOB, GPIO_PIN_4, GPIO_PIN_SET);
+                    HAL_GPIO_WritePin(GPIOB, GPIO_PIN_5, GPIO_PIN_SET);
                 }
                 else if (atoi(value) == 0)
                 {
-                    HAL_GPIO_WritePin(GPIOA, GPIO_PIN_5, GPIO_PIN_RESET);
+                    HAL_GPIO_WritePin(GPIOB, GPIO_PIN_4, GPIO_PIN_RESET);
+                    HAL_GPIO_WritePin(GPIOB, GPIO_PIN_5, GPIO_PIN_RESET);
                 }
                 else
                 {

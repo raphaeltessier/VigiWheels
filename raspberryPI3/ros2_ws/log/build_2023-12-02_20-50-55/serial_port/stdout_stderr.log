@@ -1,0 +1,18 @@
+[35m[1mConsolidate compiler generated dependencies of target serial_reading_node[0m
+[ 50%] Built target serial_writing_node
+[ 75%] [32mBuilding CXX object CMakeFiles/serial_reading_node.dir/src/serial_reading.cpp.o[0m
+[01m[K/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/src/serial_port/src/serial_reading.cpp:[m[K In member function ‘[01m[Kvoid SerialReadingNode::receiveDataFire()[m[K’:
+[01m[K/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/src/serial_port/src/serial_reading.cpp:128:22:[m[K [01;31m[Kerror: [m[KISO C++ forbids comparison between pointer and integer [[01;31m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-fpermissive-fpermissive]8;;[m[K]
+  128 |         } while ([01;31m[Kbuf != start_of_frame[m[K);
+      |                  [01;31m[K~~~~^~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/src/serial_port/src/serial_reading.cpp:139:21:[m[K [01;31m[Kerror: [m[KISO C++ forbids comparison between pointer and integer [[01;31m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-fpermissive-fpermissive]8;;[m[K]
+  139 |             if ([01;31m[Kbuf == '\n'[m[K)
+      |                 [01;31m[K~~~~^~~~~~~[m[K
+[01m[K/home/insa/Desktop/VigiWheels/raspberryPI3/ros2_ws/src/serial_port/src/serial_reading.cpp:145:30:[m[K [01;31m[Kerror: [m[Kinvalid conversion from ‘[01m[Kchar*[m[K’ to ‘[01m[Kchar[m[K’ [[01;31m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-fpermissive-fpermissive]8;;[m[K]
+  145 |             frame_buf[i++] = [01;31m[Kbuf[m[K;
+      |                              [01;31m[K^~~[m[K
+      |                              [01;31m[K|[m[K
+      |                              [01;31m[Kchar*[m[K
+gmake[2]: *** [CMakeFiles/serial_reading_node.dir/build.make:76: CMakeFiles/serial_reading_node.dir/src/serial_reading.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:139: CMakeFiles/serial_reading_node.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2
