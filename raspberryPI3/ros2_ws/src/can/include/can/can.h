@@ -19,6 +19,8 @@
 
 #define ID_MOTORS_CMD 0x100
 
+#define ID_CAM_CMD 0x500
+
 
 #define CALIBRATION_REQUEST	0x1		//frame[0]
 #define CALIBRATION_IN_PROGRESS 0x2	//frame[0]

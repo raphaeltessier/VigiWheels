@@ -42,6 +42,12 @@ def generate_launch_description():
         emulate_tty=True
     )
 
+    servo_cam_node = Node(
+        package="servo_cam",
+        executable="servo_cam",
+        emulate_tty=True
+    )
+
     config_dir = os.path.join(get_package_share_directory('imu_filter_madgwick'), 'config')
 
     imu_filter_madgwick_node = Node(
@@ -57,6 +63,24 @@ def generate_launch_description():
         executable="system_check_node",
         emulate_tty=True
     )
+    
+    serial_writing_node = Node(
+        package="uart",
+        executable="serial_writing_node",
+        emulate_tty=True
+    )
+
+    serial_reading_node = Node(
+        package="uart",
+        executable="serial_reading_node",
+        emulate_tty=True
+    )
+    
+        processing_data_fire_node = Node(
+        package="fire_detection",
+        executable="processing_data_fire_node",
+        emulate_tty=True
+    )
 
 
     ld.add_action(joystick_node)
@@ -67,5 +91,9 @@ def generate_launch_description():
     ld.add_action(obstacles_node)
     ld.add_action(imu_filter_madgwick_node)
     ld.add_action(system_check_node)
+    ld.add_action(servo_cam_node)
+    ld.add_action(serial_writing_node)
+    ld.add_action(serial_reading_node)
+    ld.add_action(processing_data_fire_node)
 
     return ld

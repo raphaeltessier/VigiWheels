@@ -13,6 +13,7 @@
 #include "interfaces/msg/steering_calibration.hpp"
 #include "interfaces/msg/system_check.hpp"
 
+
 #include "../include/can/can.h"
 
 using std::placeholders::_1;
@@ -33,6 +34,7 @@ public:
 
       subscription_system_check_ = this->create_subscription<interfaces::msg::SystemCheck>(
       "system_check", 10, std::bind(&can_tx::sendCommunicationRequestCallback, this, _1));
+
 
       RCLCPP_INFO(this->get_logger(), "Ready to transmit");
     }
@@ -92,6 +94,9 @@ private:
       return canSend(frame);
     }
 
+    
+
+
     /* Send steering calibration request via CAN bus [callback function]  :
     * This function is called when a message is published on the "/steering_calibration" topic
     */
@@ -147,6 +152,7 @@ private:
     rclcpp::Subscription<interfaces::msg::MotorsOrder>::SharedPtr subscription_motors_order_;
     rclcpp::Subscription<interfaces::msg::SteeringCalibration>::SharedPtr subscription_steering_calibration_;
     rclcpp::Subscription<interfaces::msg::SystemCheck>::SharedPtr subscription_system_check_;
+   
 };
 
 
