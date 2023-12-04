@@ -76,7 +76,7 @@ def generate_launch_description():
         emulate_tty=True
     )
     
-        processing_data_fire_node = Node(
+    processing_data_fire_node = Node(
         package="fire_detection",
         executable="processing_data_fire_node",
         emulate_tty=True
