@@ -145,7 +145,7 @@ private:
         }
 
         char tx[10]; 
-        snprintf(tx, sizeof(tx), "#%c=%04u\n", id, 90); //8
+        snprintf(tx, sizeof(tx), "#%c=%04u\n", id, value); //8
         //snprintf(tx, sizeof(tx), "#Johann\n"); //8
 
         int bytes_written = write(serial_port_, tx, strlen(tx));
