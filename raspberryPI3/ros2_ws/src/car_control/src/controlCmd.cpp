@@ -63,7 +63,7 @@ void calculateRPM_Right_Auto(float consigne_Speed_Right, bool reverse_Auto , uin
     {
 
     //Transformation consigne to RPM
-    consigne_RPM_R = gainRPM * consigne_Motor;
+    consigne_RPM_R = gainRPM * consigne_Speed_Right;
     
     // Calcul of the static error
     speedError_Right = consigne_RPM_R - currentRPM_R;

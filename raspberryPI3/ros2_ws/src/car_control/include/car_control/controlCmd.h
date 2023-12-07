@@ -36,7 +36,7 @@
 */
 
 void calculateRPM_Left_Auto(float consigne_Speed_Left, bool reverse_Auto, uint8_t& leftRearPwmCmd,
-            float currentRPM_L, float& lastError_L, float& correctedValue_L)
+            float currentRPM_L, float& lastError_L, float& correctedValue_L);
             
 
 /**
@@ -53,7 +53,7 @@ void calculateRPM_Left_Auto(float consigne_Speed_Left, bool reverse_Auto, uint8_
 
 
 void calculateRPM_Right_Auto(float consigne_Speed_Right, bool reverse_Auto, uint8_t& rightRearPwmCmd,
-                            float currentRPM_R, float& lastError_R, float& correctedValue_R)
+                            float currentRPM_R, float& lastError_R, float& correctedValue_R);
 
 
 
