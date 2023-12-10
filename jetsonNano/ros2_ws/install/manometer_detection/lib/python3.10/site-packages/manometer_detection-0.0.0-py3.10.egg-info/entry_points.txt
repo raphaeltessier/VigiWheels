@@ -1,0 +1,3 @@
+[console_scripts]
+test_node = manometer_detection.yolo_model:main
+
