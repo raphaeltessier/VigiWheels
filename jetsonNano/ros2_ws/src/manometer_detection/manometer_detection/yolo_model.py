@@ -17,7 +17,7 @@ class YOLOInferenceNode(Node):
     def __init__(self):
         super().__init__('yolo_inference')
         self.get_logger().info("mano inference launched")
-        self.model = YOLO('/home/moad/Downloads/best.pt')
+        self.model = YOLO('weights.pt')
         self.bridge = CvBridge()
         self.subscription = self.create_subscription(Image, 'image_raw', self.image_callback, 10)
         self.manometer_pub = self.create_publisher(Float32MultiArray, 'manometer_detected', 10)
