@@ -21,10 +21,12 @@ set(msg_files
   "msg/Ultrasonic.msg"
   "msg/Gnss.msg"
   "msg/SystemCheck.msg"
+  "msg/ManometerInfo.msg"
 )
 
 rosidl_generate_interfaces(${PROJECT_NAME}
   ${msg_files}
+  
 )
 
 ament_export_dependencies(rosidl_default_runtime)

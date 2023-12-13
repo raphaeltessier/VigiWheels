@@ -5,13 +5,13 @@ from rclpy.node import Node
 from sensor_msgs.msg import Image
 from cv_bridge import CvBridge
 from ultralytics import YOLO
-from std_msgs.msg import Float32MultiArray
+import math
+from manometer_interfaces.msg import ManometerInfo
 
 
+def round_up(value, decimal_places=2):
+    return math.ceil(value * 10**decimal_places) / 10**decimal_places
 
-# This node detects manometers in real-time and publishes the
-# coordinates (top left corner and bottom-right corner of the bounding box) in /manometer_detected topic
-# To test it you need to launch the usb_cam node first and then this one
 
 class YOLOInferenceNode(Node):
     def __init__(self):
@@ -20,23 +20,22 @@ class YOLOInferenceNode(Node):
         self.model = YOLO('/home/moad/Downloads/best.pt')
         self.bridge = CvBridge()
         self.subscription = self.create_subscription(Image, 'image_raw', self.image_callback, 10)
-        self.manometer_pub = self.create_publisher(Float32MultiArray, 'manometer_detected', 10)
-
+        self.manometer_pub = self.create_publisher(ManometerInfo, 'manometer_detected', 10)
+        self.highest_probability = 0
 
 
     def image_callback(self, msg):
-        # analyzing frame by frame
+        
         frame = self.bridge.imgmsg_to_cv2(msg, 'bgr8')
-        results = self.model(frame, imgsz=(640,640),conf=0.5)
+        results = self.model(frame, imgsz=(640,640),conf=0.8)
         annotated_frame = results[0].plot()
         cv2.imshow("YOLOv8 Inference", annotated_frame)
         cv2.waitKey(1)
         
-        
-      
-
-        manometer_detected_msg = Float32MultiArray() 
         #Publish wheter a manometer is detected or not
+
+        manometer_detected_msg = ManometerInfo() # analyzing frame by frame
+
         for result in results:
             boxes = result.boxes.cpu().numpy()
             xyxy = boxes.xyxy
@@ -44,8 +43,15 @@ class YOLOInferenceNode(Node):
         if len(xyxy) != 0 :
          xyxy_list = xyxy.tolist()
          xyxy_1d_list = [i for k in xyxy_list for i in k]
-         manometer_detected_msg.data = xyxy_1d_list
-         self.manometer_pub.publish(manometer_detected_msg)
+         manometer_detected_msg.probability = round_up(float((boxes.conf[0])))
+
+         if manometer_detected_msg.probability > self.highest_probability:
+          self.highest_probability = manometer_detected_msg.probability
+          manometer_detected_msg.x1 = xyxy_1d_list[0]
+          manometer_detected_msg.y1 = xyxy_1d_list[1]
+          manometer_detected_msg.x2 = xyxy_1d_list[2]
+          manometer_detected_msg.y2 = xyxy_1d_list[3]
+          self.manometer_pub.publish(manometer_detected_msg)
 
 def main(args=None):
     rclpy.init(args=args)

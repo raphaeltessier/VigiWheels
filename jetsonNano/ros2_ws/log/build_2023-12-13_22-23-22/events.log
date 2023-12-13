@@ -1,0 +1,528 @@
+[0.000000] (-) TimerEvent: {}
+[0.000126] (-) JobUnselected: {'identifier': 'geicar_start_jetson'}
+[0.000143] (-) JobUnselected: {'identifier': 'manometer_detection'}
+[0.000154] (-) JobUnselected: {'identifier': 'rplidar_ros'}
+[0.000163] (-) JobUnselected: {'identifier': 'system_check_ack'}
+[0.000173] (-) JobUnselected: {'identifier': 'usb_cam'}
+[0.000184] (interfaces) JobQueued: {'identifier': 'interfaces', 'dependencies': OrderedDict()}
+[0.000204] (interfaces) JobStarted: {'identifier': 'interfaces'}
+[0.056707] (interfaces) JobProgress: {'identifier': 'interfaces', 'progress': 'cmake'}
+[0.063659] (interfaces) JobProgress: {'identifier': 'interfaces', 'progress': 'build'}
+[0.063698] (interfaces) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/moad/VigiWheels/jetsonNano/ros2_ws/build/interfaces', '--', '-j12', '-l12'], 'cwd': '/home/moad/VigiWheels/jetsonNano/ros2_ws/build/interfaces', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'moad'), ('LC_TIME', 'fr_FR.UTF-8'), ('XDG_SESSION_TYPE', 'wayland'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/moad/VigiWheels/jetsonNano/ros2_ws/src/install/usb_cam/lib:/home/moad/VigiWheels/jetsonNano/ros2_ws/src/install/rplidar_ros/lib:/home/moad/VigiWheels/jetsonNano/ros2_ws/src/install/interfaces/lib:/home/moad/VigiWheels/jetsonNano/ros2_ws/install/usb_cam/lib:/home/moad/VigiWheels/jetsonNano/ros2_ws/install/rplidar_ros/lib:/home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/lib:/home/moad/VigiWheels/jetsonNano/ros2_ws/src/interfaces/install/interfaces/lib:/home/moad/ros2_ws/install/manometer_interfaces/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/moad'), ('OLDPWD', '/home/moad/VigiWheels/jetsonNano/ros2_ws/src'), ('DESKTOP_SESSION', 'ubuntu'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('LC_MONETARY', 'fr_FR.UTF-8'), ('SYSTEMD_EXEC_PID', '1877'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('IM_CONFIG_PHASE', '1'), ('WAYLAND_DISPLAY', 'wayland-0'), ('COLCON_PREFIX_PATH', '/home/moad/ros2_ws/install:/home/moad/VigiWheels/jetsonNano/ros2_ws/src/install:/home/moad/VigiWheels/jetsonNano/ros2_ws/install:/home/moad/VigiWheels/jetsonNano/ros2_ws/src/interfaces/install'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'moad'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'moad'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/opt/ros/humble/bin:/home/moad/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin'), ('SESSION_MANAGER', 'local/moad:@/tmp/.ICE-unix/1660,unix/moad:/tmp/.ICE-unix/1660'), ('XDG_MENU_PREFIX', 'gnome-'), ('LC_ADDRESS', 'fr_FR.UTF-8'), ('GNOME_TERMINAL_SCREEN', '/org/gnome/Terminal/screen/9b0e5ed5_804a_4f59_bbef_46ddb0de0ee4'), ('GNOME_SETUP_DISPLAY', ':1'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('LC_TELEPHONE', 'fr_FR.UTF-8'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/.mutter-Xwaylandauth.OMVZF2'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('GNOME_TERMINAL_SERVICE', ':1.123'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('AMENT_PREFIX_PATH', '/home/moad/VigiWheels/jetsonNano/ros2_ws/src/install/geicar_start_jetson:/home/moad/VigiWheels/jetsonNano/ros2_ws/src/install/usb_cam:/home/moad/VigiWheels/jetsonNano/ros2_ws/src/install/system_check_ack:/home/moad/VigiWheels/jetsonNano/ros2_ws/src/install/rplidar_ros:/home/moad/VigiWheels/jetsonNano/ros2_ws/src/install/manometer_detection:/home/moad/VigiWheels/jetsonNano/ros2_ws/src/install/interfaces:/home/moad/VigiWheels/jetsonNano/ros2_ws/install/geicar_start_jetson:/home/moad/VigiWheels/jetsonNano/ros2_ws/install/usb_cam:/home/moad/VigiWheels/jetsonNano/ros2_ws/install/system_check_ack:/home/moad/VigiWheels/jetsonNano/ros2_ws/install/rplidar_ros:/home/moad/VigiWheels/jetsonNano/ros2_ws/install/manometer_detection:/home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces:/home/moad/VigiWheels/jetsonNano/ros2_ws/src/interfaces/install/interfaces:/home/moad/ros2_ws/install/my_robot_controller:/home/moad/ros2_ws/install/manometer_detection:/home/moad/ros2_ws/install/manometer_interfaces:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('LC_NAME', 'fr_FR.UTF-8'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('LC_MEASUREMENT', 'fr_FR.UTF-8'), ('LC_IDENTIFICATION', 'fr_FR.UTF-8'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/moad/VigiWheels/jetsonNano/ros2_ws/build/interfaces'), ('LC_ALL', 'en_US.UTF-8'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/moad/VigiWheels/jetsonNano/ros2_ws/src/install/manometer_detection/lib/python3.10/site-packages:/home/moad/VigiWheels/jetsonNano/ros2_ws/src/install/interfaces/local/lib/python3.10/dist-packages:/home/moad/VigiWheels/jetsonNano/ros2_ws/install/manometer_detection/lib/python3.10/site-packages:/home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/local/lib/python3.10/dist-packages:/home/moad/VigiWheels/jetsonNano/ros2_ws/src/interfaces/install/interfaces/local/lib/python3.10/dist-packages:/home/moad/ros2_ws/install/my_robot_controller/lib/python3.10/site-packages:/home/moad/ros2_ws/install/manometer_detection/lib/python3.10/site-packages:/home/moad/ros2_ws/install/manometer_interfaces/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('LC_NUMERIC', 'fr_FR.UTF-8'), ('LC_PAPER', 'fr_FR.UTF-8'), ('COLCON', '1'), ('VTE_VERSION', '6800'), ('CMAKE_PREFIX_PATH', '/home/moad/VigiWheels/jetsonNano/ros2_ws/src/install/geicar_start_jetson:/home/moad/VigiWheels/jetsonNano/ros2_ws/src/install/usb_cam:/home/moad/VigiWheels/jetsonNano/ros2_ws/src/install/system_check_ack:/home/moad/VigiWheels/jetsonNano/ros2_ws/src/install/rplidar_ros:/home/moad/VigiWheels/jetsonNano/ros2_ws/src/install/interfaces:/home/moad/VigiWheels/jetsonNano/ros2_ws/install/geicar_start_jetson:/home/moad/VigiWheels/jetsonNano/ros2_ws/install/usb_cam:/home/moad/VigiWheels/jetsonNano/ros2_ws/install/system_check_ack:/home/moad/VigiWheels/jetsonNano/ros2_ws/install/rplidar_ros:/home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces:/home/moad/VigiWheels/jetsonNano/ros2_ws/src/interfaces/install/interfaces:/home/moad/ros2_ws/install/manometer_interfaces:/home/moad/VigiWheels/jetsonNano/ros2_ws/src/install/manometer_detection:/home/moad/VigiWheels/jetsonNano/ros2_ws/install/manometer_detection:/home/moad/ros2_ws/install/my_robot_controller:/home/moad/ros2_ws/install/manometer_detection:/opt/ros/humble')]), 'shell': False}
+[0.084944] (interfaces) StdoutLine: {'line': b'-- Found ament_cmake: 1.3.6 (/opt/ros/humble/share/ament_cmake/cmake)\n'}
+[0.099498] (-) TimerEvent: {}
+[0.187038] (interfaces) StdoutLine: {'line': b'-- Found rclcpp: 16.0.7 (/opt/ros/humble/share/rclcpp/cmake)\n'}
+[0.199707] (-) TimerEvent: {}
+[0.205754] (interfaces) StdoutLine: {'line': b'-- Found rosidl_generator_c: 3.1.5 (/opt/ros/humble/share/rosidl_generator_c/cmake)\n'}
+[0.207234] (interfaces) StdoutLine: {'line': b'-- Found rosidl_adapter: 3.1.5 (/opt/ros/humble/share/rosidl_adapter/cmake)\n'}
+[0.211087] (interfaces) StdoutLine: {'line': b'-- Found rosidl_generator_cpp: 3.1.5 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)\n'}
+[0.218671] (interfaces) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[0.229039] (interfaces) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[0.267609] (interfaces) StdoutLine: {'line': b'-- Found rmw_implementation_cmake: 6.1.1 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)\n'}
+[0.268746] (interfaces) StdoutLine: {'line': b'-- Found rmw_fastrtps_cpp: 6.2.5 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)\n'}
+[0.299923] (-) TimerEvent: {}
+[0.345838] (interfaces) StdoutLine: {'line': b"-- Using RMW implementation 'rmw_fastrtps_cpp' as default\n"}
+[0.400143] (-) TimerEvent: {}
+[0.450613] (interfaces) StdoutLine: {'line': b'-- Found rosidl_default_generators: 1.2.0 (/opt/ros/humble/share/rosidl_default_generators/cmake)\n'}
+[0.500361] (-) TimerEvent: {}
+[0.600641] (-) TimerEvent: {}
+[0.662207] (interfaces) StdoutLine: {'line': b'-- Found ament_cmake_ros: 0.10.0 (/opt/ros/humble/share/ament_cmake_ros/cmake)\n'}
+[0.700861] (-) TimerEvent: {}
+[0.801253] (-) TimerEvent: {}
+[0.876415] (interfaces) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[0.901484] (-) TimerEvent: {}
+[0.960643] (interfaces) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[0.977837] (interfaces) StdoutLine: {'line': b'-- Found python_cmake_module: 0.10.0 (/opt/ros/humble/share/python_cmake_module/cmake)\n'}
+[0.995883] (interfaces) StdoutLine: {'line': b'-- Using PYTHON_EXECUTABLE: /usr/bin/python3\n'}
+[0.996029] (interfaces) StdoutLine: {'line': b'-- Using PYTHON_INCLUDE_DIRS: /usr/include/python3.10\n'}
+[0.996086] (interfaces) StdoutLine: {'line': b'-- Using PYTHON_LIBRARIES: /usr/lib/x86_64-linux-gnu/libpython3.10.so\n'}
+[1.001654] (-) TimerEvent: {}
+[1.006881] (interfaces) StdoutLine: {'line': b'-- Found ament_lint_auto: 0.12.9 (/opt/ros/humble/share/ament_lint_auto/cmake)\n'}
+[1.032556] (interfaces) StdoutLine: {'line': b"-- Added test 'cppcheck' to perform static code analysis on C / C++ code\n"}
+[1.032841] (interfaces) StdoutLine: {'line': b'-- Configured cppcheck include dirs: \n'}
+[1.032925] (interfaces) StdoutLine: {'line': b'-- Configured cppcheck exclude dirs and/or files: \n'}
+[1.035804] (interfaces) StdoutLine: {'line': b"-- Added test 'flake8' to check Python code syntax and style conventions\n"}
+[1.040871] (interfaces) StdoutLine: {'line': b"-- Added test 'lint_cmake' to check CMake code style\n"}
+[1.043313] (interfaces) StdoutLine: {'line': b"-- Added test 'pep257' to check Python code against some of the docstring style conventions in PEP 257\n"}
+[1.062324] (interfaces) StdoutLine: {'line': b"-- Added test 'uncrustify' to check C / C++ code style\n"}
+[1.062431] (interfaces) StdoutLine: {'line': b'-- Configured uncrustify additional arguments: \n'}
+[1.065202] (interfaces) StdoutLine: {'line': b"-- Added test 'xmllint' to check XML markup files\n"}
+[1.067377] (interfaces) StdoutLine: {'line': b'-- Configuring done\n'}
+[1.101861] (-) TimerEvent: {}
+[1.110132] (interfaces) StdoutLine: {'line': b'-- Generating done\n'}
+[1.111840] (interfaces) StdoutLine: {'line': b'-- Build files have been written to: /home/moad/VigiWheels/jetsonNano/ros2_ws/build/interfaces\n'}
+[1.130292] (interfaces) StdoutLine: {'line': b'[  1%] \x1b[34m\x1b[1mGenerating C code for ROS interfaces\x1b[0m\n'}
+[1.136984] (interfaces) StdoutLine: {'line': b'[  2%] \x1b[34m\x1b[1mGenerating C++ code for ROS interfaces\x1b[0m\n'}
+[1.157493] (interfaces) StdoutLine: {'line': b'[  2%] Built target ament_cmake_python_copy_interfaces\n'}
+[1.201990] (-) TimerEvent: {}
+[1.302288] (-) TimerEvent: {}
+[1.312747] (interfaces) StdoutLine: {'line': b'running egg_info\n'}
+[1.313004] (interfaces) StdoutLine: {'line': b'writing interfaces.egg-info/PKG-INFO\n'}
+[1.313191] (interfaces) StdoutLine: {'line': b'writing dependency_links to interfaces.egg-info/dependency_links.txt\n'}
+[1.313299] (interfaces) StdoutLine: {'line': b'writing top-level names to interfaces.egg-info/top_level.txt\n'}
+[1.314588] (interfaces) StdoutLine: {'line': b"reading manifest file 'interfaces.egg-info/SOURCES.txt'\n"}
+[1.315162] (interfaces) StdoutLine: {'line': b"writing manifest file 'interfaces.egg-info/SOURCES.txt'\n"}
+[1.331949] (interfaces) StdoutLine: {'line': b'[  2%] Built target ament_cmake_python_build_interfaces_egg\n'}
+[1.402532] (-) TimerEvent: {}
+[1.503004] (-) TimerEvent: {}
+[1.603461] (-) TimerEvent: {}
+[1.703888] (-) TimerEvent: {}
+[1.804218] (-) TimerEvent: {}
+[1.830251] (interfaces) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target interfaces__rosidl_generator_c\x1b[0m\n'}
+[1.840953] (interfaces) StdoutLine: {'line': b'[  3%] \x1b[32mBuilding C object CMakeFiles/interfaces__rosidl_generator_c.dir/rosidl_generator_c/interfaces/msg/detail/motors_feedback__functions.c.o\x1b[0m\n'}
+[1.842588] (interfaces) StdoutLine: {'line': b'[  4%] \x1b[32mBuilding C object CMakeFiles/interfaces__rosidl_generator_c.dir/rosidl_generator_c/interfaces/msg/detail/joystick_order__functions.c.o\x1b[0m\n'}
+[1.843280] (interfaces) StdoutLine: {'line': b'[  5%] \x1b[32mBuilding C object CMakeFiles/interfaces__rosidl_generator_c.dir/rosidl_generator_c/interfaces/msg/detail/motors_order__functions.c.o\x1b[0m\n'}
+[1.843525] (interfaces) StdoutLine: {'line': b'[  6%] \x1b[32mBuilding C object CMakeFiles/interfaces__rosidl_generator_c.dir/rosidl_generator_c/interfaces/msg/detail/general_data__functions.c.o\x1b[0m\n'}
+[1.844736] (interfaces) StdoutLine: {'line': b'[  7%] \x1b[32mBuilding C object CMakeFiles/interfaces__rosidl_generator_c.dir/rosidl_generator_c/interfaces/msg/detail/ultrasonic__functions.c.o\x1b[0m\n'}
+[1.844938] (interfaces) StdoutLine: {'line': b'[  8%] \x1b[32mBuilding C object CMakeFiles/interfaces__rosidl_generator_c.dir/rosidl_generator_c/interfaces/msg/detail/system_check__functions.c.o\x1b[0m\n'}
+[1.845045] (interfaces) StdoutLine: {'line': b'[  9%] \x1b[32mBuilding C object CMakeFiles/interfaces__rosidl_generator_c.dir/rosidl_generator_c/interfaces/msg/detail/manometer_info__functions.c.o\x1b[0m\n'}
+[1.845285] (interfaces) StdoutLine: {'line': b'[ 10%] \x1b[32mBuilding C object CMakeFiles/interfaces__rosidl_generator_c.dir/rosidl_generator_c/interfaces/msg/detail/steering_calibration__functions.c.o\x1b[0m\n'}
+[1.846885] (interfaces) StdoutLine: {'line': b'[ 11%] \x1b[32mBuilding C object CMakeFiles/interfaces__rosidl_generator_c.dir/rosidl_generator_c/interfaces/msg/detail/gnss__functions.c.o\x1b[0m\n'}
+[1.901047] (interfaces) StdoutLine: {'line': b'[ 12%] \x1b[32m\x1b[1mLinking C shared library libinterfaces__rosidl_generator_c.so\x1b[0m\n'}
+[1.904317] (-) TimerEvent: {}
+[1.926854] (interfaces) StdoutLine: {'line': b'[ 12%] Built target interfaces__cpp\n'}
+[1.930931] (interfaces) StdoutLine: {'line': b'[ 12%] Built target interfaces__rosidl_generator_c\n'}
+[1.933263] (interfaces) StdoutLine: {'line': b'[ 13%] \x1b[34m\x1b[1mGenerating C++ type support dispatch for ROS interfaces\x1b[0m\n'}
+[1.937999] (interfaces) StdoutLine: {'line': b'[ 14%] \x1b[34m\x1b[1mGenerating C type support for eProsima Fast-RTPS\x1b[0m\n'}
+[1.938795] (interfaces) StdoutLine: {'line': b'[ 15%] \x1b[34m\x1b[1mGenerating C++ type support for eProsima Fast-RTPS\x1b[0m\n'}
+[1.941320] (interfaces) StdoutLine: {'line': b'[ 16%] \x1b[34m\x1b[1mGenerating C++ introspection for ROS interfaces\x1b[0m\n'}
+[1.943469] (interfaces) StdoutLine: {'line': b'[ 18%] \x1b[34m\x1b[1mGenerating C type support dispatch for ROS interfaces\x1b[0m\n'}
+[1.943676] (interfaces) StdoutLine: {'line': b'[ 18%] \x1b[34m\x1b[1mGenerating C introspection for ROS interfaces\x1b[0m\n'}
+[2.004535] (-) TimerEvent: {}
+[2.104981] (-) TimerEvent: {}
+[2.205440] (-) TimerEvent: {}
+[2.305849] (-) TimerEvent: {}
+[2.406267] (-) TimerEvent: {}
+[2.506605] (-) TimerEvent: {}
+[2.540040] (interfaces) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target interfaces__rosidl_typesupport_introspection_cpp\x1b[0m\n'}
+[2.553359] (interfaces) StdoutLine: {'line': b'[ 20%] \x1b[32mBuilding CXX object CMakeFiles/interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/interfaces/msg/detail/joystick_order__type_support.cpp.o\x1b[0m\n'}
+[2.555081] (interfaces) StdoutLine: {'line': b'[ 21%] \x1b[32mBuilding CXX object CMakeFiles/interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/interfaces/msg/detail/general_data__type_support.cpp.o\x1b[0m\n'}
+[2.555351] (interfaces) StdoutLine: {'line': b'[ 22%] \x1b[32mBuilding CXX object CMakeFiles/interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/interfaces/msg/detail/motors_order__type_support.cpp.o\x1b[0m\n'}
+[2.555770] (interfaces) StdoutLine: {'line': b'[ 23%] \x1b[32mBuilding CXX object CMakeFiles/interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/interfaces/msg/detail/motors_feedback__type_support.cpp.o\x1b[0m\n'}
+[2.556414] (interfaces) StdoutLine: {'line': b'[ 24%] \x1b[32mBuilding CXX object CMakeFiles/interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/interfaces/msg/detail/steering_calibration__type_support.cpp.o\x1b[0m\n'}
+[2.559240] (interfaces) StdoutLine: {'line': b'[ 26%] \x1b[32mBuilding CXX object CMakeFiles/interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/interfaces/msg/detail/ultrasonic__type_support.cpp.o\x1b[0m\n'}
+[2.559468] (interfaces) StdoutLine: {'line': b'[ 26%] \x1b[32mBuilding CXX object CMakeFiles/interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/interfaces/msg/detail/gnss__type_support.cpp.o\x1b[0m\n'}
+[2.608417] (-) TimerEvent: {}
+[2.708744] (-) TimerEvent: {}
+[2.724653] (interfaces) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target interfaces__rosidl_typesupport_fastrtps_c\x1b[0m\n'}
+[2.745556] (interfaces) StdoutLine: {'line': b'[ 27%] \x1b[32mBuilding CXX object CMakeFiles/interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/interfaces/msg/detail/joystick_order__type_support_c.cpp.o\x1b[0m\n'}
+[2.808844] (-) TimerEvent: {}
+[2.909202] (-) TimerEvent: {}
+[2.934280] (interfaces) StdoutLine: {'line': b'[ 29%] \x1b[32mBuilding CXX object CMakeFiles/interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/interfaces/msg/detail/system_check__type_support.cpp.o\x1b[0m\n'}
+[2.934484] (interfaces) StdoutLine: {'line': b'[ 29%] \x1b[32mBuilding CXX object CMakeFiles/interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/interfaces/msg/detail/motors_order__type_support_c.cpp.o\x1b[0m\n'}
+[2.934625] (interfaces) StdoutLine: {'line': b'[ 30%] \x1b[32mBuilding CXX object CMakeFiles/interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/interfaces/msg/detail/manometer_info__type_support.cpp.o\x1b[0m\n'}
+[2.961610] (interfaces) StdoutLine: {'line': b'[ 31%] \x1b[32mBuilding CXX object CMakeFiles/interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/interfaces/msg/detail/motors_feedback__type_support_c.cpp.o\x1b[0m\n'}
+[3.009313] (-) TimerEvent: {}
+[3.017469] (interfaces) StdoutLine: {'line': b'[ 32%] \x1b[32mBuilding CXX object CMakeFiles/interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/interfaces/msg/detail/general_data__type_support_c.cpp.o\x1b[0m\n'}
+[3.041841] (interfaces) StdoutLine: {'line': b'[ 33%] \x1b[32mBuilding CXX object CMakeFiles/interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/interfaces/msg/detail/steering_calibration__type_support_c.cpp.o\x1b[0m\n'}
+[3.049545] (interfaces) StdoutLine: {'line': b'[ 34%] \x1b[32mBuilding CXX object CMakeFiles/interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/interfaces/msg/detail/ultrasonic__type_support_c.cpp.o\x1b[0m\n'}
+[3.056081] (interfaces) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target interfaces__rosidl_typesupport_cpp\x1b[0m\n'}
+[3.068046] (interfaces) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target interfaces__rosidl_typesupport_c\x1b[0m\n'}
+[3.073944] (interfaces) StdoutLine: {'line': b'[ 35%] \x1b[32mBuilding CXX object CMakeFiles/interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/interfaces/msg/joystick_order__type_support.cpp.o\x1b[0m\n'}
+[3.107219] (interfaces) StdoutLine: {'line': b'[ 36%] \x1b[32mBuilding CXX object CMakeFiles/interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/interfaces/msg/joystick_order__type_support.cpp.o\x1b[0m\n'}
+[3.109431] (-) TimerEvent: {}
+[3.151004] (interfaces) StdoutLine: {'line': b'[ 37%] \x1b[32mBuilding CXX object CMakeFiles/interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/interfaces/msg/motors_order__type_support.cpp.o\x1b[0m\n'}
+[3.161528] (interfaces) StdoutLine: {'line': b'[ 38%] \x1b[32mBuilding CXX object CMakeFiles/interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/interfaces/msg/motors_order__type_support.cpp.o\x1b[0m\n'}
+[3.185441] (interfaces) StdoutLine: {'line': b'[ 40%] \x1b[32mBuilding CXX object CMakeFiles/interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/interfaces/msg/motors_feedback__type_support.cpp.o\x1b[0m\n'}
+[3.209565] (-) TimerEvent: {}
+[3.244732] (interfaces) StdoutLine: {'line': b'[ 41%] \x1b[32mBuilding CXX object CMakeFiles/interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/interfaces/msg/general_data__type_support.cpp.o\x1b[0m\n'}
+[3.271984] (interfaces) StdoutLine: {'line': b'[ 42%] \x1b[32mBuilding CXX object CMakeFiles/interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/interfaces/msg/steering_calibration__type_support.cpp.o\x1b[0m\n'}
+[3.283430] (interfaces) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target interfaces__rosidl_typesupport_introspection_c\x1b[0m\n'}
+[3.287992] (interfaces) StdoutLine: {'line': b'[ 43%] \x1b[32mBuilding CXX object CMakeFiles/interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/interfaces/msg/detail/gnss__type_support_c.cpp.o\x1b[0m\n'}
+[3.295583] (interfaces) StdoutLine: {'line': b'[ 44%] \x1b[32mBuilding C object CMakeFiles/interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/interfaces/msg/detail/joystick_order__type_support.c.o\x1b[0m\n'}
+[3.296692] (interfaces) StdoutLine: {'line': b'[ 45%] \x1b[32m\x1b[1mLinking CXX shared library libinterfaces__rosidl_typesupport_introspection_cpp.so\x1b[0m\n'}
+[3.299337] (interfaces) StdoutLine: {'line': b'[ 46%] \x1b[32mBuilding CXX object CMakeFiles/interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/interfaces/msg/ultrasonic__type_support.cpp.o\x1b[0m\n'}
+[3.309668] (-) TimerEvent: {}
+[3.327065] (interfaces) StdoutLine: {'line': b'[ 48%] \x1b[32mBuilding CXX object CMakeFiles/interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/interfaces/msg/gnss__type_support.cpp.o\x1b[0m\n'}
+[3.327296] (interfaces) StdoutLine: {'line': b'[ 48%] \x1b[32mBuilding C object CMakeFiles/interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/interfaces/msg/detail/motors_order__type_support.c.o\x1b[0m\n'}
+[3.357391] (interfaces) StdoutLine: {'line': b'[ 49%] \x1b[32mBuilding CXX object CMakeFiles/interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/interfaces/msg/system_check__type_support.cpp.o\x1b[0m\n'}
+[3.359175] (interfaces) StdoutLine: {'line': b'[ 50%] \x1b[32mBuilding C object CMakeFiles/interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/interfaces/msg/detail/motors_feedback__type_support.c.o\x1b[0m\n'}
+[3.361415] (interfaces) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target interfaces__rosidl_typesupport_fastrtps_cpp\x1b[0m\n'}
+[3.372378] (interfaces) StdoutLine: {'line': b'[ 51%] \x1b[32mBuilding CXX object CMakeFiles/interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/interfaces/msg/detail/system_check__type_support_c.cpp.o\x1b[0m\n'}
+[3.384568] (interfaces) StdoutLine: {'line': b'[ 52%] \x1b[32mBuilding CXX object CMakeFiles/interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/interfaces/msg/manometer_info__type_support.cpp.o\x1b[0m\n'}
+[3.385575] (interfaces) StdoutLine: {'line': b'[ 53%] \x1b[32mBuilding CXX object CMakeFiles/interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/interfaces/msg/detail/dds_fastrtps/joystick_order__type_support.cpp.o\x1b[0m\n'}
+[3.388027] (interfaces) StdoutLine: {'line': b'[ 54%] \x1b[32mBuilding CXX object CMakeFiles/interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/interfaces/msg/detail/manometer_info__type_support_c.cpp.o\x1b[0m\n'}
+[3.408420] (interfaces) StdoutLine: {'line': b'[ 55%] \x1b[32mBuilding C object CMakeFiles/interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/interfaces/msg/detail/general_data__type_support.c.o\x1b[0m\n'}
+[3.408960] (interfaces) StdoutLine: {'line': b'[ 55%] Built target interfaces__rosidl_typesupport_introspection_cpp\n'}
+[3.409745] (-) TimerEvent: {}
+[3.413755] (interfaces) StdoutLine: {'line': b'[ 56%] \x1b[32mBuilding CXX object CMakeFiles/interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/interfaces/msg/motors_feedback__type_support.cpp.o\x1b[0m\n'}
+[3.429594] (interfaces) StdoutLine: {'line': b'[ 57%] \x1b[32mBuilding C object CMakeFiles/interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/interfaces/msg/detail/steering_calibration__type_support.c.o\x1b[0m\n'}
+[3.430484] (interfaces) StdoutLine: {'line': b'[ 58%] \x1b[32m\x1b[1mLinking CXX shared library libinterfaces__rosidl_typesupport_c.so\x1b[0m\n'}
+[3.454080] (interfaces) StdoutLine: {'line': b'[ 60%] \x1b[32mBuilding CXX object CMakeFiles/interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/interfaces/msg/detail/dds_fastrtps/motors_order__type_support.cpp.o\x1b[0m\n'}
+[3.466325] (interfaces) StdoutLine: {'line': b'[ 61%] \x1b[32mBuilding C object CMakeFiles/interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/interfaces/msg/detail/ultrasonic__type_support.c.o\x1b[0m\n'}
+[3.472113] (interfaces) StdoutLine: {'line': b'[ 62%] \x1b[32mBuilding CXX object CMakeFiles/interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/interfaces/msg/detail/dds_fastrtps/motors_feedback__type_support.cpp.o\x1b[0m\n'}
+[3.473635] (interfaces) StdoutLine: {'line': b'[ 63%] \x1b[32mBuilding C object CMakeFiles/interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/interfaces/msg/detail/gnss__type_support.c.o\x1b[0m\n'}
+[3.486803] (interfaces) StdoutLine: {'line': b'[ 63%] Built target interfaces__rosidl_typesupport_c\n'}
+[3.497990] (interfaces) StdoutLine: {'line': b'[ 64%] \x1b[32mBuilding CXX object CMakeFiles/interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/interfaces/msg/detail/dds_fastrtps/steering_calibration__type_support.cpp.o\x1b[0m\n'}
+[3.499337] (interfaces) StdoutLine: {'line': b'[ 65%] \x1b[32mBuilding CXX object CMakeFiles/interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/interfaces/msg/detail/dds_fastrtps/ultrasonic__type_support.cpp.o\x1b[0m\n'}
+[3.501456] (interfaces) StdoutLine: {'line': b'[ 66%] \x1b[32mBuilding CXX object CMakeFiles/interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/interfaces/msg/detail/dds_fastrtps/general_data__type_support.cpp.o\x1b[0m\n'}
+[3.509874] (-) TimerEvent: {}
+[3.510138] (interfaces) StdoutLine: {'line': b'[ 67%] \x1b[32mBuilding CXX object CMakeFiles/interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/interfaces/msg/detail/dds_fastrtps/gnss__type_support.cpp.o\x1b[0m\n'}
+[3.513136] (interfaces) StdoutLine: {'line': b'[ 68%] \x1b[32mBuilding C object CMakeFiles/interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/interfaces/msg/detail/system_check__type_support.c.o\x1b[0m\n'}
+[3.550321] (interfaces) StdoutLine: {'line': b'[ 69%] \x1b[32mBuilding C object CMakeFiles/interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/interfaces/msg/detail/manometer_info__type_support.c.o\x1b[0m\n'}
+[3.580667] (interfaces) StdoutLine: {'line': b'[ 70%] \x1b[32mBuilding CXX object CMakeFiles/interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/interfaces/msg/detail/dds_fastrtps/system_check__type_support.cpp.o\x1b[0m\n'}
+[3.609987] (-) TimerEvent: {}
+[3.617795] (interfaces) StdoutLine: {'line': b'[ 71%] \x1b[32m\x1b[1mLinking C shared library libinterfaces__rosidl_typesupport_introspection_c.so\x1b[0m\n'}
+[3.664737] (interfaces) StdoutLine: {'line': b'[ 72%] \x1b[32mBuilding CXX object CMakeFiles/interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/interfaces/msg/general_data__type_support.cpp.o\x1b[0m\n'}
+[3.676120] (interfaces) StdoutLine: {'line': b'[ 72%] Built target interfaces__rosidl_typesupport_introspection_c\n'}
+[3.684880] (interfaces) StdoutLine: {'line': b'[ 73%] \x1b[32mBuilding CXX object CMakeFiles/interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/interfaces/msg/steering_calibration__type_support.cpp.o\x1b[0m\n'}
+[3.706905] (interfaces) StdoutLine: {'line': b'[ 74%] \x1b[32mBuilding CXX object CMakeFiles/interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/interfaces/msg/ultrasonic__type_support.cpp.o\x1b[0m\n'}
+[3.710100] (-) TimerEvent: {}
+[3.786405] (interfaces) StdoutLine: {'line': b'[ 75%] \x1b[32m\x1b[1mLinking CXX shared library libinterfaces__rosidl_typesupport_fastrtps_c.so\x1b[0m\n'}
+[3.810228] (-) TimerEvent: {}
+[3.894238] (interfaces) StdoutLine: {'line': b'[ 75%] Built target interfaces__rosidl_typesupport_fastrtps_c\n'}
+[3.908302] (interfaces) StdoutLine: {'line': b'[ 76%] \x1b[32mBuilding CXX object CMakeFiles/interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/interfaces/msg/gnss__type_support.cpp.o\x1b[0m\n'}
+[3.909976] (interfaces) StdoutLine: {'line': b'[ 77%] \x1b[32mBuilding CXX object CMakeFiles/interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/interfaces/msg/detail/dds_fastrtps/manometer_info__type_support.cpp.o\x1b[0m\n'}
+[3.910290] (-) TimerEvent: {}
+[3.913347] (interfaces) StdoutLine: {'line': b'[ 78%] \x1b[32mBuilding CXX object CMakeFiles/interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/interfaces/msg/system_check__type_support.cpp.o\x1b[0m\n'}
+[3.917073] (interfaces) StdoutLine: {'line': b'[ 80%] \x1b[32mBuilding CXX object CMakeFiles/interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/interfaces/msg/manometer_info__type_support.cpp.o\x1b[0m\n'}
+[4.010441] (-) TimerEvent: {}
+[4.110777] (-) TimerEvent: {}
+[4.173037] (interfaces) StdoutLine: {'line': b'[ 81%] \x1b[32m\x1b[1mLinking CXX shared library libinterfaces__rosidl_typesupport_cpp.so\x1b[0m\n'}
+[4.200092] (interfaces) StdoutLine: {'line': b'[ 81%] Built target interfaces__rosidl_typesupport_cpp\n'}
+[4.211015] (-) TimerEvent: {}
+[4.213970] (interfaces) StdoutLine: {'line': b'[ 82%] \x1b[32m\x1b[1mLinking CXX shared library libinterfaces__rosidl_typesupport_fastrtps_cpp.so\x1b[0m\n'}
+[4.263956] (interfaces) StdoutLine: {'line': b'[ 82%] Built target interfaces__rosidl_typesupport_fastrtps_cpp\n'}
+[4.277864] (interfaces) StdoutLine: {'line': b'[ 82%] Built target interfaces\n'}
+[4.292049] (interfaces) StdoutLine: {'line': b'[ 83%] \x1b[34m\x1b[1mGenerating Python code for ROS interfaces\x1b[0m\n'}
+[4.311169] (-) TimerEvent: {}
+[4.411485] (-) TimerEvent: {}
+[4.511889] (-) TimerEvent: {}
+[4.612299] (-) TimerEvent: {}
+[4.712690] (-) TimerEvent: {}
+[4.813076] (-) TimerEvent: {}
+[4.913472] (-) TimerEvent: {}
+[5.013872] (-) TimerEvent: {}
+[5.114266] (-) TimerEvent: {}
+[5.214679] (-) TimerEvent: {}
+[5.315089] (-) TimerEvent: {}
+[5.415412] (-) TimerEvent: {}
+[5.491376] (interfaces) StdoutLine: {'line': b'[ 83%] Built target interfaces__py\n'}
+[5.500924] (interfaces) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target interfaces__rosidl_generator_py\x1b[0m\n'}
+[5.514211] (interfaces) StdoutLine: {'line': b'[ 84%] \x1b[32mBuilding C object CMakeFiles/interfaces__rosidl_generator_py.dir/rosidl_generator_py/interfaces/msg/_joystick_order_s.c.o\x1b[0m\n'}
+[5.515503] (-) TimerEvent: {}
+[5.517471] (interfaces) StdoutLine: {'line': b'[ 85%] \x1b[32mBuilding C object CMakeFiles/interfaces__rosidl_generator_py.dir/rosidl_generator_py/interfaces/msg/_ultrasonic_s.c.o\x1b[0m\n'}
+[5.519911] (interfaces) StdoutLine: {'line': b'[ 86%] \x1b[32mBuilding C object CMakeFiles/interfaces__rosidl_generator_py.dir/rosidl_generator_py/interfaces/msg/_motors_order_s.c.o\x1b[0m\n'}
+[5.520445] (interfaces) StdoutLine: {'line': b'[ 88%] \x1b[32mBuilding C object CMakeFiles/interfaces__rosidl_generator_py.dir/rosidl_generator_py/interfaces/msg/_motors_feedback_s.c.o\x1b[0m\n'}
+[5.520717] (interfaces) StdoutLine: {'line': b'[ 88%] \x1b[32mBuilding C object CMakeFiles/interfaces__rosidl_generator_py.dir/rosidl_generator_py/interfaces/msg/_general_data_s.c.o\x1b[0m\n'}
+[5.521338] (interfaces) StdoutLine: {'line': b'[ 89%] \x1b[32mBuilding C object CMakeFiles/interfaces__rosidl_generator_py.dir/rosidl_generator_py/interfaces/msg/_steering_calibration_s.c.o\x1b[0m\n'}
+[5.522497] (interfaces) StdoutLine: {'line': b'[ 90%] \x1b[32mBuilding C object CMakeFiles/interfaces__rosidl_generator_py.dir/rosidl_generator_py/interfaces/msg/_gnss_s.c.o\x1b[0m\n'}
+[5.522939] (interfaces) StdoutLine: {'line': b'[ 92%] \x1b[32mBuilding C object CMakeFiles/interfaces__rosidl_generator_py.dir/rosidl_generator_py/interfaces/msg/_manometer_info_s.c.o\x1b[0m\n'}
+[5.523228] (interfaces) StdoutLine: {'line': b'[ 92%] \x1b[32mBuilding C object CMakeFiles/interfaces__rosidl_generator_py.dir/rosidl_generator_py/interfaces/msg/_system_check_s.c.o\x1b[0m\n'}
+[5.615629] (-) TimerEvent: {}
+[5.637715] (interfaces) StdoutLine: {'line': b'[ 93%] \x1b[32m\x1b[1mLinking C shared library rosidl_generator_py/interfaces/libinterfaces__rosidl_generator_py.so\x1b[0m\n'}
+[5.666152] (interfaces) StdoutLine: {'line': b'[ 93%] Built target interfaces__rosidl_generator_py\n'}
+[5.673442] (interfaces) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target interfaces__rosidl_typesupport_introspection_c__pyext\x1b[0m\n'}
+[5.673655] (interfaces) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target interfaces__rosidl_typesupport_fastrtps_c__pyext\x1b[0m\n'}
+[5.679597] (interfaces) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target interfaces__rosidl_typesupport_c__pyext\x1b[0m\n'}
+[5.681574] (interfaces) StdoutLine: {'line': b'[ 94%] \x1b[32mBuilding C object CMakeFiles/interfaces__rosidl_typesupport_fastrtps_c__pyext.dir/rosidl_generator_py/interfaces/_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c.o\x1b[0m\n'}
+[5.681780] (interfaces) StdoutLine: {'line': b'[ 95%] \x1b[32mBuilding C object CMakeFiles/interfaces__rosidl_typesupport_introspection_c__pyext.dir/rosidl_generator_py/interfaces/_interfaces_s.ep.rosidl_typesupport_introspection_c.c.o\x1b[0m\n'}
+[5.688549] (interfaces) StdoutLine: {'line': b'[ 96%] \x1b[32mBuilding C object CMakeFiles/interfaces__rosidl_typesupport_c__pyext.dir/rosidl_generator_py/interfaces/_interfaces_s.ep.rosidl_typesupport_c.c.o\x1b[0m\n'}
+[5.715854] (-) TimerEvent: {}
+[5.750889] (interfaces) StdoutLine: {'line': b'[ 97%] \x1b[32m\x1b[1mLinking C shared library rosidl_generator_py/interfaces/interfaces_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so\x1b[0m\n'}
+[5.764278] (interfaces) StdoutLine: {'line': b'[ 98%] \x1b[32m\x1b[1mLinking C shared library rosidl_generator_py/interfaces/interfaces_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so\x1b[0m\n'}
+[5.772686] (interfaces) StdoutLine: {'line': b'[ 98%] Built target interfaces__rosidl_typesupport_introspection_c__pyext\n'}
+[5.787224] (interfaces) StdoutLine: {'line': b'[ 98%] Built target interfaces__rosidl_typesupport_fastrtps_c__pyext\n'}
+[5.792881] (interfaces) StdoutLine: {'line': b'[100%] \x1b[32m\x1b[1mLinking C shared library rosidl_generator_py/interfaces/interfaces_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so\x1b[0m\n'}
+[5.815076] (interfaces) StdoutLine: {'line': b'[100%] Built target interfaces__rosidl_typesupport_c__pyext\n'}
+[5.816069] (-) TimerEvent: {}
+[5.824299] (interfaces) CommandEnded: {'returncode': 0}
+[5.916278] (-) TimerEvent: {}
+[5.955633] (interfaces) JobProgress: {'identifier': 'interfaces', 'progress': 'install'}
+[5.961740] (interfaces) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/moad/VigiWheels/jetsonNano/ros2_ws/build/interfaces'], 'cwd': '/home/moad/VigiWheels/jetsonNano/ros2_ws/build/interfaces', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'moad'), ('LC_TIME', 'fr_FR.UTF-8'), ('XDG_SESSION_TYPE', 'wayland'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/moad/VigiWheels/jetsonNano/ros2_ws/src/install/usb_cam/lib:/home/moad/VigiWheels/jetsonNano/ros2_ws/src/install/rplidar_ros/lib:/home/moad/VigiWheels/jetsonNano/ros2_ws/src/install/interfaces/lib:/home/moad/VigiWheels/jetsonNano/ros2_ws/install/usb_cam/lib:/home/moad/VigiWheels/jetsonNano/ros2_ws/install/rplidar_ros/lib:/home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/lib:/home/moad/VigiWheels/jetsonNano/ros2_ws/src/interfaces/install/interfaces/lib:/home/moad/ros2_ws/install/manometer_interfaces/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/moad'), ('OLDPWD', '/home/moad/VigiWheels/jetsonNano/ros2_ws/src'), ('DESKTOP_SESSION', 'ubuntu'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('LC_MONETARY', 'fr_FR.UTF-8'), ('SYSTEMD_EXEC_PID', '1877'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('IM_CONFIG_PHASE', '1'), ('WAYLAND_DISPLAY', 'wayland-0'), ('COLCON_PREFIX_PATH', '/home/moad/ros2_ws/install:/home/moad/VigiWheels/jetsonNano/ros2_ws/src/install:/home/moad/VigiWheels/jetsonNano/ros2_ws/install:/home/moad/VigiWheels/jetsonNano/ros2_ws/src/interfaces/install'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'moad'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'moad'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/opt/ros/humble/bin:/home/moad/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin'), ('SESSION_MANAGER', 'local/moad:@/tmp/.ICE-unix/1660,unix/moad:/tmp/.ICE-unix/1660'), ('XDG_MENU_PREFIX', 'gnome-'), ('LC_ADDRESS', 'fr_FR.UTF-8'), ('GNOME_TERMINAL_SCREEN', '/org/gnome/Terminal/screen/9b0e5ed5_804a_4f59_bbef_46ddb0de0ee4'), ('GNOME_SETUP_DISPLAY', ':1'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('LC_TELEPHONE', 'fr_FR.UTF-8'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/.mutter-Xwaylandauth.OMVZF2'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('GNOME_TERMINAL_SERVICE', ':1.123'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('AMENT_PREFIX_PATH', '/home/moad/VigiWheels/jetsonNano/ros2_ws/src/install/geicar_start_jetson:/home/moad/VigiWheels/jetsonNano/ros2_ws/src/install/usb_cam:/home/moad/VigiWheels/jetsonNano/ros2_ws/src/install/system_check_ack:/home/moad/VigiWheels/jetsonNano/ros2_ws/src/install/rplidar_ros:/home/moad/VigiWheels/jetsonNano/ros2_ws/src/install/manometer_detection:/home/moad/VigiWheels/jetsonNano/ros2_ws/src/install/interfaces:/home/moad/VigiWheels/jetsonNano/ros2_ws/install/geicar_start_jetson:/home/moad/VigiWheels/jetsonNano/ros2_ws/install/usb_cam:/home/moad/VigiWheels/jetsonNano/ros2_ws/install/system_check_ack:/home/moad/VigiWheels/jetsonNano/ros2_ws/install/rplidar_ros:/home/moad/VigiWheels/jetsonNano/ros2_ws/install/manometer_detection:/home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces:/home/moad/VigiWheels/jetsonNano/ros2_ws/src/interfaces/install/interfaces:/home/moad/ros2_ws/install/my_robot_controller:/home/moad/ros2_ws/install/manometer_detection:/home/moad/ros2_ws/install/manometer_interfaces:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('LC_NAME', 'fr_FR.UTF-8'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('LC_MEASUREMENT', 'fr_FR.UTF-8'), ('LC_IDENTIFICATION', 'fr_FR.UTF-8'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/moad/VigiWheels/jetsonNano/ros2_ws/build/interfaces'), ('LC_ALL', 'en_US.UTF-8'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/moad/VigiWheels/jetsonNano/ros2_ws/src/install/manometer_detection/lib/python3.10/site-packages:/home/moad/VigiWheels/jetsonNano/ros2_ws/src/install/interfaces/local/lib/python3.10/dist-packages:/home/moad/VigiWheels/jetsonNano/ros2_ws/install/manometer_detection/lib/python3.10/site-packages:/home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/local/lib/python3.10/dist-packages:/home/moad/VigiWheels/jetsonNano/ros2_ws/src/interfaces/install/interfaces/local/lib/python3.10/dist-packages:/home/moad/ros2_ws/install/my_robot_controller/lib/python3.10/site-packages:/home/moad/ros2_ws/install/manometer_detection/lib/python3.10/site-packages:/home/moad/ros2_ws/install/manometer_interfaces/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('LC_NUMERIC', 'fr_FR.UTF-8'), ('LC_PAPER', 'fr_FR.UTF-8'), ('COLCON', '1'), ('VTE_VERSION', '6800'), ('CMAKE_PREFIX_PATH', '/home/moad/VigiWheels/jetsonNano/ros2_ws/src/install/geicar_start_jetson:/home/moad/VigiWheels/jetsonNano/ros2_ws/src/install/usb_cam:/home/moad/VigiWheels/jetsonNano/ros2_ws/src/install/system_check_ack:/home/moad/VigiWheels/jetsonNano/ros2_ws/src/install/rplidar_ros:/home/moad/VigiWheels/jetsonNano/ros2_ws/src/install/interfaces:/home/moad/VigiWheels/jetsonNano/ros2_ws/install/geicar_start_jetson:/home/moad/VigiWheels/jetsonNano/ros2_ws/install/usb_cam:/home/moad/VigiWheels/jetsonNano/ros2_ws/install/system_check_ack:/home/moad/VigiWheels/jetsonNano/ros2_ws/install/rplidar_ros:/home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces:/home/moad/VigiWheels/jetsonNano/ros2_ws/src/interfaces/install/interfaces:/home/moad/ros2_ws/install/manometer_interfaces:/home/moad/VigiWheels/jetsonNano/ros2_ws/src/install/manometer_detection:/home/moad/VigiWheels/jetsonNano/ros2_ws/install/manometer_detection:/home/moad/ros2_ws/install/my_robot_controller:/home/moad/ros2_ws/install/manometer_detection:/opt/ros/humble')]), 'shell': False}
+[5.967361] (interfaces) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[5.967699] (interfaces) StdoutLine: {'line': b'-- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/share/ament_index/resource_index/rosidl_interfaces/interfaces\n'}
+[5.967806] (interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces\n'}
+[5.967898] (interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg\n'}
+[5.967985] (interfaces) StdoutLine: {'line': b'-- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/gnss.h\n'}
+[5.968070] (interfaces) StdoutLine: {'line': b'-- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/system_check.h\n'}
+[5.968155] (interfaces) StdoutLine: {'line': b'-- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/motors_feedback.h\n'}
+[5.968240] (interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/rosidl_generator_c__visibility_control.h\n'}
+[5.968325] (interfaces) StdoutLine: {'line': b'-- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/joystick_order.h\n'}
+[5.968408] (interfaces) StdoutLine: {'line': b'-- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/motors_order.h\n'}
+[5.968491] (interfaces) StdoutLine: {'line': b'-- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/steering_calibration.h\n'}
+[5.968746] (interfaces) StdoutLine: {'line': b'-- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/manometer_info.h\n'}
+[5.968909] (interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail\n'}
+[5.969005] (interfaces) StdoutLine: {'line': b'-- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/general_data__type_support.h\n'}
+[5.969092] (interfaces) StdoutLine: {'line': b'-- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/gnss__struct.h\n'}
+[5.969176] (interfaces) StdoutLine: {'line': b'-- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/motors_order__functions.h\n'}
+[5.969258] (interfaces) StdoutLine: {'line': b'-- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/system_check__type_support.h\n'}
+[5.969407] (interfaces) StdoutLine: {'line': b'-- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/motors_feedback__functions.h\n'}
+[5.969489] (interfaces) StdoutLine: {'line': b'-- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/motors_feedback__functions.c\n'}
+[5.969570] (interfaces) StdoutLine: {'line': b'-- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/motors_order__struct.h\n'}
+[5.969686] (interfaces) StdoutLine: {'line': b'-- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/gnss__type_support.h\n'}
+[5.969766] (interfaces) StdoutLine: {'line': b'-- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/motors_feedback__struct.h\n'}
+[5.969844] (interfaces) StdoutLine: {'line': b'-- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/steering_calibration__type_support.h\n'}
+[5.969921] (interfaces) StdoutLine: {'line': b'-- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/steering_calibration__struct.h\n'}
+[5.969998] (interfaces) StdoutLine: {'line': b'-- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/manometer_info__struct.h\n'}
+[5.970073] (interfaces) StdoutLine: {'line': b'-- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/system_check__functions.c\n'}
+[5.970149] (interfaces) StdoutLine: {'line': b'-- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/system_check__functions.h\n'}
+[5.970224] (interfaces) StdoutLine: {'line': b'-- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/gnss__functions.c\n'}
+[5.970300] (interfaces) StdoutLine: {'line': b'-- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/motors_order__type_support.h\n'}
+[5.970376] (interfaces) StdoutLine: {'line': b'-- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/gnss__functions.h\n'}
+[5.970452] (interfaces) StdoutLine: {'line': b'-- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/general_data__functions.c\n'}
+[5.970526] (interfaces) StdoutLine: {'line': b'-- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/manometer_info__functions.c\n'}
+[5.970603] (interfaces) StdoutLine: {'line': b'-- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/steering_calibration__functions.h\n'}
+[5.970678] (interfaces) StdoutLine: {'line': b'-- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/motors_feedback__type_support.h\n'}
+[5.970753] (interfaces) StdoutLine: {'line': b'-- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/ultrasonic__struct.h\n'}
+[5.970829] (interfaces) StdoutLine: {'line': b'-- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/motors_order__functions.c\n'}
+[5.970948] (interfaces) StdoutLine: {'line': b'-- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/general_data__functions.h\n'}
+[5.971030] (interfaces) StdoutLine: {'line': b'-- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/steering_calibration__functions.c\n'}
+[5.971079] (interfaces) StdoutLine: {'line': b'-- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/manometer_info__type_support.h\n'}
+[5.971113] (interfaces) StdoutLine: {'line': b'-- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/ultrasonic__functions.c\n'}
+[5.971144] (interfaces) StdoutLine: {'line': b'-- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/ultrasonic__type_support.h\n'}
+[5.971177] (interfaces) StdoutLine: {'line': b'-- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/joystick_order__type_support.h\n'}
+[5.971206] (interfaces) StdoutLine: {'line': b'-- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/manometer_info__functions.h\n'}
+[5.971235] (interfaces) StdoutLine: {'line': b'-- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/system_check__struct.h\n'}
+[5.971263] (interfaces) StdoutLine: {'line': b'-- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/joystick_order__functions.h\n'}
+[5.971290] (interfaces) StdoutLine: {'line': b'-- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/ultrasonic__functions.h\n'}
+[5.971317] (interfaces) StdoutLine: {'line': b'-- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/joystick_order__functions.c\n'}
+[5.971347] (interfaces) StdoutLine: {'line': b'-- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/general_data__struct.h\n'}
+[5.971375] (interfaces) StdoutLine: {'line': b'-- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/joystick_order__struct.h\n'}
+[5.971404] (interfaces) StdoutLine: {'line': b'-- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/general_data.h\n'}
+[5.971431] (interfaces) StdoutLine: {'line': b'-- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/ultrasonic.h\n'}
+[5.971458] (interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/share/interfaces/environment/library_path.sh\n'}
+[5.971485] (interfaces) StdoutLine: {'line': b'-- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/share/interfaces/environment/library_path.dsv\n'}
+[5.978292] (interfaces) StdoutLine: {'line': b'-- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/lib/libinterfaces__rosidl_generator_c.so\n'}
+[5.978431] (interfaces) StdoutLine: {'line': b'-- Set runtime path of "/home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/lib/libinterfaces__rosidl_generator_c.so" to ""\n'}
+[5.978538] (interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces\n'}
+[5.978679] (interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg\n'}
+[5.978760] (interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/rosidl_typesupport_fastrtps_c__visibility_control.h\n'}
+[5.978838] (interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail\n'}
+[5.978924] (interfaces) StdoutLine: {'line': b'-- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/gnss__rosidl_typesupport_fastrtps_c.h\n'}
+[5.979043] (interfaces) StdoutLine: {'line': b'-- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/manometer_info__rosidl_typesupport_fastrtps_c.h\n'}
+[5.979172] (interfaces) StdoutLine: {'line': b'-- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/ultrasonic__rosidl_typesupport_fastrtps_c.h\n'}
+[5.979240] (interfaces) StdoutLine: {'line': b'-- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/system_check__rosidl_typesupport_fastrtps_c.h\n'}
+[5.979284] (interfaces) StdoutLine: {'line': b'-- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/general_data__rosidl_typesupport_fastrtps_c.h\n'}
+[5.979324] (interfaces) StdoutLine: {'line': b'-- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/steering_calibration__rosidl_typesupport_fastrtps_c.h\n'}
+[5.979364] (interfaces) StdoutLine: {'line': b'-- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/motors_order__rosidl_typesupport_fastrtps_c.h\n'}
+[5.979446] (interfaces) StdoutLine: {'line': b'-- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/joystick_order__rosidl_typesupport_fastrtps_c.h\n'}
+[5.979518] (interfaces) StdoutLine: {'line': b'-- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/motors_feedback__rosidl_typesupport_fastrtps_c.h\n'}
+[5.979954] (interfaces) StdoutLine: {'line': b'-- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/lib/libinterfaces__rosidl_typesupport_fastrtps_c.so\n'}
+[5.980108] (interfaces) StdoutLine: {'line': b'-- Set runtime path of "/home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/lib/libinterfaces__rosidl_typesupport_fastrtps_c.so" to ""\n'}
+[5.980189] (interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces\n'}
+[5.980231] (interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg\n'}
+[5.980271] (interfaces) StdoutLine: {'line': b'-- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/gnss.hpp\n'}
+[5.980357] (interfaces) StdoutLine: {'line': b'-- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/steering_calibration.hpp\n'}
+[5.980399] (interfaces) StdoutLine: {'line': b'-- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/general_data.hpp\n'}
+[5.980442] (interfaces) StdoutLine: {'line': b'-- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/system_check.hpp\n'}
+[5.980482] (interfaces) StdoutLine: {'line': b'-- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/manometer_info.hpp\n'}
+[5.980571] (interfaces) StdoutLine: {'line': b'-- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/joystick_order.hpp\n'}
+[5.980614] (interfaces) StdoutLine: {'line': b'-- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/motors_order.hpp\n'}
+[5.980655] (interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail\n'}
+[5.980695] (interfaces) StdoutLine: {'line': b'-- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/motors_order__traits.hpp\n'}
+[5.980735] (interfaces) StdoutLine: {'line': b'-- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/joystick_order__builder.hpp\n'}
+[5.980794] (interfaces) StdoutLine: {'line': b'-- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/gnss__traits.hpp\n'}
+[5.980864] (interfaces) StdoutLine: {'line': b'-- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/ultrasonic__struct.hpp\n'}
+[5.980905] (interfaces) StdoutLine: {'line': b'-- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/joystick_order__traits.hpp\n'}
+[5.980942] (interfaces) StdoutLine: {'line': b'-- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/motors_feedback__builder.hpp\n'}
+[5.981009] (interfaces) StdoutLine: {'line': b'-- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/motors_order__struct.hpp\n'}
+[5.981051] (interfaces) StdoutLine: {'line': b'-- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/gnss__builder.hpp\n'}
+[5.981119] (interfaces) StdoutLine: {'line': b'-- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/gnss__struct.hpp\n'}
+[5.981160] (interfaces) StdoutLine: {'line': b'-- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/general_data__struct.hpp\n'}
+[5.981199] (interfaces) StdoutLine: {'line': b'-- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/steering_calibration__builder.hpp\n'}
+[5.981264] (interfaces) StdoutLine: {'line': b'-- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/manometer_info__traits.hpp\n'}
+[5.981304] (interfaces) StdoutLine: {'line': b'-- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/system_check__struct.hpp\n'}
+[5.981373] (interfaces) StdoutLine: {'line': b'-- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/general_data__builder.hpp\n'}
+[5.981412] (interfaces) StdoutLine: {'line': b'-- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/general_data__traits.hpp\n'}
+[5.981451] (interfaces) StdoutLine: {'line': b'-- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/steering_calibration__traits.hpp\n'}
+[5.981517] (interfaces) StdoutLine: {'line': b'-- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/motors_order__builder.hpp\n'}
+[5.981555] (interfaces) StdoutLine: {'line': b'-- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/system_check__traits.hpp\n'}
+[5.981593] (interfaces) StdoutLine: {'line': b'-- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/motors_feedback__struct.hpp\n'}
+[5.981683] (interfaces) StdoutLine: {'line': b'-- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/ultrasonic__traits.hpp\n'}
+[5.981727] (interfaces) StdoutLine: {'line': b'-- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/system_check__builder.hpp\n'}
+[5.981765] (interfaces) StdoutLine: {'line': b'-- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/motors_feedback__traits.hpp\n'}
+[5.981805] (interfaces) StdoutLine: {'line': b'-- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/ultrasonic__builder.hpp\n'}
+[5.981886] (interfaces) StdoutLine: {'line': b'-- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/steering_calibration__struct.hpp\n'}
+[5.981920] (interfaces) StdoutLine: {'line': b'-- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/manometer_info__struct.hpp\n'}
+[5.981960] (interfaces) StdoutLine: {'line': b'-- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/joystick_order__struct.hpp\n'}
+[5.981998] (interfaces) StdoutLine: {'line': b'-- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/manometer_info__builder.hpp\n'}
+[5.982036] (interfaces) StdoutLine: {'line': b'-- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/ultrasonic.hpp\n'}
+[5.982073] (interfaces) StdoutLine: {'line': b'-- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/motors_feedback.hpp\n'}
+[5.982134] (interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces\n'}
+[5.982217] (interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg\n'}
+[5.982258] (interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail\n'}
+[5.982296] (interfaces) StdoutLine: {'line': b'-- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/motors_feedback__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[5.982333] (interfaces) StdoutLine: {'line': b'-- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/steering_calibration__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[5.982371] (interfaces) StdoutLine: {'line': b'-- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/motors_order__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[5.982409] (interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/dds_fastrtps\n'}
+[5.982474] (interfaces) StdoutLine: {'line': b'-- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/system_check__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[5.982512] (interfaces) StdoutLine: {'line': b'-- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/manometer_info__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[5.982586] (interfaces) StdoutLine: {'line': b'-- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/general_data__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[5.982620] (interfaces) StdoutLine: {'line': b'-- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/gnss__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[5.982654] (interfaces) StdoutLine: {'line': b'-- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/joystick_order__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[5.982687] (interfaces) StdoutLine: {'line': b'-- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/ultrasonic__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[5.982721] (interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/rosidl_typesupport_fastrtps_cpp__visibility_control.h\n'}
+[5.982838] (interfaces) StdoutLine: {'line': b'-- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/lib/libinterfaces__rosidl_typesupport_fastrtps_cpp.so\n'}
+[5.983045] (interfaces) StdoutLine: {'line': b'-- Set runtime path of "/home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/lib/libinterfaces__rosidl_typesupport_fastrtps_cpp.so" to ""\n'}
+[5.983109] (interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces\n'}
+[5.983185] (interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg\n'}
+[5.983224] (interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail\n'}
+[5.983262] (interfaces) StdoutLine: {'line': b'-- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/gnss__rosidl_typesupport_introspection_c.h\n'}
+[5.983337] (interfaces) StdoutLine: {'line': b'-- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/manometer_info__rosidl_typesupport_introspection_c.h\n'}
+[5.983388] (interfaces) StdoutLine: {'line': b'-- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/motors_order__type_support.c\n'}
+[5.983425] (interfaces) StdoutLine: {'line': b'-- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/motors_feedback__type_support.c\n'}
+[5.983464] (interfaces) StdoutLine: {'line': b'-- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/system_check__type_support.c\n'}
+[5.983500] (interfaces) StdoutLine: {'line': b'-- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/joystick_order__rosidl_typesupport_introspection_c.h\n'}
+[5.983583] (interfaces) StdoutLine: {'line': b'-- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/general_data__type_support.c\n'}
+[5.983622] (interfaces) StdoutLine: {'line': b'-- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/joystick_order__type_support.c\n'}
+[5.983662] (interfaces) StdoutLine: {'line': b'-- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/system_check__rosidl_typesupport_introspection_c.h\n'}
+[5.983705] (interfaces) StdoutLine: {'line': b'-- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/general_data__rosidl_typesupport_introspection_c.h\n'}
+[5.983765] (interfaces) StdoutLine: {'line': b'-- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/ultrasonic__type_support.c\n'}
+[5.983843] (interfaces) StdoutLine: {'line': b'-- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/motors_order__rosidl_typesupport_introspection_c.h\n'}
+[5.983894] (interfaces) StdoutLine: {'line': b'-- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/ultrasonic__rosidl_typesupport_introspection_c.h\n'}
+[5.983930] (interfaces) StdoutLine: {'line': b'-- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/steering_calibration__rosidl_typesupport_introspection_c.h\n'}
+[5.983968] (interfaces) StdoutLine: {'line': b'-- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/gnss__type_support.c\n'}
+[5.984005] (interfaces) StdoutLine: {'line': b'-- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/motors_feedback__rosidl_typesupport_introspection_c.h\n'}
+[5.984057] (interfaces) StdoutLine: {'line': b'-- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/manometer_info__type_support.c\n'}
+[5.984119] (interfaces) StdoutLine: {'line': b'-- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/steering_calibration__type_support.c\n'}
+[5.984153] (interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/rosidl_typesupport_introspection_c__visibility_control.h\n'}
+[5.984368] (interfaces) StdoutLine: {'line': b'-- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/lib/libinterfaces__rosidl_typesupport_introspection_c.so\n'}
+[5.984516] (interfaces) StdoutLine: {'line': b'-- Set runtime path of "/home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/lib/libinterfaces__rosidl_typesupport_introspection_c.so" to ""\n'}
+[5.984766] (interfaces) StdoutLine: {'line': b'-- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/lib/libinterfaces__rosidl_typesupport_c.so\n'}
+[5.984924] (interfaces) StdoutLine: {'line': b'-- Set runtime path of "/home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/lib/libinterfaces__rosidl_typesupport_c.so" to ""\n'}
+[5.984987] (interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces\n'}
+[5.985061] (interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg\n'}
+[5.985096] (interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail\n'}
+[5.985133] (interfaces) StdoutLine: {'line': b'-- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/general_data__rosidl_typesupport_introspection_cpp.hpp\n'}
+[5.985169] (interfaces) StdoutLine: {'line': b'-- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/ultrasonic__type_support.cpp\n'}
+[5.985221] (interfaces) StdoutLine: {'line': b'-- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/steering_calibration__type_support.cpp\n'}
+[5.985295] (interfaces) StdoutLine: {'line': b'-- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/joystick_order__type_support.cpp\n'}
+[5.985345] (interfaces) StdoutLine: {'line': b'-- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/motors_feedback__type_support.cpp\n'}
+[5.985381] (interfaces) StdoutLine: {'line': b'-- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/gnss__type_support.cpp\n'}
+[5.985415] (interfaces) StdoutLine: {'line': b'-- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/manometer_info__rosidl_typesupport_introspection_cpp.hpp\n'}
+[5.985487] (interfaces) StdoutLine: {'line': b'-- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/system_check__type_support.cpp\n'}
+[5.985524] (interfaces) StdoutLine: {'line': b'-- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/manometer_info__type_support.cpp\n'}
+[5.985563] (interfaces) StdoutLine: {'line': b'-- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/motors_feedback__rosidl_typesupport_introspection_cpp.hpp\n'}
+[5.985621] (interfaces) StdoutLine: {'line': b'-- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/steering_calibration__rosidl_typesupport_introspection_cpp.hpp\n'}
+[5.985697] (interfaces) StdoutLine: {'line': b'-- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/gnss__rosidl_typesupport_introspection_cpp.hpp\n'}
+[5.985730] (interfaces) StdoutLine: {'line': b'-- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/motors_order__rosidl_typesupport_introspection_cpp.hpp\n'}
+[5.985765] (interfaces) StdoutLine: {'line': b'-- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/system_check__rosidl_typesupport_introspection_cpp.hpp\n'}
+[5.985800] (interfaces) StdoutLine: {'line': b'-- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/general_data__type_support.cpp\n'}
+[5.985858] (interfaces) StdoutLine: {'line': b'-- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/ultrasonic__rosidl_typesupport_introspection_cpp.hpp\n'}
+[5.985919] (interfaces) StdoutLine: {'line': b'-- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/joystick_order__rosidl_typesupport_introspection_cpp.hpp\n'}
+[5.985953] (interfaces) StdoutLine: {'line': b'-- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/motors_order__type_support.cpp\n'}
+[5.986511] (interfaces) StdoutLine: {'line': b'-- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/lib/libinterfaces__rosidl_typesupport_introspection_cpp.so\n'}
+[5.986644] (interfaces) StdoutLine: {'line': b'-- Set runtime path of "/home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/lib/libinterfaces__rosidl_typesupport_introspection_cpp.so" to ""\n'}
+[5.987090] (interfaces) StdoutLine: {'line': b'-- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/lib/libinterfaces__rosidl_typesupport_cpp.so\n'}
+[5.987235] (interfaces) StdoutLine: {'line': b'-- Set runtime path of "/home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/lib/libinterfaces__rosidl_typesupport_cpp.so" to ""\n'}
+[5.987300] (interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/share/interfaces/environment/pythonpath.sh\n'}
+[5.987337] (interfaces) StdoutLine: {'line': b'-- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/share/interfaces/environment/pythonpath.dsv\n'}
+[5.987408] (interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/local/lib/python3.10/dist-packages/interfaces-0.0.0-py3.10.egg-info\n'}
+[5.987445] (interfaces) StdoutLine: {'line': b'-- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/local/lib/python3.10/dist-packages/interfaces-0.0.0-py3.10.egg-info/SOURCES.txt\n'}
+[5.987481] (interfaces) StdoutLine: {'line': b'-- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/local/lib/python3.10/dist-packages/interfaces-0.0.0-py3.10.egg-info/dependency_links.txt\n'}
+[5.987538] (interfaces) StdoutLine: {'line': b'-- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/local/lib/python3.10/dist-packages/interfaces-0.0.0-py3.10.egg-info/top_level.txt\n'}
+[5.987575] (interfaces) StdoutLine: {'line': b'-- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/local/lib/python3.10/dist-packages/interfaces-0.0.0-py3.10.egg-info/PKG-INFO\n'}
+[5.987629] (interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/local/lib/python3.10/dist-packages/interfaces\n'}
+[5.987692] (interfaces) StdoutLine: {'line': b'-- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/local/lib/python3.10/dist-packages/interfaces/interfaces_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so\n'}
+[5.987731] (interfaces) StdoutLine: {'line': b'-- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/local/lib/python3.10/dist-packages/interfaces/_interfaces_s.ep.rosidl_typesupport_c.c\n'}
+[5.987786] (interfaces) StdoutLine: {'line': b'-- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/local/lib/python3.10/dist-packages/interfaces/interfaces_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so\n'}
+[5.987841] (interfaces) StdoutLine: {'line': b'-- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/local/lib/python3.10/dist-packages/interfaces/_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c\n'}
+[5.987895] (interfaces) StdoutLine: {'line': b'-- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/local/lib/python3.10/dist-packages/interfaces/_interfaces_s.ep.rosidl_typesupport_introspection_c.c\n'}
+[5.987957] (interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/local/lib/python3.10/dist-packages/interfaces/msg\n'}
+[5.987991] (interfaces) StdoutLine: {'line': b'-- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/local/lib/python3.10/dist-packages/interfaces/msg/_steering_calibration_s.c\n'}
+[5.988046] (interfaces) StdoutLine: {'line': b'-- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/local/lib/python3.10/dist-packages/interfaces/msg/_ultrasonic_s.c\n'}
+[5.988100] (interfaces) StdoutLine: {'line': b'-- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/local/lib/python3.10/dist-packages/interfaces/msg/_gnss_s.c\n'}
+[5.988169] (interfaces) StdoutLine: {'line': b'-- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/local/lib/python3.10/dist-packages/interfaces/msg/_motors_order_s.c\n'}
+[5.988204] (interfaces) StdoutLine: {'line': b'-- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/local/lib/python3.10/dist-packages/interfaces/msg/_general_data.py\n'}
+[5.988240] (interfaces) StdoutLine: {'line': b'-- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/local/lib/python3.10/dist-packages/interfaces/msg/_motors_feedback.py\n'}
+[5.988304] (interfaces) StdoutLine: {'line': b'-- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/local/lib/python3.10/dist-packages/interfaces/msg/_manometer_info.py\n'}
+[5.988338] (interfaces) StdoutLine: {'line': b'-- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/local/lib/python3.10/dist-packages/interfaces/msg/_system_check_s.c\n'}
+[5.988370] (interfaces) StdoutLine: {'line': b'-- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/local/lib/python3.10/dist-packages/interfaces/msg/_gnss.py\n'}
+[5.988423] (interfaces) StdoutLine: {'line': b'-- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/local/lib/python3.10/dist-packages/interfaces/msg/_ultrasonic.py\n'}
+[5.988488] (interfaces) StdoutLine: {'line': b'-- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/local/lib/python3.10/dist-packages/interfaces/msg/__init__.py\n'}
+[5.988522] (interfaces) StdoutLine: {'line': b'-- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/local/lib/python3.10/dist-packages/interfaces/msg/_joystick_order_s.c\n'}
+[5.988555] (interfaces) StdoutLine: {'line': b'-- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/local/lib/python3.10/dist-packages/interfaces/msg/_system_check.py\n'}
+[5.988624] (interfaces) StdoutLine: {'line': b'-- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/local/lib/python3.10/dist-packages/interfaces/msg/_motors_order.py\n'}
+[5.988658] (interfaces) StdoutLine: {'line': b'-- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/local/lib/python3.10/dist-packages/interfaces/msg/_motors_feedback_s.c\n'}
+[5.988692] (interfaces) StdoutLine: {'line': b'-- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/local/lib/python3.10/dist-packages/interfaces/msg/_joystick_order.py\n'}
+[5.988747] (interfaces) StdoutLine: {'line': b'-- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/local/lib/python3.10/dist-packages/interfaces/msg/_manometer_info_s.c\n'}
+[5.988782] (interfaces) StdoutLine: {'line': b'-- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/local/lib/python3.10/dist-packages/interfaces/msg/_general_data_s.c\n'}
+[5.988846] (interfaces) StdoutLine: {'line': b'-- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/local/lib/python3.10/dist-packages/interfaces/msg/_steering_calibration.py\n'}
+[5.988879] (interfaces) StdoutLine: {'line': b'-- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/local/lib/python3.10/dist-packages/interfaces/interfaces_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so\n'}
+[5.988941] (interfaces) StdoutLine: {'line': b'-- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/local/lib/python3.10/dist-packages/interfaces/__init__.py\n'}
+[5.988976] (interfaces) StdoutLine: {'line': b'-- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/local/lib/python3.10/dist-packages/interfaces/libinterfaces__rosidl_generator_py.so\n'}
+[6.016356] (-) TimerEvent: {}
+[6.022069] (interfaces) StdoutLine: {'line': b"Listing '/home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/local/lib/python3.10/dist-packages/interfaces'...\n"}
+[6.022170] (interfaces) StdoutLine: {'line': b"Compiling '/home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/local/lib/python3.10/dist-packages/interfaces/__init__.py'...\n"}
+[6.022209] (interfaces) StdoutLine: {'line': b"Listing '/home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/local/lib/python3.10/dist-packages/interfaces/msg'...\n"}
+[6.022243] (interfaces) StdoutLine: {'line': b"Compiling '/home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/local/lib/python3.10/dist-packages/interfaces/msg/__init__.py'...\n"}
+[6.022275] (interfaces) StdoutLine: {'line': b"Compiling '/home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/local/lib/python3.10/dist-packages/interfaces/msg/_general_data.py'...\n"}
+[6.022305] (interfaces) StdoutLine: {'line': b"Compiling '/home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/local/lib/python3.10/dist-packages/interfaces/msg/_gnss.py'...\n"}
+[6.022335] (interfaces) StdoutLine: {'line': b"Compiling '/home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/local/lib/python3.10/dist-packages/interfaces/msg/_joystick_order.py'...\n"}
+[6.022364] (interfaces) StdoutLine: {'line': b"Compiling '/home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/local/lib/python3.10/dist-packages/interfaces/msg/_manometer_info.py'...\n"}
+[6.022392] (interfaces) StdoutLine: {'line': b"Compiling '/home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/local/lib/python3.10/dist-packages/interfaces/msg/_motors_feedback.py'...\n"}
+[6.022421] (interfaces) StdoutLine: {'line': b"Compiling '/home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/local/lib/python3.10/dist-packages/interfaces/msg/_motors_order.py'...\n"}
+[6.022449] (interfaces) StdoutLine: {'line': b"Compiling '/home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/local/lib/python3.10/dist-packages/interfaces/msg/_steering_calibration.py'...\n"}
+[6.022477] (interfaces) StdoutLine: {'line': b"Compiling '/home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/local/lib/python3.10/dist-packages/interfaces/msg/_system_check.py'...\n"}
+[6.022510] (interfaces) StdoutLine: {'line': b"Compiling '/home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/local/lib/python3.10/dist-packages/interfaces/msg/_ultrasonic.py'...\n"}
+[6.025688] (interfaces) StdoutLine: {'line': b'-- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/local/lib/python3.10/dist-packages/interfaces/interfaces_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so\n'}
+[6.025922] (interfaces) StdoutLine: {'line': b'-- Set runtime path of "/home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/local/lib/python3.10/dist-packages/interfaces/interfaces_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so" to ""\n'}
+[6.025980] (interfaces) StdoutLine: {'line': b'-- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/local/lib/python3.10/dist-packages/interfaces/interfaces_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so\n'}
+[6.026110] (interfaces) StdoutLine: {'line': b'-- Set runtime path of "/home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/local/lib/python3.10/dist-packages/interfaces/interfaces_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so" to ""\n'}
+[6.026177] (interfaces) StdoutLine: {'line': b'-- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/local/lib/python3.10/dist-packages/interfaces/interfaces_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so\n'}
+[6.026210] (interfaces) StdoutLine: {'line': b'-- Set runtime path of "/home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/local/lib/python3.10/dist-packages/interfaces/interfaces_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so" to ""\n'}
+[6.026447] (interfaces) StdoutLine: {'line': b'-- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/lib/libinterfaces__rosidl_generator_py.so\n'}
+[6.026663] (interfaces) StdoutLine: {'line': b'-- Set runtime path of "/home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/lib/libinterfaces__rosidl_generator_py.so" to ""\n'}
+[6.026693] (interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/share/interfaces/msg/JoystickOrder.idl\n'}
+[6.026772] (interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/share/interfaces/msg/MotorsOrder.idl\n'}
+[6.026814] (interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/share/interfaces/msg/MotorsFeedback.idl\n'}
+[6.026845] (interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/share/interfaces/msg/GeneralData.idl\n'}
+[6.026881] (interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/share/interfaces/msg/SteeringCalibration.idl\n'}
+[6.026912] (interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/share/interfaces/msg/Ultrasonic.idl\n'}
+[6.026959] (interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/share/interfaces/msg/Gnss.idl\n'}
+[6.026988] (interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/share/interfaces/msg/SystemCheck.idl\n'}
+[6.027017] (interfaces) StdoutLine: {'line': b'-- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/share/interfaces/msg/ManometerInfo.idl\n'}
+[6.027075] (interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/share/interfaces/msg/JoystickOrder.msg\n'}
+[6.027106] (interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/share/interfaces/msg/MotorsOrder.msg\n'}
+[6.027136] (interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/share/interfaces/msg/MotorsFeedback.msg\n'}
+[6.027204] (interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/share/interfaces/msg/GeneralData.msg\n'}
+[6.027235] (interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/share/interfaces/msg/SteeringCalibration.msg\n'}
+[6.027265] (interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/share/interfaces/msg/Ultrasonic.msg\n'}
+[6.027296] (interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/share/interfaces/msg/Gnss.msg\n'}
+[6.027327] (interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/share/interfaces/msg/SystemCheck.msg\n'}
+[6.027356] (interfaces) StdoutLine: {'line': b'-- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/share/interfaces/msg/ManometerInfo.msg\n'}
+[6.027410] (interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/share/ament_index/resource_index/package_run_dependencies/interfaces\n'}
+[6.027443] (interfaces) StdoutLine: {'line': b'-- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/share/ament_index/resource_index/parent_prefix_path/interfaces\n'}
+[6.027475] (interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/share/interfaces/environment/ament_prefix_path.sh\n'}
+[6.027533] (interfaces) StdoutLine: {'line': b'-- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/share/interfaces/environment/ament_prefix_path.dsv\n'}
+[6.027564] (interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/share/interfaces/environment/path.sh\n'}
+[6.027594] (interfaces) StdoutLine: {'line': b'-- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/share/interfaces/environment/path.dsv\n'}
+[6.027623] (interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/share/interfaces/local_setup.bash\n'}
+[6.027651] (interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/share/interfaces/local_setup.sh\n'}
+[6.027706] (interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/share/interfaces/local_setup.zsh\n'}
+[6.027736] (interfaces) StdoutLine: {'line': b'-- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/share/interfaces/local_setup.dsv\n'}
+[6.027766] (interfaces) StdoutLine: {'line': b'-- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/share/interfaces/package.dsv\n'}
+[6.027824] (interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/share/ament_index/resource_index/packages/interfaces\n'}
+[6.027852] (interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/share/interfaces/cmake/export_interfaces__rosidl_generator_cExport.cmake\n'}
+[6.027882] (interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/share/interfaces/cmake/export_interfaces__rosidl_generator_cExport-noconfig.cmake\n'}
+[6.027940] (interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/share/interfaces/cmake/export_interfaces__rosidl_typesupport_fastrtps_cExport.cmake\n'}
+[6.027969] (interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/share/interfaces/cmake/export_interfaces__rosidl_typesupport_fastrtps_cExport-noconfig.cmake\n'}
+[6.028043] (interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/share/interfaces/cmake/export_interfaces__rosidl_generator_cppExport.cmake\n'}
+[6.028189] (interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/share/interfaces/cmake/export_interfaces__rosidl_typesupport_fastrtps_cppExport.cmake\n'}
+[6.028239] (interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/share/interfaces/cmake/export_interfaces__rosidl_typesupport_fastrtps_cppExport-noconfig.cmake\n'}
+[6.028410] (interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/share/interfaces/cmake/interfaces__rosidl_typesupport_introspection_cExport.cmake\n'}
+[6.028464] (interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/share/interfaces/cmake/interfaces__rosidl_typesupport_introspection_cExport-noconfig.cmake\n'}
+[6.028638] (interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/share/interfaces/cmake/interfaces__rosidl_typesupport_cExport.cmake\n'}
+[6.028687] (interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/share/interfaces/cmake/interfaces__rosidl_typesupport_cExport-noconfig.cmake\n'}
+[6.028815] (interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/share/interfaces/cmake/interfaces__rosidl_typesupport_introspection_cppExport.cmake\n'}
+[6.028864] (interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/share/interfaces/cmake/interfaces__rosidl_typesupport_introspection_cppExport-noconfig.cmake\n'}
+[6.029033] (interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/share/interfaces/cmake/interfaces__rosidl_typesupport_cppExport.cmake\n'}
+[6.029083] (interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/share/interfaces/cmake/interfaces__rosidl_typesupport_cppExport-noconfig.cmake\n'}
+[6.029206] (interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/share/interfaces/cmake/export_interfaces__rosidl_generator_pyExport.cmake\n'}
+[6.029263] (interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/share/interfaces/cmake/export_interfaces__rosidl_generator_pyExport-noconfig.cmake\n'}
+[6.029292] (interfaces) StdoutLine: {'line': b'-- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/share/interfaces/cmake/rosidl_cmake-extras.cmake\n'}
+[6.029339] (interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/share/interfaces/cmake/ament_cmake_export_include_directories-extras.cmake\n'}
+[6.029388] (interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/share/interfaces/cmake/ament_cmake_export_libraries-extras.cmake\n'}
+[6.029441] (interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/share/interfaces/cmake/ament_cmake_export_targets-extras.cmake\n'}
+[6.029473] (interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/share/interfaces/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake\n'}
+[6.029527] (interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/share/interfaces/cmake/ament_cmake_export_dependencies-extras.cmake\n'}
+[6.029558] (interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/share/interfaces/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake\n'}
+[6.029613] (interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/share/interfaces/cmake/interfacesConfig.cmake\n'}
+[6.029643] (interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/share/interfaces/cmake/interfacesConfig-version.cmake\n'}
+[6.029671] (interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/share/interfaces/package.xml\n'}
+[6.031038] (interfaces) CommandEnded: {'returncode': 0}
+[6.116429] (-) TimerEvent: {}
+[6.217203] (-) TimerEvent: {}
+[6.244678] (interfaces) JobEnded: {'identifier': 'interfaces', 'rc': 0}
+[6.245442] (-) EventReactorShutdown: {}

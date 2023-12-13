@@ -98,6 +98,10 @@ CMakeFiles/interfaces__cpp: rosidl_generator_cpp/interfaces/msg/system_check.hpp
 CMakeFiles/interfaces__cpp: rosidl_generator_cpp/interfaces/msg/detail/system_check__builder.hpp
 CMakeFiles/interfaces__cpp: rosidl_generator_cpp/interfaces/msg/detail/system_check__struct.hpp
 CMakeFiles/interfaces__cpp: rosidl_generator_cpp/interfaces/msg/detail/system_check__traits.hpp
+CMakeFiles/interfaces__cpp: rosidl_generator_cpp/interfaces/msg/manometer_info.hpp
+CMakeFiles/interfaces__cpp: rosidl_generator_cpp/interfaces/msg/detail/manometer_info__builder.hpp
+CMakeFiles/interfaces__cpp: rosidl_generator_cpp/interfaces/msg/detail/manometer_info__struct.hpp
+CMakeFiles/interfaces__cpp: rosidl_generator_cpp/interfaces/msg/detail/manometer_info__traits.hpp
 
 rosidl_generator_cpp/interfaces/msg/joystick_order.hpp: /opt/ros/humble/lib/rosidl_generator_cpp/rosidl_generator_cpp
 rosidl_generator_cpp/interfaces/msg/joystick_order.hpp: /opt/ros/humble/local/lib/python3.10/dist-packages/rosidl_generator_cpp/__init__.py
@@ -122,6 +126,7 @@ rosidl_generator_cpp/interfaces/msg/joystick_order.hpp: rosidl_adapter/interface
 rosidl_generator_cpp/interfaces/msg/joystick_order.hpp: rosidl_adapter/interfaces/msg/Ultrasonic.idl
 rosidl_generator_cpp/interfaces/msg/joystick_order.hpp: rosidl_adapter/interfaces/msg/Gnss.idl
 rosidl_generator_cpp/interfaces/msg/joystick_order.hpp: rosidl_adapter/interfaces/msg/SystemCheck.idl
+rosidl_generator_cpp/interfaces/msg/joystick_order.hpp: rosidl_adapter/interfaces/msg/ManometerInfo.idl
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/moad/VigiWheels/jetsonNano/ros2_ws/build/interfaces/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating C++ code for ROS interfaces"
 	/usr/bin/python3.10 /opt/ros/humble/share/rosidl_generator_cpp/cmake/../../../lib/rosidl_generator_cpp/rosidl_generator_cpp --generator-arguments-file /home/moad/VigiWheels/jetsonNano/ros2_ws/build/interfaces/rosidl_generator_cpp__arguments.json
 
@@ -218,6 +223,18 @@ rosidl_generator_cpp/interfaces/msg/detail/system_check__struct.hpp: rosidl_gene
 rosidl_generator_cpp/interfaces/msg/detail/system_check__traits.hpp: rosidl_generator_cpp/interfaces/msg/joystick_order.hpp
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_cpp/interfaces/msg/detail/system_check__traits.hpp
 
+rosidl_generator_cpp/interfaces/msg/manometer_info.hpp: rosidl_generator_cpp/interfaces/msg/joystick_order.hpp
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_cpp/interfaces/msg/manometer_info.hpp
+
+rosidl_generator_cpp/interfaces/msg/detail/manometer_info__builder.hpp: rosidl_generator_cpp/interfaces/msg/joystick_order.hpp
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_cpp/interfaces/msg/detail/manometer_info__builder.hpp
+
+rosidl_generator_cpp/interfaces/msg/detail/manometer_info__struct.hpp: rosidl_generator_cpp/interfaces/msg/joystick_order.hpp
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_cpp/interfaces/msg/detail/manometer_info__struct.hpp
+
+rosidl_generator_cpp/interfaces/msg/detail/manometer_info__traits.hpp: rosidl_generator_cpp/interfaces/msg/joystick_order.hpp
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_cpp/interfaces/msg/detail/manometer_info__traits.hpp
+
 interfaces__cpp: CMakeFiles/interfaces__cpp
 interfaces__cpp: rosidl_generator_cpp/interfaces/msg/detail/general_data__builder.hpp
 interfaces__cpp: rosidl_generator_cpp/interfaces/msg/detail/general_data__struct.hpp
@@ -228,6 +245,9 @@ interfaces__cpp: rosidl_generator_cpp/interfaces/msg/detail/gnss__traits.hpp
 interfaces__cpp: rosidl_generator_cpp/interfaces/msg/detail/joystick_order__builder.hpp
 interfaces__cpp: rosidl_generator_cpp/interfaces/msg/detail/joystick_order__struct.hpp
 interfaces__cpp: rosidl_generator_cpp/interfaces/msg/detail/joystick_order__traits.hpp
+interfaces__cpp: rosidl_generator_cpp/interfaces/msg/detail/manometer_info__builder.hpp
+interfaces__cpp: rosidl_generator_cpp/interfaces/msg/detail/manometer_info__struct.hpp
+interfaces__cpp: rosidl_generator_cpp/interfaces/msg/detail/manometer_info__traits.hpp
 interfaces__cpp: rosidl_generator_cpp/interfaces/msg/detail/motors_feedback__builder.hpp
 interfaces__cpp: rosidl_generator_cpp/interfaces/msg/detail/motors_feedback__struct.hpp
 interfaces__cpp: rosidl_generator_cpp/interfaces/msg/detail/motors_feedback__traits.hpp
@@ -246,6 +266,7 @@ interfaces__cpp: rosidl_generator_cpp/interfaces/msg/detail/ultrasonic__traits.h
 interfaces__cpp: rosidl_generator_cpp/interfaces/msg/general_data.hpp
 interfaces__cpp: rosidl_generator_cpp/interfaces/msg/gnss.hpp
 interfaces__cpp: rosidl_generator_cpp/interfaces/msg/joystick_order.hpp
+interfaces__cpp: rosidl_generator_cpp/interfaces/msg/manometer_info.hpp
 interfaces__cpp: rosidl_generator_cpp/interfaces/msg/motors_feedback.hpp
 interfaces__cpp: rosidl_generator_cpp/interfaces/msg/motors_order.hpp
 interfaces__cpp: rosidl_generator_cpp/interfaces/msg/steering_calibration.hpp
