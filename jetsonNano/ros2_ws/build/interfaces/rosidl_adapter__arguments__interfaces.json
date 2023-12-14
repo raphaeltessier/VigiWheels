@@ -8,6 +8,7 @@
     "/home/moad/VigiWheels/jetsonNano/ros2_ws/src/interfaces:msg/SteeringCalibration.msg",
     "/home/moad/VigiWheels/jetsonNano/ros2_ws/src/interfaces:msg/Ultrasonic.msg",
     "/home/moad/VigiWheels/jetsonNano/ros2_ws/src/interfaces:msg/Gnss.msg",
-    "/home/moad/VigiWheels/jetsonNano/ros2_ws/src/interfaces:msg/SystemCheck.msg"
+    "/home/moad/VigiWheels/jetsonNano/ros2_ws/src/interfaces:msg/SystemCheck.msg",
+    "/home/moad/VigiWheels/jetsonNano/ros2_ws/src/interfaces:msg/ManometerInfo.msg"
   ]
 }

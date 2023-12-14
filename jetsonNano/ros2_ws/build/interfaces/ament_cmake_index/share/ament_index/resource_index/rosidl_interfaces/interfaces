@@ -4,6 +4,8 @@ msg/Gnss.idl
 msg/Gnss.msg
 msg/JoystickOrder.idl
 msg/JoystickOrder.msg
+msg/ManometerInfo.idl
+msg/ManometerInfo.msg
 msg/MotorsFeedback.idl
 msg/MotorsFeedback.msg
 msg/MotorsOrder.idl

@@ -74,6 +74,7 @@ CMakeFiles/interfaces: /home/moad/VigiWheels/jetsonNano/ros2_ws/src/interfaces/m
 CMakeFiles/interfaces: /home/moad/VigiWheels/jetsonNano/ros2_ws/src/interfaces/msg/Ultrasonic.msg
 CMakeFiles/interfaces: /home/moad/VigiWheels/jetsonNano/ros2_ws/src/interfaces/msg/Gnss.msg
 CMakeFiles/interfaces: /home/moad/VigiWheels/jetsonNano/ros2_ws/src/interfaces/msg/SystemCheck.msg
+CMakeFiles/interfaces: /home/moad/VigiWheels/jetsonNano/ros2_ws/src/interfaces/msg/ManometerInfo.msg
 
 interfaces: CMakeFiles/interfaces
 interfaces: CMakeFiles/interfaces.dir/build.make
