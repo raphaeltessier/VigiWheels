@@ -28,4 +28,7 @@
   <export>
     <build_type>ament_cmake</build_type>
   </export>
+  <launch>
+    <include file="$(find rosbridge_server)/launch/rosbridge_websocket.launch"/>
+  </launch>
 </package>
