@@ -159,7 +159,7 @@ private:
             //Manual Mode
             if (mode==0){
 
-                if ((reverse & obstacles_rear) | (!reverse & obstacles_front)){  // si obstacle dans notre direction
+                if ((reverse && obstacles_rear) | (!reverse && obstacles_front)){  // si obstacle dans notre direction
 
                     leftRearPwmCmd = STOP;
                     rightRearPwmCmd = STOP;
@@ -177,7 +177,7 @@ private:
 
             //Autonomous Mode
             } else if (mode==1){
-                if ((reverse & obstacles_rear) | (!reverse & obstacles_front)){  // si obstacle dans notre direction
+                if ((reverse && obstacles_rear) | (!reverse && obstacles_front)){  // si obstacle dans notre direction
 
                     leftRearPwmCmd = STOP;
                     rightRearPwmCmd = STOP;
