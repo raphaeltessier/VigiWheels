@@ -155,7 +155,7 @@ private:
             perror("Error writing to serial port");
         }
 
-        RCLCPP_INFO(this->get_logger(), "Data send : %s\n", tx); 
+        RCLCPP_DEBUG(this->get_logger(), "Data send : %s\n", tx); 
     }
 
     int counter_; 
