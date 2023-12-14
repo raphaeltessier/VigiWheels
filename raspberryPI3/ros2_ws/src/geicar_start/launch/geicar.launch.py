@@ -1,5 +1,6 @@
 from launch import LaunchDescription
 from launch_ros.actions import Node
+from launch.launch_description_sources import AnyLaunchDescriptionSource
 import os
 from ament_index_python.packages import get_package_share_directory
 
@@ -82,7 +83,9 @@ def generate_launch_description():
         emulate_tty=True
     )
 
-
+    rosbride_server_node = IncludeLaunchDescription(
+        AnyLaunchDescriptionSource([get_package_share_directory('rosbridge_server'),'/launch/rosbridge_websocket_launch.xml']),
+    )
     ld.add_action(joystick_node)
     ld.add_action(joystick_to_cmd_node)
     ld.add_action(can_rx_node)
@@ -95,5 +98,6 @@ def generate_launch_description():
     ld.add_action(serial_writing_node)
     ld.add_action(serial_reading_node)
     ld.add_action(processing_data_fire_node)
+    ld.add_action(rosbride_server_node)
 
     return ld
