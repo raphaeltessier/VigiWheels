@@ -5,7 +5,7 @@
 
 #include "interfaces/msg/servo_cam_order.hpp"
 #include "interfaces/msg/cam_pos_order.hpp"
-//#include "interfaces/msg/?????????.hpp"
+#include "interfaces/msg/manometer_info.hpp"
 
 #include "std_srvs/srv/empty.hpp"
 
@@ -31,8 +31,8 @@ public:
         subscription_cam_pos_order_ = this->create_subscription<interfaces::msg::CamPosOrder>(
         "cam_pos_order", 10, std::bind(&servo_cam::camPosOrderCallback, this, _1));
 
-        //subscription_?????????_order_ = this->create_subscription<interfaces::msg::?????????>(
-        //"?????????", 10, std::bind(&servo_cam::??????Callback, this, _1));
+        subscription_manometer_order_ = this->create_subscription<interfaces::msg::ManometerInfo>(
+        "manometer_detected", 10, std::bind(&servo_cam::ImagePosCallback, this, _1));
 
 
         //periodic function
@@ -64,10 +64,10 @@ private:
 
     /* Update image position for mode 2 from image pos order feedback [callback function]  :
     *
-    * This function is called when a message is published on the "/???????????" topic
+    * This function is called when a message is published on the "/ManometerInfo" topic
     * 
     */
-    void ImagePosCallback(const interfaces::msg::??????? & pos_image){
+    void ImagePosCallback(const interfaces::msg::ManometerInfo & pos_image){
         x1 = pos_image.x1;
         x2 = pos_image.x2;
     }
@@ -140,7 +140,7 @@ private:
 
     //Suscribers
     rclcpp::Subscription<interfaces::msg::CamPosOrder>::SharedPtr subscription_cam_pos_order_;
-    //rclcpp::Subscription<interfaces::msg::?????????>::SharedPtr subscription_?????????_order_;  
+    rclcpp::Subscription<interfaces::msg::ManometerInfo>::SharedPtr subscription_manometer_order_;  
 
     //Timer
     rclcpp::TimerBase::SharedPtr timer_;
