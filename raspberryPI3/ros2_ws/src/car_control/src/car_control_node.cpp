@@ -7,12 +7,14 @@
 #include "interfaces/msg/motors_feedback.hpp"
 #include "interfaces/msg/steering_calibration.hpp"
 #include "interfaces/msg/joystick_order.hpp"
+#include "interfaces/msg/obstacles_order.hpp"
 
 #include "std_srvs/srv/empty.hpp"
 
 #include "../include/car_control/steeringCmd.h"
 #include "../include/car_control/propulsionCmd.h"
 #include "../include/car_control/car_control_node.h"
+#include "../include/car_control/controlCmd.h"
 
 using namespace std;
 using placeholders::_1;
@@ -44,6 +46,9 @@ public:
 
         subscription_steering_calibration_ = this->create_subscription<interfaces::msg::SteeringCalibration>(
         "steering_calibration", 10, std::bind(&car_control::steeringCalibrationCallback, this, _1));
+
+        subscription_obstacles_order_ = this->create_subscription<interfaces::msg::ObstaclesOrder>(
+        "obstacles_order", 10, std::bind(&car_control::obstaclesOrderCallback, this, _1));
 
 
         
@@ -97,13 +102,30 @@ private:
         }
     }
 
-    /* Update currentAngle from motors feedback [callback function]  :
+
+    /* Update front and rear obstacles prensence from Obstacles_order  :
+    *
+    * This function is called when a message is published on the "/mobstacles_order" topic
+    * 
+    */
+    void obstaclesOrderCallback(const interfaces::msg::ObstaclesOrder & obstacles_order){
+        obstacles_front = obstacles_order.front_object;
+        obstacles_rear = obstacles_order.rear_object;
+    }
+
+
+
+ 
+    /* Update currentAngle, left_rear from motors feedback [callback function]  :
+
     *
     * This function is called when a message is published on the "/motors_feedback" topic
     * 
     */
     void motorsFeedbackCallback(const interfaces::msg::MotorsFeedback & motorsFeedback){
         currentAngle = motorsFeedback.steering_angle;
+        leftRearSpeedFeedback = motorsFeedback.left_rear_speed;
+        rightRearSpeedFeedback = motorsFeedback.right_rear_speed;
     }
 
 
@@ -114,6 +136,13 @@ private:
     * In MANUAL mode, the commands depends on :
     * - requestedThrottle, reverse, requestedSteerAngle [from joystick orders]
     * - currentAngle [from motors feedback]
+    * - current RPM Speed of both motors 
+    * 
+    * In Auto mode, the commands depend on :
+    * - consigne_Speed_Left/ consigne_Speed_Right, reverse_Auto [variables to be used by Nav2]
+    * - current RPM Speed of both motors 
+    * - static error of last iteration
+    * - commanded value of last iteration
     */
     void updateCmd(){
 
@@ -129,15 +158,40 @@ private:
 
             //Manual Mode
             if (mode==0){
+
+                if ((reverse & obstacles_rear) | (!reverse & obstacles_front)){  // si obstacle dans notre direction
+
+                    leftRearPwmCmd = STOP;
+                    rightRearPwmCmd = STOP;
+                    steeringPwmCmd = STOP;
+
+                }
+                else {
+                    manualPropulsionCmd(requestedThrottle, reverse, leftRearPwmCmd,rightRearPwmCmd);
+                }
+                //manualPropulsionCmd(requestedThrottle, reverse, leftRearPwmCmd,rightRearPwmCmd);
                 
-                manualPropulsionCmd(requestedThrottle, reverse, leftRearPwmCmd,rightRearPwmCmd);
 
                 steeringCmd(requestedSteerAngle,currentAngle, steeringPwmCmd);
 
 
             //Autonomous Mode
             } else if (mode==1){
-                //...
+                if ((reverse & obstacles_rear) | (!reverse & obstacles_front)){  // si obstacle dans notre direction
+
+                    leftRearPwmCmd = STOP;
+                    rightRearPwmCmd = STOP;
+                    steeringPwmCmd = STOP;
+
+                }
+                else {
+                    calculateRPM_Left_Auto(consigne_Speed_Left, reverse_Auto, leftRearPwmCmd, leftRearSpeedFeedback,
+                    lastError_L, correctedValue_L);
+
+                    calculateRPM_Right_Auto(consigne_Speed_Right, reverse_Auto, rightRearPwmCmd, rightRearSpeedFeedback,
+                    lastError_R, correctedValue_R );
+                }
+                
             }
         }
 
@@ -215,7 +269,16 @@ private:
     
     //Motors feedback variables
     float currentAngle;
+    float leftRearSpeedFeedback;
+    float rightRearSpeedFeedback;
 
+
+    //obstacles variables
+    bool obstacles_front;
+    bool obstacles_rear;
+    
+    
+    
     //Manual Mode variables (with joystick control)
     bool reverse;
     float requestedThrottle;
@@ -226,6 +289,22 @@ private:
     uint8_t rightRearPwmCmd;
     uint8_t steeringPwmCmd;
 
+    //Default consigne in auto mode 
+
+    //Equivalent to throttle in manual mode
+    float consigne_Speed_Left = 0.5;
+    float consigne_Speed_Right = 0.5;
+
+    //Reverse mode
+    bool reverse_Auto = false;
+
+    //PI variables for motor
+
+    float correctedValue_L = 0;
+    float correctedValue_R = 0;
+    float lastError_L = 0;
+    float lastError_R = 0;
+
     //Publishers
     rclcpp::Publisher<interfaces::msg::MotorsOrder>::SharedPtr publisher_can_;
     rclcpp::Publisher<interfaces::msg::SteeringCalibration>::SharedPtr publisher_steeringCalibration_;
@@ -234,6 +313,7 @@ private:
     rclcpp::Subscription<interfaces::msg::JoystickOrder>::SharedPtr subscription_joystick_order_;
     rclcpp::Subscription<interfaces::msg::MotorsFeedback>::SharedPtr subscription_motors_feedback_;
     rclcpp::Subscription<interfaces::msg::SteeringCalibration>::SharedPtr subscription_steering_calibration_;
+    rclcpp::Subscription<interfaces::msg::ObstaclesOrder>::SharedPtr subscription_obstacles_order_; 
 
     //Timer
     rclcpp::TimerBase::SharedPtr timer_;
