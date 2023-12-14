@@ -1,0 +1,434 @@
+[0.170s] Invoking command in '/home/moad/VigiWheels/jetsonNano/ros2_ws/build/interfaces': CMAKE_PREFIX_PATH=/home/moad/ros2_ws/install/my_robot_controller:/home/moad/ros2_ws/install/manometer_detection:/opt/ros/humble /usr/bin/cmake /home/moad/VigiWheels/jetsonNano/ros2_ws/src/interfaces -DCMAKE_INSTALL_PREFIX=/home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces
+[0.213s] -- The C compiler identification is GNU 11.4.0
+[0.255s] -- The CXX compiler identification is GNU 11.4.0
+[0.263s] -- Detecting C compiler ABI info
+[0.321s] -- Detecting C compiler ABI info - done
+[0.331s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.331s] -- Detecting C compile features
+[0.332s] -- Detecting C compile features - done
+[0.335s] -- Detecting CXX compiler ABI info
+[0.399s] -- Detecting CXX compiler ABI info - done
+[0.404s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.404s] -- Detecting CXX compile features
+[0.404s] -- Detecting CXX compile features - done
+[0.406s] -- Found ament_cmake: 1.3.6 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.594s] -- Found Python3: /usr/bin/python3.10 (found version "3.10.12") found components: Interpreter 
+[0.672s] -- Found rclcpp: 16.0.7 (/opt/ros/humble/share/rclcpp/cmake)
+[0.716s] -- Found rosidl_generator_c: 3.1.5 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[0.721s] -- Found rosidl_adapter: 3.1.5 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[0.731s] -- Found rosidl_generator_cpp: 3.1.5 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[0.741s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.753s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.798s] -- Found rmw_implementation_cmake: 6.1.1 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+[0.800s] -- Found rmw_fastrtps_cpp: 6.2.5 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+[0.868s] -- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.2")  
+[0.898s] -- Found FastRTPS: /opt/ros/humble/include  
+[0.932s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[0.938s] -- Looking for pthread.h
+[0.988s] -- Looking for pthread.h - found
+[0.989s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+[1.039s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+[1.041s] -- Found Threads: TRUE  
+[1.155s] -- Found rosidl_default_generators: 1.2.0 (/opt/ros/humble/share/rosidl_default_generators/cmake)
+[1.370s] -- Found ament_cmake_ros: 0.10.0 (/opt/ros/humble/share/ament_cmake_ros/cmake)
+[1.701s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[1.808s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[1.833s] -- Found PythonInterp: /usr/bin/python3 (found suitable version "3.10.12", minimum required is "3.6") 
+[1.834s] -- Found python_cmake_module: 0.10.0 (/opt/ros/humble/share/python_cmake_module/cmake)
+[1.868s] -- Found PythonLibs: /usr/lib/x86_64-linux-gnu/libpython3.10.so (found suitable version "3.10.12", minimum required is "3.5") 
+[1.869s] -- Using PYTHON_EXECUTABLE: /usr/bin/python3
+[1.869s] -- Using PYTHON_INCLUDE_DIRS: /usr/include/python3.10
+[1.869s] -- Using PYTHON_LIBRARIES: /usr/lib/x86_64-linux-gnu/libpython3.10.so
+[1.897s] -- Found PythonExtra: .so  
+[1.940s] -- Found ament_lint_auto: 0.12.9 (/opt/ros/humble/share/ament_lint_auto/cmake)
+[1.956s] -- Added test 'lint_cmake' to check CMake code style
+[1.958s] -- Added test 'xmllint' to check XML markup files
+[1.961s] -- Configuring done
+[2.007s] -- Generating done
+[2.009s] -- Build files have been written to: /home/moad/VigiWheels/jetsonNano/ros2_ws/build/interfaces
+[2.021s] Invoked command in '/home/moad/VigiWheels/jetsonNano/ros2_ws/build/interfaces' returned '0': CMAKE_PREFIX_PATH=/home/moad/ros2_ws/install/my_robot_controller:/home/moad/ros2_ws/install/manometer_detection:/opt/ros/humble /usr/bin/cmake /home/moad/VigiWheels/jetsonNano/ros2_ws/src/interfaces -DCMAKE_INSTALL_PREFIX=/home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces
+[2.022s] Invoking command in '/home/moad/VigiWheels/jetsonNano/ros2_ws/build/interfaces': CMAKE_PREFIX_PATH=/home/moad/ros2_ws/install/my_robot_controller:/home/moad/ros2_ws/install/manometer_detection:/opt/ros/humble /usr/bin/cmake --build /home/moad/VigiWheels/jetsonNano/ros2_ws/build/interfaces -- -j12 -l12
+[2.057s] [  1%] [34m[1mGenerating C code for ROS interfaces[0m
+[2.061s] [  2%] [34m[1mGenerating C++ code for ROS interfaces[0m
+[2.100s] [  2%] Built target ament_cmake_python_copy_interfaces
+[2.451s] running egg_info
+[2.452s] creating interfaces.egg-info
+[2.452s] writing interfaces.egg-info/PKG-INFO
+[2.452s] writing dependency_links to interfaces.egg-info/dependency_links.txt
+[2.452s] writing top-level names to interfaces.egg-info/top_level.txt
+[2.453s] writing manifest file 'interfaces.egg-info/SOURCES.txt'
+[2.455s] reading manifest file 'interfaces.egg-info/SOURCES.txt'
+[2.456s] writing manifest file 'interfaces.egg-info/SOURCES.txt'
+[2.501s] [  2%] Built target ament_cmake_python_build_interfaces_egg
+[2.778s] [  2%] Built target interfaces__cpp
+[2.789s] [  5%] [34m[1mGenerating C++ type support dispatch for ROS interfaces[0m
+[2.790s] [  5%] [34m[1mGenerating C++ type support for eProsima Fast-RTPS[0m
+[2.790s] [  5%] [34m[1mGenerating C++ introspection for ROS interfaces[0m
+[2.912s] [  6%] [32mBuilding C object CMakeFiles/interfaces__rosidl_generator_c.dir/rosidl_generator_c/interfaces/msg/detail/motors_order__functions.c.o[0m
+[2.912s] [  8%] [32mBuilding C object CMakeFiles/interfaces__rosidl_generator_c.dir/rosidl_generator_c/interfaces/msg/detail/joystick_order__functions.c.o[0m
+[2.914s] [  9%] [32mBuilding C object CMakeFiles/interfaces__rosidl_generator_c.dir/rosidl_generator_c/interfaces/msg/detail/general_data__functions.c.o[0m
+[2.917s] [ 10%] [32mBuilding C object CMakeFiles/interfaces__rosidl_generator_c.dir/rosidl_generator_c/interfaces/msg/detail/steering_calibration__functions.c.o[0m
+[2.917s] [ 11%] [32mBuilding C object CMakeFiles/interfaces__rosidl_generator_c.dir/rosidl_generator_c/interfaces/msg/detail/ultrasonic__functions.c.o[0m
+[2.917s] [ 12%] [32mBuilding C object CMakeFiles/interfaces__rosidl_generator_c.dir/rosidl_generator_c/interfaces/msg/detail/motors_feedback__functions.c.o[0m
+[2.935s] [ 13%] [32mBuilding C object CMakeFiles/interfaces__rosidl_generator_c.dir/rosidl_generator_c/interfaces/msg/detail/gnss__functions.c.o[0m
+[2.936s] [ 14%] [32mBuilding C object CMakeFiles/interfaces__rosidl_generator_c.dir/rosidl_generator_c/interfaces/msg/detail/system_check__functions.c.o[0m
+[3.019s] [ 16%] [32m[1mLinking C shared library libinterfaces__rosidl_generator_c.so[0m
+[3.061s] [ 16%] Built target interfaces__rosidl_generator_c
+[3.071s] [ 18%] [34m[1mGenerating C type support for eProsima Fast-RTPS[0m
+[3.071s] [ 18%] [34m[1mGenerating C introspection for ROS interfaces[0m
+[3.071s] [ 19%] [34m[1mGenerating C type support dispatch for ROS interfaces[0m
+[3.564s] [ 20%] [32mBuilding CXX object CMakeFiles/interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/interfaces/msg/detail/joystick_order__type_support.cpp.o[0m
+[3.565s] [ 21%] [32mBuilding CXX object CMakeFiles/interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/interfaces/msg/detail/general_data__type_support.cpp.o[0m
+[3.565s] [ 22%] [32mBuilding CXX object CMakeFiles/interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/interfaces/msg/detail/motors_order__type_support.cpp.o[0m
+[3.573s] [ 24%] [32mBuilding CXX object CMakeFiles/interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/interfaces/msg/detail/steering_calibration__type_support.cpp.o[0m
+[3.574s] [ 25%] [32mBuilding CXX object CMakeFiles/interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/interfaces/msg/detail/motors_feedback__type_support.cpp.o[0m
+[3.650s] [ 26%] [32mBuilding CXX object CMakeFiles/interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/interfaces/msg/detail/ultrasonic__type_support.cpp.o[0m
+[3.653s] [ 27%] [32mBuilding CXX object CMakeFiles/interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/interfaces/msg/detail/gnss__type_support.cpp.o[0m
+[3.977s] [ 28%] [32mBuilding CXX object CMakeFiles/interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/interfaces/msg/detail/system_check__type_support.cpp.o[0m
+[4.222s] [ 31%] [32mBuilding CXX object CMakeFiles/interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/interfaces/msg/joystick_order__type_support.cpp.o[0m
+[4.222s] [ 31%] [32mBuilding CXX object CMakeFiles/interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/interfaces/msg/motors_order__type_support.cpp.o[0m
+[4.233s] [ 32%] [32mBuilding CXX object CMakeFiles/interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/interfaces/msg/motors_feedback__type_support.cpp.o[0m
+[4.250s] [ 33%] [32mBuilding CXX object CMakeFiles/interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/interfaces/msg/general_data__type_support.cpp.o[0m
+[4.272s] [ 34%] [32mBuilding CXX object CMakeFiles/interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/interfaces/msg/steering_calibration__type_support.cpp.o[0m
+[4.273s] [ 35%] [32mBuilding CXX object CMakeFiles/interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/interfaces/msg/ultrasonic__type_support.cpp.o[0m
+[4.286s] [ 36%] [32mBuilding CXX object CMakeFiles/interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/interfaces/msg/gnss__type_support.cpp.o[0m
+[4.287s] [ 37%] [32mBuilding CXX object CMakeFiles/interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/interfaces/msg/joystick_order__type_support.cpp.o[0m
+[4.312s] [ 39%] [32mBuilding CXX object CMakeFiles/interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/interfaces/msg/motors_order__type_support.cpp.o[0m
+[4.317s] [ 40%] [32mBuilding CXX object CMakeFiles/interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/interfaces/msg/system_check__type_support.cpp.o[0m
+[4.324s] [ 41%] [32mBuilding CXX object CMakeFiles/interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/interfaces/msg/motors_feedback__type_support.cpp.o[0m
+[4.335s] [ 42%] [32mBuilding CXX object CMakeFiles/interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/interfaces/msg/general_data__type_support.cpp.o[0m
+[4.369s] [ 43%] [32mBuilding CXX object CMakeFiles/interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/interfaces/msg/steering_calibration__type_support.cpp.o[0m
+[4.375s] [ 44%] [32m[1mLinking CXX shared library libinterfaces__rosidl_typesupport_c.so[0m
+[4.449s] [ 44%] Built target interfaces__rosidl_typesupport_c
+[4.515s] [ 45%] [32mBuilding CXX object CMakeFiles/interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/interfaces/msg/ultrasonic__type_support.cpp.o[0m
+[4.526s] [ 47%] [32mBuilding CXX object CMakeFiles/interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/interfaces/msg/detail/dds_fastrtps/joystick_order__type_support.cpp.o[0m
+[4.538s] [ 48%] [32mBuilding CXX object CMakeFiles/interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/interfaces/msg/gnss__type_support.cpp.o[0m
+[4.571s] [ 49%] [32mBuilding CXX object CMakeFiles/interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/interfaces/msg/detail/dds_fastrtps/motors_order__type_support.cpp.o[0m
+[4.573s] [ 50%] [32m[1mLinking CXX shared library libinterfaces__rosidl_typesupport_introspection_cpp.so[0m
+[4.573s] [ 51%] [32mBuilding CXX object CMakeFiles/interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/interfaces/msg/system_check__type_support.cpp.o[0m
+[4.580s] [ 52%] [32mBuilding C object CMakeFiles/interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/interfaces/msg/detail/joystick_order__type_support.c.o[0m
+[4.630s] [ 54%] [32mBuilding C object CMakeFiles/interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/interfaces/msg/detail/motors_order__type_support.c.o[0m
+[4.721s] [ 55%] [32mBuilding C object CMakeFiles/interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/interfaces/msg/detail/motors_feedback__type_support.c.o[0m
+[4.752s] [ 56%] [32mBuilding C object CMakeFiles/interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/interfaces/msg/detail/general_data__type_support.c.o[0m
+[4.786s] [ 57%] [32mBuilding CXX object CMakeFiles/interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/interfaces/msg/detail/dds_fastrtps/motors_feedback__type_support.cpp.o[0m
+[4.795s] [ 58%] [32mBuilding C object CMakeFiles/interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/interfaces/msg/detail/ultrasonic__type_support.c.o[0m
+[4.797s] [ 58%] Built target interfaces__rosidl_typesupport_introspection_cpp
+[4.809s] [ 59%] [32mBuilding C object CMakeFiles/interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/interfaces/msg/detail/steering_calibration__type_support.c.o[0m
+[4.811s] [ 60%] [32mBuilding C object CMakeFiles/interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/interfaces/msg/detail/gnss__type_support.c.o[0m
+[4.827s] [ 62%] [32mBuilding C object CMakeFiles/interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/interfaces/msg/detail/system_check__type_support.c.o[0m
+[4.845s] [ 63%] [32mBuilding CXX object CMakeFiles/interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/interfaces/msg/detail/dds_fastrtps/general_data__type_support.cpp.o[0m
+[4.868s] [ 64%] [32mBuilding CXX object CMakeFiles/interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/interfaces/msg/detail/dds_fastrtps/steering_calibration__type_support.cpp.o[0m
+[4.873s] [ 65%] [32m[1mLinking C shared library libinterfaces__rosidl_typesupport_introspection_c.so[0m
+[4.878s] [ 66%] [32mBuilding CXX object CMakeFiles/interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/interfaces/msg/detail/dds_fastrtps/ultrasonic__type_support.cpp.o[0m
+[4.891s] [ 67%] [32mBuilding CXX object CMakeFiles/interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/interfaces/msg/detail/dds_fastrtps/gnss__type_support.cpp.o[0m
+[4.897s] [ 68%] [32mBuilding CXX object CMakeFiles/interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/interfaces/msg/detail/dds_fastrtps/system_check__type_support.cpp.o[0m
+[4.913s] [ 70%] [32mBuilding CXX object CMakeFiles/interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/interfaces/msg/detail/joystick_order__type_support_c.cpp.o[0m
+[4.963s] [ 70%] Built target interfaces__rosidl_typesupport_introspection_c
+[4.994s] [ 71%] [32mBuilding CXX object CMakeFiles/interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/interfaces/msg/detail/motors_order__type_support_c.cpp.o[0m
+[5.050s] [ 72%] [32mBuilding CXX object CMakeFiles/interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/interfaces/msg/detail/motors_feedback__type_support_c.cpp.o[0m
+[5.065s] [ 73%] [32m[1mLinking CXX shared library libinterfaces__rosidl_typesupport_cpp.so[0m
+[5.089s] [ 74%] [32mBuilding CXX object CMakeFiles/interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/interfaces/msg/detail/general_data__type_support_c.cpp.o[0m
+[5.208s] [ 74%] Built target interfaces__rosidl_typesupport_cpp
+[5.244s] [ 75%] [32mBuilding CXX object CMakeFiles/interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/interfaces/msg/detail/steering_calibration__type_support_c.cpp.o[0m
+[5.306s] [ 77%] [32mBuilding CXX object CMakeFiles/interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/interfaces/msg/detail/ultrasonic__type_support_c.cpp.o[0m
+[5.386s] [ 78%] [32mBuilding CXX object CMakeFiles/interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/interfaces/msg/detail/gnss__type_support_c.cpp.o[0m
+[5.442s] [ 79%] [32mBuilding CXX object CMakeFiles/interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/interfaces/msg/detail/system_check__type_support_c.cpp.o[0m
+[5.696s] [ 80%] [32m[1mLinking CXX shared library libinterfaces__rosidl_typesupport_fastrtps_cpp.so[0m
+[5.757s] [ 80%] Built target interfaces__rosidl_typesupport_fastrtps_cpp
+[5.909s] [ 81%] [32m[1mLinking CXX shared library libinterfaces__rosidl_typesupport_fastrtps_c.so[0m
+[5.987s] [ 81%] Built target interfaces__rosidl_typesupport_fastrtps_c
+[6.000s] [ 81%] Built target interfaces
+[6.015s] [ 82%] [34m[1mGenerating Python code for ROS interfaces[0m
+[7.215s] [ 82%] Built target interfaces__py
+[7.229s] [ 83%] [32mBuilding C object CMakeFiles/interfaces__rosidl_generator_py.dir/rosidl_generator_py/interfaces/msg/_system_check_s.c.o[0m
+[7.232s] [ 86%] [32mBuilding C object CMakeFiles/interfaces__rosidl_generator_py.dir/rosidl_generator_py/interfaces/msg/_gnss_s.c.o[0m
+[7.232s] [ 86%] [32mBuilding C object CMakeFiles/interfaces__rosidl_generator_py.dir/rosidl_generator_py/interfaces/msg/_motors_feedback_s.c.o[0m
+[7.232s] [ 87%] [32mBuilding C object CMakeFiles/interfaces__rosidl_generator_py.dir/rosidl_generator_py/interfaces/msg/_motors_order_s.c.o[0m
+[7.232s] [ 88%] [32mBuilding C object CMakeFiles/interfaces__rosidl_generator_py.dir/rosidl_generator_py/interfaces/msg/_general_data_s.c.o[0m
+[7.232s] [ 89%] [32mBuilding C object CMakeFiles/interfaces__rosidl_generator_py.dir/rosidl_generator_py/interfaces/msg/_steering_calibration_s.c.o[0m
+[7.233s] [ 90%] [32mBuilding C object CMakeFiles/interfaces__rosidl_generator_py.dir/rosidl_generator_py/interfaces/msg/_ultrasonic_s.c.o[0m
+[7.233s] [ 91%] [32mBuilding C object CMakeFiles/interfaces__rosidl_generator_py.dir/rosidl_generator_py/interfaces/msg/_joystick_order_s.c.o[0m
+[7.363s] [ 93%] [32m[1mLinking C shared library rosidl_generator_py/interfaces/libinterfaces__rosidl_generator_py.so[0m
+[7.392s] [ 93%] Built target interfaces__rosidl_generator_py
+[7.406s] [ 94%] [32mBuilding C object CMakeFiles/interfaces__rosidl_typesupport_fastrtps_c__pyext.dir/rosidl_generator_py/interfaces/_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c.o[0m
+[7.416s] [ 96%] [32mBuilding C object CMakeFiles/interfaces__rosidl_typesupport_c__pyext.dir/rosidl_generator_py/interfaces/_interfaces_s.ep.rosidl_typesupport_c.c.o[0m
+[7.416s] [ 96%] [32mBuilding C object CMakeFiles/interfaces__rosidl_typesupport_introspection_c__pyext.dir/rosidl_generator_py/interfaces/_interfaces_s.ep.rosidl_typesupport_introspection_c.c.o[0m
+[7.480s] [ 97%] [32m[1mLinking C shared library rosidl_generator_py/interfaces/interfaces_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so[0m
+[7.521s] [ 97%] Built target interfaces__rosidl_typesupport_fastrtps_c__pyext
+[7.529s] [ 98%] [32m[1mLinking C shared library rosidl_generator_py/interfaces/interfaces_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so[0m
+[7.536s] [100%] [32m[1mLinking C shared library rosidl_generator_py/interfaces/interfaces_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so[0m
+[7.557s] [100%] Built target interfaces__rosidl_typesupport_c__pyext
+[7.563s] [100%] Built target interfaces__rosidl_typesupport_introspection_c__pyext
+[7.574s] Invoked command in '/home/moad/VigiWheels/jetsonNano/ros2_ws/build/interfaces' returned '0': CMAKE_PREFIX_PATH=/home/moad/ros2_ws/install/my_robot_controller:/home/moad/ros2_ws/install/manometer_detection:/opt/ros/humble /usr/bin/cmake --build /home/moad/VigiWheels/jetsonNano/ros2_ws/build/interfaces -- -j12 -l12
+[7.726s] Invoking command in '/home/moad/VigiWheels/jetsonNano/ros2_ws/build/interfaces': CMAKE_PREFIX_PATH=/home/moad/ros2_ws/install/my_robot_controller:/home/moad/ros2_ws/install/manometer_detection:/opt/ros/humble /usr/bin/cmake --install /home/moad/VigiWheels/jetsonNano/ros2_ws/build/interfaces
+[7.730s] -- Install configuration: ""
+[7.731s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/share/ament_index/resource_index/rosidl_interfaces/interfaces
+[7.731s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces
+[7.731s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg
+[7.731s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/gnss.h
+[7.731s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/system_check.h
+[7.731s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/motors_feedback.h
+[7.731s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/rosidl_generator_c__visibility_control.h
+[7.731s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/joystick_order.h
+[7.732s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/motors_order.h
+[7.732s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/steering_calibration.h
+[7.732s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail
+[7.732s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/general_data__type_support.h
+[7.732s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/gnss__struct.h
+[7.732s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/motors_order__functions.h
+[7.732s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/system_check__type_support.h
+[7.732s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/motors_feedback__functions.h
+[7.733s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/motors_feedback__functions.c
+[7.733s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/motors_order__struct.h
+[7.733s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/gnss__type_support.h
+[7.733s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/motors_feedback__struct.h
+[7.733s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/steering_calibration__type_support.h
+[7.733s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/steering_calibration__struct.h
+[7.733s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/system_check__functions.c
+[7.733s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/system_check__functions.h
+[7.734s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/gnss__functions.c
+[7.734s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/motors_order__type_support.h
+[7.734s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/gnss__functions.h
+[7.734s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/general_data__functions.c
+[7.734s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/steering_calibration__functions.h
+[7.734s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/motors_feedback__type_support.h
+[7.734s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/ultrasonic__struct.h
+[7.734s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/motors_order__functions.c
+[7.735s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/general_data__functions.h
+[7.735s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/steering_calibration__functions.c
+[7.735s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/ultrasonic__functions.c
+[7.735s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/ultrasonic__type_support.h
+[7.735s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/joystick_order__type_support.h
+[7.735s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/system_check__struct.h
+[7.735s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/joystick_order__functions.h
+[7.735s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/ultrasonic__functions.h
+[7.736s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/joystick_order__functions.c
+[7.736s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/general_data__struct.h
+[7.736s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/joystick_order__struct.h
+[7.736s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/general_data.h
+[7.736s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/ultrasonic.h
+[7.736s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/share/interfaces/environment/library_path.sh
+[7.736s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/share/interfaces/environment/library_path.dsv
+[7.736s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/lib/libinterfaces__rosidl_generator_c.so
+[7.736s] -- Set runtime path of "/home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/lib/libinterfaces__rosidl_generator_c.so" to ""
+[7.737s] -- Up-to-date: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces
+[7.737s] -- Up-to-date: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg
+[7.737s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/rosidl_typesupport_fastrtps_c__visibility_control.h
+[7.737s] -- Up-to-date: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail
+[7.737s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/gnss__rosidl_typesupport_fastrtps_c.h
+[7.737s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/ultrasonic__rosidl_typesupport_fastrtps_c.h
+[7.737s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/system_check__rosidl_typesupport_fastrtps_c.h
+[7.737s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/general_data__rosidl_typesupport_fastrtps_c.h
+[7.737s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/steering_calibration__rosidl_typesupport_fastrtps_c.h
+[7.737s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/motors_order__rosidl_typesupport_fastrtps_c.h
+[7.738s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/joystick_order__rosidl_typesupport_fastrtps_c.h
+[7.738s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/motors_feedback__rosidl_typesupport_fastrtps_c.h
+[7.738s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/lib/libinterfaces__rosidl_typesupport_fastrtps_c.so
+[7.738s] -- Set runtime path of "/home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/lib/libinterfaces__rosidl_typesupport_fastrtps_c.so" to ""
+[7.738s] -- Up-to-date: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces
+[7.738s] -- Up-to-date: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg
+[7.738s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/gnss.hpp
+[7.738s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/steering_calibration.hpp
+[7.738s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/general_data.hpp
+[7.738s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/system_check.hpp
+[7.739s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/joystick_order.hpp
+[7.739s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/motors_order.hpp
+[7.739s] -- Up-to-date: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail
+[7.739s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/motors_order__traits.hpp
+[7.739s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/joystick_order__builder.hpp
+[7.739s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/gnss__traits.hpp
+[7.739s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/ultrasonic__struct.hpp
+[7.739s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/joystick_order__traits.hpp
+[7.739s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/motors_feedback__builder.hpp
+[7.739s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/motors_order__struct.hpp
+[7.739s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/gnss__builder.hpp
+[7.739s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/gnss__struct.hpp
+[7.740s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/general_data__struct.hpp
+[7.740s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/steering_calibration__builder.hpp
+[7.740s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/system_check__struct.hpp
+[7.740s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/general_data__builder.hpp
+[7.740s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/general_data__traits.hpp
+[7.740s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/steering_calibration__traits.hpp
+[7.740s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/motors_order__builder.hpp
+[7.740s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/system_check__traits.hpp
+[7.740s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/motors_feedback__struct.hpp
+[7.740s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/ultrasonic__traits.hpp
+[7.740s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/system_check__builder.hpp
+[7.740s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/motors_feedback__traits.hpp
+[7.741s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/ultrasonic__builder.hpp
+[7.741s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/steering_calibration__struct.hpp
+[7.741s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/joystick_order__struct.hpp
+[7.741s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/ultrasonic.hpp
+[7.741s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/motors_feedback.hpp
+[7.741s] -- Up-to-date: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces
+[7.741s] -- Up-to-date: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg
+[7.741s] -- Up-to-date: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail
+[7.741s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/motors_feedback__rosidl_typesupport_fastrtps_cpp.hpp
+[7.741s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/steering_calibration__rosidl_typesupport_fastrtps_cpp.hpp
+[7.741s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/motors_order__rosidl_typesupport_fastrtps_cpp.hpp
+[7.741s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/dds_fastrtps
+[7.741s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/system_check__rosidl_typesupport_fastrtps_cpp.hpp
+[7.742s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/general_data__rosidl_typesupport_fastrtps_cpp.hpp
+[7.742s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/gnss__rosidl_typesupport_fastrtps_cpp.hpp
+[7.742s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/joystick_order__rosidl_typesupport_fastrtps_cpp.hpp
+[7.742s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/ultrasonic__rosidl_typesupport_fastrtps_cpp.hpp
+[7.742s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/rosidl_typesupport_fastrtps_cpp__visibility_control.h
+[7.742s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/lib/libinterfaces__rosidl_typesupport_fastrtps_cpp.so
+[7.742s] -- Set runtime path of "/home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/lib/libinterfaces__rosidl_typesupport_fastrtps_cpp.so" to ""
+[7.742s] -- Up-to-date: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces
+[7.742s] -- Up-to-date: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg
+[7.742s] -- Up-to-date: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail
+[7.742s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/gnss__rosidl_typesupport_introspection_c.h
+[7.742s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/motors_order__type_support.c
+[7.742s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/motors_feedback__type_support.c
+[7.743s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/system_check__type_support.c
+[7.743s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/joystick_order__rosidl_typesupport_introspection_c.h
+[7.743s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/general_data__type_support.c
+[7.743s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/joystick_order__type_support.c
+[7.743s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/system_check__rosidl_typesupport_introspection_c.h
+[7.743s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/general_data__rosidl_typesupport_introspection_c.h
+[7.743s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/ultrasonic__type_support.c
+[7.743s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/motors_order__rosidl_typesupport_introspection_c.h
+[7.743s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/ultrasonic__rosidl_typesupport_introspection_c.h
+[7.743s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/steering_calibration__rosidl_typesupport_introspection_c.h
+[7.743s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/gnss__type_support.c
+[7.743s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/motors_feedback__rosidl_typesupport_introspection_c.h
+[7.743s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/steering_calibration__type_support.c
+[7.744s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/rosidl_typesupport_introspection_c__visibility_control.h
+[7.744s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/lib/libinterfaces__rosidl_typesupport_introspection_c.so
+[7.744s] -- Set runtime path of "/home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/lib/libinterfaces__rosidl_typesupport_introspection_c.so" to ""
+[7.744s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/lib/libinterfaces__rosidl_typesupport_c.so
+[7.744s] -- Set runtime path of "/home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/lib/libinterfaces__rosidl_typesupport_c.so" to ""
+[7.744s] -- Up-to-date: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces
+[7.744s] -- Up-to-date: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg
+[7.744s] -- Up-to-date: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail
+[7.744s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/general_data__rosidl_typesupport_introspection_cpp.hpp
+[7.744s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/ultrasonic__type_support.cpp
+[7.744s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/steering_calibration__type_support.cpp
+[7.744s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/joystick_order__type_support.cpp
+[7.744s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/motors_feedback__type_support.cpp
+[7.745s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/gnss__type_support.cpp
+[7.745s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/system_check__type_support.cpp
+[7.745s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/motors_feedback__rosidl_typesupport_introspection_cpp.hpp
+[7.745s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/steering_calibration__rosidl_typesupport_introspection_cpp.hpp
+[7.745s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/gnss__rosidl_typesupport_introspection_cpp.hpp
+[7.745s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/motors_order__rosidl_typesupport_introspection_cpp.hpp
+[7.745s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/system_check__rosidl_typesupport_introspection_cpp.hpp
+[7.745s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/general_data__type_support.cpp
+[7.745s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/ultrasonic__rosidl_typesupport_introspection_cpp.hpp
+[7.745s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/joystick_order__rosidl_typesupport_introspection_cpp.hpp
+[7.745s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/interfaces/interfaces/msg/detail/motors_order__type_support.cpp
+[7.745s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/lib/libinterfaces__rosidl_typesupport_introspection_cpp.so
+[7.746s] -- Set runtime path of "/home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/lib/libinterfaces__rosidl_typesupport_introspection_cpp.so" to ""
+[7.746s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/lib/libinterfaces__rosidl_typesupport_cpp.so
+[7.746s] -- Set runtime path of "/home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/lib/libinterfaces__rosidl_typesupport_cpp.so" to ""
+[7.746s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/share/interfaces/environment/pythonpath.sh
+[7.746s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/share/interfaces/environment/pythonpath.dsv
+[7.746s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/local/lib/python3.10/dist-packages/interfaces-0.0.0-py3.10.egg-info
+[7.746s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/local/lib/python3.10/dist-packages/interfaces-0.0.0-py3.10.egg-info/SOURCES.txt
+[7.746s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/local/lib/python3.10/dist-packages/interfaces-0.0.0-py3.10.egg-info/dependency_links.txt
+[7.746s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/local/lib/python3.10/dist-packages/interfaces-0.0.0-py3.10.egg-info/top_level.txt
+[7.746s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/local/lib/python3.10/dist-packages/interfaces-0.0.0-py3.10.egg-info/PKG-INFO
+[7.746s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/local/lib/python3.10/dist-packages/interfaces
+[7.746s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/local/lib/python3.10/dist-packages/interfaces/interfaces_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so
+[7.746s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/local/lib/python3.10/dist-packages/interfaces/_interfaces_s.ep.rosidl_typesupport_c.c
+[7.747s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/local/lib/python3.10/dist-packages/interfaces/interfaces_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so
+[7.747s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/local/lib/python3.10/dist-packages/interfaces/_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c
+[7.747s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/local/lib/python3.10/dist-packages/interfaces/_interfaces_s.ep.rosidl_typesupport_introspection_c.c
+[7.747s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/local/lib/python3.10/dist-packages/interfaces/msg
+[7.747s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/local/lib/python3.10/dist-packages/interfaces/msg/_steering_calibration_s.c
+[7.747s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/local/lib/python3.10/dist-packages/interfaces/msg/_ultrasonic_s.c
+[7.747s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/local/lib/python3.10/dist-packages/interfaces/msg/_gnss_s.c
+[7.747s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/local/lib/python3.10/dist-packages/interfaces/msg/_motors_order_s.c
+[7.747s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/local/lib/python3.10/dist-packages/interfaces/msg/_general_data.py
+[7.747s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/local/lib/python3.10/dist-packages/interfaces/msg/_motors_feedback.py
+[7.747s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/local/lib/python3.10/dist-packages/interfaces/msg/_system_check_s.c
+[7.747s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/local/lib/python3.10/dist-packages/interfaces/msg/_gnss.py
+[7.747s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/local/lib/python3.10/dist-packages/interfaces/msg/_ultrasonic.py
+[7.748s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/local/lib/python3.10/dist-packages/interfaces/msg/__init__.py
+[7.748s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/local/lib/python3.10/dist-packages/interfaces/msg/_joystick_order_s.c
+[7.748s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/local/lib/python3.10/dist-packages/interfaces/msg/_system_check.py
+[7.748s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/local/lib/python3.10/dist-packages/interfaces/msg/_motors_order.py
+[7.748s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/local/lib/python3.10/dist-packages/interfaces/msg/_motors_feedback_s.c
+[7.748s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/local/lib/python3.10/dist-packages/interfaces/msg/_joystick_order.py
+[7.748s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/local/lib/python3.10/dist-packages/interfaces/msg/_general_data_s.c
+[7.748s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/local/lib/python3.10/dist-packages/interfaces/msg/_steering_calibration.py
+[7.748s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/local/lib/python3.10/dist-packages/interfaces/interfaces_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so
+[7.748s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/local/lib/python3.10/dist-packages/interfaces/__init__.py
+[7.748s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/local/lib/python3.10/dist-packages/interfaces/libinterfaces__rosidl_generator_py.so
+[7.769s] Listing '/home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/local/lib/python3.10/dist-packages/interfaces'...
+[7.769s] Compiling '/home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/local/lib/python3.10/dist-packages/interfaces/__init__.py'...
+[7.769s] Listing '/home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/local/lib/python3.10/dist-packages/interfaces/msg'...
+[7.769s] Compiling '/home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/local/lib/python3.10/dist-packages/interfaces/msg/__init__.py'...
+[7.770s] Compiling '/home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/local/lib/python3.10/dist-packages/interfaces/msg/_general_data.py'...
+[7.770s] Compiling '/home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/local/lib/python3.10/dist-packages/interfaces/msg/_gnss.py'...
+[7.770s] Compiling '/home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/local/lib/python3.10/dist-packages/interfaces/msg/_joystick_order.py'...
+[7.770s] Compiling '/home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/local/lib/python3.10/dist-packages/interfaces/msg/_motors_feedback.py'...
+[7.770s] Compiling '/home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/local/lib/python3.10/dist-packages/interfaces/msg/_motors_order.py'...
+[7.770s] Compiling '/home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/local/lib/python3.10/dist-packages/interfaces/msg/_steering_calibration.py'...
+[7.770s] Compiling '/home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/local/lib/python3.10/dist-packages/interfaces/msg/_system_check.py'...
+[7.770s] Compiling '/home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/local/lib/python3.10/dist-packages/interfaces/msg/_ultrasonic.py'...
+[7.773s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/local/lib/python3.10/dist-packages/interfaces/interfaces_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so
+[7.773s] -- Set runtime path of "/home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/local/lib/python3.10/dist-packages/interfaces/interfaces_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so" to ""
+[7.773s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/local/lib/python3.10/dist-packages/interfaces/interfaces_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so
+[7.774s] -- Set runtime path of "/home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/local/lib/python3.10/dist-packages/interfaces/interfaces_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so" to ""
+[7.774s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/local/lib/python3.10/dist-packages/interfaces/interfaces_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so
+[7.774s] -- Set runtime path of "/home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/local/lib/python3.10/dist-packages/interfaces/interfaces_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so" to ""
+[7.774s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/lib/libinterfaces__rosidl_generator_py.so
+[7.774s] -- Set runtime path of "/home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/lib/libinterfaces__rosidl_generator_py.so" to ""
+[7.775s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/share/interfaces/msg/JoystickOrder.idl
+[7.775s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/share/interfaces/msg/MotorsOrder.idl
+[7.775s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/share/interfaces/msg/MotorsFeedback.idl
+[7.775s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/share/interfaces/msg/GeneralData.idl
+[7.775s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/share/interfaces/msg/SteeringCalibration.idl
+[7.775s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/share/interfaces/msg/Ultrasonic.idl
+[7.775s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/share/interfaces/msg/Gnss.idl
+[7.775s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/share/interfaces/msg/SystemCheck.idl
+[7.776s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/share/interfaces/msg/JoystickOrder.msg
+[7.776s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/share/interfaces/msg/MotorsOrder.msg
+[7.776s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/share/interfaces/msg/MotorsFeedback.msg
+[7.776s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/share/interfaces/msg/GeneralData.msg
+[7.776s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/share/interfaces/msg/SteeringCalibration.msg
+[7.776s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/share/interfaces/msg/Ultrasonic.msg
+[7.776s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/share/interfaces/msg/Gnss.msg
+[7.776s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/share/interfaces/msg/SystemCheck.msg
+[7.777s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/share/ament_index/resource_index/package_run_dependencies/interfaces
+[7.777s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/share/ament_index/resource_index/parent_prefix_path/interfaces
+[7.777s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/share/interfaces/environment/ament_prefix_path.sh
+[7.777s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/share/interfaces/environment/ament_prefix_path.dsv
+[7.777s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/share/interfaces/environment/path.sh
+[7.777s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/share/interfaces/environment/path.dsv
+[7.777s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/share/interfaces/local_setup.bash
+[7.777s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/share/interfaces/local_setup.sh
+[7.778s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/share/interfaces/local_setup.zsh
+[7.778s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/share/interfaces/local_setup.dsv
+[7.778s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/share/interfaces/package.dsv
+[7.778s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/share/ament_index/resource_index/packages/interfaces
+[7.778s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/share/interfaces/cmake/export_interfaces__rosidl_generator_cExport.cmake
+[7.778s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/share/interfaces/cmake/export_interfaces__rosidl_generator_cExport-noconfig.cmake
+[7.778s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/share/interfaces/cmake/export_interfaces__rosidl_typesupport_fastrtps_cExport.cmake
+[7.779s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/share/interfaces/cmake/export_interfaces__rosidl_typesupport_fastrtps_cExport-noconfig.cmake
+[7.779s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/share/interfaces/cmake/export_interfaces__rosidl_generator_cppExport.cmake
+[7.779s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/share/interfaces/cmake/export_interfaces__rosidl_typesupport_fastrtps_cppExport.cmake
+[7.779s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/share/interfaces/cmake/export_interfaces__rosidl_typesupport_fastrtps_cppExport-noconfig.cmake
+[7.779s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/share/interfaces/cmake/interfaces__rosidl_typesupport_introspection_cExport.cmake
+[7.779s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/share/interfaces/cmake/interfaces__rosidl_typesupport_introspection_cExport-noconfig.cmake
+[7.779s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/share/interfaces/cmake/interfaces__rosidl_typesupport_cExport.cmake
+[7.780s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/share/interfaces/cmake/interfaces__rosidl_typesupport_cExport-noconfig.cmake
+[7.780s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/share/interfaces/cmake/interfaces__rosidl_typesupport_introspection_cppExport.cmake
+[7.780s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/share/interfaces/cmake/interfaces__rosidl_typesupport_introspection_cppExport-noconfig.cmake
+[7.780s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/share/interfaces/cmake/interfaces__rosidl_typesupport_cppExport.cmake
+[7.780s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/share/interfaces/cmake/interfaces__rosidl_typesupport_cppExport-noconfig.cmake
+[7.780s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/share/interfaces/cmake/export_interfaces__rosidl_generator_pyExport.cmake
+[7.780s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/share/interfaces/cmake/export_interfaces__rosidl_generator_pyExport-noconfig.cmake
+[7.781s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/share/interfaces/cmake/rosidl_cmake-extras.cmake
+[7.781s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/share/interfaces/cmake/ament_cmake_export_include_directories-extras.cmake
+[7.781s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/share/interfaces/cmake/ament_cmake_export_libraries-extras.cmake
+[7.781s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/share/interfaces/cmake/ament_cmake_export_targets-extras.cmake
+[7.781s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/share/interfaces/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake
+[7.781s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/share/interfaces/cmake/ament_cmake_export_dependencies-extras.cmake
+[7.781s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/share/interfaces/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake
+[7.781s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/share/interfaces/cmake/interfacesConfig.cmake
+[7.782s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/share/interfaces/cmake/interfacesConfig-version.cmake
+[7.782s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/share/interfaces/package.xml
+[7.784s] Invoked command in '/home/moad/VigiWheels/jetsonNano/ros2_ws/build/interfaces' returned '0': CMAKE_PREFIX_PATH=/home/moad/ros2_ws/install/my_robot_controller:/home/moad/ros2_ws/install/manometer_detection:/opt/ros/humble /usr/bin/cmake --install /home/moad/VigiWheels/jetsonNano/ros2_ws/build/interfaces

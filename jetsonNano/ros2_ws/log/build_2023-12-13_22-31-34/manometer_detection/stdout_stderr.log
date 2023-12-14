@@ -1,0 +1,23 @@
+running egg_info
+writing ../../build/manometer_detection/manometer_detection.egg-info/PKG-INFO
+writing dependency_links to ../../build/manometer_detection/manometer_detection.egg-info/dependency_links.txt
+writing entry points to ../../build/manometer_detection/manometer_detection.egg-info/entry_points.txt
+writing requirements to ../../build/manometer_detection/manometer_detection.egg-info/requires.txt
+writing top-level names to ../../build/manometer_detection/manometer_detection.egg-info/top_level.txt
+reading manifest file '../../build/manometer_detection/manometer_detection.egg-info/SOURCES.txt'
+writing manifest file '../../build/manometer_detection/manometer_detection.egg-info/SOURCES.txt'
+running build
+running build_py
+copying manometer_detection/yolo_model.py -> /home/moad/VigiWheels/jetsonNano/ros2_ws/build/manometer_detection/build/lib/manometer_detection
+running install
+running install_lib
+copying /home/moad/VigiWheels/jetsonNano/ros2_ws/build/manometer_detection/build/lib/manometer_detection/yolo_model.py -> /home/moad/VigiWheels/jetsonNano/ros2_ws/install/manometer_detection/lib/python3.10/site-packages/manometer_detection
+byte-compiling /home/moad/VigiWheels/jetsonNano/ros2_ws/install/manometer_detection/lib/python3.10/site-packages/manometer_detection/yolo_model.py to yolo_model.cpython-310.pyc
+running install_data
+copying package.xml -> /home/moad/VigiWheels/jetsonNano/ros2_ws/install/manometer_detection/share/manometer_detection
+running install_egg_info
+removing '/home/moad/VigiWheels/jetsonNano/ros2_ws/install/manometer_detection/lib/python3.10/site-packages/manometer_detection-0.0.0-py3.10.egg-info' (and everything under it)
+Copying ../../build/manometer_detection/manometer_detection.egg-info to /home/moad/VigiWheels/jetsonNano/ros2_ws/install/manometer_detection/lib/python3.10/site-packages/manometer_detection-0.0.0-py3.10.egg-info
+running install_scripts
+Installing test_node script to /home/moad/VigiWheels/jetsonNano/ros2_ws/install/manometer_detection/lib/manometer_detection
+writing list of installed files to '/home/moad/VigiWheels/jetsonNano/ros2_ws/build/manometer_detection/install.log'

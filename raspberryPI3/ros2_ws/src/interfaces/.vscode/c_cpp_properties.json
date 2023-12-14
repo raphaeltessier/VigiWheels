@@ -1,0 +1,33 @@
+{
+  "configurations": [
+    {
+      "browse": {
+        "databaseFilename": "${default}",
+        "limitSymbolsToIncludedHeaders": false
+      },
+      "includePath": [
+        "/home/moad/VigiWheels/jetsonNano/ros2_ws/src/install/usb_cam/include/**",
+        "/home/moad/VigiWheels/jetsonNano/ros2_ws/src/install/rplidar_ros/include/**",
+        "/home/moad/VigiWheels/jetsonNano/ros2_ws/src/install/interfaces/include/**",
+        "/home/moad/VigiWheels/jetsonNano/ros2_ws/install/usb_cam/include/**",
+        "/home/moad/VigiWheels/jetsonNano/ros2_ws/install/rplidar_ros/include/**",
+        "/home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/include/**",
+        "/home/moad/VigiWheels/jetsonNano/ros2_ws/src/interfaces/install/interfaces/include/**",
+        "/home/moad/ros2_ws/install/manometer_interfaces/include/**",
+        "/opt/ros/humble/include/**",
+        "/home/moad/VigiWheels/raspberryPI3/ros2_ws/src/can/include/**",
+        "/home/moad/VigiWheels/raspberryPI3/ros2_ws/src/car_control/include/**",
+        "/home/moad/VigiWheels/raspberryPI3/ros2_ws/src/imu_tools/imu_complementary_filter/include/**",
+        "/home/moad/VigiWheels/raspberryPI3/ros2_ws/src/imu_tools/imu_filter_madgwick/include/**",
+        "/home/moad/VigiWheels/raspberryPI3/ros2_ws/src/system_check/include/**",
+        "/usr/include/**"
+      ],
+      "name": "ROS",
+      "intelliSenseMode": "gcc-x64",
+      "compilerPath": "/usr/bin/gcc",
+      "cStandard": "gnu11",
+      "cppStandard": "c++14"
+    }
+  ],
+  "version": 4
+}

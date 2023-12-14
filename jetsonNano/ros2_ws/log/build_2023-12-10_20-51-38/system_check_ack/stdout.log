@@ -1,0 +1,18 @@
+[100%] Built target system_check_ack_node
+-- Install configuration: ""
+-- Up-to-date: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/system_check_ack/lib/system_check_ack/system_check_ack_node
+-- Up-to-date: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/system_check_ack/share/ament_index/resource_index/package_run_dependencies/system_check_ack
+-- Up-to-date: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/system_check_ack/share/ament_index/resource_index/parent_prefix_path/system_check_ack
+-- Up-to-date: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/system_check_ack/share/system_check_ack/environment/ament_prefix_path.sh
+-- Up-to-date: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/system_check_ack/share/system_check_ack/environment/ament_prefix_path.dsv
+-- Up-to-date: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/system_check_ack/share/system_check_ack/environment/path.sh
+-- Up-to-date: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/system_check_ack/share/system_check_ack/environment/path.dsv
+-- Up-to-date: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/system_check_ack/share/system_check_ack/local_setup.bash
+-- Up-to-date: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/system_check_ack/share/system_check_ack/local_setup.sh
+-- Up-to-date: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/system_check_ack/share/system_check_ack/local_setup.zsh
+-- Up-to-date: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/system_check_ack/share/system_check_ack/local_setup.dsv
+-- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/system_check_ack/share/system_check_ack/package.dsv
+-- Up-to-date: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/system_check_ack/share/ament_index/resource_index/packages/system_check_ack
+-- Up-to-date: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/system_check_ack/share/system_check_ack/cmake/system_check_ackConfig.cmake
+-- Up-to-date: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/system_check_ack/share/system_check_ack/cmake/system_check_ackConfig-version.cmake
+-- Up-to-date: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/system_check_ack/share/system_check_ack/package.xml
