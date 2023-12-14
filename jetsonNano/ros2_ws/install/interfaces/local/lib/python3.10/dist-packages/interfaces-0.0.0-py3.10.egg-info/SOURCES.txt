@@ -8,6 +8,7 @@ interfaces/msg/__init__.py
 interfaces/msg/_general_data.py
 interfaces/msg/_gnss.py
 interfaces/msg/_joystick_order.py
+interfaces/msg/_manometer_info.py
 interfaces/msg/_motors_feedback.py
 interfaces/msg/_motors_order.py
 interfaces/msg/_steering_calibration.py

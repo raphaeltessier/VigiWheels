@@ -4,14 +4,18 @@
   <name>manometer_detection</name>
   <version>0.0.0</version>
   <description>TODO: Package description</description>
-  <maintainer email="melhadda@etud.insa-toulouse.fr">moad</maintainer>
+  <maintainer email="moad@todo.todo">moad</maintainer>
   <license>TODO: License declaration</license>
+
+ 
+
 
   <depend>rclpy</depend>
   <depend>sensor_msgs</depend>
   <depend>cv_bridge</depend>
   <depend>ultralytics</depend>
-  <depend>std_msgs</depend>
+  <depend>manometer_interfaces</depend>
+  <depend>math</depend>
 
   <test_depend>ament_copyright</test_depend>
   <test_depend>ament_flake8</test_depend>
