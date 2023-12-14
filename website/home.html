@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="./images/icon.png">
+    <title>Vigiwheels</title>
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/eventemitter2@6.4.9/lib/eventemitter2.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/roslib@1/build/roslib.min.js"></script>
+    <script type="text/javascript" src="ros-script.js"></script>
+    <style>
+        /* Ajout du style pour le fond de la page */
+        body {
+            background-color: lightgrey;
+            /* Changement de la couleur de fond */
+            /* Autres styles pour le body */
+        }
+
+        /* Styles pour les éléments existants */
+        /* ... */
+    </style>
+</head>
+
+<body style="background-image: url('./images/principal_background.png');">
+
+    <div class="align">
+        <div id="menu" class="tab-content container">
+            <div class="text-content">
+                <h1 class="larger-text">Vigiwheels</h1>
+                <div id="stateData" class="hidden"></div>
+                <h2><em class="italic-text">Your autonomous patrol car</em></h2>
+                <button class="logout-b" onclick="redirect('index.html')">Logout</button>
+            </div>
+
+            <div class="car-icon-container">
+                <!-- Affichage de l'icône de la voiture -->
+                <img src="./images/car_icon.png" alt="Car Icon" class="car-icon">
+
+                <!-- Affichage des flammes (initialisé en tant qu'image affichée) -->
+                <img src="./images/flamme.svg" alt="Flame Icon" class="flame-icon" id="flameIcon">
+                <img src="./images/arrow.svg" alt="Arrow Icon" class="arrow-icon" id="arrowIcon">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Fonction pour afficher ou cacher les flammes en fonction des valeurs reçues
+        function displayFlames(value) {
+            var flameIcon = document.getElementById('flameIcon');
+
+            // Si la valeur est supérieure à un certain seuil (par exemple 50)
+            if (value > 50) {
+                flameIcon.style.display = 'block'; // Afficher les flammes
+            } else {
+                flameIcon.style.display = 'none'; // Cacher les flammes
+            }
+        }
+
+        // Reste du code inchangé
+        function redirectAndSelectMode(page, mode) {
+            selectMode(mode);
+        }
+
+        function redirect(page) {
+            window.location.href = 'index.html';
+        }
+
+            // Simuler la récupération des données ROS2
+            function receiveROSData() {
+                // Supposons que vous recevez un angle de rotation des roues
+                const wheelAngle = 45; // Exemple d'angle (à remplacer par la vraie valeur)
+    
+                // Appeler la fonction pour mettre à jour l'angle de la flèche
+                updateArrowDirection(wheelAngle);
+            }
+    
+            // Fonction pour mettre à jour l'angle de la flèche en fonction de l'angle des roues
+            function updateArrowDirection(angle) {
+                const arrowIcon = document.getElementById('arrowIcon');
+                arrowIcon.style.transform = `translate(-50%, -50%) rotate(${angle}deg)`;
+            }
+    
+            // Simulation de la récupération périodique des données ROS2
+            setInterval(receiveROSData, 1000); // Mettez à jour toutes les secondes par exemple
+    </script>
+</body>
+
+</html>

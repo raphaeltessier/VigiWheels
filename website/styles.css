@@ -1,0 +1,130 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #111; /* Couleur de fond sombre pour le mode sombre */
+    color: #fff; /* Couleur du texte principale en mode sombre */
+}
+
+.container,
+.container_log {
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.8); /* Couleur de fond du conteneur en mode sombre */
+    padding: 20px;
+    border-radius: 10px;
+    color: #fff; /* Couleur du texte en mode sombre */
+}
+
+.arrow-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform-origin: bottom center;
+    /* Ajouter les styles pour votre icône de flèche */
+}
+
+.input-group {
+    text-align: start;
+    margin-bottom: 10px;
+    padding: 8px;
+    font-family: 'Georgia', 'Times', sans-serif;
+    color: #fff; /* Couleur du texte des champs de texte en mode sombre */
+}
+.car-icon-container {
+    text-align: center;
+    position: relative;
+}
+
+.flame-icon {
+    position: absolute;
+    top: 50%; /* Positionnement au milieu verticalement */
+    left: 50%; /* Positionnement au milieu horizontalement */
+    transform: translate(-50%, -50%); /* Ajustement pour centrer */
+}
+
+.text-content {
+    text-align: center;
+    margin-top: 20px; /* Espacement vers le haut */
+    /* Autres styles pour le contenu texte */
+}
+
+
+svg {
+    display: inline-block;
+    height: 15px; /* Ajustez la taille */
+    width: 15px; /* Ajustez la taille */
+    fill: currentColor; /* Permet d'utiliser la couleur du texte parent */
+    vertical-align: middle;
+}
+
+.car-icon {
+    text-align: center;
+    margin-top: 50px; /* Ajustez la marge pour centrer verticalement */
+}
+
+.flame-icon {
+    display: block; /* Les flammes sont initialement affichées */
+    text-align: center;
+    margin-top: 20px; /* Ajustez la marge pour les positionner */
+    height: 45px; /* Ajustez la taille */
+    width: 45   px; /* Ajustez la taille */
+}
+label {
+    margin-bottom: 5px;
+    margin-top: 10px;
+    font-size: 18px;
+    color: #aaa; /* Couleur du texte des étiquettes en mode sombre */
+}
+
+button,
+buttonE {
+    margin: 0.001px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    border-radius: 10px;
+    transition: background-color 0.3s;
+}
+
+button {
+    background-color: #b30000; /* Couleur de fond du bouton */
+    color: #fff; /* Couleur du texte du bouton */
+}
+
+button:hover {
+    background-color: #048589; /* Couleur de fond du bouton au survol */
+}
+
+buttonE {
+    background-color: #b30000; /* Couleur de fond du bouton d'urgence */
+    color: #fff; /* Couleur du texte du bouton d'urgence */
+}
+
+buttonE:hover {
+    background-color: #b70000; /* Couleur de fond du bouton d'urgence au survol */
+}
+
+.alert {
+    background-color: #b30000; /* Couleur de fond de l'alerte */
+    color: #fff; /* Couleur du texte de l'alerte en mode sombre */
+}
+
+.larger-text {
+    color: #890404; /* Couleur du texte en rouge bordeaux */
+}
+
+.logout-b {
+    background-color: rgba(120, 120, 120, 0.7);
+    color: #fff;
+}
+
+/* Ajout de styles spécifiques pour le mode sombre */
+.hidden {
+    display: none;
+}
