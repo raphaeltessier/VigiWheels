@@ -32,7 +32,7 @@ osThreadId_t receiverThreadId;
 const osThreadAttr_t senderTask_attributes = {
 		.name = "Sender",
 		.priority = (osPriority_t)osPriorityHigh,  // High priority
-		.stack_size = 128 * 4                       // Stack size
+		.stack_size = 255 * 4                      // Stack size
 };
 
 #define SIZE_RX 10
@@ -170,6 +170,26 @@ void reading_sensor_values()
 	reading_analog_smoke_sensor2(&hadc1, &smoke_sensor2);
 }
 
+// Helper function to wait for a specific frame with timeout
+int wait_for_frame(char frame_char, uint32_t timeout_ms)
+{
+    char buf[1];
+    uint32_t start_time = osKernelGetTickCount();
+
+    do
+    {
+        HAL_UART_Receive(&huart2, (uint8_t *)buf, 1, 100);
+
+        if (*buf == frame_char)
+        {
+            return 1; // Frame received
+        }
+
+    } while ((osKernelGetTickCount() - start_time) < timeout_ms);
+
+    return 0; // Timeout occurred
+}
+
 // Frame format: "#[ID]=[Value]|[ID]=[Value]|[ID]=[Value]\n"
 void sending_data_uart(void *argument)
 {
@@ -182,84 +202,88 @@ void sending_data_uart(void *argument)
 		reading_sensor_values();
 
 		// Create and transmit the frame
-		sprintf(tx, "#IR_SENSOR1=%hu|IR_SENSOR2=%u|IR_SENSOR3=%hu|IR_SENSOR4=%u|SMOKE_SENSOR1=%hu|SMOKE_SENSOR2=%hu\n",
-				ir_sensor1, ir_sensor2, ir_sensor3, ir_sensor4, smoke_sensor1, smoke_sensor2);
+		sprintf(tx, "#IR_SENSOR1=%hu|IR_SENSOR2=%u|IR_SENSOR3=%hu|IR_SENSOR4=%u|SMOKE_SENSOR1=%hu|SMOKE_SENSOR2=%hu\n", ir_sensor1, ir_sensor2, ir_sensor3, ir_sensor4, smoke_sensor1, smoke_sensor2);
 
 		HAL_UART_Transmit(&huart2, (const uint8_t *)tx, strlen(tx), 100);
 
 		osMutexRelease(uartMutex);
 
-        osDelay(msToTicks(200));
+        osDelay(msToTicks(350));
 	}
 }
 
 // Frame format: "#[ID]=[Value]\n"
 void receiving_data_uart()
 {
-	char buf[1];
-	char rx[SIZE_RX + 1];
+    char buf[1];
+    char rx[SIZE_RX + 1];
 
-	while (1)
-	{
-		osMutexAcquire(uartMutex, osWaitForever);
+    while (1)
+    {
+        osMutexAcquire(uartMutex, osWaitForever);
 
-		// Wait for "START_OF_FRAME"
-		do
-		{
-			HAL_UART_Receive(&huart2, (uint8_t *)buf, 1, 100);
-		} while (*buf != START_OF_FRAME);
+        // Wait for "START_OF_FRAME" with timeout
+        if (!wait_for_frame(START_OF_FRAME, 100))
+        {
+            // Timeout occurred, release the mutex and continue to the next iteration
+            osMutexRelease(uartMutex);
+            continue;
+        }
 
-		// Receive data until "END_OF_FRAME"
-		int i = 0;
-		do
-		{
-			HAL_UART_Receive(&huart2, (uint8_t *)buf, 1, 100);
-			rx[i++] = *buf;
+        // Receive data until "END_OF_FRAME" with timeout
+        int i = 0;
+        if (wait_for_frame(END_OF_FRAME, 100))
+        {
+            do
+            {
+                HAL_UART_Receive(&huart2, (uint8_t *)buf, 1, 100);
+                rx[i++] = *buf;
+            } while (*buf != END_OF_FRAME);
 
-		} while (*buf != END_OF_FRAME);
+            rx[i] = '\0';
 
-		rx[i] = '\0';
+            // Extract ID and Value from the received frame
+            char *id = strtok(rx, "=");    // ID
+            char *value = strtok(NULL, "="); // Value
 
-		// Extract ID and Value from the received frame
-		char *id = strtok(rx, "=");    // ID
-		char *value = strtok(NULL, "="); // Value
+            // Process based on ID and Value
+            if (id != NULL && value != NULL)
+            {
+                if (strcmp(id, "f") == 0)
+                {
+                    // Handle Fire sensor values
+                    if (atoi(value) == 1)
+                    {
+                        HAL_GPIO_WritePin(GPIOB, GPIO_PIN_4, GPIO_PIN_SET);
+                        HAL_GPIO_WritePin(GPIOB, GPIO_PIN_5, GPIO_PIN_SET);
+                    }
+                    else if (atoi(value) == 0)
+                    {
+                        HAL_GPIO_WritePin(GPIOB, GPIO_PIN_4, GPIO_PIN_RESET);
+                        HAL_GPIO_WritePin(GPIOB, GPIO_PIN_5, GPIO_PIN_RESET);
+                    }
+                    else
+                    {
+                        // Handle error
+                    }
+                }
+                else if (strcmp(id, "c") == 0)
+                {
+                    // Handle PWM value
+                    uint32_t cmd_angle = atoi(value);
+                    update_CCR_timer_PWM(cmd_angle, &htim3);
+                }
+                else
+                {
+                    // Handle other IDs or report error
+                }
+            }
+        }
 
-		// Process based on ID and Value
-		if (id != NULL && value != NULL)
-		{
-			if (strcmp(id, "f") == 0)
-			{
-				// Handle Fire sensor values
-				if (atoi(value) == 1)
-				{
-					HAL_GPIO_WritePin(GPIOB, GPIO_PIN_4, GPIO_PIN_SET);
-					HAL_GPIO_WritePin(GPIOB, GPIO_PIN_5, GPIO_PIN_SET);
-				}
-				else if (atoi(value) == 0)
-				{
-					HAL_GPIO_WritePin(GPIOB, GPIO_PIN_4, GPIO_PIN_RESET);
-					HAL_GPIO_WritePin(GPIOB, GPIO_PIN_5, GPIO_PIN_RESET);
-				}
-				else
-				{
-					// Handle error
-				}
-			}
-			else if (strcmp(id, "c") == 0)
-			{
-				// Handle PWM value
-				uint32_t cmd_angle = atoi(value);
-				update_CCR_timer_PWM(cmd_angle,&htim3);
-			}
-			else
-			{
-				// Handle other IDs or report error
-			}
-		}
-
-		osMutexRelease(uartMutex);
-	}
+        osMutexRelease(uartMutex);
+    }
 }
+
 
 void update_CCR_timer_PWM(uint32_t cmd_angle_deg, TIM_HandleTypeDef * htim)
 {

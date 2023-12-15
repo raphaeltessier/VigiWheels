@@ -5,6 +5,7 @@
 ../Core/App/app.c:131:6:reading_analog_smoke_sensor2	40	static
 ../Core/App/app.c:157:6:reading_digital_sensor	24	static
 ../Core/App/app.c:163:6:reading_sensor_values	8	static
-../Core/App/app.c:174:6:sending_data_uart	152	static
-../Core/App/app.c:197:6:receiving_data_uart	40	static
-../Core/App/app.c:264:6:update_CCR_timer_PWM	32	static
+../Core/App/app.c:174:5:wait_for_frame	24	static
+../Core/App/app.c:194:6:sending_data_uart	152	static
+../Core/App/app.c:216:6:receiving_data_uart	40	static
+../Core/App/app.c:288:6:update_CCR_timer_PWM	32	static
