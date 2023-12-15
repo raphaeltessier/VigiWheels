@@ -1,6 +1,10 @@
-../Core/App/app.c:42:6:reading_analog_sensor	16	static
-../Core/App/app.c:51:6:reading_digital_sensor	24	static
-../Core/App/app.c:57:6:reading_sensor_values	8	static
-../Core/App/app.c:68:6:sending_data_uart	136	static
-../Core/App/app.c:91:6:receiving_data_uart	40	static
-../Core/App/app.c:161:6:update_CCR_timer_PWM	32	static
+../Core/App/app.c:41:12:msToTicks	24	static
+../Core/App/app.c:56:6:reading_analog_ir_sensor1	40	static
+../Core/App/app.c:81:6:reading_analog_ir_sensor3	40	static
+../Core/App/app.c:106:6:reading_analog_smoke_sensor1	40	static
+../Core/App/app.c:131:6:reading_analog_smoke_sensor2	40	static
+../Core/App/app.c:157:6:reading_digital_sensor	24	static
+../Core/App/app.c:163:6:reading_sensor_values	8	static
+../Core/App/app.c:174:6:sending_data_uart	152	static
+../Core/App/app.c:197:6:receiving_data_uart	40	static
+../Core/App/app.c:264:6:update_CCR_timer_PWM	32	static
