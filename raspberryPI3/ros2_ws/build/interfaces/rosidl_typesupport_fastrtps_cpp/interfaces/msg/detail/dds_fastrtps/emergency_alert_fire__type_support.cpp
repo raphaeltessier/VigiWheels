@@ -42,6 +42,10 @@ cdr_serialize(
   cdr << (ros_message.ir_rear_right ? true : false);
   // Member: ir_rear_left
   cdr << (ros_message.ir_rear_left ? true : false);
+  // Member: smoke_left
+  cdr << (ros_message.smoke_left ? true : false);
+  // Member: smoke_right
+  cdr << (ros_message.smoke_right ? true : false);
   return true;
 }
 
@@ -84,6 +88,20 @@ cdr_deserialize(
     uint8_t tmp;
     cdr >> tmp;
     ros_message.ir_rear_left = tmp ? true : false;
+  }
+
+  // Member: smoke_left
+  {
+    uint8_t tmp;
+    cdr >> tmp;
+    ros_message.smoke_left = tmp ? true : false;
+  }
+
+  // Member: smoke_right
+  {
+    uint8_t tmp;
+    cdr >> tmp;
+    ros_message.smoke_right = tmp ? true : false;
   }
 
   return true;
@@ -129,6 +147,18 @@ get_serialized_size(
   // Member: ir_rear_left
   {
     size_t item_size = sizeof(ros_message.ir_rear_left);
+    current_alignment += item_size +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
+  }
+  // Member: smoke_left
+  {
+    size_t item_size = sizeof(ros_message.smoke_left);
+    current_alignment += item_size +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
+  }
+  // Member: smoke_right
+  {
+    size_t item_size = sizeof(ros_message.smoke_right);
     current_alignment += item_size +
       eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
   }
@@ -183,6 +213,20 @@ max_serialized_size_EmergencyAlertFire(
   }
 
   // Member: ir_rear_left
+  {
+    size_t array_size = 1;
+
+    current_alignment += array_size * sizeof(uint8_t);
+  }
+
+  // Member: smoke_left
+  {
+    size_t array_size = 1;
+
+    current_alignment += array_size * sizeof(uint8_t);
+  }
+
+  // Member: smoke_right
   {
     size_t array_size = 1;
 

@@ -60,6 +60,8 @@ class EmergencyAlertFire(metaclass=Metaclass_EmergencyAlertFire):
         '_ir_front_left',
         '_ir_rear_right',
         '_ir_rear_left',
+        '_smoke_left',
+        '_smoke_right',
     ]
 
     _fields_and_field_types = {
@@ -68,9 +70,13 @@ class EmergencyAlertFire(metaclass=Metaclass_EmergencyAlertFire):
         'ir_front_left': 'boolean',
         'ir_rear_right': 'boolean',
         'ir_rear_left': 'boolean',
+        'smoke_left': 'boolean',
+        'smoke_right': 'boolean',
     }
 
     SLOT_TYPES = (
+        rosidl_parser.definition.BasicType('boolean'),  # noqa: E501
+        rosidl_parser.definition.BasicType('boolean'),  # noqa: E501
         rosidl_parser.definition.BasicType('boolean'),  # noqa: E501
         rosidl_parser.definition.BasicType('boolean'),  # noqa: E501
         rosidl_parser.definition.BasicType('boolean'),  # noqa: E501
@@ -87,6 +93,8 @@ class EmergencyAlertFire(metaclass=Metaclass_EmergencyAlertFire):
         self.ir_front_left = kwargs.get('ir_front_left', bool())
         self.ir_rear_right = kwargs.get('ir_rear_right', bool())
         self.ir_rear_left = kwargs.get('ir_rear_left', bool())
+        self.smoke_left = kwargs.get('smoke_left', bool())
+        self.smoke_right = kwargs.get('smoke_right', bool())
 
     def __repr__(self):
         typename = self.__class__.__module__.split('.')
@@ -126,6 +134,10 @@ class EmergencyAlertFire(metaclass=Metaclass_EmergencyAlertFire):
         if self.ir_rear_right != other.ir_rear_right:
             return False
         if self.ir_rear_left != other.ir_rear_left:
+            return False
+        if self.smoke_left != other.smoke_left:
+            return False
+        if self.smoke_right != other.smoke_right:
             return False
         return True
 
@@ -198,3 +210,29 @@ class EmergencyAlertFire(metaclass=Metaclass_EmergencyAlertFire):
                 isinstance(value, bool), \
                 "The 'ir_rear_left' field must be of type 'bool'"
         self._ir_rear_left = value
+
+    @builtins.property
+    def smoke_left(self):
+        """Message field 'smoke_left'."""
+        return self._smoke_left
+
+    @smoke_left.setter
+    def smoke_left(self, value):
+        if __debug__:
+            assert \
+                isinstance(value, bool), \
+                "The 'smoke_left' field must be of type 'bool'"
+        self._smoke_left = value
+
+    @builtins.property
+    def smoke_right(self):
+        """Message field 'smoke_right'."""
+        return self._smoke_right
+
+    @smoke_right.setter
+    def smoke_right(self, value):
+        if __debug__:
+            assert \
+                isinstance(value, bool), \
+                "The 'smoke_right' field must be of type 'bool'"
+        self._smoke_right = value

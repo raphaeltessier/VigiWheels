@@ -22,6 +22,8 @@ interfaces__msg__EmergencyAlertFire__init(interfaces__msg__EmergencyAlertFire * 
   // ir_front_left
   // ir_rear_right
   // ir_rear_left
+  // smoke_left
+  // smoke_right
   return true;
 }
 
@@ -36,6 +38,8 @@ interfaces__msg__EmergencyAlertFire__fini(interfaces__msg__EmergencyAlertFire * 
   // ir_front_left
   // ir_rear_right
   // ir_rear_left
+  // smoke_left
+  // smoke_right
 }
 
 bool
@@ -64,6 +68,14 @@ interfaces__msg__EmergencyAlertFire__are_equal(const interfaces__msg__EmergencyA
   if (lhs->ir_rear_left != rhs->ir_rear_left) {
     return false;
   }
+  // smoke_left
+  if (lhs->smoke_left != rhs->smoke_left) {
+    return false;
+  }
+  // smoke_right
+  if (lhs->smoke_right != rhs->smoke_right) {
+    return false;
+  }
   return true;
 }
 
@@ -85,6 +97,10 @@ interfaces__msg__EmergencyAlertFire__copy(
   output->ir_rear_right = input->ir_rear_right;
   // ir_rear_left
   output->ir_rear_left = input->ir_rear_left;
+  // smoke_left
+  output->smoke_left = input->smoke_left;
+  // smoke_right
+  output->smoke_right = input->smoke_right;
   return true;
 }
 

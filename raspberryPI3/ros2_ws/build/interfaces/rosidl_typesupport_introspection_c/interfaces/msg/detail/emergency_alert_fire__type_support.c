@@ -31,7 +31,7 @@ void interfaces__msg__EmergencyAlertFire__rosidl_typesupport_introspection_c__Em
   interfaces__msg__EmergencyAlertFire__fini(message_memory);
 }
 
-static rosidl_typesupport_introspection_c__MessageMember interfaces__msg__EmergencyAlertFire__rosidl_typesupport_introspection_c__EmergencyAlertFire_message_member_array[5] = {
+static rosidl_typesupport_introspection_c__MessageMember interfaces__msg__EmergencyAlertFire__rosidl_typesupport_introspection_c__EmergencyAlertFire_message_member_array[7] = {
   {
     "fire_detected",  // name
     rosidl_typesupport_introspection_c__ROS_TYPE_BOOLEAN,  // type
@@ -116,13 +116,47 @@ static rosidl_typesupport_introspection_c__MessageMember interfaces__msg__Emerge
     NULL,  // fetch(index, &value) function pointer
     NULL,  // assign(index, value) function pointer
     NULL  // resize(index) function pointer
+  },
+  {
+    "smoke_left",  // name
+    rosidl_typesupport_introspection_c__ROS_TYPE_BOOLEAN,  // type
+    0,  // upper bound of string
+    NULL,  // members of sub message
+    false,  // is array
+    0,  // array size
+    false,  // is upper bound
+    offsetof(interfaces__msg__EmergencyAlertFire, smoke_left),  // bytes offset in struct
+    NULL,  // default value
+    NULL,  // size() function pointer
+    NULL,  // get_const(index) function pointer
+    NULL,  // get(index) function pointer
+    NULL,  // fetch(index, &value) function pointer
+    NULL,  // assign(index, value) function pointer
+    NULL  // resize(index) function pointer
+  },
+  {
+    "smoke_right",  // name
+    rosidl_typesupport_introspection_c__ROS_TYPE_BOOLEAN,  // type
+    0,  // upper bound of string
+    NULL,  // members of sub message
+    false,  // is array
+    0,  // array size
+    false,  // is upper bound
+    offsetof(interfaces__msg__EmergencyAlertFire, smoke_right),  // bytes offset in struct
+    NULL,  // default value
+    NULL,  // size() function pointer
+    NULL,  // get_const(index) function pointer
+    NULL,  // get(index) function pointer
+    NULL,  // fetch(index, &value) function pointer
+    NULL,  // assign(index, value) function pointer
+    NULL  // resize(index) function pointer
   }
 };
 
 static const rosidl_typesupport_introspection_c__MessageMembers interfaces__msg__EmergencyAlertFire__rosidl_typesupport_introspection_c__EmergencyAlertFire_message_members = {
   "interfaces__msg",  // message namespace
   "EmergencyAlertFire",  // message name
-  5,  // number of fields
+  7,  // number of fields
   sizeof(interfaces__msg__EmergencyAlertFire),
   interfaces__msg__EmergencyAlertFire__rosidl_typesupport_introspection_c__EmergencyAlertFire_message_member_array,  // message members
   interfaces__msg__EmergencyAlertFire__rosidl_typesupport_introspection_c__EmergencyAlertFire_init_function,  // function to initialize message memory (memory has to be allocated)

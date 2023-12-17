@@ -21,16 +21,48 @@ namespace msg
 namespace builder
 {
 
+class Init_EmergencyAlertFire_smoke_right
+{
+public:
+  explicit Init_EmergencyAlertFire_smoke_right(::interfaces::msg::EmergencyAlertFire & msg)
+  : msg_(msg)
+  {}
+  ::interfaces::msg::EmergencyAlertFire smoke_right(::interfaces::msg::EmergencyAlertFire::_smoke_right_type arg)
+  {
+    msg_.smoke_right = std::move(arg);
+    return std::move(msg_);
+  }
+
+private:
+  ::interfaces::msg::EmergencyAlertFire msg_;
+};
+
+class Init_EmergencyAlertFire_smoke_left
+{
+public:
+  explicit Init_EmergencyAlertFire_smoke_left(::interfaces::msg::EmergencyAlertFire & msg)
+  : msg_(msg)
+  {}
+  Init_EmergencyAlertFire_smoke_right smoke_left(::interfaces::msg::EmergencyAlertFire::_smoke_left_type arg)
+  {
+    msg_.smoke_left = std::move(arg);
+    return Init_EmergencyAlertFire_smoke_right(msg_);
+  }
+
+private:
+  ::interfaces::msg::EmergencyAlertFire msg_;
+};
+
 class Init_EmergencyAlertFire_ir_rear_left
 {
 public:
   explicit Init_EmergencyAlertFire_ir_rear_left(::interfaces::msg::EmergencyAlertFire & msg)
   : msg_(msg)
   {}
-  ::interfaces::msg::EmergencyAlertFire ir_rear_left(::interfaces::msg::EmergencyAlertFire::_ir_rear_left_type arg)
+  Init_EmergencyAlertFire_smoke_left ir_rear_left(::interfaces::msg::EmergencyAlertFire::_ir_rear_left_type arg)
   {
     msg_.ir_rear_left = std::move(arg);
-    return std::move(msg_);
+    return Init_EmergencyAlertFire_smoke_left(msg_);
   }
 
 private:

@@ -74,6 +74,16 @@ static bool _EmergencyAlertFire__cdr_serialize(
     cdr << (ros_message->ir_rear_left ? true : false);
   }
 
+  // Field name: smoke_left
+  {
+    cdr << (ros_message->smoke_left ? true : false);
+  }
+
+  // Field name: smoke_right
+  {
+    cdr << (ros_message->smoke_right ? true : false);
+  }
+
   return true;
 }
 
@@ -121,6 +131,20 @@ static bool _EmergencyAlertFire__cdr_deserialize(
     ros_message->ir_rear_left = tmp ? true : false;
   }
 
+  // Field name: smoke_left
+  {
+    uint8_t tmp;
+    cdr >> tmp;
+    ros_message->smoke_left = tmp ? true : false;
+  }
+
+  // Field name: smoke_right
+  {
+    uint8_t tmp;
+    cdr >> tmp;
+    ros_message->smoke_right = tmp ? true : false;
+  }
+
   return true;
 }  // NOLINT(readability/fn_size)
 
@@ -165,6 +189,18 @@ size_t get_serialized_size_interfaces__msg__EmergencyAlertFire(
   // field.name ir_rear_left
   {
     size_t item_size = sizeof(ros_message->ir_rear_left);
+    current_alignment += item_size +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
+  }
+  // field.name smoke_left
+  {
+    size_t item_size = sizeof(ros_message->smoke_left);
+    current_alignment += item_size +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
+  }
+  // field.name smoke_right
+  {
+    size_t item_size = sizeof(ros_message->smoke_right);
     current_alignment += item_size +
       eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
   }
@@ -220,6 +256,18 @@ size_t max_serialized_size_interfaces__msg__EmergencyAlertFire(
     current_alignment += array_size * sizeof(uint8_t);
   }
   // member: ir_rear_left
+  {
+    size_t array_size = 1;
+
+    current_alignment += array_size * sizeof(uint8_t);
+  }
+  // member: smoke_left
+  {
+    size_t array_size = 1;
+
+    current_alignment += array_size * sizeof(uint8_t);
+  }
+  // member: smoke_right
   {
     size_t array_size = 1;
 

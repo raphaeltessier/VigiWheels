@@ -95,6 +95,24 @@ bool interfaces__msg__emergency_alert_fire__convert_from_py(PyObject * _pymsg, v
     ros_message->ir_rear_left = (Py_True == field);
     Py_DECREF(field);
   }
+  {  // smoke_left
+    PyObject * field = PyObject_GetAttrString(_pymsg, "smoke_left");
+    if (!field) {
+      return false;
+    }
+    assert(PyBool_Check(field));
+    ros_message->smoke_left = (Py_True == field);
+    Py_DECREF(field);
+  }
+  {  // smoke_right
+    PyObject * field = PyObject_GetAttrString(_pymsg, "smoke_right");
+    if (!field) {
+      return false;
+    }
+    assert(PyBool_Check(field));
+    ros_message->smoke_right = (Py_True == field);
+    Py_DECREF(field);
+  }
 
   return true;
 }
@@ -166,6 +184,28 @@ PyObject * interfaces__msg__emergency_alert_fire__convert_to_py(void * raw_ros_m
     field = PyBool_FromLong(ros_message->ir_rear_left ? 1 : 0);
     {
       int rc = PyObject_SetAttrString(_pymessage, "ir_rear_left", field);
+      Py_DECREF(field);
+      if (rc) {
+        return NULL;
+      }
+    }
+  }
+  {  // smoke_left
+    PyObject * field = NULL;
+    field = PyBool_FromLong(ros_message->smoke_left ? 1 : 0);
+    {
+      int rc = PyObject_SetAttrString(_pymessage, "smoke_left", field);
+      Py_DECREF(field);
+      if (rc) {
+        return NULL;
+      }
+    }
+  }
+  {  // smoke_right
+    PyObject * field = NULL;
+    field = PyBool_FromLong(ros_message->smoke_right ? 1 : 0);
+    {
+      int rc = PyObject_SetAttrString(_pymessage, "smoke_right", field);
       Py_DECREF(field);
       if (rc) {
         return NULL;

@@ -43,6 +43,8 @@ struct EmergencyAlertFire_
       this->ir_front_left = false;
       this->ir_rear_right = false;
       this->ir_rear_left = false;
+      this->smoke_left = false;
+      this->smoke_right = false;
     }
   }
 
@@ -57,6 +59,8 @@ struct EmergencyAlertFire_
       this->ir_front_left = false;
       this->ir_rear_right = false;
       this->ir_rear_left = false;
+      this->smoke_left = false;
+      this->smoke_right = false;
     }
   }
 
@@ -76,6 +80,12 @@ struct EmergencyAlertFire_
   using _ir_rear_left_type =
     bool;
   _ir_rear_left_type ir_rear_left;
+  using _smoke_left_type =
+    bool;
+  _smoke_left_type smoke_left;
+  using _smoke_right_type =
+    bool;
+  _smoke_right_type smoke_right;
 
   // setters for named parameter idiom
   Type & set__fire_detected(
@@ -106,6 +116,18 @@ struct EmergencyAlertFire_
     const bool & _arg)
   {
     this->ir_rear_left = _arg;
+    return *this;
+  }
+  Type & set__smoke_left(
+    const bool & _arg)
+  {
+    this->smoke_left = _arg;
+    return *this;
+  }
+  Type & set__smoke_right(
+    const bool & _arg)
+  {
+    this->smoke_right = _arg;
     return *this;
   }
 
@@ -164,6 +186,12 @@ struct EmergencyAlertFire_
       return false;
     }
     if (this->ir_rear_left != other.ir_rear_left) {
+      return false;
+    }
+    if (this->smoke_left != other.smoke_left) {
+      return false;
+    }
+    if (this->smoke_right != other.smoke_right) {
       return false;
     }
     return true;

@@ -15,6 +15,10 @@ module interfaces {
       boolean ir_rear_right;
 
       boolean ir_rear_left;
+
+      boolean smoke_left;
+
+      boolean smoke_right;
     };
   };
 };
