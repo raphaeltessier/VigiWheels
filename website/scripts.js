@@ -133,6 +133,7 @@ let o3 = 0;
 let o4 = 0;
 let o5 = 0;
 let o6 = 0;
+let fire = 0;
 function waitForO(event) {
     if (event.key === 'o') {
         // L'action que vous voulez exécuter une fois que 'o' est pressé
@@ -154,6 +155,15 @@ function waitForO(event) {
         // L'action que vous voulez exécuter une fois que 'o' est pressé
         changeBatteryLevel();
         // Autre action que vous souhaitez réaliser ici
+    }
+    if (event.key === 'f') {
+        if (fire == 0) {
+            fireDetected(1);
+            fire = 1;
+        } else if (o1 == 1) {
+            fireDetected(0);
+            fire = 0;
+        }
     }
     if (event.key === '3') {
         if (o1 == 0) {
