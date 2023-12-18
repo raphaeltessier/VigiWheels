@@ -70,6 +70,7 @@ private:
     void ImagePosCallback(const interfaces::msg::ManometerInfo & pos_image){
         x1 = pos_image.x1;
         x2 = pos_image.x2;
+        mano_update = 1;
     }
 
 
@@ -93,11 +94,13 @@ private:
             
         }
         else if (mode == 2){
-            float mean = (x1 + x2)/2;
-            float correction = mean*FOV/RESOLUTION;
-            command_angle += int(correction);
-            if (command_angle >= 180) {command_angle = 180;} //saturation
-            else if (command_angle <= 0) {command_angle = 0;} //saturation
+            if (mano_update) {
+                float mean = (x1 + x2)/2 -320;
+                float correction = mean*FOV/RESOLUTION;
+                command_angle += int(correction);
+                if (command_angle >= 180) {command_angle = 180;} //saturation
+                else if (command_angle <= 0) {command_angle = 0;} //saturation
+            }
 
         }
 
@@ -123,6 +126,7 @@ private:
         int requested_angle;
         int command_angle = 90; //[0, 180]
         int sens = PAS_SCAN; //{-10; 10}
+        bool mano_update = 0;
 
         float x1;
         float x2;
