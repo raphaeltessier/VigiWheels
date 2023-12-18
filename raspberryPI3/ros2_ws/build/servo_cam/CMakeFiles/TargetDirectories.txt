@@ -1,0 +1,10 @@
+/home/insa/Desktop/VigiWheels2.0/raspberryPI3/ros2_ws/build/servo_cam/CMakeFiles/uninstall.dir
+/home/insa/Desktop/VigiWheels2.0/raspberryPI3/ros2_ws/build/servo_cam/CMakeFiles/servo_cam_uninstall.dir
+/home/insa/Desktop/VigiWheels2.0/raspberryPI3/ros2_ws/build/servo_cam/CMakeFiles/servo_cam.dir
+/home/insa/Desktop/VigiWheels2.0/raspberryPI3/ros2_ws/build/servo_cam/CMakeFiles/test.dir
+/home/insa/Desktop/VigiWheels2.0/raspberryPI3/ros2_ws/build/servo_cam/CMakeFiles/edit_cache.dir
+/home/insa/Desktop/VigiWheels2.0/raspberryPI3/ros2_ws/build/servo_cam/CMakeFiles/rebuild_cache.dir
+/home/insa/Desktop/VigiWheels2.0/raspberryPI3/ros2_ws/build/servo_cam/CMakeFiles/list_install_components.dir
+/home/insa/Desktop/VigiWheels2.0/raspberryPI3/ros2_ws/build/servo_cam/CMakeFiles/install.dir
+/home/insa/Desktop/VigiWheels2.0/raspberryPI3/ros2_ws/build/servo_cam/CMakeFiles/install/local.dir
+/home/insa/Desktop/VigiWheels2.0/raspberryPI3/ros2_ws/build/servo_cam/CMakeFiles/install/strip.dir

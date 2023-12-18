@@ -1,0 +1,40 @@
+[01m[K/home/insa/Desktop/VigiWheels2.0/raspberryPI3/ros2_ws/src/fire_detection/src/processing_data_fire.cpp:[m[K In constructor ‘[01m[KProcessingDataFireNode::ProcessingDataFireNode()[m[K’:
+[01m[K/home/insa/Desktop/VigiWheels2.0/raspberryPI3/ros2_ws/src/fire_detection/src/processing_data_fire.cpp:11:91:[m[K [01;31m[Kerror: [m[Kclass ‘[01m[KProcessingDataFireNode[m[K’ does not have any field named ‘[01m[KFrontRightSensor[m[K’
+   11 |     ProcessingDataFireNode() : Node("processing_data_fire_node"), fireIsDetected{false},  [01;31m[KFrontRightSensor[m[K{false}, FrontLeftSensor{false}, RearRightSensor{false}, RearLeftSensor{false}, RightSmokeSensor{false}, LeftSmokeSensor{false}, window_size_{100}, counter_{0}
+      |                                                                                           [01;31m[K^~~~~~~~~~~~~~~~[m[K
+[01m[K/home/insa/Desktop/VigiWheels2.0/raspberryPI3/ros2_ws/src/fire_detection/src/processing_data_fire.cpp:11:116:[m[K [01;31m[Kerror: [m[Kclass ‘[01m[KProcessingDataFireNode[m[K’ does not have any field named ‘[01m[KFrontLeftSensor[m[K’
+   11 |     ProcessingDataFireNode() : Node("processing_data_fire_node"), fireIsDetected{false},  FrontRightSensor{false}, [01;31m[KFrontLeftSensor[m[K{false}, RearRightSensor{false}, RearLeftSensor{false}, RightSmokeSensor{false}, LeftSmokeSensor{false}, window_size_{100}, counter_{0}
+      |                                                                                                                    [01;31m[K^~~~~~~~~~~~~~~[m[K
+[01m[K/home/insa/Desktop/VigiWheels2.0/raspberryPI3/ros2_ws/src/fire_detection/src/processing_data_fire.cpp:11:140:[m[K [01;31m[Kerror: [m[Kclass ‘[01m[KProcessingDataFireNode[m[K’ does not have any field named ‘[01m[KRearRightSensor[m[K’
+   11 | ode() : Node("processing_data_fire_node"), fireIsDetected{false},  FrontRightSensor{false}, FrontLeftSensor{false}, [01;31m[KRearRightSensor[m[K{false}, RearLeftSensor{false}, RightSmokeSensor{false}, LeftSmokeSensor{false}, window_size_{100}, counter_{0}
+      |                                                                                                                     [01;31m[K^~~~~~~~~~~~~~~[m[K
+
+[01m[K/home/insa/Desktop/VigiWheels2.0/raspberryPI3/ros2_ws/src/fire_detection/src/processing_data_fire.cpp:11:164:[m[K [01;31m[Kerror: [m[Kclass ‘[01m[KProcessingDataFireNode[m[K’ does not have any field named ‘[01m[KRearLeftSensor[m[K’
+   11 | _data_fire_node"), fireIsDetected{false},  FrontRightSensor{false}, FrontLeftSensor{false}, RearRightSensor{false}, [01;31m[KRearLeftSensor[m[K{false}, RightSmokeSensor{false}, LeftSmokeSensor{false}, window_size_{100}, counter_{0}
+      |                                                                                                                     [01;31m[K^~~~~~~~~~~~~~[m[K
+
+[01m[K/home/insa/Desktop/VigiWheels2.0/raspberryPI3/ros2_ws/src/fire_detection/src/processing_data_fire.cpp:[m[K In member function ‘[01m[Kvoid ProcessingDataFireNode::dataFireCallBack(const FireSensor&)[m[K’:
+[01m[K/home/insa/Desktop/VigiWheels2.0/raspberryPI3/ros2_ws/src/fire_detection/src/processing_data_fire.cpp:104:13:[m[K [01;31m[Kerror: [m[K‘[01m[KFrontLeftIRSensor[m[K’ was not declared in this scope; did you mean ‘[01m[KFrontLeftiRSensor[m[K’?
+  104 |             [01;31m[KFrontLeftIRSensor[m[K = true;
+      |             [01;31m[K^~~~~~~~~~~~~~~~~[m[K
+      |             [32m[KFrontLeftiRSensor[m[K
+[01m[K/home/insa/Desktop/VigiWheels2.0/raspberryPI3/ros2_ws/src/fire_detection/src/processing_data_fire.cpp:[m[K In member function ‘[01m[Kvoid ProcessingDataFireNode::sendEmergencyAltert()[m[K’:
+[01m[K/home/insa/Desktop/VigiWheels2.0/raspberryPI3/ros2_ws/src/fire_detection/src/processing_data_fire.cpp:137:30:[m[K [01;31m[Kerror: [m[K‘[01m[KFrontRightSensor[m[K’ was not declared in this scope; did you mean ‘[01m[KFrontRightIRSensor[m[K’?
+  137 |         msg.ir_front_right = [01;31m[KFrontRightSensor[m[K;
+      |                              [01;31m[K^~~~~~~~~~~~~~~~[m[K
+      |                              [32m[KFrontRightIRSensor[m[K
+[01m[K/home/insa/Desktop/VigiWheels2.0/raspberryPI3/ros2_ws/src/fire_detection/src/processing_data_fire.cpp:138:29:[m[K [01;31m[Kerror: [m[K‘[01m[KFrontLeftSensor[m[K’ was not declared in this scope; did you mean ‘[01m[KFrontLeftiRSensor[m[K’?
+  138 |         msg.ir_front_left = [01;31m[KFrontLeftSensor[m[K;
+      |                             [01;31m[K^~~~~~~~~~~~~~~[m[K
+      |                             [32m[KFrontLeftiRSensor[m[K
+[01m[K/home/insa/Desktop/VigiWheels2.0/raspberryPI3/ros2_ws/src/fire_detection/src/processing_data_fire.cpp:139:29:[m[K [01;31m[Kerror: [m[K‘[01m[KRearRightSensor[m[K’ was not declared in this scope; did you mean ‘[01m[KRearRightIRSensor[m[K’?
+  139 |         msg.ir_rear_right = [01;31m[KRearRightSensor[m[K;
+      |                             [01;31m[K^~~~~~~~~~~~~~~[m[K
+      |                             [32m[KRearRightIRSensor[m[K
+[01m[K/home/insa/Desktop/VigiWheels2.0/raspberryPI3/ros2_ws/src/fire_detection/src/processing_data_fire.cpp:140:28:[m[K [01;31m[Kerror: [m[K‘[01m[KRearLeftSensor[m[K’ was not declared in this scope; did you mean ‘[01m[KRearLeftIRSensor[m[K’?
+  140 |         msg.ir_rear_left = [01;31m[KRearLeftSensor[m[K;
+      |                            [01;31m[K^~~~~~~~~~~~~~[m[K
+      |                            [32m[KRearLeftIRSensor[m[K
+gmake[2]: *** [CMakeFiles/processing_data_fire_node.dir/build.make:76: CMakeFiles/processing_data_fire_node.dir/src/processing_data_fire.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/processing_data_fire_node.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

@@ -1,0 +1,181 @@
+[ 50%] [32mBuilding CXX object CMakeFiles/processing_data_fire_node.dir/src/processing_data_fire.cpp.o[0m
+[01m[K/home/insa/Desktop/VigiWheels2.0/raspberryPI3/ros2_ws/src/fire_detection/src/processing_data_fire.cpp:66:6:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K;[m[K’ after class definition
+   66 |     }
+      |      [01;31m[K^[m[K
+      |      [32m[K;[m[K
+[01m[K/home/insa/Desktop/VigiWheels2.0/raspberryPI3/ros2_ws/src/fire_detection/src/processing_data_fire.cpp:[m[K In constructor ‘[01m[KProcessingDataFireNode::ProcessingDataFireNode()[m[K’:
+[01m[K/home/insa/Desktop/VigiWheels2.0/raspberryPI3/ros2_ws/src/fire_detection/src/processing_data_fire.cpp:11:67:[m[K [01;31m[Kerror: [m[Kclass ‘[01m[KProcessingDataFireNode[m[K’ does not have any field named ‘[01m[KfireIsDetected[m[K’
+   11 |     ProcessingDataFireNode() : Node("processing_data_fire_node"), [01;31m[KfireIsDetected[m[K{false},  FrontRightSensor{false}, FrontLeftSensor{false}, RearRightSensor{false}, RearLeftSensor{false}, RightSmokeSensor{false}, LeftSmokeSensor{false}, window_size_{100}, counter_{0}
+      |                                                                   [01;31m[K^~~~~~~~~~~~~~[m[K
+[01m[K/home/insa/Desktop/VigiWheels2.0/raspberryPI3/ros2_ws/src/fire_detection/src/processing_data_fire.cpp:11:91:[m[K [01;31m[Kerror: [m[Kclass ‘[01m[KProcessingDataFireNode[m[K’ does not have any field named ‘[01m[KFrontRightSensor[m[K’
+   11 |     ProcessingDataFireNode() : Node("processing_data_fire_node"), fireIsDetected{false},  [01;31m[KFrontRightSensor[m[K{false}, FrontLeftSensor{false}, RearRightSensor{false}, RearLeftSensor{false}, RightSmokeSensor{false}, LeftSmokeSensor{false}, window_size_{100}, counter_{0}
+      |                                                                                           [01;31m[K^~~~~~~~~~~~~~~~[m[K
+[01m[K/home/insa/Desktop/VigiWheels2.0/raspberryPI3/ros2_ws/src/fire_detection/src/processing_data_fire.cpp:11:116:[m[K [01;31m[Kerror: [m[Kclass ‘[01m[KProcessingDataFireNode[m[K’ does not have any field named ‘[01m[KFrontLeftSensor[m[K’
+   11 |     ProcessingDataFireNode() : Node("processing_data_fire_node"), fireIsDetected{false},  FrontRightSensor{false}, [01;31m[KFrontLeftSensor[m[K{false}, RearRightSensor{false}, RearLeftSensor{false}, RightSmokeSensor{false}, LeftSmokeSensor{false}, window_size_{100}, counter_{0}
+      |                                                                                                                    [01;31m[K^~~~~~~~~~~~~~~[m[K
+[01m[K/home/insa/Desktop/VigiWheels2.0/raspberryPI3/ros2_ws/src/fire_detection/src/processing_data_fire.cpp:11:140:[m[K [01;31m[Kerror: [m[Kclass ‘[01m[KProcessingDataFireNode[m[K’ does not have any field named ‘[01m[KRearRightSensor[m[K’
+   11 | ode() : Node("processing_data_fire_node"), fireIsDetected{false},  FrontRightSensor{false}, FrontLeftSensor{false}, [01;31m[KRearRightSensor[m[K{false}, RearLeftSensor{false}, RightSmokeSensor{false}, LeftSmokeSensor{false}, window_size_{100}, counter_{0}
+      |                                                                                                                     [01;31m[K^~~~~~~~~~~~~~~[m[K
+
+[01m[K/home/insa/Desktop/VigiWheels2.0/raspberryPI3/ros2_ws/src/fire_detection/src/processing_data_fire.cpp:11:164:[m[K [01;31m[Kerror: [m[Kclass ‘[01m[KProcessingDataFireNode[m[K’ does not have any field named ‘[01m[KRearLeftSensor[m[K’
+   11 | _data_fire_node"), fireIsDetected{false},  FrontRightSensor{false}, FrontLeftSensor{false}, RearRightSensor{false}, [01;31m[KRearLeftSensor[m[K{false}, RightSmokeSensor{false}, LeftSmokeSensor{false}, window_size_{100}, counter_{0}
+      |                                                                                                                     [01;31m[K^~~~~~~~~~~~~~[m[K
+
+[01m[K/home/insa/Desktop/VigiWheels2.0/raspberryPI3/ros2_ws/src/fire_detection/src/processing_data_fire.cpp:11:187:[m[K [01;31m[Kerror: [m[Kclass ‘[01m[KProcessingDataFireNode[m[K’ does not have any field named ‘[01m[KRightSmokeSensor[m[K’
+   11 | IsDetected{false},  FrontRightSensor{false}, FrontLeftSensor{false}, RearRightSensor{false}, RearLeftSensor{false}, [01;31m[KRightSmokeSensor[m[K{false}, LeftSmokeSensor{false}, window_size_{100}, counter_{0}
+      |                                                                                                                     [01;31m[K^~~~~~~~~~~~~~~~[m[K
+
+[01m[K/home/insa/Desktop/VigiWheels2.0/raspberryPI3/ros2_ws/src/fire_detection/src/processing_data_fire.cpp:11:212:[m[K [01;31m[Kerror: [m[Kclass ‘[01m[KProcessingDataFireNode[m[K’ does not have any field named ‘[01m[KLeftSmokeSensor[m[K’
+   11 | RightSensor{false}, FrontLeftSensor{false}, RearRightSensor{false}, RearLeftSensor{false}, RightSmokeSensor{false}, [01;31m[KLeftSmokeSensor[m[K{false}, window_size_{100}, counter_{0}
+      |                                                                                                                     [01;31m[K^~~~~~~~~~~~~~~[m[K
+
+[01m[K/home/insa/Desktop/VigiWheels2.0/raspberryPI3/ros2_ws/src/fire_detection/src/processing_data_fire.cpp:11:236:[m[K [01;31m[Kerror: [m[Kclass ‘[01m[KProcessingDataFireNode[m[K’ does not have any field named ‘[01m[Kwindow_size_[m[K’
+   11 | tLeftSensor{false}, RearRightSensor{false}, RearLeftSensor{false}, RightSmokeSensor{false}, LeftSmokeSensor{false}, [01;31m[Kwindow_size_[m[K{100}, counter_{0}
+      |                                                                                                                     [01;31m[K^~~~~~~~~~~~[m[K
+
+[01m[K/home/insa/Desktop/VigiWheels2.0/raspberryPI3/ros2_ws/src/fire_detection/src/processing_data_fire.cpp:11:255:[m[K [01;31m[Kerror: [m[Kclass ‘[01m[KProcessingDataFireNode[m[K’ does not have any field named ‘[01m[Kcounter_[m[K’
+   11 |  RearRightSensor{false}, RearLeftSensor{false}, RightSmokeSensor{false}, LeftSmokeSensor{false}, window_size_{100}, [01;31m[Kcounter_[m[K{0}
+      |                                                                                                                     [01;31m[K^~~~~~~~[m[K
+
+[01m[K/home/insa/Desktop/VigiWheels2.0/raspberryPI3/ros2_ws/src/fire_detection/src/processing_data_fire.cpp:14:9:[m[K [01;31m[Kerror: [m[K‘[01m[Kbuffer_[m[K’ was not declared in this scope
+   14 |         [01;31m[Kbuffer_[m[K.resize(window_size_, 0);
+      |         [01;31m[K^~~~~~~[m[K
+[01m[K/home/insa/Desktop/VigiWheels2.0/raspberryPI3/ros2_ws/src/fire_detection/src/processing_data_fire.cpp:14:24:[m[K [01;31m[Kerror: [m[K‘[01m[Kwindow_size_[m[K’ was not declared in this scope
+   14 |         buffer_.resize([01;31m[Kwindow_size_[m[K, 0);
+      |                        [01;31m[K^~~~~~~~~~~~[m[K
+[01m[K/home/insa/Desktop/VigiWheels2.0/raspberryPI3/ros2_ws/src/fire_detection/src/processing_data_fire.cpp:15:9:[m[K [01;31m[Kerror: [m[K‘[01m[Ksubscription_data_fire[m[K’ was not declared in this scope
+   15 |         [01;31m[Ksubscription_data_fire[m[K = this->create_subscription<interfaces::msg::FireSensor>("data_fire", 10, std::bind(&ProcessingDataFireNode::dataFireCallBack, this, std::placeholders::_1));
+      |         [01;31m[K^~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/insa/Desktop/VigiWheels2.0/raspberryPI3/ros2_ws/src/fire_detection/src/processing_data_fire.cpp:15:141:[m[K [01;31m[Kerror: [m[K‘[01m[KdataFireCallBack[m[K’ is not a member of ‘[01m[KProcessingDataFireNode[m[K’
+   15 | a_fire = this->create_subscription<interfaces::msg::FireSensor>("data_fire", 10, std::bind(&ProcessingDataFireNode::[01;31m[KdataFireCallBack[m[K, this, std::placeholders::_1));
+      |                                                                                                                     [01;31m[K^~~~~~~~~~~~~~~~[m[K
+
+[01m[K/home/insa/Desktop/VigiWheels2.0/raspberryPI3/ros2_ws/src/fire_detection/src/processing_data_fire.cpp:16:9:[m[K [01;31m[Kerror: [m[K‘[01m[Kpublisher_processing_data[m[K’ was not declared in this scope
+   16 |         [01;31m[Kpublisher_processing_data[m[K = this->create_publisher<interfaces::msg::EmergencyAlertFire>("emergency_alert", 10);
+      |         [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/insa/Desktop/VigiWheels2.0/raspberryPI3/ros2_ws/src/fire_detection/src/processing_data_fire.cpp:17:9:[m[K [01;31m[Kerror: [m[K‘[01m[Ktimer_proccesing_data[m[K’ was not declared in this scope
+   17 |         [01;31m[Ktimer_proccesing_data[m[K = this->create_wall_timer(std::chrono::milliseconds(250), bind(&ProcessingDataFireNode::sendEmergencyAltert, this));
+      |         [01;31m[K^~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/insa/Desktop/VigiWheels2.0/raspberryPI3/ros2_ws/src/fire_detection/src/processing_data_fire.cpp:17:119:[m[K [01;31m[Kerror: [m[K‘[01m[KsendEmergencyAltert[m[K’ is not a member of ‘[01m[KProcessingDataFireNode[m[K’
+   17 |       timer_proccesing_data = this->create_wall_timer(std::chrono::milliseconds(250), bind(&ProcessingDataFireNode::[01;31m[KsendEmergencyAltert[m[K, this));
+      |                                                                                                                     [01;31m[K^~~~~~~~~~~~~~~~~~~[m[K
+
+[01m[K/home/insa/Desktop/VigiWheels2.0/raspberryPI3/ros2_ws/src/fire_detection/src/processing_data_fire.cpp:[m[K In member function ‘[01m[Kint ProcessingDataFireNode::processIRSensorData(int)[m[K’:
+[01m[K/home/insa/Desktop/VigiWheels2.0/raspberryPI3/ros2_ws/src/fire_detection/src/processing_data_fire.cpp:23:13:[m[K [01;31m[Kerror: [m[K‘[01m[Kcounter_[m[K’ was not declared in this scope
+   23 |         if ([01;31m[Kcounter_[m[K < window_size_)
+      |             [01;31m[K^~~~~~~~[m[K
+[01m[K/home/insa/Desktop/VigiWheels2.0/raspberryPI3/ros2_ws/src/fire_detection/src/processing_data_fire.cpp:23:24:[m[K [01;31m[Kerror: [m[K‘[01m[Kwindow_size_[m[K’ was not declared in this scope
+   23 |         if (counter_ < [01;31m[Kwindow_size_[m[K)
+      |                        [01;31m[K^~~~~~~~~~~~[m[K
+[01m[K/home/insa/Desktop/VigiWheels2.0/raspberryPI3/ros2_ws/src/fire_detection/src/processing_data_fire.cpp:25:13:[m[K [01;31m[Kerror: [m[K‘[01m[Kbuffer_[m[K’ was not declared in this scope
+   25 |             [01;31m[Kbuffer_[m[K[counter_] = sensorValue;
+      |             [01;31m[K^~~~~~~[m[K
+[01m[K/home/insa/Desktop/VigiWheels2.0/raspberryPI3/ros2_ws/src/fire_detection/src/processing_data_fire.cpp:32:13:[m[K [01;31m[Kerror: [m[K‘[01m[Kbuffer_[m[K’ was not declared in this scope
+   32 |             [01;31m[Kbuffer_[m[K[counter_ % window_size_] = sensorValue;
+      |             [01;31m[K^~~~~~~[m[K
+[01m[K/home/insa/Desktop/VigiWheels2.0/raspberryPI3/ros2_ws/src/fire_detection/src/processing_data_fire.cpp:36:36:[m[K [01;31m[Kerror: [m[K‘[01m[KcalculateMovingAverage[m[K’ was not declared in this scope
+   36 |             double movingAverage = [01;31m[KcalculateMovingAverage[m[K();
+      |                                    [01;31m[K^~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/insa/Desktop/VigiWheels2.0/raspberryPI3/ros2_ws/src/fire_detection/src/processing_data_fire.cpp:39:40:[m[K [01;31m[Kerror: [m[K‘[01m[KcalculateStandardDeviation[m[K’ was not declared in this scope
+   39 |             double standardDeviation = [01;31m[KcalculateStandardDeviation[m[K();
+      |                                        [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/insa/Desktop/VigiWheels2.0/raspberryPI3/ros2_ws/src/fire_detection/src/processing_data_fire.cpp:[m[K At global scope:
+[01m[K/home/insa/Desktop/VigiWheels2.0/raspberryPI3/ros2_ws/src/fire_detection/src/processing_data_fire.cpp:68:37:[m[K [01;31m[Kerror: [m[Knon-member function ‘[01m[Kdouble calculateMovingAverage()[m[K’ cannot have cv-qualifier
+   68 |     double calculateMovingAverage() [01;31m[Kconst[m[K
+      |                                     [01;31m[K^~~~~[m[K
+[01m[K/home/insa/Desktop/VigiWheels2.0/raspberryPI3/ros2_ws/src/fire_detection/src/processing_data_fire.cpp:[m[K In function ‘[01m[Kdouble calculateMovingAverage()[m[K’:
+[01m[K/home/insa/Desktop/VigiWheels2.0/raspberryPI3/ros2_ws/src/fire_detection/src/processing_data_fire.cpp:71:26:[m[K [01;31m[Kerror: [m[K‘[01m[Kbuffer_[m[K’ was not declared in this scope
+   71 |         for (int value : [01;31m[Kbuffer_[m[K) {
+      |                          [01;31m[K^~~~~~~[m[K
+[01m[K/home/insa/Desktop/VigiWheels2.0/raspberryPI3/ros2_ws/src/fire_detection/src/processing_data_fire.cpp:74:22:[m[K [01;31m[Kerror: [m[K‘[01m[Kwindow_size_[m[K’ was not declared in this scope
+   74 |         return sum / [01;31m[Kwindow_size_[m[K;
+      |                      [01;31m[K^~~~~~~~~~~~[m[K
+[01m[K/home/insa/Desktop/VigiWheels2.0/raspberryPI3/ros2_ws/src/fire_detection/src/processing_data_fire.cpp:[m[K At global scope:
+[01m[K/home/insa/Desktop/VigiWheels2.0/raspberryPI3/ros2_ws/src/fire_detection/src/processing_data_fire.cpp:77:41:[m[K [01;31m[Kerror: [m[Knon-member function ‘[01m[Kdouble calculateStandardDeviation()[m[K’ cannot have cv-qualifier
+   77 |     double calculateStandardDeviation() [01;31m[Kconst[m[K
+      |                                         [01;31m[K^~~~~[m[K
+[01m[K/home/insa/Desktop/VigiWheels2.0/raspberryPI3/ros2_ws/src/fire_detection/src/processing_data_fire.cpp:[m[K In function ‘[01m[Kdouble calculateStandardDeviation()[m[K’:
+[01m[K/home/insa/Desktop/VigiWheels2.0/raspberryPI3/ros2_ws/src/fire_detection/src/processing_data_fire.cpp:82:26:[m[K [01;31m[Kerror: [m[K‘[01m[Kbuffer_[m[K’ was not declared in this scope
+   82 |         for (int value : [01;31m[Kbuffer_[m[K)
+      |                          [01;31m[K^~~~~~~[m[K
+[01m[K/home/insa/Desktop/VigiWheels2.0/raspberryPI3/ros2_ws/src/fire_detection/src/processing_data_fire.cpp:86:50:[m[K [01;31m[Kerror: [m[K‘[01m[Kwindow_size_[m[K’ was not declared in this scope
+   86 |         return std::sqrt(sumSquaredDifferences / [01;31m[Kwindow_size_[m[K);
+      |                                                  [01;31m[K^~~~~~~~~~~~[m[K
+[01m[K/home/insa/Desktop/VigiWheels2.0/raspberryPI3/ros2_ws/src/fire_detection/src/processing_data_fire.cpp:[m[K In function ‘[01m[Kvoid dataFireCallBack(const FireSensor&)[m[K’:
+[01m[K/home/insa/Desktop/VigiWheels2.0/raspberryPI3/ros2_ws/src/fire_detection/src/processing_data_fire.cpp:91:23:[m[K [01;31m[Kerror: [m[K‘[01m[KprocessIRSensorData[m[K’ was not declared in this scope
+   91 |         int result1 = [01;31m[KprocessIRSensorData[m[K(msg.ir_sensor1); //Avant Droit
+      |                       [01;31m[K^~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/insa/Desktop/VigiWheels2.0/raspberryPI3/ros2_ws/src/fire_detection/src/processing_data_fire.cpp:95:23:[m[K [01;31m[Kerror: [m[K‘[01m[KprocessSmokeSensorData[m[K’ was not declared in this scope
+   95 |         int result5 = [01;31m[KprocessSmokeSensorData[m[K(msg.smoke_sensor1);
+      |                       [01;31m[K^~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/insa/Desktop/VigiWheels2.0/raspberryPI3/ros2_ws/src/fire_detection/src/processing_data_fire.cpp:100:13:[m[K [01;31m[Kerror: [m[K‘[01m[KFrontRightIRSensor[m[K’ was not declared in this scope
+  100 |             [01;31m[KFrontRightIRSensor[m[K = true;
+      |             [01;31m[K^~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/insa/Desktop/VigiWheels2.0/raspberryPI3/ros2_ws/src/fire_detection/src/processing_data_fire.cpp:101:13:[m[K [01;31m[Kerror: [m[K‘[01m[KfireIsDetected[m[K’ was not declared in this scope
+  101 |             [01;31m[KfireIsDetected[m[K = true;
+      |             [01;31m[K^~~~~~~~~~~~~~[m[K
+[01m[K/home/insa/Desktop/VigiWheels2.0/raspberryPI3/ros2_ws/src/fire_detection/src/processing_data_fire.cpp:105:13:[m[K [01;31m[Kerror: [m[K‘[01m[KFrontLeftIRSensor[m[K’ was not declared in this scope
+  105 |             [01;31m[KFrontLeftIRSensor[m[K = true;
+      |             [01;31m[K^~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/insa/Desktop/VigiWheels2.0/raspberryPI3/ros2_ws/src/fire_detection/src/processing_data_fire.cpp:106:13:[m[K [01;31m[Kerror: [m[K‘[01m[KfireIsDetected[m[K’ was not declared in this scope
+  106 |             [01;31m[KfireIsDetected[m[K = true;
+      |             [01;31m[K^~~~~~~~~~~~~~[m[K
+[01m[K/home/insa/Desktop/VigiWheels2.0/raspberryPI3/ros2_ws/src/fire_detection/src/processing_data_fire.cpp:110:13:[m[K [01;31m[Kerror: [m[K‘[01m[KRearLeftIRSensor[m[K’ was not declared in this scope
+  110 |             [01;31m[KRearLeftIRSensor[m[K = true;
+      |             [01;31m[K^~~~~~~~~~~~~~~~[m[K
+[01m[K/home/insa/Desktop/VigiWheels2.0/raspberryPI3/ros2_ws/src/fire_detection/src/processing_data_fire.cpp:111:13:[m[K [01;31m[Kerror: [m[K‘[01m[KfireIsDetected[m[K’ was not declared in this scope
+  111 |             [01;31m[KfireIsDetected[m[K = true;
+      |             [01;31m[K^~~~~~~~~~~~~~[m[K
+[01m[K/home/insa/Desktop/VigiWheels2.0/raspberryPI3/ros2_ws/src/fire_detection/src/processing_data_fire.cpp:115:13:[m[K [01;31m[Kerror: [m[K‘[01m[KRearRightIRSensor[m[K’ was not declared in this scope
+  115 |             [01;31m[KRearRightIRSensor[m[K = true;
+      |             [01;31m[K^~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/insa/Desktop/VigiWheels2.0/raspberryPI3/ros2_ws/src/fire_detection/src/processing_data_fire.cpp:116:13:[m[K [01;31m[Kerror: [m[K‘[01m[KfireIsDetected[m[K’ was not declared in this scope
+  116 |             [01;31m[KfireIsDetected[m[K = true;
+      |             [01;31m[K^~~~~~~~~~~~~~[m[K
+[01m[K/home/insa/Desktop/VigiWheels2.0/raspberryPI3/ros2_ws/src/fire_detection/src/processing_data_fire.cpp:120:13:[m[K [01;31m[Kerror: [m[K‘[01m[KRightSmokeSensor[m[K’ was not declared in this scope
+  120 |             [01;31m[KRightSmokeSensor[m[K = true;
+      |             [01;31m[K^~~~~~~~~~~~~~~~[m[K
+[01m[K/home/insa/Desktop/VigiWheels2.0/raspberryPI3/ros2_ws/src/fire_detection/src/processing_data_fire.cpp:121:13:[m[K [01;31m[Kerror: [m[K‘[01m[KfireIsDetected[m[K’ was not declared in this scope
+  121 |             [01;31m[KfireIsDetected[m[K = true;
+      |             [01;31m[K^~~~~~~~~~~~~~[m[K
+[01m[K/home/insa/Desktop/VigiWheels2.0/raspberryPI3/ros2_ws/src/fire_detection/src/processing_data_fire.cpp:125:13:[m[K [01;31m[Kerror: [m[K‘[01m[KLeftSmokeSensor[m[K’ was not declared in this scope
+  125 |             [01;31m[KLeftSmokeSensor[m[K = true;
+      |             [01;31m[K^~~~~~~~~~~~~~~[m[K
+[01m[K/home/insa/Desktop/VigiWheels2.0/raspberryPI3/ros2_ws/src/fire_detection/src/processing_data_fire.cpp:126:13:[m[K [01;31m[Kerror: [m[K‘[01m[KfireIsDetected[m[K’ was not declared in this scope
+  126 |             [01;31m[KfireIsDetected[m[K = true;
+      |             [01;31m[K^~~~~~~~~~~~~~[m[K
+[01m[K/home/insa/Desktop/VigiWheels2.0/raspberryPI3/ros2_ws/src/fire_detection/src/processing_data_fire.cpp:130:13:[m[K [01;31m[Kerror: [m[K‘[01m[KfireIsDetected[m[K’ was not declared in this scope
+  130 |             [01;31m[KfireIsDetected[m[K = false;
+      |             [01;31m[K^~~~~~~~~~~~~~[m[K
+[01m[K/home/insa/Desktop/VigiWheels2.0/raspberryPI3/ros2_ws/src/fire_detection/src/processing_data_fire.cpp:[m[K In function ‘[01m[Kvoid sendEmergencyAltert()[m[K’:
+[01m[K/home/insa/Desktop/VigiWheels2.0/raspberryPI3/ros2_ws/src/fire_detection/src/processing_data_fire.cpp:137:29:[m[K [01;31m[Kerror: [m[K‘[01m[KfireIsDetected[m[K’ was not declared in this scope
+  137 |         msg.fire_detected = [01;31m[KfireIsDetected[m[K;
+      |                             [01;31m[K^~~~~~~~~~~~~~[m[K
+[01m[K/home/insa/Desktop/VigiWheels2.0/raspberryPI3/ros2_ws/src/fire_detection/src/processing_data_fire.cpp:138:30:[m[K [01;31m[Kerror: [m[K‘[01m[KFrontRightSensor[m[K’ was not declared in this scope
+  138 |         msg.ir_front_right = [01;31m[KFrontRightSensor[m[K;
+      |                              [01;31m[K^~~~~~~~~~~~~~~~[m[K
+[01m[K/home/insa/Desktop/VigiWheels2.0/raspberryPI3/ros2_ws/src/fire_detection/src/processing_data_fire.cpp:139:29:[m[K [01;31m[Kerror: [m[K‘[01m[KFrontLeftSensor[m[K’ was not declared in this scope
+  139 |         msg.ir_front_left = [01;31m[KFrontLeftSensor[m[K;
+      |                             [01;31m[K^~~~~~~~~~~~~~~[m[K
+[01m[K/home/insa/Desktop/VigiWheels2.0/raspberryPI3/ros2_ws/src/fire_detection/src/processing_data_fire.cpp:140:29:[m[K [01;31m[Kerror: [m[K‘[01m[KRearRightSensor[m[K’ was not declared in this scope
+  140 |         msg.ir_rear_right = [01;31m[KRearRightSensor[m[K;
+      |                             [01;31m[K^~~~~~~~~~~~~~~[m[K
+[01m[K/home/insa/Desktop/VigiWheels2.0/raspberryPI3/ros2_ws/src/fire_detection/src/processing_data_fire.cpp:141:28:[m[K [01;31m[Kerror: [m[K‘[01m[KRearLeftSensor[m[K’ was not declared in this scope
+  141 |         msg.ir_rear_left = [01;31m[KRearLeftSensor[m[K;
+      |                            [01;31m[K^~~~~~~~~~~~~~[m[K
+[01m[K/home/insa/Desktop/VigiWheels2.0/raspberryPI3/ros2_ws/src/fire_detection/src/processing_data_fire.cpp:142:27:[m[K [01;31m[Kerror: [m[K‘[01m[KRightSmokeSensor[m[K’ was not declared in this scope
+  142 |         msg.smoke_right = [01;31m[KRightSmokeSensor[m[K;
+      |                           [01;31m[K^~~~~~~~~~~~~~~~[m[K
+[01m[K/home/insa/Desktop/VigiWheels2.0/raspberryPI3/ros2_ws/src/fire_detection/src/processing_data_fire.cpp:143:26:[m[K [01;31m[Kerror: [m[K‘[01m[KLeftSmokeSensor[m[K’ was not declared in this scope
+  143 |         msg.smoke_left = [01;31m[KLeftSmokeSensor[m[K;
+      |                          [01;31m[K^~~~~~~~~~~~~~~[m[K
+[01m[K/home/insa/Desktop/VigiWheels2.0/raspberryPI3/ros2_ws/src/fire_detection/src/processing_data_fire.cpp:144:9:[m[K [01;31m[Kerror: [m[K‘[01m[Kpublisher_processing_data[m[K’ was not declared in this scope
+  144 |         [01;31m[Kpublisher_processing_data[m[K->publish(msg);
+      |         [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/insa/Desktop/VigiWheels2.0/raspberryPI3/ros2_ws/src/fire_detection/src/processing_data_fire.cpp:[m[K At global scope:
+[01m[K/home/insa/Desktop/VigiWheels2.0/raspberryPI3/ros2_ws/src/fire_detection/src/processing_data_fire.cpp:160:1:[m[K [01;31m[Kerror: [m[Kexpected declaration before ‘[01m[K}[m[K’ token
+  160 | [01;31m[K}[m[K;
+      | [01;31m[K^[m[K
+gmake[2]: *** [CMakeFiles/processing_data_fire_node.dir/build.make:76: CMakeFiles/processing_data_fire_node.dir/src/processing_data_fire.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/processing_data_fire_node.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

@@ -1,0 +1,12 @@
+[0.059s] Invoking command in '/home/insa/Desktop/VigiWheels2.0/raspberryPI3/ros2_ws/build/rviz_imu_plugin': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/insa/Desktop/VigiWheels2.0/raspberryPI3/ros2_ws/build/rviz_imu_plugin -- -j8 -l8
+[0.118s] [ 11%] [34m[1mAutomatic MOC for target rviz_imu_plugin[0m
+[1.103s] [ 11%] Built target rviz_imu_plugin_autogen
+[1.192s] [ 22%] [32mBuilding CXX object CMakeFiles/rviz_imu_plugin.dir/rviz_imu_plugin_autogen/mocs_compilation.cpp.o[0m
+[1.202s] [ 33%] [32mBuilding CXX object CMakeFiles/rviz_imu_plugin.dir/src/imu_display.cpp.o[0m
+[1.207s] [ 44%] [32mBuilding CXX object CMakeFiles/rviz_imu_plugin.dir/src/imu_axes_visual.cpp.o[0m
+[1.214s] [ 55%] [32mBuilding CXX object CMakeFiles/rviz_imu_plugin.dir/src/imu_orientation_visual.cpp.o[0m
+[1.223s] [ 66%] [32mBuilding CXX object CMakeFiles/rviz_imu_plugin.dir/src/imu_acc_visual.cpp.o[0m
+[1.326s] [ 77%] [32mBuilding CXX object CMakeFiles/rviz_imu_plugin.dir/src/mag_display.cpp.o[0m
+[1.342s] [ 88%] [32mBuilding CXX object CMakeFiles/rviz_imu_plugin.dir/src/mag_visual.cpp.o[0m
+[19.342s] [100%] [32m[1mLinking CXX shared library librviz_imu_plugin.so[0m
+[22.567s] [100%] Built target rviz_imu_plugin

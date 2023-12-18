@@ -1,8 +1,8 @@
-# Install script for directory: /home/moad/VigiWheels/raspberryPI3/ros2_ws/build/interfaces/interfaces__py
+# Install script for directory: /home/insa/Desktop/VigiWheels2.0/raspberryPI3/ros2_ws/build/interfaces/interfaces__py
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/moad/VigiWheels/raspberryPI3/ros2_ws/install/interfaces")
+  set(CMAKE_INSTALL_PREFIX "/home/insa/Desktop/VigiWheels2.0/raspberryPI3/ros2_ws/install/interfaces")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 

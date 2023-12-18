@@ -1,0 +1,71 @@
+[0.715s] Invoking command in '/home/insa/Desktop/VigiWheels2.0/raspberryPI3/ros2_ws/build/system_check': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake /home/insa/Desktop/VigiWheels2.0/raspberryPI3/ros2_ws/src/system_check -DCMAKE_INSTALL_PREFIX=/home/insa/Desktop/VigiWheels2.0/raspberryPI3/ros2_ws/install/system_check
+[0.941s] -- The C compiler identification is GNU 11.4.0
+[1.020s] -- The CXX compiler identification is GNU 11.4.0
+[1.039s] -- Detecting C compiler ABI info
+[1.215s] -- Detecting C compiler ABI info - done
+[1.239s] -- Check for working C compiler: /usr/bin/cc - skipped
+[1.239s] -- Detecting C compile features
+[1.241s] -- Detecting C compile features - done
+[1.248s] -- Detecting CXX compiler ABI info
+[1.452s] -- Detecting CXX compiler ABI info - done
+[1.478s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[1.479s] -- Detecting CXX compile features
+[1.480s] -- Detecting CXX compile features - done
+[1.490s] -- Found ament_cmake: 1.3.5 (/opt/ros/humble/share/ament_cmake/cmake)
+[1.989s] -- Found Python3: /usr/bin/python3.10 (found version "3.10.12") found components: Interpreter 
+[2.324s] -- Found rclcpp: 16.0.6 (/opt/ros/humble/share/rclcpp/cmake)
+[2.491s] -- Found rosidl_generator_c: 3.1.5 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[2.520s] -- Found rosidl_adapter: 3.1.5 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[2.552s] -- Found rosidl_generator_cpp: 3.1.5 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[2.602s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[2.680s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[2.972s] -- Found rmw_implementation_cmake: 6.1.1 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+[2.985s] -- Found rmw_fastrtps_cpp: 6.2.4 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+[3.227s] -- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.2")  
+[3.321s] -- Found FastRTPS: /opt/ros/humble/include  
+[3.477s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[3.521s] -- Looking for pthread.h
+[3.703s] -- Looking for pthread.h - found
+[3.703s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+[3.863s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+[3.865s] -- Found Threads: TRUE  
+[4.339s] -- Found sensor_msgs: 4.2.3 (/opt/ros/humble/share/sensor_msgs/cmake)
+[4.698s] -- Found interfaces: 0.0.0 (/home/insa/Desktop/VigiWheels2.0/raspberryPI3/ros2_ws/install/interfaces/share/interfaces/cmake)
+[4.749s] -- Found ament_lint_auto: 0.12.8 (/opt/ros/humble/share/ament_lint_auto/cmake)
+[4.993s] -- Added test 'cppcheck' to perform static code analysis on C / C++ code
+[4.993s] -- Configured cppcheck include dirs: $<BUILD_INTERFACE:/home/insa/Desktop/VigiWheels2.0/raspberryPI3/ros2_ws/src/system_check/include>
+[4.994s] -- Configured cppcheck exclude dirs and/or files: 
+[4.999s] -- Added test 'lint_cmake' to check CMake code style
+[5.002s] -- Added test 'uncrustify' to check C / C++ code style
+[5.002s] -- Configured uncrustify additional arguments: 
+[5.004s] -- Added test 'xmllint' to check XML markup files
+[5.009s] -- Configuring done
+[5.047s] -- Generating done
+[5.051s] -- Build files have been written to: /home/insa/Desktop/VigiWheels2.0/raspberryPI3/ros2_ws/build/system_check
+[5.358s] Invoked command in '/home/insa/Desktop/VigiWheels2.0/raspberryPI3/ros2_ws/build/system_check' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake /home/insa/Desktop/VigiWheels2.0/raspberryPI3/ros2_ws/src/system_check -DCMAKE_INSTALL_PREFIX=/home/insa/Desktop/VigiWheels2.0/raspberryPI3/ros2_ws/install/system_check
+[5.359s] Invoking command in '/home/insa/Desktop/VigiWheels2.0/raspberryPI3/ros2_ws/build/system_check': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/insa/Desktop/VigiWheels2.0/raspberryPI3/ros2_ws/build/system_check -- -j8 -l8
+[5.512s] [ 50%] [32mBuilding CXX object CMakeFiles/system_check_node.dir/src/system_check_node.cpp.o[0m
+[40.069s] [100%] [32m[1mLinking CXX executable system_check_node[0m
+[41.461s] [100%] Built target system_check_node
+[41.470s] Invoked command in '/home/insa/Desktop/VigiWheels2.0/raspberryPI3/ros2_ws/build/system_check' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/insa/Desktop/VigiWheels2.0/raspberryPI3/ros2_ws/build/system_check -- -j8 -l8
+[41.492s] Invoking command in '/home/insa/Desktop/VigiWheels2.0/raspberryPI3/ros2_ws/build/system_check': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/insa/Desktop/VigiWheels2.0/raspberryPI3/ros2_ws/build/system_check
+[41.498s] -- Install configuration: ""
+[41.498s] -- Installing: /home/insa/Desktop/VigiWheels2.0/raspberryPI3/ros2_ws/install/system_check/lib/system_check/system_check_node
+[41.508s] -- Set runtime path of "/home/insa/Desktop/VigiWheels2.0/raspberryPI3/ros2_ws/install/system_check/lib/system_check/system_check_node" to ""
+[41.508s] -- Installing: /home/insa/Desktop/VigiWheels2.0/raspberryPI3/ros2_ws/install/system_check/share/ament_index/resource_index/package_run_dependencies/system_check
+[41.508s] -- Installing: /home/insa/Desktop/VigiWheels2.0/raspberryPI3/ros2_ws/install/system_check/share/ament_index/resource_index/parent_prefix_path/system_check
+[41.508s] -- Installing: /home/insa/Desktop/VigiWheels2.0/raspberryPI3/ros2_ws/install/system_check/share/system_check/environment/ament_prefix_path.sh
+[41.508s] -- Installing: /home/insa/Desktop/VigiWheels2.0/raspberryPI3/ros2_ws/install/system_check/share/system_check/environment/ament_prefix_path.dsv
+[41.508s] -- Installing: /home/insa/Desktop/VigiWheels2.0/raspberryPI3/ros2_ws/install/system_check/share/system_check/environment/path.sh
+[41.508s] -- Installing: /home/insa/Desktop/VigiWheels2.0/raspberryPI3/ros2_ws/install/system_check/share/system_check/environment/path.dsv
+[41.508s] -- Installing: /home/insa/Desktop/VigiWheels2.0/raspberryPI3/ros2_ws/install/system_check/share/system_check/local_setup.bash
+[41.508s] -- Installing: /home/insa/Desktop/VigiWheels2.0/raspberryPI3/ros2_ws/install/system_check/share/system_check/local_setup.sh
+[41.508s] -- Installing: /home/insa/Desktop/VigiWheels2.0/raspberryPI3/ros2_ws/install/system_check/share/system_check/local_setup.zsh
+[41.508s] -- Installing: /home/insa/Desktop/VigiWheels2.0/raspberryPI3/ros2_ws/install/system_check/share/system_check/local_setup.dsv
+[41.508s] -- Installing: /home/insa/Desktop/VigiWheels2.0/raspberryPI3/ros2_ws/install/system_check/share/system_check/package.dsv
+[41.509s] -- Installing: /home/insa/Desktop/VigiWheels2.0/raspberryPI3/ros2_ws/install/system_check/share/ament_index/resource_index/packages/system_check
+[41.509s] -- Installing: /home/insa/Desktop/VigiWheels2.0/raspberryPI3/ros2_ws/install/system_check/share/system_check/cmake/ament_cmake_export_include_directories-extras.cmake
+[41.509s] -- Installing: /home/insa/Desktop/VigiWheels2.0/raspberryPI3/ros2_ws/install/system_check/share/system_check/cmake/system_checkConfig.cmake
+[41.509s] -- Installing: /home/insa/Desktop/VigiWheels2.0/raspberryPI3/ros2_ws/install/system_check/share/system_check/cmake/system_checkConfig-version.cmake
+[41.509s] -- Installing: /home/insa/Desktop/VigiWheels2.0/raspberryPI3/ros2_ws/install/system_check/share/system_check/package.xml
+[41.510s] Invoked command in '/home/insa/Desktop/VigiWheels2.0/raspberryPI3/ros2_ws/build/system_check' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/insa/Desktop/VigiWheels2.0/raspberryPI3/ros2_ws/build/system_check
