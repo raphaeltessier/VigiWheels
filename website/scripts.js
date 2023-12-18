@@ -14,8 +14,8 @@ function newCmdAngle(CMDangle) {
     const absCMDangle = Math.abs(CMDangle);
     const direction = CMDangle < startAngle ? -1 : 1;
 
-     // Angle de départ
-    const endAngle =  CMDangle; // Angle final
+    // Angle de départ
+    const endAngle = CMDangle; // Angle final
 
     for (let i = startAngle; i !== endAngle; i += direction) {
         setTimeout(() => {
@@ -24,7 +24,7 @@ function newCmdAngle(CMDangle) {
     }
     startAngle = endAngle;
 }
-newCmdAngle(-50);
+
 /*
 function toggleObstacle(position, enable) {
     const obstacle = document.getElementById(`obstacle_${position}`); // Sélection de tous les éléments avec la classe 'obstacle'
@@ -126,6 +126,131 @@ function toggleBlinking(element, shouldBlink) {
     }
 }
 
+let mano = 0;
+let o1 = 0;
+let o2 = 0;
+let o3 = 0;
+let o4 = 0;
+let o5 = 0;
+let o6 = 0;
+function waitForO(event) {
+    if (event.key === 'o') {
+        // L'action que vous voulez exécuter une fois que 'o' est pressé
+        alert("La touche 'o' a été pressée !");
+        // Autre action que vous souhaitez réaliser ici
+    }
+    if (event.key === 'm') {
+        // L'action que vous voulez exécuter une fois que 'o' est pressé
+        if (mano == 1) {
+            ManometerDetected(0);
+            mano = 0;
+        } else if (mano == 0) {
+            ManometerDetected(1);
+            mano = 1;
+        }
+        // Autre action que vous souhaitez réaliser ici
+    }
+    if (event.key === 'b') {
+        // L'action que vous voulez exécuter une fois que 'o' est pressé
+        changeBatteryLevel();
+        // Autre action que vous souhaitez réaliser ici
+    }
+    if (event.key === '3') {
+        if (o1 == 0) {
+            toggleObstacle("tr", 1);
+            o1 = 1;
+        } else if (o1 == 1) {
+            toggleObstacle("tr", 0);
+            o1 = 0;
+        }
+
+
+    }
+    if (event.key === '6') {
+        if (o2 === 0) {
+            toggleObstacle("tm", 1);
+            o2 = 1;
+        } else if (o2 === 1) {
+            toggleObstacle("tm", 0);
+            o2 = 0;
+        }
+    }
+
+    if (event.key === '9') {
+        if (o3 === 0) {
+            toggleObstacle("tl", 1);
+            o3 = 1;
+        } else if (o3 === 1) {
+            toggleObstacle("tl", 0);
+            o3 = 0;
+        }
+    }
+
+    if (event.key === '1') {
+        if (o4 === 0) {
+            toggleObstacle("br", 1);
+            o4 = 1;
+        } else if (o4 === 1) {
+            toggleObstacle("br", 0);
+            o4 = 0;
+        }
+    }
+
+    if (event.key === '7') {
+        if (o5 === 0) {
+            toggleObstacle("bl", 1);
+            o5 = 1;
+        } else if (o5 === 1) {
+            toggleObstacle("bl", 0);
+            o5 = 0;
+        }
+    }
+
+    if (event.key === '4') {
+        if (o6 === 0) {
+            toggleObstacle("bm", 1);
+            o6 = 1;
+        } else if (o6 === 1) {
+            toggleObstacle("bm", 0);
+            o6 = 0;
+        }
+    }
+}
+function redirect(url) {
+    window.location.href = url;
+}
+
+function changeBatteryLevel() {
+    var batteryText = document.getElementById('batteryLevel');
+    if (batteryText.innerText.includes('High')) {
+        batteryText.innerText = batteryText.innerText.replace('High', 'Low');
+    } else if (batteryText.innerText.includes('Low')) {
+        batteryText.innerText = batteryText.innerText.replace('Low', 'Medium');
+    } else if (batteryText.innerText.includes('Medium')) {
+        batteryText.innerText = batteryText.innerText.replace('Medium', 'High');
+    }
+}
+
+document.addEventListener('keydown', waitForO);
+
+function angleleft() {
+    newCmdAngle(-80);
+    setTimeout(() => {
+        angleright();
+    }, 5000);
+}
+function angleright() {
+    newCmdAngle(80);
+    setTimeout(() => {
+        angleleft();
+    }, 5000);
+}
+
+setTimeout(() => {
+    angleleft();
+}, 3000);
+
+/*
 // Timer pour test & démo
 setTimeout(() => {
     toggleObstacle("br",1);
@@ -142,4 +267,4 @@ setTimeout(() => {
     ManometerDetected(0);
 
 }, 10000); 
-
+*/
