@@ -153,6 +153,7 @@ private:
         char tx[9];
         snprintf(tx, sizeof(tx), "#fire=%u\n", msg.fire_detected);
 
+
         // Write to serial port
         int bytes_written = write(serial_port_, tx, strlen(tx));
 
