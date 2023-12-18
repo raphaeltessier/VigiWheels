@@ -160,7 +160,7 @@ function waitForO(event) {
         if (fire == 0) {
             fireDetected(1);
             fire = 1;
-        } else if (o1 == 1) {
+        } else if (fire == 1) {
             fireDetected(0);
             fire = 0;
         }
