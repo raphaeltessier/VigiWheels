@@ -181,7 +181,7 @@ private:
         }
         else
         {
-            //RCLCPP_INFO(this->get_logger(), "Data sent: %s", tx);
+            RCLCPP_INFO(this->get_logger(), "Data sent: %s", tx);
         }
     }
 

@@ -222,7 +222,7 @@ private:
                 else
                 {
                     // Print received byte
-                    //RCLCPP_INFO(this->get_logger(), "Received Data: %s", rx);
+                    RCLCPP_INFO(this->get_logger(), "Received Data: %s", rx);
 
                     // Process the complete frame (e.g., parse and publish)
                     sscanf(rx, "IR_SENSOR1=%d|IR_SENSOR2=%d|IR_SENSOR3=%d|IR_SENSOR4=%d|SMOKE_SENSOR1=%d|SMOKE_SENSOR2=%d",

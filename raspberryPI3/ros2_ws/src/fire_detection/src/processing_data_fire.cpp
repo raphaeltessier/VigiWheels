@@ -41,7 +41,7 @@ private:
             // Set dynamic thresholds
             double lowerThreshold = movingAverage - 2 * standardDeviation;
 
-            if (lowerThreshold < 150)
+            if (lowerThreshold < 50)
             {
                 return 1; // Fire detected
             }
@@ -52,9 +52,21 @@ private:
         }
     }
 
+    int processFireSensorData(int sensorValue)
+    {
+        if (sensorValue < 200)
+        {
+            return 1; // Fire detected
+        }
+        else
+        {
+            return 0; // No fire detected
+        }
+    }
+
     int processSmokeSensorData(int sensorValue)
     {
-        if (sensorValue > 800)
+        if (sensorValue > 1000)
         {
             return 1; // Fire detected
         }
@@ -88,23 +100,22 @@ private:
 
     void dataFireCallBack(const interfaces::msg::FireSensor &msg)
     {
-        bool result1 = processIRSensorData(msg.ir_sensor1); // Avant Droit
+        bool result1 = processFireSensorData(msg.ir_sensor1); // Avant Droit
         bool result2 = msg.ir_sensor2;                      // Avant Gauche
-        bool result3 = processIRSensorData(msg.ir_sensor3); // Arrière Gauche
+        bool result3 = processFireSensorData(msg.ir_sensor3); // Arrière Gauche
         bool result4 = msg.ir_sensor4;                      // Arrière Droit
         bool result5 = processSmokeSensorData(msg.smoke_sensor1);
-        bool result6 = processSmokeSensorData(msg.smoke_sensor2);
+        bool result6 = 0;
 
+        std::string logMessage = "Received Data: " +
+                                 std::to_string(result1) +
+                                 ", " + std::to_string(result2) +
+                                 ", " + std::to_string(result3) +
+                                 ", " + std::to_string(result4) +
+                                 ", " + std::to_string(result5) +
+                                 ", " + std::to_string(result6);
 
-        // std::string logMessage = "Received Data: " +
-        //                          std::to_string(result1) +
-        //                          ", " + std::to_string(result2) +
-        //                          ", " + std::to_string(result3) +
-        //                          ", " + std::to_string(result4) +
-        //                          ", " + std::to_string(result5) +
-        //                          ", " + std::to_string(result6);
-
-        // RCLCPP_INFO(this->get_logger(), "%s", logMessage.c_str());
+        RCLCPP_INFO(this->get_logger(), "%s", logMessage.c_str());
 
         if (result1 == 1)
         {
