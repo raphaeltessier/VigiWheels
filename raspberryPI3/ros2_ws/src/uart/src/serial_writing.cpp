@@ -1,168 +1,233 @@
+#include <fcntl.h>
+#include <termios.h>
+#include <unistd.h>
+#include <string.h>
+#include <errno.h>
+#include <thread>
+
 #include "rclcpp/rclcpp.hpp"
-#include <chrono>
-#include <functional>
-#include <memory>
-
+#include "interfaces/msg/emergency_alert_fire.hpp"
 #include "interfaces/msg/servo_cam_order.hpp"
-#include "interfaces/msg/cam_pos_order.hpp"
-#include "interfaces/msg/manometer_info.hpp"
 
-#include "std_srvs/srv/empty.hpp"
+#define SERIAL_PORT_1 "/dev/ttyACM0"
+#define SERIAL_PORT_2 "/dev/ttyACM1"
+#define BAUD_RATE B115200
+#define BUFFER_SIZE 100
+#define TIMEOUT_SECONDS 1
+#define VTIME_MULTIPLIER 10
 
-#include "../include/servo_cam/servo_cam_node.h"
+#define FIRE_ID 'f'
+#define CAM_ID 'c'
 
 using namespace std;
 using placeholders::_1;
 
-//take command from cam_pos_order and send angle info to the can node to be transmit to nucleo F106
-
-
-class servo_cam : public rclcpp::Node {
-
+class SerialWritingNode : public rclcpp::Node
+{
 public:
-    servo_cam()
-    : Node("servo_cam_node")
+    SerialWritingNode() : Node("Serial_writing_node"), serial_port_(-1), serial_error_logged_(false)
     {
-        //publisher
-        publisher_servo_cam_order_= this->create_publisher<interfaces::msg::ServoCamOrder>("servo_cam_order", 10);
+        RCLCPP_INFO(this->get_logger(), "Hello Serial Writing Node!");
 
-    
-        //suscriber
-        subscription_cam_pos_order_ = this->create_subscription<interfaces::msg::CamPosOrder>(
-        "cam_pos_order", 10, std::bind(&servo_cam::camPosOrderCallback, this, _1));
+        initSerialPort();
 
-        subscription_manometer_order_ = this->create_subscription<interfaces::msg::ManometerInfo>(
-        "manometer_detected", 10, std::bind(&servo_cam::ImagePosCallback, this, _1));
+        subscription_emergency_alert = this->create_subscription<interfaces::msg::EmergencyAlertFire>(
+            "emergency_alert", 10, std::bind(&SerialWritingNode::emergencyAlertFireCallback, this, std::placeholders::_1));
 
-
-        //periodic function
-        timer_ = this->create_wall_timer(PERIOD_UPDATE_CMD, std::bind(&servo_cam::updateCmd, this));
-        
-
-        // Set PWM frequency and duty cycle
-
-
-
-        RCLCPP_INFO(this->get_logger(), "servo_cam_node READY");
+        subscription_servo_cam_order_ = this->create_subscription<interfaces::msg::ServoCamOrder>(
+            "servo_cam_order", 10, std::bind(&SerialWritingNode::sendServoCamOrderCallback, this, _1));
     }
 
-    
+    ~SerialWritingNode()
+    {
+        cleanupSerialPort();
+    }
+
 private:
+    void initSerialPort()
+    {
+        // Check if the serial port is already open
+        if (serial_port_ != -1)
+        {
+            // Close the serial port before reopening
+            cleanupSerialPort();
+        }
 
+        // Try both serial ports
+        for (const char *port : {SERIAL_PORT_1, SERIAL_PORT_2})
+        {
+            // Open the serial port
+            serial_port_ = open(port, O_RDWR);
+            if (serial_port_ != -1)
+            {
+                RCLCPP_INFO(this->get_logger(), "Opened serial port: %s", port);
+                break;
+            }
+        }
 
+        if (serial_port_ == -1)
+        {
+            if (!serial_error_logged_)
+            {
+                RCLCPP_ERROR(this->get_logger(), "Error opening serial port");
+                serial_error_logged_ = true;
+            }
+            return;
+        }
 
-    /* Update mode and pwm from cam pos order feedback [callback function]  :
-    *
-    * This function is called when a message is published on the "/cam_pos_order" topic
-    * 
-    */
-    void camPosOrderCallback(const interfaces::msg::CamPosOrder & pos_cmd){
-        mode = pos_cmd.mode; // 0 : fixed ; 1 : scan
-        requested_angle = pos_cmd.cam_angle;
+        // Set up serial port
+        if (setupSerialPort(serial_port_) != 0)
+        {
+            cleanupSerialPort();
+            return;
+        }
     }
 
+    int setupSerialPort(int serial_port)
+    {
+        // Configure serial port
+        struct termios tty;
+        if (tcgetattr(serial_port, &tty) != 0)
+        {
+            if (!serial_error_logged_)
+            {
+                RCLCPP_ERROR(this->get_logger(), "Error from tcgetattr");
+                serial_error_logged_ = true;
+            }
+            close(serial_port);
+            return 1;
+        }
 
-    /* Update image position for mode 2 from image pos order feedback [callback function]  :
-    *
-    * This function is called when a message is published on the "/ManometerInfo" topic
-    * 
-    */
-    void ImagePosCallback(const interfaces::msg::ManometerInfo & pos_image){
-        x1 = pos_image.x1;
-        x2 = pos_image.x2;
-        mano_update = 1;
+        // Set serial port parameters
+        cfsetispeed(&tty, BAUD_RATE);
+        cfsetospeed(&tty, BAUD_RATE);
+        tty.c_cflag |= (CLOCAL | CREAD);
+        tty.c_cflag &= ~PARENB;
+        tty.c_cflag &= ~CSTOPB;
+        tty.c_cflag &= ~CSIZE;
+        tty.c_cflag |= CS8;
+        tty.c_lflag &= ~(ICANON | ECHO | ECHOE | ISIG);
+        tty.c_iflag &= ~(IXON | IXOFF | IXANY);
+        tty.c_oflag &= ~OPOST;
+
+        // Set read timeout
+        tty.c_cc[VTIME] = TIMEOUT_SECONDS * VTIME_MULTIPLIER;
+        tty.c_cc[VMIN] = BUFFER_SIZE;
+
+        if (tcsetattr(serial_port, TCSANOW, &tty) != 0)
+        {
+            if (!serial_error_logged_)
+            {
+                RCLCPP_ERROR(this->get_logger(), "Error from tcsetattr");
+                serial_error_logged_ = true;
+            }
+            close(serial_port);
+            return 1;
+        }
+
+        return 0;
     }
 
-
- //periodic function, see servo_cam_node.h to set period -> 100ms
-    // to update the angular positon of the camera to scan
-
-    void updateCmd(){
-
-        auto servoOrder = interfaces::msg::ServoCamOrder();
-
-        if (mode == 1) {
-            command_angle = command_angle + sens;
-            if (command_angle >= 180) {
-                command_angle = 180;
-                sens = -sens;
-            }
-            else if (command_angle <= 0) {
-                command_angle = 0;
-                sens = -sens;
-            }
-            
+    void cleanupSerialPort()
+    {
+        if (serial_port_ != -1)
+        {
+            // Close the serial port
+            close(serial_port_);
+            RCLCPP_WARN(this->get_logger(), "Closed serial port");
+            serial_port_ = -1; // Reset the file descriptor
+            serial_error_logged_ = false; // Reset the error flag when closing the serial port
         }
-        else if (mode == 2){
-            if (mano_update) {
-                mano_update = 0;
-                float mean = (x1 + x2)/2 -320;
-                //float correction = (mean > 0) ? PAS_FOLLOW : (-PAS_FOLLOW);
-                float correction = mean * FOV/RESOLUTION;
-                command_angle += int(correction);
-                if (command_angle >= 180) {command_angle = 180;} //saturation
-                else if (command_angle <= 0) {command_angle = 0;} //saturation
-            }
+    }
 
+    void emergencyAlertFireCallback(const interfaces::msg::EmergencyAlertFire &msg)
+    {
+        // Check if the serial port is open
+        if (serial_port_ == -1)
+        {
+            // Reinitialize the serial port if it is closed
+            initSerialPort();
+            return;
         }
 
-        else {
-            command_angle = requested_angle;
+        char tx[9];
+        snprintf(tx, sizeof(tx), "#fire=%u\n", msg.fire_detected);
+
+        // Write to serial port
+        int bytes_written = write(serial_port_, tx, strlen(tx));
+
+        if (bytes_written == -1)
+        {
+            // Check if the error is ENXIO (No such device or address), indicating a potential unplugging of the USB device
+            if (errno == ENXIO)
+            {
+                if (!serial_error_logged_)
+                {
+                    RCLCPP_WARN(this->get_logger(), "Error writing: %s. Reinitializing serial port.", strerror(errno));
+                    serial_error_logged_ = true;
+                }
+                initSerialPort();
+            }
+            else
+            {
+                if (!serial_error_logged_)
+                {
+                    RCLCPP_ERROR(this->get_logger(), "Error writing to serial port");
+                    serial_error_logged_ = true;
+                }
+                cleanupSerialPort();
+            }
+        }
+        else
+        {
+            //RCLCPP_INFO(this->get_logger(), "Data sent: %s", tx);
+        }
+    }
+
+    /* Send angle servo cam order via CAN bus [callback function]
+     * This function is called when a message is published on the "/system_check" topic
+     */
+    void sendServoCamOrderCallback(const interfaces::msg::ServoCamOrder &servoOrder)
+    {
+        uart_sending_uint8(CAM_ID, servoOrder.servo_cam_angle);
+    }
+
+    void uart_sending_uint8(char id, uint8_t value)
+    {
+        if (serial_port_ == -1)
+        {
+            RCLCPP_ERROR(this->get_logger(), "Serial port is not open");
+            return;
         }
 
+        char tx[10];
+        snprintf(tx, sizeof(tx), "#%c=%04u\n", id, value); //8
+        //snprintf(tx, sizeof(tx), "#Johann\n"); //8
 
-        servoOrder.servo_cam_angle = command_angle;
+        int bytes_written = write(serial_port_, tx, strlen(tx));
 
+        if (bytes_written == -1)
+        {
+            perror("Error writing to serial port");
+        }
 
+        RCLCPP_DEBUG(this->get_logger(), "Data send : %s\n", tx);
+    }
 
-        publisher_servo_cam_order_->publish(servoOrder);
-
-        
-
-     }
-   
-    // ---- Private variables ----
-
-    //General variables
-        int mode = 0;
-        int requested_angle;
-        int command_angle = 90; //[0, 180]
-        int sens = PAS_SCAN; //{-10; 10}
-        bool mano_update = 0;
-
-        float x1;
-        float x2;
-
-
-
-        
-        
-
-
-    //Publishers
-    rclcpp::Publisher<interfaces::msg::ServoCamOrder>::SharedPtr publisher_servo_cam_order_;
-
-    //Suscribers
-    rclcpp::Subscription<interfaces::msg::CamPosOrder>::SharedPtr subscription_cam_pos_order_;
-    rclcpp::Subscription<interfaces::msg::ManometerInfo>::SharedPtr subscription_manometer_order_;  
-
-    //Timer
-    rclcpp::TimerBase::SharedPtr timer_;
-
-
-
-
+    rclcpp::Subscription<interfaces::msg::EmergencyAlertFire>::SharedPtr subscription_emergency_alert;
+    rclcpp::Subscription<interfaces::msg::ServoCamOrder>::SharedPtr subscription_servo_cam_order_;
+    int serial_port_;
+    bool serial_error_logged_;
 };
 
-
-int main(int argc, char * argv[])
+int main(int argc, char *argv[])
 {
-  rclcpp::init(argc, argv);
-  auto node = std::make_shared<servo_cam>();
+    rclcpp::init(argc, argv);
 
-  rclcpp::spin(node);
+    auto node = std::make_shared<SerialWritingNode>();
 
-  rclcpp::shutdown();
-  return 0;
+    rclcpp::spin(node);
+    rclcpp::shutdown();
+
+    return 0;
 }
-

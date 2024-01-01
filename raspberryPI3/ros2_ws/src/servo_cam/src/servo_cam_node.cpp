@@ -58,7 +58,7 @@ private:
     */
     void camPosOrderCallback(const interfaces::msg::CamPosOrder & pos_cmd){
         mode = pos_cmd.mode; // 0 : fixed ; 1 : scan
-        requested_angle = pos_cmd.cam_angle;
+        turn = pos_cmd.turn_cam;
     }
 
 
@@ -81,7 +81,17 @@ private:
 
         auto servoOrder = interfaces::msg::ServoCamOrder();
 
-        if (mode == 1) {
+        if (mode == 0) {
+        command_angle = command_angle + turn*PAS_MANUAL;
+            if (command_angle >= 180) {
+                command_angle = 180;
+            }
+            else if (command_angle <= 0) {
+                command_angle = 0;
+            }
+            
+        }
+        else if (mode == 1) {
             command_angle = command_angle + sens;
             if (command_angle >= 180) {
                 command_angle = 180;
@@ -106,9 +116,6 @@ private:
 
         }
 
-        else {
-            command_angle = requested_angle;
-        }
 
 
         servoOrder.servo_cam_angle = command_angle;
@@ -125,7 +132,7 @@ private:
 
     //General variables
         int mode = 0;
-        int requested_angle;
+        int turn = 0;
         int command_angle = 90; //[0, 180]
         int sens = PAS_SCAN; //{-10; 10}
         bool mano_update = 0;
