@@ -37,10 +37,16 @@ def generate_launch_description():
         executable="test_node",
         emulate_tty=True
     )
+    pressure_level_node = Node(
+        package="pressure_level",
+        executable="pressure_node",
+        emulate_tty=True
+    )
 
 
     ld.add_action(lidar_node)
     ld.add_action(camera_node)
     ld.add_action(system_check_ack_node)
     ld.add_action(manometer_detection_node)
+    ld.add_action(pressure_level_node)
     return ld
