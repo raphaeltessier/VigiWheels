@@ -1,178 +1,168 @@
-#include <fcntl.h>
-#include <termios.h>
-#include <unistd.h>
-#include <string.h>
-#include <errno.h>
-#include <thread>
-
 #include "rclcpp/rclcpp.hpp"
-#include "interfaces/msg/emergency_alert_fire.hpp"
+#include <chrono>
+#include <functional>
+#include <memory>
+
 #include "interfaces/msg/servo_cam_order.hpp"
+#include "interfaces/msg/cam_pos_order.hpp"
+#include "interfaces/msg/manometer_info.hpp"
 
+#include "std_srvs/srv/empty.hpp"
 
-#define SERIAL_PORT_1 "/dev/ttyACM0"
-#define SERIAL_PORT_2 "/dev/ttyACM1"
-#define BAUD_RATE B115200
-#define BUFFER_SIZE 100
-#define TIMEOUT_SECONDS 1
-#define VTIME_MULTIPLIER 10
-
-#define FIRE_ID 'f'
-#define CAM_ID 'c'
+#include "../include/servo_cam/servo_cam_node.h"
 
 using namespace std;
 using placeholders::_1;
 
-class SerialWritingNode : public rclcpp::Node 
-{
+//take command from cam_pos_order and send angle info to the can node to be transmit to nucleo F106
+
+
+class servo_cam : public rclcpp::Node {
+
 public:
-    SerialWritingNode() : Node("Serial_writing_node"), serial_port_(-1)
+    servo_cam()
+    : Node("servo_cam_node")
     {
-        RCLCPP_INFO(this->get_logger(), "Hello Serial Writing Node !");
-        
-        initSerialPort();
-        
-        //timer_ = this->create_wall_timer(std::chrono::milliseconds(250), std::bind(&SerialWritingNode::EmergencyAlertFireCallBack, this)); 
-        subscription_emergency_alert = this->create_subscription<interfaces::msg::EmergencyAlertFire>("emergency_alert", 10, std::bind(&SerialWritingNode::EmergencyAlertFireCallBack, this, _1));
+        //publisher
+        publisher_servo_cam_order_= this->create_publisher<interfaces::msg::ServoCamOrder>("servo_cam_order", 10);
 
-
-        subscription_servo_cam_order_ = this->create_subscription<interfaces::msg::ServoCamOrder>(
-        "servo_cam_order", 10, std::bind(&SerialWritingNode::sendServoCamOrderCallback, this, _1));
     
+        //suscriber
+        subscription_cam_pos_order_ = this->create_subscription<interfaces::msg::CamPosOrder>(
+        "cam_pos_order", 10, std::bind(&servo_cam::camPosOrderCallback, this, _1));
+
+        subscription_manometer_order_ = this->create_subscription<interfaces::msg::ManometerInfo>(
+        "manometer_detected", 10, std::bind(&servo_cam::ImagePosCallback, this, _1));
+
+
+        //periodic function
+        timer_ = this->create_wall_timer(PERIOD_UPDATE_CMD, std::bind(&servo_cam::updateCmd, this));
+        
+
+        // Set PWM frequency and duty cycle
+
+
+
+        RCLCPP_INFO(this->get_logger(), "servo_cam_node READY");
     }
 
-    ~SerialWritingNode()
-    {
-        cleanupSerialPort();
-    }
-
+    
 private:
-    void initSerialPort()
-    {
-        for (const char *port : {SERIAL_PORT_1, SERIAL_PORT_2}) 
-        {
-            // Open the serial port
-            serial_port_ = open(port, O_RDWR);
-            if (serial_port_ != -1)
-            {
-                RCLCPP_INFO(this->get_logger(), "Opened serial port: %s", port);
-                break;
-            }
-        }
-
-        if (serial_port_ == -1) 
-        {
-            perror("Error opening serial port");
-            return;
-        }
-
-        // Set up serial port
-        if (setupSerialPort(serial_port_) != 0) 
-        {
-            cleanupSerialPort();  // Close the serial port if setup fails
-            return;
-        }
-    }
-
-    int setupSerialPort(int serial_port) 
-    {
-        // Configure serial port
-        struct termios tty;
-        if (tcgetattr(serial_port, &tty) != 0)
-        {
-            perror("Error from tcgetattr");
-            close(serial_port);
-            return 1;
-        }
-
-        // Set serial port parameters
-        cfsetispeed(&tty, BAUD_RATE);
-        cfsetospeed(&tty, BAUD_RATE);
-        tty.c_cflag |= (CLOCAL | CREAD);
-        tty.c_cflag &= ~PARENB;
-        tty.c_cflag &= ~CSTOPB;
-        tty.c_cflag &= ~CSIZE;
-        tty.c_cflag |= CS8;
-        tty.c_lflag &= ~(ICANON | ECHO | ECHOE | ISIG);
-        tty.c_iflag &= ~(IXON | IXOFF | IXANY);
-        tty.c_oflag &= ~OPOST;
-
-        // Set read timeout
-        tty.c_cc[VTIME] = TIMEOUT_SECONDS * VTIME_MULTIPLIER;
-        tty.c_cc[VMIN] = BUFFER_SIZE;
-
-        if (tcsetattr(serial_port, TCSANOW, &tty) != 0) 
-        {
-            perror("Error from tcsetattr");
-            close(serial_port);
-            return 1;
-        }
-
-        return 0;
-    }
-
-    void cleanupSerialPort() 
-    {
-        if (serial_port_ != -1)
-        {
-            // Close the serial port
-            close(serial_port_);
-            RCLCPP_INFO(this->get_logger(), "Closed serial port");
-        }
-    }
-
-    void EmergencyAlertFireCallBack(const interfaces::msg::EmergencyAlertFire & msg)
-    {
-       uart_sending_uint8(FIRE_ID, uint8_t(msg.fire_detected));
-
-    }
 
 
-    /* Send angle servo cam order via CAN bus [callback function]
-    * This function is called when a message is published on the "/system_check" topic
+
+    /* Update mode and pwm from cam pos order feedback [callback function]  :
+    *
+    * This function is called when a message is published on the "/cam_pos_order" topic
+    * 
     */
-    void sendServoCamOrderCallback (const interfaces::msg::ServoCamOrder & servoOrder) {
-        uart_sending_uint8(CAM_ID, servoOrder.servo_cam_angle);
-  
+    void camPosOrderCallback(const interfaces::msg::CamPosOrder & pos_cmd){
+        mode = pos_cmd.mode; // 0 : fixed ; 1 : scan
+        requested_angle = pos_cmd.cam_angle;
     }
 
 
-    void uart_sending_uint8(char id, uint8_t value) {
-        if (serial_port_ == -1) 
-        {
-            RCLCPP_ERROR(this->get_logger(), "Serial port is not open");
-            return;
-        }
-
-        char tx[10]; 
-        snprintf(tx, sizeof(tx), "#%c=%04u\n", id, value); //8
-        //snprintf(tx, sizeof(tx), "#Johann\n"); //8
-
-        int bytes_written = write(serial_port_, tx, strlen(tx));
-
-        if (bytes_written == -1) 
-        {
-            perror("Error writing to serial port");
-        }
-
-        RCLCPP_DEBUG(this->get_logger(), "Data send : %s\n", tx); 
+    /* Update image position for mode 2 from image pos order feedback [callback function]  :
+    *
+    * This function is called when a message is published on the "/ManometerInfo" topic
+    * 
+    */
+    void ImagePosCallback(const interfaces::msg::ManometerInfo & pos_image){
+        x1 = pos_image.x1;
+        x2 = pos_image.x2;
+        mano_update = 1;
     }
 
-    int counter_; 
-    std::shared_ptr<rclcpp::TimerBase> timer_;
-    rclcpp::Subscription<interfaces::msg::EmergencyAlertFire>::SharedPtr subscription_emergency_alert;
-    rclcpp::Subscription<interfaces::msg::ServoCamOrder>::SharedPtr subscription_servo_cam_order_;
-    int serial_port_;
+
+ //periodic function, see servo_cam_node.h to set period -> 100ms
+    // to update the angular positon of the camera to scan
+
+    void updateCmd(){
+
+        auto servoOrder = interfaces::msg::ServoCamOrder();
+
+        if (mode == 1) {
+            command_angle = command_angle + sens;
+            if (command_angle >= 180) {
+                command_angle = 180;
+                sens = -sens;
+            }
+            else if (command_angle <= 0) {
+                command_angle = 0;
+                sens = -sens;
+            }
+            
+        }
+        else if (mode == 2){
+            if (mano_update) {
+                mano_update = 0;
+                float mean = (x1 + x2)/2 -320;
+                //float correction = (mean > 0) ? PAS_FOLLOW : (-PAS_FOLLOW);
+                float correction = mean * FOV/RESOLUTION;
+                command_angle += int(correction);
+                if (command_angle >= 180) {command_angle = 180;} //saturation
+                else if (command_angle <= 0) {command_angle = 0;} //saturation
+            }
+
+        }
+
+        else {
+            command_angle = requested_angle;
+        }
+
+
+        servoOrder.servo_cam_angle = command_angle;
+
+
+
+        publisher_servo_cam_order_->publish(servoOrder);
+
+        
+
+     }
+   
+    // ---- Private variables ----
+
+    //General variables
+        int mode = 0;
+        int requested_angle;
+        int command_angle = 90; //[0, 180]
+        int sens = PAS_SCAN; //{-10; 10}
+        bool mano_update = 0;
+
+        float x1;
+        float x2;
+
+
+
+        
+        
+
+
+    //Publishers
+    rclcpp::Publisher<interfaces::msg::ServoCamOrder>::SharedPtr publisher_servo_cam_order_;
+
+    //Suscribers
+    rclcpp::Subscription<interfaces::msg::CamPosOrder>::SharedPtr subscription_cam_pos_order_;
+    rclcpp::Subscription<interfaces::msg::ManometerInfo>::SharedPtr subscription_manometer_order_;  
+
+    //Timer
+    rclcpp::TimerBase::SharedPtr timer_;
+
+
+
+
 };
 
-int main(int argc, char *argv[]) 
+
+int main(int argc, char * argv[])
 {
-    rclcpp::init(argc, argv);
+  rclcpp::init(argc, argv);
+  auto node = std::make_shared<servo_cam>();
 
-    auto node = std::make_shared<SerialWritingNode>();
+  rclcpp::spin(node);
 
-    rclcpp::spin(node);
-    rclcpp::shutdown();
-
-    return 0;
+  rclcpp::shutdown();
+  return 0;
 }
+

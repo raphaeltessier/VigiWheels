@@ -7,6 +7,8 @@
 
 #define PERIOD_UPDATE_CMD 100ms // update pwm servo period
 #define PAS_SCAN 10
+#define FOV 50          // degree from left to right of the image (from datasheet)
+#define RESOLUTION 640 //pixel image
 
 
 
