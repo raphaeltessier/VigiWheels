@@ -1,0 +1,15 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from interfaces/msg/ServoCamOrder.msg
+// generated code does not contain a copyright notice
+
+
+module interfaces {
+  module msg {
+    struct ServoCamOrder {
+      @verbatim (language="comment", text=
+        "angle ° [0, 180]")
+      @default (value=90)
+      uint8 servo_cam_angle;
+    };
+  };
+};

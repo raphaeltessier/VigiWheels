@@ -1,0 +1,35 @@
+running egg_info
+creating build/pressure_level/pressure_level.egg-info
+writing build/pressure_level/pressure_level.egg-info/PKG-INFO
+writing dependency_links to build/pressure_level/pressure_level.egg-info/dependency_links.txt
+writing entry points to build/pressure_level/pressure_level.egg-info/entry_points.txt
+writing requirements to build/pressure_level/pressure_level.egg-info/requires.txt
+writing top-level names to build/pressure_level/pressure_level.egg-info/top_level.txt
+writing manifest file 'build/pressure_level/pressure_level.egg-info/SOURCES.txt'
+reading manifest file 'build/pressure_level/pressure_level.egg-info/SOURCES.txt'
+writing manifest file 'build/pressure_level/pressure_level.egg-info/SOURCES.txt'
+running build
+running build_py
+creating /home/moad/VigiWheels/jetsonNano/ros2_ws/src/pressure_level/build/pressure_level/build
+creating /home/moad/VigiWheels/jetsonNano/ros2_ws/src/pressure_level/build/pressure_level/build/lib
+creating /home/moad/VigiWheels/jetsonNano/ros2_ws/src/pressure_level/build/pressure_level/build/lib/pressure_level
+copying pressure_level/pressure_level.py -> /home/moad/VigiWheels/jetsonNano/ros2_ws/src/pressure_level/build/pressure_level/build/lib/pressure_level
+copying pressure_level/__init__.py -> /home/moad/VigiWheels/jetsonNano/ros2_ws/src/pressure_level/build/pressure_level/build/lib/pressure_level
+running install
+running install_lib
+creating /home/moad/VigiWheels/jetsonNano/ros2_ws/src/pressure_level/install/pressure_level/lib/python3.10/site-packages/pressure_level
+copying /home/moad/VigiWheels/jetsonNano/ros2_ws/src/pressure_level/build/pressure_level/build/lib/pressure_level/pressure_level.py -> /home/moad/VigiWheels/jetsonNano/ros2_ws/src/pressure_level/install/pressure_level/lib/python3.10/site-packages/pressure_level
+copying /home/moad/VigiWheels/jetsonNano/ros2_ws/src/pressure_level/build/pressure_level/build/lib/pressure_level/__init__.py -> /home/moad/VigiWheels/jetsonNano/ros2_ws/src/pressure_level/install/pressure_level/lib/python3.10/site-packages/pressure_level
+byte-compiling /home/moad/VigiWheels/jetsonNano/ros2_ws/src/pressure_level/install/pressure_level/lib/python3.10/site-packages/pressure_level/pressure_level.py to pressure_level.cpython-310.pyc
+byte-compiling /home/moad/VigiWheels/jetsonNano/ros2_ws/src/pressure_level/install/pressure_level/lib/python3.10/site-packages/pressure_level/__init__.py to __init__.cpython-310.pyc
+running install_data
+creating /home/moad/VigiWheels/jetsonNano/ros2_ws/src/pressure_level/install/pressure_level/share/ament_index
+creating /home/moad/VigiWheels/jetsonNano/ros2_ws/src/pressure_level/install/pressure_level/share/ament_index/resource_index
+creating /home/moad/VigiWheels/jetsonNano/ros2_ws/src/pressure_level/install/pressure_level/share/ament_index/resource_index/packages
+copying resource/pressure_level -> /home/moad/VigiWheels/jetsonNano/ros2_ws/src/pressure_level/install/pressure_level/share/ament_index/resource_index/packages
+copying package.xml -> /home/moad/VigiWheels/jetsonNano/ros2_ws/src/pressure_level/install/pressure_level/share/pressure_level
+running install_egg_info
+Copying build/pressure_level/pressure_level.egg-info to /home/moad/VigiWheels/jetsonNano/ros2_ws/src/pressure_level/install/pressure_level/lib/python3.10/site-packages/pressure_level-0.0.0-py3.10.egg-info
+running install_scripts
+Installing pressure_node script to /home/moad/VigiWheels/jetsonNano/ros2_ws/src/pressure_level/install/pressure_level/lib/pressure_level
+writing list of installed files to '/home/moad/VigiWheels/jetsonNano/ros2_ws/src/pressure_level/build/pressure_level/install.log'

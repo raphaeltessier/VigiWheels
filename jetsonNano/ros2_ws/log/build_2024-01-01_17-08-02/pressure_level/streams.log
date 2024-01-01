@@ -1,0 +1,21 @@
+[0.529s] Invoking command in '/home/moad/VigiWheels/jetsonNano/ros2_ws/src/pressure_level': AMENT_PREFIX_PATH=/home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces:${CMAKE_PREFIX_PATH} LD_LIBRARY_PATH=/home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/moad/VigiWheels/jetsonNano/ros2_ws/build/pressure_level/prefix_override:/home/moad/VigiWheels/jetsonNano/ros2_ws/install/pressure_level/lib/python3.10/site-packages:/home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/pressure_level build --build-base /home/moad/VigiWheels/jetsonNano/ros2_ws/build/pressure_level/build install --record /home/moad/VigiWheels/jetsonNano/ros2_ws/build/pressure_level/install.log --single-version-externally-managed
+[0.679s] running egg_info
+[0.679s] writing ../../build/pressure_level/pressure_level.egg-info/PKG-INFO
+[0.679s] writing dependency_links to ../../build/pressure_level/pressure_level.egg-info/dependency_links.txt
+[0.679s] writing entry points to ../../build/pressure_level/pressure_level.egg-info/entry_points.txt
+[0.679s] writing requirements to ../../build/pressure_level/pressure_level.egg-info/requires.txt
+[0.679s] writing top-level names to ../../build/pressure_level/pressure_level.egg-info/top_level.txt
+[0.680s] reading manifest file '../../build/pressure_level/pressure_level.egg-info/SOURCES.txt'
+[0.688s] writing manifest file '../../build/pressure_level/pressure_level.egg-info/SOURCES.txt'
+[0.688s] running build
+[0.688s] running build_py
+[0.688s] running install
+[0.689s] running install_lib
+[0.689s] running install_data
+[0.689s] running install_egg_info
+[0.690s] removing '/home/moad/VigiWheels/jetsonNano/ros2_ws/install/pressure_level/lib/python3.10/site-packages/pressure_level-0.0.0-py3.10.egg-info' (and everything under it)
+[0.691s] Copying ../../build/pressure_level/pressure_level.egg-info to /home/moad/VigiWheels/jetsonNano/ros2_ws/install/pressure_level/lib/python3.10/site-packages/pressure_level-0.0.0-py3.10.egg-info
+[0.691s] running install_scripts
+[0.704s] Installing pressure_node script to /home/moad/VigiWheels/jetsonNano/ros2_ws/install/pressure_level/lib/pressure_level
+[0.704s] writing list of installed files to '/home/moad/VigiWheels/jetsonNano/ros2_ws/build/pressure_level/install.log'
+[0.720s] Invoked command in '/home/moad/VigiWheels/jetsonNano/ros2_ws/src/pressure_level' returned '0': AMENT_PREFIX_PATH=/home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces:${CMAKE_PREFIX_PATH} LD_LIBRARY_PATH=/home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/moad/VigiWheels/jetsonNano/ros2_ws/build/pressure_level/prefix_override:/home/moad/VigiWheels/jetsonNano/ros2_ws/install/pressure_level/lib/python3.10/site-packages:/home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/pressure_level build --build-base /home/moad/VigiWheels/jetsonNano/ros2_ws/build/pressure_level/build install --record /home/moad/VigiWheels/jetsonNano/ros2_ws/build/pressure_level/install.log --single-version-externally-managed

@@ -11,7 +11,13 @@
     "/home/moad/VigiWheels/jetsonNano/ros2_ws/build/interfaces/rosidl_adapter/interfaces:msg/Ultrasonic.idl",
     "/home/moad/VigiWheels/jetsonNano/ros2_ws/build/interfaces/rosidl_adapter/interfaces:msg/Gnss.idl",
     "/home/moad/VigiWheels/jetsonNano/ros2_ws/build/interfaces/rosidl_adapter/interfaces:msg/SystemCheck.idl",
-    "/home/moad/VigiWheels/jetsonNano/ros2_ws/build/interfaces/rosidl_adapter/interfaces:msg/ManometerInfo.idl"
+    "/home/moad/VigiWheels/jetsonNano/ros2_ws/build/interfaces/rosidl_adapter/interfaces:msg/ManometerInfo.idl",
+    "/home/moad/VigiWheels/jetsonNano/ros2_ws/build/interfaces/rosidl_adapter/interfaces:msg/ObstaclesOrder.idl",
+    "/home/moad/VigiWheels/jetsonNano/ros2_ws/build/interfaces/rosidl_adapter/interfaces:msg/ServoCamOrder.idl",
+    "/home/moad/VigiWheels/jetsonNano/ros2_ws/build/interfaces/rosidl_adapter/interfaces:msg/CamPosOrder.idl",
+    "/home/moad/VigiWheels/jetsonNano/ros2_ws/build/interfaces/rosidl_adapter/interfaces:msg/FireSensor.idl",
+    "/home/moad/VigiWheels/jetsonNano/ros2_ws/build/interfaces/rosidl_adapter/interfaces:msg/EmergencyAlertFire.idl",
+    "/home/moad/VigiWheels/jetsonNano/ros2_ws/build/interfaces/rosidl_adapter/interfaces:msg/PressureLevel.idl"
   ],
   "target_dependencies": [
     "/opt/ros/humble/share/rosidl_generator_cpp/cmake/../../../lib/rosidl_generator_cpp/rosidl_generator_cpp",
@@ -37,6 +43,12 @@
     "/home/moad/VigiWheels/jetsonNano/ros2_ws/build/interfaces/rosidl_adapter/interfaces/msg/Ultrasonic.idl",
     "/home/moad/VigiWheels/jetsonNano/ros2_ws/build/interfaces/rosidl_adapter/interfaces/msg/Gnss.idl",
     "/home/moad/VigiWheels/jetsonNano/ros2_ws/build/interfaces/rosidl_adapter/interfaces/msg/SystemCheck.idl",
-    "/home/moad/VigiWheels/jetsonNano/ros2_ws/build/interfaces/rosidl_adapter/interfaces/msg/ManometerInfo.idl"
+    "/home/moad/VigiWheels/jetsonNano/ros2_ws/build/interfaces/rosidl_adapter/interfaces/msg/ManometerInfo.idl",
+    "/home/moad/VigiWheels/jetsonNano/ros2_ws/build/interfaces/rosidl_adapter/interfaces/msg/ObstaclesOrder.idl",
+    "/home/moad/VigiWheels/jetsonNano/ros2_ws/build/interfaces/rosidl_adapter/interfaces/msg/ServoCamOrder.idl",
+    "/home/moad/VigiWheels/jetsonNano/ros2_ws/build/interfaces/rosidl_adapter/interfaces/msg/CamPosOrder.idl",
+    "/home/moad/VigiWheels/jetsonNano/ros2_ws/build/interfaces/rosidl_adapter/interfaces/msg/FireSensor.idl",
+    "/home/moad/VigiWheels/jetsonNano/ros2_ws/build/interfaces/rosidl_adapter/interfaces/msg/EmergencyAlertFire.idl",
+    "/home/moad/VigiWheels/jetsonNano/ros2_ws/build/interfaces/rosidl_adapter/interfaces/msg/PressureLevel.idl"
   ]
 }
