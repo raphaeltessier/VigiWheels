@@ -1,3 +1,9 @@
+msg/CamPosOrder.idl
+msg/CamPosOrder.msg
+msg/EmergencyAlertFire.idl
+msg/EmergencyAlertFire.msg
+msg/FireSensor.idl
+msg/FireSensor.msg
 msg/GeneralData.idl
 msg/GeneralData.msg
 msg/Gnss.idl
@@ -10,6 +16,12 @@ msg/MotorsFeedback.idl
 msg/MotorsFeedback.msg
 msg/MotorsOrder.idl
 msg/MotorsOrder.msg
+msg/ObstaclesOrder.idl
+msg/ObstaclesOrder.msg
+msg/PressureLevel.idl
+msg/PressureLevel.msg
+msg/ServoCamOrder.idl
+msg/ServoCamOrder.msg
 msg/SteeringCalibration.idl
 msg/SteeringCalibration.msg
 msg/SystemCheck.idl

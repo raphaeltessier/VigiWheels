@@ -75,6 +75,12 @@ CMakeFiles/interfaces: /home/moad/VigiWheels/jetsonNano/ros2_ws/src/interfaces/m
 CMakeFiles/interfaces: /home/moad/VigiWheels/jetsonNano/ros2_ws/src/interfaces/msg/Gnss.msg
 CMakeFiles/interfaces: /home/moad/VigiWheels/jetsonNano/ros2_ws/src/interfaces/msg/SystemCheck.msg
 CMakeFiles/interfaces: /home/moad/VigiWheels/jetsonNano/ros2_ws/src/interfaces/msg/ManometerInfo.msg
+CMakeFiles/interfaces: /home/moad/VigiWheels/jetsonNano/ros2_ws/src/interfaces/msg/ObstaclesOrder.msg
+CMakeFiles/interfaces: /home/moad/VigiWheels/jetsonNano/ros2_ws/src/interfaces/msg/ServoCamOrder.msg
+CMakeFiles/interfaces: /home/moad/VigiWheels/jetsonNano/ros2_ws/src/interfaces/msg/CamPosOrder.msg
+CMakeFiles/interfaces: /home/moad/VigiWheels/jetsonNano/ros2_ws/src/interfaces/msg/FireSensor.msg
+CMakeFiles/interfaces: /home/moad/VigiWheels/jetsonNano/ros2_ws/src/interfaces/msg/EmergencyAlertFire.msg
+CMakeFiles/interfaces: /home/moad/VigiWheels/jetsonNano/ros2_ws/src/interfaces/msg/PressureLevel.msg
 
 interfaces: CMakeFiles/interfaces
 interfaces: CMakeFiles/interfaces.dir/build.make

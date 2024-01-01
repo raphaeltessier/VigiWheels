@@ -1,0 +1,22 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from interfaces/msg/FireSensor.msg
+// generated code does not contain a copyright notice
+
+
+module interfaces {
+  module msg {
+    struct FireSensor {
+      int16 ir_sensor1;
+
+      boolean ir_sensor2;
+
+      int16 ir_sensor3;
+
+      boolean ir_sensor4;
+
+      int16 smoke_sensor1;
+
+      int16 smoke_sensor2;
+    };
+  };
+};

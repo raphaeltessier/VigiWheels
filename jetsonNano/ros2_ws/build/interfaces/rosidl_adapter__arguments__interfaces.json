@@ -9,6 +9,12 @@
     "/home/moad/VigiWheels/jetsonNano/ros2_ws/src/interfaces:msg/Ultrasonic.msg",
     "/home/moad/VigiWheels/jetsonNano/ros2_ws/src/interfaces:msg/Gnss.msg",
     "/home/moad/VigiWheels/jetsonNano/ros2_ws/src/interfaces:msg/SystemCheck.msg",
-    "/home/moad/VigiWheels/jetsonNano/ros2_ws/src/interfaces:msg/ManometerInfo.msg"
+    "/home/moad/VigiWheels/jetsonNano/ros2_ws/src/interfaces:msg/ManometerInfo.msg",
+    "/home/moad/VigiWheels/jetsonNano/ros2_ws/src/interfaces:msg/ObstaclesOrder.msg",
+    "/home/moad/VigiWheels/jetsonNano/ros2_ws/src/interfaces:msg/ServoCamOrder.msg",
+    "/home/moad/VigiWheels/jetsonNano/ros2_ws/src/interfaces:msg/CamPosOrder.msg",
+    "/home/moad/VigiWheels/jetsonNano/ros2_ws/src/interfaces:msg/FireSensor.msg",
+    "/home/moad/VigiWheels/jetsonNano/ros2_ws/src/interfaces:msg/EmergencyAlertFire.msg",
+    "/home/moad/VigiWheels/jetsonNano/ros2_ws/src/interfaces:msg/PressureLevel.msg"
   ]
 }

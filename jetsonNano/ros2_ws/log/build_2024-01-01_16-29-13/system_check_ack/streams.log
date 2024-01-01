@@ -1,0 +1,49 @@
+[0.252s] Invoking command in '/home/moad/VigiWheels/jetsonNano/ros2_ws/build/system_check_ack': CMAKE_PREFIX_PATH=/home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces:/home/moad/VigiWheels/jetsonNano/ros2_ws/install/geicar_start_jetson:/home/moad/VigiWheels/jetsonNano/ros2_ws/install/usb_cam:/home/moad/VigiWheels/jetsonNano/ros2_ws/install/system_check_ack:/home/moad/VigiWheels/jetsonNano/ros2_ws/install/rplidar_ros:/home/moad/ros2_ws/install/manometer_interfaces:/home/moad/VigiWheels/jetsonNano/ros2_ws/install/pressure_level:/home/moad/VigiWheels/jetsonNano/ros2_ws/install/manometer_detection:/home/moad/ros2_ws/install/pressure_level:/home/moad/ros2_ws/install/my_robot_controller:/home/moad/ros2_ws/install/manometer_detection:/opt/ros/humble LD_LIBRARY_PATH=/home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/lib:/home/moad/VigiWheels/jetsonNano/ros2_ws/install/usb_cam/lib:/home/moad/VigiWheels/jetsonNano/ros2_ws/install/rplidar_ros/lib:/home/moad/ros2_ws/install/manometer_interfaces/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib /usr/bin/cmake --build /home/moad/VigiWheels/jetsonNano/ros2_ws/build/system_check_ack -- -j12 -l12
+[0.267s] -- Found ament_cmake: 1.3.6 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.368s] -- Found rclcpp: 16.0.7 (/opt/ros/humble/share/rclcpp/cmake)
+[0.386s] -- Found rosidl_generator_c: 3.1.5 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[0.388s] -- Found rosidl_adapter: 3.1.5 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[0.391s] -- Found rosidl_generator_cpp: 3.1.5 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[0.399s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.409s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.447s] -- Found rmw_implementation_cmake: 6.1.1 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+[0.448s] -- Found rmw_fastrtps_cpp: 6.2.5 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+[0.534s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[0.639s] -- Found sensor_msgs: 4.2.3 (/opt/ros/humble/share/sensor_msgs/cmake)
+[0.728s] -- Found interfaces: 0.0.0 (/home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/share/interfaces/cmake)
+[0.739s] -- Found ament_lint_auto: 0.12.9 (/opt/ros/humble/share/ament_lint_auto/cmake)
+[0.787s] -- Added test 'cppcheck' to perform static code analysis on C / C++ code
+[0.787s] -- Configured cppcheck include dirs: $<BUILD_INTERFACE:/home/moad/VigiWheels/jetsonNano/ros2_ws/src/system_check_ack/include>
+[0.787s] -- Configured cppcheck exclude dirs and/or files: 
+[0.788s] -- Added test 'lint_cmake' to check CMake code style
+[0.788s] -- Added test 'uncrustify' to check C / C++ code style
+[0.788s] -- Configured uncrustify additional arguments: 
+[0.788s] -- Added test 'xmllint' to check XML markup files
+[0.789s] -- Configuring done
+[0.796s] -- Generating done
+[0.797s] -- Build files have been written to: /home/moad/VigiWheels/jetsonNano/ros2_ws/build/system_check_ack
+[0.815s] [35m[1mConsolidate compiler generated dependencies of target system_check_ack_node[0m
+[0.826s] [ 50%] [32mBuilding CXX object CMakeFiles/system_check_ack_node.dir/src/system_check_ack_node.cpp.o[0m
+[6.067s] [100%] [32m[1mLinking CXX executable system_check_ack_node[0m
+[6.329s] [100%] Built target system_check_ack_node
+[6.340s] Invoked command in '/home/moad/VigiWheels/jetsonNano/ros2_ws/build/system_check_ack' returned '0': CMAKE_PREFIX_PATH=/home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces:/home/moad/VigiWheels/jetsonNano/ros2_ws/install/geicar_start_jetson:/home/moad/VigiWheels/jetsonNano/ros2_ws/install/usb_cam:/home/moad/VigiWheels/jetsonNano/ros2_ws/install/system_check_ack:/home/moad/VigiWheels/jetsonNano/ros2_ws/install/rplidar_ros:/home/moad/ros2_ws/install/manometer_interfaces:/home/moad/VigiWheels/jetsonNano/ros2_ws/install/pressure_level:/home/moad/VigiWheels/jetsonNano/ros2_ws/install/manometer_detection:/home/moad/ros2_ws/install/pressure_level:/home/moad/ros2_ws/install/my_robot_controller:/home/moad/ros2_ws/install/manometer_detection:/opt/ros/humble LD_LIBRARY_PATH=/home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/lib:/home/moad/VigiWheels/jetsonNano/ros2_ws/install/usb_cam/lib:/home/moad/VigiWheels/jetsonNano/ros2_ws/install/rplidar_ros/lib:/home/moad/ros2_ws/install/manometer_interfaces/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib /usr/bin/cmake --build /home/moad/VigiWheels/jetsonNano/ros2_ws/build/system_check_ack -- -j12 -l12
+[6.354s] Invoking command in '/home/moad/VigiWheels/jetsonNano/ros2_ws/build/system_check_ack': CMAKE_PREFIX_PATH=/home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces:/home/moad/VigiWheels/jetsonNano/ros2_ws/install/geicar_start_jetson:/home/moad/VigiWheels/jetsonNano/ros2_ws/install/usb_cam:/home/moad/VigiWheels/jetsonNano/ros2_ws/install/system_check_ack:/home/moad/VigiWheels/jetsonNano/ros2_ws/install/rplidar_ros:/home/moad/ros2_ws/install/manometer_interfaces:/home/moad/VigiWheels/jetsonNano/ros2_ws/install/pressure_level:/home/moad/VigiWheels/jetsonNano/ros2_ws/install/manometer_detection:/home/moad/ros2_ws/install/pressure_level:/home/moad/ros2_ws/install/my_robot_controller:/home/moad/ros2_ws/install/manometer_detection:/opt/ros/humble LD_LIBRARY_PATH=/home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/lib:/home/moad/VigiWheels/jetsonNano/ros2_ws/install/usb_cam/lib:/home/moad/VigiWheels/jetsonNano/ros2_ws/install/rplidar_ros/lib:/home/moad/ros2_ws/install/manometer_interfaces/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib /usr/bin/cmake --install /home/moad/VigiWheels/jetsonNano/ros2_ws/build/system_check_ack
+[6.358s] -- Install configuration: ""
+[6.359s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/system_check_ack/lib/system_check_ack/system_check_ack_node
+[6.361s] -- Set runtime path of "/home/moad/VigiWheels/jetsonNano/ros2_ws/install/system_check_ack/lib/system_check_ack/system_check_ack_node" to ""
+[6.362s] -- Up-to-date: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/system_check_ack/share/ament_index/resource_index/package_run_dependencies/system_check_ack
+[6.362s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/system_check_ack/share/ament_index/resource_index/parent_prefix_path/system_check_ack
+[6.362s] -- Up-to-date: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/system_check_ack/share/system_check_ack/environment/ament_prefix_path.sh
+[6.362s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/system_check_ack/share/system_check_ack/environment/ament_prefix_path.dsv
+[6.362s] -- Up-to-date: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/system_check_ack/share/system_check_ack/environment/path.sh
+[6.362s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/system_check_ack/share/system_check_ack/environment/path.dsv
+[6.362s] -- Up-to-date: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/system_check_ack/share/system_check_ack/local_setup.bash
+[6.362s] -- Up-to-date: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/system_check_ack/share/system_check_ack/local_setup.sh
+[6.362s] -- Up-to-date: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/system_check_ack/share/system_check_ack/local_setup.zsh
+[6.362s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/system_check_ack/share/system_check_ack/local_setup.dsv
+[6.362s] -- Installing: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/system_check_ack/share/system_check_ack/package.dsv
+[6.363s] -- Up-to-date: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/system_check_ack/share/ament_index/resource_index/packages/system_check_ack
+[6.363s] -- Up-to-date: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/system_check_ack/share/system_check_ack/cmake/system_check_ackConfig.cmake
+[6.364s] -- Up-to-date: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/system_check_ack/share/system_check_ack/cmake/system_check_ackConfig-version.cmake
+[6.364s] -- Up-to-date: /home/moad/VigiWheels/jetsonNano/ros2_ws/install/system_check_ack/share/system_check_ack/package.xml
+[6.364s] Invoked command in '/home/moad/VigiWheels/jetsonNano/ros2_ws/build/system_check_ack' returned '0': CMAKE_PREFIX_PATH=/home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces:/home/moad/VigiWheels/jetsonNano/ros2_ws/install/geicar_start_jetson:/home/moad/VigiWheels/jetsonNano/ros2_ws/install/usb_cam:/home/moad/VigiWheels/jetsonNano/ros2_ws/install/system_check_ack:/home/moad/VigiWheels/jetsonNano/ros2_ws/install/rplidar_ros:/home/moad/ros2_ws/install/manometer_interfaces:/home/moad/VigiWheels/jetsonNano/ros2_ws/install/pressure_level:/home/moad/VigiWheels/jetsonNano/ros2_ws/install/manometer_detection:/home/moad/ros2_ws/install/pressure_level:/home/moad/ros2_ws/install/my_robot_controller:/home/moad/ros2_ws/install/manometer_detection:/opt/ros/humble LD_LIBRARY_PATH=/home/moad/VigiWheels/jetsonNano/ros2_ws/install/interfaces/lib:/home/moad/VigiWheels/jetsonNano/ros2_ws/install/usb_cam/lib:/home/moad/VigiWheels/jetsonNano/ros2_ws/install/rplidar_ros/lib:/home/moad/ros2_ws/install/manometer_interfaces/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib /usr/bin/cmake --install /home/moad/VigiWheels/jetsonNano/ros2_ws/build/system_check_ack
