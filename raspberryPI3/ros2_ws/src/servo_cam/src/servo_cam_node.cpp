@@ -95,8 +95,10 @@ private:
         }
         else if (mode == 2){
             if (mano_update) {
+                mano_update = 0;
                 float mean = (x1 + x2)/2 -320;
-                float correction = mean*FOV/RESOLUTION;
+                //float correction = (mean > 0) ? PAS_FOLLOW : (-PAS_FOLLOW);
+                float correction = mean * FOV/RESOLUTION;
                 command_angle += int(correction);
                 if (command_angle >= 180) {command_angle = 180;} //saturation
                 else if (command_angle <= 0) {command_angle = 0;} //saturation
