@@ -37,7 +37,7 @@ As the ROS environment on the Jetson has not yet been started, **it is normal fo
     * Press "B" to stop the car
     * Press "A" to select Autonomous Mode (that do nothing by default), press "Y" to select Manual Mode
     * Press "X" to record path
-    * Press Dpad top, right and bottom for camera rotation mode, respectively, manual, scan and follow manometer
+    * Press Dpad top or right  for camera rotation mode, respectively, manual and scan
     * Use right joystick to control camera rotation in manual camera mode
 
 6. **Optional** If you want to start the LIDAR and the CAMERA (not used by default):
