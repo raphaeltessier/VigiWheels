@@ -208,15 +208,12 @@ private:
 
 
         //camera 
-        if (buttonDpadBottom || buttonDpadTop || buttonDpadRight){
+        if (buttonDpadTop || buttonDpadRight){
 
             if (buttonDpadTop)
                 cam_mode = 0;
             else if (buttonDpadRight)
                 cam_mode = 1;
-            else if (buttonDpadBottom && !buttonStart){
-                cam_mode = 2;
-            }
         }
 
         axisRS_X = -axisRS_X;   //axisLS_X : 1 .. -1  ;  steering_angle : -1 .. 1

@@ -57,12 +57,20 @@ private:
     * 
     */
     void camPosOrderCallback(const interfaces::msg::CamPosOrder & pos_cmd){
-        mode = pos_cmd.mode; // 0 : fixed ; 1 : scan
+        if (mode != pos_cmd.mode) {
+            mode = pos_cmd.mode; // 0 : manual ; 1 : scan
+            if (mode == 0) {
+                RCLCPP_INFO(this->get_logger(), "CAMERA in MANUAL mode");
+            }
+            else if (mode == 1) {
+                RCLCPP_INFO(this->get_logger(), "CAMERA in SCAN mode");
+            }
+        }
         turn = pos_cmd.turn_cam;
     }
 
 
-    /* Update image position for mode 2 from image pos order feedback [callback function]  :
+    /* Update image position for follow from image pos order feedback [callback function]  :
     *
     * This function is called when a message is published on the "/ManometerInfo" topic
     * 
@@ -80,43 +88,29 @@ private:
     void updateCmd(){
 
         auto servoOrder = interfaces::msg::ServoCamOrder();
-
-        if (mode == 0) {
-        command_angle = command_angle + turn*PAS_MANUAL;
-            if (command_angle >= 180) {
-                command_angle = 180;
-            }
-            else if (command_angle <= 0) {
-                command_angle = 0;
-            }
-            
-        }
-        else if (mode == 1) {
-            command_angle = command_angle + sens;
-            if (command_angle >= 180) {
-                command_angle = 180;
-                sens = -sens;
-            }
-            else if (command_angle <= 0) {
-                command_angle = 0;
-                sens = -sens;
-            }
-            
-        }
-        else if (mode == 2){
-            if (mano_update) {
+        if (mano_update) {
                 mano_update = 0;
                 float mean = (x1 + x2)/2 -320;
                 //float correction = (mean > 0) ? PAS_FOLLOW : (-PAS_FOLLOW);
                 float correction = mean * FOV/RESOLUTION;
                 command_angle += int(correction);
-                if (command_angle >= 180) {command_angle = 180;} //saturation
-                else if (command_angle <= 0) {command_angle = 0;} //saturation
-            }
+        }
+        else if (mode == 0) {
+        command_angle = command_angle + turn*PAS_MANUAL;
 
         }
+        else if (mode == 1) {
+            command_angle = command_angle + sens;    
+        }
 
-
+        if (command_angle >= 180) {
+            command_angle = 180; //saturation
+            sens = -PAS_SCAN;
+        } 
+        else if (command_angle <= 0) {
+            command_angle = 0; //saturation
+            sens = PAS_SCAN;
+        } 
 
         servoOrder.servo_cam_angle = command_angle;
 
