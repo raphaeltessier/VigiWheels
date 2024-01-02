@@ -133,13 +133,16 @@ private:
 
         if (buttonA || buttonY || buttonDpadBottom){
 
-            if (buttonY)
+            if (buttonY){
                 mode = 0;
-            else if (buttonA)
+            }
+            else if (buttonA){
                 mode = 1;
+            }
             else if (buttonDpadBottom && buttonStart){
                 mode = 2;
                 start = false;
+
             }
         }
 
@@ -158,7 +161,8 @@ private:
         if (buttonB){       // B button -> Stop the car
             start = false;
 
-        }else if (buttonStart && mode !=2){   // Start button -> Start the car    
+        }
+        else if (buttonStart && mode !=2){   // Start button -> Start the car    
             start = true;
         }
 
@@ -189,7 +193,7 @@ private:
         }
 
         //recording path
-        if (buttonX) {
+        if (buttonX && !prev_buttonX) {
             record_path = !record_path;
         }
 
@@ -229,12 +233,14 @@ private:
 
         publisher_cam_pos_order_->publish(camOrderMsg); //Send order to the servo_cam mode
 
+        prev_buttonX = buttonX;
+
     }
 
     //Joystick variables
     map<string,int> axisMap;
     map<string,int> buttonsMap;
-    bool buttonB, buttonStart, buttonA, buttonY, buttonX, buttonDpadBottom, buttonDpadLeft,buttonDpadRight, buttonDpadTop ;
+    bool buttonB, buttonStart, buttonA, buttonY, buttonX, prev_buttonX, buttonDpadBottom, buttonDpadLeft,buttonDpadRight, buttonDpadTop ;
     
     float axisRT, axisLT, axisLS_X, axisRS_X;
 
