@@ -15,7 +15,10 @@
 #include "../include/path_recording/path_recording_node.h"
 
 using namespace std;
+using namespace std::chrono;
 using placeholders::_1;
+
+
 
 
 
@@ -53,6 +56,11 @@ private:
     * 
     */
     void camPosOrderCallback(const interfaces::msg::CamPosOrder & pos_cmd){
+        if (recording) {
+            time_span_cam = duration_cast<duration<double>>(steady_clock::now() - t_start);
+            cam_data << time_span_cam.count() << " " << (int)pos_cmd.mode << " " << pos_cmd.turn_cam << endl;
+            
+        }
 
     }
 
@@ -65,8 +73,8 @@ private:
     void joystickOrderCallback(const interfaces::msg::JoystickOrder & joyOrder){
         if (joyOrder.record_path && !prev_buttonX && (!recording) && joyOrder.start && (joyOrder.mode == 0)) { 
             //run the record if request and start and manual mode
-            recording = true;
             if (startRecord() != -1) {
+                recording = true;
                 RCLCPP_INFO(this->get_logger(), "Start recording : use X button to stop record");
             }
         }
@@ -76,6 +84,11 @@ private:
             recording = false;
             RCLCPP_INFO(this->get_logger(), "Record finish");
 
+        }
+        else if (recording) {
+            time_span_car = duration_cast<duration<double>>(steady_clock::now() - t_start);
+            car_data << time_span_car.count() << " " << joyOrder.throttle << " " << joyOrder.steer <<  " " << joyOrder.reverse << endl;
+            
         }
 
 
@@ -91,8 +104,8 @@ private:
         string name_car = "/home/pi/path/" + date + "_car.txt";
         string name_cam = "/home/pi/path/" + date + "_cam.txt";
 
-        car_data.open(name_car.c_str());
-        cam_data.open(name_cam.c_str());
+        car_data.open(name_car.c_str(), ofstream::out | ofstream::app);
+        cam_data.open(name_cam.c_str(), ofstream::out | ofstream::app);
         
         if(!car_data || !cam_data) {
             RCLCPP_ERROR(this->get_logger(), "Error while creating saving files");
@@ -104,6 +117,8 @@ private:
             RCLCPP_INFO(this->get_logger(), msg.c_str());
             msg = "Camera command will be save in " + name_car;
             RCLCPP_INFO(this->get_logger(), msg.c_str());
+
+            t_start = steady_clock::now();
             return 0;
         }
 
@@ -118,9 +133,8 @@ private:
         
     // return the date in string : "DD-MM-YYYY_HH-MM-SS"
     string getDate() {
-        using chrono::system_clock;
         auto today = system_clock::now();
-        time_t now_c = chrono::system_clock::to_time_t(today);
+        time_t now_c = system_clock::to_time_t(today);
         tm * ptm = localtime(&now_c);
         char buffer[20];
         strftime(buffer, 20, "%d-%m-%Y_%H-%M-%S", ptm); 
@@ -137,6 +151,11 @@ private:
     bool recording = false;
     bool prev_buttonX = false;
 
+
+    //timing data
+    steady_clock::time_point t_start;
+    duration<double> time_span_car;
+    duration<double> time_span_cam;
         
         
 
