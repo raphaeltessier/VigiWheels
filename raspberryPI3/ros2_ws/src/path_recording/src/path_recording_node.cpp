@@ -63,22 +63,29 @@ private:
     * 
     */
     void joystickOrderCallback(const interfaces::msg::JoystickOrder & joyOrder){
-        if (joyOrder.record_path && (!recording) && joyOrder.start && (joyOrder.mode == 0)) {
+        if (joyOrder.record_path && !prev_buttonX && (!recording) && joyOrder.start && (joyOrder.mode == 0)) { 
+            //run the record if request and start and manual mode
             recording = true;
             if (startRecord() != -1) {
                 RCLCPP_INFO(this->get_logger(), "Start recording : use X button to stop record");
             }
         }
-        if ((!joyOrder.record_path) && recording){
+        else if (((joyOrder.record_path && !prev_buttonX) || (!joyOrder.start) || (joyOrder.mode != 0)) && recording ){ 
+            //stop the record if request or stop or autonomous/calibrating mode
             stopRecording();
             recording = false;
             RCLCPP_INFO(this->get_logger(), "Record finish");
 
         }
+
+
+
+
+        prev_buttonX = joyOrder.record_path;
     }
 
 
-
+    //start two ofstream flux in /home/pi/path/DD-MM-YYYY_HH-MM-SS_cam.txt (and _car)
     int startRecord() {
         string date = getDate();
         string name_car = "/home/pi/path/" + date + "_car.txt";
@@ -101,12 +108,15 @@ private:
         }
 
     }
+
+
+    //close the ofstream flux
     void stopRecording () {
         car_data.close();
         cam_data.close();
     }
         
-
+    // return the date in string : "DD-MM-YYYY_HH-MM-SS"
     string getDate() {
         using chrono::system_clock;
         auto today = system_clock::now();
@@ -125,6 +135,7 @@ private:
 
     //General variables
     bool recording = false;
+    bool prev_buttonX = false;
 
         
         

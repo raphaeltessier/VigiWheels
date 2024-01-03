@@ -192,11 +192,6 @@ private:
             requestedAngle = axisLS_X;    
         }
 
-        //recording path
-        if (buttonX && !prev_buttonX) {
-            record_path = !record_path;
-        }
-
         
 
         auto joystickOrderMsg = interfaces::msg::JoystickOrder();
@@ -205,7 +200,7 @@ private:
         joystickOrderMsg.throttle = requestedThrottle;
         joystickOrderMsg.steer  = requestedAngle;
         joystickOrderMsg.reverse = reverse;
-        joystickOrderMsg.record_path = record_path;
+        joystickOrderMsg.record_path = buttonX;
 
         publisher_joystick_order_->publish(joystickOrderMsg); //Send order to the car_control_node
 
@@ -233,7 +228,6 @@ private:
 
         publisher_cam_pos_order_->publish(camOrderMsg); //Send order to the servo_cam mode
 
-        prev_buttonX = buttonX;
 
     }
 
