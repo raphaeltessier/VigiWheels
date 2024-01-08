@@ -39,9 +39,6 @@ public:
         "joystick_order", 10, std::bind(&path_recording::joystickOrderCallback, this, _1));
 
 
-
-
-
         RCLCPP_INFO(this->get_logger(), "path_node READY");
     }
 
@@ -101,8 +98,8 @@ private:
     //start two ofstream flux in /home/pi/path/DD-MM-YYYY_HH-MM-SS_cam.txt (and _car)
     int startRecord() {
         string date = getDate();
-        string name_car = "/home/pi/path/" + date + "_car.txt";
-        string name_cam = "/home/pi/path/" + date + "_cam.txt";
+        string name_car = "/home/pi/path/memory/" + date + "_car.txt";
+        string name_cam = "/home/pi/path/memory/" + date + "_cam.txt";
 
         car_data.open(name_car.c_str(), ofstream::out | ofstream::app);
         cam_data.open(name_cam.c_str(), ofstream::out | ofstream::app);
