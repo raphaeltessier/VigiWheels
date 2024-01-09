@@ -86,25 +86,25 @@ private:
 
     void updateAuto(){
 
-        if (car_mode == 1 && car_start && !playing) {
+        if (car_mode == 1 && car_start && !playing) { //start replay mode
             if (startPlaying() != -1) {
                 playing = true;
             }
         }
-        else if ((car_mode != 1 || !car_start) && playing) {
+        else if ((car_mode != 1 || !car_start) && playing) { //stop replay mode 
             playing = false;
             file.close();
         }
         else if (playing) {
             duration<double> time_span = duration_cast<duration<double>>(steady_clock::now() - t_start);
-            if (time_span.count() >= time_stamp) {
-                file >> mode >> turn;
+            if (time_span.count() >= time_stamp) { //if timing is ok 
+                file >> mode >> turn; //update command
                 file.ignore(256, '\n');
                 if (!file.eof()) {
-                    file >> time_stamp;
+                    file >> time_stamp; //update commant timing
                 }
                 else {
-                    playing = false;
+                    playing = false; //close the file at it end
                     file.close();
                 }
             }
@@ -114,21 +114,22 @@ private:
 
      }
 
+    //open the ifstream
     int startPlaying() {
         ifstream to_run;
         
-        to_run.open("/home/pi/path/file_to_run.txt", ifstream::in);
+        to_run.open("/home/pi/path/file_to_run.txt", ifstream::in); //open fil where name of instruction file is store
         if(!to_run) {
             RCLCPP_ERROR(this->get_logger(), "Error while opening save name file");
             return -1;
         }
         else {
-            char c_root[20];
-            to_run.getline(c_root, 20);
+            char c_name[20];
+            to_run.getline(c_root, 20); //reading instruction txt file name
             to_run.close();
 
-            string name = "/home/pi/path/memory/" + string(c_root) + "_cam.txt";
-            file.open(name.c_str());
+            string name = "/home/pi/path/memory/" + string(c_name) + "_cam.txt";
+            file.open(name.c_str());//opening instruction file for the camera
 
             if(!file) {
                 RCLCPP_ERROR(this->get_logger(), "Error while opening record file");
@@ -137,9 +138,9 @@ private:
             else {
                 string msg = "Start playing " + name;
                 RCLCPP_INFO(this->get_logger(), msg.c_str());
-                t_start = steady_clock::now();
+                t_start = steady_clock::now(); //get time origin
                 if(!file.eof()) {
-                    file >> time_stamp;
+                    file >> time_stamp; // get first instruction timing
                 }
                 else {
                     RCLCPP_ERROR(this->get_logger(), "Empty file");
@@ -182,35 +183,35 @@ private:
     }
 
 
- //periodic function, see servo_cam_node.h to set period -> 100ms
+ //periodic function, see servo_cam_node.h to set period -> 10ms
     // to update the angular positon of the camera 
 
     void updateCmd(){
 
         if (car_start) {
             auto servoOrder = interfaces::msg::ServoCamOrder();
-            if (mano_update) {
+            if (mano_update) { //if we have something to follow
                     mano_update = 0;
                     float mean = (x1 + x2)/2 -320;
                     //float correction = (mean > 0) ? PAS_FOLLOW : (-PAS_FOLLOW);
                     float correction = mean * FOV/RESOLUTION;
                     command_angle += int(correction);
             }
-            else if (mode == 0) {
+            else if (mode == 0) { //manual mode
             command_angle = command_angle + turn*PAS_MANUAL;
 
             }
-            else if (mode == 1) {
+            else if (mode == 1) { //scan mode
                 command_angle = command_angle + sens;    
             }
 
             if (command_angle >= 180) {
                 command_angle = 180; //saturation
-                sens = -PAS_SCAN;
+                sens = -PAS_SCAN; //reverse direction for scan mode
             } 
             else if (command_angle <= 0) {
                 command_angle = 0; //saturation
-                sens = PAS_SCAN;
+                sens = PAS_SCAN;  //reverse direction for scan mode
             } 
 
             servoOrder.servo_cam_angle = command_angle;

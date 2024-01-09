@@ -54,8 +54,8 @@ private:
     */
     void camPosOrderCallback(const interfaces::msg::CamPosOrder & pos_cmd){
         if (recording) {
-            time_span_cam = duration_cast<duration<double>>(steady_clock::now() - t_start);
-            cam_data << time_span_cam.count() << " " << (int)pos_cmd.mode << " " << pos_cmd.turn_cam << endl;
+            time_span_cam = duration_cast<duration<double>>(steady_clock::now() - t_start); //compute timing of the callback
+            cam_data << time_span_cam.count() << " " << (int)pos_cmd.mode << " " << pos_cmd.turn_cam << endl; //store data in txt file
             
         }
 
@@ -68,8 +68,8 @@ private:
     * 
     */
     void joystickOrderCallback(const interfaces::msg::JoystickOrder & joyOrder){
-        if (joyOrder.record_path && !prev_buttonX && (!recording) && joyOrder.start && (joyOrder.mode == 0)) { 
-            //run the record if request and start and manual mode
+        if (joyOrder.record_path && !prev_buttonX && (!recording) && joyOrder.start && (joyOrder.mode == 0)) {
+            //run the record if request and start and manual mode, when rising edge of record request
             if (startRecord() != -1) {
                 recording = true;
                 RCLCPP_INFO(this->get_logger(), "Start recording : use X button to stop record");
@@ -83,8 +83,8 @@ private:
 
         }
         else if (recording) {
-            time_span_car = duration_cast<duration<double>>(steady_clock::now() - t_start);
-            car_data << time_span_car.count() << " " << joyOrder.throttle << " " << joyOrder.steer <<  " " << joyOrder.reverse << endl;
+            time_span_car = duration_cast<duration<double>>(steady_clock::now() - t_start); //compute timing of the callback
+            car_data << time_span_car.count() << " " << joyOrder.throttle << " " << joyOrder.steer <<  " " << joyOrder.reverse << endl; //store data in txt file
             
         }
 
