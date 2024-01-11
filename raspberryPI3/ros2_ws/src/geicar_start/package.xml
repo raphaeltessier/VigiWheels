@@ -20,15 +20,12 @@
   <exec_depend>car_control</exec_depend>
   <exec_depend>system_check</exec_depend>
   <exec_depend>ros2launch</exec_depend>
-  <exec_depend>obstacles></exec_depend>
-  <exec_depend>servo_cam></exec_depend>
-  <exec_depend>uart></exec_depend>
+  <exec_depend>obstacles</exec_depend>
+  <exec_depend>servo_cam</exec_depend>
+  <exec_depend>uart</exec_depend>
   <exec_depend>fire_detection</exec_depend>
 
   <export>
     <build_type>ament_cmake</build_type>
   </export>
-  <launch>
-    <include file="$(find rosbridge_server)/launch/rosbridge_websocket.launch"/>
-  </launch>
 </package>
