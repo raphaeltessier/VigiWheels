@@ -2,6 +2,9 @@
 #include <chrono>
 #include <functional>
 #include <memory>
+#include <fstream>
+#include <ctime>
+#include <string.h> 
 
 #include "interfaces/msg/motors_order.hpp"
 #include "interfaces/msg/motors_feedback.hpp"
@@ -17,6 +20,7 @@
 #include "../include/car_control/controlCmd.h"
 
 using namespace std;
+using namespace std::chrono;
 using placeholders::_1;
 
 
@@ -141,7 +145,7 @@ private:
         }
         else {
             char c_name[20];
-            to_run.getline(c_root, 20); //reading instruction txt file name
+            to_run.getline(c_name, 20); //reading instruction txt file name
             to_run.close();
 
             string name = "/home/pi/path/memory/" + string(c_name) + "_car.txt";
@@ -167,7 +171,7 @@ private:
             }
         }
 
-
+    }
     /* Update PWM commands : leftRearPwmCmd, rightRearPwmCmd, steeringPwmCmd
     *
     * This function is called periodically by the timer [see PERIOD_UPDATE_CMD in "car_control_node.h"]
@@ -187,7 +191,7 @@ private:
 
         auto motorsOrder = interfaces::msg::MotorsOrder();
 
-        if ((car_mode != 1 || !car_start) && playing) { //stop replay mode 
+        if ((mode != 1 || !start) && playing) { //stop replay mode 
                 playing = false;
                 file.close();
         }

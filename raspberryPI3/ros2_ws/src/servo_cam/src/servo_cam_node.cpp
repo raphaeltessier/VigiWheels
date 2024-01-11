@@ -125,7 +125,7 @@ private:
         }
         else {
             char c_name[20];
-            to_run.getline(c_root, 20); //reading instruction txt file name
+            to_run.getline(c_name, 20); //reading instruction txt file name
             to_run.close();
 
             string name = "/home/pi/path/memory/" + string(c_name) + "_cam.txt";
