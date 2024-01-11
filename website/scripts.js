@@ -25,21 +25,6 @@ function newCmdAngle(CMDangle) {
     startAngle = endAngle;
 }
 
-<<<<<<< HEAD
-=======
-/*
-function toggleObstacle(position, enable) {
-    const obstacle = document.getElementById(`obstacle_${position}`); // Sélection de tous les éléments avec la classe 'obstacle'
-    if (enable == 1){
-        obstacle.style.display = "flex";
-    } else if (enable == 0){
-        obstacle.style.display = "none";
-    }
-
-
-}*/
-
->>>>>>> 1f3bf00d4f794654fc3993c51cbb317e4cda19ee
 let detectedPositions = []; // Tableau pour stocker les positions détectées
 
 function toggleObstacle(position, enable) {
@@ -80,7 +65,6 @@ function fireDetected(isFireDetected) {
     const fireContainer = document.getElementById("fire_notif");
 
     if (isFireDetected === 1) {
-<<<<<<< HEAD
         toggleDisplay(fireContainer, true);
     } else if (isFireDetected === 0) {
         toggleDisplay(fireContainer, false);
@@ -100,21 +84,6 @@ function ManometerDetected(isManometerDetected, value = 0) {
         toggleDisplay(ManometerContainer, true);
     } else if (isManometerDetected === 0) {
         toggleDisplay(ManometerContainer, false);
-=======
-        toggleBlinking(fireContainer, true);
-    } else if (isFireDetected === 0) {
-        toggleBlinking(fireContainer, false);
-    }
-}
-
-function ManometerDetected(isManometerDetected) {
-    const ManometerContainer = document.getElementById("manometer_notif");
-
-    if (isManometerDetected === 1) {
-        toggleBlinking(ManometerContainer, true);
-    } else if (isManometerDetected === 0) {
-        toggleBlinking(ManometerContainer, false);
->>>>>>> 1f3bf00d4f794654fc3993c51cbb317e4cda19ee
     }
 }
 
@@ -122,22 +91,15 @@ function ObstacleDetected(isObstacleDetected) {
     const ObstacleContainer = document.getElementById("obstacle_notif");
 
     if (isObstacleDetected === 1) {
-<<<<<<< HEAD
         toggleDisplay(ObstacleContainer, true);
     } else if (isObstacleDetected === 0) {
         toggleDisplay(ObstacleContainer, false);
-=======
-        toggleBlinking(ObstacleContainer, true);
-    } else if (isObstacleDetected === 0) {
-        toggleBlinking(ObstacleContainer, false);
->>>>>>> 1f3bf00d4f794654fc3993c51cbb317e4cda19ee
     }
 }
 
 let intervalId = null;
 const elementsToBlink = new Set();
 
-<<<<<<< HEAD
 
 function toggleDisplay(element, shouldDisplay) {
     if (shouldDisplay) {
@@ -147,8 +109,6 @@ function toggleDisplay(element, shouldDisplay) {
     }
 }
 
-=======
->>>>>>> 1f3bf00d4f794654fc3993c51cbb317e4cda19ee
 function toggleBlinking(element, shouldBlink) {
     if (shouldBlink) {
         elementsToBlink.add(element);
@@ -177,7 +137,6 @@ let o4 = 0;
 let o5 = 0;
 let o6 = 0;
 let fire = 0;
-<<<<<<< HEAD
 function waitFor(event) {
     if (event.key === 'm') {
         if (mano == 1) {
@@ -190,29 +149,6 @@ function waitFor(event) {
     }
     if (event.key === 'b') {
         changeBatteryLevel();
-=======
-function waitForO(event) {
-    if (event.key === 'o') {
-        // L'action que vous voulez exécuter une fois que 'o' est pressé
-        alert("La touche 'o' a été pressée !");
-        // Autre action que vous souhaitez réaliser ici
-    }
-    if (event.key === 'm') {
-        // L'action que vous voulez exécuter une fois que 'o' est pressé
-        if (mano == 1) {
-            ManometerDetected(0);
-            mano = 0;
-        } else if (mano == 0) {
-            ManometerDetected(1);
-            mano = 1;
-        }
-        // Autre action que vous souhaitez réaliser ici
-    }
-    if (event.key === 'b') {
-        // L'action que vous voulez exécuter une fois que 'o' est pressé
-        changeBatteryLevel();
-        // Autre action que vous souhaitez réaliser ici
->>>>>>> 1f3bf00d4f794654fc3993c51cbb317e4cda19ee
     }
     if (event.key === 'f') {
         if (fire == 0) {
@@ -232,10 +168,6 @@ function waitForO(event) {
             o1 = 0;
         }
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 1f3bf00d4f794654fc3993c51cbb317e4cda19ee
     }
     if (event.key === '6') {
         if (o2 === 0) {
@@ -291,7 +223,6 @@ function redirect(url) {
     window.location.href = url;
 }
 
-<<<<<<< HEAD
 function changeBatteryLevel(BatteryLevel = "None") {
     var batteryText = document.getElementById('batteryLevel');
         batteryText.innerText = `Battery level: ${BatteryLevel}`;
@@ -310,20 +241,6 @@ function changeSpeed(speedvalue) {
 
 
 document.addEventListener('keydown', waitFor);
-=======
-function changeBatteryLevel() {
-    var batteryText = document.getElementById('batteryLevel');
-    if (batteryText.innerText.includes('High')) {
-        batteryText.innerText = batteryText.innerText.replace('High', 'Low');
-    } else if (batteryText.innerText.includes('Low')) {
-        batteryText.innerText = batteryText.innerText.replace('Low', 'Medium');
-    } else if (batteryText.innerText.includes('Medium')) {
-        batteryText.innerText = batteryText.innerText.replace('Medium', 'High');
-    }
-}
-
-document.addEventListener('keydown', waitForO);
->>>>>>> 1f3bf00d4f794654fc3993c51cbb317e4cda19ee
 
 function angleleft() {
     newCmdAngle(-80);
