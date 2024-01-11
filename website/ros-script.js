@@ -1,5 +1,4 @@
 // ros-script.js
-
 var ros = new ROSLIB.Ros({
     url: 'ws://10.105.1.168:9090'
 });
@@ -16,26 +15,17 @@ ros.on('close', function () {
     console.log('Connexion au serveur websocket ROS fermée.');
 });
 
-var modePublisher = new ROSLIB.Topic({
+
+var listener = new ROSLIB.Topic({
     ros: ros,
-    name: '/web_mode',
-    messageType: 'interfaces/msg/WebMode'
+    name: '/motors_order',
+    messageType: 'interfaces/msg/MotorsOrder'
 });
 
+listener.subscribe(test);
 
-var generalDataListener = new ROSLIB.Topic({
-    ros: ros,
-    name: '/general_data', 
-    messageType: 'interfaces/msg/GeneralData'
-});
+function test(message){
 
+    console.log('mess',message.right_rear_pwm);
 
-function updateBatteryDisplay(message) {
-
-    if (message.battery_level !== undefined) {
-
-        document.getElementById('batteryDisplay').innerHTML = 'Battery Level: ' + message.battery_level;
-    }
 }
-
-generalDataListener.subscribe(updateBatteryDisplay);

@@ -2,11 +2,9 @@
 const arc = document.getElementById('arc');
 arc.style.transformOrigin = "100px 100px"; // Changement du centre de rotation
 
-
 function deplacerArc(angle) {
     const arc = document.getElementById('arc');
     arc.style.transform = `rotate(${angle}deg)`;
-
 }
 
 let startAngle = 0;
