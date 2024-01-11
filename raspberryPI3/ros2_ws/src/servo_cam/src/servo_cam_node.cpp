@@ -10,6 +10,7 @@
 #include "interfaces/msg/cam_pos_order.hpp"
 #include "interfaces/msg/manometer_info.hpp"
 #include "interfaces/msg/joystick_order.hpp"
+#include "interfaces/msg/obstacles_order.hpp"
 
 #include "std_srvs/srv/empty.hpp"
 
@@ -43,6 +44,9 @@ public:
         subscription_joystick_order_ = this->create_subscription<interfaces::msg::JoystickOrder>(
         "joystick_order", 10, std::bind(&servo_cam::joystickOrderCallback, this, _1));
 
+        subscription_obstacles_order_ = this->create_subscription<interfaces::msg::ObstaclesOrder>(
+        "obstacles_order", 10, std::bind(&servo_cam::obstaclesOrderCallback, this, _1));
+
         //periodic function
         timer_ = this->create_wall_timer(PERIOD_UPDATE_CMD, std::bind(&servo_cam::updateCmd, this));
         timer_auto_ = this->create_wall_timer(PERIOD_HIGH_CLK, std::bind(&servo_cam::updateAuto, this));
@@ -58,7 +62,25 @@ public:
     
 private:
 
+    /* Update front and rear obstacles prensence from Obstacles_order  :
+    *
+    * This function is called when a message is published on the "/mobstacles_order" topic
+    * 
+    */
+    void obstaclesOrderCallback(const interfaces::msg::ObstaclesOrder & obstacles_order){
+        if (((car_reverse && obstacles_order.rear_object) || (!car_reverse && obstacles_order.front_object)) && !obstacles_stop){  // si obstacle dans notre direction
 
+            obstacles_stop = true;
+            t_obstacle = steady_clock::now(); //get time when obstacle is detected
+
+        }
+        else if (obstacles_stop) {
+            obstacles_stop = false;
+            t_start += steady_clock::now() - t_obstacle; //ignore the time where an obstacle is present
+
+
+        }
+    }
 
     /* Update mode and pwm from cam pos order feedback [callback function]  :
     *
@@ -95,7 +117,7 @@ private:
             playing = false;
             file.close();
         }
-        else if (playing) {
+        else if (playing && !obstacles_stop) {
             duration<double> time_span = duration_cast<duration<double>>(steady_clock::now() - t_start);
             if (time_span.count() >= time_stamp) { //if timing is ok 
                 file >> mode >> turn; //update command
@@ -168,6 +190,7 @@ private:
 
         car_mode = joyOrder.mode;
         car_start = joyOrder.start;
+        car_reverse = joyOrder.reverse;
         }
     
 
@@ -244,10 +267,13 @@ private:
 
         int car_mode = 0;
         bool car_start = false;
+        bool car_reverse;
 
         bool playing = false;
 
         double time_stamp;
+
+        bool obstacles_stop;
 
 
         //file
@@ -255,6 +281,7 @@ private:
 
         //timing data
         steady_clock::time_point t_start;
+        steady_clock::time_point t_obstacle;
         duration<double> time_span;
 
 
@@ -269,6 +296,8 @@ private:
     rclcpp::Subscription<interfaces::msg::CamPosOrder>::SharedPtr subscription_cam_pos_order_;
     rclcpp::Subscription<interfaces::msg::ManometerInfo>::SharedPtr subscription_manometer_order_;  
     rclcpp::Subscription<interfaces::msg::JoystickOrder>::SharedPtr subscription_joystick_order_;
+    rclcpp::Subscription<interfaces::msg::ObstaclesOrder>::SharedPtr subscription_obstacles_order_; 
+
 
     //Timer
     rclcpp::TimerBase::SharedPtr timer_;

@@ -8,6 +8,7 @@
 
 #include "interfaces/msg/cam_pos_order.hpp"
 #include "interfaces/msg/joystick_order.hpp"
+#include "interfaces/msg/obstacles_order.hpp"
 
 
 #include "std_srvs/srv/empty.hpp"
@@ -38,6 +39,9 @@ public:
         subscription_joystick_order_ = this->create_subscription<interfaces::msg::JoystickOrder>(
         "joystick_order", 10, std::bind(&path_recording::joystickOrderCallback, this, _1));
 
+        subscription_obstacles_order_ = this->create_subscription<interfaces::msg::ObstaclesOrder>(
+        "obstacles_order", 10, std::bind(&path_recording::obstaclesOrderCallback, this, _1));
+
 
         RCLCPP_INFO(this->get_logger(), "path_node READY");
     }
@@ -45,7 +49,15 @@ public:
     
 private:
 
-
+    /* Update front and rear obstacles prensence from Obstacles_order  :
+    *
+    * This function is called when a message is published on the "/mobstacles_order" topic
+    * 
+    */
+    void obstaclesOrderCallback(const interfaces::msg::ObstaclesOrder & obstacles_order){
+        obstacles_front = obstacles_order.front_object;
+        obstacles_rear = obstacles_order.rear_object;
+    }
 
     /* Update mode and pwm from cam pos order feedback [callback function]  :
     *
@@ -72,14 +84,15 @@ private:
             //run the record if request and start and manual mode, when rising edge of record request
             if (startRecord() != -1) {
                 recording = true;
-                RCLCPP_INFO(this->get_logger(), "Start recording : use X button to stop record");
+                RCLCPP_INFO(this->get_logger(), "Start recording, record will stop when pushing X, changing mode, or detecting obstacle");
             }
         }
-        else if (((joyOrder.record_path && !prev_buttonX) || (!joyOrder.start) || (joyOrder.mode != 0)) && recording ){ 
+        else if (((joyOrder.record_path && !prev_buttonX) || (!joyOrder.start) || (joyOrder.mode != 0) || 
+                                    (joyOrder.reverse && obstacles_rear) || (!joyOrder.reverse && obstacles_front)) && recording ){ 
             //stop the record if request or stop or autonomous/calibrating mode
             stopRecording();
             recording = false;
-            RCLCPP_INFO(this->get_logger(), "Record finish");
+            RCLCPP_INFO(this->get_logger(), "Record stopped");
 
         }
         else if (recording) {
@@ -148,7 +161,14 @@ private:
     bool recording = false;
     bool prev_buttonX = false;
 
+    //obstacles variables
+    bool obstacles_front;
+    bool obstacles_rear;
 
+    //Car variables
+    bool reverse;    
+
+    
     //timing data
     steady_clock::time_point t_start;
     duration<double> time_span_car;
@@ -162,6 +182,7 @@ private:
     //Suscribers
     rclcpp::Subscription<interfaces::msg::CamPosOrder>::SharedPtr subscription_cam_pos_order_;
     rclcpp::Subscription<interfaces::msg::JoystickOrder>::SharedPtr subscription_joystick_order_;
+    rclcpp::Subscription<interfaces::msg::ObstaclesOrder>::SharedPtr subscription_obstacles_order_; 
 
     //fichier stockage
     ofstream car_data;

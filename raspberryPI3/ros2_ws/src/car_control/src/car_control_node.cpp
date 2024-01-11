@@ -209,7 +209,7 @@ private:
                 }
             }
 
-            else if (playing) {
+            else if (playing && !obstacles_stop) {
                 duration<double> time_span = duration_cast<duration<double>>(steady_clock::now() - t_start);
                 if (time_span.count() >= time_stamp) { //if timing is ok 
                     file >> requestedThrottle >> requestedSteerAngle >> reverse; //update command
@@ -232,18 +232,32 @@ private:
                     rightRearPwmCmd = STOP;
                     steeringPwmCmd = STOP;
 
+                    if (!obstacles_stop) {
+                        obstacles_stop = true;
+                        t_obstacle = steady_clock::now(); //get time when obstacle is detected
+
+                    }
+
+                }
+                else if (obstacles_stop) {
+                    obstacles_stop = false;
+                    t_start += steady_clock::now() - t_obstacle; //ignore the time where an obstacle is present
+
+
                 }
                 else{
-                    calculateRPM_Left_Auto(requestedThrottle, reverse, leftRearPwmCmd, leftRearSpeedFeedback,
+                    manualPropulsionCmd(requestedThrottle, reverse, leftRearPwmCmd,rightRearPwmCmd);
+                    /*calculateRPM_Left_Auto(requestedThrottle, reverse, leftRearPwmCmd, leftRearSpeedFeedback,
                     lastError_L, correctedValue_L);
 
                     calculateRPM_Right_Auto(requestedThrottle, reverse, rightRearPwmCmd, rightRearSpeedFeedback,
-                    lastError_R, correctedValue_R );
+                    lastError_R, correctedValue_R );*/
 
                         
                 }
-                steeringCmd(requestedSteerAngle,currentAngle, steeringPwmCmd);
-
+                if (!obstacles_stop || !playing) {
+                    steeringCmd(requestedSteerAngle,currentAngle, steeringPwmCmd);
+                }
             
                 
             }
@@ -330,6 +344,9 @@ private:
     //obstacles variables
     bool obstacles_front;
     bool obstacles_rear;
+
+    bool obstacles_stop = false;
+
     
     
     
@@ -361,6 +378,7 @@ private:
 
     //timing data
     steady_clock::time_point t_start;
+    steady_clock::time_point t_obstacle;
     duration<double> time_span;
     double time_stamp;
 
