@@ -7,17 +7,24 @@ body {
     align-items: center;
     justify-content: center;
     height: 100vh;
-    background-color: #111; /* Couleur de fond sombre pour le mode sombre */
-    color: #fff; /* Couleur du texte principale en mode sombre */
+    background-color: #ffffff;
+    /* Couleur de fond sombre pour le mode sombre */
+    color: #fff;
+    /* Couleur du texte principale en mode sombre */
+    
+        overflow: hidden;
+      
 }
 
-.container,
+
 .container_log {
     text-align: center;
-    background-color: rgba(0, 0, 0, 0.8); /* Couleur de fond du conteneur en mode sombre */
-    padding: 20px;
+    background-color: rgba(78, 69, 69, 0);
+    /* Couleur de fond du conteneur en mode sombre */
+    padding: 5px;
     border-radius: 10px;
-    color: #fff; /* Couleur du texte en mode sombre */
+    color: #fff;
+    /* Couleur du texte en mode sombre */
 }
 
 .arrow-icon {
@@ -33,52 +40,82 @@ body {
     margin-bottom: 10px;
     padding: 8px;
     font-family: 'Georgia', 'Times', sans-serif;
-    color: #fff; /* Couleur du texte des champs de texte en mode sombre */
+    color: #fff;
+    /* Couleur du texte des champs de texte en mode sombre */
 }
+
 .car-icon-container {
     text-align: center;
-    position: relative;
+    position: absolute;
 }
 
 .flame-icon {
     position: absolute;
-    top: 50%; /* Positionnement au milieu verticalement */
-    left: 50%; /* Positionnement au milieu horizontalement */
-    transform: translate(-50%, -50%); /* Ajustement pour centrer */
+    top: 50%;
+    /* Positionnement au milieu verticalement */
+    left: 50%;
+    /* Positionnement au milieu horizontalement */
+    transform: translate(-50%, -50%);
+    /* Ajustement pour centrer */
 }
 
 .text-content {
     text-align: center;
-    margin-top: 20px; /* Espacement vers le haut */
+    margin-top: 20px;
+    /* Espacement vers le haut */
     /* Autres styles pour le contenu texte */
 }
 
 
-svg {
-    display: inline-block;
-    height: 15px; /* Ajustez la taille */
-    width: 15px; /* Ajustez la taille */
-    fill: currentColor; /* Permet d'utiliser la couleur du texte parent */
-    vertical-align: middle;
+
+.image-container {
+    position: relative;
+    animation: rotation 5s linear infinite;
+    /* Définit l'animation appelée 'rotation' */
+    transform-origin: center bottom;
+    /* Définit le centre de rotation au centre de l'image */
 }
 
-.car-icon {
+@keyframes rotation {
+    from {
+        transform: rotate(0deg);
+        /* Rotation initiale à 0 degrés */
+    }
+
+    to {
+        transform: rotate(360deg);
+        /* Rotation complète à 360 degrés */
+    }
+}
+
+.scan-icon {
     text-align: center;
-    margin-top: 50px; /* Ajustez la marge pour centrer verticalement */
+    margin-top: 50px;
+    /* Ajustez la marge pour centrer verticalement */
+    height: 300px;
+    /* Ajustez la taille */
+    width: 300px;
+    /* Ajustez la taille */
 }
 
 .flame-icon {
-    display: block; /* Les flammes sont initialement affichées */
+    display: block;
+    /* Les flammes sont initialement affichées */
     text-align: center;
-    margin-top: 20px; /* Ajustez la marge pour les positionner */
-    height: 45px; /* Ajustez la taille */
-    width: 45   px; /* Ajustez la taille */
+    margin-top: 20px;
+    /* Ajustez la marge pour les positionner */
+    height: 45px;
+    /* Ajustez la taille */
+    width: 45 px;
+    /* Ajustez la taille */
 }
+
 label {
     margin-bottom: 5px;
     margin-top: 10px;
     font-size: 18px;
-    color: #aaa; /* Couleur du texte des étiquettes en mode sombre */
+    color: #aaa;
+    /* Couleur du texte des étiquettes en mode sombre */
 }
 
 button,
@@ -93,38 +130,252 @@ buttonE {
 }
 
 button {
-    background-color: #b30000; /* Couleur de fond du bouton */
-    color: #fff; /* Couleur du texte du bouton */
+    background-color: #00c894;
+    /* Couleur de fond du bouton */
+    color: #fff;
+    /* Couleur du texte du bouton */
 }
 
 button:hover {
-    background-color: #048589; /* Couleur de fond du bouton au survol */
+    background-color: #048589;
+    /* Couleur de fond du bouton au survol */
 }
 
 buttonE {
-    background-color: #b30000; /* Couleur de fond du bouton d'urgence */
-    color: #fff; /* Couleur du texte du bouton d'urgence */
+    background-color: #00c894;
+    /* Couleur de fond du bouton d'urgence */
+    color: #fff;
+    /* Couleur du texte du bouton d'urgence */
 }
 
 buttonE:hover {
-    background-color: #b70000; /* Couleur de fond du bouton d'urgence au survol */
+    background-color: #00c894;
+    /* Couleur de fond du bouton d'urgence au survol */
 }
 
 .alert {
-    background-color: #b30000; /* Couleur de fond de l'alerte */
-    color: #fff; /* Couleur du texte de l'alerte en mode sombre */
+    background-color: #00c894;
+    /* Couleur de fond de l'alerte */
+    color: #fff;
+    /* Couleur du texte de l'alerte en mode sombre */
 }
 
 .larger-text {
-    color: #890404; /* Couleur du texte en rouge bordeaux */
+    color: #00c894;
+    font-size: 65px;
+}
+
+.larger-text2 {
+    color: white;
+    /* Couleur du texte en rouge bordeaux */
 }
 
 .logout-b {
     background-color: rgba(120, 120, 120, 0.7);
     color: #fff;
+    position : absolute;
+    bottom: 10px;
+    right : 10px;
 }
 
 /* Ajout de styles spécifiques pour le mode sombre */
 .hidden {
+    display: none;
+}
+
+
+/* Styles pour diviser la page en deux parties */
+.container {
+    display: flex;
+    height: 100vh;
+    /* 100% de la hauteur de la fenêtre */
+}
+
+.left-side {
+    flex: 4;
+    align-items: center;
+    /* Centrer verticalement */
+    justify-content: center;
+    /* Centrer horizontalement */
+    height: 100vh;
+    /* Pour occuper toute la hauteur */
+    background-color: #2b2a33;
+    padding: 50px;
+}
+
+/* Styles pour le contenu textuel */
+.text-content {
+    text-align: center;
+    /* Centrer le texte horizontalement */
+}
+
+body {
+    border: 2px solid black;
+    /* Ajoute une bordure noire de 2 pixels à l'ensemble de la page */
+    margin: 0;
+    /* Supprime les marges par défaut du corps */
+    padding: 0;
+    /* Supprime les paddings par défaut du corps */
+    height: 100vh;
+    /* Hauteur de la page égale à 100% de la hauteur de la fenêtre */
+    display: flex;
+    /* Utilisation de Flexbox pour organiser le contenu */
+}
+
+.right-side {
+    flex: 6;
+    padding: 50px;
+    height: 100vh;
+    align-items: center;
+    /* Centrer verticalement */
+    justify-content: center;
+    /* Centrer horizontalement */
+    background-color: #a3a2ad;
+    padding: 50px;
+}
+
+
+
+/* Pour l'ensemble du document */
+body {
+    font-family: 'Roboto', Arial, sans-serif;
+}
+
+/* Pour les titres */
+h1,
+h2 {
+    font-family: 'Georgia', Times New Roman, serif;
+    /* Ajoutez d'autres styles de police ou de taille de texte ici si nécessaire */
+}
+
+h3 {
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 12px;
+    /* Ajoutez d'autres styles de police ou de taille de texte ici si nécessaire */
+}
+/* Pour les paragraphes */
+p {
+    font-family: 'Roboto', Arial, sans-serif;
+    /* Autres styles de police, taille, espacement, etc. */
+}
+.rectangle-container {
+    background-color: #1d1b1b; /* Couleur grise */
+    border-radius: 10px; /* Bords arrondis */
+    font-size: 16px;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+     padding-bottom: 10px; /* Espace intérieur */
+    margin-bottom: 30px;
+  }
+  .rectangle-container2 {
+    border-radius: 10px; /* Bords arrondis */
+    padding-left: 10px; /* Espace intérieur */
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background-color: #142a24; /* Couleur grise */
+    text-align: center;
+    font-size: 25px;
+    margin-bottom: 10px;
+  }
+/* Pour les textes en italique */
+.emphasis {
+    font-style: italic;
+    /* Choisissez la police appropriée */
+}
+
+/* Styles pour les icônes */
+.icons-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.bottom-center-text {   
+    position: absolute;
+    bottom: 5px; /* Ajustez cette valeur selon votre préférence */
+    left: 6%;
+    text-align: center;
+    font-size: 16px;
+}
+.bottom-center-text2 {
+    position: absolute;
+    bottom: 5px; /* Ajustez cette valeur selon votre préférence */
+    left: 58%;
+    text-align: center;
+    font-size: 16px;
+}
+.icon-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    /* Espacement entre chaque rangée d'icônes */
+}
+.logo-container  {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    color: #00c894;
+    font-size: 65px;
+    font-family: 'Georgia', Times New Roman, serif;
+    font-weight: bold;
+    
+}
+
+.icon {
+    width: 50px;
+    height: 50px;
+    margin-left: 50px;
+    /* Marge à droite des icônes */
+}
+
+.logo {
+    width: 120px;
+    height: 120px;
+    margin-left: 15px;
+    margin-right: 30px;
+    font-weight: bold;
+    /* Marge à droite des icônes */
+}
+
+.big-icon-container{
+    display: none;
+}
+.big-icon {
+    width: 80px;
+    height: 80px;
+    margin-left: 50px;
+    margin-right: 20px;
+    
+    /* Marge à droite des icônes */
+}
+
+.big-icon-text {
+    margin: 0;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 25px;
+
+    /* Ajoutez d'autres styles si nécessaire */
+}
+
+/* Styles pour les icônes dans le bloc de notification */
+.notification-block .icon-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    /* Espacement entre chaque rangée d'icônes */
+}
+
+/* Autres styles pour les icônes et les textes (similaires à ceux déjà définis) */
+.icon {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+}
+
+.icon-text {
+    margin: 0;
+    font-family: 'Times New Roman', Times, serif;
+
+    /* Ajoutez d'autres styles si nécessaire */
+}
+
+.obstacle {
     display: none;
 }

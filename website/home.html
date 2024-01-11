@@ -3,90 +3,133 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="icon" type="image/png" href="./images/icon.png">
     <title>Vigiwheels</title>
-    <script type="text/javascript"
-        src="https://cdn.jsdelivr.net/npm/eventemitter2@6.4.9/lib/eventemitter2.min.js"></script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/roslib@1/build/roslib.min.js"></script>
-    <script type="text/javascript" src="ros-script.js"></script>
-    <style>
-        /* Ajout du style pour le fond de la page */
-        body {
-            background-color: lightgrey;
-            /* Changement de la couleur de fond */
-            /* Autres styles pour le body */
-        }
-
-        /* Styles pour les éléments existants */
-        /* ... */
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 
-<body style="background-image: url('./images/principal_background.png');">
+<body>
 
-    <div class="align">
-        <div id="menu" class="tab-content container">
-            <div class="text-content">
-                <h1 class="larger-text">Vigiwheels</h1>
-                <div id="stateData" class="hidden"></div>
-                <h2><em class="italic-text">Your autonomous patrol car</em></h2>
-                <button class="logout-b" onclick="redirect('index.html')">Logout</button>
+    <div class="left-side">
+
+        <!-- Contenu de la partie gauche -->
+        <div class="text-content">
+            <div class="logo-container">
+                <img src="./images/vigi3.png" class="logo" />
+                Vigiwheels
+
             </div>
+            <h2><em class="italic-text" style="position: absolute; top : 110px; left: 24%;font-size: 15px;">Your autonomous patrol
+                    car</em></h2>
 
-            <div class="car-icon-container">
-                <!-- Affichage de l'icône de la voiture -->
-                <img src="./images/car_icon.png" alt="Car Icon" class="car-icon">
+            <!-- Icônes alignées verticalement dans le bloc de notification -->
+            <div class="rectangle-container">
+                <div class="rectangle-container2">
+                    Real-Time Data
+                </div>
 
-                <!-- Affichage des flammes (initialisé en tant qu'image affichée) -->
-                <img src="./images/flamme.svg" alt="Flame Icon" class="flame-icon" id="flameIcon">
-                <img src="./images/arrow.svg" alt="Arrow Icon" class="arrow-icon" id="arrowIcon">
+                <div class="icon-row">
+                    <img src="./images/battery.png" alt="battery Icon" class="icon" />
+                    <span id="batteryLevel">Battery level:</span>
+                </div>
+                
+                <div class="icon-row">
+                    <img src="./images/voiture.png" alt="speed Icon" class="icon" />
+                    <span id="speedvalue">Speed:</span>
+                    
+                </div>
+
             </div>
         </div>
+
+        <!-- Image des flammes -->
+        <div id="fire_notif" class="big-icon-container">
+
+            <div class="icon-row">
+                <img src="./images/flamme.svg" alt="Flame Icon" class="big-icon" />
+                <p class="big-icon-text">Fire detected</p>
+            </div>
+        </div>
+        <!-- Image du manomètre -->
+        <div id="manometer_notif" class="big-icon-container">
+            <div class="icon-row">
+                <img src="./images/manometer.png" alt="manometer Icon" class="big-icon" />
+                <p class="big-icon-text">Manometer detected (no value read)</p>
+            </div>
+        </div>
+        
+        <div id="obstacle_notif" class="big-icon-container">
+
+            <div class="icon-row">
+                <img src="./images/barrierh.png" alt="manometer Icon" class="big-icon" />
+                <p class="big-icon-text">Obstacle detected</p>
+            </div>
+
+        </div>
+
+
     </div>
 
-    <script>
-        // Fonction pour afficher ou cacher les flammes en fonction des valeurs reçues
-        function displayFlames(value) {
-            var flameIcon = document.getElementById('flameIcon');
+    <div class="right-side">
+        <!-- Contenu de la partie droite -->
+        <div class="text-content">
+            <h2 class="larger-text2">Real-Time Evolution</h2>
+            <h3>Initial sketch of the car's real-time evolving design, showcasing its progression</h3>
+        </div>
+        <!-- Icône de la voiture et flammes -->
+        <div class="car-icon-container" style="transform: rotate(90deg);">
+            <img src="./images/car_icon.svg" alt="Car Icon" class="car-icon" style="width: 600px; height: 600px;">
 
-            // Si la valeur est supérieure à un certain seuil (par exemple 50)
-            if (value > 50) {
-                flameIcon.style.display = 'block'; // Afficher les flammes
-            } else {
-                flameIcon.style.display = 'none'; // Cacher les flammes
-            }
-        }
 
-        // Reste du code inchangé
-        function redirectAndSelectMode(page, mode) {
-            selectMode(mode);
-        }
+            <div id="obstacle_tl" class="obstacle" style="width: 400px; height: 70px; position: absolute;
+            top: 30px; left: 170px; align-items: center;">
+                <img src="./images/barrier.png" alt="barrier Icon" id="barrierIcon"
+                    style="width: 50px; height: 50px;" />
+            </div>
+            <div id="obstacle_tm" class="obstacle" style="width: 400px; height: 70px; position: absolute;
+                top: 10px; left: 260px; align-items: center;">
+                <img src="./images/barrier.png" alt="barrier Icon" id="barrierIcon"
+                    style="width: 50px; height: 50px;" />
+            </div>
+            <div id="obstacle_tr" class="obstacle" style="width: 400px; height: 70px; position: absolute;
+                top: 30px; left: 350px; align-items: center;">
+                <img src="./images/barrier.png" alt="barrier Icon" id="barrierIcon"
+                    style="width: 50px; height: 50px;" />
+            </div>
+            <div id="obstacle_bl" class="obstacle" style="width: 400px; height: 70px; position: absolute;
+                top: 450px; left: 170px; align-items: center;">
+                <img src="./images/barrier.png" alt="barrier Icon" id="barrierIcon"
+                    style="width: 50px; height: 50px;" />
 
-        function redirect(page) {
-            window.location.href = 'index.html';
-        }
+            </div>
+            <div id="obstacle_bm" class="obstacle" style="width: 400px; height: 70px; position: absolute;
+                top: 470px; left: 260px; align-items: center;">
+                <img src="./images/barrier.png" alt="barrier Icon" id="barrierIcon"
+                    style="width: 50px; height: 50px;" />
+            </div>
 
-            // Simuler la récupération des données ROS2
-            function receiveROSData() {
-                // Supposons que vous recevez un angle de rotation des roues
-                const wheelAngle = 45; // Exemple d'angle (à remplacer par la vraie valeur)
-    
-                // Appeler la fonction pour mettre à jour l'angle de la flèche
-                updateArrowDirection(wheelAngle);
-            }
-    
-            // Fonction pour mettre à jour l'angle de la flèche en fonction de l'angle des roues
-            function updateArrowDirection(angle) {
-                const arrowIcon = document.getElementById('arrowIcon');
-                arrowIcon.style.transform = `translate(-50%, -50%) rotate(${angle}deg)`;
-            }
-    
-            // Simulation de la récupération périodique des données ROS2
-            setInterval(receiveROSData, 1000); // Mettez à jour toutes les secondes par exemple
-    </script>
+            <div id="obstacle_br" class="obstacle" style="width: 400px; height: 70px; position: absolute;
+                top: 450px; left: 350px;    align-items: center;">
+                <img src="./images/barrier.png" alt="manometer Icon" id="manometerIcon"
+                    style="width: 50px; height: 50px;" />
+            </div>
+
+            <svg id="scan" width="200" height="200" xmlns="http://www.w3.org/2000/svg"
+                style="position: absolute; top: 40px; left: 180px;">
+                <path d="M 100,100 L 50,20 A 75,75 0 0 1 150,20 Z"
+                    style="fill: #00c894    ; stroke: none; stroke-width: 1;" id="arc" />
+            </svg>
+
+
+        </div>
+        <button class="logout-b" onclick="redirect('./index.html')">Logout</button>
+
+    </div>
+
+    <script src="scripts.js">        </script>
+
+    <t class="bottom-center-text">Département Génie Electrique et Informatique - INSA de Toulouse</t>
+    <t class="bottom-center-text2">Made by TAHANI team, inspired by the CHIDI team's website.</t>
+
 </body>
 
 </html>
