@@ -18,43 +18,9 @@ public:
     }
 
 private:
-    int processIRSensorData(int sensorValue)
-    {
-        if (counter_ < window_size_)
-        {
-            buffer_[counter_] = sensorValue;
-            counter_++;
-            return 0; // Not enough data for processing
-        }
-        else
-        {
-            // Update the buffer with the new sensor value
-            buffer_[counter_ % window_size_] = sensorValue;
-            counter_++;
-
-            // Calculate the moving average
-            double movingAverage = calculateMovingAverage();
-
-            // Calculate the standard deviation
-            double standardDeviation = calculateStandardDeviation();
-
-            // Set dynamic thresholds
-            double lowerThreshold = movingAverage - 2 * standardDeviation;
-
-            if (lowerThreshold < 50)
-            {
-                return 1; // Fire detected
-            }
-            else
-            {
-                return 0; // No fire detected
-            }
-        }
-    }
-
     int processFireSensorData(int sensorValue)
     {
-        if (sensorValue < 200)
+        if (sensorValue < 100)
         {
             return 1; // Fire detected
         }
@@ -76,36 +42,14 @@ private:
         }
     }
 
-    double calculateMovingAverage() const
-    {
-        double sum = 0.0;
-        for (int value : buffer_)
-        {
-            sum += value;
-        }
-        return sum / window_size_;
-    }
-
-    double calculateStandardDeviation() const
-    {
-        double sumSquaredDifferences = 0.0;
-        double average = calculateMovingAverage();
-
-        for (int value : buffer_)
-        {
-            sumSquaredDifferences += std::pow(value - average, 2);
-        }
-        return std::sqrt(sumSquaredDifferences / window_size_);
-    }
-
     void dataFireCallBack(const interfaces::msg::FireSensor &msg)
     {
         bool result1 = processFireSensorData(msg.ir_sensor1); // Avant Droit
         bool result2 = msg.ir_sensor2;                      // Avant Gauche
         bool result3 = processFireSensorData(msg.ir_sensor3); // Arrière Gauche
-        bool result4 = msg.ir_sensor4;                      // Arrière Droit
+        bool result4 = msg.ir_sensor4;                      // Arrière Droite
         bool result5 = processSmokeSensorData(msg.smoke_sensor1);
-        bool result6 = 0;
+        bool result6 = processSmokeSensorData(msg.smoke_sensor2);
 
         std::string logMessage = "Received Data: " +
                                  std::to_string(result1) +

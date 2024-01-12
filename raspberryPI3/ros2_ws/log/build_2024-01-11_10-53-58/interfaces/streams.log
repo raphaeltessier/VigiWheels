@@ -1,0 +1,24 @@
+[0.052s] Invoking command in '/home/insa/Desktop/VigiWheels2.0/raspberryPI3/ros2_ws/build/interfaces': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/insa/Desktop/VigiWheels2.0/raspberryPI3/ros2_ws/build/interfaces -- -j8 -l8
+[0.072s] -- Found ament_cmake: 1.3.5 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.171s] -- Found rclcpp: 16.0.6 (/opt/ros/humble/share/rclcpp/cmake)
+[0.188s] -- Found rosidl_generator_c: 3.1.5 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[0.190s] -- Found rosidl_adapter: 3.1.5 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[0.193s] -- Found rosidl_generator_cpp: 3.1.5 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[0.201s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.210s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.246s] -- Found rmw_implementation_cmake: 6.1.1 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+[0.248s] -- Found rmw_fastrtps_cpp: 6.2.4 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+[0.330s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[0.427s] -- Found rosidl_default_generators: 1.2.0 (/opt/ros/humble/share/rosidl_default_generators/cmake)
+[0.433s] [31mCMake Error at /opt/ros/humble/share/rosidl_cmake/cmake/rosidl_generate_interfaces.cmake:93 (message):
+[0.433s]   rosidl_generate_interfaces() the passed file 'msg/PressureLevel.msg'
+[0.433s]   doesn't exist relative to the CMAKE_CURRENT_SOURCE_DIR
+[0.433s]   '/home/insa/Desktop/VigiWheels2.0/raspberryPI3/ros2_ws/src/interfaces'
+[0.433s] Call Stack (most recent call first):
+[0.433s]   CMakeLists.txt:33 (rosidl_generate_interfaces)
+[0.433s] 
+[0.433s] [0m
+[0.433s] -- Configuring incomplete, errors occurred!
+[0.433s] See also "/home/insa/Desktop/VigiWheels2.0/raspberryPI3/ros2_ws/build/interfaces/CMakeFiles/CMakeOutput.log".
+[0.438s] gmake: *** [Makefile:3555: cmake_check_build_system] Error 1
+[0.439s] Invoked command in '/home/insa/Desktop/VigiWheels2.0/raspberryPI3/ros2_ws/build/interfaces' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/insa/Desktop/VigiWheels2.0/raspberryPI3/ros2_ws/build/interfaces -- -j8 -l8

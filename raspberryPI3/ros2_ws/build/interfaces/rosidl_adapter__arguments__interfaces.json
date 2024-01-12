@@ -14,6 +14,7 @@
     "/home/insa/Desktop/VigiWheels2.0/raspberryPI3/ros2_ws/src/interfaces:msg/ServoCamOrder.msg",
     "/home/insa/Desktop/VigiWheels2.0/raspberryPI3/ros2_ws/src/interfaces:msg/CamPosOrder.msg",
     "/home/insa/Desktop/VigiWheels2.0/raspberryPI3/ros2_ws/src/interfaces:msg/FireSensor.msg",
-    "/home/insa/Desktop/VigiWheels2.0/raspberryPI3/ros2_ws/src/interfaces:msg/EmergencyAlertFire.msg"
+    "/home/insa/Desktop/VigiWheels2.0/raspberryPI3/ros2_ws/src/interfaces:msg/EmergencyAlertFire.msg",
+    "/home/insa/Desktop/VigiWheels2.0/raspberryPI3/ros2_ws/src/interfaces:msg/PressureLevel.msg"
   ]
 }

@@ -18,6 +18,8 @@ msg/MotorsOrder.idl
 msg/MotorsOrder.msg
 msg/ObstaclesOrder.idl
 msg/ObstaclesOrder.msg
+msg/PressureLevel.idl
+msg/PressureLevel.msg
 msg/ServoCamOrder.idl
 msg/ServoCamOrder.msg
 msg/SteeringCalibration.idl

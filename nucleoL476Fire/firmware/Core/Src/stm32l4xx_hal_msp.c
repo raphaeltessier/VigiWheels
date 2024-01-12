@@ -124,7 +124,7 @@ void HAL_ADC_MspInit(ADC_HandleTypeDef* hadc)
     PA4     ------> ADC1_IN9
     PB0     ------> ADC1_IN15
     */
-    GPIO_InitStruct.Pin = A0___IR_SENSOR1_Pin|A1___IR_SENSOR3_Pin|A2___SMOKE_SENSOR1_Pin;
+    GPIO_InitStruct.Pin = A0___IR_SENSOR1_Pin|A0___IR_SENSOR3_Pin|A2___SMOKE_SENSOR1_Pin;
     GPIO_InitStruct.Mode = GPIO_MODE_ANALOG_ADC_CONTROL;
     GPIO_InitStruct.Pull = GPIO_NOPULL;
     HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
@@ -163,7 +163,7 @@ void HAL_ADC_MspDeInit(ADC_HandleTypeDef* hadc)
     PA4     ------> ADC1_IN9
     PB0     ------> ADC1_IN15
     */
-    HAL_GPIO_DeInit(GPIOA, A0___IR_SENSOR1_Pin|A1___IR_SENSOR3_Pin|A2___SMOKE_SENSOR1_Pin);
+    HAL_GPIO_DeInit(GPIOA, A0___IR_SENSOR1_Pin|A0___IR_SENSOR3_Pin|A2___SMOKE_SENSOR1_Pin);
 
     HAL_GPIO_DeInit(A2___SMOKE_SENSOR2_GPIO_Port, A2___SMOKE_SENSOR2_Pin);
 

@@ -23,6 +23,8 @@ file(REMOVE_RECURSE
   "../rosidl_generator_py/interfaces/msg/_motors_order_s.c"
   "../rosidl_generator_py/interfaces/msg/_obstacles_order.py"
   "../rosidl_generator_py/interfaces/msg/_obstacles_order_s.c"
+  "../rosidl_generator_py/interfaces/msg/_pressure_level.py"
+  "../rosidl_generator_py/interfaces/msg/_pressure_level_s.c"
   "../rosidl_generator_py/interfaces/msg/_servo_cam_order.py"
   "../rosidl_generator_py/interfaces/msg/_servo_cam_order_s.c"
   "../rosidl_generator_py/interfaces/msg/_steering_calibration.py"

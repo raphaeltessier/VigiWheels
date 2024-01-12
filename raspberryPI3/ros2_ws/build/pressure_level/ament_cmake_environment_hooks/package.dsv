@@ -1,0 +1,4 @@
+source;share/pressure_level/local_setup.bash
+source;share/pressure_level/local_setup.dsv
+source;share/pressure_level/local_setup.sh
+source;share/pressure_level/local_setup.zsh

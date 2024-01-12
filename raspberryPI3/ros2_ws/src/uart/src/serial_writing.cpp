@@ -8,6 +8,7 @@
 #include "rclcpp/rclcpp.hpp"
 #include "interfaces/msg/emergency_alert_fire.hpp"
 #include "interfaces/msg/servo_cam_order.hpp"
+#include "interfaces/msg/pressure_level.hpp"
 
 #define SERIAL_PORT_1 "/dev/ttyACM0"
 #define SERIAL_PORT_2 "/dev/ttyACM1"
@@ -36,7 +37,11 @@ public:
 
         subscription_servo_cam_order_ = this->create_subscription<interfaces::msg::ServoCamOrder>(
             "servo_cam_order", 10, std::bind(&SerialWritingNode::sendServoCamOrderCallback, this, _1));
-    }
+
+        subscription_pressure_alert = this->create_subscription<interfaces::msg::PressureLevel>(
+            "pressure_level", 10, std::bind(&SerialWritingNode::alertPressureCallback, this, std::placeholders::_1));
+     }
+    
 
     ~SerialWritingNode()
     {
@@ -185,6 +190,60 @@ private:
         }
     }
 
+    void alertPressureCallback(const interfaces::msg::PressureLevel &msg)
+    {
+        // Check if the serial port is open
+        if (serial_port_ == -1)
+        {
+            // Reinitialize the serial port if it is closed
+            initSerialPort();
+            return;
+        }
+
+        if(strcmp(msg.level.c_str(), "High") == 0)
+        {
+            fire_detection = true; 
+        }
+        else 
+        {
+            fire_detection = false; 
+        }
+
+        char tx[20];  
+        snprintf(tx, sizeof(tx), "#pressure=%u\n", fire_detection);
+
+
+        // Write to serial port
+        int bytes_written = write(serial_port_, tx, strlen(tx));
+
+        if (bytes_written == -1)
+        {
+            // Check if the error is ENXIO (No such device or address), indicating a potential unplugging of the USB device
+            if (errno == ENXIO)
+            {
+                if (!serial_error_logged_)
+                {
+                    RCLCPP_WARN(this->get_logger(), "Error writing: %s. Reinitializing serial port.", strerror(errno));
+                    serial_error_logged_ = true;
+                }
+                initSerialPort();
+            }
+            else
+            {
+                if (!serial_error_logged_)
+                {
+                    RCLCPP_ERROR(this->get_logger(), "Error writing to serial port");
+                    serial_error_logged_ = true;
+                }
+                cleanupSerialPort();
+            }
+        }
+        else
+        {
+            RCLCPP_INFO(this->get_logger(), "Data sent: %s", tx);
+        }
+    }
+
     /* Send angle servo cam order via CAN bus [callback function]
      * This function is called when a message is published on the "/system_check" topic
      */
@@ -203,7 +262,6 @@ private:
 
         char tx[10];
         snprintf(tx, sizeof(tx), "#%c=%04u\n", id, value); //8
-        //snprintf(tx, sizeof(tx), "#Johann\n"); //8
 
         int bytes_written = write(serial_port_, tx, strlen(tx));
 
@@ -214,9 +272,10 @@ private:
 
         RCLCPP_DEBUG(this->get_logger(), "Data send : %s\n", tx);
     }
-
+    rclcpp::Subscription<interfaces::msg::PressureLevel>::SharedPtr subscription_pressure_alert;
     rclcpp::Subscription<interfaces::msg::EmergencyAlertFire>::SharedPtr subscription_emergency_alert;
     rclcpp::Subscription<interfaces::msg::ServoCamOrder>::SharedPtr subscription_servo_cam_order_;
+    bool fire_detection; 
     int serial_port_;
     bool serial_error_logged_;
 };

@@ -63,8 +63,8 @@ void Error_Handler(void);
 #define B1_GPIO_Port GPIOC
 #define A0___IR_SENSOR1_Pin GPIO_PIN_0
 #define A0___IR_SENSOR1_GPIO_Port GPIOA
-#define A1___IR_SENSOR3_Pin GPIO_PIN_1
-#define A1___IR_SENSOR3_GPIO_Port GPIOA
+#define A0___IR_SENSOR3_Pin GPIO_PIN_1
+#define A0___IR_SENSOR3_GPIO_Port GPIOA
 #define USART_TX_Pin GPIO_PIN_2
 #define USART_TX_GPIO_Port GPIOA
 #define USART_RX_Pin GPIO_PIN_3

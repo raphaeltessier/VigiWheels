@@ -122,6 +122,10 @@ CMakeFiles/interfaces__cpp: rosidl_generator_cpp/interfaces/msg/emergency_alert_
 CMakeFiles/interfaces__cpp: rosidl_generator_cpp/interfaces/msg/detail/emergency_alert_fire__builder.hpp
 CMakeFiles/interfaces__cpp: rosidl_generator_cpp/interfaces/msg/detail/emergency_alert_fire__struct.hpp
 CMakeFiles/interfaces__cpp: rosidl_generator_cpp/interfaces/msg/detail/emergency_alert_fire__traits.hpp
+CMakeFiles/interfaces__cpp: rosidl_generator_cpp/interfaces/msg/pressure_level.hpp
+CMakeFiles/interfaces__cpp: rosidl_generator_cpp/interfaces/msg/detail/pressure_level__builder.hpp
+CMakeFiles/interfaces__cpp: rosidl_generator_cpp/interfaces/msg/detail/pressure_level__struct.hpp
+CMakeFiles/interfaces__cpp: rosidl_generator_cpp/interfaces/msg/detail/pressure_level__traits.hpp
 
 rosidl_generator_cpp/interfaces/msg/joystick_order.hpp: /opt/ros/humble/lib/rosidl_generator_cpp/rosidl_generator_cpp
 rosidl_generator_cpp/interfaces/msg/joystick_order.hpp: /opt/ros/humble/local/lib/python3.10/dist-packages/rosidl_generator_cpp/__init__.py
@@ -152,6 +156,7 @@ rosidl_generator_cpp/interfaces/msg/joystick_order.hpp: rosidl_adapter/interface
 rosidl_generator_cpp/interfaces/msg/joystick_order.hpp: rosidl_adapter/interfaces/msg/CamPosOrder.idl
 rosidl_generator_cpp/interfaces/msg/joystick_order.hpp: rosidl_adapter/interfaces/msg/FireSensor.idl
 rosidl_generator_cpp/interfaces/msg/joystick_order.hpp: rosidl_adapter/interfaces/msg/EmergencyAlertFire.idl
+rosidl_generator_cpp/interfaces/msg/joystick_order.hpp: rosidl_adapter/interfaces/msg/PressureLevel.idl
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/insa/Desktop/VigiWheels2.0/raspberryPI3/ros2_ws/build/interfaces/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating C++ code for ROS interfaces"
 	/usr/bin/python3.10 /opt/ros/humble/share/rosidl_generator_cpp/cmake/../../../lib/rosidl_generator_cpp/rosidl_generator_cpp --generator-arguments-file /home/insa/Desktop/VigiWheels2.0/raspberryPI3/ros2_ws/build/interfaces/rosidl_generator_cpp__arguments.json
 
@@ -320,6 +325,18 @@ rosidl_generator_cpp/interfaces/msg/detail/emergency_alert_fire__struct.hpp: ros
 rosidl_generator_cpp/interfaces/msg/detail/emergency_alert_fire__traits.hpp: rosidl_generator_cpp/interfaces/msg/joystick_order.hpp
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_cpp/interfaces/msg/detail/emergency_alert_fire__traits.hpp
 
+rosidl_generator_cpp/interfaces/msg/pressure_level.hpp: rosidl_generator_cpp/interfaces/msg/joystick_order.hpp
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_cpp/interfaces/msg/pressure_level.hpp
+
+rosidl_generator_cpp/interfaces/msg/detail/pressure_level__builder.hpp: rosidl_generator_cpp/interfaces/msg/joystick_order.hpp
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_cpp/interfaces/msg/detail/pressure_level__builder.hpp
+
+rosidl_generator_cpp/interfaces/msg/detail/pressure_level__struct.hpp: rosidl_generator_cpp/interfaces/msg/joystick_order.hpp
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_cpp/interfaces/msg/detail/pressure_level__struct.hpp
+
+rosidl_generator_cpp/interfaces/msg/detail/pressure_level__traits.hpp: rosidl_generator_cpp/interfaces/msg/joystick_order.hpp
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_cpp/interfaces/msg/detail/pressure_level__traits.hpp
+
 interfaces__cpp: CMakeFiles/interfaces__cpp
 interfaces__cpp: rosidl_generator_cpp/interfaces/msg/cam_pos_order.hpp
 interfaces__cpp: rosidl_generator_cpp/interfaces/msg/detail/cam_pos_order__builder.hpp
@@ -352,6 +369,9 @@ interfaces__cpp: rosidl_generator_cpp/interfaces/msg/detail/motors_order__traits
 interfaces__cpp: rosidl_generator_cpp/interfaces/msg/detail/obstacles_order__builder.hpp
 interfaces__cpp: rosidl_generator_cpp/interfaces/msg/detail/obstacles_order__struct.hpp
 interfaces__cpp: rosidl_generator_cpp/interfaces/msg/detail/obstacles_order__traits.hpp
+interfaces__cpp: rosidl_generator_cpp/interfaces/msg/detail/pressure_level__builder.hpp
+interfaces__cpp: rosidl_generator_cpp/interfaces/msg/detail/pressure_level__struct.hpp
+interfaces__cpp: rosidl_generator_cpp/interfaces/msg/detail/pressure_level__traits.hpp
 interfaces__cpp: rosidl_generator_cpp/interfaces/msg/detail/servo_cam_order__builder.hpp
 interfaces__cpp: rosidl_generator_cpp/interfaces/msg/detail/servo_cam_order__struct.hpp
 interfaces__cpp: rosidl_generator_cpp/interfaces/msg/detail/servo_cam_order__traits.hpp
@@ -373,6 +393,7 @@ interfaces__cpp: rosidl_generator_cpp/interfaces/msg/manometer_info.hpp
 interfaces__cpp: rosidl_generator_cpp/interfaces/msg/motors_feedback.hpp
 interfaces__cpp: rosidl_generator_cpp/interfaces/msg/motors_order.hpp
 interfaces__cpp: rosidl_generator_cpp/interfaces/msg/obstacles_order.hpp
+interfaces__cpp: rosidl_generator_cpp/interfaces/msg/pressure_level.hpp
 interfaces__cpp: rosidl_generator_cpp/interfaces/msg/servo_cam_order.hpp
 interfaces__cpp: rosidl_generator_cpp/interfaces/msg/steering_calibration.hpp
 interfaces__cpp: rosidl_generator_cpp/interfaces/msg/system_check.hpp
