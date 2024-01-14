@@ -12,14 +12,31 @@ function changeBatteryLevel(BatteryLevel = "None") {
     batteryText.innerText = `Battery level: ${BatteryLevel}`;
 }
 
-function changeSpeed(speedvalue) {
+function changeSpeed(speedvalue, reverse) {
     const SpeedText = document.getElementById('speedvalue');
     if (speedvalue > 0) {
-        SpeedText.innerText = `Forward speed: ${speedvalue} rpm`;
-    } else if (speedvalue < 0) {
-        SpeedText.innerText = `Reverse speed: ${-speedvalue} rpm`;
+        if (reverse){
+            SpeedText.innerText = `Reverse speed: ${-speedvalue} m/s`;
+        }else{
+            SpeedText.innerText = `Forward speed: ${speedvalue} m/s`;
+        }   
     } else {
         SpeedText.innerText = "Car is currently stationary";
+    }
+}
+
+function orientationCar(speed, steering_angle, reverse_car){
+    var arrow_orientation_front = document.getElementById('arrow_direction_front');
+    var arrow_orientation_rear = document.getElementById('arrow_direction_rear');
+    if (reverse_car){
+        arrow_orientation_front.style.display = "none";
+        //arrow_orientation_rear.style.transformOrigin = "250px 80px"; // Changement du centre de rotation
+        //arrow_orientation_rear.style.transform = `rotate(${steering_angle}deg)`; 
+    }
+    else{
+        arrow_orientation_rear.style.display = "none";
+        //arrow_orientation_front.style.transformOrigin = "250px 80px"; // Changement du centre de rotation
+        //arrow_orientation_front.style.transform = `rotate(${-steering_angle}deg)`; 
     }
 }
 
@@ -303,6 +320,34 @@ function updateObstacles(message) {
 
 }
 
+function calculate_Speed_Orientation(message){
+
+    // Calculate the speed of the car by right wheel speed
+    var speed_right = message.right_rear_speed;
+    var speed_left = message.left_rear_speed;
+    var average_speed = (speed_left + speed_right)/2;
+    console.log('Calcul avec succès de la vitesse', average_speed);
+    
+    //Calculate steering angle of the car
+    var steering_angle = message.steering_angle;
+
+    console.log('Calcul avec succès de l orientation ', steering_angle);
+
+}
+
+function identify_Reverse(message){
+
+    // Identify if the car is going at reverse mode or not
+    if (message.right_rear_pwm > 50){
+        var reverse_car = true;
+    }    
+    else{
+        var reverse_car = false;
+    }
+    console.log('Calcul avec succès de la reverse et reverse',reverse_car);
+}
+
+
 // ROS script initialization
 var ros = new ROSLIB.Ros({
     url: 'ws://10.105.1.168:9090' // ROS websocket server URL
@@ -363,6 +408,23 @@ var l_obstacles = new ROSLIB.Topic({
     messageType: 'interfaces/msg/ObstaclesOrder'
 });
 l_obstacles.subscribe(updateObstacles)
+
+var car_speed_listener = new ROSLIB.Topic({
+    ros: ros,
+    name: '/motors_feedback',
+    messageType: 'interfaces/msg/MotorsFeedback'
+});
+
+car_speed_listener.subscribe(calculate_Speed_Orientation);
+
+var motorOrder_listener = new ROSLIB.Topic({
+    ros: ros,
+    name: '/motors_order',
+    messageType: 'interfaces/msg/MotorsOrder'
+});
+
+motorOrder_listener.subscribe(identify_Reverse);
+
 
 
 // Timer for testing & demo & functions associated

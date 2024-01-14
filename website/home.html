@@ -116,13 +116,23 @@
             <div id="obstacle_br" class="obstacle obstacle_br">
                 <img src="./images/barrier.png" alt="manometer Icon" id="manometerIcon" />
             </div>
-
+            
+           
             <!-- SVG for the scan icon -->
             <svg class="scan-icon" id="scan" width="200" height="200" xmlns="http://www.w3.org/2000/svg">
                 <path d="M 100,100 L 50,20 A 75,75 0 0 1 150,20 Z" id="arc" />
             </svg>
-        </div>
 
+            <!--Arrow icon to indicate the movement of the car-->
+            <div id="arrow_direction_front" class="arrow_orientation">
+                <img src="./images/arrow_orientation.png" alt="orientation" id="arrow_orientation_front"/>
+            </div>
+
+            <div id="arrow_direction_rear" class="arrow_orientation">
+                <img src="./images/arrow_orientation rear.png" alt="orientation" id="arrow_orientation_rear"/>
+            </div>
+
+         
         <!-- Bottom text for credits -->
         <div class="bottom-center-text">Made by TAHANI team, inspired by the CHIDI team's website.</div>
 
@@ -132,4 +142,13 @@
 </body>
 
 <script src="scripts.js"></script>
+<script>
+    //Show the speed on the website
+    changeSpeed(average_speed, reverse_car);
+</script>
+<script>
+    //Positioning the arrow on basis of movement
+    orientationCar(average_speed, steering_angle, reverse_car);
+</script>
+
 </html>
