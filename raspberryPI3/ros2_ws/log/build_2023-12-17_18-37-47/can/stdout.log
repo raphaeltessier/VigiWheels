@@ -1,6 +1,0 @@
-[ 25%] [32mBuilding CXX object CMakeFiles/can_tx_node.dir/src/can_tx_node.cpp.o[0m
-[ 50%] [32mBuilding CXX object CMakeFiles/can_rx_node.dir/src/can_rx_node.cpp.o[0m
-[ 75%] [32m[1mLinking CXX executable can_rx_node[0m
-[ 75%] Built target can_rx_node
-[100%] [32m[1mLinking CXX executable can_tx_node[0m
-[100%] Built target can_tx_node

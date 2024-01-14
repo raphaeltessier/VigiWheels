@@ -1,8 +1,0 @@
-[35m[1mConsolidate compiler generated dependencies of target serial_writing_node[0m
-[35m[1mConsolidate compiler generated dependencies of target serial_reading_node[0m
-[ 25%] [32mBuilding CXX object CMakeFiles/serial_reading_node.dir/src/serial_reading.cpp.o[0m
-[ 50%] [32mBuilding CXX object CMakeFiles/serial_writing_node.dir/src/serial_writing.cpp.o[0m
-[ 75%] [32m[1mLinking CXX executable serial_reading_node[0m
-[ 75%] Built target serial_reading_node
-[100%] [32m[1mLinking CXX executable serial_writing_node[0m
-[100%] Built target serial_writing_node

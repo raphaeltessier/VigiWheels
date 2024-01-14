@@ -1,8 +1,0 @@
-[0.097s] Invoking command in '/home/insa/Desktop/VigiWheels2.0/raspberryPI3/ros2_ws/build/imu_complementary_filter': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/insa/Desktop/VigiWheels2.0/raspberryPI3/ros2_ws/build/imu_complementary_filter -- -j8 -l8
-[0.177s] [ 20%] [32mBuilding CXX object CMakeFiles/complementary_filter.dir/src/complementary_filter.cpp.o[0m
-[0.219s] [ 40%] [32mBuilding CXX object CMakeFiles/complementary_filter.dir/src/complementary_filter_ros.cpp.o[0m
-[19.995s] [ 60%] [32m[1mLinking CXX static library libcomplementary_filter.a[0m
-[20.269s] [ 60%] Built target complementary_filter
-[20.295s] [ 80%] [32mBuilding CXX object CMakeFiles/complementary_filter_node.dir/src/complementary_filter_node.cpp.o[0m
-[23.095s] [100%] [32m[1mLinking CXX executable complementary_filter_node[0m
-[23.958s] [100%] Built target complementary_filter_node

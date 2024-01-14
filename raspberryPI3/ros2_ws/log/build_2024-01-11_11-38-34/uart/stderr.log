@@ -1,4 +1,0 @@
-[01m[K/home/insa/Desktop/VigiWheels2.0/raspberryPI3/ros2_ws/src/uart/src/serial_writing.cpp:[m[K In member function ‘[01m[Kvoid SerialWritingNode::alertPressureCallback(const PressureLevel&)[m[K’:
-[01m[K/home/insa/Desktop/VigiWheels2.0/raspberryPI3/ros2_ws/src/uart/src/serial_writing.cpp:203:30:[m[K [01;35m[Kwarning: [m[Kcomparison with string literal results in unspecified behavior [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Waddress-Waddress]8;;[m[K]
-  203 |         if([01;35m[Kmsg.level.c_str() == "High"[m[K)
-      |            [01;35m[K~~~~~~~~~~~~~~~~~~^~~~~~~~~[m[K

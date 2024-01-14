@@ -1,8 +1,0 @@
-[01m[K/home/insa/Desktop/VigiWheels2.0/raspberryPI3/ros2_ws/src/fire_detection/src/processing_data_fire.cpp:[m[K In member function ‘[01m[Kvoid ProcessingDataFireNode::dataFireCallBack(const FireSensor&)[m[K’:
-[01m[K/home/insa/Desktop/VigiWheels2.0/raspberryPI3/ros2_ws/src/fire_detection/src/processing_data_fire.cpp:116:56:[m[K [01;31m[Kerror: [m[K‘[01m[Kresult6[m[K’ was not declared in this scope; did you mean ‘[01m[Kresult5[m[K’?
-  116 |                                  ", " + std::to_string([01;31m[Kresult6[m[K);
-      |                                                        [01;31m[K^~~~~~~[m[K
-      |                                                        [32m[Kresult5[m[K
-gmake[2]: *** [CMakeFiles/processing_data_fire_node.dir/build.make:76: CMakeFiles/processing_data_fire_node.dir/src/processing_data_fire.cpp.o] Error 1
-gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/processing_data_fire_node.dir/all] Error 2
-gmake: *** [Makefile:146: all] Error 2

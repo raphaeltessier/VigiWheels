@@ -1,8 +1,0 @@
-[ 50%] [32mBuilding CXX object CMakeFiles/pressure_node_ex.dir/src/pressure_node.cpp.o[0m
-[01m[K/home/insa/Desktop/VigiWheels2.0/raspberryPI3/ros2_ws/src/pressure_level/src/pressure_node.cpp:2:10:[m[K [01;31m[Kfatal error: [m[Kinterfaces/msg/pressure_level.hpp: No such file or directory
-    2 | #include [01;31m[K"interfaces/msg/pressure_level.hpp"[m[K
-      |          [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
-compilation terminated.
-gmake[2]: *** [CMakeFiles/pressure_node_ex.dir/build.make:76: CMakeFiles/pressure_node_ex.dir/src/pressure_node.cpp.o] Error 1
-gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/pressure_node_ex.dir/all] Error 2
-gmake: *** [Makefile:146: all] Error 2
