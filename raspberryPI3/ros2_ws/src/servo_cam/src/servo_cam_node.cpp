@@ -2,16 +2,23 @@
 #include <chrono>
 #include <functional>
 #include <memory>
+#include <fstream>
+#include <ctime>
+#include <string.h>
 
 #include "interfaces/msg/servo_cam_order.hpp"
 #include "interfaces/msg/cam_pos_order.hpp"
 #include "interfaces/msg/manometer_info.hpp"
+#include "interfaces/msg/joystick_order.hpp"
+#include "interfaces/msg/obstacles_order.hpp"
 
 #include "std_srvs/srv/empty.hpp"
 
 #include "../include/servo_cam/servo_cam_node.h"
 
+
 using namespace std;
+using namespace std::chrono;
 using placeholders::_1;
 
 //take command from cam_pos_order and send angle info to the can node to be transmit to nucleo F106
@@ -34,9 +41,15 @@ public:
         subscription_manometer_order_ = this->create_subscription<interfaces::msg::ManometerInfo>(
         "manometer_detected", 10, std::bind(&servo_cam::ImagePosCallback, this, _1));
 
+        subscription_joystick_order_ = this->create_subscription<interfaces::msg::JoystickOrder>(
+        "joystick_order", 10, std::bind(&servo_cam::joystickOrderCallback, this, _1));
+
+        subscription_obstacles_order_ = this->create_subscription<interfaces::msg::ObstaclesOrder>(
+        "obstacles_order", 10, std::bind(&servo_cam::obstaclesOrderCallback, this, _1));
 
         //periodic function
         timer_ = this->create_wall_timer(PERIOD_UPDATE_CMD, std::bind(&servo_cam::updateCmd, this));
+        timer_auto_ = this->create_wall_timer(PERIOD_HIGH_CLK, std::bind(&servo_cam::updateAuto, this));
         
 
         // Set PWM frequency and duty cycle
@@ -49,26 +62,137 @@ public:
     
 private:
 
+    /* Update front and rear obstacles prensence from Obstacles_order  :
+    *
+    * This function is called when a message is published on the "/mobstacles_order" topic
+    * 
+    */
+    void obstaclesOrderCallback(const interfaces::msg::ObstaclesOrder & obstacles_order){
+        if (((car_reverse && obstacles_order.rear_object) || (!car_reverse && obstacles_order.front_object)) && !obstacles_stop){  // si obstacle dans notre direction
 
+            obstacles_stop = true;
+            t_obstacle = steady_clock::now(); //get time when obstacle is detected
+
+        }
+        else if (obstacles_stop) {
+            obstacles_stop = false;
+            t_start += steady_clock::now() - t_obstacle; //ignore the time where an obstacle is present
+
+
+        }
+    }
 
     /* Update mode and pwm from cam pos order feedback [callback function]  :
     *
     * This function is called when a message is published on the "/cam_pos_order" topic
+    * only if mode manual
     * 
     */
     void camPosOrderCallback(const interfaces::msg::CamPosOrder & pos_cmd){
-        if (mode != pos_cmd.mode) {
-            mode = pos_cmd.mode; // 0 : manual ; 1 : scan
-            if (mode == 0) {
-                RCLCPP_INFO(this->get_logger(), "CAMERA in MANUAL mode");
+        if (car_mode == 0) {
+            if (mode != pos_cmd.mode) {
+                mode = pos_cmd.mode; // 0 : manual ; 1 : scan
+                if (mode == 0) {
+                    RCLCPP_INFO(this->get_logger(), "CAMERA in MANUAL mode");
+                }
+                else if (mode == 1) {
+                    RCLCPP_INFO(this->get_logger(), "CAMERA in SCAN mode");
+                }
             }
-            else if (mode == 1) {
-                RCLCPP_INFO(this->get_logger(), "CAMERA in SCAN mode");
-            }
+            turn = pos_cmd.turn_cam;
         }
-        turn = pos_cmd.turn_cam;
     }
 
+         //periodic function, see servo_cam_node.h to set period -> 1ms
+    // to read the .txt data
+
+    void updateAuto(){
+
+        if (car_mode == 1 && car_start && !playing) { //start replay mode
+            if (startPlaying() != -1) {
+                playing = true;
+            }
+        }
+        else if ((car_mode != 1 || !car_start) && playing) { //stop replay mode 
+            playing = false;
+            file.close();
+        }
+        else if (playing && !obstacles_stop) {
+            duration<double> time_span = duration_cast<duration<double>>(steady_clock::now() - t_start);
+            if (time_span.count() >= time_stamp) { //if timing is ok 
+                file >> mode >> turn; //update command
+                file.ignore(256, '\n');
+                if (!file.eof()) {
+                    file >> time_stamp; //update commant timing
+                }
+                else {
+                    playing = false; //close the file at it end
+                    file.close();
+                }
+            }
+
+        }
+        
+
+     }
+
+    //open the ifstream
+    int startPlaying() {
+        ifstream to_run;
+        
+        to_run.open("/home/pi/path/file_to_run.txt", ifstream::in); //open fil where name of instruction file is store
+        if(!to_run) {
+            RCLCPP_ERROR(this->get_logger(), "Error while opening save name file");
+            return -1;
+        }
+        else {
+            char c_name[20];
+            to_run.getline(c_name, 20); //reading instruction txt file name
+            to_run.close();
+
+            string name = "/home/pi/path/memory/" + string(c_name) + "_cam.txt";
+            file.open(name.c_str());//opening instruction file for the camera
+
+            if(!file) {
+                RCLCPP_ERROR(this->get_logger(), "Error while opening record file");
+                return -1;
+            }
+            else {
+                string msg = "Start playing " + name;
+                RCLCPP_INFO(this->get_logger(), msg.c_str());
+                t_start = steady_clock::now(); //get time origin
+                if(!file.eof()) {
+                    file >> time_stamp; // get first instruction timing
+                }
+                else {
+                    RCLCPP_ERROR(this->get_logger(), "Empty file");
+                    return -1;
+
+                }
+                return 0;
+            }
+        }
+
+
+        
+
+        
+        
+        
+    }
+
+    /* Update mode from joystick order [callback function]  :
+    *
+    * This function is called when a message is published on the "/joystick_order" topic
+    * 
+    */
+    void joystickOrderCallback(const interfaces::msg::JoystickOrder & joyOrder) {
+
+        car_mode = joyOrder.mode;
+        car_start = joyOrder.start;
+        car_reverse = joyOrder.reverse;
+        }
+    
 
     /* Update image position for follow from image pos order feedback [callback function]  :
     *
@@ -82,45 +206,50 @@ private:
     }
 
 
- //periodic function, see servo_cam_node.h to set period -> 100ms
-    // to update the angular positon of the camera to scan
+ //periodic function, see servo_cam_node.h to set period -> 10ms
+    // to update the angular positon of the camera 
 
     void updateCmd(){
 
-        auto servoOrder = interfaces::msg::ServoCamOrder();
-        if (mano_update) {
-                mano_update = 0;
-                float mean = (x1 + x2)/2 -320;
-                //float correction = (mean > 0) ? PAS_FOLLOW : (-PAS_FOLLOW);
-                float correction = mean * FOV/RESOLUTION;
-                command_angle += int(correction);
+        if (car_start) {
+            auto servoOrder = interfaces::msg::ServoCamOrder();
+            if (mano_update) { //if we have something to follow
+                    mano_update = 0;
+                    float mean = (x1 + x2)/2 -320;
+                    //float correction = (mean > 0) ? PAS_FOLLOW : (-PAS_FOLLOW);
+                    float correction = mean * FOV/RESOLUTION;
+                    command_angle += int(correction);
+            }
+            else if (mode == 0) { //manual mode
+            command_angle = command_angle + turn*PAS_MANUAL;
+
+            }
+            else if (mode == 1) { //scan mode
+                command_angle = command_angle + sens;    
+            }
+
+            if (command_angle >= 180) {
+                command_angle = 180; //saturation
+                sens = -PAS_SCAN; //reverse direction for scan mode
+            } 
+            else if (command_angle <= 0) {
+                command_angle = 0; //saturation
+                sens = PAS_SCAN;  //reverse direction for scan mode
+            } 
+
+            servoOrder.servo_cam_angle = command_angle;
+
+
+
+            publisher_servo_cam_order_->publish(servoOrder);
         }
-        else if (mode == 0) {
-        command_angle = command_angle + turn*PAS_MANUAL;
-
-        }
-        else if (mode == 1) {
-            command_angle = command_angle + sens;    
-        }
-
-        if (command_angle >= 180) {
-            command_angle = 180; //saturation
-            sens = -PAS_SCAN;
-        } 
-        else if (command_angle <= 0) {
-            command_angle = 0; //saturation
-            sens = PAS_SCAN;
-        } 
-
-        servoOrder.servo_cam_angle = command_angle;
-
-
-
-        publisher_servo_cam_order_->publish(servoOrder);
-
         
 
      }
+
+
+
+   
    
     // ---- Private variables ----
 
@@ -136,6 +265,24 @@ private:
 
         float facteur = RESOLUTION/FOV;
 
+        int car_mode = 0;
+        bool car_start = false;
+        bool car_reverse;
+
+        bool playing = false;
+
+        double time_stamp;
+
+        bool obstacles_stop;
+
+
+        //file
+        ifstream file;
+
+        //timing data
+        steady_clock::time_point t_start;
+        steady_clock::time_point t_obstacle;
+        duration<double> time_span;
 
 
         
@@ -148,9 +295,13 @@ private:
     //Suscribers
     rclcpp::Subscription<interfaces::msg::CamPosOrder>::SharedPtr subscription_cam_pos_order_;
     rclcpp::Subscription<interfaces::msg::ManometerInfo>::SharedPtr subscription_manometer_order_;  
+    rclcpp::Subscription<interfaces::msg::JoystickOrder>::SharedPtr subscription_joystick_order_;
+    rclcpp::Subscription<interfaces::msg::ObstaclesOrder>::SharedPtr subscription_obstacles_order_; 
+
 
     //Timer
     rclcpp::TimerBase::SharedPtr timer_;
+    rclcpp::TimerBase::SharedPtr timer_auto_;
 
 
 

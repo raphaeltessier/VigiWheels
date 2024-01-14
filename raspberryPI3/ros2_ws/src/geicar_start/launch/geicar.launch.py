@@ -84,9 +84,17 @@ def generate_launch_description():
         emulate_tty=True
     )
 
+
+    path_recording_node = Node(
+        package="path_recording",
+        executable="path_recording",
+        emulate_tty=True
+    )
+
     rosbride_server_node = IncludeLaunchDescription(
         AnyLaunchDescriptionSource([get_package_share_directory('rosbridge_server'),'/launch/rosbridge_websocket_launch.xml']),
     )
+
     ld.add_action(joystick_node)
     ld.add_action(joystick_to_cmd_node)
     ld.add_action(can_rx_node)
@@ -99,6 +107,8 @@ def generate_launch_description():
     ld.add_action(serial_writing_node)
     ld.add_action(serial_reading_node)
     ld.add_action(processing_data_fire_node)
+    ld.add_action(path_recording_node)
     ld.add_action(rosbride_server_node)
+
 
     return ld

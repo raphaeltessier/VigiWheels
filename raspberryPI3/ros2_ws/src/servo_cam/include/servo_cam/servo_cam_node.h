@@ -5,12 +5,15 @@
 #include <string.h>  
 
 
-#define PERIOD_UPDATE_CMD 1000ms // update pwm servo period
-#define PAS_MANUAL 10
-#define PAS_SCAN 10
+#define PERIOD_UPDATE_CMD 10ms // update pwm servo period
+#define PERIOD_HIGH_CLK 1ms
+#define PAS_MANUAL 1
+#define PAS_SCAN 1
 #define PAS_FOLLOW 4
-#define FOV 20          // degree from left to right of the image (from datasheet)
+#define FOV 25          // degree from left to right of the image (from datasheet)
 #define RESOLUTION 640 //pixel image
+
+
 
 
 
