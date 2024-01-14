@@ -1,3 +1,0 @@
-[console_scripts]
-pressure_node = pressure_level.pressure_level:main
-

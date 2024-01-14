@@ -1,9 +1,0 @@
-[0.000000] (-) TimerEvent: {}
-[0.000354] (-) JobUnselected: {'identifier': 'geicar_start_jetson'}
-[0.000375] (-) JobUnselected: {'identifier': 'interfaces'}
-[0.000388] (-) JobUnselected: {'identifier': 'manometer_detection'}
-[0.000397] (-) JobUnselected: {'identifier': 'pressure_level'}
-[0.000408] (-) JobUnselected: {'identifier': 'rplidar_ros'}
-[0.000423] (-) JobUnselected: {'identifier': 'system_check_ack'}
-[0.000450] (-) JobUnselected: {'identifier': 'usb_cam'}
-[0.000729] (-) EventReactorShutdown: {}
