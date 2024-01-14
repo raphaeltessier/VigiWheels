@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.8)
-project(interfaces)
+project(path_recording)
 
 if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
   add_compile_options(-Wall -Wextra -Wpedantic)
@@ -8,33 +8,26 @@ endif()
 # find dependencies
 find_package(ament_cmake REQUIRED)
 find_package(rclcpp REQUIRED)
-find_package(std_msgs REQUIRED)
-find_package(builtin_interfaces REQUIRED)
-find_package(rosidl_default_generators REQUIRED)
+find_package(interfaces REQUIRED)
+find_package(sensor_msgs REQUIRED)
+find_package(std_srvs REQUIRED)
 
-set(msg_files
-  "msg/JoystickOrder.msg"
-  "msg/MotorsOrder.msg"
-  "msg/MotorsFeedback.msg"
-  "msg/GeneralData.msg"
-  "msg/SteeringCalibration.msg"
-  "msg/Ultrasonic.msg"
-  "msg/Gnss.msg"
-  "msg/SystemCheck.msg"
-  "msg/ManometerInfo.msg"
-  "msg/ObstaclesOrder.msg"
-  "msg/ServoCamOrder.msg"
-  "msg/CamPosOrder.msg"
-  "msg/FireSensor.msg" #Added for fire_detection
-  "msg/EmergencyAlertFire.msg" #Added for fire_detection
-  "msg/PressureLevel.msg"
+add_executable(path_recording 
+  src/path_recording_node.cpp
 )
 
-rosidl_generate_interfaces(${PROJECT_NAME}
-  ${msg_files}
-)
 
-ament_export_dependencies(rosidl_default_runtime)
+ament_target_dependencies(path_recording rclcpp interfaces sensor_msgs std_srvs)
+ament_export_include_directories(include)
+
+target_include_directories(path_recording PUBLIC
+  $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
+  $<INSTALL_INTERFACE:include>)
+target_compile_features(path_recording  PUBLIC c_std_99 cxx_std_17)  # Require C99 and C++17
+
+
+install(TARGETS path_recording
+  DESTINATION lib/${PROJECT_NAME})
 
 if(BUILD_TESTING)
   find_package(ament_lint_auto REQUIRED)

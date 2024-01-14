@@ -82,6 +82,12 @@ def generate_launch_description():
         emulate_tty=True
     )
 
+    path_recording_node = Node(
+        package="path_recording",
+        executable="path_recording",
+        emulate_tty=True
+    )
+
 
     ld.add_action(joystick_node)
     ld.add_action(joystick_to_cmd_node)
@@ -95,5 +101,6 @@ def generate_launch_description():
     ld.add_action(serial_writing_node)
     ld.add_action(serial_reading_node)
     ld.add_action(processing_data_fire_node)
+    ld.add_action(path_recording_node)
 
     return ld

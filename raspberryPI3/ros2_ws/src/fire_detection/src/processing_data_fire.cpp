@@ -8,7 +8,7 @@
 class ProcessingDataFireNode : public rclcpp::Node
 {
 public:
-    ProcessingDataFireNode() : Node("processing_data_fire_node"), fireIsDetected{false},  FrontRightSensor{false}, FrontLeftSensor{false}, RearRightSensor{false}, RearLeftSensor{false} , window_size_{100}, counter_{0}
+    ProcessingDataFireNode() : Node("processing_data_fire_node"), fireIsDetected{false},  FrontRightIRSensor{false}, FrontLeftIRSensor{false}, RearRightIRSensor{false}, RearLeftIRSensor{false}, RightSmokeSensor{false}, LeftSmokeSensor{false}, window_size_{100}, counter_{0}
     {
         RCLCPP_INFO(this->get_logger(), "Hello Processing Data Fire Node !");
         buffer_.resize(window_size_, 0);
@@ -18,7 +18,7 @@ public:
     }
 
 private:
-    int processSensorData(int sensorValue)
+    int processIRSensorData(int sensorValue)
     {
         if (counter_ < window_size_) 
         {
@@ -52,6 +52,18 @@ private:
         }
     }
 
+    int processSmokeSensorData(int sensorValue)
+    {
+        if (sensorValue > 800) 
+        {
+            return 1; // Fire detected
+        }
+        else 
+        {
+            return 0; // No fire detected
+        }
+    }
+
     double calculateMovingAverage() const
     {
         double sum = 0.0;
@@ -75,29 +87,41 @@ private:
 
     void dataFireCallBack(const interfaces::msg::FireSensor & msg)
     {
-        int result1 = processSensorData(msg.ir_sensor1); //Avant Droit 
+        bool result1 = processIRSensorData(msg.ir_sensor1); //Avant Droit 
         bool result2 = msg.ir_sensor2; //Avant Gauche 
-        int result3 = processSensorData(msg.ir_sensor3); //Arrière Gauche 
-        int result4 = msg.ir_sensor4; //Arrière Droit 
+        bool result3 = processIRSensorData(msg.ir_sensor3); //Arrière Gauche 
+        bool result4 = msg.ir_sensor4; //Arrière Droit 
+        bool result5 = processSmokeSensorData(msg.smoke_sensor1);
+        bool result6 = processSmokeSensorData(msg.smoke_sensor2);
     
         if (result1 == 1)
         {
-            FrontRightSensor = true; 
+            FrontRightIRSensor = true; 
             fireIsDetected = true; 
         }
         else if (result2 == 1)
         {
-            FrontLeftSensor = true; 
+            FrontLeftIRSensor = true; 
             fireIsDetected = true; 
         }
         else if (result3 == 1)
         {
-            RearLeftSensor = true; 
+            RearLeftIRSensor = true; 
             fireIsDetected = true; 
         }
         else if (result4 == 1)
         {
-            RearRightSensor = true; 
+            RearRightIRSensor = true; 
+            fireIsDetected = true; 
+        }
+        else if (result5 == 1)
+        {
+            RightSmokeSensor = true; 
+            fireIsDetected = true; 
+        }
+        else if (result6 == 1)
+        {
+            LeftSmokeSensor = true; 
             fireIsDetected = true; 
         }
         else
@@ -110,18 +134,22 @@ private:
     {
         auto msg = interfaces::msg::EmergencyAlertFire();
         msg.fire_detected = fireIsDetected;
-        msg.ir_front_right = FrontRightSensor; 
-        msg.ir_front_left = FrontLeftSensor; 
-        msg.ir_rear_right = RearRightSensor; 
-        msg.ir_rear_left = RearLeftSensor; 
+        msg.ir_front_right = FrontRightIRSensor; 
+        msg.ir_front_left = FrontLeftIRSensor; 
+        msg.ir_rear_right = RearRightIRSensor; 
+        msg.ir_rear_left = RearLeftIRSensor; 
+        msg.smoke_right = RightSmokeSensor; 
+        msg.smoke_left = LeftSmokeSensor; 
         publisher_processing_data->publish(msg);
     }
 
     bool fireIsDetected; 
-    bool FrontRightSensor; 
-    bool FrontLeftSensor; 
-    bool RearRightSensor; 
-    bool RearLeftSensor; 
+    bool FrontRightIRSensor; 
+    bool FrontLeftIRSensor; 
+    bool RearRightIRSensor; 
+    bool RearLeftIRSensor; 
+    bool RightSmokeSensor; 
+    bool LeftSmokeSensor; 
     size_t window_size_;
     size_t counter_;
     std::vector<int> buffer_;
