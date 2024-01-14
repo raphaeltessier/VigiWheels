@@ -35,6 +35,16 @@ const osThreadAttr_t senderTask_attributes = {
 		.stack_size = 255 * 4                      // Stack size
 };
 
+
+TickType_t msToTicks(TickType_t ms);
+void reading_analog_ir_sensor1(uint16_t *sensorValue);
+void reading_analog_ir_sensor3(uint16_t *sensorValue);
+void reading_analog_smoke_sensor1(uint16_t *sensorValue);
+void reading_analog_smoke_sensor2(uint16_t *sensorValue);
+void reading_digital_sensor(GPIO_TypeDef *GPIOx, uint16_t GPIO_Pin, uint16_t *sensorValue);
+void reading_sensor_values();
+int wait_for_frame(char frame_char, uint32_t timeout_ms);
+
 #define SIZE_RX 10
 #define SIZE_TX 100
 
@@ -53,104 +63,94 @@ TickType_t msToTicks(TickType_t ms)
 	return tmp;
 }
 
-void reading_analog_ir_sensor1(ADC_HandleTypeDef *hadc, uint16_t *sensorValue)
+
+void reading_analog_ir_sensor1(uint16_t *sensorValue)
 {
-	ADC_ChannelConfTypeDef sConfig = {0};
+    ADC_ChannelConfTypeDef sConfig = {0};
 
-	// Configure and start ADC conversions for A0
-	sConfig.Channel = ADC_CHANNEL_5;
-	sConfig.Rank = ADC_REGULAR_RANK_1;
-	sConfig.SamplingTime = ADC_SAMPLETIME_2CYCLES_5;
-	sConfig.SingleDiff = ADC_SINGLE_ENDED;
-	sConfig.OffsetNumber = ADC_OFFSET_NONE;
-	sConfig.Offset = 0;
+    // Configure and start ADC conversions for A0
+    sConfig.Channel = ADC_CHANNEL_5;
+    sConfig.Rank = ADC_REGULAR_RANK_1;
+    sConfig.SamplingTime = ADC_SAMPLETIME_2CYCLES_5;
+    sConfig.SingleDiff = ADC_SINGLE_ENDED;
+    sConfig.OffsetNumber = ADC_OFFSET_NONE;
+    sConfig.Offset = 0;
 
-	HAL_ADC_ConfigChannel(&hadc1, &sConfig);
-	HAL_ADC_Start(&hadc1);
+    HAL_ADC_ConfigChannel(&hadc1, &sConfig);
+    HAL_ADC_Start(&hadc1);
 
-	// Wait for conversion to complete
-	HAL_ADC_PollForConversion(&hadc1, HAL_MAX_DELAY);
+    // Wait for conversion to complete
+    HAL_ADC_PollForConversion(&hadc1, HAL_MAX_DELAY);
 
-	// Read ADC value for A0
-    *sensorValue = HAL_ADC_GetValue(hadc);
+    // Read ADC value for A0
+    *sensorValue = HAL_ADC_GetValue(&hadc1);
 
-	// Stop ADC conversions for A0
-    HAL_ADC_Stop(hadc);
 }
 
-void reading_analog_ir_sensor3(ADC_HandleTypeDef *hadc, uint16_t *sensorValue)
+void reading_analog_ir_sensor3(uint16_t *sensorValue)
 {
-	ADC_ChannelConfTypeDef sConfig = {0};
+    ADC_ChannelConfTypeDef sConfig = {0};
 
-	// Configure and start ADC conversions for A1
-	sConfig.Channel = ADC_CHANNEL_6;
-	sConfig.Rank = ADC_REGULAR_RANK_1;
-	sConfig.SamplingTime = ADC_SAMPLETIME_2CYCLES_5;
-	sConfig.SingleDiff = ADC_SINGLE_ENDED;
-	sConfig.OffsetNumber = ADC_OFFSET_NONE;
-	sConfig.Offset = 0;
+    // Configure and start ADC conversions for A1
+    sConfig.Channel = ADC_CHANNEL_6;
+    sConfig.Rank = ADC_REGULAR_RANK_1;
+    sConfig.SamplingTime = ADC_SAMPLETIME_2CYCLES_5;
+    sConfig.SingleDiff = ADC_SINGLE_ENDED;
+    sConfig.OffsetNumber = ADC_OFFSET_NONE;
+    sConfig.Offset = 0;
 
-	HAL_ADC_ConfigChannel(&hadc1, &sConfig);
-	HAL_ADC_Start(&hadc1);
+    HAL_ADC_ConfigChannel(&hadc1, &sConfig);
+    HAL_ADC_Start(&hadc1);
 
-	// Wait for conversion to complete
-	HAL_ADC_PollForConversion(&hadc1, HAL_MAX_DELAY);
+    // Wait for conversion to complete
+    HAL_ADC_PollForConversion(&hadc1, HAL_MAX_DELAY);
 
-	// Read ADC value for A0
-    *sensorValue = HAL_ADC_GetValue(hadc);
-
-	// Stop ADC conversions for A0
-    HAL_ADC_Stop(hadc);
+    // Read ADC value for A0
+    *sensorValue = HAL_ADC_GetValue(&hadc1);
 }
 
-void reading_analog_smoke_sensor1(ADC_HandleTypeDef *hadc, uint16_t *sensorValue)
+void reading_analog_smoke_sensor1(uint16_t *sensorValue)
 {
-	ADC_ChannelConfTypeDef sConfig = {0};
+    ADC_ChannelConfTypeDef sConfig = {0};
 
-	// Configure and start ADC conversions for A0
-	sConfig.Channel = ADC_CHANNEL_9;
-	sConfig.Rank = ADC_REGULAR_RANK_1;
-	sConfig.SamplingTime = ADC_SAMPLETIME_2CYCLES_5;
-	sConfig.SingleDiff = ADC_SINGLE_ENDED;
-	sConfig.OffsetNumber = ADC_OFFSET_NONE;
-	sConfig.Offset = 0;
+    // Configure and start ADC conversions for A2
+    sConfig.Channel = ADC_CHANNEL_9;
+    sConfig.Rank = ADC_REGULAR_RANK_1;
+    sConfig.SamplingTime = ADC_SAMPLETIME_2CYCLES_5;
+    sConfig.SingleDiff = ADC_SINGLE_ENDED;
+    sConfig.OffsetNumber = ADC_OFFSET_NONE;
+    sConfig.Offset = 0;
 
-	HAL_ADC_ConfigChannel(&hadc1, &sConfig);
-	HAL_ADC_Start(&hadc1);
+    HAL_ADC_ConfigChannel(&hadc1, &sConfig);
+    HAL_ADC_Start(&hadc1);
 
-	// Wait for conversion to complete
-	HAL_ADC_PollForConversion(&hadc1, HAL_MAX_DELAY);
+    // Wait for conversion to complete
+    HAL_ADC_PollForConversion(&hadc1, HAL_MAX_DELAY);
 
-	// Read ADC value for A0
-    *sensorValue = HAL_ADC_GetValue(hadc);
-
-	// Stop ADC conversions for A0
-    HAL_ADC_Stop(hadc);
+    // Read ADC value for A0
+    *sensorValue = HAL_ADC_GetValue(&hadc1);
 }
 
-void reading_analog_smoke_sensor2(ADC_HandleTypeDef *hadc, uint16_t *sensorValue)
+void reading_analog_smoke_sensor2(uint16_t *sensorValue)
 {
-	ADC_ChannelConfTypeDef sConfig = {0};
+    ADC_ChannelConfTypeDef sConfig = {0};
 
-	// Configure and start ADC conversions for A0
-	sConfig.Channel = ADC_CHANNEL_15;
-	sConfig.Rank = ADC_REGULAR_RANK_1;
-	sConfig.SamplingTime = ADC_SAMPLETIME_2CYCLES_5;
-	sConfig.SingleDiff = ADC_SINGLE_ENDED;
-	sConfig.OffsetNumber = ADC_OFFSET_NONE;
-	sConfig.Offset = 0;
+    // Configure and start ADC conversions for A3
+    sConfig.Channel = ADC_CHANNEL_15;
+    sConfig.Rank = ADC_REGULAR_RANK_1;
+    sConfig.SamplingTime = ADC_SAMPLETIME_2CYCLES_5;
+    sConfig.SingleDiff = ADC_SINGLE_ENDED;
+    sConfig.OffsetNumber = ADC_OFFSET_NONE;
+    sConfig.Offset = 0;
 
-	HAL_ADC_ConfigChannel(&hadc1, &sConfig);
-	HAL_ADC_Start(&hadc1);
+    HAL_ADC_ConfigChannel(&hadc1, &sConfig);
+    HAL_ADC_Start(&hadc1);
 
-	// Wait for conversion to complete
-	HAL_ADC_PollForConversion(&hadc1, HAL_MAX_DELAY);
+    // Wait for conversion to complete
+    HAL_ADC_PollForConversion(&hadc1, HAL_MAX_DELAY);
 
-	// Read ADC value for A0
-    *sensorValue = HAL_ADC_GetValue(hadc);
-
-	// Stop ADC conversions for A0
-    HAL_ADC_Stop(hadc);
+    // Read ADC value for A0
+    *sensorValue = HAL_ADC_GetValue(&hadc1);
 }
 
 // Function to read digital sensor values
@@ -162,12 +162,12 @@ void reading_digital_sensor(GPIO_TypeDef *GPIOx, uint16_t GPIO_Pin, uint16_t *se
 // Function to read all sensor values
 void reading_sensor_values()
 {
-	reading_analog_ir_sensor1(&hadc1, &ir_sensor1);
+	reading_analog_ir_sensor1(&ir_sensor1);
 	reading_digital_sensor(GPIOA, GPIO_PIN_10, &ir_sensor2);
-	reading_analog_ir_sensor3(&hadc1, &ir_sensor3);
+	reading_analog_ir_sensor3(&ir_sensor3);
 	reading_digital_sensor(GPIOB, GPIO_PIN_3, &ir_sensor4);
-	reading_analog_smoke_sensor1(&hadc1, &smoke_sensor1);
-	reading_analog_smoke_sensor2(&hadc1, &smoke_sensor2);
+	reading_analog_smoke_sensor1(&smoke_sensor1);
+	reading_analog_smoke_sensor2(&smoke_sensor2);
 }
 
 // Helper function to wait for a specific frame with timeout
@@ -202,15 +202,16 @@ void sending_data_uart(void *argument)
 		reading_sensor_values();
 
 		// Create and transmit the frame
-		sprintf(tx, "#IR_SENSOR1=%hu|IR_SENSOR2=%u|IR_SENSOR3=%hu|IR_SENSOR4=%u|SMOKE_SENSOR1=%hu|SMOKE_SENSOR2=%hu\n", ir_sensor1, ir_sensor2, ir_sensor3, ir_sensor4, smoke_sensor1, smoke_sensor2);
+		sprintf(tx, "#IR_SENSOR1=%hu|IR_SENSOR2=%u|IR_SENSOR3=4095|IR_SENSOR4=%u|SMOKE_SENSOR1=%hu|SMOKE_SENSOR2=%hu\n", ir_sensor1, ir_sensor2, ir_sensor4, smoke_sensor1, smoke_sensor2);
 
 		HAL_UART_Transmit(&huart2, (const uint8_t *)tx, strlen(tx), 100);
 
 		osMutexRelease(uartMutex);
 
-        osDelay(msToTicks(350));
+        osDelay(msToTicks(500));
 	}
 }
+
 
 // Frame format: "#[ID]=[Value]\n"
 void receiving_data_uart()
@@ -222,61 +223,73 @@ void receiving_data_uart()
     {
         osMutexAcquire(uartMutex, osWaitForever);
 
-        // Wait for "START_OF_FRAME" with timeout
-        if (!wait_for_frame(START_OF_FRAME, 100))
+        // Wait for "START_OF_FRAME"
+        do
         {
-            // Timeout occurred, release the mutex and continue to the next iteration
-            osMutexRelease(uartMutex);
-            continue;
-        }
+            HAL_UART_Receive(&huart2, (uint8_t *)buf, 1, 100);
+        } while (*buf != START_OF_FRAME);
 
-        // Receive data until "END_OF_FRAME" with timeout
+        // Receive data until "END_OF_FRAME"
         int i = 0;
-        if (wait_for_frame(END_OF_FRAME, 100))
+        do
         {
-            do
+            HAL_UART_Receive(&huart2, (uint8_t *)buf, 1, 100);
+            rx[i++] = *buf;
+
+        } while (*buf != END_OF_FRAME);
+
+        rx[i] = '\0';
+
+        // Extract ID and Value from the received frame
+        char *id = strtok(rx, "=");    // ID
+        char *value = strtok(NULL, "="); // Value
+
+        // Process based on ID and Value
+        if (id != NULL && value != NULL)
+        {
+            if (strcmp(id, "fire") == 0)
             {
-                HAL_UART_Receive(&huart2, (uint8_t *)buf, 1, 100);
-                rx[i++] = *buf;
-            } while (*buf != END_OF_FRAME);
-
-            rx[i] = '\0';
-
-            // Extract ID and Value from the received frame
-            char *id = strtok(rx, "=");    // ID
-            char *value = strtok(NULL, "="); // Value
-
-            // Process based on ID and Value
-            if (id != NULL && value != NULL)
-            {
-                if (strcmp(id, "f") == 0)
+                // Handle Fire sensor value
+                if (atoi(value) == 1)
                 {
-                    // Handle Fire sensor values
-                    if (atoi(value) == 1)
-                    {
-                        HAL_GPIO_WritePin(GPIOB, GPIO_PIN_4, GPIO_PIN_SET);
-                        HAL_GPIO_WritePin(GPIOB, GPIO_PIN_5, GPIO_PIN_SET);
-                    }
-                    else if (atoi(value) == 0)
-                    {
-                        HAL_GPIO_WritePin(GPIOB, GPIO_PIN_4, GPIO_PIN_RESET);
-                        HAL_GPIO_WritePin(GPIOB, GPIO_PIN_5, GPIO_PIN_RESET);
-                    }
-                    else
-                    {
-                        // Handle error
-                    }
+                    HAL_GPIO_WritePin(GPIOB, GPIO_PIN_4, GPIO_PIN_SET);
+                    HAL_GPIO_WritePin(GPIOB, GPIO_PIN_5, GPIO_PIN_SET);
                 }
-                else if (strcmp(id, "c") == 0)
+                else if (atoi(value) == 0)
                 {
-                    // Handle PWM value
-                    uint32_t cmd_angle = atoi(value);
-                    update_CCR_timer_PWM(cmd_angle, &htim3);
+                    HAL_GPIO_WritePin(GPIOB, GPIO_PIN_4, GPIO_PIN_RESET);
+                    HAL_GPIO_WritePin(GPIOB, GPIO_PIN_5, GPIO_PIN_RESET);
                 }
                 else
                 {
-                    // Handle other IDs or report error
+                    // Handle error
                 }
+            }
+            else if (strcmp(id, "c") == 0)
+            {
+                // Handle PWM value
+                uint32_t cmd_angle = atoi(value);
+                update_CCR_timer_PWM(cmd_angle, &htim3);
+            }
+            else if (strcmp(id, "pressure") == 0)
+			{
+                // Handle Fire sensor value
+                if (atoi(value) == 1)
+                {
+                    HAL_GPIO_WritePin(GPIOB, GPIO_PIN_10, GPIO_PIN_SET);
+                }
+                else if (atoi(value) == 0)
+                {
+                    HAL_GPIO_WritePin(GPIOB, GPIO_PIN_10, GPIO_PIN_RESET);
+                }
+                else
+                {
+                    // Handle error
+                }
+			}
+            else
+            {
+                // Handle other IDs or report error
             }
         }
 
