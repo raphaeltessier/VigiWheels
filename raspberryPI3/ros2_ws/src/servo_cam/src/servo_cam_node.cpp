@@ -5,6 +5,7 @@
 
 #include "interfaces/msg/servo_cam_order.hpp"
 #include "interfaces/msg/cam_pos_order.hpp"
+#include "interfaces/msg/manometer_info.hpp"
 
 #include "std_srvs/srv/empty.hpp"
 
@@ -30,6 +31,9 @@ public:
         subscription_cam_pos_order_ = this->create_subscription<interfaces::msg::CamPosOrder>(
         "cam_pos_order", 10, std::bind(&servo_cam::camPosOrderCallback, this, _1));
 
+        subscription_manometer_order_ = this->create_subscription<interfaces::msg::ManometerInfo>(
+        "manometer_detected", 10, std::bind(&servo_cam::ImagePosCallback, this, _1));
+
 
         //periodic function
         timer_ = this->create_wall_timer(PERIOD_UPDATE_CMD, std::bind(&servo_cam::updateCmd, this));
@@ -53,28 +57,30 @@ private:
     * 
     */
     void camPosOrderCallback(const interfaces::msg::CamPosOrder & pos_cmd){
-        mode = pos_cmd.mode; // 0 : fixed ; 1 : scan
-        requested_angle = pos_cmd.cam_angle;
+        if (mode != pos_cmd.mode) {
+            mode = pos_cmd.mode; // 0 : manual ; 1 : scan
+            if (mode == 0) {
+                RCLCPP_INFO(this->get_logger(), "CAMERA in MANUAL mode");
+            }
+            else if (mode == 1) {
+                RCLCPP_INFO(this->get_logger(), "CAMERA in SCAN mode");
+            }
+        }
+        turn = pos_cmd.turn_cam;
     }
 
-/*
-    //calculate a pwm [5 , 10] for the servo from an command angle
-    float calculate_pwm(int angle) {
-        float pwm = float(angle)/36.0 + 5;
 
-
-        //security
-        if (pwm >= 10) {
-            pwm = 10;
-        }
-        else if (pwm <= 0) {
-            pwm = 0;
-        }
-
-        return pwm;
-
+    /* Update image position for follow from image pos order feedback [callback function]  :
+    *
+    * This function is called when a message is published on the "/ManometerInfo" topic
+    * 
+    */
+    void ImagePosCallback(const interfaces::msg::ManometerInfo & pos_image){
+        x1 = pos_image.x1;
+        x2 = pos_image.x2;
+        mano_update = 1;
     }
-*/
+
 
  //periodic function, see servo_cam_node.h to set period -> 100ms
     // to update the angular positon of the camera to scan
@@ -82,24 +88,29 @@ private:
     void updateCmd(){
 
         auto servoOrder = interfaces::msg::ServoCamOrder();
+        if (mano_update) {
+                mano_update = 0;
+                float mean = (x1 + x2)/2 -320;
+                //float correction = (mean > 0) ? PAS_FOLLOW : (-PAS_FOLLOW);
+                float correction = mean * FOV/RESOLUTION;
+                command_angle += int(correction);
+        }
+        else if (mode == 0) {
+        command_angle = command_angle + turn*PAS_MANUAL;
 
-        if (mode == 1) {
-            command_angle = command_angle + sens;
-            if (command_angle >= 180) {
-                command_angle = 180;
-                sens = -sens;
-            }
-            else if (command_angle <= 0) {
-                command_angle = 0;
-                sens = -sens;
-            }
-            
+        }
+        else if (mode == 1) {
+            command_angle = command_angle + sens;    
         }
 
-        else {
-            command_angle = requested_angle;
-        }
-
+        if (command_angle >= 180) {
+            command_angle = 180; //saturation
+            sens = -PAS_SCAN;
+        } 
+        else if (command_angle <= 0) {
+            command_angle = 0; //saturation
+            sens = PAS_SCAN;
+        } 
 
         servoOrder.servo_cam_angle = command_angle;
 
@@ -115,9 +126,15 @@ private:
 
     //General variables
         int mode = 0;
-        int requested_angle;
+        int turn = 0;
         int command_angle = 90; //[0, 180]
         int sens = PAS_SCAN; //{-10; 10}
+        bool mano_update = 0;
+
+        float x1;
+        float x2;
+
+        float facteur = RESOLUTION/FOV;
 
 
 
@@ -129,7 +146,8 @@ private:
     rclcpp::Publisher<interfaces::msg::ServoCamOrder>::SharedPtr publisher_servo_cam_order_;
 
     //Suscribers
-    rclcpp::Subscription<interfaces::msg::CamPosOrder>::SharedPtr subscription_cam_pos_order_; 
+    rclcpp::Subscription<interfaces::msg::CamPosOrder>::SharedPtr subscription_cam_pos_order_;
+    rclcpp::Subscription<interfaces::msg::ManometerInfo>::SharedPtr subscription_manometer_order_;  
 
     //Timer
     rclcpp::TimerBase::SharedPtr timer_;

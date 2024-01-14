@@ -10,6 +10,7 @@
 #include "sensor_msgs/msg/joy.hpp"
 #include "interfaces/msg/joystick_order.hpp"
 #include "interfaces/msg/system_check.hpp"
+#include "interfaces/msg/cam_pos_order.hpp"
 
 
 using namespace std;
@@ -18,6 +19,8 @@ using placeholders::_1;
 #define DEADZONE_LT_RT 0.15  // %
 #define DEADZONE_LS_X_LEFT 0.4  // %
 #define DEADZONE_LS_X_RIGHT 0.2  // %
+#define DEADZONE_RS_X_LEFT 0.4  // %
+#define DEADZONE_RS_X_RIGHT 0.2  // %
 
 #define STOP 0
 #define CENTER 0
@@ -36,6 +39,11 @@ public:
         reverse = false;
         requestedThrottle = STOP;
         requestedAngle = CENTER;
+
+        record_path = false;
+
+        cam_mode = 0;
+        turn_cam = CENTER;
         
         axisMap.insert({"LS_X",0});    //Left Stick axis X  (full left) 1.0 > -1.0 (full right)
         axisMap.insert({"LS_Y",1});    //Left Stick axis Y  (full high) 1.0 > -1.0 (full bottom)
@@ -61,6 +69,7 @@ public:
 
         publisher_joystick_order_= this->create_publisher<interfaces::msg::JoystickOrder>("joystick_order", 10);
         publisher_system_check_= this->create_publisher<interfaces::msg::SystemCheck>("system_check", 10);
+        publisher_cam_pos_order_= this->create_publisher<interfaces::msg::CamPosOrder>("cam_pos_order", 10);
 
 
         subscription_joy_ = this->create_subscription<sensor_msgs::msg::Joy>(
@@ -79,22 +88,34 @@ private:
         buttonStart = joy.buttons[buttonsMap.find("START")->second];
         buttonB = joy.buttons[buttonsMap.find("B")->second];    
         buttonA = joy.buttons[buttonsMap.find("A")->second];  
-        buttonY = joy.buttons[buttonsMap.find("Y")->second]; 
+        buttonY = joy.buttons[buttonsMap.find("Y")->second];
+        buttonX = joy.buttons[buttonsMap.find("X")->second]; 
         
 
         axisRT = joy.axes[axisMap.find("RT")->second];      //Motors (go forward)
         axisLT = joy.axes[axisMap.find("LT")->second];      //Motors (go backward)
         axisLS_X = joy.axes[axisMap.find("LS_X")->second];     //Steering
+        axisRS_X = joy.axes[axisMap.find("RS_X")->second];     //Turn camera
 
         if (joy.axes[axisMap.find("DPAD_Y")->second] == -1.0)
             buttonDpadBottom = true;
         else
             buttonDpadBottom = false;
 
+        if (joy.axes[axisMap.find("DPAD_Y")->second] == 1.0)
+            buttonDpadTop = true;
+        else
+            buttonDpadTop= false;
+
         if (joy.axes[axisMap.find("DPAD_X")->second] == 1.0)
             buttonDpadLeft = true;
         else
             buttonDpadLeft = false;
+
+        if (joy.axes[axisMap.find("DPAD_X")->second] == -1.0)
+            buttonDpadRight = true;
+        else
+            buttonDpadRight = false;
         
         
 
@@ -167,6 +188,11 @@ private:
             requestedAngle = axisLS_X;    
         }
 
+        //recording path
+        if (buttonX) {
+            record_path = !record_path;
+        }
+
         
 
         auto joystickOrderMsg = interfaces::msg::JoystickOrder();
@@ -175,31 +201,62 @@ private:
         joystickOrderMsg.throttle = requestedThrottle;
         joystickOrderMsg.steer  = requestedAngle;
         joystickOrderMsg.reverse = reverse;
+        joystickOrderMsg.record_path = record_path;
 
         publisher_joystick_order_->publish(joystickOrderMsg); //Send order to the car_control_node
+
+
+
+        //camera 
+        if (buttonDpadTop || buttonDpadRight){
+
+            if (buttonDpadTop)
+                cam_mode = 0;
+            else if (buttonDpadRight)
+                cam_mode = 1;
+        }
+
+        axisRS_X = -axisRS_X;   //axisLS_X : 1 .. -1  ;  steering_angle : -1 .. 1
+        if (axisRS_X > DEADZONE_RS_X_LEFT && axisRS_X < DEADZONE_RS_X_RIGHT){     //asymmetric deadzone (hardware : joystick LS)
+            turn_cam = CENTER;
+        } else {
+            turn_cam = axisRS_X;    
+        }
+
+        auto camOrderMsg = interfaces::msg::CamPosOrder();
+        camOrderMsg.mode = cam_mode;
+        camOrderMsg.turn_cam = turn_cam;
+
+        publisher_cam_pos_order_->publish(camOrderMsg); //Send order to the servo_cam mode
+
     }
 
     //Joystick variables
     map<string,int> axisMap;
     map<string,int> buttonsMap;
-    bool buttonB, buttonStart, buttonA, buttonY, buttonDpadBottom, buttonDpadLeft ;
+    bool buttonB, buttonStart, buttonA, buttonY, buttonX, buttonDpadBottom, buttonDpadLeft,buttonDpadRight, buttonDpadTop ;
     
-    float axisRT, axisLT, axisLS_X;
+    float axisRT, axisLT, axisLS_X, axisRS_X;
 
     //General variables
     bool start;
     int mode;
     bool systemCheckPrintRequest;
 
-
+    bool record_path;
     //Manual mode variables
     float requestedAngle, requestedThrottle;
     bool reverse;
+
+    //Camera variables
+    float turn_cam;
+    int cam_mode;
 
 
 
     rclcpp::Publisher<interfaces::msg::JoystickOrder>::SharedPtr publisher_joystick_order_;
     rclcpp::Publisher<interfaces::msg::SystemCheck>::SharedPtr publisher_system_check_;
+    rclcpp::Publisher<interfaces::msg::CamPosOrder>::SharedPtr publisher_cam_pos_order_;
 
     rclcpp::Subscription<sensor_msgs::msg::Joy>::SharedPtr subscription_joy_;
 };
