@@ -1,5 +1,3 @@
-
-
 // Function to move the arc gradually based on the specified angle
 const arc = document.getElementById('arc');
 arc.style.transformOrigin = "100px 100px"; // Set the rotation center of the arc
@@ -9,7 +7,23 @@ function moveArc(angle) {
     arc.style.transform = `rotate(${angle + 90}deg)`; // Rotate the arc with the given angle offset
 }
 
-let detectedPositions = []; // Array to store detected obstacle positions
+function changeBatteryLevel(BatteryLevel = "None") {
+    var batteryText = document.getElementById('batteryLevel');
+    batteryText.innerText = `Battery level: ${BatteryLevel}`;
+}
+
+function changeSpeed(speedvalue) {
+    const SpeedText = document.getElementById('speedvalue');
+    if (speedvalue > 0) {
+        SpeedText.innerText = `Forward speed: ${speedvalue} rpm`;
+    } else if (speedvalue < 0) {
+        SpeedText.innerText = `Reverse speed: ${-speedvalue} rpm`;
+    } else {
+        SpeedText.innerText = "Car is currently stationary";
+    }
+}
+
+let Obst_detectedPositions = []; // Array to store detected obstacle positions
 
 function toggleObstacle(position, enable) {
     const validPositions = ['tl', 'tm', 'tr', 'bl', 'bm', 'br']; // Valid obstacle positions
@@ -18,20 +32,20 @@ function toggleObstacle(position, enable) {
 
         if (enable === 1) {
             obstacle.style.display = "flex"; // Display the obstacle
-            if (!detectedPositions.includes(position)) {
-                detectedPositions.push(position); // Add the position if not already in the array
+            if (!Obst_detectedPositions.includes(position)) {
+                Obst_detectedPositions.push(position); // Add the position if not already in the array
             }
         } else if (enable === 0) {
             obstacle.style.display = "none"; // Hide the obstacle
-            const index = detectedPositions.indexOf(position);
+            const index = Obst_detectedPositions.indexOf(position);
             if (index !== -1) {
-                detectedPositions.splice(index, 1); // Remove the position if in the array
+                Obst_detectedPositions.splice(index, 1); // Remove the position if in the array
             }
         }
     } else {
         console.log("Invalid position."); // Log if the position is not in the specified list
     }
-    if (detectedPositions.length > 0) {
+    if (Obst_detectedPositions.length > 0) {
         // Call another function if at least one obstacle is still detected
         ObstacleDetected(1);
     } else {
@@ -39,6 +53,8 @@ function toggleObstacle(position, enable) {
     }
 }
 
+
+// NOTIFICATIONS ON LEFT SIDE
 let fireIntervalId = null;
 let manometerIntervalId = null;
 let obstacleIntervalId = null;
@@ -79,6 +95,39 @@ function ObstacleDetected(isObstacleDetected) {
     }
 }
 
+
+
+// ICON APPARITIONS ON RIGHT SIDE
+let Fire_detectedPositions = []; // Array to store detected fire positions
+
+function togglefire(position, enable) {
+    const validPositions = ['tl', 'tr', 'bl', 'br']; // Valid fire positions
+    if (validPositions.includes(position)) {
+        const fire = document.getElementById(`fire_${position}`);
+
+        if (enable === 1) {
+            fire.style.display = "flex"; // Display the fire
+            if (!Fire_detectedPositions.includes(position)) {
+                Fire_detectedPositions.push(position); // Add the position if not already in the array
+            }
+        } else if (enable === 0) {
+            fire.style.display = "none"; // Hide the fire
+            const index = Fire_detectedPositions.indexOf(position);
+            if (index !== -1) {
+                Fire_detectedPositions.splice(index, 1); // Remove the position if in the array
+            }
+        }
+    } else {
+        console.log("Invalid position."); // Log if the position is not in the specified list
+    }
+    if (Fire_detectedPositions.length > 0) {
+        // Call another function if at least one obstacle is still detected
+        fireDetected(1);
+    } else {
+        fireDetected(0);
+    }
+}
+
 let intervalId = null;
 const elementsToBlink = new Set();
 
@@ -90,6 +139,8 @@ function toggleDisplay(element, shouldDisplay) {
     }
 }
 
+
+// CONTROL USING KEY BOARD
 let mano = 0;
 let o1 = 0;
 let o2 = 0;
@@ -180,62 +231,77 @@ function waitFor(event) {
     }
 }
 
+document.addEventListener('keydown', waitFor);
 
+
+// Website  redirection
 function redirect(url) {
     window.location.href = url;
 }
 
-function changeBatteryLevel(BatteryLevel = "None") {
-    var batteryText = document.getElementById('batteryLevel');
-    batteryText.innerText = `Battery level: ${BatteryLevel}`;
-}
 
-function changeSpeed(speedvalue) {
-    const SpeedText = document.getElementById('speedvalue');
-    if (speedvalue > 0) {
-        SpeedText.innerText = `Forward speed: ${speedvalue} rpm`;
-    } else if (speedvalue < 0) {
-        SpeedText.innerText = `Reverse speed: ${-speedvalue} rpm`;
+// Updater
+function updateEmergencyAlert(message) {
+    if (message.ir_front_right) {
+        togglefire("tr", 1);
     } else {
-        SpeedText.innerText = "Car is currently stationary";
+        togglefire("tr", 0);
     }
+    if (message.ir_front_left) {
+        togglefire("tl", 1);
+    } else {
+        togglefire("tl", 0);
+    }
+    if (message.ir_rear_left) {
+        togglefire("tl", 1);
+    } else {
+        togglefire("tl", 0);
+    }
+    if (message.ir_rear_right) {
+        togglefire("br", 1);
+    } else {
+        togglefire("br", 0);
+    }
+/*
+    bool ir_front_right
+    bool ir_front_left
+    bool ir_rear_right
+    bool ir_rear_left
+    bool smoke_left
+    bool smoke_right
+    */
+}
+function updateGeneralData(message) {
+    changeBatteryLevel(str(message.battery_level));
 }
 
-document.addEventListener('keydown', waitFor);
-
-// Function to move the arc left and right in intervals
-function angleleft() {
-    moveArc(-80);
-    setTimeout(() => {
-        angleright();
-    }, 5000);
+function updateCameraAngle(message) {
+    new_angle = message.servo_cam_angle;
+    moveArc(new_angle);
 }
 
-function angleright() {
-    moveArc(80);
-    setTimeout(() => {
-        angleleft();
-    }, 5000);
+function updateObstacles(message) {
+    if (message.front_object) {
+        toggleObstacle("tl", 1);
+        toggleObstacle("tm", 1);
+        toggleObstacle("tr", 1);
+    } else {
+        toggleObstacle("tl", 0);
+        toggleObstacle("tm", 0);
+        toggleObstacle("tr", 0);
+    }
+
+    if (message.rear_object) {
+        toggleObstacle("bl", 1);
+        toggleObstacle("bm", 1);
+        toggleObstacle("br", 1);
+    } else {
+        toggleObstacle("bl", 0);
+        toggleObstacle("bm", 0);
+        toggleObstacle("br", 0);
+    }
+
 }
-
-setTimeout(() => {
-    angleleft();
-}, 3000);
-
-// Timer for testing & demo
-setTimeout(() => {
-    toggleObstacle("br", 1);
-    toggleObstacle("tr", 1);
-
-    ObstacleDetected(1);
-    ManometerDetected(1);
-}, 1000);
-
-setTimeout(() => {
-    toggleObstacle("br", 0);
-    moveArc(30);
-    ManometerDetected(0);
-}, 10000);
 
 // ROS script initialization
 var ros = new ROSLIB.Ros({
@@ -264,6 +330,71 @@ var listener = new ROSLIB.Topic({
 // Subscribe to ROS topic and call the test function
 listener.subscribe(test);
 
+
 function test(message) {
     console.log('Message:', message.right_rear_pwm);
 }
+
+var l_servo_cam_angle = new ROSLIB.Topic({
+    ros: ros,
+    name: '/servo_cam_order',
+    messageType: 'interfaces/msg/ServoCamOrder'
+});
+l_servo_cam_angle.subscribe(updateCameraAngle);
+
+var l_general_data = new ROSLIB.Topic({
+    ros: ros,
+    name: '/general_data',
+    messageType: 'interfaces/msg/GeneralData    '
+});
+l_general_data.subscribe(updateGeneralData)
+
+var l_emergency_alert = new ROSLIB.Topic({
+    ros: ros,
+    name: '/emergency_alert',
+    messageType: 'interfaces/msg/EmergencyAlertFire'
+});
+l_emergency_alert.subscribe(updateEmergencyAlert)
+
+
+var l_obstacles = new ROSLIB.Topic({
+    ros: ros,
+    name: '/obstacles_order',
+    messageType: 'interfaces/msg/ObstaclesOrder'
+});
+l_obstacles.subscribe(updateObstacles)
+
+
+// Timer for testing & demo & functions associated
+function angleleft() {
+    moveArc(-80);
+    setTimeout(() => {
+        angleright();
+    }, 5000);
+}
+
+function angleright() {
+    moveArc(80);
+    setTimeout(() => {
+        angleleft();
+    }, 5000);
+}
+
+setTimeout(() => {
+    angleleft();
+}, 3000);
+
+setTimeout(() => {
+    toggleObstacle("br", 1);
+    toggleObstacle("tr", 1);
+
+    ObstacleDetected(1);
+    ManometerDetected(1);
+}, 1000);
+
+setTimeout(() => {
+    toggleObstacle("br", 0);
+    moveArc(30);
+    ManometerDetected(0);
+}, 10000);
+
