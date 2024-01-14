@@ -84,6 +84,12 @@ def generate_launch_description():
         emulate_tty=True
     )
 
+    path_recording_node = Node(
+        package="path_recording",
+        executable="path_recording",
+        emulate_tty=True
+    )
+
 
     path_recording_node = Node(
         package="path_recording",

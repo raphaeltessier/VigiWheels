@@ -8,7 +8,9 @@
 class ProcessingDataFireNode : public rclcpp::Node
 {
 public:
+
     ProcessingDataFireNode() : Node("processing_data_fire_node"), fireIsDetected{false}, FrontRightIRSensor{false}, FrontLeftIRSensor{false}, RearRightIRSensor{false}, RearLeftIRSensor{false}, RightSmokeSensor{false}, LeftSmokeSensor{false}
+
     {
         RCLCPP_INFO(this->get_logger(), "Hello Processing Data Fire Node !");
         subscription_data_fire = this->create_subscription<interfaces::msg::FireSensor>("data_fire", 10, std::bind(&ProcessingDataFireNode::dataFireCallBack, this, std::placeholders::_1));
@@ -17,6 +19,7 @@ public:
     }
 
 private:
+
     int processFireSensorData(int sensorValue)
     {
         if (sensorValue < 100)
@@ -30,6 +33,7 @@ private:
     }
 
     int processSmokeSensorData(int sensorValue)
+
     {
         if (sensorValue > 1000)
         {
@@ -43,6 +47,7 @@ private:
 
     void dataFireCallBack(const interfaces::msg::FireSensor &msg)
     {
+
         bool result1 = processFireSensorData(msg.ir_sensor1); // Avant Droit
         bool result2 = msg.ir_sensor2;                      // Avant Gauche
         bool result3 = processFireSensorData(msg.ir_sensor3); // Arrière Gauche
@@ -119,6 +124,7 @@ private:
     bool RearLeftIRSensor;
     bool RightSmokeSensor;
     bool LeftSmokeSensor;
+
     std::shared_ptr<rclcpp::Publisher<interfaces::msg::EmergencyAlertFire>> publisher_processing_data;
     std::shared_ptr<rclcpp::TimerBase> timer_proccesing_data;
     rclcpp::Subscription<interfaces::msg::FireSensor>::SharedPtr subscription_data_fire;

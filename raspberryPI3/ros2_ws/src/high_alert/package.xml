@@ -1,28 +1,15 @@
 <?xml version="1.0"?>
 <?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
 <package format="3">
-  <name>manometer_detection</name>
+  <name>high_alert</name>
   <version>0.0.0</version>
   <description>TODO: Package description</description>
-  <maintainer email="moad@todo.todo">moad</maintainer>
+  <maintainer email="tessier.raphael@laposte.net">pi</maintainer>
   <license>TODO: License declaration</license>
 
- 
-
-
   <depend>rclpy</depend>
-  <depend>ultralytics</depend>
-  <depend>cv_bridge</depend>
-  <depend>sensor_msgs</depend>
   <depend>interfaces</depend>
-  <depend>math</depend>
-  <depend>asyncio</depend>
-  <depend>websockets</depend>
-  <depend>numpy</depend>
   <depend>os</depend>
-  <depend>json</depend>
-
-
 
   <test_depend>ament_copyright</test_depend>
   <test_depend>ament_flake8</test_depend>

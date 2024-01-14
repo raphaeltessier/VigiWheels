@@ -10,6 +10,7 @@
 #include "interfaces/msg/servo_cam_order.hpp"
 #include "interfaces/msg/pressure_level.hpp"
 
+
 #define SERIAL_PORT_1 "/dev/ttyACM0"
 #define SERIAL_PORT_2 "/dev/ttyACM1"
 #define BAUD_RATE B115200
@@ -38,10 +39,12 @@ public:
         subscription_servo_cam_order_ = this->create_subscription<interfaces::msg::ServoCamOrder>(
             "servo_cam_order", 10, std::bind(&SerialWritingNode::sendServoCamOrderCallback, this, _1));
 
+
         subscription_pressure_alert = this->create_subscription<interfaces::msg::PressureLevel>(
             "pressure_level", 10, std::bind(&SerialWritingNode::alertPressureCallback, this, std::placeholders::_1));
      }
     
+
 
     ~SerialWritingNode()
     {
@@ -155,6 +158,7 @@ private:
             return;
         }
 
+
         char tx[9];
         snprintf(tx, sizeof(tx), "#fire=%u\n", msg.fire_detected);
 
@@ -211,7 +215,6 @@ private:
 
         char tx[20];  
         snprintf(tx, sizeof(tx), "#pressure=%u\n", pressure_detection); 
-
 
         // Write to serial port
         int bytes_written = write(serial_port_, tx, strlen(tx));
@@ -272,6 +275,7 @@ private:
 
         RCLCPP_DEBUG(this->get_logger(), "Data send : %s\n", tx);
     }
+
     rclcpp::Subscription<interfaces::msg::PressureLevel>::SharedPtr subscription_pressure_alert;
     rclcpp::Subscription<interfaces::msg::EmergencyAlertFire>::SharedPtr subscription_emergency_alert;
     rclcpp::Subscription<interfaces::msg::ServoCamOrder>::SharedPtr subscription_servo_cam_order_;
