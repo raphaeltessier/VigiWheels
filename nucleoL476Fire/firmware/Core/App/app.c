@@ -276,11 +276,11 @@ void receiving_data_uart()
                 // Handle Fire sensor value
                 if (atoi(value) == 1)
                 {
-                    HAL_GPIO_WritePin(GPIOB, GPIO_PIN_6, GPIO_PIN_SET);
+                    HAL_GPIO_WritePin(GPIOB, GPIO_PIN_10, GPIO_PIN_SET);
                 }
                 else if (atoi(value) == 0)
                 {
-                    HAL_GPIO_WritePin(GPIOB, GPIO_PIN_6, GPIO_PIN_RESET);
+                    HAL_GPIO_WritePin(GPIOB, GPIO_PIN_10, GPIO_PIN_RESET);
                 }
                 else
                 {

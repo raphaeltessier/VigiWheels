@@ -5208,9 +5208,8 @@ LOAD /opt/st/stm32cubeide_1.14.0/plugins/com.st.stm32cube.ide.mcu.externaltools.
                 0x0000000008000fdc       0xa0 ./Core/App/app.o
                 0x0000000008000fdc                sending_data_uart
  .text.receiving_data_uart
-                0x000000000800107c      0x158 ./Core/App/app.o
+                0x000000000800107c      0x15c ./Core/App/app.o
                 0x000000000800107c                receiving_data_uart
- *fill*         0x00000000080011d4        0x4 
  .text.update_CCR_timer_PWM
                 0x00000000080011d8       0xe0 ./Core/App/app.o
                 0x00000000080011d8                update_CCR_timer_PWM

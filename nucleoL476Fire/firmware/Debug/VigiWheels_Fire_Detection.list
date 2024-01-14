@@ -1573,7 +1573,7 @@ void receiving_data_uart()
     while (1)
     {
         osMutexAcquire(uartMutex, osWaitForever);
- 8001082:	4b4c      	ldr	r3, [pc, #304]	; (80011b4 <receiving_data_uart+0x138>)
+ 8001082:	4b4d      	ldr	r3, [pc, #308]	; (80011b8 <receiving_data_uart+0x13c>)
  8001084:	681b      	ldr	r3, [r3, #0]
  8001086:	f04f 31ff 	mov.w	r1, #4294967295	; 0xffffffff
  800108a:	4618      	mov	r0, r3
@@ -1586,7 +1586,7 @@ void receiving_data_uart()
  8001090:	f107 010c 	add.w	r1, r7, #12
  8001094:	2364      	movs	r3, #100	; 0x64
  8001096:	2201      	movs	r2, #1
- 8001098:	4847      	ldr	r0, [pc, #284]	; (80011b8 <receiving_data_uart+0x13c>)
+ 8001098:	4848      	ldr	r0, [pc, #288]	; (80011bc <receiving_data_uart+0x140>)
  800109a:	f005 f9a7 	bl	80063ec <HAL_UART_Receive>
         } while (*buf != START_OF_FRAME);
  800109e:	7b3b      	ldrb	r3, [r7, #12]
@@ -1603,7 +1603,7 @@ void receiving_data_uart()
  80010a8:	f107 010c 	add.w	r1, r7, #12
  80010ac:	2364      	movs	r3, #100	; 0x64
  80010ae:	2201      	movs	r2, #1
- 80010b0:	4841      	ldr	r0, [pc, #260]	; (80011b8 <receiving_data_uart+0x13c>)
+ 80010b0:	4842      	ldr	r0, [pc, #264]	; (80011bc <receiving_data_uart+0x140>)
  80010b2:	f005 f99b 	bl	80063ec <HAL_UART_Receive>
             rx[i++] = *buf;
  80010b6:	69fb      	ldr	r3, [r7, #28]
@@ -1629,12 +1629,12 @@ void receiving_data_uart()
         // Extract ID and Value from the received frame
         char *id = strtok(rx, "=");    // ID
  80010d6:	463b      	mov	r3, r7
- 80010d8:	4938      	ldr	r1, [pc, #224]	; (80011bc <receiving_data_uart+0x140>)
+ 80010d8:	4939      	ldr	r1, [pc, #228]	; (80011c0 <receiving_data_uart+0x144>)
  80010da:	4618      	mov	r0, r3
  80010dc:	f009 fa94 	bl	800a608 <strtok>
  80010e0:	61b8      	str	r0, [r7, #24]
         char *value = strtok(NULL, "="); // Value
- 80010e2:	4936      	ldr	r1, [pc, #216]	; (80011bc <receiving_data_uart+0x140>)
+ 80010e2:	4937      	ldr	r1, [pc, #220]	; (80011c0 <receiving_data_uart+0x144>)
  80010e4:	2000      	movs	r0, #0
  80010e6:	f009 fa8f 	bl	800a608 <strtok>
  80010ea:	6178      	str	r0, [r7, #20]
@@ -1643,13 +1643,13 @@ void receiving_data_uart()
         if (id != NULL && value != NULL)
  80010ec:	69bb      	ldr	r3, [r7, #24]
  80010ee:	2b00      	cmp	r3, #0
- 80010f0:	d05a      	beq.n	80011a8 <receiving_data_uart+0x12c>
+ 80010f0:	d05c      	beq.n	80011ac <receiving_data_uart+0x130>
  80010f2:	697b      	ldr	r3, [r7, #20]
  80010f4:	2b00      	cmp	r3, #0
- 80010f6:	d057      	beq.n	80011a8 <receiving_data_uart+0x12c>
+ 80010f6:	d059      	beq.n	80011ac <receiving_data_uart+0x130>
         {
             if (strcmp(id, "fire") == 0)
- 80010f8:	4931      	ldr	r1, [pc, #196]	; (80011c0 <receiving_data_uart+0x144>)
+ 80010f8:	4932      	ldr	r1, [pc, #200]	; (80011c4 <receiving_data_uart+0x148>)
  80010fa:	69b8      	ldr	r0, [r7, #24]
  80010fc:	f7ff f868 	bl	80001d0 <strcmp>
  8001100:	4603      	mov	r3, r0
@@ -1667,40 +1667,40 @@ void receiving_data_uart()
                     HAL_GPIO_WritePin(GPIOB, GPIO_PIN_4, GPIO_PIN_SET);
  8001112:	2201      	movs	r2, #1
  8001114:	2110      	movs	r1, #16
- 8001116:	482b      	ldr	r0, [pc, #172]	; (80011c4 <receiving_data_uart+0x148>)
+ 8001116:	482c      	ldr	r0, [pc, #176]	; (80011c8 <receiving_data_uart+0x14c>)
  8001118:	f002 fbb4 	bl	8003884 <HAL_GPIO_WritePin>
                     HAL_GPIO_WritePin(GPIOB, GPIO_PIN_5, GPIO_PIN_SET);
  800111c:	2201      	movs	r2, #1
  800111e:	2120      	movs	r1, #32
- 8001120:	4828      	ldr	r0, [pc, #160]	; (80011c4 <receiving_data_uart+0x148>)
+ 8001120:	4829      	ldr	r0, [pc, #164]	; (80011c8 <receiving_data_uart+0x14c>)
  8001122:	f002 fbaf 	bl	8003884 <HAL_GPIO_WritePin>
- 8001126:	e03f      	b.n	80011a8 <receiving_data_uart+0x12c>
+ 8001126:	e041      	b.n	80011ac <receiving_data_uart+0x130>
                 }
                 else if (atoi(value) == 0)
  8001128:	6978      	ldr	r0, [r7, #20]
  800112a:	f009 f8af 	bl	800a28c <atoi>
  800112e:	4603      	mov	r3, r0
  8001130:	2b00      	cmp	r3, #0
- 8001132:	d139      	bne.n	80011a8 <receiving_data_uart+0x12c>
+ 8001132:	d13b      	bne.n	80011ac <receiving_data_uart+0x130>
                 {
                     HAL_GPIO_WritePin(GPIOB, GPIO_PIN_4, GPIO_PIN_RESET);
  8001134:	2200      	movs	r2, #0
  8001136:	2110      	movs	r1, #16
- 8001138:	4822      	ldr	r0, [pc, #136]	; (80011c4 <receiving_data_uart+0x148>)
+ 8001138:	4823      	ldr	r0, [pc, #140]	; (80011c8 <receiving_data_uart+0x14c>)
  800113a:	f002 fba3 	bl	8003884 <HAL_GPIO_WritePin>
                     HAL_GPIO_WritePin(GPIOB, GPIO_PIN_5, GPIO_PIN_RESET);
  800113e:	2200      	movs	r2, #0
  8001140:	2120      	movs	r1, #32
- 8001142:	4820      	ldr	r0, [pc, #128]	; (80011c4 <receiving_data_uart+0x148>)
+ 8001142:	4821      	ldr	r0, [pc, #132]	; (80011c8 <receiving_data_uart+0x14c>)
  8001144:	f002 fb9e 	bl	8003884 <HAL_GPIO_WritePin>
- 8001148:	e02e      	b.n	80011a8 <receiving_data_uart+0x12c>
+ 8001148:	e030      	b.n	80011ac <receiving_data_uart+0x130>
                 else
                 {
                     // Handle error
                 }
             }
             else if (strcmp(id, "c") == 0)
- 800114a:	491f      	ldr	r1, [pc, #124]	; (80011c8 <receiving_data_uart+0x14c>)
+ 800114a:	4920      	ldr	r1, [pc, #128]	; (80011cc <receiving_data_uart+0x150>)
  800114c:	69b8      	ldr	r0, [r7, #24]
  800114e:	f7ff f83f 	bl	80001d0 <strcmp>
  8001152:	4603      	mov	r3, r0
@@ -1714,18 +1714,18 @@ void receiving_data_uart()
  800115e:	4603      	mov	r3, r0
  8001160:	613b      	str	r3, [r7, #16]
                 update_CCR_timer_PWM(cmd_angle, &htim3);
- 8001162:	491a      	ldr	r1, [pc, #104]	; (80011cc <receiving_data_uart+0x150>)
+ 8001162:	491b      	ldr	r1, [pc, #108]	; (80011d0 <receiving_data_uart+0x154>)
  8001164:	6938      	ldr	r0, [r7, #16]
  8001166:	f000 f837 	bl	80011d8 <update_CCR_timer_PWM>
- 800116a:	e01d      	b.n	80011a8 <receiving_data_uart+0x12c>
+ 800116a:	e01f      	b.n	80011ac <receiving_data_uart+0x130>
             }
             else if (strcmp(id, "pressure") == 0)
- 800116c:	4918      	ldr	r1, [pc, #96]	; (80011d0 <receiving_data_uart+0x154>)
+ 800116c:	4919      	ldr	r1, [pc, #100]	; (80011d4 <receiving_data_uart+0x158>)
  800116e:	69b8      	ldr	r0, [r7, #24]
  8001170:	f7ff f82e 	bl	80001d0 <strcmp>
  8001174:	4603      	mov	r3, r0
  8001176:	2b00      	cmp	r3, #0
- 8001178:	d116      	bne.n	80011a8 <receiving_data_uart+0x12c>
+ 8001178:	d118      	bne.n	80011ac <receiving_data_uart+0x130>
 			{
                 // Handle Fire sensor value
                 if (atoi(value) == 1)
@@ -1733,48 +1733,47 @@ void receiving_data_uart()
  800117c:	f009 f886 	bl	800a28c <atoi>
  8001180:	4603      	mov	r3, r0
  8001182:	2b01      	cmp	r3, #1
- 8001184:	d105      	bne.n	8001192 <receiving_data_uart+0x116>
+ 8001184:	d106      	bne.n	8001194 <receiving_data_uart+0x118>
                 {
-                    HAL_GPIO_WritePin(GPIOB, GPIO_PIN_6, GPIO_PIN_SET);
+                    HAL_GPIO_WritePin(GPIOB, GPIO_PIN_10, GPIO_PIN_SET);
  8001186:	2201      	movs	r2, #1
- 8001188:	2140      	movs	r1, #64	; 0x40
- 800118a:	480e      	ldr	r0, [pc, #56]	; (80011c4 <receiving_data_uart+0x148>)
- 800118c:	f002 fb7a 	bl	8003884 <HAL_GPIO_WritePin>
- 8001190:	e00a      	b.n	80011a8 <receiving_data_uart+0x12c>
+ 8001188:	f44f 6180 	mov.w	r1, #1024	; 0x400
+ 800118c:	480e      	ldr	r0, [pc, #56]	; (80011c8 <receiving_data_uart+0x14c>)
+ 800118e:	f002 fb79 	bl	8003884 <HAL_GPIO_WritePin>
+ 8001192:	e00b      	b.n	80011ac <receiving_data_uart+0x130>
                 }
                 else if (atoi(value) == 0)
- 8001192:	6978      	ldr	r0, [r7, #20]
- 8001194:	f009 f87a 	bl	800a28c <atoi>
- 8001198:	4603      	mov	r3, r0
- 800119a:	2b00      	cmp	r3, #0
- 800119c:	d104      	bne.n	80011a8 <receiving_data_uart+0x12c>
+ 8001194:	6978      	ldr	r0, [r7, #20]
+ 8001196:	f009 f879 	bl	800a28c <atoi>
+ 800119a:	4603      	mov	r3, r0
+ 800119c:	2b00      	cmp	r3, #0
+ 800119e:	d105      	bne.n	80011ac <receiving_data_uart+0x130>
                 {
-                    HAL_GPIO_WritePin(GPIOB, GPIO_PIN_6, GPIO_PIN_RESET);
- 800119e:	2200      	movs	r2, #0
- 80011a0:	2140      	movs	r1, #64	; 0x40
- 80011a2:	4808      	ldr	r0, [pc, #32]	; (80011c4 <receiving_data_uart+0x148>)
- 80011a4:	f002 fb6e 	bl	8003884 <HAL_GPIO_WritePin>
+                    HAL_GPIO_WritePin(GPIOB, GPIO_PIN_10, GPIO_PIN_RESET);
+ 80011a0:	2200      	movs	r2, #0
+ 80011a2:	f44f 6180 	mov.w	r1, #1024	; 0x400
+ 80011a6:	4808      	ldr	r0, [pc, #32]	; (80011c8 <receiving_data_uart+0x14c>)
+ 80011a8:	f002 fb6c 	bl	8003884 <HAL_GPIO_WritePin>
             {
                 // Handle other IDs or report error
             }
         }
 
         osMutexRelease(uartMutex);
- 80011a8:	4b02      	ldr	r3, [pc, #8]	; (80011b4 <receiving_data_uart+0x138>)
- 80011aa:	681b      	ldr	r3, [r3, #0]
- 80011ac:	4618      	mov	r0, r3
- 80011ae:	f006 f8b1 	bl	8007314 <osMutexRelease>
+ 80011ac:	4b02      	ldr	r3, [pc, #8]	; (80011b8 <receiving_data_uart+0x13c>)
+ 80011ae:	681b      	ldr	r3, [r3, #0]
+ 80011b0:	4618      	mov	r0, r3
+ 80011b2:	f006 f8af 	bl	8007314 <osMutexRelease>
     {
- 80011b2:	e766      	b.n	8001082 <receiving_data_uart+0x6>
- 80011b4:	20000094 	.word	0x20000094
- 80011b8:	2000019c 	.word	0x2000019c
- 80011bc:	0800b7e8 	.word	0x0800b7e8
- 80011c0:	0800b7ec 	.word	0x0800b7ec
- 80011c4:	48000400 	.word	0x48000400
- 80011c8:	0800b7f4 	.word	0x0800b7f4
- 80011cc:	20000150 	.word	0x20000150
- 80011d0:	0800b7f8 	.word	0x0800b7f8
- 80011d4:	00000000 	.word	0x00000000
+ 80011b6:	e764      	b.n	8001082 <receiving_data_uart+0x6>
+ 80011b8:	20000094 	.word	0x20000094
+ 80011bc:	2000019c 	.word	0x2000019c
+ 80011c0:	0800b7e8 	.word	0x0800b7e8
+ 80011c4:	0800b7ec 	.word	0x0800b7ec
+ 80011c8:	48000400 	.word	0x48000400
+ 80011cc:	0800b7f4 	.word	0x0800b7f4
+ 80011d0:	20000150 	.word	0x20000150
+ 80011d4:	0800b7f8 	.word	0x0800b7f8
 
 080011d8 <update_CCR_timer_PWM>:
     }
