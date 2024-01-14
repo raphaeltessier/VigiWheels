@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="./images/icon.png">
+    <title>Login - Vigiwheels</title>
+</head>
+<body style="background-image: url('./images/bg.jpg');">
+
+    <div class="container_log">
+            <div>
+                <h1 class="larger-text">Vigiwheels</h1>
+            <div id="login-form">
+                <div class="input-group">
+                    <label for="username">Username:</label>
+                    <input type="text" id="username" name="username" required>
+                </div>
+                <div class="input-group">
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" onkeypress="checkEnter(event)" required>
+                </div>
+            </div>
+            <div id="login-error" class="alert hidden">
+                Invalid username or password. Please try again.
+            </div>
+            <button style="position: relative; right: 0;" onclick="authenticate()">Login</button>        
+
+        </div>
+    </div>
+
+    <script>
+        function authenticate() {
+            var username = document.getElementById('username').value;
+            var password = document.getElementById('password').value;
+
+            if (username === 'vigiwheels_admin' && password === 'admin') {
+                window.location.href = 'home.html'; 
+            } else {
+                document.getElementById('login-error').style.display = 'block'; 
+            }
+        }
+
+        function checkEnter(event) {
+            if (event.key === "Enter") {
+                authenticate();
+            }
+        }
+    </script>
+
+</body>
+</html>

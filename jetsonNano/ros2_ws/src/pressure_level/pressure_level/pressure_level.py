@@ -9,11 +9,13 @@ from interfaces.msg import PressureLevel
 import time
 import websockets.client
 import asyncio
+import math
 
 def img_to_bytes(img) :
     _, bts = cv2.imencode('.jpg', img)
     bts = bts.tobytes()
     return bts
+
 
 class PressureLevelNode(Node):
     def __init__(self):
@@ -77,8 +79,6 @@ class PressureLevelNode(Node):
 
          # analyzing frame by frame
 
-
-
 def main(args=None):
     rclpy.init(args=args)
     pressure_level_node = PressureLevelNode()
@@ -88,6 +88,7 @@ def main(args=None):
 
 if __name__ == '__main__':
     main()
+
 
 
 
