@@ -1,0 +1,10 @@
+[01m[K/home/insa/Desktop/VigiWheels2.0/raspberryPI3/ros2_ws/src/fire_detection/src/processing_data_fire.cpp:[m[K In constructor ‘[01m[KProcessingDataFireNode::ProcessingDataFireNode()[m[K’:
+[01m[K/home/insa/Desktop/VigiWheels2.0/raspberryPI3/ros2_ws/src/fire_detection/src/processing_data_fire.cpp:14:9:[m[K [01;31m[Kerror: [m[K‘[01m[Kbuffer_[m[K’ was not declared in this scope
+   14 |         [01;31m[Kbuffer_[m[K.resize(window_size_, 0);
+      |         [01;31m[K^~~~~~~[m[K
+[01m[K/home/insa/Desktop/VigiWheels2.0/raspberryPI3/ros2_ws/src/fire_detection/src/processing_data_fire.cpp:14:24:[m[K [01;31m[Kerror: [m[K‘[01m[Kwindow_size_[m[K’ was not declared in this scope
+   14 |         buffer_.resize([01;31m[Kwindow_size_[m[K, 0);
+      |                        [01;31m[K^~~~~~~~~~~~[m[K
+gmake[2]: *** [CMakeFiles/processing_data_fire_node.dir/build.make:76: CMakeFiles/processing_data_fire_node.dir/src/processing_data_fire.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/processing_data_fire_node.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

@@ -1,0 +1,10 @@
+/home/insa/Desktop/VigiWheels2.0/raspberryPI3/build/obstacles/CMakeFiles/uninstall.dir
+/home/insa/Desktop/VigiWheels2.0/raspberryPI3/build/obstacles/CMakeFiles/obstacles_uninstall.dir
+/home/insa/Desktop/VigiWheels2.0/raspberryPI3/build/obstacles/CMakeFiles/obstacles.dir
+/home/insa/Desktop/VigiWheels2.0/raspberryPI3/build/obstacles/CMakeFiles/test.dir
+/home/insa/Desktop/VigiWheels2.0/raspberryPI3/build/obstacles/CMakeFiles/edit_cache.dir
+/home/insa/Desktop/VigiWheels2.0/raspberryPI3/build/obstacles/CMakeFiles/rebuild_cache.dir
+/home/insa/Desktop/VigiWheels2.0/raspberryPI3/build/obstacles/CMakeFiles/list_install_components.dir
+/home/insa/Desktop/VigiWheels2.0/raspberryPI3/build/obstacles/CMakeFiles/install.dir
+/home/insa/Desktop/VigiWheels2.0/raspberryPI3/build/obstacles/CMakeFiles/install/local.dir
+/home/insa/Desktop/VigiWheels2.0/raspberryPI3/build/obstacles/CMakeFiles/install/strip.dir

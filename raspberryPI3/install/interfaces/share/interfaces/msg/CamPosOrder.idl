@@ -1,0 +1,19 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from interfaces/msg/CamPosOrder.msg
+// generated code does not contain a copyright notice
+
+
+module interfaces {
+  module msg {
+    struct CamPosOrder {
+      @verbatim (language="comment", text=
+        "0 -> fixed ; 1 -> scan")
+      @default (value=0)
+      int8 mode;
+
+      @default (value=90)
+      @unit (value="0;180")
+      int16 cam_angle;
+    };
+  };
+};

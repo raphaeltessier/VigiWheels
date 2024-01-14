@@ -266,9 +266,6 @@ static void MX_ADC1_Init(void)
     Error_Handler();
   }
 
-  /** Configure Regular Channel
-  */
-
   /* USER CODE BEGIN ADC1_Init 2 */
 
   /* USER CODE END ADC1_Init 2 */
@@ -459,7 +456,7 @@ static void MX_GPIO_Init(void)
   HAL_GPIO_WritePin(LD2_GPIO_Port, LD2_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOB, D5___BUZZER_Pin|D4___RELAIS_Pin, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(GPIOB, D6___BUZZER_PRESSURE_Pin|D5___BUZZER_FIRE_Pin|D4___RELAIS_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin : B1_Pin */
   GPIO_InitStruct.Pin = B1_Pin;
@@ -480,6 +477,13 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(LD2_GPIO_Port, &GPIO_InitStruct);
 
+  /*Configure GPIO pins : D6___BUZZER_PRESSURE_Pin D5___BUZZER_FIRE_Pin D4___RELAIS_Pin */
+  GPIO_InitStruct.Pin = D6___BUZZER_PRESSURE_Pin|D5___BUZZER_FIRE_Pin|D4___RELAIS_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+  HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
+
   /*Configure GPIO pin : D2___IR_SENSOR2_Pin */
   GPIO_InitStruct.Pin = D2___IR_SENSOR2_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
@@ -491,13 +495,6 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   HAL_GPIO_Init(D3___IR_SENSOR4_GPIO_Port, &GPIO_InitStruct);
-
-  /*Configure GPIO pins : D5___BUZZER_Pin D4___RELAIS_Pin */
-  GPIO_InitStruct.Pin = D5___BUZZER_Pin|D4___RELAIS_Pin;
-  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
-  GPIO_InitStruct.Pull = GPIO_NOPULL;
-  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
-  HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
 
 /* USER CODE BEGIN MX_GPIO_Init_2 */
 /* USER CODE END MX_GPIO_Init_2 */

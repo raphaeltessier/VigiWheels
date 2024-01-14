@@ -8,10 +8,9 @@
 class ProcessingDataFireNode : public rclcpp::Node
 {
 public:
-    ProcessingDataFireNode() : Node("processing_data_fire_node"), fireIsDetected{false}, FrontRightIRSensor{false}, FrontLeftIRSensor{false}, RearRightIRSensor{false}, RearLeftIRSensor{false}, RightSmokeSensor{false}, LeftSmokeSensor{false}, window_size_{5}, counter_{0}
+    ProcessingDataFireNode() : Node("processing_data_fire_node"), fireIsDetected{false}, FrontRightIRSensor{false}, FrontLeftIRSensor{false}, RearRightIRSensor{false}, RearLeftIRSensor{false}, RightSmokeSensor{false}, LeftSmokeSensor{false}
     {
         RCLCPP_INFO(this->get_logger(), "Hello Processing Data Fire Node !");
-        buffer_.resize(window_size_, 0);
         subscription_data_fire = this->create_subscription<interfaces::msg::FireSensor>("data_fire", 10, std::bind(&ProcessingDataFireNode::dataFireCallBack, this, std::placeholders::_1));
         publisher_processing_data = this->create_publisher<interfaces::msg::EmergencyAlertFire>("emergency_alert", 10);
         timer_proccesing_data = this->create_wall_timer(std::chrono::milliseconds(250), bind(&ProcessingDataFireNode::sendEmergencyAltert, this));
@@ -51,6 +50,8 @@ private:
         bool result5 = processSmokeSensorData(msg.smoke_sensor1);
         bool result6 = processSmokeSensorData(msg.smoke_sensor2);
 
+       
+       /*
         std::string logMessage = "Received Data: " +
                                  std::to_string(result1) +
                                  ", " + std::to_string(result2) +
@@ -60,6 +61,7 @@ private:
                                  ", " + std::to_string(result6);
 
         RCLCPP_INFO(this->get_logger(), "%s", logMessage.c_str());
+        */ 
 
         if (result1 == 1)
         {
@@ -117,9 +119,6 @@ private:
     bool RearLeftIRSensor;
     bool RightSmokeSensor;
     bool LeftSmokeSensor;
-    size_t window_size_;
-    size_t counter_;
-    std::vector<int> buffer_;
     std::shared_ptr<rclcpp::Publisher<interfaces::msg::EmergencyAlertFire>> publisher_processing_data;
     std::shared_ptr<rclcpp::TimerBase> timer_proccesing_data;
     rclcpp::Subscription<interfaces::msg::FireSensor>::SharedPtr subscription_data_fire;

@@ -1,0 +1,11 @@
+[35m[1mConsolidate compiler generated dependencies of target serial_reading_node[0m
+[35m[1mConsolidate compiler generated dependencies of target serial_writing_node[0m
+[ 50%] Built target serial_reading_node
+[ 75%] [32mBuilding CXX object CMakeFiles/serial_writing_node.dir/src/serial_writing.cpp.o[0m
+[01m[K/home/insa/Desktop/VigiWheels2.0/raspberryPI3/ros2_ws/src/uart/src/serial_writing.cpp:[m[K In member function ‘[01m[Kvoid SerialWritingNode::alertPressureCallback(const PressureLevel&)[m[K’:
+[01m[K/home/insa/Desktop/VigiWheels2.0/raspberryPI3/ros2_ws/src/uart/src/serial_writing.cpp:215:13:[m[K [01;31m[Kerror: [m[K‘[01m[Kbytes_written[m[K’ was not declared in this scope
+  215 |         if ([01;31m[Kbytes_written[m[K == -1)
+      |             [01;31m[K^~~~~~~~~~~~~[m[K
+gmake[2]: *** [CMakeFiles/serial_writing_node.dir/build.make:76: CMakeFiles/serial_writing_node.dir/src/serial_writing.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:165: CMakeFiles/serial_writing_node.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

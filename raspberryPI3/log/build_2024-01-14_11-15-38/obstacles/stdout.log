@@ -1,0 +1,21 @@
+[35m[1mConsolidate compiler generated dependencies of target obstacles[0m
+[100%] Built target obstacles
+-- Install configuration: ""
+-- Installing: /home/insa/Desktop/VigiWheels2.0/raspberryPI3/install/obstacles/lib/obstacles/obstacles
+-- Set runtime path of "/home/insa/Desktop/VigiWheels2.0/raspberryPI3/install/obstacles/lib/obstacles/obstacles" to ""
+-- Installing: /home/insa/Desktop/VigiWheels2.0/raspberryPI3/install/obstacles/share/ament_index/resource_index/package_run_dependencies/obstacles
+-- Installing: /home/insa/Desktop/VigiWheels2.0/raspberryPI3/install/obstacles/share/ament_index/resource_index/parent_prefix_path/obstacles
+-- Installing: /home/insa/Desktop/VigiWheels2.0/raspberryPI3/install/obstacles/share/obstacles/environment/ament_prefix_path.sh
+-- Installing: /home/insa/Desktop/VigiWheels2.0/raspberryPI3/install/obstacles/share/obstacles/environment/ament_prefix_path.dsv
+-- Installing: /home/insa/Desktop/VigiWheels2.0/raspberryPI3/install/obstacles/share/obstacles/environment/path.sh
+-- Installing: /home/insa/Desktop/VigiWheels2.0/raspberryPI3/install/obstacles/share/obstacles/environment/path.dsv
+-- Installing: /home/insa/Desktop/VigiWheels2.0/raspberryPI3/install/obstacles/share/obstacles/local_setup.bash
+-- Installing: /home/insa/Desktop/VigiWheels2.0/raspberryPI3/install/obstacles/share/obstacles/local_setup.sh
+-- Installing: /home/insa/Desktop/VigiWheels2.0/raspberryPI3/install/obstacles/share/obstacles/local_setup.zsh
+-- Installing: /home/insa/Desktop/VigiWheels2.0/raspberryPI3/install/obstacles/share/obstacles/local_setup.dsv
+-- Installing: /home/insa/Desktop/VigiWheels2.0/raspberryPI3/install/obstacles/share/obstacles/package.dsv
+-- Installing: /home/insa/Desktop/VigiWheels2.0/raspberryPI3/install/obstacles/share/ament_index/resource_index/packages/obstacles
+-- Installing: /home/insa/Desktop/VigiWheels2.0/raspberryPI3/install/obstacles/share/obstacles/cmake/ament_cmake_export_include_directories-extras.cmake
+-- Installing: /home/insa/Desktop/VigiWheels2.0/raspberryPI3/install/obstacles/share/obstacles/cmake/obstaclesConfig.cmake
+-- Installing: /home/insa/Desktop/VigiWheels2.0/raspberryPI3/install/obstacles/share/obstacles/cmake/obstaclesConfig-version.cmake
+-- Installing: /home/insa/Desktop/VigiWheels2.0/raspberryPI3/install/obstacles/share/obstacles/package.xml

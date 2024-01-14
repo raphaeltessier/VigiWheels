@@ -186,7 +186,7 @@ private:
         }
         else
         {
-            RCLCPP_INFO(this->get_logger(), "Data sent: %s", tx);
+            //RCLCPP_INFO(this->get_logger(), "Data sent: %s", tx);
         }
     }
 
@@ -202,15 +202,15 @@ private:
 
         if(strcmp(msg.level.c_str(), "High") == 0)
         {
-            fire_detection = true; 
+            pressure_detection = true; 
         }
         else 
         {
-            fire_detection = false; 
+            pressure_detection = false; 
         }
 
         char tx[20];  
-        snprintf(tx, sizeof(tx), "#pressure=%u\n", fire_detection);
+        snprintf(tx, sizeof(tx), "#pressure=%u\n", pressure_detection); 
 
 
         // Write to serial port
@@ -240,7 +240,7 @@ private:
         }
         else
         {
-            RCLCPP_INFO(this->get_logger(), "Data sent: %s", tx);
+            //RCLCPP_INFO(this->get_logger(), "Data sent: %s", tx);
         }
     }
 
@@ -275,7 +275,7 @@ private:
     rclcpp::Subscription<interfaces::msg::PressureLevel>::SharedPtr subscription_pressure_alert;
     rclcpp::Subscription<interfaces::msg::EmergencyAlertFire>::SharedPtr subscription_emergency_alert;
     rclcpp::Subscription<interfaces::msg::ServoCamOrder>::SharedPtr subscription_servo_cam_order_;
-    bool fire_detection; 
+    bool pressure_detection; 
     int serial_port_;
     bool serial_error_logged_;
 };

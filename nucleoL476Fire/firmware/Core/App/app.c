@@ -202,13 +202,13 @@ void sending_data_uart(void *argument)
 		reading_sensor_values();
 
 		// Create and transmit the frame
-		sprintf(tx, "#IR_SENSOR1=%hu|IR_SENSOR2=%u|IR_SENSOR3=%hu|IR_SENSOR4=%u|SMOKE_SENSOR1=%hu|SMOKE_SENSOR2=%hu\n", ir_sensor1, ir_sensor2, ir_sensor3, ir_sensor4, smoke_sensor1, smoke_sensor2);
+		sprintf(tx, "#IR_SENSOR1=%hu|IR_SENSOR2=%u|IR_SENSOR3=4095|IR_SENSOR4=%u|SMOKE_SENSOR1=%hu|SMOKE_SENSOR2=%hu\n", ir_sensor1, ir_sensor2, ir_sensor4, smoke_sensor1, smoke_sensor2);
 
 		HAL_UART_Transmit(&huart2, (const uint8_t *)tx, strlen(tx), 100);
 
 		osMutexRelease(uartMutex);
 
-        osDelay(msToTicks(350));
+        osDelay(msToTicks(500));
 	}
 }
 
@@ -276,13 +276,11 @@ void receiving_data_uart()
                 // Handle Fire sensor value
                 if (atoi(value) == 1)
                 {
-                    HAL_GPIO_WritePin(GPIOB, GPIO_PIN_4, GPIO_PIN_SET);
-                    HAL_GPIO_WritePin(GPIOB, GPIO_PIN_5, GPIO_PIN_SET);
+                    HAL_GPIO_WritePin(GPIOB, GPIO_PIN_6, GPIO_PIN_SET);
                 }
                 else if (atoi(value) == 0)
                 {
-                    HAL_GPIO_WritePin(GPIOB, GPIO_PIN_4, GPIO_PIN_RESET);
-                    HAL_GPIO_WritePin(GPIOB, GPIO_PIN_5, GPIO_PIN_RESET);
+                    HAL_GPIO_WritePin(GPIOB, GPIO_PIN_6, GPIO_PIN_RESET);
                 }
                 else
                 {

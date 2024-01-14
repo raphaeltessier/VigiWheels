@@ -75,6 +75,8 @@ void Error_Handler(void);
 #define LD2_GPIO_Port GPIOA
 #define A2___SMOKE_SENSOR2_Pin GPIO_PIN_0
 #define A2___SMOKE_SENSOR2_GPIO_Port GPIOB
+#define D6___BUZZER_PRESSURE_Pin GPIO_PIN_10
+#define D6___BUZZER_PRESSURE_GPIO_Port GPIOB
 #define D2___IR_SENSOR2_Pin GPIO_PIN_10
 #define D2___IR_SENSOR2_GPIO_Port GPIOA
 #define TMS_Pin GPIO_PIN_13
@@ -83,8 +85,8 @@ void Error_Handler(void);
 #define TCK_GPIO_Port GPIOA
 #define D3___IR_SENSOR4_Pin GPIO_PIN_3
 #define D3___IR_SENSOR4_GPIO_Port GPIOB
-#define D5___BUZZER_Pin GPIO_PIN_4
-#define D5___BUZZER_GPIO_Port GPIOB
+#define D5___BUZZER_FIRE_Pin GPIO_PIN_4
+#define D5___BUZZER_FIRE_GPIO_Port GPIOB
 #define D4___RELAIS_Pin GPIO_PIN_5
 #define D4___RELAIS_GPIO_Port GPIOB
 
