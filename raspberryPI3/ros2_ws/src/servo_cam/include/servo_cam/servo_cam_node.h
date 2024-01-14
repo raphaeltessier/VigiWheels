@@ -10,7 +10,7 @@
 #define PAS_MANUAL 1
 #define PAS_SCAN 1
 #define PAS_FOLLOW 4
-#define FOV 20          // degree from left to right of the image (from datasheet)
+#define FOV 25          // degree from left to right of the image (from datasheet)
 #define RESOLUTION 640 //pixel image
 
 
