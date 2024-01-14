@@ -28,16 +28,22 @@ function changeSpeed(speedvalue, reverse) {
 function orientationCar(speed, steering_angle, reverse_car){
     var arrow_orientation_front = document.getElementById('arrow_direction_front');
     var arrow_orientation_rear = document.getElementById('arrow_direction_rear');
-    if (reverse_car){
+
+    if(average_speed>0){
+        if (reverse_car){
+            arrow_orientation_front.style.display = "none";
+            arrow_orientation_rear.style.transform = `rotate(${steering_angle}deg)`; 
+        }
+        else{
+            arrow_orientation_rear.style.display = "none";
+            arrow_orientation_front.style.transform = `rotate(${-steering_angle}deg)`; 
+        }
+    }else{
         arrow_orientation_front.style.display = "none";
-        //arrow_orientation_rear.style.transformOrigin = "250px 80px"; // Changement du centre de rotation
-        //arrow_orientation_rear.style.transform = `rotate(${steering_angle}deg)`; 
-    }
-    else{
         arrow_orientation_rear.style.display = "none";
-        //arrow_orientation_front.style.transformOrigin = "250px 80px"; // Changement du centre de rotation
-        //arrow_orientation_front.style.transform = `rotate(${-steering_angle}deg)`; 
     }
+
+    
 }
 
 let Obst_detectedPositions = []; // Array to store detected obstacle positions
@@ -322,15 +328,18 @@ function updateObstacles(message) {
 
 function calculate_Speed_Orientation(message){
 
-    // Calculate the speed of the car by right wheel speed
+    // Calculate the speed of the car by average of right wheel speed and left wheel speed
+    const radius_wheel = 5;
     var speed_right = message.right_rear_speed;
     var speed_left = message.left_rear_speed;
     var average_speed = (speed_left + speed_right)/2;
+    average_speed = average_speed * radius_wheel * Math.pow(10, -2);   
     console.log('Calcul avec succès de la vitesse', average_speed);
     
     //Calculate steering angle of the car
+    const conversion_degree = 90;
     var steering_angle = message.steering_angle;
-
+    steering_angle = steering_angle * conversion_degree;  // [-1;1] for steering angle
     console.log('Calcul avec succès de l orientation ', steering_angle);
 
 }

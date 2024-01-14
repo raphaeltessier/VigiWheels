@@ -363,8 +363,9 @@ p {
     width: 400px;
     height: 70px;
     position: absolute;
-    top: 270px;
-    left: 620px;    
+    top: 47%;
+    left: 73%;
+    transform-origin: -35% 20%;    
     align-items: center; 
 }
 
@@ -377,8 +378,9 @@ p {
     width: 400px;
     height: 70px;
     position: absolute;
-    top: 270px;
-    left: 190px;    
+    top: 47%;
+    left: 25%;
+    transform-origin: 35% 20%;    
     align-items: center; 
 }
 
