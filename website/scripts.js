@@ -1,3 +1,10 @@
+//Initialisation des variables pour orientation + vitesse
+var reverse_car = false;
+var steering_angle = 0;
+var average_speed = 0;
+const radius_wheel = 5;
+const conversion_degree = 90;
+
 // Function to move the arc gradually based on the specified angle
 const arc = document.getElementById('arc');
 arc.style.transformOrigin = "100px 100px"; // Set the rotation center of the arc
@@ -329,16 +336,16 @@ function updateObstacles(message) {
 function calculate_Speed_Orientation(message){
 
     // Calculate the speed of the car by average of right wheel speed and left wheel speed
-    const radius_wheel = 5;
+    
     var speed_right = message.right_rear_speed;
     var speed_left = message.left_rear_speed;
-    var average_speed = (speed_left + speed_right)/2;
+    average_speed = (speed_left + speed_right)/2;
     average_speed = average_speed * radius_wheel * Math.pow(10, -2);   
     console.log('Calcul avec succès de la vitesse', average_speed);
     
     //Calculate steering angle of the car
-    const conversion_degree = 90;
-    var steering_angle = message.steering_angle;
+    
+    steering_angle = message.steering_angle;
     steering_angle = steering_angle * conversion_degree;  // [-1;1] for steering angle
     console.log('Calcul avec succès de l orientation ', steering_angle);
 
@@ -354,10 +361,10 @@ function identify_Reverse(message){
 
     // Identify if the car is going at reverse mode or not
     if (message.right_rear_pwm > 50){
-        var reverse_car = true;
+        reverse_car = true;
     }    
     else{
-        var reverse_car = false;
+        reverse_car = false;
     }
     console.log('Calcul avec succès de la reverse et reverse',reverse_car);
 }
