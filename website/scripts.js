@@ -361,10 +361,10 @@ function identify_Reverse(message){
 
     // Identify if the car is going at reverse mode or not
     if (message.right_rear_pwm > 50){
-        reverse_car = true;
+        reverse_car = false;
     }    
     else{
-        reverse_car = false;
+        reverse_car = true;
     }
     console.log('Calcul avec succès de la reverse et reverse',reverse_car);
 }
