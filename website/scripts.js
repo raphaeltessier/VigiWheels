@@ -23,9 +23,9 @@ function changeSpeed(speedvalue, reverse) {
     const SpeedText = document.getElementById('speedvalue');
     if (speedvalue > 0) {
         if (reverse){
-            SpeedText.innerText = `Reverse speed: ${-speedvalue} m/s`;
+            SpeedText.innerText = `Reverse speed: ${-speedvalue.toFixed(4)} m/s`;
         }else{
-            SpeedText.innerText = `Forward speed: ${speedvalue} m/s`;
+            SpeedText.innerText = `Forward speed: ${speedvalue.toFixed(4)} m/s`;
         }   
     } else {
         SpeedText.innerText = "Car is currently stationary";
@@ -36,7 +36,7 @@ function orientationCar(speed, steering_angle, reverse_car){
     var arrow_orientation_front = document.getElementById('arrow_direction_front');
     var arrow_orientation_rear = document.getElementById('arrow_direction_rear');
 
-    if(average_speed>0){
+    if(speed>0){
         if (reverse_car){
             arrow_orientation_front.style.display = "none";
             arrow_orientation_rear.style.transform = `rotate(${steering_angle}deg)`; 
