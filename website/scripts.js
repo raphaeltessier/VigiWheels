@@ -14,9 +14,9 @@ function moveArc(angle) {
     arc.style.transform = `rotate(${angle}deg)`; // Rotate the arc with the given angle offset
 }
 
-function changeBatteryLevel(BatteryLevel = "None") {
+function changeBatteryLevel(BatteryLevel) {
     var batteryText = document.getElementById('batteryLevel');
-    batteryText.innerText = `Battery level: ${BatteryLevel}`;
+    batteryText.innerText = `Battery level: ${BatteryLevel.toFixed(2)}`;
 }
 
 function changeSpeed(speedvalue, reverse) {
@@ -274,22 +274,23 @@ function redirect(url) {
 
 // Updater
 function updateEmergencyAlert(message) {
-    if (message.ir_front_right) {
+    console.log(message)
+    if (message.ir_front_right == true) {
         togglefire("tr", 1);
     } else {
         togglefire("tr", 0);
     }
-    if (message.ir_front_left) {
+    if (message.ir_front_left == true) {
         togglefire("tl", 1);
     } else {
         togglefire("tl", 0);
     }
-    if (message.ir_rear_left) {
-        togglefire("tl", 1);
+    if (message.ir_rear_left == true) {
+        togglefire("bl", 1);
     } else {
-        togglefire("tl", 0);
+        togglefire("bl", 0);
     }
-    if (message.ir_rear_right) {
+    if (message.ir_rear_right == true) {
         togglefire("br", 1);
     } else {
         togglefire("br", 0);
@@ -304,7 +305,7 @@ function updateEmergencyAlert(message) {
     */
 }
 function updateGeneralData(message) {
-    changeBatteryLevel(str(message.battery_level));
+    changeBatteryLevel(message.battery_level);
 }
 
 function updateCameraAngle(message) {
@@ -397,7 +398,7 @@ l_servo_cam_angle.subscribe(updateCameraAngle);
 var l_general_data = new ROSLIB.Topic({
     ros: ros,
     name: '/general_data',
-    messageType: 'interfaces/msg/GeneralData    '
+    messageType: 'interfaces/msg/GeneralData'
 });
 l_general_data.subscribe(updateGeneralData)
 
@@ -406,7 +407,7 @@ var l_emergency_alert = new ROSLIB.Topic({
     name: '/emergency_alert',
     messageType: 'interfaces/msg/EmergencyAlertFire'
 });
-l_emergency_alert.subscribe(updateEmergencyAlert)
+//l_emergency_alert.subscribe(updateEmergencyAlert)
 
 
 var l_obstacles = new ROSLIB.Topic({
