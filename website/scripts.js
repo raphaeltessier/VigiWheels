@@ -181,7 +181,7 @@ let o4 = 0;
 let o5 = 0;
 let o6 = 0;
 let fire = 0;
-
+/*
 function waitFor(event) {
     // Handle key events for various functionalities
     if (event.key === 'm') {
@@ -262,7 +262,7 @@ function waitFor(event) {
         }
     }
 }
-
+*/
 document.addEventListener('keydown', waitFor);
 
 
@@ -449,7 +449,7 @@ function angleright() {
         angleleft();
     }, 5000);
 }
-
+/*
 setTimeout(() => {
     angleleft();
 }, 3000);
@@ -468,3 +468,4 @@ setTimeout(() => {
     ManometerDetected(0);
 }, 10000);
 
+*/
