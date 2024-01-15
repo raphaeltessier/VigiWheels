@@ -2,8 +2,8 @@
 var reverse_car = false;
 var steering_angle = 0;
 var average_speed = 0;
-const radius_wheel = 5;
-const conversion_degree = 90;
+const radius_wheel = 9.5;
+const conversion_degree = 50;
 
 // Function to move the arc gradually based on the specified angle
 const arc = document.getElementById('arc');
