@@ -342,6 +342,12 @@ function calculate_Speed_Orientation(message){
     steering_angle = steering_angle * conversion_degree;  // [-1;1] for steering angle
     console.log('Calcul avec succès de l orientation ', steering_angle);
 
+    //Show the speed on the website
+    changeSpeed(average_speed, reverse_car);
+
+    //Positioning the arrow on basis of movement
+    orientationCar(average_speed, steering_angle, reverse_car);
+
 }
 
 function identify_Reverse(message){
