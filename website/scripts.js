@@ -11,7 +11,7 @@ arc.style.transformOrigin = "100px 100px"; // Set the rotation center of the arc
 
 function moveArc(angle) {
     const arc = document.getElementById('arc');
-    arc.style.transform = `rotate(${angle + 90}deg)`; // Rotate the arc with the given angle offset
+    arc.style.transform = `rotate(${angle}deg)`; // Rotate the arc with the given angle offset
 }
 
 function changeBatteryLevel(BatteryLevel = "None") {
@@ -39,11 +39,13 @@ function orientationCar(speed, steering_angle, reverse_car){
     if(speed>0){
         if (reverse_car){
             arrow_orientation_front.style.display = "none";
-            arrow_orientation_rear.style.transform = `rotate(${steering_angle}deg)`; 
+            arrow_orientation_rear.style.transform = `rotate(${-steering_angle}deg)`; 
+            arrow_orientation_rear.style.display = "flex";
         }
         else{
             arrow_orientation_rear.style.display = "none";
-            arrow_orientation_front.style.transform = `rotate(${-steering_angle}deg)`; 
+            arrow_orientation_front.style.transform = `rotate(${steering_angle}deg)`; 
+            arrow_orientation_front.style.display = "flex";
         }
     }else{
         arrow_orientation_front.style.display = "none";
@@ -311,7 +313,7 @@ function updateCameraAngle(message) {
 }
 
 function updateObstacles(message) {
-    if (message.front_object) {
+    if (message.rear_object) {
         toggleObstacle("tl", 1);
         toggleObstacle("tm", 1);
         toggleObstacle("tr", 1);
@@ -321,7 +323,7 @@ function updateObstacles(message) {
         toggleObstacle("tr", 0);
     }
 
-    if (message.rear_object) {
+    if (message.front_object) {
         toggleObstacle("bl", 1);
         toggleObstacle("bm", 1);
         toggleObstacle("br", 1);
@@ -341,13 +343,11 @@ function calculate_Speed_Orientation(message){
     var speed_left = message.left_rear_speed;
     average_speed = (speed_left + speed_right)/2;
     average_speed = average_speed * radius_wheel * Math.pow(10, -2);   
-    console.log('Calcul avec succès de la vitesse', average_speed);
     
     //Calculate steering angle of the car
     
     steering_angle = message.steering_angle;
     steering_angle = steering_angle * conversion_degree;  // [-1;1] for steering angle
-    console.log('Calcul avec succès de l orientation ', steering_angle);
 
     //Show the speed on the website
     changeSpeed(average_speed, reverse_car);
@@ -366,7 +366,6 @@ function identify_Reverse(message){
     else{
         reverse_car = true;
     }
-    console.log('Calcul avec succès de la reverse et reverse',reverse_car);
 }
 
 
@@ -387,20 +386,6 @@ ros.on('close', function () {
     console.log('Connection to ROS websocket server closed.');
 });
 
-// ROS topic listener
-var listener = new ROSLIB.Topic({
-    ros: ros,
-    name: '/motors_order',
-    messageType: 'interfaces/msg/MotorsOrder'
-});
-
-// Subscribe to ROS topic and call the test function
-listener.subscribe(test);
-
-
-function test(message) {
-    console.log('Message:', message.right_rear_pwm);
-}
 
 var l_servo_cam_angle = new ROSLIB.Topic({
     ros: ros,
