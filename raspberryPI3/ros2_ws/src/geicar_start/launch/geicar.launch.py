@@ -99,7 +99,7 @@ def generate_launch_description():
 
     high_alert_node = Node(
         package="high_alert",
-        executable="high_alert.py",
+        executable="alarm_node",
         emulate_tty=True
     )
 
