@@ -263,7 +263,7 @@ function waitFor(event) {
     }
 }
 */
-document.addEventListener('keydown', waitFor);
+//document.addEventListener('keydown', waitFor);
 
 
 // Website  redirection
