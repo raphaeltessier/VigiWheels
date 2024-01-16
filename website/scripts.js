@@ -275,6 +275,12 @@ function redirect(url) {
 // Updater
 function updateEmergencyAlert(message) {
     console.log(message)
+    if (message.fire_detected == true) {
+        fireDetected(1);
+    } else {
+        fireDetected(0);
+    }
+    /*
     if (message.ir_front_right == true) {
         togglefire("tr", 1);
     } else {
@@ -294,7 +300,8 @@ function updateEmergencyAlert(message) {
         togglefire("br", 1);
     } else {
         togglefire("br", 0);
-    }
+    }*/
+
 /*
     bool ir_front_right
     bool ir_front_left
@@ -407,7 +414,7 @@ var l_emergency_alert = new ROSLIB.Topic({
     name: '/emergency_alert',
     messageType: 'interfaces/msg/EmergencyAlertFire'
 });
-//l_emergency_alert.subscribe(updateEmergencyAlert)
+l_emergency_alert.subscribe(updateEmergencyAlert)
 
 
 var l_obstacles = new ROSLIB.Topic({
