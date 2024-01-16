@@ -97,6 +97,12 @@ def generate_launch_description():
         emulate_tty=True
     )
 
+    high_alert_node = Node(
+        package="high_alert",
+        executable="high_alert.py",
+        emulate_tty=True
+    )
+
     rosbride_server_node = IncludeLaunchDescription(
         AnyLaunchDescriptionSource([get_package_share_directory('rosbridge_server'),'/launch/rosbridge_websocket_launch.xml']),
     )
@@ -115,6 +121,7 @@ def generate_launch_description():
     ld.add_action(processing_data_fire_node)
     ld.add_action(path_recording_node)
     ld.add_action(rosbride_server_node)
+    ld.add_action(high_alert_node)
 
 
     return ld
