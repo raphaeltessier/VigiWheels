@@ -8,9 +8,7 @@
 class ProcessingDataFireNode : public rclcpp::Node
 {
 public:
-
     ProcessingDataFireNode() : Node("processing_data_fire_node"), fireIsDetected{false}, FrontRightIRSensor{false}, FrontLeftIRSensor{false}, RearRightIRSensor{false}, RearLeftIRSensor{false}, RightSmokeSensor{false}, LeftSmokeSensor{false}
-
     {
         RCLCPP_INFO(this->get_logger(), "Hello Processing Data Fire Node !");
         subscription_data_fire = this->create_subscription<interfaces::msg::FireSensor>("data_fire", 10, std::bind(&ProcessingDataFireNode::dataFireCallBack, this, std::placeholders::_1));
@@ -19,7 +17,6 @@ public:
     }
 
 private:
-
     int processFireSensorData(int sensorValue)
     {
         if (sensorValue < 100)
@@ -33,7 +30,6 @@ private:
     }
 
     int processSmokeSensorData(int sensorValue)
-
     {
         if (sensorValue > 1000)
         {
@@ -47,7 +43,6 @@ private:
 
     void dataFireCallBack(const interfaces::msg::FireSensor &msg)
     {
-
         bool result1 = processFireSensorData(msg.ir_sensor1); // Avant Droit
         bool result2 = msg.ir_sensor2;                      // Avant Gauche
         bool result3 = processFireSensorData(msg.ir_sensor3); // Arrière Gauche
@@ -73,33 +68,45 @@ private:
             FrontRightIRSensor = true;
             fireIsDetected = true;
         }
-        else if (result2 == 1)
+
+        if (result2 == 1)
         {
             FrontLeftIRSensor = true;
             fireIsDetected = true;
         }
-        else if (result3 == 1)
+        
+        if (result3 == 1)
         {
             RearLeftIRSensor = true;
             fireIsDetected = true;
         }
-        else if (result4 == 1)
+        
+        if (result4 == 1)
         {
             RearRightIRSensor = true;
             fireIsDetected = true;
         }
-        else if (result5 == 1)
+        
+        if (result5 == 1)
         {
             RightSmokeSensor = true;
             fireIsDetected = true;
         }
-        else if (result6 == 1)
+        
+        if (result6 == 1)
         {
             LeftSmokeSensor = true;
             fireIsDetected = true;
         }
-        else
+        
+        if (result1 == 0 && result2 == 0 && result3 == 0 && result4 == 0 && result5 == 0 && result6 == 0)
         {
+            FrontRightIRSensor = false;
+            FrontLeftIRSensor = false;
+            RearLeftIRSensor = false;
+            RearRightIRSensor = false;
+            RightSmokeSensor = false;
+            LeftSmokeSensor = false;
             fireIsDetected = false;
         }
     }
@@ -124,7 +131,6 @@ private:
     bool RearLeftIRSensor;
     bool RightSmokeSensor;
     bool LeftSmokeSensor;
-
     std::shared_ptr<rclcpp::Publisher<interfaces::msg::EmergencyAlertFire>> publisher_processing_data;
     std::shared_ptr<rclcpp::TimerBase> timer_proccesing_data;
     rclcpp::Subscription<interfaces::msg::FireSensor>::SharedPtr subscription_data_fire;
