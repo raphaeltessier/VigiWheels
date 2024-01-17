@@ -8,4 +8,4 @@
 ../Core/App/app.c:174:5:wait_for_frame	24	static
 ../Core/App/app.c:194:6:sending_data_uart	144	static
 ../Core/App/app.c:217:6:receiving_data_uart	40	static
-../Core/App/app.c:301:6:update_CCR_timer_PWM	32	static
+../Core/App/app.c:285:6:update_CCR_timer_PWM	32	static

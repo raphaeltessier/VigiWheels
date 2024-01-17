@@ -1,0 +1,11 @@
+/home/insa/Desktop/3.0/VigiWheels/raspberryPI3/ros2_ws/build/uart/CMakeFiles/uninstall.dir
+/home/insa/Desktop/3.0/VigiWheels/raspberryPI3/ros2_ws/build/uart/CMakeFiles/uart_uninstall.dir
+/home/insa/Desktop/3.0/VigiWheels/raspberryPI3/ros2_ws/build/uart/CMakeFiles/serial_reading_node.dir
+/home/insa/Desktop/3.0/VigiWheels/raspberryPI3/ros2_ws/build/uart/CMakeFiles/serial_writing_node.dir
+/home/insa/Desktop/3.0/VigiWheels/raspberryPI3/ros2_ws/build/uart/CMakeFiles/test.dir
+/home/insa/Desktop/3.0/VigiWheels/raspberryPI3/ros2_ws/build/uart/CMakeFiles/edit_cache.dir
+/home/insa/Desktop/3.0/VigiWheels/raspberryPI3/ros2_ws/build/uart/CMakeFiles/rebuild_cache.dir
+/home/insa/Desktop/3.0/VigiWheels/raspberryPI3/ros2_ws/build/uart/CMakeFiles/list_install_components.dir
+/home/insa/Desktop/3.0/VigiWheels/raspberryPI3/ros2_ws/build/uart/CMakeFiles/install.dir
+/home/insa/Desktop/3.0/VigiWheels/raspberryPI3/ros2_ws/build/uart/CMakeFiles/install/local.dir
+/home/insa/Desktop/3.0/VigiWheels/raspberryPI3/ros2_ws/build/uart/CMakeFiles/install/strip.dir

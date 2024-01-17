@@ -1,0 +1,3 @@
+[console_scripts]
+alarm_node = high_alert.high_alert:main
+

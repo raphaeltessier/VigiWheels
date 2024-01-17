@@ -271,22 +271,6 @@ void receiving_data_uart()
                 uint32_t cmd_angle = atoi(value);
                 update_CCR_timer_PWM(cmd_angle, &htim3);
             }
-            else if (strcmp(id, "pressure") == 0)
-			{
-                // Handle Fire sensor value
-                if (atoi(value) == 1)
-                {
-                    HAL_GPIO_WritePin(GPIOB, GPIO_PIN_10, GPIO_PIN_SET);
-                }
-                else if (atoi(value) == 0)
-                {
-                    HAL_GPIO_WritePin(GPIOB, GPIO_PIN_10, GPIO_PIN_RESET);
-                }
-                else
-                {
-                    // Handle error
-                }
-			}
             else
             {
                 // Handle other IDs or report error
