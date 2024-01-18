@@ -3,7 +3,7 @@ var reverse_car = false;
 var steering_angle = 0;
 var average_speed = 0;
 const radius_wheel = 9.5;
-const conversion_degree = 50;
+const conversion_degree = 30;
 
 // Function to move the arc gradually based on the specified angle
 const arc = document.getElementById('arc');
@@ -100,6 +100,15 @@ function fireDetected(isFireDetected) {
         toggleDisplay(fireContainer, false); // Hide fire notification
     }
 }
+function smokeDetected(isSmokeDetected) {
+    const smokeContainer = document.getElementById("smoke_notif");
+
+    if (isSmokeDetected === 1) {
+        toggleDisplay(smokeContainer, true); // Show smoke notification
+    } else if (isSmokeDetected === 0) {
+        toggleDisplay(smokeContainer, false); // Hide smoke notification
+    }
+}
 
 function ManometerDetected(isManometerDetected, value = 0) {
     const ManometerContainer = document.getElementById("manometer_notif");
@@ -157,6 +166,36 @@ function togglefire(position, enable) {
         fireDetected(1);
     } else {
         fireDetected(0);
+    }
+}
+
+let Smoke_detectedPositions = []; // Array to store detected smoke positions
+
+function togglesmoke(position, enable) {
+    const validPositions = ['l', 'r']; // Valid smoke positions
+    if (validPositions.includes(position)) {
+        const smoke = document.getElementById(`smoke-section-${position}`);
+
+        if (enable === 1) {
+            smoke.style.display = "flex"; // Display the smoke
+            if (!Smoke_detectedPositions.includes(position)) {
+                Smoke_detectedPositions.push(position); // Add the position if not already in the array
+            }
+        } else if (enable === 0) {
+            smoke.style.display = "none"; // Hide the smoke
+            const index = Smoke_detectedPositions.indexOf(position);
+            if (index !== -1) {
+                Smoke_detectedPositions.splice(index, 1); // Remove the position if in the array
+            }
+        }
+    } else {
+        console.log("Invalid position for smoke detection."); // Log if the position is not in the specified list
+    }
+    if (Smoke_detectedPositions.length > 0) {
+        // Call another function if at least one obstacle is still detected
+        smokeDetected(1);
+    } else {
+        smokeDetected(0);
     }
 }
 
@@ -274,13 +313,6 @@ function redirect(url) {
 
 // Updater
 function updateEmergencyAlert(message) {
-    console.log(message)
-    if (message.fire_detected == true) {
-        fireDetected(1);
-    } else {
-        fireDetected(0);
-    }
-    /*
     if (message.ir_front_right == true) {
         togglefire("tr", 1);
     } else {
@@ -300,7 +332,17 @@ function updateEmergencyAlert(message) {
         togglefire("br", 1);
     } else {
         togglefire("br", 0);
-    }*/
+    }
+    if (message.smoke_left == true) {
+        togglefire("br", 1);
+    } else {
+        togglefire("br", 0);
+    }
+    if (message.smoke_right == true) {
+        togglefire("br", 1);
+    } else {
+        togglefire("br", 0);
+    }
 
 /*
     bool ir_front_right
@@ -464,7 +506,7 @@ setTimeout(() => {
 setTimeout(() => {
     toggleObstacle("br", 1);
     toggleObstacle("tr", 1);
-
+    togglesmoke("l",1)
     ObstacleDetected(1);
     ManometerDetected(1);
 }, 1000);
@@ -472,7 +514,8 @@ setTimeout(() => {
 setTimeout(() => {
     toggleObstacle("br", 0);
     moveArc(30);
+    togglesmoke("l",0)
     ManometerDetected(0);
 }, 10000);
-
 */
+
