@@ -27,6 +27,7 @@ set(msg_files
   "msg/CamPosOrder.msg"
   "msg/FireSensor.msg" #Added for fire_detection
   "msg/EmergencyAlertFire.msg" #Added for fire_detection
+  "msg/PressureLevel.msg"
 )
 
 rosidl_generate_interfaces(${PROJECT_NAME}

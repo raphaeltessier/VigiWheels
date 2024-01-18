@@ -20,7 +20,7 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
-            "test_node = manometer_detection.yolo_model:main"
+            "test_node = manometer_detection.ros_comm_ai:main"
         ],
     },
 )

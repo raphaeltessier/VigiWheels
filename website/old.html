@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vigiwheels</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="./images/icon.png">
+    <!-- Import des scripts -->
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/eventemitter2@6.4.9/lib/eventemitter2.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/roslib@1/build/roslib.min.js"></script>
+    <script type="text/javascript" src="ros-script.js"></script>
+    <style>
+        /* Styles pour le fond de la page et autres styles globaux */
+        body {
+            background-color: rgb(98, 83, 83);
+            /* Autres styles pour le body */
+        }
+
+        /* Styles pour les éléments existants */
+        /* ... */
+    </style>
+</head>
+<div class="align">
+    <div id="menu" class="tab-content">
+        <!-- Contenu principal -->
+        <div class="text-content" container style="position: absolute; top: 0; left: 20">
+            <h1 class="larger-text">Vigiwheels</h1>
+            <div id="stateData" class="hidden"></div>
+            <h2><em class="italic-text">Your autonomous patrol car</em></h2>
+            <button class="logout-b" onclick="redirect('index.html')">Logout</button>
+        </div>
+        <!-- Icône de la voiture et flammes -->
+        <div class="car-icon-container" style="width: 600px; height: 600px; position: absolute; top: 20px; left: 20px">
+            <img src="./images/car_icon.svg" alt="Car Icon" class="car-icon"
+                style="width: 600px; height: 600px; position: absolute; top: 20px; left: 20px">
+
+            <!-- Animation pour la flèche 
+
+            <svg id="arrow" width="400" height="400" xmlns="http://www.w3.org/2000/svg"
+                style="position: absolute; top: 80px; left: 300px;">
+                Ligne principale de la flèche sous forme d'arc elliptique 
+                <g id="fleche">
+                    <path d="M 100,120 A 100,100 0 0 1 100,40" style="stroke:black; stroke-width: 2; fill: none;" />
+                </g>
+
+                Pointe de la flèche
+                <g id="triangle">
+                    <polygon points="70,40 100,0 130,40" style=" fill: black; transform-origin: 100 120;" />
+                </g>
+
+
+                 Groupe contenant la ligne droite de la flèche 
+                <g id="ligne">
+                    <line x1="100" y1="200" x2="100" y2="120" style="stroke:black; stroke-width: 2;" />
+                </g>
+
+            </svg>
+
+
+
+            <svg id="trait" width="200" height="200" xmlns="http://www.w3.org/2000/svg"
+                style="position: absolute; top: 160px; left: 800px;  ">
+                >
+
+            </svg>-->
+
+            <!-- Animation pour l'arc -->
+            <svg id="scan" width="200" height="200" xmlns="http://www.w3.org/2000/svg"
+                style="position: absolute; top: 60px; left: 200px; transform-origin: 60px 60px;   ">
+                <path d="M 100,100 L 50,20 A 75,75 0 0 1 150,20 Z"
+                    style="fill: rgb(255, 0, 0); stroke: none; stroke-width: 1;" id="arc" />
+            </svg>   
+
+
+        </div>
+        <div id="obstacle_tl"
+            style="width: 400px; height: 70px; position: absolute; top: 75px; left: 170px; display: flex; align-items: center;">
+            <img src="./images/barrier.png" alt="manometer Icon" id="manometerIcon"
+            style="width: 50px; height: 50px;" />
+        </div>
+        <div id="obstacle_tm"
+            style="width: 400px; height: 70px; position: absolute; top: 30px; left: 295px; display: flex; align-items: center;">
+            <img src="./images/barrier.png" alt="manometer Icon" id="manometerIcon"
+                style="width: 50px; height: 50px;" />
+        </div>
+        <div id="obstacle_tr"
+            style="width: 400px; height: 70px; position: absolute; top: 75px; left: 420px; display: flex; align-items: center;">
+            <img src="./images/barrier.png" alt="manometer Icon" id="manometerIcon"
+            style="width: 50px; height: 50px;" />
+        </div>
+        <div id="obstacle_bl"
+            style="width: 400px; height: 70px; position: absolute; top: 480px; left: 170px; display: flex; align-items: center;">
+            <img src="./images/barrier.png" alt="manometer Icon" id="manometerIcon"
+            style="width: 50px; height: 50px;" />
+
+        </div>
+        <div id="obstacle_bm"
+            style="width: 400px; height: 70px; position: absolute; top: 540px; left: 295px; display: flex; align-items: center;">
+            <img src="./images/barrier.png" alt="manometer Icon" id="manometerIcon"
+            style="width: 50px; height: 50px;" />
+        </div>
+
+        <div id="obstacle_br"
+        style="width: 400px; height: 70px; position: absolute; top: 480px; left: 420px; display: flex; align-items: center;">
+        <img src="./images/barrier.png" alt="manometer Icon" id="manometerIcon"
+        style="width: 50px; height: 50px;" />
+        </div>
+        <!-- Image des flammes -->
+        <div id="fire_detected"
+            style="display: none; width: 400px; height: 70px; position: absolute; top: 300px; left: 20; display: flex; align-items: center;">
+            <img src="./images/flamme.svg" alt="Flame Icon" id="flameIcon" style="width: 80px; height: 80px;" />
+            <p id="texte" style="margin-left: 10px;">Fire detected</p>
+        </div>
+
+        <!-- Image du niveau de batterie -->
+        <div id="battery_container"
+            style="width: 400px; height: 70px; position: absolute; top: 200px; left: 20; display: flex; align-items: center;">
+            <img src="./images/battery.png" alt="battery Icon" id="batteryIcon" style="width: 80px; height: 80px;" />
+            <p id="texte" style="margin-left: 10px;">Battery level: High</p>
+        </div>
+
+        <!-- Image du manomètre -->
+        <div id="manometer_container"
+            style="width: 400px; height: 70px; position: absolute; top: 400px; left: 20; display: flex; align-items: center;">
+            <img src="./images/manometer.png" alt="manometer Icon" id="manometerIcon"
+                style="width: 80px; height: 80px;" />
+            <p id="texte" style="margin-left: 10px;">Manometer detected</p>
+        </div>
+
+
+    </div>
+</div>
+
+<!-- Styles spécifiques pour les animations -->
+<style>
+    /* Styles spécifiques pour l'animation de l'arc */
+    #arc {
+        transform-origin: 100px 100px;
+        animation: rotateArc 5s linear infinite;
+    }
+
+    @keyframes rotateArc {
+        from {
+            transform: rotate(0deg);
+        }
+
+        to {
+            transform: rotate(360deg);
+        }
+    }
+</style>
+
+<!-- Scripts pour le contrôle de l'affichage et les animations -->
+<script>
+    // Récupérer les éléments du DOM
+    const container = document.getElementById('fire_detected');
+
+    // Fonction pour afficher le bloc "Fire Detected" pendant un certain temps
+    const afficherFireDetected = () => {
+        container.style.visibility = 'visible'; // Rendre le bloc visible
+        setTimeout(() => {
+            container.style.visibility = 'hidden'; // Rendre le bloc invisible après 2 secondes
+        }, 1000);
+    };
+
+    const controlerApparition = () => {
+        setInterval(() => {
+            afficherFireDetected();
+            newSpeed(80); // Appel de la fonction pour afficher le bloc
+        }, 3000);
+    };
+    controlerApparition();
+    // Fonction pour contrôler l'apparition du bloc "Fire Detected" toutes les 5 secondes
+
+
+    let rotationAngle = 0;
+    function rotateArrow(angle) {
+        const arrowTip = document.querySelector('#fleche polygon');
+        rotationAngle += angle; // Augmentez ou diminuez la valeur pour changer la vitesse de rotation
+        arrowTip.setAttribute('transform', `rotate(${rotationAngle} 30 30)`);
+        const dx = 30;
+        const dy = 30;
+        document.querySelector('#fleche path').setAttribute('d', `M 200,30 A 400,50 0 0 1 ${dx},${dy}`);
+    }
+    rotateArrow(10);
+
+    function newSpeed(speed) {
+        const ligne = document.getElementById('arrow').querySelector('#ligne line');
+        let y2 = ligne.getAttribute('y2');
+        const newY2 = y2 - speed;
+        ligne.setAttribute('y2', `${newY2}`);
+
+        const triangle = document.getElementById('arrow').querySelector('#triangle polygon');
+        let points = ligne.getAttribute('points');
+
+        // Séparer les coordonnées des points (séparées par des espaces)
+        let coordonnees = points.split(' ');
+        /*
+                // Mettre à jour chaque coordonnée X en ajoutant la valeur de décalage
+                const nouveauxPoints = coordonnees.map(coordonnee => {
+                    const [x, y] = coordonnee.split(','); // Séparer les coordonnées X et Y
+                    const nouvelleX = parseFloat(x) + valeurX; // Ajouter la valeur de décalage à X
+                    return `${nouvelleX},${y}`; // Retourner la nouvelle coordonnée mise à jour
+                });*/
+        //points = ;
+        triangle.setAttribute('points', "70,40 100,0 180,40");
+
+    }
+
+
+</script>
+</body>
+
+</html>
