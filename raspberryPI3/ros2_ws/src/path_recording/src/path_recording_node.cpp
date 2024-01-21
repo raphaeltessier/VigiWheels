@@ -123,6 +123,16 @@ private:
             return -1;
         }
         else {
+            ofstream to_run;
+            to_run.open("/home/pi/path/file_to_run.txt", ofstream::out | ofstream.trunc); //open fil where name of instruction file is store
+            if(to_run) {
+                to_run << date << flush;
+                to_run.close();
+            }
+            else {
+                RCLCPP_ERROR(this->get_logger(), "Error while editing record path in file_to_run");
+            }
+
             string msg = "Camera command will be save in " + name_cam;
             RCLCPP_INFO(this->get_logger(), msg.c_str());
             msg = "Camera command will be save in " + name_car;
