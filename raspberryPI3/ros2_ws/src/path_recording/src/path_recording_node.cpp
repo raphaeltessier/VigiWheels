@@ -124,7 +124,7 @@ private:
         }
         else {
             ofstream to_run;
-            to_run.open("/home/pi/path/file_to_run.txt", ofstream::out | ofstream.trunc); //open fil where name of instruction file is store
+            to_run.open("/home/pi/path/file_to_run.txt", ofstream::out | ofstream::trunc); //open fil where name of instruction file is store
             if(to_run) {
                 to_run << date << flush;
                 to_run.close();
