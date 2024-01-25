@@ -115,22 +115,22 @@ function smokeDetected(isSmokeDetected) {
 function ManometerDetected(isManometerDetected, value = 0) {
     const ManometerContainer = document.getElementById("manometer_notif");
     const manometerText = ManometerContainer.querySelector('.big-icon-text');
+    const manometerTextLevel = ManometerContainer.querySelector('.big-icon-text2');
 
     if (isManometerDetected === 1) {
-        manometerText.innerText = "Manometer detected \n";
+        manometerText.innerText = "Manometer detected : ";
         if (value !== 0) {
-            if (value = "Low"){
-                manometerText.style.color = 'green'; // Display value if available
-            }else if (value ="Average"){
-                manometerText.style.color = 'orange';// Display value if available
-            }else if (value = "High"){
-                manometerText.style.color = 'red'; // Display value if available
+            if (value === "Low"){
+                manometerTextLevel.style.color = 'green'; // Display value if available
+            }else if (value === "Average"){
+                manometerTextLevel.style.color = 'orange';// Display value if available
+            }else if (value === "High"){
+                manometerTextLevel.style.color = 'red'; // Display value if available
             }
-            manometerText.innerText +=  value + ")"; 
-            manometerText.style.color = 'white';
+            manometerTextLevel.innerText = "&nbsp;"+ value ; 
             
         } else {
-            manometerText.innerText = "Manometer detected \n(no value read)";
+            manometerText.innerText = "Manometer detected : (no value read)";
         }
         toggleDisplay(ManometerContainer, true); // Show manometer notification
     } else if (isManometerDetected === 0) {
@@ -443,6 +443,18 @@ function updatePressureLevel(message){
     ManometerDetected(mano_detection, level_pressure); 
 }
 
+function updateConnection(connection){
+    var status_Connection = document.getElementById("connection-status");
+    if (connection){
+        status_Connection.style.color = 'green'; 
+        status_Connection.innerText = "Connected";
+    }
+    else{
+        status_Connection.style.color = 'red'; 
+        status_Connection.innerText = "Not Connected";
+    }
+}
+
 
 // ROS script initialization
 var ros = new ROSLIB.Ros({
@@ -451,14 +463,20 @@ var ros = new ROSLIB.Ros({
 
 ros.on('connection', function () {
     console.log('Connected to ROS websocket server.');
+    var connection_car = true;
+    updateConnection(connection_car);
 });
 
 ros.on('error', function (error) {
     console.log('Error connecting to ROS websocket server: ', error);
+    var connection_car = false;
+    updateConnection(connection_car);
 });
 
 ros.on('close', function () {
     console.log('Connection to ROS websocket server closed.');
+    var connection_car = false;
+    updateConnection(connection_car);
 });
 
 
@@ -519,7 +537,7 @@ var manometer_detection = new ROSLIB.Topic({
     name: '/manometer_detected',
     messageType: 'interfaces/msg/ManometerInfo'
 });
-l_servo_cam_angle.subscribe(updateManometerDetection);
+manometer_detection.subscribe(updateManometerDetection);
 
 
 // Timer for testing & demo & functions associated

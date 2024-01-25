@@ -243,6 +243,14 @@ p {
     left: 50%;
     width: 100%;
 }
+
+.right-side .top-right-text{
+    position: absolute;
+    top: 0.5%;
+    right: 0.5%;
+    font-size: 12px;
+}
+
 .icon-row {
     display: flex;
     align-items: center;
@@ -278,7 +286,7 @@ p {
 }
 
 .big-icon-container {
-    display: none
+    display: none;
 }
 
 .big-icon {
@@ -294,6 +302,15 @@ p {
     font-size: 25px
 }
 
+.big-icon-text-pressure {
+    color: green;
+    margin: 0;
+    align-items: center;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 25px
+}
+
+
 .notification-block .icon-row {
     display: flex;
     align-items: center;
@@ -303,7 +320,7 @@ p {
 .icon {
     width: 50px;
     height: 50px;
-    margin-right: 10px
+    margin-right: 10px;
 }
 
 .icon-text {
@@ -362,11 +379,12 @@ p {
     width: 400px;
     height: 70px;
     position: absolute;
-    top: 47%;
+    top: 44.5%;
     left: 73%;
     transform-origin: -35% 20%;    
     align-items: center; 
     display: none;
+    
 }
 
 #arrow_orientation_front{
@@ -378,7 +396,7 @@ p {
     width: 400px;
     height: 70px;
     position: absolute;
-    top: 47%;
+    top: 44.5%;
     left: 24%;
     transform-origin: 35% 20%;    
     align-items: center; 
