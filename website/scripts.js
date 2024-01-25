@@ -4,6 +4,7 @@ var steering_angle = 0;
 var average_speed = 0;
 const radius_wheel = 9.5;
 const conversion_degree = 30;
+var mano_detection = false;
 
 
 // Function to move the arc gradually based on the specified angle
@@ -116,6 +117,7 @@ function ManometerDetected(isManometerDetected, value = 0) {
     const manometerText = ManometerContainer.querySelector('.big-icon-text');
 
     if (isManometerDetected === 1) {
+        manometerText.innerText = "Manometer detected \n";
         if (value !== 0) {
             if (value = "Low"){
                 manometerText.style.color = 'green'; // Display value if available
@@ -124,10 +126,10 @@ function ManometerDetected(isManometerDetected, value = 0) {
             }else if (value = "High"){
                 manometerText.style.color = 'red'; // Display value if available
             }
-            manometerText.innerText = "Manometer detected \n(Value read: " + value + ")"; 
+            manometerText.innerText +=  value + ")"; 
+            manometerText.style.color = 'white';
             
         } else {
-            manometerText.style.color = 'white';
             manometerText.innerText = "Manometer detected \n(no value read)";
         }
         toggleDisplay(ManometerContainer, true); // Show manometer notification
@@ -428,6 +430,19 @@ function identify_Reverse(message){
     }
 }
 
+function updateManometerDetection(message){
+    if (message.x1 !=0){
+        mano_detection = true;
+    }else {
+        mano_detection = false;
+    }
+}
+
+function updatePressureLevel(message){
+    var level_pressure = message.level;
+    ManometerDetected(mano_detection, level_pressure); 
+}
+
 
 // ROS script initialization
 var ros = new ROSLIB.Ros({
@@ -491,6 +506,20 @@ var motorOrder_listener = new ROSLIB.Topic({
 });
 
 motorOrder_listener.subscribe(identify_Reverse);
+
+var pressure_level_listener = new ROSLIB.Topic({
+    ros: ros,
+    name: '/pressure_level',
+    messageType: 'interfaces/msg/PressureLevel'
+});
+pressure_level_listener.subscribe(updatePressureLevel);
+
+var manometer_detection = new ROSLIB.Topic({
+    ros: ros,
+    name: '/manometer_detected',
+    messageType: 'interfaces/msg/ManometerInfo'
+});
+l_servo_cam_angle.subscribe(updateManometerDetection);
 
 
 // Timer for testing & demo & functions associated
