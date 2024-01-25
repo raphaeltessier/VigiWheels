@@ -5,6 +5,7 @@ var average_speed = 0;
 const radius_wheel = 9.5;
 const conversion_degree = 30;
 
+
 // Function to move the arc gradually based on the specified angle
 const arc = document.getElementById('arc');
 arc.style.transformOrigin = "100px 100px"; // Set the rotation center of the arc
@@ -116,8 +117,17 @@ function ManometerDetected(isManometerDetected, value = 0) {
 
     if (isManometerDetected === 1) {
         if (value !== 0) {
-            manometerText.innerText = "Manometer detected \n(value read: " + value + ")"; // Display value if available
+            if (value = "Low"){
+                manometerText.style.color = 'green'; // Display value if available
+            }else if (value ="Average"){
+                manometerText.style.color = 'orange';// Display value if available
+            }else if (value = "High"){
+                manometerText.style.color = 'red'; // Display value if available
+            }
+            manometerText.innerText = "Manometer detected \n(Value read: " + value + ")"; 
+            
         } else {
+            manometerText.style.color = 'white';
             manometerText.innerText = "Manometer detected \n(no value read)";
         }
         toggleDisplay(ManometerContainer, true); // Show manometer notification
@@ -481,7 +491,6 @@ var motorOrder_listener = new ROSLIB.Topic({
 });
 
 motorOrder_listener.subscribe(identify_Reverse);
-
 
 
 // Timer for testing & demo & functions associated
