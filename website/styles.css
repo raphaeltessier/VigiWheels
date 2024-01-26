@@ -257,6 +257,13 @@ p {
     margin-bottom: 10px
 }
 
+.icon-row2 {
+    display: none;
+    align-items: center;
+    margin-bottom: 10px
+}
+
+
 .logo-container {
     display: flex;
     align-items: center;

@@ -53,8 +53,20 @@ function orientationCar(speed, steering_angle, reverse_car){
         arrow_orientation_front.style.display = "none";
         arrow_orientation_rear.style.display = "none";
     }
+}
 
-    
+function updatePlayMode(joystick_throttle, joystick_mode, speed){
+    var play_mode = document.getElementById('playback_mode');
+    var manu_mode = document.getElementById('manual_mode');
+    if (joystick_mode == 1){
+        if (joystick_throttle == 0 && speed> 0){
+            toggleDisplay(play_mode,true);
+            toggleDisplay(manu_mode,false);
+        }else if (joystick_throttle > 0){
+            toggleDisplay(play_mode,false);
+            toggleDisplay(manu_mode,true);
+        }
+    }
 }
 
 let Obst_detectedPositions = []; // Array to store detected obstacle positions
@@ -455,6 +467,15 @@ function updateConnection(connection){
     }
 }
 
+function updateCarMode(message){
+    manual_car = document.getElementById("manual_mode");
+    if (message.start == true && message.mode == 1){
+        updatePlayMode(message.throttle, message.mode, average_speed);
+    }else{
+        toggleDisplay(manual_car, false);
+    }
+}
+
 
 // ROS script initialization
 var ros = new ROSLIB.Ros({
@@ -538,6 +559,13 @@ var manometer_detection = new ROSLIB.Topic({
     messageType: 'interfaces/msg/ManometerInfo'
 });
 manometer_detection.subscribe(updateManometerDetection);
+
+var car_mode_listener= new ROSLIB.Topic({
+    ros: ros,
+    name: '/joystick_order',
+    messageType: 'interfaces/msg/JoystickOrder'
+});
+car_mode_listener.subscribe(updateCarMode);
 
 
 // Timer for testing & demo & functions associated
