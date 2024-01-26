@@ -55,17 +55,15 @@ function orientationCar(speed, steering_angle, reverse_car){
     }
 }
 
-function updatePlayMode(joystick_throttle, joystick_mode, speed){
-    var play_mode = document.getElementById('playback_mode');
-    var manu_mode = document.getElementById('manual_mode');
+function updatePlayMode(joystick_mode){
+    var play_mode = document.getElementById('playback_car');
+    var manu_mode = document.getElementById('manual_car');
     if (joystick_mode == 1){
-        if (joystick_throttle == 0 && speed> 0){
-            toggleDisplay(play_mode,true);
-            toggleDisplay(manu_mode,false);
-        }else if (joystick_throttle > 0){
-            toggleDisplay(play_mode,false);
-            toggleDisplay(manu_mode,true);
-        }
+        toggleDisplay(play_mode,true);
+        toggleDisplay(manu_mode,false);
+    }else{
+        toggleDisplay(play_mode,false);
+        toggleDisplay(manu_mode,true);
     }
 }
 
@@ -125,27 +123,27 @@ function smokeDetected(isSmokeDetected) {
 }
 
 function ManometerDetected(isManometerDetected, value = 0) {
+
     const ManometerContainer = document.getElementById("manometer_notif");
     const manometerText = ManometerContainer.querySelector('.big-icon-text');
-    const manometerTextLevel = ManometerContainer.querySelector('.big-icon-text2');
-
-    if (isManometerDetected === 1) {
+    const manometerTextLevel = ManometerContainer.querySelector('.big-icon-text-pressure');
+    if (isManometerDetected === true) {
         manometerText.innerText = "Manometer detected : ";
-        if (value !== 0) {
+        if (value !== "") {
             if (value === "Low"){
-                manometerTextLevel.style.color = 'green'; // Display value if available
+                manometerTextLevel.style.color = 'green'; // Display Low in green
             }else if (value === "Average"){
-                manometerTextLevel.style.color = 'orange';// Display value if available
+                manometerTextLevel.style.color = 'orange';// Display Average in orange
             }else if (value === "High"){
-                manometerTextLevel.style.color = 'red'; // Display value if available
+                manometerTextLevel.style.color = 'red'; // Display High in Red
             }
-            manometerTextLevel.innerText = "&nbsp;"+ value ; 
+            manometerTextLevel.innerText =  value ; 
             
         } else {
             manometerText.innerText = "Manometer detected : (no value read)";
         }
         toggleDisplay(ManometerContainer, true); // Show manometer notification
-    } else if (isManometerDetected === 0) {
+    } else if (isManometerDetected === false) {
         toggleDisplay(ManometerContainer, false); // Hide manometer notification
     }
 }
@@ -372,7 +370,7 @@ function updateEmergencyAlert(message) {
     bool ir_front_right
     bool ir_front_left
     bool ir_rear_right
-    bool ir_rear_left
+    bool ir_rear_leftconsole.log('Non Affichage Manometer');
     bool smoke_left
     bool smoke_right
     */
@@ -442,16 +440,13 @@ function identify_Reverse(message){
     }
 }
 
-function updateManometerDetection(message){
-    if (message.x1 !=0){
+function updatePressureLevel(message){
+    var level_pressure = message.level;
+	if (level_pressure != ''){
         mano_detection = true;
     }else {
         mano_detection = false;
     }
-}
-
-function updatePressureLevel(message){
-    var level_pressure = message.level;
     ManometerDetected(mano_detection, level_pressure); 
 }
 
@@ -468,12 +463,13 @@ function updateConnection(connection){
 }
 
 function updateCarMode(message){
-    manual_car = document.getElementById("manual_mode");
-    if (message.start == true && message.mode == 1){
-        updatePlayMode(message.throttle, message.mode, average_speed);
+    var manual_md = document.getElementById("manual_car");
+    if (message.mode == 0 && message.start == true){
+        toggleDisplay(manual_md, true);
     }else{
-        toggleDisplay(manual_car, false);
+        toggleDisplay(manual_md, false);
     }
+    updatePlayMode(message.mode);
 }
 
 
@@ -552,13 +548,6 @@ var pressure_level_listener = new ROSLIB.Topic({
     messageType: 'interfaces/msg/PressureLevel'
 });
 pressure_level_listener.subscribe(updatePressureLevel);
-
-var manometer_detection = new ROSLIB.Topic({
-    ros: ros,
-    name: '/manometer_detected',
-    messageType: 'interfaces/msg/ManometerInfo'
-});
-manometer_detection.subscribe(updateManometerDetection);
 
 var car_mode_listener= new ROSLIB.Topic({
     ros: ros,
