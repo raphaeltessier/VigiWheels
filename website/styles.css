@@ -233,7 +233,6 @@ p {
     position: absolute;
     bottom: 0;
     font-size: 16px;
-
     width: 100%;
 }
 
@@ -241,14 +240,29 @@ p {
     position: absolute;
     bottom: 0;
     font-size: 16px;
-
+    left: 50%;
     width: 100%;
 }
+
+.right-side .top-right-text{
+    position: absolute;
+    top: 0.5%;
+    right: 0.5%;
+    font-size: 12px;
+}
+
 .icon-row {
     display: flex;
     align-items: center;
     margin-bottom: 10px
 }
+
+.icon-row2 {
+    display: none;
+    align-items: center;
+    margin-bottom: 10px
+}
+
 
 .logo-container {
     display: flex;
@@ -279,7 +293,7 @@ p {
 }
 
 .big-icon-container {
-    display: none
+    display: none;
 }
 
 .big-icon {
@@ -295,6 +309,15 @@ p {
     font-size: 25px
 }
 
+.big-icon-text-pressure {
+    color: green;
+    margin: 0;
+    align-items: center;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 25px
+}
+
+
 .notification-block .icon-row {
     display: flex;
     align-items: center;
@@ -304,7 +327,7 @@ p {
 .icon {
     width: 50px;
     height: 50px;
-    margin-right: 10px
+    margin-right: 10px;
 }
 
 .icon-text {
@@ -363,23 +386,24 @@ p {
     width: 400px;
     height: 70px;
     position: absolute;
-    top: 47%;
+    top: 44.5%;
     left: 73%;
     transform-origin: -35% 20%;    
     align-items: center; 
+    display: none;
+    
 }
 
 #arrow_orientation_front{
     width: 50px;
     height: 50px;
-    display: none;
 }
 
 #arrow_direction_rear{
     width: 400px;
     height: 70px;
     position: absolute;
-    top: 47%;
+    top: 44.5%;
     left: 24%;
     transform-origin: 35% 20%;    
     align-items: center; 
@@ -390,8 +414,6 @@ p {
 #arrow_orientation_rear{
     width: 50px;
     height: 50px;
-    display: none;
-
 }
 
 .fire-bl,
@@ -406,6 +428,30 @@ p {
     justify-content: center
 }
 
+.smoke-section-l,
+.smoke-section-r {
+    position: absolute;
+    width: 100%;
+    height: 50%;
+    align-items: center;
+    display: none;
+    justify-content: center
+}
+.smoke-section-l .icon{
+    width: 80px;
+    height: auto;
+    position: absolute;
+    left: 40%;
+    top: 40%
+}
+
+.smoke-section-r .icon{
+    width: 80px;
+    height: auto;
+    position: absolute;
+    left: 40%;
+    bottom: 40%
+}
 .fire-bl .icon,
 .fire-br .icon,
 .fire-tl .icon,
@@ -416,20 +462,22 @@ p {
 
 .fire-tl,
 .fire-tr {
+    right: 0
+}
+
+.fire-bl,
+.fire-tl
+.smoke-section-l {
     top: 0
 }
 
 .fire-bl,
-.fire-tl {
+.fire-br {
     left: 0
 }
 
-.fire-bl,
-.fire-br {
-    bottom: 0
-}
-
 .fire-br,
-.fire-tr {
-    right: 0
+.fire-tr,
+.smoke-section-r {
+    bottom: 0
 }

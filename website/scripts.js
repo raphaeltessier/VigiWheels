@@ -3,7 +3,9 @@ var reverse_car = false;
 var steering_angle = 0;
 var average_speed = 0;
 const radius_wheel = 9.5;
-const conversion_degree = 50;
+const conversion_degree = 30;
+var mano_detection = false;
+
 
 // Function to move the arc gradually based on the specified angle
 const arc = document.getElementById('arc');
@@ -51,8 +53,18 @@ function orientationCar(speed, steering_angle, reverse_car){
         arrow_orientation_front.style.display = "none";
         arrow_orientation_rear.style.display = "none";
     }
+}
 
-    
+function updatePlayMode(joystick_mode){
+    var play_mode = document.getElementById('playback_car');
+    var manu_mode = document.getElementById('manual_car');
+    if (joystick_mode == 1){
+        toggleDisplay(play_mode,true);
+        toggleDisplay(manu_mode,false);
+    }else{
+        toggleDisplay(play_mode,false);
+        toggleDisplay(manu_mode,true);
+    }
 }
 
 let Obst_detectedPositions = []; // Array to store detected obstacle positions
@@ -100,19 +112,38 @@ function fireDetected(isFireDetected) {
         toggleDisplay(fireContainer, false); // Hide fire notification
     }
 }
+function smokeDetected(isSmokeDetected) {
+    const smokeContainer = document.getElementById("smoke_notif");
+
+    if (isSmokeDetected === 1) {
+        toggleDisplay(smokeContainer, true); // Show smoke notification
+    } else if (isSmokeDetected === 0) {
+        toggleDisplay(smokeContainer, false); // Hide smoke notification
+    }
+}
 
 function ManometerDetected(isManometerDetected, value = 0) {
+
     const ManometerContainer = document.getElementById("manometer_notif");
     const manometerText = ManometerContainer.querySelector('.big-icon-text');
-
-    if (isManometerDetected === 1) {
-        if (value !== 0) {
-            manometerText.innerText = "Manometer detected \n(value read: " + value + ")"; // Display value if available
+    const manometerTextLevel = ManometerContainer.querySelector('.big-icon-text-pressure');
+    if (isManometerDetected === true) {
+        manometerText.innerText = "Manometer detected : ";
+        if (value !== "") {
+            if (value === "Low"){
+                manometerTextLevel.style.color = 'green'; // Display Low in green
+            }else if (value === "Average"){
+                manometerTextLevel.style.color = 'orange';// Display Average in orange
+            }else if (value === "High"){
+                manometerTextLevel.style.color = 'red'; // Display High in Red
+            }
+            manometerTextLevel.innerText =  value ; 
+            
         } else {
-            manometerText.innerText = "Manometer detected \n(no value read)";
+            manometerText.innerText = "Manometer detected : (no value read)";
         }
         toggleDisplay(ManometerContainer, true); // Show manometer notification
-    } else if (isManometerDetected === 0) {
+    } else if (isManometerDetected === false) {
         toggleDisplay(ManometerContainer, false); // Hide manometer notification
     }
 }
@@ -157,6 +188,36 @@ function togglefire(position, enable) {
         fireDetected(1);
     } else {
         fireDetected(0);
+    }
+}
+
+let Smoke_detectedPositions = []; // Array to store detected smoke positions
+
+function togglesmoke(position, enable) {
+    const validPositions = ['l', 'r']; // Valid smoke positions
+    if (validPositions.includes(position)) {
+        const smoke = document.getElementById(`smoke-section-${position}`);
+
+        if (enable === 1) {
+            smoke.style.display = "flex"; // Display the smoke
+            if (!Smoke_detectedPositions.includes(position)) {
+                Smoke_detectedPositions.push(position); // Add the position if not already in the array
+            }
+        } else if (enable === 0) {
+            smoke.style.display = "none"; // Hide the smoke
+            const index = Smoke_detectedPositions.indexOf(position);
+            if (index !== -1) {
+                Smoke_detectedPositions.splice(index, 1); // Remove the position if in the array
+            }
+        }
+    } else {
+        console.log("Invalid position for smoke detection."); // Log if the position is not in the specified list
+    }
+    if (Smoke_detectedPositions.length > 0) {
+        // Call another function if at least one obstacle is still detected
+        smokeDetected(1);
+    } else {
+        smokeDetected(0);
     }
 }
 
@@ -274,13 +335,6 @@ function redirect(url) {
 
 // Updater
 function updateEmergencyAlert(message) {
-    console.log(message)
-    if (message.fire_detected == true) {
-        fireDetected(1);
-    } else {
-        fireDetected(0);
-    }
-    /*
     if (message.ir_front_right == true) {
         togglefire("tr", 1);
     } else {
@@ -300,13 +354,23 @@ function updateEmergencyAlert(message) {
         togglefire("br", 1);
     } else {
         togglefire("br", 0);
-    }*/
+    }
+    if (message.smoke_left == true) {
+        togglefire("br", 1);
+    } else {
+        togglefire("br", 0);
+    }
+    if (message.smoke_right == true) {
+        togglefire("br", 1);
+    } else {
+        togglefire("br", 0);
+    }
 
 /*
     bool ir_front_right
     bool ir_front_left
     bool ir_rear_right
-    bool ir_rear_left
+    bool ir_rear_leftconsole.log('Non Affichage Manometer');
     bool smoke_left
     bool smoke_right
     */
@@ -368,12 +432,44 @@ function calculate_Speed_Orientation(message){
 function identify_Reverse(message){
 
     // Identify if the car is going at reverse mode or not
-    if (message.right_rear_pwm > 50){
+    if (message.right_rear_pwm >50){
         reverse_car = false;
     }    
-    else{
+    else if (message.right_rear_pwm <50){
         reverse_car = true;
     }
+}
+
+function updatePressureLevel(message){
+    var level_pressure = message.level;
+	if (level_pressure != ''){
+        mano_detection = true;
+    }else {
+        mano_detection = false;
+    }
+    ManometerDetected(mano_detection, level_pressure); 
+}
+
+function updateConnection(connection){
+    var status_Connection = document.getElementById("connection-status");
+    if (connection){
+        status_Connection.style.color = 'green'; 
+        status_Connection.innerText = "Connected";
+    }
+    else{
+        status_Connection.style.color = 'red'; 
+        status_Connection.innerText = "Not Connected";
+    }
+}
+
+function updateCarMode(message){
+    var manual_md = document.getElementById("manual_car");
+    if (message.mode == 0 && message.start == true){
+        toggleDisplay(manual_md, true);
+    }else{
+        toggleDisplay(manual_md, false);
+    }
+    updatePlayMode(message.mode);
 }
 
 
@@ -384,14 +480,20 @@ var ros = new ROSLIB.Ros({
 
 ros.on('connection', function () {
     console.log('Connected to ROS websocket server.');
+    var connection_car = true;
+    updateConnection(connection_car);
 });
 
 ros.on('error', function (error) {
     console.log('Error connecting to ROS websocket server: ', error);
+    var connection_car = false;
+    updateConnection(connection_car);
 });
 
 ros.on('close', function () {
     console.log('Connection to ROS websocket server closed.');
+    var connection_car = false;
+    updateConnection(connection_car);
 });
 
 
@@ -440,6 +542,19 @@ var motorOrder_listener = new ROSLIB.Topic({
 
 motorOrder_listener.subscribe(identify_Reverse);
 
+var pressure_level_listener = new ROSLIB.Topic({
+    ros: ros,
+    name: '/pressure_level',
+    messageType: 'interfaces/msg/PressureLevel'
+});
+pressure_level_listener.subscribe(updatePressureLevel);
+
+var car_mode_listener= new ROSLIB.Topic({
+    ros: ros,
+    name: '/joystick_order',
+    messageType: 'interfaces/msg/JoystickOrder'
+});
+car_mode_listener.subscribe(updateCarMode);
 
 
 // Timer for testing & demo & functions associated
@@ -464,7 +579,7 @@ setTimeout(() => {
 setTimeout(() => {
     toggleObstacle("br", 1);
     toggleObstacle("tr", 1);
-
+    togglesmoke("l",1)
     ObstacleDetected(1);
     ManometerDetected(1);
 }, 1000);
@@ -472,7 +587,8 @@ setTimeout(() => {
 setTimeout(() => {
     toggleObstacle("br", 0);
     moveArc(30);
+    togglesmoke("l",0)
     ManometerDetected(0);
 }, 10000);
-
 */
+

@@ -45,6 +45,18 @@
                     <img src="./images/voiture.png" alt="speed Icon" class="icon" />
                     <span id="speedvalue">Speed:</span>
                 </div>
+
+                <!-- Mode icon and name -->
+                <div id ="manual_car" class="icon-row2">
+                    <img src="./images/icons8-joystick-100.png" alt="Joystick Icon" class="icon" />
+                    <span id="manualmode"> Manual Mode </span>
+                </div>
+
+                <div id ="playback_car"class="icon-row2">
+                    <img src="./images/icons8-play-96.png" alt="Play Icon" class="icon" />
+                    <span id="playbackmode"> Playback Mode </span>
+                </div>
+
             </div>
         </div>
 
@@ -57,11 +69,20 @@
             </div>
         </div>
 
+        <div id="smoke_notif" class="big-icon-container">
+            <div class="icon-row">
+                <!-- Smoke icon and text -->
+                <img src="./images/fumee.png" alt="smoke Icon" class="big-icon" />
+                <p class="big-icon-text">Smoke detected</p>
+            </div>
+        </div>
+
         <div id="manometer_notif" class="big-icon-container">
             <div class="icon-row">
                 <!-- Manometer icon and text -->
                 <img src="./images/manometer.png" alt="manometer Icon" class="big-icon" />
-                <p class="big-icon-text">Manometer detected (no value read)</p>
+                <p class="big-icon-text">Manometer detected : </p>
+                <p class="big-icon-text-pressure"> &nbsp; No value </p>
             </div>
         </div>
 
@@ -87,6 +108,11 @@
             <h3>Initial sketch of the car's real-time evolving design, showcasing its progression</h3>
         </div>
 
+        <div class="top-right-text">
+            <!-- Affichage connexion à la voiture -->
+            <span id="connection-status">Waiting for connection ... </span>
+        </div>
+
         <!-- Car icon and flame indicators -->
         <div class="section-car">
             <img src="./images/car_icon.svg" alt="Car Icon" class="car-icon">
@@ -96,7 +122,8 @@
             <div id="fire_tr" class="fire-tr"><img src="./images/flamme.svg" alt="Icon" class="icon"></div>
             <div id="fire_bl" class="fire-bl"><img src="./images/flamme.svg" alt="Icon" class="icon"></div>
             <div id="fire_br" class="fire-br"><img src="./images/flamme.svg" alt="Icon" class="icon"></div>
-
+            <div id="smoke-section-l" class="smoke-section-l"><img src="./images/fumee.png" class="icon"></div>
+            <div id="smoke-section-r" class="smoke-section-r"><img src="./images/fumee.png" class="icon"></div>
             <!-- Obstacle icons for different corners -->
             <div id="obstacle_tl" class="obstacle obstacle_tl">
                 <img src="./images/barrier.png" alt="barrier Icon" id="barrierIcon" />
@@ -134,11 +161,13 @@
 
          
         <!-- Bottom text for credits -->
-        <div class="bottom-center-text">Made by TAHANI team, inspired by the CHIDI team's website.</div>
 
         <!-- Logout button -->
         <button class="logout-b" onclick="redirect('./index.html')">Logout</button>
     </div>
+    <div class="bottom-center-text">Made by TAHANI team, inspired by the CHIDI team's website.</div>
+</div>
+
 </body>
 
 <script src="scripts.js"></script>
