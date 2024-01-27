@@ -432,10 +432,10 @@ function calculate_Speed_Orientation(message){
 function identify_Reverse(message){
 
     // Identify if the car is going at reverse mode or not
-    if (message.right_rear_pwm > 50){
+    if (message.right_rear_pwm >50){
         reverse_car = false;
     }    
-    else{
+    else if (message.right_rear_pwm <50){
         reverse_car = true;
     }
 }
