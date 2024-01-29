@@ -356,14 +356,14 @@ function updateEmergencyAlert(message) {
         togglefire("br", 0);
     }
     if (message.smoke_left == true) {
-        togglefire("br", 1);
+        togglesmoke("l", 1);
     } else {
-        togglefire("br", 0);
+        togglesmoke("l", 0);
     }
     if (message.smoke_right == true) {
-        togglefire("br", 1);
+        togglesmoke("r", 1);
     } else {
-        togglefire("br", 0);
+        togglesmoke("r", 0);
     }
 
 /*
