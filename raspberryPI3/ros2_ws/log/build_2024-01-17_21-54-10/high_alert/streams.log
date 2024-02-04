@@ -1,0 +1,37 @@
+[1.778s] Invoking command in '/home/insa/Desktop/3.0/VigiWheels/raspberryPI3/ros2_ws/src/high_alert': AMENT_PREFIX_PATH=/home/insa/Desktop/3.0/VigiWheels/raspberryPI3/ros2_ws/install/interfaces:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/insa/Desktop/3.0/VigiWheels/raspberryPI3/ros2_ws/install/interfaces:${CMAKE_PREFIX_PATH} LD_LIBRARY_PATH=/home/insa/Desktop/3.0/VigiWheels/raspberryPI3/ros2_ws/install/interfaces/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/insa/Desktop/3.0/VigiWheels/raspberryPI3/ros2_ws/build/high_alert/prefix_override:/home/insa/Desktop/3.0/VigiWheels/raspberryPI3/ros2_ws/install/high_alert/lib/python3.10/site-packages:/home/insa/Desktop/3.0/VigiWheels/raspberryPI3/ros2_ws/install/interfaces/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/high_alert build --build-base /home/insa/Desktop/3.0/VigiWheels/raspberryPI3/ros2_ws/build/high_alert/build install --record /home/insa/Desktop/3.0/VigiWheels/raspberryPI3/ros2_ws/build/high_alert/install.log --single-version-externally-managed
+[2.980s] running egg_info
+[2.981s] creating ../../build/high_alert/high_alert.egg-info
+[2.981s] writing ../../build/high_alert/high_alert.egg-info/PKG-INFO
+[2.981s] writing dependency_links to ../../build/high_alert/high_alert.egg-info/dependency_links.txt
+[2.981s] writing entry points to ../../build/high_alert/high_alert.egg-info/entry_points.txt
+[2.981s] writing requirements to ../../build/high_alert/high_alert.egg-info/requires.txt
+[2.981s] writing top-level names to ../../build/high_alert/high_alert.egg-info/top_level.txt
+[2.981s] writing manifest file '../../build/high_alert/high_alert.egg-info/SOURCES.txt'
+[2.981s] reading manifest file '../../build/high_alert/high_alert.egg-info/SOURCES.txt'
+[2.981s] writing manifest file '../../build/high_alert/high_alert.egg-info/SOURCES.txt'
+[2.981s] running build
+[2.981s] running build_py
+[2.982s] creating /home/insa/Desktop/3.0/VigiWheels/raspberryPI3/ros2_ws/build/high_alert/build
+[2.982s] creating /home/insa/Desktop/3.0/VigiWheels/raspberryPI3/ros2_ws/build/high_alert/build/lib
+[2.982s] creating /home/insa/Desktop/3.0/VigiWheels/raspberryPI3/ros2_ws/build/high_alert/build/lib/high_alert
+[2.982s] copying high_alert/__init__.py -> /home/insa/Desktop/3.0/VigiWheels/raspberryPI3/ros2_ws/build/high_alert/build/lib/high_alert
+[2.982s] copying high_alert/high_alert.py -> /home/insa/Desktop/3.0/VigiWheels/raspberryPI3/ros2_ws/build/high_alert/build/lib/high_alert
+[2.982s] running install
+[2.982s] running install_lib
+[2.982s] creating /home/insa/Desktop/3.0/VigiWheels/raspberryPI3/ros2_ws/install/high_alert/lib/python3.10/site-packages/high_alert
+[2.982s] copying /home/insa/Desktop/3.0/VigiWheels/raspberryPI3/ros2_ws/build/high_alert/build/lib/high_alert/__init__.py -> /home/insa/Desktop/3.0/VigiWheels/raspberryPI3/ros2_ws/install/high_alert/lib/python3.10/site-packages/high_alert
+[2.982s] copying /home/insa/Desktop/3.0/VigiWheels/raspberryPI3/ros2_ws/build/high_alert/build/lib/high_alert/high_alert.py -> /home/insa/Desktop/3.0/VigiWheels/raspberryPI3/ros2_ws/install/high_alert/lib/python3.10/site-packages/high_alert
+[2.982s] byte-compiling /home/insa/Desktop/3.0/VigiWheels/raspberryPI3/ros2_ws/install/high_alert/lib/python3.10/site-packages/high_alert/__init__.py to __init__.cpython-310.pyc
+[2.983s] byte-compiling /home/insa/Desktop/3.0/VigiWheels/raspberryPI3/ros2_ws/install/high_alert/lib/python3.10/site-packages/high_alert/high_alert.py to high_alert.cpython-310.pyc
+[2.983s] running install_data
+[2.983s] creating /home/insa/Desktop/3.0/VigiWheels/raspberryPI3/ros2_ws/install/high_alert/share/ament_index
+[2.983s] creating /home/insa/Desktop/3.0/VigiWheels/raspberryPI3/ros2_ws/install/high_alert/share/ament_index/resource_index
+[2.983s] creating /home/insa/Desktop/3.0/VigiWheels/raspberryPI3/ros2_ws/install/high_alert/share/ament_index/resource_index/packages
+[2.983s] copying resource/high_alert -> /home/insa/Desktop/3.0/VigiWheels/raspberryPI3/ros2_ws/install/high_alert/share/ament_index/resource_index/packages
+[2.983s] copying package.xml -> /home/insa/Desktop/3.0/VigiWheels/raspberryPI3/ros2_ws/install/high_alert/share/high_alert
+[2.983s] running install_egg_info
+[2.983s] Copying ../../build/high_alert/high_alert.egg-info to /home/insa/Desktop/3.0/VigiWheels/raspberryPI3/ros2_ws/install/high_alert/lib/python3.10/site-packages/high_alert-0.0.0-py3.10.egg-info
+[2.983s] running install_scripts
+[2.983s] Installing alarm_node script to /home/insa/Desktop/3.0/VigiWheels/raspberryPI3/ros2_ws/install/high_alert/lib/high_alert
+[2.984s] writing list of installed files to '/home/insa/Desktop/3.0/VigiWheels/raspberryPI3/ros2_ws/build/high_alert/install.log'
+[3.108s] Invoked command in '/home/insa/Desktop/3.0/VigiWheels/raspberryPI3/ros2_ws/src/high_alert' returned '0': AMENT_PREFIX_PATH=/home/insa/Desktop/3.0/VigiWheels/raspberryPI3/ros2_ws/install/interfaces:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/insa/Desktop/3.0/VigiWheels/raspberryPI3/ros2_ws/install/interfaces:${CMAKE_PREFIX_PATH} LD_LIBRARY_PATH=/home/insa/Desktop/3.0/VigiWheels/raspberryPI3/ros2_ws/install/interfaces/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/insa/Desktop/3.0/VigiWheels/raspberryPI3/ros2_ws/build/high_alert/prefix_override:/home/insa/Desktop/3.0/VigiWheels/raspberryPI3/ros2_ws/install/high_alert/lib/python3.10/site-packages:/home/insa/Desktop/3.0/VigiWheels/raspberryPI3/ros2_ws/install/interfaces/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/high_alert build --build-base /home/insa/Desktop/3.0/VigiWheels/raspberryPI3/ros2_ws/build/high_alert/build install --record /home/insa/Desktop/3.0/VigiWheels/raspberryPI3/ros2_ws/build/high_alert/install.log --single-version-externally-managed

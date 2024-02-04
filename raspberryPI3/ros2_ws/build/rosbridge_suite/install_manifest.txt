@@ -1,0 +1,15 @@
+/home/insa/Desktop/3.0/VigiWheels/raspberryPI3/ros2_ws/install/rosbridge_suite/share/ament_index/resource_index/package_run_dependencies/rosbridge_suite
+/home/insa/Desktop/3.0/VigiWheels/raspberryPI3/ros2_ws/install/rosbridge_suite/share/ament_index/resource_index/parent_prefix_path/rosbridge_suite
+/home/insa/Desktop/3.0/VigiWheels/raspberryPI3/ros2_ws/install/rosbridge_suite/share/rosbridge_suite/environment/ament_prefix_path.sh
+/home/insa/Desktop/3.0/VigiWheels/raspberryPI3/ros2_ws/install/rosbridge_suite/share/rosbridge_suite/environment/ament_prefix_path.dsv
+/home/insa/Desktop/3.0/VigiWheels/raspberryPI3/ros2_ws/install/rosbridge_suite/share/rosbridge_suite/environment/path.sh
+/home/insa/Desktop/3.0/VigiWheels/raspberryPI3/ros2_ws/install/rosbridge_suite/share/rosbridge_suite/environment/path.dsv
+/home/insa/Desktop/3.0/VigiWheels/raspberryPI3/ros2_ws/install/rosbridge_suite/share/rosbridge_suite/local_setup.bash
+/home/insa/Desktop/3.0/VigiWheels/raspberryPI3/ros2_ws/install/rosbridge_suite/share/rosbridge_suite/local_setup.sh
+/home/insa/Desktop/3.0/VigiWheels/raspberryPI3/ros2_ws/install/rosbridge_suite/share/rosbridge_suite/local_setup.zsh
+/home/insa/Desktop/3.0/VigiWheels/raspberryPI3/ros2_ws/install/rosbridge_suite/share/rosbridge_suite/local_setup.dsv
+/home/insa/Desktop/3.0/VigiWheels/raspberryPI3/ros2_ws/install/rosbridge_suite/share/rosbridge_suite/package.dsv
+/home/insa/Desktop/3.0/VigiWheels/raspberryPI3/ros2_ws/install/rosbridge_suite/share/ament_index/resource_index/packages/rosbridge_suite
+/home/insa/Desktop/3.0/VigiWheels/raspberryPI3/ros2_ws/install/rosbridge_suite/share/rosbridge_suite/cmake/rosbridge_suiteConfig.cmake
+/home/insa/Desktop/3.0/VigiWheels/raspberryPI3/ros2_ws/install/rosbridge_suite/share/rosbridge_suite/cmake/rosbridge_suiteConfig-version.cmake
+/home/insa/Desktop/3.0/VigiWheels/raspberryPI3/ros2_ws/install/rosbridge_suite/share/rosbridge_suite/package.xml

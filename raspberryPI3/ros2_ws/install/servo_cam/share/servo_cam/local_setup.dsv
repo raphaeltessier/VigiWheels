@@ -1,0 +1,2 @@
+source;share/servo_cam/environment/ament_prefix_path.sh
+source;share/servo_cam/environment/path.sh

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Metadata for character set and title -->
+    <meta charset="UTF-8">
+    <title>Vigiwheels</title>
+
+    <!-- External stylesheet and scripts for ROS (Robot Operating System) -->
+    <link rel="stylesheet" href="styles.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/roslib@1/build/roslib.min.js"></script>
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/eventemitter2@6.4.9/lib/eventemitter2.min.js"></script>
+
+</head>
+
+<body>
+    <!-- Left-side content -->
+    <div class="left-side">
+        <!-- Content of the left part of the page -->
+        <div class="text-content">
+            <div class="main-title">
+                <!-- Logo and title -->
+                <div class="logo-container">
+                    <img src="./images/vigi3.png" class="logo" />
+                    Vigiwheels
+                    <h2 class="slogan">Your autonomous patrol car</h2>
+                </div>
+            </div>
+
+            <!-- Vertical icons in the notification block -->
+            <div class="rectangle-container">
+                <div class="rectangle-container2">
+                    Real-Time Data
+                </div>
+
+                <!-- Battery level icon and value -->
+                <div class="icon-row">
+                    <img src="./images/battery.png" alt="battery Icon" class="icon" />
+                    <span id="batteryLevel">Battery level:</span>
+                </div>
+
+                <!-- Speed icon and value -->
+                <div class="icon-row">
+                    <img src="./images/voiture.png" alt="speed Icon" class="icon" />
+                    <span id="speedvalue">Speed:</span>
+                </div>
+
+                <!-- Mode icon and name -->
+                <div id ="manual_car" class="icon-row2">
+                    <img src="./images/icons8-joystick-100.png" alt="Joystick Icon" class="icon" />
+                    <span id="manualmode"> Manual Mode </span>
+                </div>
+
+                <div id ="playback_car"class="icon-row2">
+                    <img src="./images/icons8-play-96.png" alt="Play Icon" class="icon" />
+                    <span id="playbackmode"> Playback Mode </span>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Notification icons -->
+        <div id="fire_notif" class="big-icon-container">
+            <div class="icon-row">
+                <!-- Flame icon and text -->
+                <img src="./images/flamme.svg" alt="Flame Icon" class="big-icon" />
+                <p class="big-icon-text">Fire detected</p>
+            </div>
+        </div>
+
+        <div id="smoke_notif" class="big-icon-container">
+            <div class="icon-row">
+                <!-- Smoke icon and text -->
+                <img src="./images/fumee.png" alt="smoke Icon" class="big-icon" />
+                <p class="big-icon-text">Smoke detected</p>
+            </div>
+        </div>
+
+        <div id="manometer_notif" class="big-icon-container">
+            <div class="icon-row">
+                <!-- Manometer icon and text -->
+                <img src="./images/manometer.png" alt="manometer Icon" class="big-icon" />
+                <p class="big-icon-text">Manometer detected : </p>
+                <p class="big-icon-text-pressure"> &nbsp; No value </p>
+            </div>
+        </div>
+
+        <div id="obstacle_notif" class="big-icon-container">
+            <div class="icon-row">
+                <!-- Obstacle icon and text -->
+                <img src="./images/barrierh.png" alt="manometer Icon" class="big-icon" />
+                <p class="big-icon-text">Obstacle detected</p>
+            </div>
+        </div>
+
+        <!-- Bottom text for credits -->
+        <div class="bottom-center-text"> Département Génie Electrique et Informatique - INSA de Toulouse
+        </div>
+    </div>
+
+    <!-- Right-side content -->
+    <div class="right-side">
+        <!-- Content of the right part of the page -->
+        <div class="text-content">
+            <!-- Title and description for the real-time evolution section -->
+            <h2> Real-Time Evolution </h2>
+            <h3>Initial sketch of the car's real-time evolving design, showcasing its progression</h3>
+        </div>
+
+        <div class="top-right-text">
+            <!-- Affichage connexion à la voiture -->
+            <span id="connection-status">Waiting for connection ... </span>
+        </div>
+
+        <!-- Car icon and flame indicators -->
+        <div class="section-car">
+            <img src="./images/car_icon.svg" alt="Car Icon" class="car-icon">
+
+            <!-- Flame indicators for each corner -->
+            <div id="fire_tl" class="fire-tl"><img src="./images/flamme.svg" alt="Icon" class="icon"></div>
+            <div id="fire_tr" class="fire-tr"><img src="./images/flamme.svg" alt="Icon" class="icon"></div>
+            <div id="fire_bl" class="fire-bl"><img src="./images/flamme.svg" alt="Icon" class="icon"></div>
+            <div id="fire_br" class="fire-br"><img src="./images/flamme.svg" alt="Icon" class="icon"></div>
+            <div id="smoke-section-l" class="smoke-section-l"><img src="./images/fumee.png" class="icon"></div>
+            <div id="smoke-section-r" class="smoke-section-r"><img src="./images/fumee.png" class="icon"></div>
+            <!-- Obstacle icons for different corners -->
+            <div id="obstacle_tl" class="obstacle obstacle_tl">
+                <img src="./images/barrier.png" alt="barrier Icon" id="barrierIcon" />
+            </div>
+            <div id="obstacle_tm" class="obstacle obstacle_tm">
+                <img src="./images/barrier.png" alt="barrier Icon" id="barrierIcon" />
+            </div>
+            <div id="obstacle_tr" class="obstacle obstacle_tr">
+                <img src="./images/barrier.png" alt="barrier Icon" id="barrierIcon" />
+            </div>
+            <div id="obstacle_bl" class="obstacle obstacle_bl">
+                <img src="./images/barrier.png" alt="barrier Icon" id="barrierIcon" />
+            </div>
+            <div id="obstacle_bm" class="obstacle obstacle_bm">
+                <img src="./images/barrier.png" alt="barrier Icon" id="barrierIcon" />
+            </div>
+            <div id="obstacle_br" class="obstacle obstacle_br">
+                <img src="./images/barrier.png" alt="manometer Icon" id="manometerIcon" />
+            </div>
+            
+           
+            <!-- SVG for the scan icon -->
+            <svg class="scan-icon" id="scan" width="200" height="200" xmlns="http://www.w3.org/2000/svg">
+                <path d="M 100,100 L 50,20 A 75,75 0 0 1 150,20 Z" id="arc" />
+            </svg>
+
+            <!--Arrow icon to indicate the movement of the car-->
+            <div id="arrow_direction_front" class="arrow_orientation">
+                <img src="./images/arrow_orientation.png" alt="orientation" id="arrow_orientation_front"/>
+            </div>
+
+            <div id="arrow_direction_rear" class="arrow_orientation">
+                <img src="./images/arrow_orientation rear.png" alt="orientation" id="arrow_orientation_rear"/>
+            </div>
+
+         
+        <!-- Bottom text for credits -->
+
+        <!-- Logout button -->
+        <button class="logout-b" onclick="redirect('./index.html')">Logout</button>
+    </div>
+    <div class="bottom-center-text">Made by TAHANI team, inspired by the CHIDI team's website.</div>
+</div>
+
+</body>
+
+<script src="scripts.js"></script>
+
+
+</html>
