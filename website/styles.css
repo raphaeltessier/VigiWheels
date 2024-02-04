@@ -1,0 +1,483 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #fff;
+    color: #fff;
+    overflow: hidden
+}
+
+.fire1 {
+    position: absolute;
+    width: 50%;
+    height: 50%;
+    top: 0;
+    left: 0;
+    background-color: red
+}
+
+.container_log {
+    text-align: center;
+    background-color: rgba(78, 69, 69, 0);
+    padding: 5px;
+    border-radius: 10px;
+    color: #fff
+}
+
+.input-group {
+    text-align: start;
+    margin-bottom: 10px;
+    padding: 8px;
+    font-family: Georgia, Times, sans-serif;
+    color: #fff
+}
+
+.section-car {
+    position: relative;
+    width: 100vh;
+    height: 70vh
+}
+
+.car-icon {
+    position: absolute;
+    height: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-54%, -46.5%) rotate(90deg)
+}
+
+.flame-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%)
+}
+
+.image-container {
+    position: relative;
+    animation: rotation 5s linear infinite;
+    transform-origin: center bottom
+}
+
+@keyframes rotation {
+    from {
+        transform: rotate(0)
+    }
+
+    to {
+        transform: rotate(360deg)
+    }
+}
+
+.scan-icon {
+    position: absolute;
+    top: 50%;
+    left: 65%;
+    transform: translate(-50%, -50%)
+}
+
+.scan-icon path {
+    fill: #00c894;
+    stroke: none;
+    stroke-width: 1
+}
+
+.flame-icon {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    height: 45px;
+    width: 45 px
+}
+
+label {
+    margin-bottom: 5px;
+    margin-top: 10px;
+    font-size: 18px;
+    color: #aaa
+}
+
+button {
+    margin: .001px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    border-radius: 10px;
+    transition: background-color .3s
+}
+
+button {
+    background-color: #00c894;
+    color: #fff
+}
+
+button:hover {
+    background-color: #048589
+}
+
+.alert {
+    background-color: #00c894;
+    color: #fff
+}
+
+.larger-text {
+    color: #00c894;
+    font-size: 65px
+}
+
+.larger-text2 {
+    color: #fff
+}
+
+.logout-b {
+    background-color: rgba(120, 120, 120, .7);
+    color: #fff;
+    position: absolute;
+    bottom: 10px;
+    right: 10px
+}
+
+.hidden {
+    display: none
+}
+
+.container {
+    display: flex;
+    height: 100vh
+}
+
+.text-content {
+    position: static;
+    text-align: center
+}
+
+body {
+    border: 2px solid #000;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex
+}
+
+.left-side {
+    flex: 1;
+    background-color: #2b2a33;
+    height: 100vh;
+    box-sizing: border-box;
+    position: static;
+    padding: 50px
+}
+
+.right-side {
+    flex: 2;
+    background-color: #a3a2ad;
+    height: 100vh;
+    box-sizing: border-box;
+    position: static;
+    padding: 50px;
+}
+
+.slogan {
+    position: absolute;
+    bottom: -10px;
+    right: 20px;
+    font-size: 15px
+}
+
+body {
+    font-family: Roboto, Arial, sans-serif
+}
+
+h1,
+h2 {
+    font-family: Georgia, Times New Roman, serif;
+    color: #fff
+}
+
+h3 {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 12px
+}
+
+p {
+    font-family: Roboto, Arial, sans-serif
+}
+
+.rectangle-container {
+    background-color: #1d1b1b;
+    border-radius: 10px;
+    font-size: 16px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    padding-bottom: 10px;
+    margin-bottom: 30px
+}
+
+.rectangle-container2 {
+    border-radius: 10px;
+    padding-left: 10px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background-color: #142a24;
+    text-align: center;
+    font-size: 25px;
+    margin-bottom: 10px
+}
+
+
+.left-side .bottom-center-text {
+    position: absolute;
+    bottom: 0;
+    font-size: 16px;
+    width: 100%;
+}
+
+.right-side .bottom-center-text {
+    position: absolute;
+    bottom: 0;
+    font-size: 16px;
+    left: 50%;
+    width: 100%;
+}
+
+.right-side .top-right-text{
+    position: absolute;
+    top: 0.5%;
+    right: 0.5%;
+    font-size: 12px;
+}
+
+.icon-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px
+}
+
+.icon-row2 {
+    display: none;
+    align-items: center;
+    margin-bottom: 10px
+}
+
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    color: #00c894;
+    font-size: 65px;
+    font-family: Georgia, Times New Roman, serif;
+    font-weight: 700
+}
+
+.main-title {
+    position: relative
+}
+
+.icon {
+    width: 50px;
+    height: 50px;
+    margin-left: 50px
+}
+
+.logo {
+    width: 120px;
+    height: 120px;
+    margin-left: 15px;
+    margin-right: 30px;
+    font-weight: 700
+}
+
+.big-icon-container {
+    display: none;
+}
+
+.big-icon {
+    width: 80px;
+    height: 80px;
+    margin-left: 50px;
+    margin-right: 20px
+}
+
+.big-icon-text {
+    margin: 0;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 25px
+}
+
+.big-icon-text-pressure {
+    color: green;
+    margin: 0;
+    align-items: center;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 25px
+}
+
+
+.notification-block .icon-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px
+}
+
+.icon {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+}
+
+.icon-text {
+    margin: 0;
+    font-family: 'Times New Roman', Times, serif
+}
+
+.obstacle {
+    position: absolute;
+    align-items: center;
+    width: 400px;
+    height: 70px;
+    display: none;
+}
+
+.obstacle img{
+    width: 50px;
+    height: 50px
+}
+
+.obstacle_tl,
+.obstacle_tr {
+    left: 15%
+}
+
+.obstacle_tm {
+    left: 10%
+}
+
+.obstacle_bl,
+.obstacle_br {
+    left: 80%
+}
+
+.obstacle_bm {
+    left: 85%
+}
+
+.obstacle_bl,
+.obstacle_tl {
+    top: 20%
+}
+
+.obstacle_br,
+.obstacle_tr {
+    top: 64%
+}
+
+.obstacle_bm,
+.obstacle_tm {
+    top: 42%
+}
+
+
+#arrow_direction_front{
+    width: 400px;
+    height: 70px;
+    position: absolute;
+    top: 44.5%;
+    left: 73%;
+    transform-origin: -35% 20%;    
+    align-items: center; 
+    display: none;
+    
+}
+
+#arrow_orientation_front{
+    width: 50px;
+    height: 50px;
+}
+
+#arrow_direction_rear{
+    width: 400px;
+    height: 70px;
+    position: absolute;
+    top: 44.5%;
+    left: 24%;
+    transform-origin: 35% 20%;    
+    align-items: center; 
+    display: none;
+
+}
+
+#arrow_orientation_rear{
+    width: 50px;
+    height: 50px;
+}
+
+.fire-bl,
+.fire-br,
+.fire-tl,
+.fire-tr {
+    position: absolute;
+    width: 50%;
+    height: 50%;
+    display: none;
+    align-items: center;
+    justify-content: center
+}
+
+.smoke-section-l,
+.smoke-section-r {
+    position: absolute;
+    width: 100%;
+    height: 50%;
+    align-items: center;
+    display: none;
+    justify-content: center
+}
+.smoke-section-l .icon{
+    width: 80px;
+    height: auto;
+    position: absolute;
+    left: 40%;
+    top: 40%
+}
+
+.smoke-section-r .icon{
+    width: 80px;
+    height: auto;
+    position: absolute;
+    left: 40%;
+    bottom: 40%
+}
+.fire-bl .icon,
+.fire-br .icon,
+.fire-tl .icon,
+.fire-tr .icon {
+    width: 80px;
+    height: auto
+}
+
+.fire-tl,
+.fire-tr {
+    right: 0
+}
+
+.fire-bl,
+.fire-tl
+.smoke-section-l {
+    top: 0
+}
+
+.fire-bl,
+.fire-br {
+    left: 0
+}
+
+.fire-br,
+.fire-tr,
+.smoke-section-r {
+    bottom: 0
+}

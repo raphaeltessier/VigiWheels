@@ -2,19 +2,25 @@
 #include <chrono>
 #include <functional>
 #include <memory>
+#include <fstream>
+#include <ctime>
+#include <string.h> 
 
 #include "interfaces/msg/motors_order.hpp"
 #include "interfaces/msg/motors_feedback.hpp"
 #include "interfaces/msg/steering_calibration.hpp"
 #include "interfaces/msg/joystick_order.hpp"
+#include "interfaces/msg/obstacles_order.hpp"
 
 #include "std_srvs/srv/empty.hpp"
 
 #include "../include/car_control/steeringCmd.h"
 #include "../include/car_control/propulsionCmd.h"
 #include "../include/car_control/car_control_node.h"
+#include "../include/car_control/controlCmd.h"
 
 using namespace std;
+using namespace std::chrono;
 using placeholders::_1;
 
 
@@ -45,6 +51,9 @@ public:
         subscription_steering_calibration_ = this->create_subscription<interfaces::msg::SteeringCalibration>(
         "steering_calibration", 10, std::bind(&car_control::steeringCalibrationCallback, this, _1));
 
+        subscription_obstacles_order_ = this->create_subscription<interfaces::msg::ObstaclesOrder>(
+        "obstacles_order", 10, std::bind(&car_control::obstaclesOrderCallback, this, _1));
+
 
         
 
@@ -52,6 +61,7 @@ public:
                             "steering_calibration", std::bind(&car_control::steeringCalibration, this, std::placeholders::_1, std::placeholders::_2));
 
         timer_ = this->create_wall_timer(PERIOD_UPDATE_CMD, std::bind(&car_control::updateCmd, this));
+
 
         
         RCLCPP_INFO(this->get_logger(), "car_control_node READY");
@@ -97,16 +107,71 @@ private:
         }
     }
 
-    /* Update currentAngle from motors feedback [callback function]  :
+
+    /* Update front and rear obstacles prensence from Obstacles_order  :
+    *
+    * This function is called when a message is published on the "/mobstacles_order" topic
+    * 
+    */
+    void obstaclesOrderCallback(const interfaces::msg::ObstaclesOrder & obstacles_order){
+        obstacles_front = obstacles_order.front_object;
+        obstacles_rear = obstacles_order.rear_object;
+    }
+
+
+
+ 
+    /* Update currentAngle, left_rear from motors feedback [callback function]  :
+
     *
     * This function is called when a message is published on the "/motors_feedback" topic
     * 
     */
     void motorsFeedbackCallback(const interfaces::msg::MotorsFeedback & motorsFeedback){
         currentAngle = motorsFeedback.steering_angle;
+        leftRearSpeedFeedback = motorsFeedback.left_rear_speed;
+        rightRearSpeedFeedback = motorsFeedback.right_rear_speed;
     }
 
 
+    //open the ifstream
+    int startPlaying() {
+        ifstream to_run;
+        
+        to_run.open("/home/pi/path/file_to_run.txt", ifstream::in); //open fil where name of instruction file is store
+        if(!to_run) {
+            RCLCPP_ERROR(this->get_logger(), "Error while opening save name file");
+            return -1;
+        }
+        else {
+            char c_name[20];
+            to_run.getline(c_name, 20); //reading instruction txt file name
+            to_run.close();
+
+            string name = "/home/pi/path/memory/" + string(c_name) + "_car.txt";
+            file.open(name.c_str());//opening instruction file for the car
+
+            if(!file) {
+                RCLCPP_ERROR(this->get_logger(), "Error while opening record file");
+                return -1;
+            }
+            else {
+                string msg = "Start playing " + name;
+                RCLCPP_INFO(this->get_logger(), msg.c_str());
+                t_start = steady_clock::now(); //get time origin
+                if(!file.eof()) {
+                    file >> time_stamp; // get first instruction timing
+                }
+                else {
+                    RCLCPP_ERROR(this->get_logger(), "Empty file");
+                    return -1;
+
+                }
+                return 0;
+            }
+        }
+
+    }
     /* Update PWM commands : leftRearPwmCmd, rightRearPwmCmd, steeringPwmCmd
     *
     * This function is called periodically by the timer [see PERIOD_UPDATE_CMD in "car_control_node.h"]
@@ -114,30 +179,87 @@ private:
     * In MANUAL mode, the commands depends on :
     * - requestedThrottle, reverse, requestedSteerAngle [from joystick orders]
     * - currentAngle [from motors feedback]
+    * - current RPM Speed of both motors 
+    * 
+    * In Auto mode, the commands depend on :
+    * - consigne_Speed_Left/ consigne_Speed_Right, reverse_Auto [variables to be used by Nav2]
+    * - current RPM Speed of both motors 
+    * - static error of last iteration
+    * - commanded value of last iteration
     */
     void updateCmd(){
 
         auto motorsOrder = interfaces::msg::MotorsOrder();
+
+        if ((mode != 1 || !start) && playing) { //stop replay mode 
+                playing = false;
+                file.close();
+        }
 
         if (!start){    //Car stopped
             leftRearPwmCmd = STOP;
             rightRearPwmCmd = STOP;
             steeringPwmCmd = STOP;
 
-
         }else{ //Car started
 
-            //Manual Mode
-            if (mode==0){
+            if (mode == 1  && !playing) { //start replay mode
+                if (startPlaying() != -1) {
+                    playing = true;
+                }
+            }
+
+            else if (playing && !obstacles_stop) {
+                duration<double> time_span = duration_cast<duration<double>>(steady_clock::now() - t_start);
+                if (time_span.count() >= time_stamp) { //if timing is ok 
+                    file >> requestedThrottle >> requestedSteerAngle >> reverse; //update command
+                    file.ignore(256, '\n');
+                    if (!file.eof()) {
+                        file >> time_stamp; //update commant timing
+                    }
+                    else {
+                        playing = false; //close the file at it end
+                        file.close();
+                    }
+                }
+
+            }
+
+            if (playing || mode == 0) {
+                if ((reverse && obstacles_rear) | (!reverse && obstacles_front)){  // si obstacle dans notre direction
+
+                    leftRearPwmCmd = STOP;
+                    rightRearPwmCmd = STOP;
+                    steeringPwmCmd = STOP;
+
+                    if (!obstacles_stop) {
+                        obstacles_stop = true;
+                        t_obstacle = steady_clock::now(); //get time when obstacle is detected
+
+                    }
+
+                }
+                else if (obstacles_stop) {
+                    obstacles_stop = false;
+                    t_start += steady_clock::now() - t_obstacle; //ignore the time where an obstacle is present
+
+
+                }
+                else{
+                    manualPropulsionCmd(requestedThrottle, reverse, leftRearPwmCmd,rightRearPwmCmd);
+                    /*calculateRPM_Left_Auto(requestedThrottle, reverse, leftRearPwmCmd, leftRearSpeedFeedback,
+                    lastError_L, correctedValue_L);
+
+                    calculateRPM_Right_Auto(requestedThrottle, reverse, rightRearPwmCmd, rightRearSpeedFeedback,
+                    lastError_R, correctedValue_R );*/
+
+                        
+                }
+                if (!obstacles_stop || !playing) {
+                    steeringCmd(requestedSteerAngle,currentAngle, steeringPwmCmd);
+                }
+            
                 
-                manualPropulsionCmd(requestedThrottle, reverse, leftRearPwmCmd,rightRearPwmCmd);
-
-                steeringCmd(requestedSteerAngle,currentAngle, steeringPwmCmd);
-
-
-            //Autonomous Mode
-            } else if (mode==1){
-                //...
             }
         }
 
@@ -215,7 +337,19 @@ private:
     
     //Motors feedback variables
     float currentAngle;
+    float leftRearSpeedFeedback;
+    float rightRearSpeedFeedback;
 
+
+    //obstacles variables
+    bool obstacles_front;
+    bool obstacles_rear;
+
+    bool obstacles_stop = false;
+
+    
+    
+    
     //Manual Mode variables (with joystick control)
     bool reverse;
     float requestedThrottle;
@@ -226,6 +360,28 @@ private:
     uint8_t rightRearPwmCmd;
     uint8_t steeringPwmCmd;
 
+    //Default consigne in auto mode
+
+
+    //PI variables for motor
+
+    float correctedValue_L = 0;
+    float correctedValue_R = 0;
+    float lastError_L = 0;
+    float lastError_R = 0;
+
+    //auto mode
+    bool playing = false;
+    
+    //file
+    ifstream file;
+
+    //timing data
+    steady_clock::time_point t_start;
+    steady_clock::time_point t_obstacle;
+    duration<double> time_span;
+    double time_stamp;
+
     //Publishers
     rclcpp::Publisher<interfaces::msg::MotorsOrder>::SharedPtr publisher_can_;
     rclcpp::Publisher<interfaces::msg::SteeringCalibration>::SharedPtr publisher_steeringCalibration_;
@@ -234,6 +390,7 @@ private:
     rclcpp::Subscription<interfaces::msg::JoystickOrder>::SharedPtr subscription_joystick_order_;
     rclcpp::Subscription<interfaces::msg::MotorsFeedback>::SharedPtr subscription_motors_feedback_;
     rclcpp::Subscription<interfaces::msg::SteeringCalibration>::SharedPtr subscription_steering_calibration_;
+    rclcpp::Subscription<interfaces::msg::ObstaclesOrder>::SharedPtr subscription_obstacles_order_; 
 
     //Timer
     rclcpp::TimerBase::SharedPtr timer_;
